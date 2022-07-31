@@ -13,7 +13,9 @@ namespace RED4ext
 struct CBaseFunction;
 struct IScriptable : ISerializable
 {
-    virtual CClass* GetType();
+    static constexpr const uintptr_t VFT_RVA = 0x307DCE0 + 0x1800;
+
+    virtual CClass* GetType() override;
 
     virtual void sub_D8(int64_t a1, int64_t a2); // D8
     virtual void sub_E0();                       // E0
@@ -44,7 +46,7 @@ struct IScriptable : ISerializable
         return ExecuteFunctionImpl<void>(aFunc, nullptr, std::forward<Args>(aArgs)...);
     }
 
-    CClass* unk30;     // 30
+    CClass* unk30;     // 30, parentType
     void* valueHolder; // 38
 
 protected:

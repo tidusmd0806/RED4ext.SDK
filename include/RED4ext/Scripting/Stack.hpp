@@ -16,6 +16,7 @@ namespace RED4ext
  * found, the names will be kept as they are now.
  */
 struct CBaseRTTIType;
+struct CBaseFunction;
 struct IScriptable;
 
 struct CStackType

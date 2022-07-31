@@ -7,23 +7,34 @@
 #include <RED4ext/CName.hpp>
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/Entity.hpp>
+
+#include <RED4ext/Scripting/Natives/entIComponent.hpp>
 
 namespace RED4ext
 {
-namespace ent { 
-struct IComponent : IScriptable
-{
-    static constexpr const char* NAME = "entIComponent";
-    static constexpr const char* ALIAS = "IComponent";
+namespace ent {
+// struct Entity;
+// struct IComponent : IScriptable
+// {
+//     static constexpr const char* NAME = "entIComponent";
+//     static constexpr const char* ALIAS = "IComponent";
 
-    CName name; // 40
-    uint8_t unk48[0x60 - 0x48]; // 48
-    CRUID id; // 60
-    uint8_t unk68[0x8B - 0x68]; // 68
-    bool isEnabled; // 8B
-    bool isReplicable; // 8C
-    uint8_t unk8D[0x90 - 0x8D]; // 8D
-};
+//     CName name; // 40
+//     CName owner; // 48 "player"
+//     Handle<Entity> entity; // 50
+//     CRUID id; // 60
+//     uint64_t unk68;
+//     void *unk70;
+//     uint64_t unk78;
+//     uint64_t unk80;
+//     uint8_t unk88;
+//     uint8_t unk89;
+//     uint8_t unk8A;
+//     bool isEnabled; // 8B
+//     bool isReplicable; // 8C
+//     uint8_t unk8D[0x90 - 0x8D]; // 8D
+// };
 RED4EXT_ASSERT_SIZE(IComponent, 0x90);
 } // namespace ent
 using IComponent = ent::IComponent;

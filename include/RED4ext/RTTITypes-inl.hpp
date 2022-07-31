@@ -189,20 +189,20 @@ RED4EXT_INLINE RED4ext::CClass::CClass(CName aName, uint32_t aSize, Flags aFlags
     , unkA8(Memory::RTTIAllocator::Get())
     , unkD8(0)
     , unkE0(0)
-    , unkE8(Memory::RTTIAllocator::Get())
-    , unk118(Memory::RTTIAllocator::Get())
-    , unk128(Memory::RTTIAllocator::Get())
-    , unk138(Memory::RTTIAllocator::Get())
-    , unk148(Memory::RTTIAllocator::Get())
-    , unk158(Memory::ScriptAllocator::Get())
-    , unk168(Memory::ScriptAllocator::Get())
+    , propsByName(Memory::RTTIAllocator::Get())
+    , allProps(Memory::RTTIAllocator::Get())
+    , persistentProps(Memory::RTTIAllocator::Get())
+    , referenceProps(Memory::RTTIAllocator::Get())
+    , referencePropTypes(Memory::RTTIAllocator::Get())
+    , propsWithDefaults(Memory::ScriptAllocator::Get())
+    , defaultValues(Memory::ScriptAllocator::Get())
     , unk180(Memory::RTTIAllocator::Get())
-    , unk1B0(Memory::RTTIAllocator::Get())
-    , unk2C0(-1)
+    , callbacks(Memory::RTTIAllocator::Get())
+    , callbackTypeId(-1)
     , unk2C4(-1)
-    , unk2C9(0xE6)
+    , classSetupState(0xE6)
 {
-    std::memset(unk1C0, 0, sizeof(unk1C0));
+    std::memset(callbackTypes, 0, sizeof(callbackTypes));
 }
 
 RED4EXT_INLINE RED4ext::CName RED4ext::CClass::GetName() const

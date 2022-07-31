@@ -8,6 +8,7 @@
 #include <RED4ext/HashMap.hpp>
 #include <RED4ext/InstanceType.hpp>
 #include <RED4ext/Utils.hpp>
+#include <RED4ext/Scripting/Natives/Callbacks.hpp>
 
 namespace RED4ext
 {
@@ -39,6 +40,8 @@ enum class ERTTIType : uint8_t
 
 struct CBaseRTTIType
 {
+    static constexpr const uintptr_t VFT_RVA = 0x30807E0;
+    
     CBaseRTTIType();
     virtual ~CBaseRTTIType() = default; // 00
 
@@ -111,6 +114,8 @@ RED4EXT_ASSERT_SIZE(CBaseRTTIType, 0x10);
 
 struct CClass : CBaseRTTIType
 {
+    static constexpr const uintptr_t VFT_RVA = 0x30805D0;
+
     struct Flags
     {
         uint32_t isAbstract : 1;                      // 00
@@ -127,6 +132,12 @@ struct CClass : CBaseRTTIType
         uint32_t b10 : 21;                            // 0B
     };
     RED4EXT_ASSERT_SIZE(CClass::Flags, 0x4);
+
+    struct DefaultValue
+    {
+        uint64_t type;
+        uint64_t value;
+    };
 
     CClass(CName aName, uint32_t aSize, Flags aFlags);
 
@@ -174,6 +185,23 @@ struct CClass : CBaseRTTIType
         DestructCls(aMemory);
     }
 
+    // 1.52 RVA: 0x1F4BD0 / 2051024
+    /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B F2 48 8B E9 66 0F 1F 44 00 00
+    __int64 __fastcall AddCallback(Callback *a2);
+
+    // 1.52 RVA: 0x1F4C80 / 2051200
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 41 0F B7 B8 C0 02 00 00 48 8B DA 48 8B F1 66 83 FF
+    uint32_t __fastcall AddEventCallbackType(CName actionType, CClass *eventType, CallbackDefinition *definition);
+
+    // 1.52 RVA: 0x1F4D60 / 2051424
+    /// @pattern 4C 8B DC 53 56 41 56 48 83 EC 60 48 8B 59 48 4C 8B F1 8B 41 54 48 8D 34 C3 48 3B DE 0F 84 9A 01
+    uint32_t __fastcall SetupScriptCallbacks();
+
+    // 1.52 RVA: 0x1F8690 / 2066064
+    /// @pattern 8B 41 70 45 84 C0 74 06 0B C2 89 41 70 C3 F7 D2 23 D0 89 51 70 C3
+    void __fastcall ApplyFlags(Flags a2, bool set);
+
+
     CClass* parent;                              // 10
     CName name;                                  // 18
     CName computedName;                          // 20
@@ -189,21 +217,21 @@ struct CClass : CBaseRTTIType
     HashMap<void*, void*> unkA8;                 // A8
     int64_t unkD8;                               // D8
     int64_t unkE0;                               // E0
-    HashMap<CName, CProperty*> unkE8;            // E8
-    DynArray<CProperty*> unk118;                 // 118 - More entries than 0x28, will contain native props
-    DynArray<void*> unk128;                      // 128
-    DynArray<CProperty*> unk138;                 // 138 - Only RT_Class types?
-    DynArray<void*> unk148;                      // 148
-    DynArray<CProperty*> unk158;                 // 158 - Scripted props?
-    DynArray<void*> unk168;                      // 168
+    HashMap<CName, CProperty*> propsByName;      // E8
+    DynArray<CProperty*> allProps;               // 118 - More entries than 0x28, will contain native props
+    DynArray<CProperty*> persistentProps;        // 128
+    DynArray<CProperty*> referenceProps;         // 138
+    DynArray<void*> referencePropTypes;      // 148 - CBaseRTTIType* with an unknown uint32_t value at 0x0C
+    DynArray<CName> propsWithDefaults;           // 158
+    DynArray<DefaultValue*> defaultValues;       // 168
     int64_t unk178;                              // 178
     HashMap<void*, void*> unk180;                // 180
-    DynArray<void*> unk1B0;                      // 1B0
-    int8_t unk1C0[256];                          // 1C0
-    int16_t unk2C0;                              // 2C0
+    DynArray<CallbackStorage> callbacks;         // 1B0
+    int32_t callbackTypes[64];                   // 1C0 - Bits are toggled here if a type's id is supported in a callback
+    int16_t callbackTypeId;                      // 2C0 - Types used in callbacks get assigned one at runtime
     int32_t unk2C4;                              // 2C4
-    SharedMutex unk2C8;                          // 2C8
-    uint8_t unk2C9;                              // 2C9
+    SharedMutex propsLock;                       // 2C8
+    uint8_t classSetupState;                     // 2C9
 };
 RED4EXT_ASSERT_SIZE(CClass, 0x2D0);
 RED4EXT_ASSERT_OFFSET(CClass, parent, 0x10);
