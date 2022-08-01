@@ -21,6 +21,7 @@
 #include <RED4ext/Scripting/Natives/Generated/AI/CAgent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/move/Component.hpp>
 #include <RED4ext/Scripting/Natives/ActionInterface.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPhysics.hpp>
 
 namespace RED4ext
 {

@@ -9,6 +9,8 @@
 #include <RED4ext/HashMap.hpp>
 #include <RED4ext/Scripting/Natives/IUpdatableSystem.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/RuntimeScene.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeInfo.hpp>
+#include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
 
 namespace RED4ext
 {
@@ -20,8 +22,8 @@ namespace Memory
 {
 struct IAllocator;
 }
-
-namespace world { struct RuntimeScene;}
+namespace game { struct IGameSystem; }
+namespace world { struct RuntimeScene; struct RuntimeInfo; }
 
 struct CBaseEngine
 {
@@ -173,27 +175,81 @@ struct BaseGameEngine : CBaseEngine
 RED4EXT_ASSERT_SIZE(BaseGameEngine, 0x2E0);
 RED4EXT_ASSERT_OFFSET(BaseGameEngine, watchdogThread, 0x2D8);
 
-struct GameInstance
-{
-    virtual ~GameInstance() = 0;                                      // 00
-    virtual IScriptable* GetInstance(const CBaseRTTIType* aType) = 0; // 08
-    virtual void Unk_10() = 0;                                        // 10
-    virtual void Unk_18() = 0;                                        // 18
-    virtual void Unk_20() = 0;                                        // 20
-    virtual void Unk_28() = 0;                                        // 28
-    virtual void Unk_30() = 0;                                        // 30
-    virtual void Unk_38() = 0;                                        // 38
-    virtual void Unk_40() = 0;                                        // 40
-    virtual void Unk_48() = 0;                                        // 48
-    virtual void Unk_50() = 0;                                        // 50
-    virtual void Unk_58() = 0;                                        // 58
-    virtual void Unk_60() = 0;                                        // 60
-    virtual void Unk_68() = 0;                                        // 68
+struct IGameInstance {
 
-    HashMap<CBaseRTTIType*, Handle<IScriptable>> unk08; // 08
+    static constexpr const uintptr_t VFT_RVA = 0x35FAC80;
+    virtual ~IGameInstance() = 0;                                     // 00
+    virtual game::IGameSystem* GetInstance(const CClass* aType) = 0;  // 08
+    virtual world::RuntimeInfo* GetRuntimeInfo() = 0;                 // 10
+    virtual Memory::IAllocator* GetAllocator() = 0;                   // 18
+    // break
+    virtual void Unk_20(uint8_t*, uint64_t, uint32_t*) = 0;           // 20
+    // Calls game::IGameSystem::RegisterUpdates() for each system
+    virtual void RegisterUpdates(CGameFramework*) = 0;                // 28
+    // break
+    virtual void GetRuntimeScene() = 0;                               // 30
+    // break
+    virtual void GetGameInstance() = 0;                               // 38
+    // break
+    virtual void SaveGame(uint64_t, uint64_t, uint64_t) = 0;          // 40
+    // break
+    virtual void SomethingAutoSave_sub_1B8(uint64_t) = 0;             // 48
+    virtual void SomethingAutoSave_sub_1C0() { }                      // 50
+    virtual void AllSystems_sub_130() = 0;                            // 58
+    virtual uint8_t Unk_60(uint64_t, byte*) = 0;                      // 60
+
+    // 1.52 RVA: 0x2CFF000 / 47181824
+    /// @pattern 40 55 53 56 57 41 56 48 8D 6C 24 C9 48 81 EC B0 00 00 00 48 8B F1 E8 A5 E7 C9 FF 48 8D 05 5E BC
+    IGameInstance *__fastcall InitializeIGameSystem();
+
+    HashMap<CBaseRTTIType*, Handle<game::IGameSystem>> systemInstances; // 08
     DynArray<Handle<IScriptable>> gameSystems;                // 38
-    HashMap<CBaseRTTIType*, CBaseRTTIType*> unk48;      // 48
-    uintptr_t unk78[(0x138 - 0x78) >> 3];                     // 78
+    // contains the ISystem to System mapping, System is listed twice if no interface
+    HashMap<CBaseRTTIType*, CBaseRTTIType*> interfaceMapping;      // 48
+    void * runtimeSystemHandles; // 78
+    world::RuntimeInfo runtimeInfo; // 80
+    int64_t unk100; // 100
+    IGameInstance* self; // 108
+    DynArray<Handle<IScriptable>>* gameSystemsPtr; // 110
+    Handle<void> gameFeatureManager; // 118
+    int64_t unk128; // 128
+};
+
+struct GameInstance : IGameInstance
+{
+    static constexpr const uintptr_t VFT_RVA = 0x35FC738;
+
+    virtual ~GameInstance() override;                                      // 00
+    // creates some systems, calls systems' sub_190, sub198
+    virtual void Unk_20(uint8_t*, uint64_t, uint32_t*) override;           // 20
+    // calls parent func, then sets gameInstance & runtimeScene
+    virtual void RegisterUpdates(CGameFramework*) override;                // 28
+    virtual void GetRuntimeScene() override;                               // 30
+    virtual void GetGameInstance() override;                               // 38
+    virtual void SaveGame(uint64_t, uint64_t, uint64_t) override;          // 40
+    virtual void SomethingAutoSave_sub_1B8(uint64_t) override;             // 48
+    virtual void SomethingAutoSave_sub_1C0() override;                     // 50
+    // no longer exists
+    // virtual void Unk_68() = 0;                                     // 68
+
+    // 1.52 RVA: 0x2D494B0 / 47486128
+    /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 42 5B FB FF 48 8D 05 73 32 8B 00 48 89 03 33 C0 48 89 83 30 01 00
+    GameInstance();
+
+    // 1.52 RVA: 0x2CFF600 / 47183360
+    /// @pattern 4C 89 44 24 18 48 89 54 24 10 48 89 4C 24 08 55 53 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 E1
+    __int64 *__fastcall Unknown(void **unkThing, uint8_t *a3);
+    
+    /**
+     * @brief Calls game::IGameSystem::RegisterUpdates() for each system
+     * @address 0x2D007D0
+     * @pattern 48 89 5C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC 20 48 8B 1A 48 8D B9 80 00 00 00 4C
+    */
+    // bool __fastcall RegisterSystemUpdates(CGameFramework *a2);
+
+    int64_t gameInstance; // 130
+    int64_t runtimeScene; // 138
+
     //world::RuntimeSystemHandles * runtimeSystemHandles; // 78
     //world::RuntimeInfo runtimeInfo; // 80
     //int64_t unk100; // 100
@@ -204,7 +260,7 @@ struct GameInstance
     //int64_t unk130; // 130
     //int64_t unk138; // 138
 };
-RED4EXT_ASSERT_SIZE(GameInstance, 0x138);
+RED4EXT_ASSERT_SIZE(GameInstance, 0x140);
 
 struct CGameEngine : BaseGameEngine
 {
@@ -214,11 +270,11 @@ struct CGameEngine : BaseGameEngine
     {
         static constexpr const uintptr_t VFT_RVA = 0x3599FE8;
 
-        virtual void GetAllocator();
+        virtual Memory::IAllocator* GetAllocator();
         virtual void Destruct(char);
         virtual void sub_10();
 
-        UpdateCoreHolder* updateCoreHolder; // 08
+        UpdateManagerHolder* updateManagerHolder; // 08
         GameInstance* gameInstance; // 10
         world::RuntimeScene* runtimeScene; // 18
         void* stateMachine; // 20

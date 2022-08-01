@@ -28,11 +28,34 @@ struct UpdateEntry
     uint32_t unk3C;
 };
 
+struct UpdateManagerHolder;
+
 struct IUpdatableSystem : IScriptable
 {
     static constexpr const char* NAME = "IUpdatableSystem";
     static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x31A6470;
+
+    struct Update
+    {
+        IUpdatableSystem *system;
+        uint64_t unk08;
+        uint64_t unk10;
+        uint64_t unk18;
+        CallbackStruct *callbackStruct;
+    };
+
+    // 1.52 RVA: 0xA86060 / 11034720
+    /// @pattern 0F B6 C1 83 F8 0C 77 7B 48 8D 15 91 9F 57 FF 8B 8C 82 EC 60 A8 00 48 03 CA FF E1 48 8D 05 46 18
+    // static const char *__fastcall GetStringForUnk0(Unk0);
+
+    // sub_110 - adds callbacks to the lookup - there are at least 10 dynarrays
+    virtual void RegisterUpdates(UpdateManagerHolder* holder) { }; 
+};
+RED4EXT_ASSERT_SIZE(IUpdatableSystem, 0x40);
+
+
+struct UpdateManager {
 
     enum class Unk0 : char {
         // TierSystem, MountingFacility, HitRepresentationSystem
@@ -169,15 +192,6 @@ struct IUpdatableSystem : IScriptable
         Common = 0x7,
     };
 
-    struct Update
-    {
-        IUpdatableSystem *system;
-        uint64_t unk08;
-        uint64_t unk10;
-        uint64_t unk18;
-        CallbackStruct *callbackStruct;
-    };
-
     struct UpdateStorage 
     {
         Unk0 index;
@@ -188,8 +202,8 @@ struct IUpdatableSystem : IScriptable
         uint8_t unk05;
         uint8_t unk06;
         uint8_t unk07;
-        Update update1;
-        Update update2;
+        IUpdatableSystem::Update update1;
+        IUpdatableSystem::Update update2;
         CClass *systemCls;
         char *nameStr;
         uint32_t thread;
@@ -209,21 +223,7 @@ struct IUpdatableSystem : IScriptable
         // 1.52 RVA: 0xA85470 / 11031664
         /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 0F B7 02 48 8B DA 66 89 01 48 8B F9
         UpdateStorage *__fastcall Copy_0(UpdateStorage *a2);
-
     };
-
-    // 1.52 RVA: 0xA86060 / 11034720
-    /// @pattern 0F B6 C1 83 F8 0C 77 7B 48 8D 15 91 9F 57 FF 8B 8C 82 EC 60 A8 00 48 03 CA FF E1 48 8D 05 46 18
-    // static const char *__fastcall GetStringForUnk0(Unk0);
-
-    // sub_110 - adds callbacks to the lookup - there are at least 10 dynarrays
-    virtual void RegisterCallbacks(DynArray<UpdateStorage>** lookup) { }; 
-};
-RED4EXT_ASSERT_SIZE(IUpdatableSystem, 0x40);
-
-
-struct UpdateCore {
-
 
     // 1.52 RVA: 0xA85990 / 11032976
     /// @pattern 48 89 6C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC 20 8B B1 D0 00 00 00 33 ED 4C 8B F1
@@ -231,7 +231,7 @@ struct UpdateCore {
 
     // 1.52 RVA: 0xA86820 / 11036704
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 41 56 48 83 EC 40 0F B6 1A 48 8B F2 48 C1 E3 04 48
-    uint64_t __fastcall RegisterUpdate(IUpdatableSystem::UpdateStorage *update);
+    uint64_t __fastcall RegisterUpdate(UpdateStorage *update);
 
     // 1.52 RVA: 0xA86DE0 / 11038176
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 20 4C 8B 29 B8
@@ -243,21 +243,10 @@ struct UpdateCore {
 
     // 1.52 RVA: 0xA855E0 / 11032032
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 30 48 8B F1 48
-    UpdateCore *__fastcall Setup();
+    UpdateManager *__fastcall Setup();
 
-    DynArray<IUpdatableSystem::UpdateStorage> frameBegin;
-    DynArray<IUpdatableSystem::UpdateStorage> multiplayer_UpdateStateSnapshots;
-    DynArray<IUpdatableSystem::UpdateStorage> entityUpdateState;
-    DynArray<IUpdatableSystem::UpdateStorage> preBuckets;
-    DynArray<IUpdatableSystem::UpdateStorage> buckets;
-    DynArray<IUpdatableSystem::UpdateStorage> postBuckets;
-    DynArray<IUpdatableSystem::UpdateStorage> cameraUpdate;
-    DynArray<IUpdatableSystem::UpdateStorage> playerAimUpdate;
-    DynArray<IUpdatableSystem::UpdateStorage> postPlayerAimUpdate;
-    DynArray<IUpdatableSystem::UpdateStorage> mappinsUpdate;
-    DynArray<IUpdatableSystem::UpdateStorage> blackboardCallbacks_SecondPass;
-    DynArray<IUpdatableSystem::UpdateStorage> preRenderUpdate;
-    DynArray<IUpdatableSystem::UpdateStorage> multiplayer_CaptureStateSnapshots;
+    // one for each Unk0
+    DynArray<UpdateStorage> storage[13];
     uint32_t arrayCount;
     uint32_t unkD4;
     // don't seem to be assigned
@@ -275,10 +264,8 @@ struct UpdateCore {
     uint32_t count4;
 };
 
-// using UpdateCoreEntry = UpdateCore::Entry;
-
-struct UpdateCoreHolder {
-    UpdateCore * updateCore;
+struct UpdateManagerHolder {
+    UpdateManager * UpdateManager;
     void * unk08;
     uint8_t unk09;
 };

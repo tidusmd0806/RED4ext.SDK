@@ -118,18 +118,26 @@ struct CClass : CBaseRTTIType
 
     struct Flags
     {
-        uint32_t isAbstract : 1;                      // 00
-        uint32_t isNative : 1;                        // 01
-        uint32_t isScriptedClass : 1;                 // 02
-        uint32_t isScriptedStruct : 1;                // 03
-        uint32_t hasNoDefaultObjectSerialization : 1; // 04
-        uint32_t isAlwaysTransient : 1;               // 05
-        uint32_t isImportOnly : 1;                    // 06
-        uint32_t isPrivate : 1;                       // 07
-        uint32_t isProtected : 1;                     // 08
-        uint32_t isTestOnly : 1;                      // 09
-        uint32_t isSavable : 1;                       // 0A
-        uint32_t b10 : 21;                            // 0B
+        uint32_t isAbstract : 1;                      // 00 0x1
+        uint32_t isNative : 1;                        // 01 0x2
+        uint32_t isScriptedClass : 1;                 // 02 0x4
+        uint32_t isScriptedStruct : 1;                // 03 0x8
+        uint32_t hasNoDefaultObjectSerialization : 1; // 04 0x10
+        uint32_t isAlwaysTransient : 1;               // 05 0x20
+        uint32_t isImportOnly : 1;                    // 06 0x40
+        uint32_t isPrivate : 1;                       // 07 0x80
+        uint32_t isProtected : 1;                     // 08 0x100
+        uint32_t isTestOnly : 1;                      // 09 0x200
+        uint32_t isSavable : 1;                       // 0A 0x400
+        uint32_t b800 : 1;                            // 0B 0x800 systems use
+        uint32_t b1000 : 1;                           // 0C 0x1000
+        uint32_t b2000 : 1;                           // 0D 0x2000
+        uint32_t b4000 : 1;                           // 0E 0x4000
+        uint32_t b8000 : 1;                           // 0F 0x8000
+        uint32_t b10000 : 1;                          // 0C 0x10000
+        uint32_t b20000 : 1;                          // 0D 0x20000 sysems use
+        uint32_t b40000 : 1;                          // 0E 0x40000
+        uint32_t b80000 : 1;                          // 0F 0x80000
     };
     RED4EXT_ASSERT_SIZE(CClass::Flags, 0x4);
 

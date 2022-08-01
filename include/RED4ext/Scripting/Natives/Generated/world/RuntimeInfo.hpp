@@ -14,6 +14,8 @@ struct RuntimeInfo : IScriptable
     static constexpr const char* NAME = "worldRuntimeInfo";
     static constexpr const char* ALIAS = "RuntimeInfo";
 
+    virtual CClass * __fastcall GetNativeType() override;
+
     uint8_t unk40[0x80 - 0x40]; // 40
 };
 RED4EXT_ASSERT_SIZE(RuntimeInfo, 0x80);

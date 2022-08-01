@@ -87,7 +87,7 @@ inline void IGameSystem::sub_170()
     return (this->*call)();
 }
 
-inline uintptr_t IGameSystem::sub_178(uintptr_t a1, uintptr_t a2)
+inline uintptr_t IGameSystem::sub_178(uintptr_t a1)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_178)> call(VFT_RVA, 0x178);
     return (this->*call)(a1, a2);
@@ -105,16 +105,16 @@ inline void IGameSystem::sub_188()
     return (this->*call)();
 }
 
-inline void IGameSystem::sub_190()
+inline void IGameSystem::sub_190(IGameSystem::HighLow * hl)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_190)> call(VFT_RVA, 0x190);
-    return (this->*call)();
+    return (this->*call)(hl);
 }
 
-inline void IGameSystem::sub_198()
+inline void IGameSystem::sub_198(void * a1)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_198)> call(VFT_RVA, 0x198);
-    return (this->*call)();
+    return (this->*call)(a1);
 }
 
 inline void IGameSystem::sub_1A0()

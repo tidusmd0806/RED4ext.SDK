@@ -18,6 +18,13 @@ struct IGameSystem : IUpdatableSystem
     static constexpr const char* ALIAS = "IGameSystem";
     static constexpr const uintptr_t VFT_RVA = 0x31B53F0;
 
+    struct HighLow
+    {
+        void *unk00;
+        void *unk08;
+        uint8_t unk10;
+    };
+
     virtual CClass* GetNativeType() override;     
 
     virtual bool sub_118(void *); // 108 onAttach
@@ -36,8 +43,9 @@ struct IGameSystem : IUpdatableSystem
     virtual uintptr_t sub_178(uintptr_t a1);                    
     virtual void sub_180(); // 180
     virtual void sub_188(); // 188
-    virtual void sub_190(); // 190
-    virtual void sub_198(); // 198 LoadFromTweakDB
+    virtual void sub_190(HighLow *); // 190
+    // some systems load tweaks - might be a setup
+    virtual void sub_198(void *); // 198
     virtual void sub_1A0(); // 1A0
 
     // 1.52 RVA: 0xAEC8E0 / 11454688
