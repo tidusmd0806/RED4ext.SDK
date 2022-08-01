@@ -24,16 +24,14 @@ struct BaseObject;
 #pragma pack(push, 1)
 struct Physics
 {
-    static constexpr const char* NAME = "vehiclePhysics";
-    static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x34316C8;
 
-    virtual uint64_t Destruct(char);
-    virtual uint64_t Create(vehicle::BaseObject *);
+    virtual ~Physics();
+    virtual uint64_t SetVehicle(vehicle::BaseObject *);
     virtual uint64_t sub_10();
     virtual uint64_t sub_18();
-    virtual uint64_t VehiclePhysicsUnkChassisComponent_0();
-    virtual uint64_t j_VP_UpdateWorldTransform();
+    virtual uint64_t sub_20();
+    virtual uint64_t UpdateTransform();
     virtual uint64_t sub_30();
     virtual void sub_38(float deltaTime);
     virtual void sub_40(float deltaTime);
@@ -77,9 +75,9 @@ struct Physics
     // empty
     virtual void sub_118();
     // updates some animation stuff, sub_120
-    virtual uint64_t UpdatePhysicsWT3();
+    virtual uint64_t UpdateWheelAnimations();
     // update blackboard, effectdata
-    virtual uint64_t sub_128();
+    virtual uint64_t UpdateBlackboard();
     virtual void sub_130();
     virtual uint64_t sub_138();
     virtual void LoadSomeVehiclePhysicsStuff(void *);
@@ -164,23 +162,22 @@ struct Physics
 //char (*__kaboom)[sizeof(VehiclePhysics)] = 1;
 //char (*__kaboom2)[offsetof(VehiclePhysics, unkD4Position)] = 1;
 
-struct WheeledPhysics : Physics {
-    static constexpr const char* NAME = "vehicleWheeledPhysics";
-    static constexpr const char* ALIAS = NAME;
+struct WheeledPhysics : Physics 
+{
     static constexpr const uintptr_t VFT_RVA = 0x3431EE0;
 
     // 1.52 RVA: 0x1D0DB70 / 30464880
     /// @pattern 40 56 41 56 48 83 EC 38 48 89 5C 24 58 4C 8B F1 48 89 7C 24 68 4C 89 7C 24 30 8B F2 E8 1F C9 FD
-    WheeledPhysics* __fastcall InitializeWheeled(unsigned int wheels);
+    WheeledPhysics(unsigned int wheels);
 
 // overrides
 
-    virtual uint64_t Destruct(char) override;
-    virtual uint64_t Create(vehicle::BaseObject *) override;
+    virtual ~WheeledPhysics() override;
+    virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
     // virtual uint64_t sub_10() override;
     virtual uint64_t sub_18() override;
-    virtual uint64_t VehiclePhysicsUnkChassisComponent_0() override;
-    // virtual uint64_t j_VP_UpdateWorldTransform() override;
+    virtual uint64_t sub_20() override;
+    // virtual uint64_t UpdateTransform() override;
     // virtual uint64_t sub_30() override;
     virtual void sub_38(float deltaTime) override;
     // virtual void sub_40(float deltaTime) override;
@@ -213,8 +210,8 @@ struct WheeledPhysics : Physics {
     virtual void sub_108() override;
     // virtual void sub_110() override;
     // virtual void sub_118() override;
-    virtual uint64_t UpdatePhysicsWT3() override;
-    // virtual uint64_t sub_128() override;
+    virtual uint64_t UpdateWheelAnimations() override;
+    // virtual uint64_t UpdateBlackboard() override;
     virtual void sub_130() override;
     virtual uint64_t sub_138() override;
     virtual void LoadSomeVehiclePhysicsStuff(void *) override;
@@ -232,11 +229,11 @@ struct WheeledPhysics : Physics {
     // returns 0
     virtual void sub_170();
     // empty
-    virtual void sub_178();
+    virtual void UpdateTilt(float deltaTime);
     virtual void VehiclePhysicsUpdate();
-    virtual void sub_188();
+    virtual void UpdateTurn();
     // throw error
-    virtual void sub_190();
+    virtual void UpdateSuspensionAnimation();
     virtual void UpdateVehicleLinearVelocityStuff();
     virtual void UpdateVehRotW();
     // returns 1f
@@ -327,18 +324,16 @@ RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD28);
 
 struct CarPhysics : WheeledPhysics
 {
-    static constexpr const char* NAME = "vehicleCarPhysics";
-    static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x3431C10;
 
 // overrides
 
-    virtual uint64_t Destruct(char) override;
-    virtual uint64_t Create(vehicle::BaseObject *) override;
+    virtual ~CarPhysics() override;
+    virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
     // virtual uint64_t sub_10() override;
     // virtual uint64_t sub_18() override;
-    // virtual uint64_t VehiclePhysicsUnkChassisComponent_0() override;
-    // virtual uint64_t j_VP_UpdateWorldTransform() override;
+    // virtual uint64_t sub_20() override;
+    // virtual uint64_t UpdateTransform() override;
     virtual uint64_t sub_30() override;
     // animation update
     virtual void sub_38(float deltaTime) override;
@@ -372,8 +367,8 @@ struct CarPhysics : WheeledPhysics
     // virtual void sub_108() override;
     // virtual void sub_110() override;
     // virtual void sub_118() override;
-    virtual uint64_t UpdatePhysicsWT3() override;
-    virtual uint64_t sub_128() override;
+    virtual uint64_t UpdateWheelAnimations() override;
+    virtual uint64_t UpdateBlackboard() override;
     // virtual void sub_130() override;
     // virtual uint64_t sub_138() override;
     virtual void LoadSomeVehiclePhysicsStuff(void *) override;
@@ -385,12 +380,12 @@ struct CarPhysics : WheeledPhysics
     virtual void sub_168() override;
     // also rear wheel maybe
     virtual void sub_170() override;
-    // virtual void sub_178() override;
+    // virtual void UpdateTilt(float deltaTime) override;
     virtual void VehiclePhysicsUpdate() override;
     // update steering
-    virtual void sub_188() override;
+    virtual void UpdateTurn() override;
     // update wheel blackbords
-    virtual void sub_190() override;
+    virtual void UpdateSuspensionAnimation() override;
     // virtual void UpdateVehicleLinearVelocityStuff() override;
     // virtual void UpdateVehRotW() override;
     // get insert pointers
@@ -398,7 +393,7 @@ struct CarPhysics : WheeledPhysics
 
     // 1.52 RVA: 0x1D09090 / 30445712
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 BA 04 00 00 00 48 8B D9 E8 C9 4A 00 00 48 8D 05 62 8B 72 01 33 FF
-    CarPhysics* __fastcall InitializeCar();
+    CarPhysics();
 
     // 1.52 RVA: 0x1D0C290 / 30458512
     /// @pattern 48 89 5C 24 18 56 48 81 EC D0 00 00 00 48 8B F1 0F 29 B4 24 C0 00 00 00 48 8B 89 20 0D 00 00 BA
@@ -444,13 +439,24 @@ RED4EXT_ASSERT_OFFSET(CarPhysics, unkE78, 0xE78);
 
 struct BikePhysics : WheeledPhysics
 {
-    static constexpr const char* NAME = "vehicleBikePhysics";
-    static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x3431A30;
+
+    virtual ~BikePhysics() override;
+    virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
+    virtual uint64_t sub_30() override;
+    virtual void sub_118() override;
+    virtual uint64_t UpdateWheelAnimations() override;
+    virtual uint64_t UpdateBlackboard() override;
+    virtual void LoadSomeVehiclePhysicsStuff(void *) override;
+    virtual void sub_158() override;
+    virtual void sub_170() override;
+    virtual void UpdateTilt(float deltaTime) override;
+    virtual void UpdateTurn() override;
+    virtual void UpdateSuspensionAnimation() override;
 
     // 1.52 RVA: 0x1D04210 / 30425616
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 BA 02 00 00 00 48 8B D9 E8 49 99 00 00 33 FF 48 8D 05 00 D8 72 01
-    BikePhysics* __fastcall InitializeBike();
+    BikePhysics();
 
     // 1.52 RVA: 0x1D06B00 / 30436096
     static constexpr const uintptr_t AnimationUpdateAddr = 0x1D06B00;
@@ -478,12 +484,10 @@ struct BikePhysics : WheeledPhysics
 
 struct TankPhysics : Physics
 {
-    static constexpr const char* NAME = "vehicleTankPhysics";
-    static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x3432650;
     
-    virtual uint64_t Destruct(char) override;
-    virtual uint64_t Create(vehicle::BaseObject *) override;
+    virtual ~TankPhysics() override;
+    virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
 };
 
 } // namespace physics
