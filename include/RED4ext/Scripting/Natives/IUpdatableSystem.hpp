@@ -8,6 +8,25 @@
 
 namespace RED4ext
 {
+struct CGameFramework;
+
+struct UpdateEntry
+{
+    char *Unk0Str;
+    char *srcStr;
+    char *funcStr;
+    uint32_t unk18;
+    uint32_t thread;
+    uint32_t unk20;
+    uint32_t unk24;
+    uint32_t Unk0Hash32;
+    uint32_t unk2C;
+    uint32_t unk30;
+    uint32_t unk34;
+    uint16_t unk38;
+    uint16_t unk3A;
+    uint32_t unk3C;
+};
 
 struct IUpdatableSystem : IScriptable
 {
@@ -15,16 +34,7 @@ struct IUpdatableSystem : IScriptable
     static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x31A6470;
 
-    // 1.52 RVA: 0xA86060 / 11034720
-    /// @pattern 0F B6 C1 83 F8 0C 77 7B 48 8D 15 91 9F 57 FF 8B 8C 82 EC 60 A8 00 48 03 CA FF E1 48 8D 05 46 18
-    static const char *__fastcall GetStringForUnk0(Unk0);
-
-    // 1.52 RVA: 0xA855E0 / 11032032
-    // contains strings for IUpdatableSystem::Unk1
-    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 30 48 8B F1 48
-    void *__fastcall ProcessUpdates(CBaseEngine*);
-
-    enum Unk0 : uint8_t {
+    enum class Unk0 : char {
         // TierSystem, MountingFacility, HitRepresentationSystem
         // AIDirectorSystem, UpdateTime, Damage, TrafficSystemMovement
         // Audio/FinishAsyncJob, Traffic_FrameStart, DebugCheatsSystem
@@ -81,7 +91,7 @@ struct IUpdatableSystem : IScriptable
         Unknown = 0xD
     };
 
-    enum Unk1 : uint8_t {
+    enum class Unk1 : char {
         // Entities/PreTick, MovingPlatforms/Tick, PuppetUpdaterSystem/PreTick, ReactionSystem::Update
         Entities_PreTick            = 0x0,
         // Entities/ServiceEvents, RuntimeSystemDestruction/FoliageDestructionTick
@@ -117,7 +127,25 @@ struct IUpdatableSystem : IScriptable
         Unknown                     = 0xC
     };
 
-    enum Unk2 : uint8_t {
+
+    // 0 RuntimeSystem/Entity/Animation/DisplaySelectedOnly
+    // 1 RuntimeSystem/Entity/Animation/DisplayPerformance
+    // 2 RuntimeSystem/Entity/Animation/DisplayLOD
+    // 3 RuntimeSystem/Entity/Animation/DisplayFacial
+    // 4 RuntimeSystem/Entity/Animation/DisplayVisibilityBoxes
+    // 5 RuntimeSystem/Entity/Animation/AnimationStreaming
+    // 6 RuntimeSystem/Entity/Animation/DisplayCameraTransform
+    // 7 RuntimeSystem/Entity/Animation/DisplayPredictedCameraTransform
+    // 8 RuntimeSystem/Entity/Animation/DisplayCameraFrustum
+    // 9 RuntimeSystem/Entity/Animation/DisplayCameraDataForVehiclesBucket
+    // A RuntimeSystem/Entity/Animation/DisplayCameraDataForCharactersBucket
+    // B RuntimeSystem/Entity/Animation/DisplayCameraDataForPropsBucket
+    // C RuntimeSystem/Entity/Animation/DisplayRenderingStats
+
+
+// #include <RED4ext/Scripting/Natives/Generated/UpdateBucketEnum.hpp>
+
+    enum class Unk2 : char {
         VeryCommon = 0x0,  // Most are this
         FoliageDestructionTick = 0x1,
         UpdateKick = 0x1,
@@ -139,7 +167,7 @@ struct IUpdatableSystem : IScriptable
         CleanupUpdateKick = 0x4,
         CleanupUpdateFinish = 0x4,
         Common = 0x7,
-    }
+    };
 
     struct Update
     {
@@ -164,9 +192,9 @@ struct IUpdatableSystem : IScriptable
         Update update2;
         CClass *systemCls;
         char *nameStr;
-        uint32_t unk68;
+        uint32_t thread;
         uint32_t unk6C;
-        void * unk70;
+        UpdateEntry * entry;
         uint8_t unk78;
         uint8_t unk79[7];
 
@@ -178,14 +206,24 @@ struct IUpdatableSystem : IScriptable
         /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 41 56 48 83 EC 20 0F B7 02 48 8D 72 08 66 89 01 48
         UpdateStorage *__fastcall Copy(UpdateStorage *a2);
 
+        // 1.52 RVA: 0xA85470 / 11031664
+        /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 0F B7 02 48 8B DA 66 89 01 48 8B F9
+        UpdateStorage *__fastcall Copy_0(UpdateStorage *a2);
+
     };
+
+    // 1.52 RVA: 0xA86060 / 11034720
+    /// @pattern 0F B6 C1 83 F8 0C 77 7B 48 8D 15 91 9F 57 FF 8B 8C 82 EC 60 A8 00 48 03 CA FF E1 48 8D 05 46 18
+    // static const char *__fastcall GetStringForUnk0(Unk0);
 
     // sub_110 - adds callbacks to the lookup - there are at least 10 dynarrays
     virtual void RegisterCallbacks(DynArray<UpdateStorage>** lookup) { }; 
 };
 RED4EXT_ASSERT_SIZE(IUpdatableSystem, 0x40);
 
-struct UpdateSystem {
+
+struct UpdateCore {
+
 
     // 1.52 RVA: 0xA85990 / 11032976
     /// @pattern 48 89 6C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC 20 8B B1 D0 00 00 00 33 ED 4C 8B F1
@@ -203,20 +241,71 @@ struct UpdateSystem {
     /// @pattern 4C 8B DC 4D 89 43 18 49 89 53 10 56 48 81 EC B0 00 00 00 8B 84 24 E0 00 00 00 48 8B F2 44 3B C8
     void *__fastcall PrepareFiring(__int64 a2, int *a3, unsigned int a4, unsigned int a5);
 
+    // 1.52 RVA: 0xA855E0 / 11032032
+    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 30 48 8B F1 48
+    UpdateCore *__fastcall Setup();
+
     DynArray<IUpdatableSystem::UpdateStorage> frameBegin;
-    DynArray<IUpdatableSystem::UpdateStorage> multiplayer_UpdateStateSnapshots; 
-    DynArray<IUpdatableSystem::UpdateStorage> entityUpdateState; 
-    DynArray<IUpdatableSystem::UpdateStorage> preBuckets; 
-    DynArray<IUpdatableSystem::UpdateStorage> buckets; 
-    DynArray<IUpdatableSystem::UpdateStorage> postBuckets; 
-    DynArray<IUpdatableSystem::UpdateStorage> cameraUpdate; 
-    DynArray<IUpdatableSystem::UpdateStorage> playerAimUpdate; 
-    DynArray<IUpdatableSystem::UpdateStorage> postPlayerAimUpdate; 
-    DynArray<IUpdatableSystem::UpdateStorage> mappinsUpdate; 
-    DynArray<IUpdatableSystem::UpdateStorage> blackboardCallbacks_SecondPass; 
-    DynArray<IUpdatableSystem::UpdateStorage> preRenderUpdate; 
+    DynArray<IUpdatableSystem::UpdateStorage> multiplayer_UpdateStateSnapshots;
+    DynArray<IUpdatableSystem::UpdateStorage> entityUpdateState;
+    DynArray<IUpdatableSystem::UpdateStorage> preBuckets;
+    DynArray<IUpdatableSystem::UpdateStorage> buckets;
+    DynArray<IUpdatableSystem::UpdateStorage> postBuckets;
+    DynArray<IUpdatableSystem::UpdateStorage> cameraUpdate;
+    DynArray<IUpdatableSystem::UpdateStorage> playerAimUpdate;
+    DynArray<IUpdatableSystem::UpdateStorage> postPlayerAimUpdate;
+    DynArray<IUpdatableSystem::UpdateStorage> mappinsUpdate;
+    DynArray<IUpdatableSystem::UpdateStorage> blackboardCallbacks_SecondPass;
+    DynArray<IUpdatableSystem::UpdateStorage> preRenderUpdate;
     DynArray<IUpdatableSystem::UpdateStorage> multiplayer_CaptureStateSnapshots;
-    DynArray<IUpdatableSystem::UpdateStorage> unknown; 
-}
+    uint32_t arrayCount;
+    uint32_t unkD4;
+    // don't seem to be assigned
+    UpdateEntry *unkD8[24];
+    uint32_t count0;
+    uint32_t unk19C;
+    UpdateEntry *entries0[13];
+    uint32_t count1;
+    uint32_t unk20C;
+    UpdateEntry *entries1[12];
+    uint32_t count2;
+    uint32_t unk274;
+    UpdateEntry *entries2[3];
+    uint32_t count3;
+    uint32_t count4;
+};
+
+// using UpdateCoreEntry = UpdateCore::Entry;
+
+struct UpdateCoreHolder {
+    UpdateCore * updateCore;
+    void * unk08;
+    uint8_t unk09;
+};
+
+struct __declspec(align(8)) UpdateLog
+{
+    struct Unk08
+    {
+        CGameFramework *framework;
+        void *unk08;
+        uint8_t functionalTestsMode;
+        uint8_t headless;
+        uint8_t automator;
+        uint8_t unk13;
+        uint32_t unk14;
+        CString engineName;
+        uint64_t unk38;
+    };
+
+  void *func;
+  Unk08 *unk08;
+  UpdateEntry *entry;
+  uint32_t unk18;
+  uint8_t unk1C;
+  CGameFramework *framework;
+  uint8_t unk28;
+};
+
 
 } // namespace RED4ext

@@ -7,6 +7,8 @@
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/HashMap.hpp>
+#include <RED4ext/Scripting/Natives/IUpdatableSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeScene.hpp>
 
 namespace RED4ext
 {
@@ -18,6 +20,8 @@ namespace Memory
 {
 struct IAllocator;
 }
+
+namespace world { struct RuntimeScene;}
 
 struct CBaseEngine
 {
@@ -204,12 +208,22 @@ RED4EXT_ASSERT_SIZE(GameInstance, 0x138);
 
 struct CGameEngine : BaseGameEngine
 {
+    static constexpr const uintptr_t VFT_RVA = 0x3591C30;
+
     struct CGameFramework
     {
-        int8_t unk00[0x10];         // 00
+        static constexpr const uintptr_t VFT_RVA = 0x3599FE8;
+
+        virtual void GetAllocator();
+        virtual void Destruct(char);
+        virtual void sub_10();
+
+        UpdateCoreHolder* updateCoreHolder; // 08
         GameInstance* gameInstance; // 10
+        world::RuntimeScene* runtimeScene; // 18
+        void* stateMachine; // 20
     };
-    RED4EXT_ASSERT_SIZE(CGameFramework, 0x18);
+    RED4EXT_ASSERT_SIZE(CGameFramework, 0x28);
     RED4EXT_ASSERT_OFFSET(CGameFramework, gameInstance, 0x10);
 
     static CGameEngine* Get();

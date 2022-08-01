@@ -15,6 +15,8 @@ struct ServerGameSession : mp::GameSession
     static constexpr const char* ALIAS = NAME;
 
     uint8_t unk68[0x90 - 0x68]; // 68
+    // UpdateCore ** 0x70
+    // GameInstance * 0x78
 };
 RED4EXT_ASSERT_SIZE(ServerGameSession, 0x90);
 } // namespace mp
