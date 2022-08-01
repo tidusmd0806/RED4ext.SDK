@@ -25,7 +25,12 @@ struct IGameSystem : IUpdatableSystem
         uint8_t unk10;
     };
 
+    // 1.52 RVA: 0xAEC190 / 11452816
+    /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 22 B8 F8 FF 48 8D 05 4B 92 6C 02 48 C7 43 40 00 00 00 00 48 89 03
+    IGameSystem();
+
     virtual CClass* GetNativeType() override;     
+    virtual ~IGameSystem() override;
 
     virtual bool sub_118(void *); // 108 onAttach
     virtual bool sub_120(); // 120 onDetach

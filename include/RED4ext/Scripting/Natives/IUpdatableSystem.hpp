@@ -45,6 +45,13 @@ struct IUpdatableSystem : IScriptable
         CallbackStruct *callbackStruct;
     };
 
+    // 1.52 RVA: 0xA779C0 / 10975680
+    /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 82 7F 76 FF 48 8D 05 9B EA 72 02 48 89 03 48 8B C3 48 83 C4 20 5B
+    IUpdatableSystem();
+    
+    virtual RED4ext::CClass* GetNativeType() override;
+    virtual ~IUpdatableSystem() override;
+
     // 1.52 RVA: 0xA86060 / 11034720
     /// @pattern 0F B6 C1 83 F8 0C 77 7B 48 8D 15 91 9F 57 FF 8B 8C 82 EC 60 A8 00 48 03 CA FF E1 48 8D 05 46 18
     // static const char *__fastcall GetStringForUnk0(Unk0);

@@ -18,12 +18,18 @@ struct CString;
 
 struct ISerializable
 {
+    static constexpr const char* NAME = "ISerializable";
+    static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x3078CC8;
+
+    // 1.52 RVA: 0x1AB240 / 1749568
+    /// @pattern 40 53 48 83 EC 20 48 8D 05 7B DA EC 02 48 8B D9 48 89 01 33 C0 48 89 41 08 48 89 41 10 48 89 41
+    ISerializable();
 
     virtual CClass* GetNativeType() = 0;                                                // 00
     virtual CClass* GetType();                                                          // 08
     virtual Memory::IAllocator* GetAllocator();                                         // 10
-    virtual ~ISerializable() = default;                                                 // 18
+    virtual ~ISerializable();                                                           // 18
     virtual void sub_20(Handle<ISerializable>*);                                        // 20
     virtual void sub_28();                                                              // 28
     virtual bool sub_30();                                                              // 30

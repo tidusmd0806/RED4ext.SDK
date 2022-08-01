@@ -175,15 +175,16 @@ struct BaseGameEngine : CBaseEngine
 RED4EXT_ASSERT_SIZE(BaseGameEngine, 0x2E0);
 RED4EXT_ASSERT_OFFSET(BaseGameEngine, watchdogThread, 0x2D8);
 
-struct IGameInstance {
-
+struct IGameInstance
+{
     static constexpr const uintptr_t VFT_RVA = 0x35FAC80;
+
     virtual ~IGameInstance() = 0;                                     // 00
     virtual game::IGameSystem* GetInstance(const CClass* aType) = 0;  // 08
     virtual world::RuntimeInfo* GetRuntimeInfo() = 0;                 // 10
     virtual Memory::IAllocator* GetAllocator() = 0;                   // 18
     // break
-    virtual void Unk_20(uint8_t*, uint64_t, uint32_t*) = 0;           // 20
+    virtual void sub_20(uint8_t*, uint64_t, uint32_t*) = 0;           // 20
     // Calls game::IGameSystem::RegisterUpdates() for each system
     virtual void RegisterUpdates(CGameFramework*) = 0;                // 28
     // break
@@ -196,16 +197,16 @@ struct IGameInstance {
     virtual void SomethingAutoSave_sub_1B8(uint64_t) = 0;             // 48
     virtual void SomethingAutoSave_sub_1C0() { }                      // 50
     virtual void AllSystems_sub_130() = 0;                            // 58
-    virtual uint8_t Unk_60(uint64_t, byte*) = 0;                      // 60
+    virtual uint8_t sub_60(uint64_t, byte*) = 0;                      // 60
 
     // 1.52 RVA: 0x2CFF000 / 47181824
     /// @pattern 40 55 53 56 57 41 56 48 8D 6C 24 C9 48 81 EC B0 00 00 00 48 8B F1 E8 A5 E7 C9 FF 48 8D 05 5E BC
-    IGameInstance *__fastcall InitializeIGameSystem();
+    IGameInstance();
 
     HashMap<CBaseRTTIType*, Handle<game::IGameSystem>> systemInstances; // 08
     DynArray<Handle<IScriptable>> gameSystems;                // 38
-    // contains the ISystem to System mapping, System is listed twice if no interface
-    HashMap<CBaseRTTIType*, CBaseRTTIType*> interfaceMapping;      // 48
+    // 48: contains the ISystem to System mapping, System is listed twice if no interface
+    HashMap<CBaseRTTIType*, CBaseRTTIType*> interfaceMapping;
     void * runtimeSystemHandles; // 78
     world::RuntimeInfo runtimeInfo; // 80
     int64_t unk100; // 100
@@ -221,7 +222,7 @@ struct GameInstance : IGameInstance
 
     virtual ~GameInstance() override;                                      // 00
     // creates some systems, calls systems' sub_190, sub198
-    virtual void Unk_20(uint8_t*, uint64_t, uint32_t*) override;           // 20
+    virtual void sub_20(uint8_t*, uint64_t, uint32_t*) override;           // 20
     // calls parent func, then sets gameInstance & runtimeScene
     virtual void RegisterUpdates(CGameFramework*) override;                // 28
     virtual void GetRuntimeScene() override;                               // 30
@@ -236,16 +237,15 @@ struct GameInstance : IGameInstance
     /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 42 5B FB FF 48 8D 05 73 32 8B 00 48 89 03 33 C0 48 89 83 30 01 00
     GameInstance();
 
-    // 1.52 RVA: 0x2CFF600 / 47183360
-    /// @pattern 4C 89 44 24 18 48 89 54 24 10 48 89 4C 24 08 55 53 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 E1
-    __int64 *__fastcall Unknown(void **unkThing, uint8_t *a3);
-    
     /**
-     * @brief Calls game::IGameSystem::RegisterUpdates() for each system
-     * @address 0x2D007D0
-     * @pattern 48 89 5C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC 20 48 8B 1A 48 8D B9 80 00 00 00 4C
+     * @brief Calls sub_60 on each class in a list, creates them, calls their sub_190 & sub_198
+     * @address 0x2CFF600
+     * @param unkThing is some sort of logging struct
+     * @param a3 is a flag that gets passed to sub_60
+     * @pattern 4C 89 44 24 18 48 89 54 24 10 48 89 4C 24 08 55 53 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 E1
     */
-    // bool __fastcall RegisterSystemUpdates(CGameFramework *a2);
+    __int64 *__fastcall Setup(void **unkThing, uint8_t *a3);
+    
 
     int64_t gameInstance; // 130
     int64_t runtimeScene; // 138

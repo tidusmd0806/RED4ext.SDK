@@ -14,7 +14,12 @@ struct IRuntimeSystem : IUpdatableSystem
     static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x31CA950;
 
-    virtual void ~IRuntimeSystem(char);
+    // 1.52 RVA: 0xB7C220 / 12042784
+    /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 92 B7 EF FF 48 8D 05 1B E7 64 02 66 C7 43 40 00 00 48 89 03 48 8B
+    IRuntimeSystem();
+
+    virtual RED4ext::CClass* GetNativeType() override;
+    virtual ~IRuntimeSystem() override;
 
     virtual void sub_118(uint64_t, uint64_t*);
     virtual void sub_120();
@@ -33,7 +38,6 @@ struct IRuntimeSystem : IUpdatableSystem
     virtual uint64_t sub_180();
     virtual void sub_188(uint64_t);
     virtual uint64_t sub_190(uint64_t);
-    virtual uint64_t sub_198();
 
     GameInstance* gameInstance; // 40
 };
