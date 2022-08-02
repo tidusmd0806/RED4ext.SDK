@@ -281,30 +281,19 @@ struct UpdateManagerHolder {
     /// @pattern 48 89 5C 24 18 57 48 83 EC 30 48 8B 19 48 8B F9 48 8D 4C 24 48 48 8B 53 40 44 8B 43 4C 49 C1 E0
     __int64 __fastcall Something();
 
+    // 1.52 RVA: 0xA85D10 / 11033872
+    /// @pattern 48 8B C4 48 89 58 10 4C 89 48 20 55 56 57 41 54 41 55 41 56 41 57 48 81 EC B0 00 00 00 48 8B 19
+    void *__fastcall UpdateSystems(void *a2, float a3, __int64 a4);
+
 };
 
 struct __declspec(align(8)) UpdateLog
 {
-    struct Unk08
-    {
-        CGameFramework *framework;
-        void *unk08;
-        uint8_t functionalTestsMode;
-        uint8_t headless;
-        uint8_t automator;
-        uint8_t unk13;
-        uint32_t unk14;
-        CString engineName;
-        uint64_t unk38;
-    };
-
   void *func;
-  Unk08 *unk08;
+  void *args;
   UpdateEntry *entry;
   uint32_t unk18;
   uint8_t unk1C;
-  CGameFramework *framework;
-  uint8_t unk28;
 };
 
 

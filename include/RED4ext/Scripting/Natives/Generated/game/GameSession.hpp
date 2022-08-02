@@ -12,7 +12,14 @@ namespace game {
 struct GameSession : game::BaseGameSession
 {
     static constexpr const char* NAME = "gameGameSession";
-    static constexpr const char* ALIAS = NAME;
+    static constexpr const char* ALIAS = NAME;    
+    static constexpr const uintptr_t VFT_RVA = 0x3399CE0;
+
+    virtual ~GameSession() override;
+    // registers BaseGameSession/Initialize, SetGameStatus callbacks
+    virtual void Initialize(void*, char*, void*, void*, void*, void*, void*) override;
+    // something with playerManager, calls BaseGameSession->sub_10()
+    virtual void * sub_10() override;
 
 };
 RED4EXT_ASSERT_SIZE(GameSession, 0x30);
