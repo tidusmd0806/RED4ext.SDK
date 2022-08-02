@@ -275,6 +275,12 @@ struct UpdateManagerHolder {
     UpdateManager * UpdateManager;
     void * unk08;
     uint8_t unk09;
+
+    // 1.52 RVA: 0xA862E0 / 11035360
+    // Sets some sizes & iterates through buckets
+    /// @pattern 48 89 5C 24 18 57 48 83 EC 30 48 8B 19 48 8B F9 48 8D 4C 24 48 48 8B 53 40 44 8B 43 4C 49 C1 E0
+    __int64 __fastcall Something();
+
 };
 
 struct __declspec(align(8)) UpdateLog

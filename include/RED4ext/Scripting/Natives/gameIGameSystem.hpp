@@ -33,20 +33,21 @@ struct IGameSystem : IUpdatableSystem
     virtual ~IGameSystem() override;
 
     virtual bool sub_118(void *); // 108 onAttach
-    virtual bool sub_120(); // 120 onDetach
-    virtual void sub_128(); // 128 Setup
+    virtual void sub_120(void * runtimeScene); // 120 onDetach
+    virtual void sub_128(void * runtimeScene); // 128 Setup
     virtual void sub_130(); // 130
     virtual void sub_138(); // AK::MemoryMgr::StopProfileThreadUsage(void)
     virtual void sub_140(); // 140
     virtual void sub_148(); // 148
-    virtual void sub_150(); // 150
-    virtual uint64_t sub_158(); // 158 ReturnOne
+    // 150, OnGameLoad
+    virtual void sub_150(void *, uint64_t, uint64_t); 
+    virtual bool sub_158(); // 158 ReturnOne
     virtual void sub_160(); // 160
     virtual void sub_168(); // 168
     virtual void sub_170(); // 170
     // something with a CString @ 0x08
-    virtual uintptr_t sub_178(uintptr_t a1);                    
-    virtual void sub_180(); // 180
+    virtual void sub_178(uintptr_t a1, bool a2);                    
+    virtual void sub_180(uint64_t, bool isGameLoaded, uint64_t); // 180
     virtual void sub_188(); // 188
     virtual void sub_190(HighLow *); // 190
     // some systems load tweaks - might be a setup
