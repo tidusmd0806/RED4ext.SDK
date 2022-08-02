@@ -23,7 +23,8 @@ struct IRuntimeSystem : IUpdatableSystem
 
     virtual void sub_118(uint64_t, uint64_t*);
     virtual void sub_120();
-    virtual void sub_128();
+    // index for runtimeScene
+    virtual uint32_t sub_128();
     // returns 6
     virtual void sub_130();
     virtual void sub_138();
@@ -32,12 +33,17 @@ struct IRuntimeSystem : IUpdatableSystem
     virtual uint64_t sub_150(uint64_t);
     virtual void sub_158();
     virtual void sub_160();
-    virtual void sub_168();
+    virtual void sub_168(RuntimeScene*, uint64_t _a3, void** unkThing);
     virtual uint64_t sub_170(uint64_t, byte*);
     virtual uint64_t sub_178();
     virtual uint64_t sub_180();
     virtual void sub_188(uint64_t);
     virtual uint64_t sub_190(uint64_t);
+
+    // 1.52 RVA: 0xB7C480 / 12043392
+    // might create jobs for callbacks - returns unkThing**
+    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 20 48 8B EA 66 C7 44 24 30 00 00 0F B7
+    void ** __fastcall Setup_sub_168(void **unkThing, RuntimeScene *runtimeScene, void *a3, RuntimeScene::Flags *a5);
 
     GameInstance* gameInstance; // 40
 };

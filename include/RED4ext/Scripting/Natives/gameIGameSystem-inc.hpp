@@ -21,16 +21,16 @@ inline bool IGameSystem::sub_118(void * a1)
     return (this->*call)(a1);
 }
 
-inline bool IGameSystem::sub_120()
+inline void IGameSystem::sub_120(void * runtimeScene)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_120)> call(VFT_RVA, 0x120);
-    return (this->*call)();
+    return (this->*call)(runtimeScene);
 }
 
-inline void IGameSystem::sub_128()
+inline void IGameSystem::sub_128(void * runtimeScene)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_128)> call(VFT_RVA, 0x128);
-    return (this->*call)();
+    return (this->*call)(runtimeScene);
 }
 
 inline void IGameSystem::sub_130()
@@ -57,13 +57,13 @@ inline void IGameSystem::sub_148()
     return (this->*call)();
 }
 
-inline void IGameSystem::sub_150()
+inline void IGameSystem::sub_150(void * a1, uint64_t a2, uint64_t a3)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_150)> call(VFT_RVA, 0x150);
-    return (this->*call)();
+    return (this->*call)(a1, a2, a3);
 }
 
-inline uint64_t IGameSystem::sub_158()
+inline bool IGameSystem::sub_158()
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_158)> call(VFT_RVA, 0x158);
     return (this->*call)();
@@ -87,16 +87,16 @@ inline void IGameSystem::sub_170()
     return (this->*call)();
 }
 
-inline uintptr_t IGameSystem::sub_178(uintptr_t a1)
+inline void IGameSystem::sub_178(uintptr_t a1, bool a2)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_178)> call(VFT_RVA, 0x178);
     return (this->*call)(a1, a2);
 }
 
-inline void IGameSystem::sub_180()
+inline void IGameSystem::sub_180(uint64_t a1, bool isGameLoaded, uint64_t a3)
 {
     RelocVirtualFunc<decltype(&IGameSystem::sub_180)> call(VFT_RVA, 0x180);
-    return (this->*call)();
+    return (this->*call)(a1, isGameLoaded, a3);
 }
 
 inline void IGameSystem::sub_188()

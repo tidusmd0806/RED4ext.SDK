@@ -179,34 +179,40 @@ struct IGameInstance
 {
     static constexpr const uintptr_t VFT_RVA = 0x35FAC80;
 
-    virtual ~IGameInstance() = 0;                                     // 00
-    virtual game::IGameSystem* GetInstance(const CClass* aType) = 0;  // 08
-    virtual world::RuntimeInfo* GetRuntimeInfo() = 0;                 // 10
-    virtual Memory::IAllocator* GetAllocator() = 0;                   // 18
-    // break
-    virtual void sub_20(uint8_t*, uint64_t, uint32_t*) = 0;           // 20
-    // Calls game::IGameSystem::RegisterUpdates() for each system
-    virtual bool RegisterUpdates(CGameFramework*) = 0;                // 28
-    // break
-    virtual void* GetRuntimeScene() = 0;                               // 30
-    // break
-    virtual void* GetGameInstance() = 0;                               // 38
-    // break
-    virtual void SaveGame(uint64_t, uint64_t, uint64_t) = 0;          // 40
-    // break
-    virtual void SomethingAutoSave_sub_1B8(uint64_t) = 0;             // 48
-    virtual void SomethingAutoSave_sub_1C0() { }                      // 50
-    virtual void Systems130() = 0;                            // 58
-    virtual uint8_t sub_60(uint64_t, byte*) = 0;                      // 60
+    virtual ~IGameInstance();                                     // 00
+    virtual game::IGameSystem* GetInstance(const CClass* aType);  // 08
+    virtual world::RuntimeInfo* GetRuntimeInfo();                 // 10
+    virtual Memory::IAllocator* GetAllocator();                   // 18
+    // sub_20: break
+    virtual void sub_20(uint8_t*, uint64_t, uint32_t*);
+    // sub_28: Calls game::IGameSystem::RegisterUpdates() for each system
+    virtual bool RegisterUpdates(CGameFramework*);
+    // sub_30: break
+    virtual void* GetRuntimeScene();
+    // sub_38: break
+    virtual void* GetGameInstance();
+    // sub_40: break
+    virtual void SaveGame(uint64_t, uint64_t, uint64_t);
+    // sub_48: break
+    virtual void SomethingAutoSave_sub_1B8(uint64_t);
+    // sub_50: empty
+    virtual void SomethingAutoSave_sub_1C0() { }              
+    virtual void Systems130();                            // 58
+    virtual uint8_t sub_60(uint64_t, byte*);                      // 60
 
     // 1.52 RVA: 0x2CFF000 / 47181824
     /// @pattern 40 55 53 56 57 41 56 48 8D 6C 24 C9 48 81 EC B0 00 00 00 48 8B F1 E8 A5 E7 C9 FF 48 8D 05 5E BC
     IGameInstance();
 
+    // 1.52 RVA: 0x29CA390 / 43819920
+    // calls sub20 with some unknown values from a1
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B F9 48 8B DA 0F B6 4A 32 E8 67 DC 1E 00 0F B6 47 08 48 8D 54
+    static void *__fastcall FrameworkSetupCallback(__m64 *a1, uint64_t a2);
+
     // 1.52 RVA: 0x2CFFC40 / 47184960
     // sets gameIsLoading to true
     /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 D9 48 81 EC F0 00 00
-    __int64 __fastcall RegisterGameLoadCallbacks(__int64 a2, _BYTE *a3, __int64 a4);
+    __int64 __fastcall RegisterGameLoadCallbacks(__int64 a2, byte *a3, __int64 a4);
 
     // 1.52 RVA: 0x2D005A0 / 47187360
     // Uses a struct to call system->sub_150
@@ -252,8 +258,9 @@ struct IGameInstance
     void __fastcall Systems168o170(bool a2);
 
     // 1.52 RVA: 0x2CFFA90 / 47184528
+    // passes a3 into systems->sub_178
     /// @pattern 48 8B C4 53 57 41 55 41 57 48 83 EC 68 48 8B 59 38 45 0F B6 E8 8B 79 44 4C 8B FA 48 C1 E7 04 48
-    void __fastcall Systems178(_DWORD *a2, unsigned __int8 a3);
+    void __fastcall Systems178(DynArray<void*> *a2, bool a3);
 
     HashMap<CBaseRTTIType*, Handle<game::IGameSystem>> systemInstances; // 08
     DynArray<Handle<IScriptable>> gameSystems;                // 38
@@ -316,34 +323,34 @@ struct GameInstance : IGameInstance
 };
 RED4EXT_ASSERT_SIZE(GameInstance, 0x140);
 
+struct CGameFramework
+{
+    static constexpr const uintptr_t VFT_RVA = 0x3599FE8;
+
+    virtual Memory::IAllocator* GetAllocator();
+    virtual void Destruct(char);
+    virtual void sub_10();
+
+    // 1.52 RVA: 0x138AF20 / 20492064
+    /// @pattern 48 8B 49 10 48 85 C9 0F 85 33 58 97 01 C3
+    void __fastcall Systems168o170(bool a2);
+
+    // 1.52 RVA: 0x138B060 / 20492384
+    // then call engine->sub_80, sets stateMachine to 4?
+    /// @pattern 48 89 5C 24 08 57 48 83 EC 20 33 C0 48 8B F9 87 41 24 48 8B 59 10 48 85 DB 0F 84 17 01 00 00 E8
+    __int64 __fastcall Systems_120_128_130();
+
+    UpdateManagerHolder* updateManagerHolder; // 08
+    GameInstance* gameInstance; // 10
+    world::RuntimeScene* runtimeScene; // 18
+    void* stateMachine; // 20
+};
+RED4EXT_ASSERT_SIZE(CGameFramework, 0x28);
+RED4EXT_ASSERT_OFFSET(CGameFramework, gameInstance, 0x10);
+
 struct CGameEngine : BaseGameEngine
 {
     static constexpr const uintptr_t VFT_RVA = 0x3591C30;
-
-    struct CGameFramework
-    {
-        static constexpr const uintptr_t VFT_RVA = 0x3599FE8;
-
-        virtual Memory::IAllocator* GetAllocator();
-        virtual void Destruct(char);
-        virtual void sub_10();
-
-        // 1.52 RVA: 0x138AF20 / 20492064
-        /// @pattern 48 8B 49 10 48 85 C9 0F 85 33 58 97 01 C3
-        void __fastcall Systems168o170(bool a2);
-
-        // 1.52 RVA: 0x138B060 / 20492384
-        // then call engine->sub_80, sets stateMachine to 4?
-        /// @pattern 48 89 5C 24 08 57 48 83 EC 20 33 C0 48 8B F9 87 41 24 48 8B 59 10 48 85 DB 0F 84 17 01 00 00 E8
-        __int64 __fastcall Systems_120_128_130();
-
-        UpdateManagerHolder* updateManagerHolder; // 08
-        GameInstance* gameInstance; // 10
-        world::RuntimeScene* runtimeScene; // 18
-        void* stateMachine; // 20
-    };
-    RED4EXT_ASSERT_SIZE(CGameFramework, 0x28);
-    RED4EXT_ASSERT_OFFSET(CGameFramework, gameInstance, 0x10);
 
     static CGameEngine* Get();
 
