@@ -32,8 +32,16 @@ struct BaseGameSession
     virtual void sub_38(void * a2);
     // register InitializeWorldStreaming, InitializeGame callbacks
     virtual void sub_40(void * a2, void* a3);
-
-    uint8_t unk00[0x30 - 0x0]; // 0
+        
+    void *__vftable;
+    void *updateManagerHolder;
+    RED4ext::GameInstance *gameInstance;
+    RED4ext::world::RuntimeScene *runtimeScene;
+    uint32_t gameStatus;
+    uint32_t unk24;
+    uint8_t unk28;
+    uint8_t unk29;
+    uint8_t unk2A;
 };
 RED4EXT_ASSERT_SIZE(BaseGameSession, 0x30);
 } // namespace game
