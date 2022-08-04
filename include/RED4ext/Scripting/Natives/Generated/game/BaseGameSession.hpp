@@ -31,7 +31,7 @@ struct BaseGameSession
     virtual void sub_20();
     // gameInstance->RegisterUpdates
     virtual void sub_28();
-    // sets runtimeScene info, calls systems->RegisterUpdates
+    // sets runtimeScene info, calls runtimeSystems->RegisterUpdates
     virtual void sub_30();
     // something with game rules system & community system
     virtual void sub_38(void * a2);

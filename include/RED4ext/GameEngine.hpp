@@ -191,10 +191,10 @@ struct BaseGameEngine : CBaseEngine
     virtual ~BaseGameEngine() override;                   // 18
     virtual void sub_50() override;
     virtual void sub_60() override;
-    virtual void sub_D8() override;
+    virtual void sub_D8(int64_t a2) override;
     // register Initialization callbacks: BaseInitialization, VirtualRUIDs
     // LoadTweakDB, Blackboard, EnumerateWorlds, PSClassBindings
-    virtual void sub_E0() override;
+    virtual void sub_E0(uint64_t a2, uint64_t a3, uint64_t a4) override;
 
     int64_t unk2C8;         // 2C8
     int64_t unk2D0;         // 2D0
@@ -228,9 +228,10 @@ struct CGameFramework
 RED4EXT_ASSERT_SIZE(CGameFramework, 0x28);
 RED4EXT_ASSERT_OFFSET(CGameFramework, gameInstance, 0x10);
 
-struct Unk328 {
+struct Unk328
+{
     static constexpr const uintptr_t VFT_RVA = 0x3599380;
-    
+
     virtual void sub_00();
     virtual void sub_08();
     virtual void sub_10();
@@ -271,7 +272,7 @@ struct Unk328 {
     uint8_t unk4E;
     uint8_t unk4F;
     uint64_t unk50[4];
-}
+};
 RED4EXT_ASSERT_SIZE(Unk328, 0x70);
 
 struct CGameEngine : BaseGameEngine
@@ -280,7 +281,7 @@ struct CGameEngine : BaseGameEngine
 
     virtual CBaseRTTIType* GetNativeType() override;      // 00
     virtual CBaseRTTIType* GetParentType() override;      // 08
-    virtual ~CBaseEngine() override;                      // 18
+    virtual ~CGameEngine() override;                      // 18
     virtual void sub_20() override;
     virtual void sub_28() override;
     virtual void sub_50() override;

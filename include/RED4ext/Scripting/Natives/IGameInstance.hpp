@@ -11,6 +11,7 @@ namespace world {
 namespace Memory {
     struct IAllocator;
 }
+struct GameSystemData;
 struct IGameInstance // : IDynamicStorage
 {
     static constexpr const uintptr_t VFT_RVA = 0x35FAC80;
@@ -22,11 +23,11 @@ struct IGameInstance // : IDynamicStorage
     // sub_20: break
     virtual void sub_20(uint8_t*, uint64_t, uint32_t*);
     // sub_28: Calls game::IGameSystem::RegisterUpdates() for each system
-    virtual bool RegisterUpdates(CGameFramework*);
+    virtual bool RegisterUpdates(world::RuntimeInfo **runtimeInfo);
     // sub_30: break
-    virtual void* GetRuntimeScene();
+    virtual void* GetUnk130();
     // sub_38: break
-    virtual void* GetGameInstance();
+    virtual void* GetUnk138();
     // sub_40: break
     virtual void SaveGame(uint64_t, uint64_t, uint64_t);
     // sub_48: break
@@ -34,7 +35,8 @@ struct IGameInstance // : IDynamicStorage
     // sub_50: empty
     virtual void SomethingAutoSave_sub_1C0() { }              
     virtual void Systems130();                            // 58
-    virtual uint8_t sub_60(uint64_t, byte*);                      // 60
+    // returns value of GameSystemData flags
+    virtual uint8_t sub_60(GameSystemData*, byte*);                      // 60
 
     // 1.52 RVA: 0x2CFF000 / 47181824
     /// @pattern 40 55 53 56 57 41 56 48 8D 6C 24 C9 48 81 EC B0 00 00 00 48 8B F1 E8 A5 E7 C9 FF 48 8D 05 5E BC

@@ -41,16 +41,20 @@ struct IGameSystem : IUpdatableSystem
     virtual void sub_148(); // 148
     // 150, OnGameLoad
     virtual void sub_150(void *, uint64_t, uint64_t); 
-    virtual bool sub_158(); // 158 ReturnOne
+    // ReturnOne - should probably always return 1
+    virtual bool sub_158();
     virtual void sub_160(); // 160
+    // might be called from GameInstance->Systems168o170
     virtual void sub_168(); // 168
+    // might be called from GameInstance->Systems168o170
     virtual void sub_170(); // 170
     // something with a CString @ 0x08
     virtual void sub_178(uintptr_t a1, bool a2);                    
     virtual void sub_180(uint64_t, bool isGameLoaded, uint64_t); // 180
     virtual void sub_188(); // 188
+    // called from GameInstance->sub_20
     virtual void sub_190(HighLow *); // 190
-    // some systems load tweaks - might be a setup
+    // some systems load tweaks - might be a setup, called from GameInstance->sub_20
     virtual void sub_198(void *); // 198
     virtual void sub_1A0(); // 1A0
 

@@ -28,17 +28,38 @@ struct UpdatableSystems {
     uint64_t graphics_raytracing;
 };
 
+struct GameSystemData
+{
+  CName name;
+  bool inPreview;
+  bool inSingleplayer;
+  bool onClient;
+  bool onServer;
+};
+
+// 1.52 RVA: 0x2D028A0 / 47196320
+// inits array, calls LoadGameSystemsData
+/// @pattern 40 53 48 83 EC 20 48 8B D9 48 8D 4C 24 30 E8 FD F9 48 FD 48 8B D0 48 8B CB E8 12 29 4A FD 48 8D
+DynArray<GameSystemData> *__fastcall GetGameSystemsData(DynArray<GameSystemData> *gameSystemsData);
+
+// 1.52 RVA: 0x2D028E0 / 47196384
+// loads gameSystems from base\systems\game_systems_startup.csv
+/// @pattern 40 55 48 8D 6C 24 A9 48 81 EC B0 00 00 00 4C 89 B4 24 98 00 00 00 4C 8B F1 48 8D 0D 40 7C 02 02
+void __fastcall LoadGameSystemsData(DynArray<GameSystemData> *rcx0);
+
 struct GameInstance : IGameInstance
 {
     static constexpr const uintptr_t VFT_RVA = 0x35FC738;
 
     virtual ~GameInstance() override;                                      // 00
     // creates some systems, calls systems' sub_190, sub198
+    // calls GetGameSystemsData
     virtual void sub_20(uint8_t*, uint64_t, uint32_t*) override;           // 20
-    // calls parent func, then sets gameInstance & runtimeScene
-    virtual bool RegisterUpdates(CGameFramework*) override;                // 28
-    virtual void* GetRuntimeScene() override;                               // 30
-    virtual void* GetGameInstance() override;                               // 38
+    // calls parent func, then sets unk130 & unk138
+    virtual bool RegisterUpdates(world::RuntimeInfo **runtimeInfo) override;                // 28
+    virtual void* GetUnk130() override;                               // 30
+    virtual void* GetUnk138() override;                               // 38
+    // Registers callbacks: SaveGame/PreSaveSystems, SaveGame/SaveSystems
     virtual void SaveGame(uint64_t, uint64_t, uint64_t) override;          // 40
     virtual void SomethingAutoSave_sub_1B8(uint64_t) override;             // 48
     virtual void SomethingAutoSave_sub_1C0() override;                     // 50
@@ -74,8 +95,8 @@ struct GameInstance : IGameInstance
     uint8_t unk12A[6];
 
 
-    int64_t gameInstance; // 130
-    int64_t runtimeScene; // 138
+    int64_t unk130; // 130
+    int64_t unk138; // 138
 
     //world::RuntimeSystemHandles * runtimeSystemHandles; // 78
     //world::RuntimeInfo runtimeInfo; // 80
