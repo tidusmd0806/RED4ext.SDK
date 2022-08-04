@@ -8,12 +8,12 @@
 
 namespace RED4ext
 {
-struct BaseGameEngine : CBaseEngine
-{
-    static constexpr const char* NAME = "BaseGameEngine";
-    static constexpr const char* ALIAS = NAME;
-
-    uint8_t unk2C8[0x2D0 - 0x2C8]; // 2C8
-};
-RED4EXT_ASSERT_SIZE(BaseGameEngine, 0x2D0);
+//struct BaseGameEngine : CBaseEngine
+//{
+//    static constexpr const char* NAME = "BaseGameEngine";
+//    static constexpr const char* ALIAS = NAME;
+//
+//    uint8_t unk2C8[0x2D0 - 0x2C8]; // 2C8
+//};
+//RED4EXT_ASSERT_SIZE(BaseGameEngine, 0x2D0);
 } // namespace RED4ext

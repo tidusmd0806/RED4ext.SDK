@@ -1,6 +1,8 @@
 #pragma once
 
+#include <RED4ext/Common.hpp>
 #include <RED4ext/Map.hpp>
+//#include <RED4ext/RTTITypes.hpp>
 //#include <RED4ext/Scripting/Natives/Generated/ent/IComponent.hpp>
 
 namespace RED4ext {
@@ -10,6 +12,7 @@ namespace RED4ext {
 //struct IComponent;
 //}
 struct CallbackStruct;
+struct CClass;
 
 struct CallbackId {
     union {
@@ -83,7 +86,7 @@ struct CallbackManager
 
     // 1.52 RVA: 0x2BC1B60 / 45882208
     /// @pattern 40 56 41 56 48 83 EC 48 48 83 3A 00 48 8B F2 4C 8B F1 0F 84 F2 00 00 00 48 89 5C 24 60 48 83 C1
-    void __fastcall AddToUnk00(RED4ext::HandleBase *a2);
+    void __fastcall AddToUnk00(HandleBase *a2);
 
     // 1.52 RVA: 0x2BC1C80 / 45882496
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 56 57 41 54 41 56 41 57 48 83 EC 40 48 8B E9 48 8B F2 48 83 C1 5B
@@ -96,7 +99,7 @@ struct CallbackManager
     // 1.52 RVA: 0x2BC2440 / 45884480
     // Takes an event class
     /// @pattern 48 8B C4 41 56 41 57 48 83 EC 78 83 79 0C 00 4C 8B FA 4C 8B F1 0F 84 D0 02 00 00 48 89 58 10 48
-    void __fastcall Unknown6(RED4ext::CClass *a2);
+    void __fastcall Unknown6(CClass *a2);
 
     // 1.52 RVA: 0x2BC2740 / 45885248
     /// @pattern 48 89 5C 24 08 57 48 83 EC 30 48 8D 59 5B 48 8B F9 48 8B CB E8 C7 8C F7 FF 8B 57 44 48 8D 4F 38

@@ -27,10 +27,10 @@ struct IGameSystem : IUpdatableSystem
 
     // 1.52 RVA: 0xAEC190 / 11452816
     /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 22 B8 F8 FF 48 8D 05 4B 92 6C 02 48 C7 43 40 00 00 00 00 48 89 03
-    IGameSystem();
+    //IGameSystem();
 
     virtual CClass* GetNativeType() override;     
-    virtual ~IGameSystem() override;
+    virtual ~IGameSystem() override = default;
 
     virtual bool sub_118(void *); // 108 onAttach
     virtual void sub_120(void * runtimeScene); // 120 onDetach
@@ -71,5 +71,5 @@ RED4EXT_ASSERT_SIZE(IGameSystem, 0x48);
 } // namespace RED4ext
 
 #ifdef RED4EXT_HEADER_ONLY
-#include <RED4ext/Scripting/Natives/gameIGameSystem-inc.hpp>
+#include <RED4ext/Scripting/Natives/gameIGameSystem-inl.hpp>
 #endif

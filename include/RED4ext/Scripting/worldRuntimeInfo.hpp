@@ -4,6 +4,10 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
+#include <RED4ext/CName.hpp>
+#include <RED4ext/CString.hpp>
+#include <RED4ext/ResourcePath.hpp>
+#include <RED4ext/ResourceReference.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
 
 namespace RED4ext
@@ -15,7 +19,7 @@ struct RuntimeDescription
 {
     // 1.52 RVA: 0xB508B0 / 11864240
     /// @pattern 40 53 48 83 EC 20 33 C0 48 8B D9 48 89 01 48 89 41 08 48 83 C1 10 E8 75 FB 64 FF 48 8D 4B 30 E8
-    RuntimeDescription();
+    //RuntimeDescription();
 
     // 0x6B19682BA3D859CF - cname? resource?
     CName unk00;

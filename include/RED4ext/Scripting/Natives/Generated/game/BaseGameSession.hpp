@@ -7,6 +7,11 @@
 
 namespace RED4ext
 {
+struct GameInstance;
+namespace world
+{
+struct RuntimeScene;
+}
 namespace game { 
 struct BaseGameSession
 {
@@ -35,14 +40,14 @@ struct BaseGameSession
         
     void *__vftable;
     void *updateManagerHolder;
-    RED4ext::GameInstance *gameInstance;
-    RED4ext::world::RuntimeScene *runtimeScene;
+    GameInstance *gameInstance;
+    world::RuntimeScene *runtimeScene;
     uint32_t gameStatus;
     uint32_t unk24;
     uint8_t unk28;
     uint8_t unk29;
     uint8_t unk2A;
 };
-RED4EXT_ASSERT_SIZE(BaseGameSession, 0x30);
+//RED4EXT_ASSERT_SIZE(BaseGameSession, 0x30);
 } // namespace game
 } // namespace RED4ext

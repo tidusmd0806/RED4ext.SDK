@@ -7,20 +7,21 @@
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/HashMap.hpp>
-#include <RED4ext/IDynamicStorage.hpp>
+//#include <RED4ext/Scripting/Natives/GameInstance.hpp>
 
 namespace RED4ext
 {
 struct CBaseRTTIType;
-struct IScriptable;
+//struct IScriptable;
 struct CGameOptions;
+struct IGameInstance;
 
 namespace Memory
 {
 struct IAllocator;
 }
-namespace game { struct IGameSystem; struct GameFeatureManager; }
-namespace world { struct RuntimeScene; struct RuntimeInfo; }
+//namespace game { struct IGameSystem; struct GameFeatureManager; }
+namespace world { struct RuntimeScene;  } //struct RuntimeInfo;
 
 struct CBaseEngine
 {
@@ -189,8 +190,8 @@ struct CGameFramework
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 33 C0 48 8B F9 87 41 24 48 8B 59 10 48 85 DB 0F 84 17 01 00 00 E8
     __int64 __fastcall Systems_120_128_130();
 
-    UpdateManagerHolder* updateManagerHolder; // 08
-    IDynamicStorage* gameInstance; // 10
+    void* updateManagerHolder; // 08
+    IGameInstance* gameInstance; // 10
     world::RuntimeScene* runtimeScene; // 18
     void* stateMachine; // 20
 };

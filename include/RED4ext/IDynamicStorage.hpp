@@ -1,4 +1,9 @@
+#pragma once
+
+#include <cstdint>
 #include <RED4ext/Common.hpp>
+#include <RED4ext/RTTITypes.hpp>
+#include <RED4ext/Scripting/worldRuntimeInfo.hpp>
 
 namespace RED4ext {
 

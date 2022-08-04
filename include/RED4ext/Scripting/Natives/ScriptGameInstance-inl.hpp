@@ -10,7 +10,7 @@
 #include <RED4ext/GameEngine.hpp>
 #include <RED4ext/RTTISystem.hpp>
 
-RED4EXT_INLINE RED4ext::ScriptGameInstance::ScriptGameInstance(GameInstance* aInstance)
+RED4EXT_INLINE RED4ext::ScriptGameInstance::ScriptGameInstance(IGameInstance* aInstance)
     : instance(aInstance)
     , unk8(1)
     , unk10(0)

@@ -147,7 +147,7 @@ struct Object : ent::GameEntity, PSInterface
     RED4ext::HandleBase owner;
     uint64_t unk210; // 210
     Handle<ent::SlotComponent> uiSlotComponent; // 218
-    GameInstance * gameInstance2; // 228
+    IGameInstance * gameInstance2; // 228
     red::TagList tags; // 230
 };
 RED4EXT_ASSERT_SIZE(Object, 0x240);

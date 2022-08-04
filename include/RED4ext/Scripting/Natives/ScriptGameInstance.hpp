@@ -2,10 +2,11 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
+// #include <RED4ext/Scripting/Natives/GameInstance.hpp>
 
 namespace RED4ext
 {
-struct GameInstance;
+struct IGameInstance;
 
 struct ScriptGameInstance
 {
@@ -13,9 +14,9 @@ struct ScriptGameInstance
      * @brief Construct an instance of "ScriptGameInstance" native type.
      * @param aInstance The instance pointer, if NULL it will be retrived automatically from CGameFramework.
     */
-    ScriptGameInstance(GameInstance* aInstance = nullptr);
+    ScriptGameInstance(IGameInstance* aInstance = nullptr);
 
-    GameInstance* instance;
+    IGameInstance* instance;
     int8_t unk8;
     int64_t unk10;
 };

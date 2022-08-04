@@ -7,6 +7,12 @@
 #include <RED4ext/Addresses.hpp>
 #include <RED4ext/Relocation.hpp>
 
+RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetNativeType()
+{
+    RelocVirtualFunc<decltype(&RED4ext::IScriptable::GetNativeType)> call(VFT_RVA, 0x000);
+    return (this->*call)();
+}
+
 RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetType()
 {
     if (unk30)
