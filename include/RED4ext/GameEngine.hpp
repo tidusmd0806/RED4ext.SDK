@@ -25,6 +25,8 @@ namespace world { struct RuntimeScene;  } //struct RuntimeInfo;
 
 struct CBaseEngine
 {
+    static constexpr const uintptr_t VFT_RVA = 0x31A27D8;
+
     // https://github.com/yamashi/RED4ext/commit/2d30f32826276458f86da8b4c26940924044564d
     struct UnkC0
     {
@@ -45,6 +47,8 @@ struct CBaseEngine
 
     struct Unk108
     {
+        static constexpr const uintptr_t VFT_RVA = 0x31A2920;
+
         int64_t unk0;
         int64_t unk8;
         int64_t unk10;
@@ -66,35 +70,48 @@ struct CBaseEngine
     virtual CBaseRTTIType* GetParentType() = 0;      // 08
     virtual Memory::IAllocator* GetAllocator() = 0;  // 10
     virtual ~CBaseEngine() = 0;                      // 18
-    virtual void sub_18() = 0;                       // 20
-    virtual void sub_28() = 0;                       // 28
-    virtual void sub_30() = 0;                       // 30
-    virtual void sub_38() = 0;                       // 38
-    virtual void sub_40() = 0;                       // 40
+    // checks unkF8 against 5, 4
+    virtual void sub_20() = 0;
+    // checks unkF8 against 4, 5
+    virtual void sub_28() = 0;
+    // something with SystemMenuPause CName
+    virtual void sub_30() = 0;
+    virtual void sub_38() = 0;
+    // increment unk44, etc
+    virtual void sub_40() = 0;
+    // decrement unk44, etc
     virtual void sub_48() = 0;                       // 48
-    virtual void sub_50() = 0;                       // 50
+    // call sub_D0, various prop things
+    virtual void sub_50() = 0;
     virtual void sub_58() = 0;                       // 58
     virtual void sub_60() = 0;                       // 60
-    virtual void sub_68() = 0;                       // 68
+    // create unk98
+    virtual void sub_68() = 0;
     virtual void sub_70() = 0;                       // 70
     virtual void sub_78() = 0;                       // 78
     virtual void sub_80() = 0;                       // 80
-    virtual void sub_88() = 0;                       // 88
-    virtual void sub_90() = 0;                       // 90
+    virtual void sub_88(uint64_t a2, char a3) = 0;    // 88
+    virtual void sub_90(int a2, CString *a3, uint64_t a4) = 0; // 90
     virtual void sub_98() = 0;                       // 98
     virtual void sub_A0() = 0;                       // A0
     virtual void sub_A8() = 0;                       // A8
     virtual void sub_B0() = 0;                       // B0
-    virtual void sub_B8() = 0;                       // B8
+    // uses CBaseEngine string
+    virtual void sub_B8() = 0;
     virtual void sub_C0() = 0;                       // C0
     virtual void sub_C8(CGameOptions& aOptions) = 0; // C8
     virtual void sub_D0() = 0;                       // D0
-    virtual void sub_D8() = 0;                       // D8
-    virtual void sub_E0() = 0;                       // E0
+    // Load everything
+    virtual void sub_D8(int64_t a2) = 0;
+    // register some Initialization callbacks: GameServicesAsync
+    // Physics, LoadRenderResources, Recorder, Animation, DebugServer
+    // DebugNetwork, Finialization
+    virtual void sub_E0(uint64_t a2, uint64_t a3, uint64_t a4) = 0;                       // E0
     virtual void sub_E8() = 0;                       // E8
     virtual void sub_F0() = 0;                       // F0
     virtual void sub_F8() = 0;                       // F8
-    virtual void sub_100() = 0;                      // 100
+    // doesn't actually exist, start of an interface
+    // virtual void sub_100() = 0;                      // 100
 
     double unk8;                 // 08
     float unk10;                 // 10
@@ -107,6 +124,7 @@ struct CBaseEngine
     int8_t unk34;                // 34
     int64_t unk38;               // 38
     int8_t unk40;                // 40
+    // mutex for unk44
     SharedMutex unk41;           // 41
     int32_t unk44;               // 44
     int8_t unk48;                // 48
@@ -166,6 +184,18 @@ RED4EXT_ASSERT_OFFSET(CBaseEngine, unkC0, 0xC0);
 
 struct BaseGameEngine : CBaseEngine
 {
+    static constexpr const uintptr_t VFT_RVA = 0x3374328;
+
+    virtual CBaseRTTIType* GetNativeType() override;      // 00
+    virtual CBaseRTTIType* GetParentType() override;      // 08
+    virtual ~BaseGameEngine() override;                   // 18
+    virtual void sub_50() override;
+    virtual void sub_60() override;
+    virtual void sub_D8() override;
+    // register Initialization callbacks: BaseInitialization, VirtualRUIDs
+    // LoadTweakDB, Blackboard, EnumerateWorlds, PSClassBindings
+    virtual void sub_E0() override;
+
     int64_t unk2C8;         // 2C8
     int64_t unk2D0;         // 2D0
     int64_t watchdogThread; // 2D8
@@ -188,7 +218,7 @@ struct CGameFramework
     // 1.52 RVA: 0x138B060 / 20492384
     // then call engine->sub_80, sets stateMachine to 4?
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 33 C0 48 8B F9 87 41 24 48 8B 59 10 48 85 DB 0F 84 17 01 00 00 E8
-    __int64 __fastcall Systems_120_128_130();
+    uint64_t __fastcall Systems_120_128_130();
 
     void* updateManagerHolder; // 08
     IGameInstance* gameInstance; // 10
@@ -198,11 +228,94 @@ struct CGameFramework
 RED4EXT_ASSERT_SIZE(CGameFramework, 0x28);
 RED4EXT_ASSERT_OFFSET(CGameFramework, gameInstance, 0x10);
 
+struct Unk328 {
+    static constexpr const uintptr_t VFT_RVA = 0x3599380;
+    
+    virtual void sub_00();
+    virtual void sub_08();
+    virtual void sub_10();
+    virtual void sub_18();
+    virtual void sub_20();
+    virtual void sub_28();
+    virtual void sub_30();
+    virtual void sub_38();
+    virtual void sub_40();
+    virtual void sub_48();
+    virtual ~Unk328() = default;
+
+    uint64_t unk08;
+    uint64_t unk10;
+    uint64_t unk18;
+    uint64_t unk20;
+    uint64_t unk28;
+    uint64_t unk30;
+    uint8_t unk38;
+    uint8_t unk39;
+    uint8_t unk3A;
+    uint8_t unk3B;
+    float unk3C;
+    uint8_t unk40;
+    uint8_t unk41;
+    uint8_t unk42;
+    uint8_t unk43;
+    uint8_t unk44;
+    uint8_t unk45;
+    uint8_t unk46;
+    uint8_t unk47;
+    uint8_t unk48;
+    uint8_t unk49;
+    uint8_t unk4A;
+    uint8_t unk4B;
+    uint8_t unk4C;
+    uint8_t unk4D;
+    uint8_t unk4E;
+    uint8_t unk4F;
+    uint64_t unk50[4];
+}
+RED4EXT_ASSERT_SIZE(Unk328, 0x70);
+
 struct CGameEngine : BaseGameEngine
 {
     static constexpr const uintptr_t VFT_RVA = 0x3591C30;
 
+    virtual CBaseRTTIType* GetNativeType() override;      // 00
+    virtual CBaseRTTIType* GetParentType() override;      // 08
+    virtual ~CBaseEngine() override;                      // 18
+    virtual void sub_20() override;
+    virtual void sub_28() override;
+    virtual void sub_50() override;
+    // gets unk318
+    virtual void sub_78() override;
+    // gets unk328
+    virtual void sub_80() override;
+    // something with unk308
+    virtual void sub_88(uint64_t a2, char a3) override;
+    // more with unk308
+    virtual void sub_90(int a2, CString *a3, uint64_t a4) override;
+    // more unk308
+    virtual void sub_98() override;
+    // creates game services (servicesGameServicesWin)
+    virtual void sub_C0() override;    
+    // something unk300
+    virtual void sub_D0() override;
+    // initializes sound, input & viewport
+    virtual void sub_D8(int64_t a2) override;
+    // register Initialization callbacks: BaseEngineRegularSystemInitialization
+    // FreeCamera, RegisterNativeFunctions, ScriptsDebugger, GameFramework
+    // EnumerateGameDefs, InkSystem
+    virtual void sub_E0(uint64_t a2, uint64_t a3, uint64_t a4) override;
+    // do nothing with unk308
+    virtual void sub_E8() override;
+
     static CGameEngine* Get();
+
+    // 1.52 RVA: 0x29919A0 / 43588000
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B F9 0F B6 4A 32 E8 5A 66 22 00 48 8B 87 C0 00 00 00 8B 10 85
+    static void __fastcall InitializeScriptsDebugger(uint64_t *a1, uint64_t a2);
+
+    // 1.52 RVA: 0x2991B50 / 43588432
+    /// @pattern 48 89 5C 24 18 48 89 6C 24 20 56 48 83 EC 60 48 8B F1 48 8B DA 0F B6 4A 32 E8 A2 64 22 00 48 8B
+    static void __fastcall InitializeGameFramework(uint64_t * a1, uint64_t a2);
 
     int64_t unk2E0;            // 2E0
     int64_t unk2E8;            // 2E8
@@ -214,7 +327,7 @@ struct CGameEngine : BaseGameEngine
     int64_t unk310;            // 310
     int64_t unk318;            // 318
     int64_t unk320;            // 320
-    int64_t unk328;            // 328
+    Unk328 * unk328;            // 328
     int64_t unk330;            // 330
     int64_t unk338;            // 338
     int32_t unk340;            // 340

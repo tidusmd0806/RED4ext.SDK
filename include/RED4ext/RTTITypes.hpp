@@ -8,7 +8,6 @@
 #include <RED4ext/HashMap.hpp>
 #include <RED4ext/InstanceType.hpp>
 #include <RED4ext/Utils.hpp>
-#include <RED4ext/Scripting/Natives/Callbacks.hpp>
 
 namespace RED4ext
 {
@@ -16,6 +15,9 @@ struct BaseStream;
 struct CProperty;
 struct CClassFunction;
 struct CClassStaticFunction;
+struct Callback;
+struct CallbackDefinition;
+struct CallbackStorage;
 
 enum class ERTTIType : uint8_t
 {
