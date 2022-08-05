@@ -12,6 +12,11 @@ namespace RED4ext {
 namespace game { struct IGameSystem; struct GameFeatureManager; }
 
 struct UpdatableSystems {
+    // 1.52 RVA: 0xB90F10 / 12128016
+    // called from GameInstance->SetRuntimeScene
+    /// @pattern 40 53 48 83 EC 40 48 89 51 08 48 8B D9 48 8D 54 24 20 E8 59 02 00 00 48 8B 4B 08 48 8D 54 24 20
+    __int64 __fastcall SetRuntimeScene(RED4ext::world::RuntimeScene *);
+
     DynArray<Handle<IScriptable>> * gameSystems;
     world::RuntimeScene* runtimeSystems;
     Handle<game::GameFeatureManager> featureManager;
@@ -55,7 +60,7 @@ struct GameInstance : IGameInstance
     // creates some systems, calls systems' sub_190, sub198
     // calls GetGameSystemsData
     virtual void sub_20(uint8_t*, uint64_t, uint32_t*) override;           // 20
-    // calls parent func, then sets unk130 & unk138
+    // calls parent func, then sets unk130 & unk138 from the struct the runtimeInfo is in
     virtual bool RegisterUpdates(world::RuntimeInfo **runtimeInfo) override;                // 28
     virtual void* GetUnk130() override;                               // 30
     virtual void* GetUnk138() override;                               // 38
@@ -69,6 +74,11 @@ struct GameInstance : IGameInstance
     // 1.52 RVA: 0x2D494B0 / 47486128
     /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 42 5B FB FF 48 8D 05 73 32 8B 00 48 89 03 33 C0 48 89 83 30 01 00
     GameInstance();
+
+    // 1.52 RVA: 0x2CFF590 / 47183248
+    // called from LoadGame callback, calls systems->sub_118
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 89 51 78 48 8B 89 10 01 00 00 48 8B F2
+    __int64 __fastcall SetRuntimeScene(world::RuntimeScene *);
 
     /**
      * @brief Calls sub_60 on each class in a list, creates them, calls their sub_190 & sub_198
@@ -91,7 +101,7 @@ struct GameInstance : IGameInstance
     UpdatableSystems* updatableSystems; // 110
     Handle<game::GameFeatureManager> gameFeatureManager; // 118
     bool gameIsLoading; // 128
-    uint8_t unk129;
+    uint8_t isPaused;
     uint8_t unk12A[6];
 
 

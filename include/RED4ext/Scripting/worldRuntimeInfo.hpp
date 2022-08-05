@@ -37,7 +37,7 @@ struct RuntimeInfo : IScriptable
     static constexpr const char* ALIAS = "RuntimeInfo";
 
     enum class Mode : byte {
-        Unknown = 0x0,
+        Unknown = 0x0, // inPreview maybe?
         Singleplayer = 0x1,
         MultiplayerClient = 0x2,
         MultiplayerServer = 0x3

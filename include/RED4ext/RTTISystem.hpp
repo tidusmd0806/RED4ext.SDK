@@ -13,6 +13,7 @@ namespace RED4ext
 {
 struct CBaseFunction;
 struct CGlobalFunction;
+struct Update;
 
 struct IRTTISystem
 {
@@ -39,8 +40,11 @@ struct IRTTISystem
     virtual void RegisterFunction(CGlobalFunction* aFunc) = 0;                                // 98
     virtual void UnregisterFunction(CGlobalFunction* aFunc) = 0;                              // A0
     virtual void sub_A8() = 0;                                                                // A8
-    virtual void sub_B0() = 0;                                                                // B0
-    virtual void sub_B8() = 0;                                                                // B8
+    // adds register type callback
+    virtual void sub_B0(Update*) = 0;                                                         // B0
+    // adds post register type callback
+    virtual void sub_B8(Update*) = 0;                                                         // B8
+    // fire register types & post register types callbacks
     virtual void sub_C0() = 0;                                                                // C0
     virtual void sub_C8() = 0;                                                                // C8
     virtual void CreateScriptedClass(CName aName, CClass::Flags aFlags, CClass* aParent) = 0; // D0
@@ -71,20 +75,20 @@ struct CRTTISystem : IRTTISystem
     using IRTTISystem::RegisterType;
     void RegisterType(CBaseRTTIType* aType);
 
-    int32_t unk8;                                     // 08
+    int32_t numOfTypeCallbacks;                       // 08
     HashMap<CName, CBaseRTTIType*> types;             // 10
     HashMap<uint64_t, CBaseRTTIType*> typesByAsyncId; // 40
     HashMap<CName, uint32_t> typeAsyncIds;            // 70
     HashMap<CName, CGlobalFunction*> funcs;           // A0
     HashMap<uint64_t, CGlobalFunction*> funcsByHash;  // D0
-    HashMap<void*, void*> unk100;                      // 100
+    HashMap<void*, void*> unk100;                     // 100
     DynArray<void*> unk130;                           // 130
     DynArray<void*> unk140;                           // 140
     HashMap<CName, CName> scriptToNative;             // 150
     HashMap<CName, CName> nativeToScript;             // 180
     DynArray<CString> strings;                        // 1B0 - Used by StringConst opcode (0x10)
-    DynArray<void*> unk1C0;                           // 1C0
-    DynArray<void*> unk1D0;                           // 1D0
+    DynArray<Update*> postRegisterTypeCallbaks;         // 1C0
+    DynArray<Update*> registerTypeCallbacks;            // 1D0
     CRITICAL_SECTION unk1E0;                          // 1E0
     volatile int8_t typesLock;                        // 208
     CRITICAL_SECTION unk210;                          // 210

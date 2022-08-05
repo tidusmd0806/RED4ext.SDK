@@ -13,6 +13,7 @@ namespace RED4ext {
 //}
 struct CallbackStruct;
 struct CClass;
+struct Update;
 
 struct CallbackId {
     union {
@@ -54,16 +55,16 @@ struct CallbackStorage : CallbackInstance
 struct CallbackStruct
 {
     // Calls the OnEvent with the instance + offset & event
-    void (__fastcall* FireCallback)(CallbackDefinition* definition, IScriptable* instance, void* event);
+    void (* Callback)(CallbackDefinition* definition, IScriptable* instance, void* event);
 
     // Copy the definition into storage
-    void (__fastcall* StoreDefinition)(CallbackId*, CallbackId*);
+    void (*StoreDefinition)(Update* a1, Update* a2);
 
     // Copy the storage struct
-    void (__fastcall* CopyStorage)(CallbackId*, CallbackId*);
+    void (*CopyStorage)(Update* a1, Update* a2);
 
     // CallbackDefinition is also passed into this
-    void (__fastcall* Initialize)(CallbackStorage*);
+    void (* Destruct)(CallbackStorage*);
 };
 
 struct CallbackManager

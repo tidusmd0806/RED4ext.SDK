@@ -9,8 +9,10 @@
 
 namespace RED4ext
 {
+struct GameInstance;
+
 namespace game { 
-// mabe this instead?
+// maybe this instead?
 // struct IGameSystem : IScriptable, virtual IUpdatableSystem
 struct IGameSystem : IUpdatableSystem
 {
@@ -20,9 +22,9 @@ struct IGameSystem : IUpdatableSystem
 
     struct HighLow
     {
-        void *unk00;
-        void *unk08;
-        uint8_t unk10;
+        void* unk00;
+        void* performance;
+        uint8_t crowdDensity;
     };
 
     // 1.52 RVA: 0xAEC190 / 11452816
@@ -32,43 +34,39 @@ struct IGameSystem : IUpdatableSystem
     virtual CClass* GetNativeType() override;     
     virtual ~IGameSystem() override = default;
 
-    virtual bool sub_118(void *); // 108 onAttach
-    virtual void sub_120(void * runtimeScene); // 120 onDetach
-    virtual void sub_128(void * runtimeScene); // 128 Setup
+    virtual bool sub_118(world::RuntimeScene * runtimeScene); // 108 OnAttach
+    virtual void sub_120(world::RuntimeScene * runtimeScene); // 120 OnDetach
+    virtual void sub_128(world::RuntimeScene * runtimeScene); // 128 HasDetached
     virtual void sub_130(); // 130
-    virtual void sub_138(); // AK::MemoryMgr::StopProfileThreadUsage(void)
+    virtual bool sub_138(); // 138 return 0
     virtual void sub_140(); // 140
     virtual void sub_148(); // 148
-    // 150, OnGameLoad
-    virtual void sub_150(void *, uint64_t, uint64_t); 
-    // ReturnOne - should probably always return 1
-    virtual bool sub_158();
-    virtual void sub_160(); // 160
-    // might be called from GameInstance->Systems168o170
-    virtual void sub_168(); // 168
-    // might be called from GameInstance->Systems168o170
-    virtual void sub_170(); // 170
-    // something with a CString @ 0x08
-    virtual void sub_178(uintptr_t a1, bool a2);                    
-    virtual void sub_180(uint64_t, bool isGameLoaded, uint64_t); // 180
+    virtual void sub_150(void *, uint64_t, uint64_t); // 150 OnGameLoad
+    virtual bool sub_158(); // ReturnOne, something WaitingForEntities
+    virtual void sub_160(); // 160 OnGamePrepared
+    virtual void sub_168(); // 168 Pause game
+    virtual void sub_170(); // 170 Resume game
+    virtual void sub_178(uintptr_t a1, bool a2); // something with a CString @ 0x08 - PointOfNoReturnSave?                   
+    virtual void sub_180(uint64_t, bool isGameLoaded, uint64_t); // 180 OnStreamingWorldLoaded
     virtual void sub_188(); // 188
-    // called from GameInstance->sub_20
-    virtual void sub_190(HighLow *); // 190
-    // some systems load tweaks - might be a setup, called from GameInstance->sub_20
-    virtual void sub_198(void *); // 198
-    virtual void sub_1A0(); // 1A0
+    // called from GameInstance->sub_20, recieves some struct based on game performance setting & crowd density
+    virtual void sub_190(HighLow *);
+    // called after created & atter gameInstance is set
+    virtual void ** sub_198(void ** unkThing);
+    virtual void sub_1A0(); // 1A0 on exit game
 
     // 1.52 RVA: 0xAEC8E0 / 11454688
-    // Sets unk40, calls sub_198
+    // Sets gameInstance, creates unkThing, calls sub_198
+    // Called from GameInstance->sub_20
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B FA 66 C7 44 24 30 00 00 0F B7 44 24 30 48 8D 54 24 30 4C 89
-    void * __fastcall Set(void *, void * unk40);
+    void ** __fastcall SetGameInstance(void ** unkThing, GameInstance * gameInstance);
 
     // 1.52 RVA: 0xAEC970 / 11454832
     // Unsets unk40, calls sub_1A0
     /// @pattern 40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 A0 01 00 00 48 C7 43 40 00 00 00 00 48 83 C4 20 5B C3
     __int64 __fastcall Unset();
 
-    uint8_t unk40[0x48 - 0x40]; // 40
+    GameInstance* gameInstance; // 40
 };
 RED4EXT_ASSERT_SIZE(IGameSystem, 0x48);
 } // namespace game
