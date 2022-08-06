@@ -81,7 +81,7 @@ struct GameInstance : IGameInstance
     __int64 __fastcall SetRuntimeScene(world::RuntimeScene *);
 
     /**
-     * @brief Calls sub_60 on each class in a list, creates them, calls their sub_190 & sub_198
+     * @brief calls systems->sub_190 & sub_198
      * @address 0x2CFF600
      * @param unkThing is some sort of logging struct
      * @param a3 is a flag that gets passed to sub_60
@@ -103,20 +103,9 @@ struct GameInstance : IGameInstance
     bool gameIsLoading; // 128
     uint8_t isPaused;
     uint8_t unk12A[6];
-
-
+    // actual GameInstance starts here
     int64_t unk130; // 130
     int64_t unk138; // 138
-
-    //world::RuntimeSystemHandles * runtimeSystemHandles; // 78
-    //world::RuntimeInfo runtimeInfo; // 80
-    //int64_t unk100; // 100
-    //GameInstance* gameInstancePtr; // 108
-    //DynArray<Handle<IScriptable>>* gameSystemsPtr; // 110
-    //Handle<game::GameFeatureManager> gameFeatureManager; // 118
-    //int64_t unk128; // 128
-    //int64_t unk130; // 130
-    //int64_t unk138; // 138
 };
 RED4EXT_ASSERT_SIZE(GameInstance, 0x140);
 }

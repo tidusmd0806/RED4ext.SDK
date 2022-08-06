@@ -51,7 +51,7 @@ struct IGameSystem : IUpdatableSystem
     virtual void sub_188(); // 188
     // called from GameInstance->sub_20, recieves some struct based on game performance setting & crowd density
     virtual void sub_190(HighLow *);
-    // called after created & atter gameInstance is set
+    // called after created & gameInstance is set
     virtual void ** sub_198(void ** unkThing);
     virtual void sub_1A0(); // 1A0 on exit game
 
