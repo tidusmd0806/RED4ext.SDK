@@ -28,6 +28,7 @@ struct SlotComponent : ent::IPlacedComponent
     uint8_t unk199[7];
 };
 RED4EXT_ASSERT_SIZE(SlotComponent, 0x1A0);
+RED4EXT_ASSERT_OFFSET(SlotComponent, slots, 0x120);
 } // namespace ent
 using SlotComponent = ent::SlotComponent;
 } // namespace RED4ext

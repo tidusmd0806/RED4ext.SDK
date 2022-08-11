@@ -7,6 +7,7 @@
 #include <RED4ext/Scripting/Natives/Generated/SWeaponPlaneParams.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 #include <RED4ext/Scripting/Natives/entTargetedCameraInterface.hpp>
 
 namespace RED4ext
@@ -31,7 +32,7 @@ struct BaseCameraComponent
     virtual void GetUnk170();
     virtual void GetWeaponPlane();
     virtual void GetUnk190();
-    virtual void sub_2B0();
+    virtual void sub_2B0(Transform* otherTransform, Transform* localTransform);
     virtual void SetFov();
     virtual void CameraCopyIsh();
     virtual void SetZoom();

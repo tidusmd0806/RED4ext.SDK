@@ -24,48 +24,51 @@ struct IComponent : IScriptable
 
     //}
 
-    virtual void sub_110();
-    virtual void sub_118();
-    virtual void sub_120();
-    virtual void sub_128();
-    virtual void sub_130();
-    virtual void sub_138();
-    virtual void sub_140();
-    // after callback is registered
-    virtual void sub_148();
-    virtual void sub_150();
-    virtual void sub_158();
-    // called on initialize components
-    virtual bool sub_160();
-    virtual void sub_168();
-    virtual void sub_170();
-    // called on initialize components
-    virtual uint64_t sub_178(uint64_t);
-    virtual void sub_180();
-    virtual void OnRequestComponents();
-    virtual void sub_190();
-    virtual void sub_198();
-    virtual void sub_1A0();
-    virtual void sub_1A8();
-    virtual void sub_1B0();
-    virtual void sub_1B8();
-    virtual void sub_1C0();
-    virtual void sub_1C8();
-    virtual void sub_1D0();
-    virtual void sub_1D8();
-    virtual void sub_1E0();
-    virtual void sub_1E8();
-    // called on gather event listeners, after registered
-    virtual uint64_t sub_1F0(Handle<CallbackManager>*);
-    virtual void sub_1F8();
-    virtual void sub_200();
-    virtual void sub_208();
-    virtual uint64_t Initialize();
-    virtual void sub_218();
-    virtual void sub_220();
-    virtual void sub_228();
-    // called on initialize components
-    virtual uint32_t sub_230();
+    // virtual void sub_110();
+    // virtual void sub_118();
+    // virtual void sub_120();
+    // virtual void sub_128();
+    // virtual void sub_130();
+    // virtual void sub_138();
+    // virtual void sub_140();
+    // // after callback is registered
+    // virtual void sub_148();
+    // virtual void sub_150();
+    // virtual void sub_158();
+    // // called on initialize components
+    // // isReplicable?
+    // virtual bool sub_160();
+    // virtual void sub_168();
+    // virtual void sub_170();
+    // // called on initialize components
+    // virtual uint64_t sub_178(uint64_t);
+    // virtual void sub_180();
+    // // this, 160, 1A8, then 190 called when initializing
+    // // struct of entity, scriptGameIntance, runtimeScene
+    // virtual void OnRequestComponents(void*);
+    // virtual void sub_190();
+    // virtual void sub_198();
+    // virtual void sub_1A0();
+    // virtual void sub_1A8();
+    // virtual void sub_1B0();
+    // virtual void sub_1B8();
+    // virtual void sub_1C0();
+    // virtual void sub_1C8();
+    // virtual void sub_1D0();
+    // virtual void sub_1D8();
+    // virtual void sub_1E0();
+    // virtual void sub_1E8();
+    // // called on gather event listeners, after registered
+    // virtual uint64_t sub_1F0(Handle<CallbackManager>*);
+    // virtual void sub_1F8();
+    // virtual void sub_200();
+    // virtual void sub_208();
+    // virtual uint64_t Initialize();
+    // virtual void sub_218();
+    // virtual void sub_220();
+    // virtual void sub_228();
+    // // called on initialize components
+    // virtual uint32_t sub_230();
 
     // 1.52 RVA: 0x103E040 / 17031232
     /// @pattern 48 89 51 50 C3

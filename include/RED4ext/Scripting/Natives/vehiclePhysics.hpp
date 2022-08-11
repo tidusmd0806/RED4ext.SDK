@@ -17,9 +17,32 @@
 namespace RED4ext
 {
 
+namespace anim
+{
+struct AnimFeature_VehiclePassenger;
+}
+
 namespace vehicle
 {
 struct BaseObject;
+
+
+struct UnkC8 {
+  uint32_t unk00;
+  Vector3 unk04;
+  Vector4 linearVelocity;
+  Vector4 angularVelocity;
+  float unk30;
+  float unk34;
+  float unk38;
+  float unk3C;
+  WorldTransform unk40;
+  float unk60;
+  float unk64;
+  float unk68;
+  float unk6C;
+};
+
 
 #pragma pack(push, 1)
 struct Physics
@@ -33,6 +56,7 @@ struct Physics
     virtual uint64_t sub_20();
     virtual uint64_t UpdateTransform();
     virtual uint64_t sub_30();
+    // checks for vehicle being Z < -100, teleports if so (VehicleTeleportationIfFallsUnderWorld @ RVA 0x4781A38)
     virtual void sub_38(float deltaTime);
     virtual void sub_40(float deltaTime);
     virtual uint64_t FixedUpdate_PreSolve(uint64_t, float);
@@ -84,7 +108,7 @@ struct Physics
 
     // 1.52 RVA: 0x1CEB5B0 / 30324144
     /// @pattern 80 79 50 00 75 03 32 C0 C3 F2 0F 10 41 30 F2 0F 11 02 8B 41 38 89 42 08 B0 01 0F 10 41 40 0F 11
-    char __fastcall ReadWorldTransform(RED4ext::WorldTransform *a2);
+    char __fastcall ReadWorldTransform(WorldTransform *a2);
 
     // 1.52 RVA: 0x1CEB370 / 30323568
     /// @pattern 48 89 5C 24 20 55 41 56 41 57 48 8D 6C 24 B9 48 81 EC B0 00 00 00 4C 8B F1 41 0F B6 D8 48 8B 49
@@ -127,12 +151,12 @@ struct Physics
     BaseObject *__fastcall GetVehicle();
 
     uint64_t unk08;
-    Vector3 velocity;
-    uint32_t unk10;
+    Vector3 velocity; // 10
+    uint32_t unk1C;
     uint8_t unk20;
     uint8_t unk21[7];
     uint64_t unk28;
-    WorldTransform worldTransform;
+    WorldTransform worldTransform; // 30
     uint8_t unk50;
     uint8_t unk51[7];
     uint64_t unk58;
@@ -141,7 +165,7 @@ struct Physics
     uint8_t unk70;
     uint8_t unk71[7];
     uint64_t unk78;
-    WorldTransform worldTransform2;
+    WorldTransform worldTransform2; // 80
     float unkA0;
     float unkA4;
     float setTo0point5;
@@ -157,10 +181,10 @@ struct Physics
     uint16_t unkBE;
     float has_been_flipped_over_for_some_time_delay;
     float unkC4;
-    uintptr_t physicsBaseStruct2;
+    UnkC8* physicsBaseStruct2;
 };
-//char (*__kaboom)[sizeof(VehiclePhysics)] = 1;
-//char (*__kaboom2)[offsetof(VehiclePhysics, unkD4Position)] = 1;
+//char (*__kaboom)[sizeof(Physics)] = 1;
+//char (*__kaboom2)[offsetof(Physics, unk08)] = 1;
 
 struct WheeledPhysics : Physics 
 {
@@ -239,8 +263,15 @@ struct WheeledPhysics : Physics
     // returns 1f
     virtual void sub_1A8();
 
+    // 1.52 RVA: 0x1D11A50 / 30480976
+    /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 57 48 81 EC C0 00 00 00 0F 29 70 E8 48 8B F1 48 8B 89 F8 00 00
+    void __fastcall UpdatePassengerAnim(anim::AnimFeature_VehiclePassenger *);
+
     uint32_t unkD0;
-    Vector4 unkD4Position;
+    float unkD4;
+    float unkD8;
+    float unkDC;
+    float unkE0;
     float turnRate;
     uint32_t unkE8;
     uint32_t unkEC;
@@ -321,6 +352,7 @@ struct WheeledPhysics : Physics
 #pragma pack(pop)
 RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
 RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD28);
+//char (*__kaboom)[offsetof(WheeledPhysics, unkC40)] = 1;
 
 struct CarPhysics : WheeledPhysics
 {
@@ -473,7 +505,7 @@ struct BikePhysics : WheeledPhysics
     uint8_t unkD63;
     float customTargetTilt;
     float tiltRelated;
-    float tiltRelatedTan;
+    float transversalForce;
     float bikeTiltSpeed;
     float bikeTiltReturnSpeed;
     float bikeTiltCustomSpeed;

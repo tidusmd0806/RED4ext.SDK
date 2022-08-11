@@ -46,6 +46,7 @@ struct IGameSystem : IUpdatableSystem
     virtual void sub_160(); // 160 OnGamePrepared
     virtual void sub_168(); // 168 Pause game
     virtual void sub_170(); // 170 Resume game
+    // 178, 138, 148 fire when going out-of-bounds
     virtual void sub_178(uintptr_t a1, bool a2); // something with a CString @ 0x08 - PointOfNoReturnSave?                   
     virtual void sub_180(uint64_t, bool isGameLoaded, uint64_t); // 180 OnStreamingWorldLoaded
     virtual void sub_188(); // 188

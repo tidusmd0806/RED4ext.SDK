@@ -6,19 +6,18 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IComponent.hpp>
+#include <RED4ext/Scripting/Natives/gamePSInterface.hpp>
 
 namespace RED4ext
 {
-namespace game { struct PersistentState; }
-
 namespace game { 
-struct Component : ent::IComponent
+struct Component : ent::IComponent, PSInterface
 {
     static constexpr const char* NAME = "gameComponent";
     static constexpr const char* ALIAS = "GameComponent";
 
-    uint8_t unk90[0x98 - 0x90]; // 90
-    Handle<game::PersistentState> persistentState; // 98
+    // uint8_t unk90[0x98 - 0x90]; // 90
+    // Handle<game::PersistentState> persistentState; // 98
 };
 RED4EXT_ASSERT_SIZE(Component, 0xA8);
 } // namespace game

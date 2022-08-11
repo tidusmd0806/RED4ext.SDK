@@ -50,6 +50,63 @@ struct Weapon;
 //    virtual uint64_t __fastcall sub_08() override;
 //};
 
+struct Unk568 {
+
+    // 1.52 RVA: 0x1AB9B80 / 28023680
+    /// @pattern C7 41 3C 00 00 80 3F 33 C0 48 89 41 20 0F 57 C0 89 41 28 48 89 41 30 89 41 38 48 89 01 48 89 41
+    Unk568();
+
+    // 1.52 RVA: 0x1ABAA10 / 28027408
+    /// @pattern 0F 10 81 A0 00 00 00 0F 57 C9 0F 11 81 B0 00 00 00 0F 11 89 A0 00 00 00 C3
+    void __fastcall CopyOverCollisionForce();
+
+    // 1.52 RVA: 0x1ABAA30 / 28027440
+    /// @pattern 0F 10 02 0F 11 81 D0 00 00 00 C3
+    void __fastcall SetUnkD0(void *a2);
+
+    // 1.52 RVA: 0x1ABAA40 / 28027456
+    /// @pattern 0F 10 02 0F 11 81 C0 00 00 00 C3
+    void __fastcall SetRotationalVelocityMaybe(Vector4 *);
+
+    // 1.52 RVA: 0x1ABAA50 / 28027472
+    /// @pattern 48 83 EC 58 0F 29 74 24 40 0F 29 7C 24 30 44 0F 29 44 24 20 44 0F 29 4C 24 10 44 0F 10 0A 44 0F
+    __int64 __fastcall SetAcceleration(Vector4 *);
+
+    // 1.52 RVA: 0x1ABACA0 / 28028064
+    /// @pattern 48 83 EC 48 0F 10 61 30 0F 28 DC 0F 29 74 24 30 0F 59 DC 0F 29 7C 24 20 44 0F 29 44 24 10 44 0F
+    void __fastcall SetLinearVelocityEtc(Vector4 *);
+
+	float unk00[8]; // ",	0,	0x80000400,	-1,	32);
+	WorldTransform worldTransform; // ",	0X20,	0x60000400,	get_struc_id("RED4ext::WorldTransform"),	32);
+	Vector4 linearVelocity; // ",	0X40,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
+	Vector4 acceleration; // ",	0X50,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
+	Transform unk60; // ",	0X60,	0x60000400,	get_struc_id("RED4ext::Transform"),	32);
+	Vector4 unk80; // ",	0X80,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
+	Vector4 unk90; // ",	0X90,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
+	float currentForce; // ",	0XA0,	0x80000400,	-1,	4);
+	Vector3 currentForceVector; // ",	0XA4,	0x60000400,	get_struc_id("RED4ext::Vector3"),	12);
+	float collisionForce; // ",	0XB0,	0x80000400,	-1,	4);
+	Vector3 collisionForceVector; // ",	0XB4,	0x60000400,	get_struc_id("RED4ext::Vector3"),	12);
+	Vector4 rotationalVelocityMaybe; // ",	0XC0,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
+	float unkD0[4]; // ",	0XD0,	0x80000400,	-1,	16);
+	float unkE0; // ",	0XE0,	0x80000400,	-1,	4);
+	float unkE4; // ",	0XE4,	0x80000400,	-1,	4);
+	float unkE8; // ",	0XE8,	0x80000400,	-1,	4);
+	float unkEC; // ",	0XEC,	0x80000400,	-1,	4);
+	float accelerationMaybe; // ",	0XF0,	0x80000400,	-1,	4);
+	float unkF4; // ",	0XF4,	0x80000400,	-1,	4);
+	float unkF8; // ",	0XF8,	0x80000400,	-1,	4);
+	float unkFC; // ",	0XFC,	0x80000400,	-1,	4);
+	float unk100; // ",	0X100,	0x80000400,	-1,	4);
+	float unk104; // ",	0X104,	0x80000400,	-1,	4);
+	float unk108; // ",	0X108,	0x80000400,	-1,	4);
+	float unk10C; // ",	0X10C,	0x80000400,	-1,	4);
+	float unk110; // ",	0X110,	0x80000400,	-1,	4);
+	float downforceMaybe; // ",	0X114,	0x80000400,	-1,	4);
+	float gravityScalar; // ",	0X118,	0x80000400,	-1,	4);
+	float unk11C; // ",	0X11C,	0x80000400,	-1,	100);
+};
+
 #pragma pack(push, 1)
 struct BaseObject : game::Object
 {
@@ -140,8 +197,8 @@ struct BaseObject : game::Object
     // mount/engine related
     virtual uint64_t __fastcall sub_310();
 
-    // checks something in engine data
-    virtual uint64_t __fastcall sub_318();
+    // checks something in engine data - has throttle input
+    virtual bool __fastcall sub_318();
 
     // some physics & wheel stuff
     virtual uint64_t __fastcall sub_320();
@@ -263,15 +320,15 @@ struct BaseObject : game::Object
     uint8_t horn;
     uint8_t unk28A;
     uint8_t unk28B;
+    float unk28C;
+    float unk290;
+    float unk294;
+    float unk298;
     float unk29C;
     float unk2A0;
     float unk2A4;
     float unk2A8;
     float unk2AC;
-    float unk2B0;
-    float unk2B4;
-    float unk2B8;
-    float unk2BC;
     Physics* physics;             // 2B0
     PhysicsData* physicsData; // 2B8
     Handle<void> curveSetData;

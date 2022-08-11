@@ -7,7 +7,7 @@
 
 namespace RED4ext
 {
-struct Vector3
+struct alignas(0x4) Vector3
 {
     static constexpr const char* NAME = "Vector3";
     static constexpr const char* ALIAS = NAME;

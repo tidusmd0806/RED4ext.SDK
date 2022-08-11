@@ -43,7 +43,8 @@ struct EntityTemplate : res::StreamedResource
     DataBuffer localData; // 118
     uint8_t unk140[0x1B0 - 0x140]; // 140
     DataBuffer includeInstanceBuffer; // 1B0
-    uint64_t unk1D8;
+    uint16_t entityIndex; // pointer to index of entity in buffer
+    uint16_t unk1DA[3];
     void * version;
     void * unk1E8;
     uint32_t unk1F0;
@@ -55,8 +56,8 @@ struct EntityTemplate : res::StreamedResource
     void * unk238;
     uint64_t datasize;
     DataBuffer compiledData; // 248
-    DynArray<RaRef<CResource>> resolvedDependencies; // 270
-    DynArray<Ref<CResource>> inplaceResources; // 280
+    DynArray<TResourceAsyncReference<CResource>> resolvedDependencies; // 270
+    DynArray<TResourceReference<CResource>> inplaceResources; // 280
     uint8_t unk290[0x2A0 - 0x290]; // 290
     uint16_t compiledEntityLODFlags; // 2A0
     uint8_t unk2A2[0x2B0 - 0x2A2]; // 2A2

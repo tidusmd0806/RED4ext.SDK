@@ -31,27 +31,71 @@ struct TPPCameraPreset
     int32_t index;
 };
 
+struct HeadLookAtStruct
+{
+  float maxYaw;
+  float maxX;
+  float centerYawThresholdX;
+  float pitchUpY;
+  float pitchDownY;
+  float rotationSpeed;
+};
+
+struct TPPCameraData
+{
+    WorldTransform transform; // unk568.unk44
+    float yawDelta;
+    float pitchDelta;
+    bool isUsingMouse;
+    uint8_t unk29;
+    uint8_t unk2A;
+    uint8_t unk2B;
+    float unk2C;
+    uint8_t isInAir;
+    float unk34;
+    float unk38;
+    float unk3C;
+    Vector4 unk40; // unk568.unkC0
+    float unk50;   // unk568.unk110
+    uint8_t unk54;
+    uint8_t unk55;
+    uint8_t unk56;
+    uint8_t unk57;
+    void* cameraSystem;
+};
+
 struct TPPCameraComponent : game::CameraComponent
 {
     static constexpr const char* NAME = "vehicleTPPCameraComponent";
     static constexpr const char* ALIAS = "vehicleTPPCameraComponent";
+    static constexpr const uintptr_t VFT_RVA = 0x342E350;
+
+    virtual bool sub_320(HeadLookAtStruct *a2);
+    virtual bool sub_328();
+    
+    // 1.52 RVA: 0x1CC4600 / 30164480
+    /// @pattern 48 8B C4 48 89 58 18 48 89 78 20 55 48 8D 68 D8 48 81 EC 20 01 00 00 0F 28 05 12 6F 3B 01 0F 57
+    Vector3* __fastcall UnkTPPCameraAdjustments(Vector4 *placeholderPosition, TPPCameraPreset *preset);
+
+
+    //virtual void ent::TargetedCameraInterface::sub_00() override;
 
     Handle<BaseObject> vehicle;
-    WorldTransform unkWorldTransform;
+    WorldTransform unkWorldTransform; // start of TPP data
     float yawDelta;
     float pitchDelta;
     uint8_t isUsingMouse;
     uint8_t unk2E1;
     uint8_t unk2E2;
     uint8_t unk2E3;
-    float unk2E4;
+    float unk2E4; // data.unk2C
     uint8_t isInAir;
     uint8_t unk2E9[7];
     float unk2F0;
     float unk2F4;
-    Vector4 unk2F8;
-    uint32_t unk300;
-    uint8_t unk304;
+    Vector4 unk2F8; // data.unk40
+    uint32_t unk300; // data.unk50
+    uint8_t unk304; // data.unk54
     uint8_t unk305;
     uint8_t unk306;
     uint8_t unk307;
@@ -96,10 +140,7 @@ struct TPPCameraComponent : game::CameraComponent
     Vector3 otherPosition;
     float slopeCorretionInAirLastValue;
     float unk46C;
-    float unk470;
-    float unk474;
-    float unk478;
-    float unk47C;
+    Vector4 unk470; // result of some calc
     float unk480;
     uint8_t collisionDetection;
     uint8_t elasticBoomVelocity;

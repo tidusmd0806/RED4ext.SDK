@@ -28,9 +28,10 @@ struct AirControl
     Vector3 velocityPID;
     Vector3 flippedOverRecoveryPID;
     float massReference;
-    float unk244;
+    PID unk244;
+    float unk264;
 };
 #pragma pack(pop)
-RED4EXT_ASSERT_SIZE(AirControl, 0x248);
+RED4EXT_ASSERT_SIZE(AirControl, 0x268);
 } // namespace vehicle
 } // namespace RED4ext

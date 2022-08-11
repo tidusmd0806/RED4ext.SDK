@@ -110,9 +110,12 @@ struct CallbackManager
     /// @pattern 48 89 5C 24 18 55 56 41 54 41 55 41 56 48 83 EC 30 48 8B E9 4C 8B EA 48 83 C1 5B E8 60 8C F7 FF
     void __fastcall SomethingListeners(Handle<IScriptable> *a2);
 
-
+    // some events are added to this
     DynArray<Handle<IScriptable>> unk00;
-    Map<Handle<IScriptable>, uint32_t> unk10;
+    // Map<Handle<IScriptable>, uint32_t> unk10;
+    DynArray<Handle<IScriptable>> unk10;
+    DynArray<uint32_t> unk20;
+    uint32_t flags;
     DynArray<CallbackInstance> callbackInstances; //38
     DynArray<Handle<IScriptable>> listeners; // 48
     uint16_t lastUnk1C; // 58

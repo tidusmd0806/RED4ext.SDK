@@ -15,6 +15,7 @@
 #include <RED4ext/ResourcePath.hpp>
 #include <RED4ext/GameEngine.hpp>
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
+#include <RED4ext/Scripting/Natives/Generated/red/Taglist.hpp>
 
 namespace RED4ext
 {
@@ -96,13 +97,13 @@ struct Entity : IScriptable
     uint64_t unk58;
     ResourcePath resource; // 60
     uint64_t unk68;
-    ComponentsStorage componentsStorage;
+    ComponentsStorage componentsStorage; // 70
     void* placeholder; // B0
     void* runtime; // B8
     ScriptGameInstance* scriptGameInstance; // C0
     Handle<void> unkC8;
     CallbackManager callbackManager; // D8
-    DynArray<void*> effects;
+    red::TagList entityTags;
     void * unk148;
     float updatingTransform;
     uint8_t customCameraTarget;

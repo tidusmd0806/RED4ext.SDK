@@ -4,6 +4,7 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePID.hpp>
 
 namespace RED4ext
 {
@@ -15,8 +16,8 @@ struct AirControlAxis
     static constexpr const char* NAME = "vehicleAirControlAxis";
     static constexpr const char* ALIAS = NAME;
 
-    uint32_t unk00;
-    float unk04[15];
+    PID pid1;
+    PID pid2;
     uint8_t controlAxis;
     uint8_t unk41;
     uint8_t unk42;

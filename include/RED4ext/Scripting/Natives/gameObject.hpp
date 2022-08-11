@@ -13,21 +13,13 @@
 #include <RED4ext/Scripting/Natives/Generated/red/TagList.hpp>
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/PersistentState.hpp>
+#include <RED4ext/Scripting/Natives/gamePSInterface.hpp>
 
 namespace RED4ext
 {
 namespace ent { struct SlotComponent; }
 
 namespace game {
-struct PersistentState;
-// game::Object interface, accepts instance - 0x160 shift
-struct PSInterface
-{
-    virtual uint64_t __fastcall Destruct(char a1); // 00
-    virtual uint64_t __fastcall sub_08();          // 08
-
-    Handle<PersistentState> persistentState; // 168
-};
 
 struct IComponentHelper {
     static constexpr const uintptr_t VFT_RVA = 0x30DF830;
@@ -148,7 +140,7 @@ struct Object : ent::GameEntity, PSInterface
     uint64_t unk210; // 210
     Handle<ent::SlotComponent> uiSlotComponent; // 218
     IGameInstance * gameInstance2; // 228
-    red::TagList tags; // 230
+    red::TagList gameObjectTags; // 230
 };
 RED4EXT_ASSERT_SIZE(Object, 0x240);
 RED4EXT_ASSERT_OFFSET(Object, persistentState, 0x168);
