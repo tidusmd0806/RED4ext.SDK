@@ -9,8 +9,8 @@ namespace game {
 struct PersistentState;
 struct PSInterface
 {
-    virtual uint64_t __fastcall Destruct(char a1); // 00
-    virtual uint64_t __fastcall sub_08();          // 08
+    virtual uint64_t __fastcall PS_Destruct(char a1); // 00
+    virtual uint64_t __fastcall PS_sub_08();          // 08
 
     Handle<PersistentState> persistentState;
 };

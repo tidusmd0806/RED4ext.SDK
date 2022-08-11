@@ -226,7 +226,7 @@ struct CClass : CBaseRTTIType
     HashMap<void*, void*> unk78;                 // 78
     HashMap<void*, void*> unkA8;                 // A8
     int64_t unkD8;                               // D8
-    int64_t unkE0;                               // E0
+    int64_t unkE0;                               // E0 - default instance?
     HashMap<CName, CProperty*> propsByName;      // E8
     DynArray<CProperty*> allProps;               // 118 - More entries than 0x28, will contain native props
     DynArray<CProperty*> persistentProps;        // 128
