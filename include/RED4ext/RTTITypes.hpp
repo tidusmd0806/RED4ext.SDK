@@ -275,9 +275,11 @@ struct TTypedClass : CClass
 
     void Assign(ScriptInstance aLhs, const ScriptInstance aRhs) const final // 50
     {
-        if constexpr (std::is_copy_constructible_v<T>)
-        {
-            new (aLhs) T(*static_cast<T*>(aRhs));
+        if (aLhs) {
+            if constexpr (std::is_copy_constructible_v<T>)
+            {
+                new (aLhs) T(*static_cast<T*>(aRhs));
+            }
         }
     }
 

@@ -9,6 +9,7 @@
 #include <RED4ext/Scripting/IScriptable.hpp>
 #include <RED4ext/Scripting/Natives/entEntity.hpp>
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/PersistentState.hpp>
 
 namespace RED4ext
 {
@@ -18,57 +19,62 @@ struct IComponent : IScriptable
 {
     static constexpr const char* NAME = "entIComponent";
     static constexpr const char* ALIAS = "IComponent";
+    static constexpr const uintptr_t VFT_RVA = 0x32A05E0;
 
     //virtual CClass* GetNativeType() override
     //{
 
     //}
 
-    // virtual void sub_110();
-    // virtual void sub_118();
-    // virtual void sub_120();
-    // virtual void sub_128();
-    // virtual void sub_130();
-    // virtual void sub_138();
-    // virtual void sub_140();
-    // // after callback is registered
-    // virtual void sub_148();
-    // virtual void sub_150();
-    // virtual void sub_158();
-    // // called on initialize components
-    // // isReplicable?
-    // virtual bool sub_160();
-    // virtual void sub_168();
-    // virtual void sub_170();
-    // // called on initialize components
-    // virtual uint64_t sub_178(uint64_t);
-    // virtual void sub_180();
-    // // this, 160, 1A8, then 190 called when initializing
-    // // struct of entity, scriptGameIntance, runtimeScene
-    // virtual void OnRequestComponents(void*);
-    // virtual void sub_190();
-    // virtual void sub_198();
-    // virtual void sub_1A0();
-    // virtual void sub_1A8();
-    // virtual void sub_1B0();
-    // virtual void sub_1B8();
-    // virtual void sub_1C0();
-    // virtual void sub_1C8();
-    // virtual void sub_1D0();
-    // virtual void sub_1D8();
-    // virtual void sub_1E0();
-    // virtual void sub_1E8();
-    // // called on gather event listeners, after registered
-    // virtual uint64_t sub_1F0(Handle<CallbackManager>*);
-    // virtual void sub_1F8();
-    // virtual void sub_200();
-    // virtual void sub_208();
-    // virtual uint64_t Initialize();
-    // virtual void sub_218();
-    // virtual void sub_220();
-    // virtual void sub_228();
-    // // called on initialize components
-    // virtual uint32_t sub_230();
+     virtual void sub_110();
+     virtual bool sub_118(CName, void*);
+     virtual bool sub_120(CName, void*);
+     virtual void sub_128();
+     virtual void sub_130();
+     virtual void sub_138();
+     virtual void sub_140();
+     // after callback is registered
+     virtual void sub_148();
+     virtual void sub_150();
+     // Get persistent state
+     virtual Handle<game::PersistentState>* sub_158(Handle<game::PersistentState>*);
+     // called on initialize components
+     // isReplicable?
+     virtual bool sub_160();
+     virtual void sub_168();
+     virtual void sub_170();
+     // called on initialize components
+     // unk88 |= 1
+     virtual uint64_t sub_178(uint64_t);
+     virtual void sub_180();
+     // this, 160, 1A8, then 190 called when initializing
+     // struct of entity, scriptGameIntance, runtimeScene
+     // on game editor attach?
+     virtual void OnRequestComponents(void*);
+     virtual void sub_190();
+     // on game editor detach
+     virtual void sub_198();
+     virtual void sub_1A0();
+     virtual void sub_1A8();
+     virtual void sub_1B0();
+     virtual void sub_1B8();
+     virtual void sub_1C0();
+     virtual void sub_1C8();
+     virtual void sub_1D0();
+     virtual void sub_1D8();
+     virtual void sub_1E0();
+     virtual void sub_1E8();
+     // called on gather event listeners, after registered
+     virtual uint64_t sub_1F0(Handle<CallbackManager>*);
+     virtual void sub_1F8();
+     virtual void sub_200();
+     virtual void sub_208();
+     virtual uint64_t Initialize();
+     virtual void sub_218();
+     virtual void sub_220(void*);
+     virtual void sub_228();
+     // called on initialize components
+     virtual uint32_t sub_230();
 
     // 1.52 RVA: 0x103E040 / 17031232
     /// @pattern 48 89 51 50 C3
@@ -92,3 +98,7 @@ struct IComponent : IScriptable
  //char (*__kaboom)[sizeof(IComponent)] = 1;
 } // namespace ent
 } // namespace RED4ext
+
+#ifdef RED4EXT_HEADER_ONLY
+#include <RED4ext/Scripting/Natives/entIComponent-inl.hpp>
+#endif
