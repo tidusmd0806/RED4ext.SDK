@@ -26,12 +26,25 @@ struct IComponent : IScriptable
 
     //}
 
+    inline virtual bool sub_58() override
+    {
+        RelocFunc<decltype(&IComponent::sub_58)> call(VFT_RVA, 0x58);
+        return call(this);
+    }
+
+    inline virtual void* sub_C0(void* a1) override
+    {
+        RelocFunc<decltype(&IComponent::sub_C0)> call(VFT_RVA, 0xC0);
+        return call(this, a1);
+    }
+
+
      virtual void sub_110();
      virtual bool sub_118(CName, void*);
      virtual bool sub_120(CName, void*);
      virtual void sub_128();
-     virtual void sub_130();
-     virtual void sub_138();
+     virtual bool sub_130();
+     virtual bool sub_138();
      virtual void sub_140();
      // after callback is registered
      virtual void sub_148();
@@ -46,14 +59,18 @@ struct IComponent : IScriptable
      // called on initialize components
      // unk88 |= 1
      virtual uint64_t sub_178(uint64_t);
+     // unk88 &= -2u
      virtual void sub_180();
      // this, 160, 1A8, then 190 called when initializing
      // struct of entity, scriptGameIntance, runtimeScene
      // on game editor attach?
-     virtual void OnRequestComponents(void*);
+     // unk88 |= 2
+     virtual void sub_188(void*);
      virtual void sub_190();
      // on game editor detach
-     virtual void sub_198();
+     //   unk88 &= ~2u;
+     //   unk88 |= 8u;
+     virtual bool sub_198(void*);
      virtual void sub_1A0();
      virtual void sub_1A8();
      virtual void sub_1B0();
@@ -62,19 +79,20 @@ struct IComponent : IScriptable
      virtual void sub_1C8();
      virtual void sub_1D0();
      virtual void sub_1D8();
-     virtual void sub_1E0();
+     virtual bool sub_1E0();
      virtual void sub_1E8();
      // called on gather event listeners, after registered
      virtual uint64_t sub_1F0(Handle<CallbackManager>*);
      virtual void sub_1F8();
-     virtual void sub_200();
+     // OnRenderSelection
+     virtual uint64_t sub_200(uint64_t);
      virtual void sub_208();
      virtual uint64_t Initialize();
      virtual void sub_218();
      virtual void sub_220(void*);
-     virtual void sub_228();
+     virtual const char * sub_228();
      // called on initialize components
-     virtual uint32_t sub_230();
+     virtual CClass* sub_230();
 
     // 1.52 RVA: 0x103E040 / 17031232
     /// @pattern 48 89 51 50 C3

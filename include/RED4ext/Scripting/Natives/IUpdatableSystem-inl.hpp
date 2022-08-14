@@ -9,8 +9,8 @@ namespace RED4ext
 
 RED4EXT_INLINE CClass* IUpdatableSystem::GetNativeType()
 {
-    RelocVirtualFunc<decltype(&IUpdatableSystem::GetNativeType)> call(VFT_RVA, 0x000);
-    return (this->*call)();
+    RelocFunc<decltype(&IUpdatableSystem::GetNativeType)> call(VFT_RVA, 0x000);
+    return call(this);
 }
 
 } // namespace RED4ext

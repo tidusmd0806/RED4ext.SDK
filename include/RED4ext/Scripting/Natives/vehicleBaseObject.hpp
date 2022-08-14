@@ -231,6 +231,13 @@ struct BaseObject : game::Object
 
 // non-virtual methods
 
+    // 1.52 RVA: 0x1C60690 / 29755024
+    /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 20 57 48 83 EC 30 8B B1 50 02 00 00 41 0F B6 E8 8B FA
+    inline void __fastcall SetPhysicsState(uint32_t a2, bool a3) {
+        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C60690);
+        call(this, a2, a3);
+    }
+
     // 1.52 RVA: 0x1C4D3A0 / 29676448
     /// @pattern 48 8B 81 B8 02 00 00 F3 0F 10 80 BC 01 00 00 C3
     float __fastcall GetTotalMass();

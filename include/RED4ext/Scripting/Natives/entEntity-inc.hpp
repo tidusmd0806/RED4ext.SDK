@@ -11,8 +11,8 @@ namespace ent
 
 RED4EXT_INLINE uintptr_t Entity::CopyComponentsToStorage(EntityDefinition* definition, void* a2)
 {
-    RelocVirtualFunc<decltype(&Entity::CopyComponentsToStorage)> call(VFT_RVA, 0x1A8);
-    (this->*call)(definition, a2);
+    RelocFunc<decltype(&Entity::CopyComponentsToStorage)> call(VFT_RVA, 0x1A8);
+    return call(this, definition, a2);
 }
 
 RED4EXT_INLINE Vector2 * __fastcall Entity::sub_120(Vector2 * a1, Vector2 * a2) {
@@ -27,8 +27,8 @@ RED4EXT_INLINE bool __fastcall Entity::sub_130() {
 
 RED4EXT_INLINE void Entity::sub_138()
 {
-    RelocVirtualFunc<decltype(&Entity::sub_138)> call(VFT_RVA, 0x138);
-    return (this->*call)();
+    RelocFunc<decltype(&Entity::sub_138)> call(VFT_RVA, 0x138);
+    return call(this);
 }
 
 RED4EXT_INLINE uint64_t Entity::SetupEntityAndComponents(EntityDefinition* definition)

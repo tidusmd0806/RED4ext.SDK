@@ -9,8 +9,8 @@
 
 RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetNativeType()
 {
-    RelocVirtualFunc<decltype(&RED4ext::IScriptable::GetNativeType)> call(VFT_RVA, 0x000);
-    return (this->*call)();
+    RelocFunc<decltype(&RED4ext::IScriptable::GetNativeType)> call(VFT_RVA, 0x00);
+    return call(this);
 }
 
 RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetType()
@@ -25,9 +25,8 @@ RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetType()
 
 RED4EXT_INLINE void RED4ext::IScriptable::sub_D8(int64_t a1, int64_t a2)
 {
-    using func_t = void (*)(ISerializable*, int64_t, int64_t);
-    RelocFunc<func_t> func(Addresses::IScriptable_sub_D8);
-    func(this, a1, a2);
+    RelocFunc<decltype(&RED4ext::IScriptable::sub_D8)> call(VFT_RVA, 0xD8);
+    call(this, a1, a2);
 }
 
 RED4EXT_INLINE void RED4ext::IScriptable::sub_E0()

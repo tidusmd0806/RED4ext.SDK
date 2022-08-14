@@ -11,6 +11,7 @@
 
 namespace RED4ext
 {
+struct GameInstance;
 namespace game { 
 struct Component : ent::IComponent, PSInterface
 {
@@ -18,29 +19,67 @@ struct Component : ent::IComponent, PSInterface
     static constexpr const char* ALIAS = "GameComponent";
     static constexpr const uintptr_t VFT_RVA = 0x330D588;
 
-    inline virtual void SetPersistentState(Handle<game::PersistentState>* a1) {
-        RelocVirtualFunc<decltype(&Component::SetPersistentState)> call(VFT_RVA, 0x238);
-        return (this->*call)(a1);
+// overridden virtuals
+
+    inline virtual Memory::IAllocator* GetAllocator() override {
+        RelocFunc<decltype(&Component::GetAllocator)> call(VFT_RVA, 0x10);
+        return call(this);
     }
-    inline virtual void* sub_240() {
-        RelocVirtualFunc<decltype(&Component::sub_240)> call(VFT_RVA, 0x240);
-        return (this->*call)();
+
+    inline virtual Handle<game::PersistentState>* sub_158(Handle<game::PersistentState>* a1) override {
+        RelocFunc<decltype(&Component::sub_158)> call(VFT_RVA, 0x158);
+        return call(this, a1);
     }
-    inline virtual void sub_248() {
-        RelocVirtualFunc<decltype(&Component::sub_248)> call(VFT_RVA, 0x248);
-        return (this->*call)();
+
+    inline virtual void sub_188(void* a1) override {
+        RelocFunc<decltype(&Component::sub_188)> call(VFT_RVA, 0x188);
+        return call(this, a1);
     }
+
+    inline virtual bool sub_198(void* a1) override {
+        RelocFunc<decltype(&Component::sub_198)> call(VFT_RVA, 0x198);
+        return call(this, a1);
+    }
+
+    inline virtual void sub_220(void* a1) override {
+        RelocFunc<decltype(&Component::sub_220)> call(VFT_RVA, 0x220);
+        return call(this, a1);
+    }
+
+    // new virtuals
+
+    // sets the persisent state
+    inline virtual void sub_238(Handle<game::PersistentState>* a1) {
+        RelocFunc<decltype(&Component::sub_238)> call(VFT_RVA, 0x238);
+        return call(this, a1);
+    }
+
+    // is Scripted Class / has scripted callbacks?
+    inline virtual bool sub_240() {
+        RelocFunc<decltype(&Component::sub_240)> call(VFT_RVA, 0x240);
+        return call(this);
+    }
+
+    // called from on game attach
+    inline virtual void sub_248(GameInstance* a1) {
+        RelocFunc<decltype(&Component::sub_248)> call(VFT_RVA, 0x248);
+        return call(this, a1);
+    }
+
     inline virtual void sub_250() {
-        RelocVirtualFunc<decltype(&Component::sub_250)> call(VFT_RVA, 0x250);
-        return (this->*call)();
+        RelocFunc<decltype(&Component::sub_250)> call(VFT_RVA, 0x250);
+        return call(this);
     }
+
+    // called from on editor attach
     inline virtual void sub_258() {
-        RelocVirtualFunc<decltype(&Component::sub_258)> call(VFT_RVA, 0x258);
-        return (this->*call)();
+        RelocFunc<decltype(&Component::sub_258)> call(VFT_RVA, 0x258);
+        return call(this);
     }
+
     inline virtual void sub_260() {
-        RelocVirtualFunc<decltype(&Component::sub_260)> call(VFT_RVA, 0x260);
-        return (this->*call)();
+        RelocFunc<decltype(&Component::sub_260)> call(VFT_RVA, 0x260);
+        return call(this);
     }
 
     // uint8_t unk90[0x98 - 0x90]; // 90

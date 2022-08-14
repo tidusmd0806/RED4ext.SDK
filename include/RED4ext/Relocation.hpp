@@ -24,6 +24,11 @@ public:
     {
     }
 
+    RelocFuncBase(uintptr_t aVftOffset, uintptr_t aOffset)
+        : m_address(*reinterpret_cast<T*>(aVftOffset + aOffset + GetImageBase()))
+    {
+    }
+
     inline operator T() const
     {
         return m_address;
@@ -58,23 +63,35 @@ class RelocFunc<R (C::*)(Args...)> : public RelocFuncBase<R (*)(C*, Args...)>
  * @brief Represent a native virtual member function, use this to relocate its address at runtime.
  * @tparam T The type.
  */
-template<typename T>
-class RelocVirtualFunc : private RelocBase
-{
-public:
-    RelocVirtualFunc(uintptr_t aVftOffset, uintptr_t aOffset)
-        : m_address(*reinterpret_cast<T*>(aVftOffset + aOffset + GetImageBase()))
-    {
-    }
+//template<typename T>
+//class RelocVirtualFunc : private RelocBase
+//{
+//public:
+//    RelocVirtualFunc(uintptr_t aVftOffset, uintptr_t aOffset)
+//        : m_address(*reinterpret_cast<T*>(aVftOffset + aOffset + GetImageBase()))
+//    {
+//    }
+//
+//    inline operator T() const
+//    {
+//        return m_address;
+//    }
+//
+//private:
+//    T m_address;
+//};
 
-    inline operator T() const
-    {
-        return m_address;
-    }
+//template<typename T>
+//class RelocVirtualFunc
+//{
+//};
+//
+//template<typename C, typename R, typename... Args>
+//class RelocVirtualFunc<R (C::*)(Args...)> : public RelocFuncBase<R (*)(C*, Args...)>
+//{
+//    using RelocFuncBase<R (*)(C*, Args...)>::RelocFuncBase;
+//};
 
-private:
-    T m_address;
-};
 
 /**
  * @brief Represent a native pointer, use this to relocate its address at runtime.

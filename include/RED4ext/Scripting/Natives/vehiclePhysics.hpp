@@ -176,7 +176,8 @@ struct Physics
     uint16_t unkB6;
     uint8_t unkB8;
     uint8_t unkB9;
-    uint16_t unkBA;
+    uint8_t unkBA;
+    uint8_t unkBB;
     uint16_t unkBC;
     uint16_t unkBE;
     float has_been_flipped_over_for_some_time_delay;
