@@ -34,26 +34,36 @@ struct IGameSystem : IUpdatableSystem
     virtual CClass* GetNativeType() override;     
     virtual ~IGameSystem() override = default;
 
-    virtual bool sub_118(world::RuntimeScene * runtimeScene); // 108 OnAttach
-    virtual void sub_120(world::RuntimeScene * runtimeScene); // 120 OnDetach
-    virtual void sub_128(world::RuntimeScene * runtimeScene); // 128 HasDetached
+    virtual bool WorldAttached(world::RuntimeScene * runtimeScene); // 118 OnAttach
+    virtual void WorldPendingDetach(world::RuntimeScene * runtimeScene); // 120 OnDetach
+    virtual void WorldDetached(world::RuntimeScene * runtimeScene); // 128 HasDetached
     virtual void sub_130(); // 130
-    virtual bool sub_138(); // 138 return 0
-    virtual void sub_140(); // 140
-    virtual void sub_148(); // 148
-    virtual void sub_150(void *, uint64_t, uint64_t); // 150 OnGameLoad
-    virtual bool sub_158(); // ReturnOne, something WaitingForEntities
-    virtual void sub_160(); // 160 OnGamePrepared
+    // 138 returns 0 - DelaySystem, ContainerManager, QuestSystem return 1
+    // PreSaveSystems
+    virtual uint32_t sub_138(uint64_t, uint64_t);
+    // 140 related to 150 maybe
+    // called on SaveGame/SaveSystems
+    virtual void sub_140(uint64_t saveGameInterface);
+    // 148 PostSaveSystems
+    virtual void sub_148();
+    // 150 OnGameLoad / Load
+    virtual void OnGameLoad(void *, uint64_t, uint64_t saveGameInterface);
+    // 158 ReturnOne, something WaitingForEntities, "Saved"
+    // right before player attach
+    virtual bool sub_158(); 
+    virtual void OnGamePrepared(); // 160 OnGamePrepared
     virtual void sub_168(); // 168 Pause game
     virtual void sub_170(); // 170 Resume game
     // 178, 138, 148 fire when going out-of-bounds
     virtual void sub_178(uintptr_t a1, bool a2); // something with a CString @ 0x08 - PointOfNoReturnSave?                   
-    virtual void sub_180(uint64_t, bool isGameLoaded, uint64_t); // 180 OnStreamingWorldLoaded
-    virtual void sub_188(); // 188
+    virtual void OnStreamingWorldLoaded(uint64_t, bool isGameLoaded, uint64_t); // 180 OnStreamingWorldLoaded
+    virtual void sub_188(); // 188, some systems use a string here
     // called from GameInstance->sub_20, recieves some struct based on game performance setting & crowd density
     virtual void sub_190(HighLow *);
     // called after created & gameInstance is set
-    virtual void ** sub_198(void ** unkThing);
+    // OnInitialize called
+    // Tweaks loaded
+    virtual void Initialize(void ** unkThing);
     virtual void sub_1A0(); // 1A0 on exit game
 
     // 1.52 RVA: 0xAEC8E0 / 11454688

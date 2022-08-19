@@ -15,21 +15,21 @@ RED4EXT_INLINE CClass* IGameSystem::GetNativeType()
     return call(this);
 }
 
-RED4EXT_INLINE bool IGameSystem::sub_118(world::RuntimeScene * a1)
+RED4EXT_INLINE bool IGameSystem::WorldAttached(world::RuntimeScene * a1)
 {
-    RelocFunc<decltype(&IGameSystem::sub_118)> call(VFT_RVA, 0x118);
+    RelocFunc<decltype(&IGameSystem::WorldAttached)> call(VFT_RVA, 0x118);
     return call(this, a1);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_120(world::RuntimeScene * runtimeScene)
+RED4EXT_INLINE void IGameSystem::WorldPendingDetach(world::RuntimeScene * runtimeScene)
 {
-    RelocFunc<decltype(&IGameSystem::sub_120)> call(VFT_RVA, 0x120);
+    RelocFunc<decltype(&IGameSystem::WorldPendingDetach)> call(VFT_RVA, 0x120);
     return call(this, runtimeScene);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_128(world::RuntimeScene * runtimeScene)
+RED4EXT_INLINE void IGameSystem::WorldDetached(world::RuntimeScene * runtimeScene)
 {
-    RelocFunc<decltype(&IGameSystem::sub_128)> call(VFT_RVA, 0x128);
+    RelocFunc<decltype(&IGameSystem::WorldDetached)> call(VFT_RVA, 0x128);
     return call(this, runtimeScene);
 }
 
@@ -39,16 +39,16 @@ RED4EXT_INLINE void IGameSystem::sub_130()
     return call(this);
 }
 
-RED4EXT_INLINE bool IGameSystem::sub_138()
+RED4EXT_INLINE uint32_t IGameSystem::sub_138(uint64_t a1, uint64_t a2)
 {
     RelocFunc<decltype(&IGameSystem::sub_138)> call(VFT_RVA, 0x138);
-    return call(this);
+    return call(this, a1, a2);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_140()
+RED4EXT_INLINE void IGameSystem::sub_140(uint64_t a1)
 {
     RelocFunc<decltype(&IGameSystem::sub_140)> call(VFT_RVA, 0x140);
-    return call(this);
+    return call(this, a1);
 }
 
 RED4EXT_INLINE void IGameSystem::sub_148()
@@ -57,9 +57,9 @@ RED4EXT_INLINE void IGameSystem::sub_148()
     return call(this);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_150(void * a1, uint64_t a2, uint64_t a3)
+RED4EXT_INLINE void IGameSystem::OnGameLoad(void * a1, uint64_t a2, uint64_t a3)
 {
-    RelocFunc<decltype(&IGameSystem::sub_150)> call(VFT_RVA, 0x150);
+    RelocFunc<decltype(&IGameSystem::OnGameLoad)> call(VFT_RVA, 0x150);
     return call(this, a1, a2, a3);
 }
 
@@ -69,9 +69,9 @@ RED4EXT_INLINE bool IGameSystem::sub_158()
     return call(this);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_160()
+RED4EXT_INLINE void IGameSystem::OnGamePrepared()
 {
-    RelocFunc<decltype(&IGameSystem::sub_160)> call(VFT_RVA, 0x160);
+    RelocFunc<decltype(&IGameSystem::OnGamePrepared)> call(VFT_RVA, 0x160);
     return call(this);
 }
 
@@ -93,9 +93,9 @@ RED4EXT_INLINE void IGameSystem::sub_178(uintptr_t a1, bool a2)
     return call(this, a1, a2);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_180(uint64_t a1, bool isGameLoaded, uint64_t a3)
+RED4EXT_INLINE void IGameSystem::OnStreamingWorldLoaded(uint64_t a1, bool isGameLoaded, uint64_t a3)
 {
-    RelocFunc<decltype(&IGameSystem::sub_180)> call(VFT_RVA, 0x180);
+    RelocFunc<decltype(&IGameSystem::OnStreamingWorldLoaded)> call(VFT_RVA, 0x180);
     return call(this, a1, isGameLoaded, a3);
 }
 
@@ -111,9 +111,9 @@ RED4EXT_INLINE void IGameSystem::sub_190(IGameSystem::HighLow * hl)
     return call(this, hl);
 }
 
-RED4EXT_INLINE void ** IGameSystem::sub_198(void ** unkThing)
+RED4EXT_INLINE void IGameSystem::Initialize(void ** unkThing)
 {
-    RelocFunc<decltype(&IGameSystem::sub_198)> call(VFT_RVA, 0x198);
+    RelocFunc<decltype(&IGameSystem::Initialize)> call(VFT_RVA, 0x198);
     return call(this, unkThing);
 }
 

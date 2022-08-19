@@ -74,7 +74,7 @@ RED4EXT_INLINE void IComponent::sub_170() {
     return call(this);
 }
 
-RED4EXT_INLINE uint64_t IComponent::sub_178(uint64_t a1) {
+RED4EXT_INLINE uint64_t IComponent::sub_178(WorldTransform* a1) {
     RelocFunc<decltype(&IComponent::sub_178)> call(VFT_RVA, 0x178);
     return call(this, a1);
 }

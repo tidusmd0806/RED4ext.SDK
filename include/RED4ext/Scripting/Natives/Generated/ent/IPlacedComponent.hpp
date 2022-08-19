@@ -19,6 +19,7 @@ struct IPlacedComponent : IComponent
 {
     static constexpr const char* NAME = "entIPlacedComponent";
     static constexpr const char* ALIAS = "IPlacedComponent";
+    static constexpr const uintptr_t VFT_RVA = 0x32AEA70;
 
     virtual void sub_238();
     virtual void sub_240();
@@ -26,7 +27,8 @@ struct IPlacedComponent : IComponent
     virtual void GetFlags();
 
     Handle<ITransformBinding> parentTransform; // 90
-    uint8_t unkA0[0xC0 - 0xA0]; // A0
+    DynArray<uint64_t[4]> unkA0;
+    uint8_t unkB0[0xC0 - 0xB0]; // B0
     WorldTransform worldTransform;
     WorldTransform localTransform;// E0
     Box bounds; // 100

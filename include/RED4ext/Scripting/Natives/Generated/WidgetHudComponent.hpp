@@ -8,12 +8,33 @@
 
 namespace RED4ext
 {
-struct WidgetHudComponent : WidgetHudComponentInterface
+
+namespace ent { struct Entity; }
+namespace cp { struct PlayerSystem; }
+
+struct WidgetHudComponent_Interface
+{
+    static constexpr const uintptr_t VFT_RVA = 0x35559B8;
+
+    virtual void WHCI_sub_00();
+    virtual void WHCI_sub_08();
+    // set thing in some system E0
+    virtual void WHCI_sub_10(ent::Entity*);
+    // unset thing
+    virtual void WHCI_sub_18(ent::Entity*);
+    virtual void WHCI_sub_20();
+    virtual void WHCI_sub_28();
+
+    Handle<cp::PlayerSystem> playerSystem;
+    uint32_t unk208;
+    uint32_t unk20C;
+};
+
+struct WidgetHudComponent : WidgetHudComponentInterface, WidgetHudComponent_Interface
 {
     static constexpr const char* NAME = "WidgetHudComponent";
     static constexpr const char* ALIAS = NAME;
-
-    uint8_t unk1F0[0x210 - 0x1F0]; // 1F0
+    static constexpr const uintptr_t VFT_RVA = 0x3555750;
 };
 RED4EXT_ASSERT_SIZE(WidgetHudComponent, 0x210);
 } // namespace RED4ext

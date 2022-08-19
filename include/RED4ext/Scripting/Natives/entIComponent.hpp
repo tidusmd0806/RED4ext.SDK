@@ -13,6 +13,7 @@
 
 namespace RED4ext
 {
+struct WorldTransform;
 namespace ent {
 struct Entity;
 struct IComponent : IScriptable
@@ -55,10 +56,12 @@ struct IComponent : IScriptable
      // isReplicable?
      virtual bool sub_160();
      virtual void sub_168();
+     // OnMeshesLoaded
      virtual void sub_170();
      // called on initialize components
      // unk88 |= 1
-     virtual uint64_t sub_178(uint64_t);
+     // Internal_LoadResources?
+     virtual uint64_t sub_178(WorldTransform*);
      // unk88 &= -2u
      virtual void sub_180();
      // this, 160, 1A8, then 190 called when initializing
@@ -73,6 +76,7 @@ struct IComponent : IScriptable
      virtual bool sub_198(void*);
      virtual void sub_1A0();
      virtual void sub_1A8();
+     // OnPostSnapshotApplied
      virtual void sub_1B0();
      virtual void sub_1B8();
      virtual void sub_1C0();
@@ -92,6 +96,7 @@ struct IComponent : IScriptable
      virtual void sub_220(void*);
      virtual const char * sub_228();
      // called on initialize components
+     // Get Replicated State Class
      virtual CClass* sub_230();
 
     // 1.52 RVA: 0x103E040 / 17031232
@@ -103,8 +108,7 @@ struct IComponent : IScriptable
     Handle<Entity> entity; // 50
     CRUID id; // 60
     uint64_t unk68;
-    void *unk70;
-    uint64_t unk78;
+    DynArray<Handle<void>> unk70;
     uint64_t unk80;
     uint8_t unk88;
     uint8_t unk89;

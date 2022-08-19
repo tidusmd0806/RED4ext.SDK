@@ -17,6 +17,7 @@ struct IWorldWidgetComponent : WidgetBaseComponent
     static constexpr const char* NAME = "IWorldWidgetComponent";
     static constexpr const char* ALIAS = "IWorldWidgetComponent";
 
+    // worldUIRuntimeSystemUI
     uint8_t unk1A0[0x1D0 - 0x1A0]; // 1A0
     float glitchValue; // 1D0
     uint8_t unk1D4[0x200 - 0x1D4]; // 1D4

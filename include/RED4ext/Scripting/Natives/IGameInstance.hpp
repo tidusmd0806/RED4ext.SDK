@@ -83,12 +83,12 @@ struct IGameInstance // : IDynamicStorage
     // 1.52 RVA: 0x2D00400 / 47186944
     // calls system->sub_120(a2)
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B 79 38 48 8B F2 8B 59 44 48 C1 E3 04 48 03 DF
-    void __fastcall Systems120(void* runtimeScene);
+    void __fastcall WorldPendingDetach(void* runtimeScene);
 
     // 1.52 RVA: 0x2CFFA00 / 47184384
     // also sets gameSystemPtr+0x8 to 0
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B 79 38 48 8B F2 8B 59 44 48 8B
-    void __fastcall Systems128(void* runtimeScene);
+    void __fastcall WorldDetached(void* runtimeScene);
 
     // 1.52 RVA: 0x2D00760 / 47187808
     // calls system->sub_168 if a2, else system->sub_170
