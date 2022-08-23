@@ -40,9 +40,9 @@ struct Entity : IScriptable
     virtual void __fastcall sub_140(Handle<void>*, int16_t*) { };
     virtual void __fastcall sub_148(uintptr_t) { };
     virtual void __fastcall sub_150() { };
-    virtual void __fastcall Attach() { };
+    virtual void __fastcall Attach(void *) { };
     virtual uintptr_t __fastcall Detach() { };
-    virtual void __fastcall sub_168() { };
+    virtual void __fastcall sub_168(uint16_t) { };
     virtual void __fastcall sub_170() { };
     virtual uintptr_t __fastcall sub_178();
 

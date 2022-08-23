@@ -21,6 +21,10 @@ struct ChassisComponent : ent::IPlacedComponent
     /// @pattern 4C 8B DC 53 48 83 EC 70 8B 81 60 01 00 00 48 8B D9 49 8D 4B 08 41 89 43 08 E8 82 60 7D FE 84 C0
     __int64 __fastcall Unknown1();
 
+    // 1.52 RVA: 0x1C71CB0 / 29826224
+    /// @pattern 40 53 48 83 EC 20 80 B9 8B 00 00 00 00 48 8B D9 74 2F 8B 81 60 01 00 00 48 8D 4C 24 30 89 44 24
+    void __fastcall SomethingIfEnabled();
+
     uint8_t unk120[0x128 - 0x120]; // 120
     Ref<physics::SystemResource> collisionResource; // 128
     Ref<physics::SystemResource> optionalPlayerOnlyCollisionResource; // 140

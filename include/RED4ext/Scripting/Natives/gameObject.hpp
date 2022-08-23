@@ -71,7 +71,7 @@ struct Object : ent::GameEntity, PSInterface
     virtual void __fastcall sub_110() override;
     virtual void __fastcall sub_148(uintptr_t a1) override;
     virtual void __fastcall sub_150() override;
-    virtual void __fastcall Attach() override;
+    virtual void __fastcall Attach(void *) override;
     virtual uintptr_t __fastcall Detach() override;
 
 // new virtuals
@@ -90,6 +90,7 @@ struct Object : ent::GameEntity, PSInterface
     virtual uint64_t __fastcall sub_220(void*);
 
     // Updates some position with placeholder - called by other member functions
+    // updates audio emitter position
     virtual uint64_t __fastcall sub_228();
 
     // Called by ReplicateAnimFeature

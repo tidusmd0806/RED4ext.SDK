@@ -22,6 +22,8 @@ struct AutonomousData : ISerializable
     static constexpr const char* NAME = "vehicleAutonomousData";
     static constexpr const char* ALIAS = NAME;
 
+    virtual CClass* GetNativeType() override;
+
     WeakHandle<vehicle::BaseObject> owner; // 30
     bool useKinematic; // 40
     bool needDriver; // 41
@@ -43,11 +45,17 @@ struct AutonomousData : ISerializable
     bool driveBackwards; // EB
     bool reverseSpline; // EC
     bool startFromClosest; // ED
-    uint8_t unkEE[0xFC - 0xEE]; // EE
+    uint8_t unkEE[2]; // EE
+    float forcedStartSpeed;
+    bool stopAtPathEnd;
+    bool useTraffic;
+    uint8_t unkF6;
+    uint8_t unkF7;
+    float speedInTraffic;
     bool canClearActions; // FC
-    uint8_t unkFD[0xFE - 0xFD]; // FD
-    bool keepDistanceParamBool; // FE
-    uint8_t unkFF[0x100 - 0xFF]; // FF
+    bool forceGreenLights;
+    bool keepDistanceParamBool;
+    uint8_t unkFF;
     WeakHandle<game::Object> keepDistanceParamCompanion; // 100
     float keepDistanceParamDistance; // 110
     bool rubberBandingBool; // 114
@@ -61,9 +69,14 @@ struct AutonomousData : ISerializable
     uint8_t unk133[0x134 - 0x133]; // 133
     float secureTimeOut; // 134
     Handle<vehicle::PortalsList> portalsList; // 138
-    bool trafficTryNeighborsForStart; // 148
-    bool trafficTryNeighborsForEnd; // 149
-    uint8_t unk14A[0x150 - 0x14A]; // 14A
+    bool trafficTryNeighborsForStart;
+    bool trafficTryNeighborsForEnd;
+    bool allowStubMovement;
+    uint8_t unk14B;
+    uint8_t unk14C;
+    uint8_t unk14D;
+    uint8_t unk14E;
+    uint8_t unk14F;
 };
 RED4EXT_ASSERT_SIZE(AutonomousData, 0x150);
 } // namespace vehicle

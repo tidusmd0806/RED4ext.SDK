@@ -26,7 +26,7 @@ struct VehiclePhysicsInsert2
     RED4ext::Vector3 unk50;
     RED4ext::Vector3 unk5C;
     float unk68[14];
-    uint64_t unkA0;
+    CName physMaterial;
     int32_t unkA8[3];
     float relatedToInAir;
     float unkB8[2];

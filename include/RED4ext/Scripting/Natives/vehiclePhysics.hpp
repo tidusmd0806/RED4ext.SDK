@@ -13,6 +13,7 @@
 #include <RED4ext/Scripting/Natives/Generated/vehicle/BaseObject.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePID.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
+#include <RED4ext/Scripting/Natives/vehicleWaterParams.hpp>
 
 namespace RED4ext
 {
@@ -25,7 +26,6 @@ struct AnimFeature_VehiclePassenger;
 namespace vehicle
 {
 struct BaseObject;
-
 
 struct UnkC8 {
   uint32_t unk00;
@@ -43,7 +43,6 @@ struct UnkC8 {
   float unk6C;
 };
 
-
 #pragma pack(push, 1)
 struct Physics
 {
@@ -55,12 +54,14 @@ struct Physics
     virtual uint64_t sub_18();
     virtual uint64_t sub_20();
     virtual uint64_t UpdateTransform();
-    virtual uint64_t sub_30();
+    virtual void sub_30(uint32_t *, float*);
     // checks for vehicle being Z < -100, teleports if so (VehicleTeleportationIfFallsUnderWorld @ RVA 0x4781A38)
     virtual void sub_38(float deltaTime);
     virtual void sub_40(float deltaTime);
     virtual uint64_t FixedUpdate_PreSolve(uint64_t, float);
-    virtual uint64_t sub_50();
+    // also called w/o arg?
+    // sets this->velocity from physicsData->velocity
+    virtual void sub_50(float deltaTime);
     virtual uint64_t sub_58(float deltaTime);
     // empty
     virtual void sub_60();
@@ -104,7 +105,7 @@ struct Physics
     virtual uint64_t UpdateBlackboard();
     virtual void sub_130();
     virtual uint64_t sub_138();
-    virtual void LoadSomeVehiclePhysicsStuff(void *);
+    virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record> *);
 
     // 1.52 RVA: 0x1CEB5B0 / 30324144
     /// @pattern 80 79 50 00 75 03 32 C0 C3 F2 0F 10 41 30 F2 0F 11 02 8B 41 38 89 42 08 B0 01 0F 10 41 40 0F 11
@@ -132,7 +133,7 @@ struct Physics
 
     // 1.52 RVA: 0x1CEC3F0 / 30327792
     /// @pattern 48 89 5C 24 10 48 89 6C 24 20 56 57 41 56 48 83 EC 20 48 8B 01 4C 8B F1 FF 90 40 01 00 00 48 8D
-    double __fastcall LoadHasBeenFlippedOver();
+    double __fastcall LoadHasBeenFlippedOver(Handle<game::data::VehicleDriveModelData_Record> *a2);
 
     // 1.52 RVA: 0x1CEC520 / 30328096
     /// @pattern C7 81 A0 00 00 00 00 00 80 3F C3
@@ -145,6 +146,10 @@ struct Physics
     // 1.52 RVA: 0x1CEC5E0 / 30328288
     /// @pattern 48 83 EC 28 48 8B 49 60 84 D2 74 19 E8 7F 38 A4 FE F3 0F 10 0D DF 0F 3D 01 48 8B C8 48 83 C4 28
     __int64 __fastcall SetUsesAlternativeChassisMass(bool uses);
+
+    // 1.52 RVA: 0x1CED2A0 / 30331552
+    /// @pattern 40 53 48 81 EC 80 00 00 00 4C 8B 41 60 0F 57 C0 F3 0F 7F 44 24 20 48 8B D9 44 0F 29 44 24 50 44
+    void __fastcall ComputeSleep(float deltaTime);
 
     // 1.52 RVA: 0x368A20 / 3574304
     /// @pattern 48 8B 41 60 C3
@@ -161,21 +166,28 @@ struct Physics
     uint8_t unk51[7];
     uint64_t unk58;
     BaseObject* parent;
-    uintptr_t waterParams;
+    WaterParams* waterParams;
     uint8_t unk70;
     uint8_t unk71[7];
     uint64_t unk78;
     WorldTransform worldTransform2; // 80
-    float unkA0;
+    // Set to 1.0 when awake, counts down when sleep conditions are met - when 0.0, vehicle enters sleep state, and is set to -1.0
+    float sleepTimer;
     float unkA4;
     float setTo0point5;
     int32_t unkAC;
     float unkB0;
-    uint8_t unkB4;
+    // computed from chassis component
+    bool isMoving;
     uint8_t unkB5;
-    uint16_t unkB6;
-    uint8_t unkB8;
-    uint8_t unkB9;
+    // is player controllered maybe
+    bool unkB6;
+    // set from vehicle->unk361
+    uint8_t unkB7;
+    // true if any vehicle->acceleration, et al != 0
+    bool hasInput;
+    // true if any vehicle->unk568->unk60 value != 0 - isMoving?
+    bool unkB9;
     uint8_t unkBA;
     uint8_t unkBB;
     uint16_t unkBC;
@@ -194,6 +206,23 @@ struct WheeledPhysics : Physics
     // 1.52 RVA: 0x1D0DB70 / 30464880
     /// @pattern 40 56 41 56 48 83 EC 38 48 89 5C 24 58 4C 8B F1 48 89 7C 24 68 4C 89 7C 24 30 8B F2 E8 1F C9 FD
     WheeledPhysics(unsigned int wheels);
+    
+    // 1.52 RVA: 0x1D12E00 / 30486016
+    /// @pattern 40 53 48 83 EC 40 45 33 C0 0F 29 74 24 30 48 8B D9 0F 29 7C 24 20 0F 57 FF 44 39 81 C0 05 00 00
+    float __fastcall GetEnergy();
+
+    // 1.52 RVA: 0x1D12F70 / 30486384
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 8B 81 90 0B 00 00 48 8D 99 D0 05 00 00 48 69 F8 70
+    __int64 __fastcall GetNumberOfWheelsTouchingGround();
+
+    // 1.52 RVA: 0x1D18D30 / 30510384
+    // called from vehicleWheeledPhysics_sub_38
+    /// @pattern 48 8B C4 55 53 56 57 41 54 41 56 48 8D 6C 24 88 48 81 EC 78 01 00 00 80 79 20 00 48 8B F1 44 8B
+    void __fastcall SomethingWheels(float a2);
+
+    // 1.52 RVA: 0x1D0E8D0 / 30468304
+    /// @pattern 40 53 48 81 EC A0 00 00 00 44 0F B6 D2 4C 8D 89 D0 05 00 00 41 0F B6 C0 48 8B D9 4D 69 C2 30 01
+    void __fastcall FourWheelTorque(unsigned __int8 rearWheelIndex, unsigned __int8 frontWheelIndex, float a4, RED4ext::Transform *transform);
 
 // overrides
 
@@ -203,11 +232,11 @@ struct WheeledPhysics : Physics
     virtual uint64_t sub_18() override;
     virtual uint64_t sub_20() override;
     // virtual uint64_t UpdateTransform() override;
-    // virtual uint64_t sub_30() override;
+    // virtual void sub_30(uint32_t *, float*) override;
     virtual void sub_38(float deltaTime) override;
     // virtual void sub_40(float deltaTime) override;
     virtual uint64_t FixedUpdate_PreSolve(uint64_t, float) override;
-    virtual uint64_t sub_50() override;
+    virtual void sub_50(float deltaTime) override;
     virtual uint64_t sub_58(float deltaTime) override;
     virtual void sub_60() override;
     // virtual uint64_t sub_68(float) override;
@@ -239,20 +268,20 @@ struct WheeledPhysics : Physics
     // virtual uint64_t UpdateBlackboard() override;
     virtual void sub_130() override;
     virtual uint64_t sub_138() override;
-    virtual void LoadSomeVehiclePhysicsStuff(void *) override;
+    virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record>*) override;
 
 // new virtuals
 
     // returns 0
-    virtual uint64_t sub_148();
+    virtual bool sub_148(uint64_t);
     // returns 0
-    virtual uint64_t sub_150();
-    virtual void sub_158();
-    virtual void GetWheelUnk90();
+    virtual bool sub_150(uint64_t);
+    virtual bool sub_158(uint64_t, uint64_t);
+    virtual uint32_t GetWheelUnk90(uint64_t, uint64_t);
     // returns 0
-    virtual void sub_168();
+    virtual bool sub_168(uint64_t);
     // returns 0
-    virtual void sub_170();
+    virtual bool sub_170(uint64_t);
     // empty
     virtual void UpdateTilt(float deltaTime);
     virtual void VehiclePhysicsUpdate();
@@ -367,13 +396,13 @@ struct CarPhysics : WheeledPhysics
     // virtual uint64_t sub_18() override;
     // virtual uint64_t sub_20() override;
     // virtual uint64_t UpdateTransform() override;
-    virtual uint64_t sub_30() override;
+    virtual void sub_30(uint32_t *, float*) override;
     // animation update
     virtual void sub_38(float deltaTime) override;
     // animation update
     virtual void sub_40(float deltaTime) override;
     // virtual uint64_t FixedUpdate_PreSolve(uint64_t, float) override;
-    // virtual uint64_t sub_50() override;
+    // virtual void sub_50(float deltaTime) override;
     // virtual uint64_t sub_58(float deltaTime) override;
     // virtual void sub_60() override;
     virtual uint64_t sub_68(float) override;
@@ -404,15 +433,15 @@ struct CarPhysics : WheeledPhysics
     virtual uint64_t UpdateBlackboard() override;
     // virtual void sub_130() override;
     // virtual uint64_t sub_138() override;
-    virtual void LoadSomeVehiclePhysicsStuff(void *) override;
-    virtual uint64_t sub_148() override;
-    virtual uint64_t sub_150() override;
-    virtual void sub_158() override;
-    // virtual void GetWheelUnk90() override;
+    virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record>*) override;
+    virtual bool sub_148(uint64_t) override;
+    virtual bool sub_150(uint64_t) override;
+    virtual bool sub_158(uint64_t, uint64_t) override;
+    // virtual uint32_t GetWheelUnk90(uint64_t, uint64_t) override;
     // is rear wheel maybe
-    virtual void sub_168() override;
+    virtual bool sub_168(uint64_t) override;
     // also rear wheel maybe
-    virtual void sub_170() override;
+    virtual bool sub_170(uint64_t) override;
     // virtual void UpdateTilt(float deltaTime) override;
     virtual void VehiclePhysicsUpdate() override;
     // update steering
@@ -476,13 +505,13 @@ struct BikePhysics : WheeledPhysics
 
     virtual ~BikePhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
-    virtual uint64_t sub_30() override;
+    virtual void sub_30(uint32_t *, float*) override;
     virtual void sub_118() override;
     virtual uint64_t UpdateWheelAnimations() override;
     virtual uint64_t UpdateBlackboard() override;
-    virtual void LoadSomeVehiclePhysicsStuff(void *) override;
-    virtual void sub_158() override;
-    virtual void sub_170() override;
+    virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record>*) override;
+    virtual bool sub_158(uint64_t, uint64_t) override;
+    virtual bool sub_170(uint64_t) override;
     virtual void UpdateTilt(float deltaTime) override;
     virtual void UpdateTurn() override;
     virtual void UpdateSuspensionAnimation() override;

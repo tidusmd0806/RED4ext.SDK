@@ -15,6 +15,13 @@ struct alignas(0x4) Vector3
     float X; // 00
     float Y; // 04
     float Z; // 08
+
+    Vector3& operator+=(const Vector3& rhs) {
+        this->X += rhs.X;
+        this->Y += rhs.Y;
+        this->Z += rhs.Z;
+        return *this;
+    } 
 };
 RED4EXT_ASSERT_SIZE(Vector3, 0xC);
 } // namespace RED4ext

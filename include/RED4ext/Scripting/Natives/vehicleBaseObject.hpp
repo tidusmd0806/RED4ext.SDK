@@ -19,28 +19,27 @@
 #include <RED4ext/Scripting/Natives/Generated/game/Puppet.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/IBlackboard.hpp>
 #include <RED4ext/Scripting/Natives/Generated/AI/CAgent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/move/Component.hpp>
-#include <RED4ext/Scripting/Natives/ActionInterface.hpp>
+#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
+#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPhysics.hpp>
+#include <RED4ext/Scripting/Natives/Generated/audio/VehicleMetadata.hpp>
+#include <RED4ext/Scripting/Natives/Generated/vehicle/AutonomousData.hpp>
+#include <RED4ext/Scripting/Natives/Generated/move/Component.hpp>
 
 namespace RED4ext
 {
 namespace weapon { struct Object; }
 namespace AI { struct Archetype; }
-namespace world
-{
-struct RuntimeSystemPhysics;
-}
-namespace ent
-{
-struct Entity;
-}
+namespace game { struct VehicleSystem; }
+namespace world { struct RuntimeSystemPhysics; }
+namespace ent { struct Entity; }
 namespace vehicle
 {
 struct Physics;
 struct PhysicsData;
 struct AirControl;
 struct Weapon;
+struct BaseObject;
 
 //struct Interface : game::Object::Interface
 //{
@@ -49,6 +48,146 @@ struct Weapon;
 //    // Returns 0
 //    virtual uint64_t __fastcall sub_08() override;
 //};
+
+enum class Type : __int8
+{
+  Car = 0x0,
+  Bike = 0x1,
+  AV = 0x2,
+  Tank = 0x3,
+  Yacht = 0x4,
+  Unknown = 0x5,
+};
+
+struct Unk580
+{
+    // 1.52 RVA: 0x1C3A0B0 / 29597872
+    /// @pattern 80 E2 01 88 91 CA 03 00 00 C3
+    void __fastcall Update3CA(char a2);
+
+    // 1.52 RVA: 0x1C370D0 / 29585616
+    /// @pattern 40 53 48 83 EC 20 80 B9 D6 03 00 00 00 48 8B DA 74 09 48 8B 81 B0 01 00 00 EB 07 48 8B 81 B8 01
+    void *__fastcall GetAudioResourceMetadata(void *a2);
+
+    // 1.52 RVA: 0x1C3D700 / 29611776
+    /// @pattern 40 56 48 83 EC 50 48 8B F1 48 8B 89 38 01 00 00 E8 8B 1C 01 00 84 C0 0F 84 B5 01 00 00 4C 8B 86
+    void __fastcall UpdateAudio();
+
+    // 1.52 RVA: 0x1C3C0A0 / 29606048
+    /// @pattern 48 8B C4 55 41 56 41 57 48 8D 6C 24 80 48 81 EC 80 01 00 00 0F 28 C2 0F 29 78 A8 F3 0F 58 81 C0
+    void __fastcall Unknown(__int64 a2, float a3, uint64_t *a4);
+
+    // 1.52 RVA: 0x1C3BD10 / 29605136a
+    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 7C 24 20 41 54 41 56 41 57 48 83 EC 60 48 8B 81 B0 01 00 00
+    __int64 __fastcall UpdateWheelEmitters(__int64 a2);
+
+    // 1.52 RVA: 0x1C36B10 / 29584144
+    /// @pattern 48 83 EC 38 0F B6 91 CF 03 00 00 85 D2 74 17 83 EA 01 0F 84 07 01 00 00 83 EA 01 74 5C 83 FA 01
+    bool __fastcall ShouldUseSomeAVListener();
+
+    // 1.52 RVA: 0x1C38700 / 29591296
+    /// @pattern 40 53 56 57 48 83 EC 40 80 B9 00 04 00 00 03 49 8B F8 48 8B D9 0F 85 E0 00 00 00 48 8B 89 38 01
+    void __fastcall ToggleHorn(bool a2, uint8_t *a3);
+
+    // 1.52 RVA: 0x1C3A8D0 / 29599952
+    /// @pattern 48 83 EC 38 0F 57 C0 45 84 C0 74 19 8B C2 0F 57 D2 89 91 84 01 00 00 C6 81 88 01 00 00 01 F3 48
+    __int64 __fastcall SetRadioTier(int a2, bool a3);
+
+    // 1.52 RVA: 0x1C3A790 / 29599632
+    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 20 48 83 B9 78 01 00 00 00 41 0F B6 E8
+    void __fastcall NextRadioReceiverStation(uint32_t direction, bool);
+
+    // 1.52 RVA: 0x1C37E80 / 29589120
+    /// @pattern 40 53 48 83 EC 20 48 83 B9 78 01 00 00 00 48 8B D9 0F 84 B9 00 00 00 48 8B 81 50 01 00 00 80 B8
+    bool __fastcall IsRadioReceiverActive();
+
+    // 1.52 RVA: 0x1C35A20 / 29579808
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B B9 A0 03 00 00 48 8B D9 48 85 FF 74 15 48 8B CF E8 6F 14 B0
+    ~Unk580();
+
+    int64_t unk00;
+    uint64_t unk08[32];
+    float unk108;
+    float unk10C;
+    float unk110;
+    float unk114;
+    float unk118;
+    float unk11C;
+    float unk120;
+    float unk124;
+    uint32_t unk128;
+    uint32_t unk12C;
+    uint32_t unk130;
+    uint32_t unk134;
+    BaseObject *vehicle;
+    uint64_t player_audio_resource_hash;
+    uint64_t traffic_audio_resource_hash;
+    Unk580 *self;
+    uint32_t unk158;
+    uint32_t unk15C;
+    uint8_t unk160;
+    uint8_t unk161;
+    uint8_t unk162;
+    uint8_t unk163;
+    uint8_t unk164;
+    uint8_t unk165;
+    uint8_t unk166;
+    uint8_t unk167;
+    uint64_t unk168[2];
+    uint64_t *unk178;
+    uint8_t unk180;
+    uint8_t unk181;
+    uint8_t unk182;
+    uint8_t unk183;
+    uint8_t unk184;
+    uint8_t unk185;
+    uint8_t unk186;
+    uint8_t unk187;
+    uint64_t unk188[2];
+    void *unk198;
+    uint64_t unk1A0[2];
+    audio::VehicleMetadata *player_audio_resource_metadata;
+    audio::VehicleMetadata *traffic_audio_resource_metadata;
+    uint64_t unk1C0[24];
+    uint64_t unk280[1];
+    uint32_t unk288[42];
+    uint32_t unk330;
+    uint32_t unk334;
+    uint64_t unk338[18];
+    uint8_t unk3C8;
+    uint8_t isTPP2;
+    uint8_t unk3CA;
+    uint8_t unk3CB[4];
+    Type type;
+    uint8_t unk3D0;
+    uint8_t unk3D1;
+    uint8_t unk3D2;
+    uint8_t unk3D3;
+    uint8_t unk3D4;
+    uint8_t unk3D5;
+    uint8_t usePlayer;
+    uint8_t unk3D7;
+    uint64_t unk3D8[5];
+    uint8_t unk400;
+    uint8_t isTPP;
+    uint8_t unk402;
+    uint8_t unk403;
+    float unk404;
+    uint64_t unk408;
+    uint64_t unk410;
+    uint64_t unk418;
+    float unk420;
+    uint64_t unk428;
+    uint64_t unk430;
+    uint64_t unk438;
+    uint64_t unk440;
+    uint64_t unk448;
+    float unk450;
+    float unk454;
+    uint64_t unk458;
+    float unk460;
+
+};
 
 struct Unk568 {
 
@@ -80,6 +219,7 @@ struct Unk568 {
 	WorldTransform worldTransform; // ",	0X20,	0x60000400,	get_struc_id("RED4ext::WorldTransform"),	32);
 	Vector4 linearVelocity; // ",	0X40,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
 	Vector4 acceleration; // ",	0X50,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
+    // actually velocity, maybe - dot product taken @ 0x1CED337
 	Transform unk60; // ",	0X60,	0x60000400,	get_struc_id("RED4ext::Transform"),	32);
 	Vector4 unk80; // ",	0X80,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
 	Vector4 unk90; // ",	0X90,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
@@ -107,6 +247,82 @@ struct Unk568 {
 	float unk11C; // ",	0X11C,	0x80000400,	-1,	100);
 };
 
+struct Unk570 {
+    // 1.52 RVA: 0x1CFA220 / 30384672
+    /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
+    void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
+
+    // BaseObject *vehicle;
+    // void *animationController;
+    // RED4ext::anim::AnimFeature_VehiclePassenger *vehiclePassenger;
+    // RED4ext::RefCnt *vehiclePassegner::ref;
+    // RED4ext::DynArray unk20;
+    // RED4ext::DynArray unk30;
+    // RED4ext::DynArray unk40;
+    // uint64_t unk48[2];
+    // RED4ext::DynArray unk60;
+    // RED4ext::DynArray unk70;
+    // uint64_t veh_engine_throttle_input;
+    // uint64_t unk88;
+    // uint64_t veh_motion_blur_scale;
+    // uint64_t unk98;
+    // uint64_t unkA0;
+    // uint64_t unkA8;
+    // RED4ext::DynArray unkB0;
+    // RED4ext::DynArray unkC0;
+    // RED4ext::HashMap unkD0;
+    // RED4ext::HashMap unk100;
+    // RED4ext::HashMap unk130;
+    // uint64_t unk160;
+    // RED4ext::DynArray unk168;
+    // uint64_t unk178;
+};
+
+struct Unk588 {
+
+    // 1.52 RVA: 0x1C3FB20 / 29621024
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 30 48 89 11 48 8B C2 C7 81 50 03 00 00 00 00 00 00 48
+    __int64 __fastcall Unknown(BaseObject *vehicle, __int64 a3);
+
+    uint64_t unk00;
+    uint8_t affectsTPPAudio;
+    uint32_t unk0C;
+    uint32_t unk10;
+    uint32_t unk14;
+    uint64_t unk18;
+    uint64_t unk20;
+    uint64_t unk28;
+    uint64_t unk30;
+    uint64_t unk38;
+    uint64_t unk40;
+    uint64_t unk48[100];
+    uint64_t companionRelated;
+};
+
+struct Unk368
+{
+  uint64_t unk00;
+  uint64_t unk08;
+  move::Component *moveComponent;
+  void *unk18;
+  BaseObject *vehicle;
+};
+
+
+enum PhysicsState
+{
+  Traffic = 0x1,
+  Unk2 = 0x2,
+  Unk4 = 0x4,
+  Unk8 = 0x8,
+  Asleep = 0x10,
+  Unk20 = 0x20,
+  Parked = 0x40,
+  PlayerControlledMaybe = 0x80,
+  Chase = 0x100,
+};
+
+
 #pragma pack(push, 1)
 struct BaseObject : game::Object
 {
@@ -115,6 +331,13 @@ struct BaseObject : game::Object
     static constexpr const uintptr_t VFT_RVA = 0x341BB90 + 0x1800;
 
 // overridden member functions
+
+    // calls 268, 270, 350
+    virtual void Attach(void *) override;
+
+    virtual uintptr_t Detach() override;
+
+    virtual void sub_168(uint16_t) override;
 
     virtual CClass* __fastcall GetNativeType() override;
 
@@ -161,15 +384,15 @@ struct BaseObject : game::Object
     virtual uint64_t __fastcall sub_2A8();
 
     // Empty function
-    virtual void __fastcall sub_2B0();
+    virtual uint64_t __fastcall sub_2B0(uint64_t, uint64_t);
 
     // Call physics sub_58, runs update with chassis
     virtual void __fastcall sub_2B8(uint64_t, uint64_t);
 
     // Empty function
-    virtual void __fastcall sub_2C0();
+    virtual void __fastcall sub_2C0(float);
 
-    // Raytraces, decides isOnGround, physics sub_C0
+    // Raytraces, decides isOnGround, physics sub_C0 - only runs if physicsState == 0
     virtual void __fastcall sub_2C8();
 
     // Empty function, calls physics sub_118
@@ -183,6 +406,7 @@ struct BaseObject : game::Object
 
     virtual uint64_t __fastcall sub_2E8();
 
+    // return one
     virtual uint64_t __fastcall sub_2F0();
 
     // updates wheel positions, calls sub_310
@@ -195,17 +419,20 @@ struct BaseObject : game::Object
     virtual uint64_t __fastcall sub_308(uint64_t *);
 
     // mount/engine related
-    virtual uint64_t __fastcall sub_310();
+    // TurnEngineOn
+    virtual uint64_t __fastcall sub_310(bool);
 
     // checks something in engine data - has throttle input
+    // IsEngineTurnedOn
     virtual bool __fastcall sub_318();
 
-    // some physics & wheel stuff
-    virtual uint64_t __fastcall sub_320();
-    virtual uint64_t __fastcall sub_328();
-    virtual uint64_t __fastcall sub_330();
-    virtual uint64_t __fastcall sub_338();
-    virtual uint64_t __fastcall sub_340();
+    // some physics & wheel stuff with unk568
+    virtual float __fastcall sub_320();
+    virtual uint64_t __fastcall sub_328(Handle<ISerializable>*);
+    virtual uint64_t __fastcall sub_330(Handle<ISerializable>*);
+    virtual uint64_t __fastcall sub_338(Handle<ISerializable>*);
+    virtual uint64_t __fastcall sub_340(Handle<ISerializable>*);
+    // return one
     virtual uint64_t __fastcall sub_348();
 
     // Something wheels
@@ -236,6 +463,13 @@ struct BaseObject : game::Object
     inline void __fastcall SetPhysicsState(uint32_t a2, bool a3) {
         RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C60690);
         call(this, a2, a3);
+    }
+
+    // 1.52 RVA: 0x1C4C4F0 / 29672688
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8 0D
+    void __fastcall UnsetPhysicsStates() {
+        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C4C4F0);
+        call(this);
     }
 
     // 1.52 RVA: 0x1C4D3A0 / 29676448
@@ -292,7 +526,7 @@ struct BaseObject : game::Object
 
     // 1.52 RVA: 0x126CE00 / 19320320
     /// @pattern 48 8D 81 88 03 00 00 C3
-    ActionInterface *__fastcall GetInterface();
+    action::ActionInterface *__fastcall GetInterface();
 
     // 1.52 RVA: 0x72FE70 / 7536240
     /// @pattern 48 8B 81 B8 02 00 00 C3
@@ -302,11 +536,53 @@ struct BaseObject : game::Object
     /// @pattern F2 0F 10 81 58 02 00 00 C3
     double __fastcall GetDeceleration();
 
+    // 1.52 RVA: 0x1C5F7B0 / 29751216
+    /// @pattern 48 8B C4 55 41 56 48 8D 68 98 48 81 EC 58 01 00 00 83 B9 4C 09 00 00 00 4C 8B F1 0F 84 00 04 00
+    void __fastcall ProcessWeapons();
+
+    // 1.52 RVA: 0x1C5F740 / 29751104
+    /// @pattern 8B 91 50 02 00 00 F7 C2 EE FF FF FF 74 03 B0 01 C3 8B C2 C1 E8 04 A8 01 75 19 F6 C2 01 74 14 BA
+    bool __fastcall CheckPhysicsStateActionInterface();
+
+    // 1.52 RVA: 0x1C55E70 / 29711984
+    /// @pattern 40 53 48 83 EC 30 48 8B D9 0F 29 74 24 20 48 8B 89 B0 02 00 00 0F 28 F1 48 85 C9 74 18 48 8B 01
+    void __fastcall UpdatePhysicsSleepState(float deltaTime);
+
+    // both process actions @ 0
+
+    // 1.52 RVA: 0x1C55CF0 / 29711600
+    // runs if physicsState != 0.0, runs physics->sub_30
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 40 33 C0 0F 29 74 24 30 48 89 81 54 02 00 00 49 8B F8 48 89 81 5C 02
+    void __fastcall PreUpdatePreMovePhysicsStateNotZero( __int64 a2, float *deltaTime, __int64 a4);
+
+    // 1.52 RVA: 0x1C559F0 / 29710832
+    /// @pattern 48 89 74 24 18 57 48 83 EC 70 44 0F 29 4C 24 40 49 8B F0 44 0F 28 C9 48 8B F9 E8 01 FC FF FF 48
+    __int64 __fastcall PreUpdatePreMovePhysicsStateZero(__int64 a2, __int64 a3, __int64 a4);
+
+    // both process actions @ 1
+
+    // 1.52 RVA: 0x1C54F90 / 29708176
+    /// @pattern 48 89 5C 24 08 57 48 83 EC 50 0F 29 74 24 40 49 8B F8 0F 28 F1 48 8B D9 E8 03 FA FF FF 48 8B 03
+    RED4ext::WorldTransform *__fastcall PostMovePhysicsStateNotZero(float deltaTime, float *a3);
+
+    // 1.52 RVA: 0x1C54DA0 / 29707680
+    // runs physics->sub_38, checks isOnGround, does something with airTime
+    /// @pattern 40 57 48 83 EC 60 0F 29 74 24 50 48 8B F9 48 89 5C 24 78 0F 28 F1 49 8B D8 E8 F2 FB FF FF 48 8B
+    RED4ext::WorldTransform *__fastcall PostMovePhysicsStateZero(float deltaTime, float *a3);
+
+    // 1.52 RVA: 0x1C5D800 / 29743104
+    /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 48 8D B1 88 03 00 00 48 8B FA 48 8B CE 48 8D 54 24
+    inline action::ActionBase **__fastcall CreateAction(action::ActionBase **action_p, action::Type type) {
+        RED4ext::RelocFunc<decltype(&BaseObject::CreateAction)> call(0x1C5D800);
+        return call(this, action_p, type);
+    }
+
     world::RuntimeSystemPhysics* physicsSystem;
-    float unk248;
+    // resets when isOnGround, counts up otherwise
+    float airTimer;
     bool isOnGround;
     uint8_t unk24D[3];
-    uint32_t isInTrafficPhysicsState;
+    PhysicsState physicsState;
     float acceleration;
     float deceleration;
     float handbrake;
@@ -351,27 +627,28 @@ struct BaseObject : game::Object
     uint8_t unk362;
     uint8_t unk363;
     float unk364;
-    Handle<AI::CAgent> aiComponent;
+    Unk368 *unk368;
+    CName unk370;
     Handle<move::Component> moveComponent;
-    ActionInterface actionInterface; // 388
+    action::ActionInterface actionInterface; // 388
     Handle<void> baseDrivingParams[4];
     Handle<game::interactions::Component> interactionsComponent;
     Handle<game::interactions::Component> passengerInteractions;
     Handle<Controller> vehicleController;
     Handle<void> wheelRuntimePSData;
     Handle<CameraManager> cameraManager;
-    world::RuntimeSystemPhysics* vehicleSystem;
+    game::VehicleSystem* vehicleSystem;
     Handle<game::IBlackboard> blackboard;
     Handle<void> blackboard2;
     Handle<void> controllerMaybe;
     uint64_t unk540;
     Handle<game::Puppet> drivingPuppet;
     Handle<game::Puppet> mountedPuppet;
-    void*unk568;
-    void* unk570;
+    Unk568* unk568;
+    Unk570* unk570;
     AirControl* airControl; // 578
-    void* unk580;
-    void* unk588;
+    Unk580* unk580;
+    Unk588* unk588;
     void* unk590;
     void* destructionParams;
     void* unk5A0;
@@ -388,56 +665,37 @@ struct BaseObject : game::Object
     float unk5F0;
     float unk5F4;
     float unk5F8;
-    uint8_t unk5FC;
+    uint8_t permanantStun2;
     uint8_t unk5FD;
-    uint8_t unk5FE;
-    uint8_t unk5FF;
+    uint16_t permanantStun1;
     float unk600;
-    float unk604;
+    uint8_t unk604;
+    uint8_t unk605;
+    uint8_t unk606;
+    uint8_t unk607;
+    // timer that counts down to zero (min value)
     float unk608;
     float unk60C;
     uint8_t important;
     uint8_t ignoreImpulses;
     uint8_t unk612;
     uint8_t unk613;
-    uint32_t unk614;
+    uint8_t unk614;
+    // was summoned maybe?
+    uint8_t unk615;
+    uint8_t highPriorityDriving;
+    uint8_t unk617;
     DynArray<void*> uiComponents;
     Matrix unk628;
     Matrix unk668;
     float unk6A8[18];
     uint64_t unk6F0[2];
-    uint32_t unk700[4];
+    float max_tolerance_radius;
+    float acc_pid_p;
+    float acc_pid_i;
+    float acc_pid_d;
     uint64_t unk710[10];
-    void* unk760;
-    uint64_t unk768[4];
-    uint32_t unk788[2];
-    uint64_t unk790;
-    uint64_t unk798;
-    uint64_t unk7A0;
-    uint64_t unk7A8;
-    uint64_t targetToReach;
-    uint64_t unk7B8;
-    uint64_t targetToFollow;
-    uint64_t unk7C8;
-    uint64_t splineToFollow;
-    uint64_t splineBackwardToFollow;
-    uint64_t unk7E0;
-    void* unk7E8;
-    uint64_t unk7F0[3];
-    Box bounds;
-    Handle<void> unk828;
-    Vector4 unk838;
-    uint8_t unk848;
-    uint8_t unk849;
-    uint8_t unk84A;
-    uint8_t unk84B;
-    float unk84C;
-    float unk850;
-    uint32_t unk854[14];
-    uint32_t unk88C;
-    uint32_t unk890[2];
-    Handle<void> vehicleAudio;
-    uint64_t unk8A8;
+    AutonomousData autonomousData;
     uint8_t hasDestructionParams;
     uint8_t unk8B1;
     uint8_t unk8B2;

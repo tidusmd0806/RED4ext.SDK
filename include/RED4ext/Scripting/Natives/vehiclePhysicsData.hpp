@@ -10,6 +10,7 @@
 #include <RED4ext/Scripting/Natives/Generated/Box.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Matrix.hpp>
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/data/VehicleDriveModelData_Record.hpp>
 
 namespace RED4ext
 {
@@ -40,6 +41,10 @@ struct PhysicsData
     /// @pattern 48 83 EC 38 4C 8B 81 80 01 00 00 0F 57 C0 F3 0F 7F 44 24 20 49 8B 80 D8 02 00 00 48 85 C0 0F 84
     void __fastcall UpdateChassis();
 
+    // 1.52 RVA: 0x1CE1E60 / 30285408
+    /// @pattern 4C 8B 02 4C 8B D1 F3 0F 10 05 AA B8 39 01 4C 8B DA 41 0F B7 80 C0 00 00 00 45 0F B6 88 C2 00 00
+    void __fastcall LoadPhysicsStructFromTweaks(Handle<game::data::VehicleDriveModelData_Record> *a2);
+
     Vector3 force;
     Vector3 torque;
     Vector3 velocity;
@@ -57,7 +62,8 @@ struct PhysicsData
     uint64_t unk188;
     Box bounds;
     uint32_t unk1B0;
-    uint32_t unk1B4;
+    // set to 100000.0 in a function
+    float alternativeChassisMass;
     uint8_t usesAlternativeChassisMass;
     uint8_t unk1B9;
     uint8_t unk1BA;

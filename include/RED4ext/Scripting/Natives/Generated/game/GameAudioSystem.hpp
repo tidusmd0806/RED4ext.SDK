@@ -13,6 +13,27 @@ struct GameAudioSystem : game::IGameAudioSystem
 {
     static constexpr const char* NAME = "gameGameAudioSystem";
     static constexpr const char* ALIAS = "AudioSystem";
+    static constexpr const uintptr_t VFT_RVA = 0x33596B8;
+
+    virtual void sub_1A8();
+    virtual void sub_1B0();
+    virtual void sub_1B8();
+    virtual void sub_1C0();
+    virtual void sub_1C8();
+    // switch to TPP maybe, calls C8
+    virtual void sub_1D0();
+    virtual void sub_1D8();
+    // switch to FPP maybe
+    virtual void sub_1E0();
+    virtual void sub_1E8();
+    virtual void sub_1F0();
+    virtual void sub_1F8();
+    virtual void sub_200();
+    virtual void sub_208();
+    virtual void sub_210();
+    virtual void sub_218();
+    virtual void sub_220();
+    virtual void sub_228();
 
     uint8_t unk48[0x3E0 - 0x48]; // 48
 };

@@ -143,7 +143,7 @@ struct CBaseEngine
     CString unk60;               // 60
     DynArray<void*> unk80;       // 80
     int64_t unk90;               // 90
-    int64_t unk98;               // 98
+    int64_t unk98;               // 98 - audio related
     int64_t unkA0;               // A0
     int64_t unkA8;               // A8
     int64_t unkB0;               // B0

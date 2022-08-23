@@ -16,8 +16,8 @@ struct AirControlAxis
     static constexpr const char* NAME = "vehicleAirControlAxis";
     static constexpr const char* ALIAS = NAME;
 
-    PID pid1;
-    PID pid2;
+    PID angle;
+    PID velocity;
     uint8_t controlAxis;
     uint8_t unk41;
     uint8_t unk42;
