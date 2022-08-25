@@ -26,6 +26,9 @@ struct AnimFeature_VehiclePassenger;
 namespace vehicle
 {
 struct BaseObject;
+struct WheeledBaseObject;
+struct CarBaseObject;
+struct BikeBaseObject;
 
 struct UnkC8 {
   uint32_t unk00;
@@ -202,7 +205,7 @@ struct Physics
 struct UnkD10 {
 
 
-}
+};
 
 struct WheeledPhysics : Physics 
 {
@@ -315,7 +318,7 @@ struct WheeledPhysics : Physics
     uint8_t unkF5;
     uint8_t unkF6;
     uint8_t unkF7;
-    vehicle::WheeledBaseObject* wheeledObject;
+    WheeledBaseObject* wheeledObject;
     physics::VehiclePhysicsInsert1 wheel1;
     physics::VehiclePhysicsInsert1 wheel2;
     physics::VehiclePhysicsInsert1 wheel3;
@@ -385,7 +388,7 @@ struct WheeledPhysics : Physics
 };
 #pragma pack(pop)
 RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
-RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD28);
+RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
 //char (*__kaboom)[offsetof(WheeledPhysics, unkC40)] = 1;
 
 struct CarPhysics : WheeledPhysics
