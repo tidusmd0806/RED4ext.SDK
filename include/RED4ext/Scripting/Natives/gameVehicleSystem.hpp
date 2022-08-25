@@ -26,6 +26,7 @@ struct VehicleSystem : game::IVehicleSystem, VehicleInterface2, VehicleInterface
 {
     static constexpr const char* NAME = "gameVehicleSystem";
     static constexpr const char* ALIAS = "VehicleSystem";
+    static constexpr const uintptr_t VFT_RVA = gameVehicleSystem_VFT_RVA;
 
     uint8_t unk50[0x208C0 - 0x60]; // 60
 };

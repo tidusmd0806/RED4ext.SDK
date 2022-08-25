@@ -74,7 +74,7 @@ struct Physics
     virtual void sub_88();
     virtual void SetUnk70To1();
     // empty
-    virtual void sub_98();
+    virtual void sub_98(bool);
     // empty
     virtual uint64_t sub_A0(uint64_t);
     virtual uint64_t IntializeVectorQuaternion(uint64_t);
@@ -92,7 +92,7 @@ struct Physics
     // empty
     virtual void sub_F8();
     // empty
-    virtual void sub_100();
+    virtual void sub_100(uint32_t*, float*);
     // empty
     virtual void sub_108();
     // empty
@@ -199,6 +199,11 @@ struct Physics
 //char (*__kaboom)[sizeof(Physics)] = 1;
 //char (*__kaboom2)[offsetof(Physics, unk08)] = 1;
 
+struct UnkD10 {
+
+
+}
+
 struct WheeledPhysics : Physics 
 {
     static constexpr const uintptr_t VFT_RVA = 0x3431EE0;
@@ -245,7 +250,7 @@ struct WheeledPhysics : Physics
     // virtual void sub_80() override;
     // virtual void sub_88() override;
     // virtual void SetUnk70To1() override;
-    // virtual void sub_98() override;
+    // virtual void sub_98(bool) override;
     // virtual uint64_t sub_A0(uint64_t) override;
     // virtual uint64_t IntializeVectorQuaternion(uint64_t) override;
     virtual uint64_t sub_B0(int, float) override;
@@ -260,7 +265,7 @@ struct WheeledPhysics : Physics
     virtual float Return1F() override;
     // virtual void sub_F0() override;
     virtual void sub_F8() override;
-    virtual void sub_100() override;
+    virtual void sub_100(uint32_t*, float*) override;
     virtual void sub_108() override;
     // virtual void sub_110() override;
     // virtual void sub_118() override;
@@ -289,9 +294,9 @@ struct WheeledPhysics : Physics
     // throw error
     virtual void UpdateSuspensionAnimation();
     virtual void UpdateVehicleLinearVelocityStuff();
-    virtual void UpdateVehRotW();
+    virtual void UpdateVehRotW(float deltaTime);
     // returns 1f
-    virtual void sub_1A8();
+    virtual void sub_1A8(uint32_t);
 
     // 1.52 RVA: 0x1D11A50 / 30480976
     /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 57 48 81 EC C0 00 00 00 0F 29 70 E8 48 8B F1 48 8B 89 F8 00 00
@@ -310,7 +315,7 @@ struct WheeledPhysics : Physics
     uint8_t unkF5;
     uint8_t unkF6;
     uint8_t unkF7;
-    vehicle::BaseObject* parent2;
+    vehicle::WheeledBaseObject* wheeledObject;
     physics::VehiclePhysicsInsert1 wheel1;
     physics::VehiclePhysicsInsert1 wheel2;
     physics::VehiclePhysicsInsert1 wheel3;
@@ -375,9 +380,8 @@ struct WheeledPhysics : Physics
     DynArray<uintptr_t> driveHelpers;
     Handle<void> curveSet;
     uint64_t stuckTimeout;
-    float* transformStruct;
+    UnkD10* unkD10;
     uint64_t unkD18;
-    BaseObject* parent3;
 };
 #pragma pack(pop)
 RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
@@ -412,7 +416,7 @@ struct CarPhysics : WheeledPhysics
     // virtual void sub_88() override;
     // set is car
     virtual void SetUnk70To1() override;
-    virtual void sub_98() override;
+    virtual void sub_98(bool) override;
     virtual uint64_t sub_A0(uint64_t) override;
     // virtual uint64_t IntializeVectorQuaternion(uint64_t) override;
     // virtual uint64_t sub_B0(int, float) override;
@@ -425,7 +429,7 @@ struct CarPhysics : WheeledPhysics
     // virtual float Return1F() override;
     // virtual void sub_F0() override;
     // virtual void sub_F8() override;
-    // virtual void sub_100() override;
+    // virtual void sub_100(uint32_t*, float*) override;
     // virtual void sub_108() override;
     // virtual void sub_110() override;
     // virtual void sub_118() override;
@@ -449,9 +453,9 @@ struct CarPhysics : WheeledPhysics
     // update wheel blackbords
     virtual void UpdateSuspensionAnimation() override;
     // virtual void UpdateVehicleLinearVelocityStuff() override;
-    // virtual void UpdateVehRotW() override;
+    // virtual void UpdateVehRotW(float deltaTime) override;
     // get insert pointers
-    virtual void sub_1A8() override;
+    virtual void sub_1A8(uint32_t) override;
 
     // 1.52 RVA: 0x1D09090 / 30445712
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 BA 04 00 00 00 48 8B D9 E8 C9 4A 00 00 48 8D 05 62 8B 72 01 33 FF
@@ -461,6 +465,7 @@ struct CarPhysics : WheeledPhysics
     /// @pattern 48 89 5C 24 18 56 48 81 EC D0 00 00 00 48 8B F1 0F 29 B4 24 C0 00 00 00 48 8B 89 20 0D 00 00 BA
     int64_t __fastcall AnimationUpdate(float);
 
+    CarBaseObject* carObject;
     PID bankBodyFBPID;
     PID bankBodyLRPID;
     float bankBodyFBTanMultiplier;
@@ -525,6 +530,7 @@ struct BikePhysics : WheeledPhysics
     /// @pattern 48 89 5C 24 10 57 48 83 EC 40 48 8B 81 20 0D 00 00 48 8B D9 F3 0F 10 81 E4 00 00 00 0F 57 05 8D
     __int64 __fastcall AnimationUpdate();
 
+    BikeBaseObject* bikeObject;
     Handle<void> callbackRelated;
     PID tiltPID;
     float negTurnRate;
@@ -550,6 +556,15 @@ struct TankPhysics : Physics
     
     virtual ~TankPhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
+
+    //TankBaseObject *wheeledBaseObject;
+    //Vector3 unkD8;
+    //Vector3 turnRate;
+    //Vector3 wheelTurningThing;
+    //bool yawMaxed;
+    //uint8_t unkFD;
+    //uint8_t unkFE;
+    //uint8_t unkFF;
 };
 
 } // namespace physics

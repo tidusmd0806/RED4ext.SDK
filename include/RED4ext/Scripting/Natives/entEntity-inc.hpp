@@ -8,7 +8,6 @@ namespace RED4ext
 {
 namespace ent
 {
-//uintptr_t Entity::VFT_RVA = 0x329FC30;
 
 RED4EXT_INLINE uintptr_t Entity::CopyComponentsToStorage(EntityDefinition* definition, void* a2)
 {

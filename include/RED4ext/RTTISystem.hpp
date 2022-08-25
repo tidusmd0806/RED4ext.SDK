@@ -81,9 +81,9 @@ struct CRTTISystem : IRTTISystem
     HashMap<CName, uint32_t> typeAsyncIds;            // 70
     HashMap<CName, CGlobalFunction*> funcs;           // A0
     HashMap<uint64_t, CGlobalFunction*> funcsByHash;  // D0
-    HashMap<void*, void*> unk100;                     // 100
+    HashMap<CName, CName> oldNames;                   // 100
     DynArray<void*> unk130;                           // 130
-    DynArray<void*> unk140;                           // 140
+    DynArray<void*> stringParsingTypes;               // 140
     HashMap<CName, CName> scriptToNative;             // 150
     HashMap<CName, CName> nativeToScript;             // 180
     DynArray<CString> strings;                        // 1B0 - Used by StringConst opcode (0x10)

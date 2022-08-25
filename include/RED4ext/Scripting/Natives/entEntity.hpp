@@ -27,7 +27,7 @@ struct Entity : IScriptable
 {
     static constexpr const char* NAME = "entEntity";
     static constexpr const char* ALIAS = "Entity";
-    static constexpr const uintptr_t VFT_RVA = 0x329FC30;
+    static constexpr const uintptr_t VFT_RVA = entEntity_VFT_RVA;
     
     virtual void __fastcall sub_110() { }
     virtual float __fastcall sub_118();

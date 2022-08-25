@@ -19,6 +19,13 @@ struct PersistentDataPS : game::ComponentPS
     static constexpr const char* NAME = "vehiclePersistentDataPS";
     static constexpr const char* ALIAS = NAME;
 
+    // 1.52 RVA: 0x1CA5F70 / 30039920
+    /// @pattern 48 89 5C 24 08 57 48 83 EC 30 0F B6 DA 48 8B F9 48 8B D1 45 33 C0 48 8D 4C 24 20 E8 C0 B2 53 FE
+    void __fastcall ToggleQuestForceBraking(bool on) {
+        RelocFunc<decltype(&PersistentDataPS::ToggleQuestForceBraking)> call(0x1CA5F70);
+        call(this, on);
+    }
+
     uint32_t flags; // 68
     float autopilotPos; // 6C
     float autopilotCurrentSpeed; // 70

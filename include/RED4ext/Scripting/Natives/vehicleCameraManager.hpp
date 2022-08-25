@@ -23,6 +23,7 @@ struct CameraManager : IScriptable
 {
     static constexpr const char* NAME = "vehicleCameraManager";
     static constexpr const char* ALIAS = "VehicleCameraManager";
+    static constexpr const uintptr_t VFT_RVA = vehicleCameraManager_VFT_RVA;
 
     // 1.52 RVA: 0x1C6C270 / 29803120
     /// @pattern 48 89 5C 24 20 55 56 57 48 8B EC 48 83 EC 60 48 8B F9 48 8B F2 48 8B 49 50 48 85 C9 74 05 E8 6D
@@ -35,6 +36,15 @@ struct CameraManager : IScriptable
     // 1.52 RVA: 0x1C6A460 / 29795424
     /// @pattern 40 53 48 83 EC 20 65 48 8B 04 25 58 00 00 00 48 8B D9 8B 15 B8 EE F2 02 B9 9C 07 00 00 48 8B 14
     bool __fastcall ShouldUseSomeListener();
+
+    // 1.52 RVA: 0x1C67E70 / 29785712
+    /// @pattern 48 8B C4 55 56 48 8D 68 A1 48 81 EC F8 00 00 00 48 89 78 20 48 8B F9 8B 89 90 00 00 00 4C 89 60
+    void __fastcall ChangeCamera(uint32_t cameraType, float blendTime);
+
+    // 1.52 RVA: 0x1C6CCA0 / 29805728
+    // called from vehicle->PreUpdatePreMove
+    /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 83 79 48 02 48 8B D9 75 05 E8 F3 D1 FF FF 48 8B CB
+    void __fastcall Update();
 
     void * unk40; 
     float customTarget; 
