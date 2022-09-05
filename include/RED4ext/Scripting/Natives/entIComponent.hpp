@@ -104,10 +104,11 @@ struct IComponent : IScriptable
     void __fastcall SetEntity(Entity *);
 
     CName name; // 40
-    CName owner; // 48 "player"
-    Handle<Entity> entity; // 50
+    CName appearanceName; // 48 "player"
+    Entity* entity; // 50
+    uint64_t unk58;
     CRUID id; // 60
-    uint64_t unk68;
+    ResourcePath appearancePath;
     DynArray<Handle<void>> unk70;
     uint64_t unk80;
     uint8_t unk88;
