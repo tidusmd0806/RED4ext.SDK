@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -18,6 +20,7 @@ struct WeaponReplicationHistory
 
     uint8_t unk00[0x18 - 0x0]; // 0
     TweakDBID weaponSlot; // 18
+#pragma warning(suppress : 4324)
     alignas(8) StaticArray<game::ReplicatedShotData, 8> shots; // 20
     uint32_t latestShotId; // 1A8
     uint8_t unk1AC[0x1B0 - 0x1AC]; // 1AC
@@ -27,3 +30,5 @@ struct WeaponReplicationHistory
 RED4EXT_ASSERT_SIZE(WeaponReplicationHistory, 0x1D0);
 } // namespace game
 } // namespace RED4ext
+
+// clang-format on

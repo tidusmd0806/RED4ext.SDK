@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -174,7 +176,10 @@ struct CameraManager : IScriptable
     uint64_t unk388;
 };
 RED4EXT_ASSERT_SIZE(CameraManager, 0x390);
+// RED4EXT_ASSERT_SIZE(CameraManager, 0x370);
  //char (*__kaboom)[sizeof(CameraManager)] = 1;
 } // namespace vehicle
 using VehicleCameraManager = vehicle::CameraManager;
 } // namespace RED4ext
+
+// clang-format on

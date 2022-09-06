@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -14,8 +16,10 @@ struct WorldFluffLayer : ink::Layer
     static constexpr const char* NAME = "inkWorldFluffLayer";
     static constexpr const char* ALIAS = NAME;
 
-    uint8_t unk148[0x1F8 - 0x148]; // 148
+    uint8_t unk150[0x200 - 0x150]; // 150
 };
-RED4EXT_ASSERT_SIZE(WorldFluffLayer, 0x1F8);
+RED4EXT_ASSERT_SIZE(WorldFluffLayer, 0x200);
 } // namespace ink
 } // namespace RED4ext
+
+// clang-format on

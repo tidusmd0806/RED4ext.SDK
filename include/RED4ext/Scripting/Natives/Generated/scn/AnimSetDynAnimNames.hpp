@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -16,9 +18,12 @@ struct AnimSetDynAnimNames
     static constexpr const char* NAME = "scnAnimSetDynAnimNames";
     static constexpr const char* ALIAS = NAME;
 
+#pragma warning(suppress : 4324)
     alignas(8) StaticArray<CName, 1> animVariable; // 00
     DynArray<CName> animNames; // 10
 };
 RED4EXT_ASSERT_SIZE(AnimSetDynAnimNames, 0x20);
 } // namespace scn
 } // namespace RED4ext
+
+// clang-format on

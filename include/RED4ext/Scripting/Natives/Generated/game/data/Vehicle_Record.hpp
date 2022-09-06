@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -100,7 +102,9 @@ struct Vehicle_Record : game::data::SpawnableObject_Record
     uint8_t leftBackCamber[3];
     uint8_t enableDestruction[3];
 };
-RED4EXT_ASSERT_SIZE(Vehicle_Record, 0x150);
+RED4EXT_ASSERT_SIZE(Vehicle_Record, 0x158);
 } // namespace game::data
 using Vehicle_Record = game::data::Vehicle_Record;
 } // namespace RED4ext
+
+// clang-format on

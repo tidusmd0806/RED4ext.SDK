@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -30,6 +32,7 @@ struct PersistentDataPS : game::ComponentPS
     float autopilotPos; // 6C
     float autopilotCurrentSpeed; // 70
     uint8_t unk74[0x78 - 0x74]; // 74
+#pragma warning(suppress : 4324)
     alignas(8) StaticArray<vehicle::WheelRuntimePSData, 4> wheelRuntimeData; // 78
     Transform questEnforcedTransform; // E0
     vehicle::DestructionPSData destruction; // 100
@@ -39,3 +42,5 @@ struct PersistentDataPS : game::ComponentPS
 RED4EXT_ASSERT_SIZE(PersistentDataPS, 0x1C0);
 } // namespace vehicle
 } // namespace RED4ext
+
+// clang-format on

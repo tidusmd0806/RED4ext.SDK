@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -16,6 +18,7 @@ struct VertexAnimationMapperEntry
     static constexpr const char* NAME = "entVertexAnimationMapperEntry";
     static constexpr const char* ALIAS = NAME;
 
+#pragma warning(suppress : 4324)
     alignas(8) StaticArray<ent::VertexAnimationMapperSource, 4> sources; // 00
     uint8_t unkA8[0xB0 - 0xA8]; // A8
     ent::VertexAnimationMapperDestination destination; // B0
@@ -23,3 +26,5 @@ struct VertexAnimationMapperEntry
 RED4EXT_ASSERT_SIZE(VertexAnimationMapperEntry, 0xD0);
 } // namespace ent
 } // namespace RED4ext
+
+// clang-format on

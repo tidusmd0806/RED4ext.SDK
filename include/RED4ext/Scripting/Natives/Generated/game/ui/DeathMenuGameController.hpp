@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -15,7 +17,9 @@ struct DeathMenuGameController : game::ui::MenuItemListGameController
     static constexpr const char* ALIAS = "DeathMenuGameController";
 
 };
-RED4EXT_ASSERT_SIZE(DeathMenuGameController, 0x170);
+RED4EXT_ASSERT_SIZE(DeathMenuGameController, 0x180);
 } // namespace game::ui
 using DeathMenuGameController = game::ui::DeathMenuGameController;
 } // namespace RED4ext
+
+// clang-format on

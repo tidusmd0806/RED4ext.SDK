@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -10,9 +12,11 @@ enum class SaveStatus : uint8_t
 {
     Invalid = 0,
     Local = 1,
-    Cloud = 2,
-    InSync = 3,
-    Conflict = 4,
+    Upload = 2,
+    Cloud = 3,
+    InSync = 4,
 };
 } // namespace ink
 } // namespace RED4ext
+
+// clang-format on

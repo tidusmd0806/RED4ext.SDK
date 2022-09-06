@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -14,8 +16,10 @@ struct ItemsMeshesLoaded : red::Event
     static constexpr const char* NAME = "gameItemsMeshesLoaded";
     static constexpr const char* ALIAS = "gameItemsMeshesLoaded";
 
-    uint8_t unk40[0x98 - 0x40]; // 40
+    uint8_t unk40[0x88 - 0x40]; // 40
 };
-RED4EXT_ASSERT_SIZE(ItemsMeshesLoaded, 0x98);
+RED4EXT_ASSERT_SIZE(ItemsMeshesLoaded, 0x88);
 } // namespace game
 } // namespace RED4ext
+
+// clang-format on

@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -14,9 +16,11 @@ struct Attack_GameEffect : game::IAttack
     static constexpr const char* NAME = "gameAttack_GameEffect";
     static constexpr const char* ALIAS = "Attack_GameEffect";
 
-    uint8_t unkD8[0xE8 - 0xD8]; // D8
+    uint8_t unkD8[0x100 - 0xD8]; // D8
 };
-RED4EXT_ASSERT_SIZE(Attack_GameEffect, 0xE8);
+RED4EXT_ASSERT_SIZE(Attack_GameEffect, 0x100);
 } // namespace game
 using Attack_GameEffect = game::Attack_GameEffect;
 } // namespace RED4ext
+
+// clang-format on

@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -15,8 +17,11 @@ struct PoseCorrectionGroup
     static constexpr const char* NAME = "animPoseCorrectionGroup";
     static constexpr const char* ALIAS = NAME;
 
+#pragma warning(suppress : 4324)
     alignas(16) StaticArray<anim::PoseCorrection, 2> poseCorrections; // 00
 };
 RED4EXT_ASSERT_SIZE(PoseCorrectionGroup, 0x270);
 } // namespace anim
 } // namespace RED4ext
+
+// clang-format on

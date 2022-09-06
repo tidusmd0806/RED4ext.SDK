@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -16,6 +18,7 @@ struct GateSignal
     static constexpr const char* NAME = "AIGateSignal";
     static constexpr const char* ALIAS = NAME;
 
+#pragma warning(suppress : 4324)
     alignas(8) StaticArray<CName, 4> tags; // 00
     AI::SignalFlags flags; // 28
     float priority; // 2C
@@ -25,3 +28,5 @@ struct GateSignal
 RED4EXT_ASSERT_SIZE(GateSignal, 0x38);
 } // namespace AI
 } // namespace RED4ext
+
+// clang-format on

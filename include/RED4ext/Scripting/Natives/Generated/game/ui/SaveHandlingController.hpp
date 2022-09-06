@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -14,8 +16,10 @@ struct SaveHandlingController : game::ui::MenuGameController
     static constexpr const char* NAME = "gameuiSaveHandlingController";
     static constexpr const char* ALIAS = NAME;
 
-    uint8_t unkF0[0x150 - 0xF0]; // F0
+    uint8_t unkF0[0x160 - 0xF0]; // F0
 };
-RED4EXT_ASSERT_SIZE(SaveHandlingController, 0x150);
+RED4EXT_ASSERT_SIZE(SaveHandlingController, 0x160);
 } // namespace game::ui
 } // namespace RED4ext
+
+// clang-format on

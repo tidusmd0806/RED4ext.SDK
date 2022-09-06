@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -21,6 +23,7 @@ struct AttachPropToWorldFallbackData
 
     scn::PerformerId owner; // 00
     uint8_t unk04[0x10 - 0x4]; // 4
+#pragma warning(suppress : 4324)
     alignas(16) StaticArray<scn::events::AttachPropToWorldCachedFallbackBone, 2> fallbackCachedBones; // 10
     Ref<anim::AnimSet> fallbackAnimset; // 80
     CName fallbackAnimationName; // 98
@@ -30,3 +33,5 @@ struct AttachPropToWorldFallbackData
 RED4EXT_ASSERT_SIZE(AttachPropToWorldFallbackData, 0xB0);
 } // namespace scn::events
 } // namespace RED4ext
+
+// clang-format on

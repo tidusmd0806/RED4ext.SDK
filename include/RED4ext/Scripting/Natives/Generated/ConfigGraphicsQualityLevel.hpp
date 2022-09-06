@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -27,17 +29,20 @@ enum class ConfigGraphicsQualityLevel : uint32_t
     PlayStation5_Quality = 17,
     PlayStation5_Backcompat_Performance = 18,
     PlayStation5_Backcompat_Quality = 19,
-    XboxSeriesS = 20,
-    XboxSeriesS_Backcompat = 21,
-    XboxSeriesX_Performance = 22,
-    XboxSeriesX_Quality = 23,
-    XboxSeriesX_Backcompat_Performance = 24,
-    XboxSeriesX_Backcompat_Quality = 25,
-    GeForceNow = 26,
-    IconsGeneration = 27,
-    SafeMode = 28,
-    Auto = 29,
-    GGP_Performance = 32,
-    GGP_Quality = 33,
+    XboxSeriesS_Performance = 20,
+    XboxSeriesS_Quality = 21,
+    XboxSeriesS_Backcompat = 22,
+    XboxSeriesX_Performance = 23,
+    XboxSeriesX_Quality = 24,
+    XboxSeriesX_Backcompat_Performance = 25,
+    XboxSeriesX_Backcompat_Quality = 26,
+    GeForceNow = 27,
+    IconsGeneration = 28,
+    SafeMode = 29,
+    Auto = 30,
+    GGP_Performance = 33,
+    GGP_Quality = 34,
 };
 } // namespace RED4ext
+
+// clang-format on

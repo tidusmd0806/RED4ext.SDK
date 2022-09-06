@@ -4,129 +4,174 @@
 
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Handle.hpp>
+#include <RED4ext/Memory/SharedPtr.hpp>
+#include <RED4ext/ResourceLoader.hpp>
 #include <RED4ext/ResourcePath.hpp>
 #include <RED4ext/Scripting/Natives/Generated/CResource.hpp>
 
 namespace RED4ext
 {
+template<typename T = CResource>
 struct ResourceReference
 {
-    ResourceReference() noexcept = default;
-    ResourceReference(ResourcePath aPath) noexcept;
-    ResourceReference(ResourcePath aPath, bool aLoad) noexcept;
-    ResourceReference(const ResourceReference& aOther) noexcept;
-    ResourceReference(ResourceReference&& aOther) noexcept;
-    ~ResourceReference();
+    ResourceReference() = default;
+
+    ResourceReference(ResourcePath aPath) noexcept
+        : path(aPath)
+    {
+        LoadAsync();
+    }
+
+    ResourceReference(const ResourceReference& aOther) noexcept
+        : path(aOther.path)
+        , token(aOther.token)
+    {
+    }
+
+    ResourceReference(ResourceReference&& aOther) noexcept
+        : path(aOther.path)
+        , token(std::move(aOther.token))
+    {
+        aOther.path = "";
+    }
+
+    ~ResourceReference() noexcept = default;
+
+    ResourceReference& operator=(const ResourceReference& aRhs) noexcept
+    {
+        path = aRhs.path;
+        token = aRhs.token;
+        return *this;
+    }
+
+    ResourceReference& operator=(ResourceReference&& aRhs) noexcept
+    {
+        path = std::move(aRhs.path);
+        token = std::move(aRhs.token);
+        return *this;
+    }
 
     /**
-     * @brief Load the resource synchronously and fill the token.
+     * @brief Load the resource synchronously.
+     *
+     * @return Returns true if the resource is loaded successfully, false otherwise.
      */
-    void Load();
+    bool Load()
+    {
+        if (!token)
+        {
+            token = ResourceLoader::Get()->LoadAsync<T>(path);
+        }
+
+        token->Fetch();
+        return token->IsLoaded();
+    }
+
+    /**
+     * @brief Start loading the resource asynchronously.
+     *
+     * @return Returns true if the load started successfully, false otherwise.
+     */
+    bool LoadAsync()
+    {
+        if (!token)
+        {
+            token = ResourceLoader::Get()->LoadAsync<T>(path);
+        }
+
+        return !token->IsFailed();
+    }
 
     /**
      * @brief Load if it's not already loaded and get the resource.
+     *
      * @return The loaded resource.
      */
-    Handle<CResource>& Fetch();
+    [[nodiscard]] Handle<T>& Fetch()
+    {
+        if (!token)
+        {
+            token = ResourceLoader::Get()->LoadAsync<T>(path);
+        }
+
+        return token->Fetch();
+    }
+
+    /**
+     * @brief Get the loaded resource.
+     *
+     * @return The loaded resource.
+     */
+    [[nodiscard]] Handle<T>& Get() const noexcept
+    {
+        if (!token)
+        {
+            return {};
+        }
+
+        return token->Get();
+    }
 
     /**
      * @brief Reset the path and associated token.
      */
-    void Reset();
-
-    struct ResourceTokenPtr
+    void Reset()
     {
-        void* instance{ nullptr };
-        RED4ext::RefCnt* refCount{ nullptr };
-    };
+        path = "";
+        token.Reset();
+    }
 
-    ResourcePath path;      // 00
-    ResourceTokenPtr token; // 08
+    [[nodiscard]] inline bool IsLoaded() const noexcept
+    {
+        return token && token->IsLoaded();
+    }
+
+    [[nodiscard]] inline bool IsFailed() const noexcept
+    {
+        return token && token->IsFailed();
+    }
+
+    ResourcePath path;                 // 00
+    SharedPtr<ResourceToken<T>> token; // 08
 };
-RED4EXT_ASSERT_SIZE(ResourceReference, 0x18);
+RED4EXT_ASSERT_SIZE(ResourceReference<>, 0x18);
+RED4EXT_ASSERT_OFFSET(ResourceReference<>, path, 0x0);
+RED4EXT_ASSERT_OFFSET(ResourceReference<>, token, 0x8);
 
+template<typename T = CResource>
 struct ResourceAsyncReference
 {
-    ResourceAsyncReference() noexcept = default;
-    ResourceAsyncReference(ResourcePath aPath) noexcept;
-    ResourceAsyncReference(const ResourceAsyncReference& aOther) noexcept;
-    ResourceAsyncReference(ResourceAsyncReference&& aOther) noexcept;
+    ResourceAsyncReference() = default;
 
-    [[nodiscard]] ResourceReference Resolve() const noexcept;
+    ResourceAsyncReference(ResourcePath aPath) noexcept
+        : path(aPath)
+    {
+    }
+
+    ResourceAsyncReference(const ResourceAsyncReference& aOther) noexcept
+        : path(aOther.path)
+    {
+    }
+
+    ResourceAsyncReference(ResourceAsyncReference&& aOther) noexcept
+        : path(aOther.path)
+    {
+        aOther.path = ResourcePath();
+    }
+
+    [[nodiscard]] ResourceReference<T> Resolve() const noexcept
+    {
+        return {path};
+    }
 
     ResourcePath path; // 00
 };
-RED4EXT_ASSERT_SIZE(ResourceAsyncReference, 0x8);
-
-template<typename T = CResource>
-struct TResourceReference : ResourceReference
-{
-    // static_assert(std::is_base_of_v<CResource, T> or std::is_same_v<CResource, T>,
-    //     "Resource reference inner type must inherit from 'CResource'.");
-
-    TResourceReference() noexcept
-        : ResourceReference()
-    {}
-
-    TResourceReference(ResourcePath aPath) noexcept
-        : ResourceReference(aPath)
-    {}
-
-    TResourceReference(ResourcePath aPath, bool aLoad) noexcept
-        : ResourceReference(aPath, aLoad)
-    {}
-
-    TResourceReference(const TResourceReference<T>& aOther) noexcept
-        : ResourceReference(aOther)
-    {}
-
-    TResourceReference(TResourceReference<T>&& aOther) noexcept
-        : ResourceReference(aOther)
-    {}
-
-    inline Handle<T>& Fetch()
-    {
-        return reinterpret_cast<Handle<T>&>(ResourceReference::Fetch());
-    }
-};
-RED4EXT_ASSERT_SIZE(TResourceReference<>, sizeof(ResourceReference));
-
-template<typename T = CResource>
-struct TResourceAsyncReference : ResourceAsyncReference
-{
-    // static_assert(std::is_base_of_v<CResource, T> or std::is_same_v<CResource, T>,
-    //     "Resource reference inner type must inherit from 'CResource'.");
-
-    TResourceAsyncReference() noexcept
-        : ResourceAsyncReference()
-    {}
-
-    TResourceAsyncReference(ResourcePath aPath) noexcept
-        : ResourceAsyncReference(aPath)
-    {}
-
-    TResourceAsyncReference(const TResourceAsyncReference<T>& aOther) noexcept
-        : ResourceAsyncReference(aOther)
-    {}
-
-    TResourceAsyncReference(TResourceAsyncReference<T>&& aOther) noexcept
-        : ResourceAsyncReference(aOther)
-    {}
-
-    [[nodiscard]] inline TResourceReference<T> Resolve() const noexcept
-    {
-        return TResourceReference<T>(path);
-    }
-};
-RED4EXT_ASSERT_SIZE(TResourceReference<>, sizeof(ResourceReference));
+RED4EXT_ASSERT_SIZE(ResourceAsyncReference<>, 0x8);
+RED4EXT_ASSERT_OFFSET(ResourceAsyncReference<>, path, 0x0);
 
 template<typename T>
-using Ref = TResourceReference<T>;
+using Ref = ResourceReference<T>;
 
 template<typename T>
-using RaRef = TResourceAsyncReference<T>;
+using RaRef = ResourceAsyncReference<T>;
 } // namespace RED4ext
-
-#ifdef RED4EXT_HEADER_ONLY
-#include <RED4ext/ResourceReference-inl.hpp>
-#endif

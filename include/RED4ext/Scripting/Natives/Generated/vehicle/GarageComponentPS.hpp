@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -22,6 +24,7 @@ struct GarageComponentPS : game::ComponentPS
     DynArray<vehicle::GarageComponentVehicleData> spawnedVehiclesData; // 68
     DynArray<vehicle::GarageVehicleID> unlockedVehicles; // 78
     DynArray<vehicle::UnlockedVehicle> unlockedVehicleArray; // 88
+#pragma warning(suppress : 4324)
     alignas(8) StaticArray<vehicle::GarageVehicleID, 3> activeVehicles; // 98
     vehicle::GarageComponentVehicleData mountedVehicleData; // D0
     bool mountedVehicleStolen; // F0
@@ -31,3 +34,5 @@ RED4EXT_ASSERT_SIZE(GarageComponentPS, 0xF8);
 } // namespace vehicle
 using GarageComponentPS = vehicle::GarageComponentPS;
 } // namespace RED4ext
+
+// clang-format on

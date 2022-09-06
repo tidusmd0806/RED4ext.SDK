@@ -4,177 +4,31 @@
 #include <type_traits>
 
 #include <RED4ext/Common.hpp>
+#include <RED4ext/Detail/Callback.hpp>
 #include <RED4ext/Memory/Allocators.hpp>
-
-namespace
-{
-constexpr size_t DefaultFixedBufferSize = 32;
-constexpr size_t DefaultFlexibleBufferSize = 24;
-}
 
 namespace RED4ext
 {
-template<typename R, typename... Args>
-struct CallbackHandler;
-
-namespace Detail
-{
-template<typename T, typename R, typename... Args>
-concept IsClosure = std::is_class_v<T> && requires(T t, Args... args)
-{
-    { t(std::forward<Args>(args)...) } -> std::convertible_to<R>;
-};
-
-template<typename R, typename... Args>
-using UnboundFunctionPtr = R (*)(Args...);
-
-template<typename C, typename R, typename... Args>
-using MemberFunctionPtr = R (C::*)(Args...);
-
-template<typename R, typename... Args>
-struct UnboundFunctionTarget
-{
-    using TargetFunc = UnboundFunctionPtr<R, Args...>;
-
-    TargetFunc func;
-};
-
-template<typename C, typename R, typename... Args>
-struct MemberFunctionTarget
-{
-    using TargetFunc = MemberFunctionPtr<C, R, Args...>;
-    using ContextPtr = C*;
-
-    ContextPtr context;
-    TargetFunc func;
-};
-
-template<typename L, typename R, typename... Args>
-requires IsClosure<L, R, Args...>
-struct ClosureTarget : L
-{
-    using ClosureType = L;
-    using L::L;
-};
-
-template<typename T>
-struct CallbackHandlerImpl;
-
-template<typename R, typename... Args>
-struct CallbackHandlerImpl<UnboundFunctionTarget<R, Args...>>
-{
-    using TargetType = UnboundFunctionTarget<R, Args...>;
-
-    static R Invoke(TargetType* aTarget, Args&&... aArgs)
-    {
-        (aTarget->func)(std::forward<Args>(aArgs)...);
-    }
-
-    static void Copy(TargetType* aDst, TargetType* aSrc)
-    {
-        aDst->func = aSrc->func;
-    }
-
-    static void Move(TargetType* aDst, TargetType* aSrc)
-    {
-        aDst->func = aSrc->func;
-        aSrc->func = nullptr;
-    }
-
-    static void Destruct(TargetType* aTarget)
-    {
-        aTarget->func = nullptr;
-    }
-};
-
-template<typename C, typename R, typename... Args>
-struct CallbackHandlerImpl<MemberFunctionTarget<C, R, Args...>>
-{
-    using TargetType = MemberFunctionTarget<C, R, Args...>;
-
-    static R Invoke(TargetType* aTarget, Args&&... aArgs)
-    {
-        ((aTarget->context)->*(aTarget->func))(std::forward<Args>(aArgs)...);
-    }
-
-    static void Copy(TargetType* aDst, TargetType* aSrc)
-    {
-        aDst->context = aSrc->context;
-        aDst->func = aSrc->func;
-    }
-
-    static void Move(TargetType* aDst, TargetType* aSrc)
-    {
-        aDst->context = aSrc->context;
-        aDst->func = aSrc->func;
-        aSrc->context = nullptr;
-        aSrc->func = nullptr;
-    }
-
-    static void Destruct(TargetType* aTarget)
-    {
-        aTarget->context = nullptr;
-        aTarget->func = nullptr;
-    }
-};
-
-template<typename L, typename R, typename... Args>
-requires IsClosure<L, R, Args...>
-struct CallbackHandlerImpl<ClosureTarget<L, R, Args...>>
-{
-    using TargetType = typename ClosureTarget<L, R, Args...>::ClosureType;
-
-    static R Invoke(TargetType* aTarget, Args&&... aArgs)
-    {
-        (*aTarget)(std::forward<Args>(aArgs)...);
-    }
-
-    static void Copy(TargetType* aDst, TargetType* aSrc)
-    {
-        new (aDst) TargetType(*aSrc);
-    }
-
-    static void Move(TargetType* aDst, TargetType* aSrc)
-    {
-        new (aDst) TargetType(std::move(*aSrc));
-        aSrc->~TargetType();
-    }
-
-    static void Destruct(TargetType* aTarget)
-    {
-        aTarget->~TargetType();
-    }
-};
-
-template<typename Impl, typename R, typename... Args>
-struct CallbackHandlerBuilder
-{
-    using HandlerType = CallbackHandler<R, Args...>;
-
-    static HandlerType* Build()
-    {
-        static HandlerType s_handler{ &Impl::Invoke, &Impl::Copy, &Impl::Move, &Impl::Destruct };
-        return &s_handler;
-    }
-};
-} // namespace Detail
+constexpr size_t DefaultFixedCallbackBufferSize = 32;
+constexpr size_t DefaultFlexCallbackBufferSize = 24;
 
 template<typename R, typename... Args>
 struct CallbackHandler
 {
-    template<typename T = void>
+    template<typename T>
     using InvokeFunc = R (*)(T* aTarget, Args&&... aArgs);
 
-    template<typename T = void>
+    template<typename T>
     using CopyFunc = void (*)(T* aDst, T* aSrc);
 
-    template<typename T = void>
+    template<typename T>
     using MoveFunc = CopyFunc<T>;
 
-    template<typename T = void>
+    template<typename T>
     using DestructFunc = void (*)(T* aTarget);
 
-    CallbackHandler(InvokeFunc<> aInvoke, CopyFunc<> aCopy, MoveFunc<> aMove, DestructFunc<> aDestruct)
+    CallbackHandler(InvokeFunc<void> aInvoke, CopyFunc<void> aCopy, MoveFunc<void> aMove,
+                    DestructFunc<void> aDestruct) noexcept
         : invoke(aInvoke)
         , copy(aCopy)
         , move(aMove)
@@ -183,246 +37,403 @@ struct CallbackHandler
     }
 
     template<typename T>
-    CallbackHandler(InvokeFunc<T> aInvoke, CopyFunc<T> aCopy, MoveFunc<T> aMove, DestructFunc<T> aDestruct)
-        : invoke(reinterpret_cast<InvokeFunc<>>(aInvoke))
-        , copy(reinterpret_cast<CopyFunc<>>(aCopy))
-        , move(reinterpret_cast<MoveFunc<>>(aMove))
-        , destruct(reinterpret_cast<DestructFunc<>>(aDestruct))
+    CallbackHandler(InvokeFunc<T> aInvoke, CopyFunc<T> aCopy, MoveFunc<T> aMove, DestructFunc<T> aDestruct) noexcept
+        : invoke(reinterpret_cast<InvokeFunc<void>>(aInvoke))
+        , copy(reinterpret_cast<CopyFunc<void>>(aCopy))
+        , move(reinterpret_cast<MoveFunc<void>>(aMove))
+        , destruct(reinterpret_cast<DestructFunc<void>>(aDestruct))
     {
     }
 
-    InvokeFunc<> invoke;     // 00
-    CopyFunc<> copy;         // 08
-    MoveFunc<> move;         // 10
-    DestructFunc<> destruct; // 18
+    InvokeFunc<void> invoke;     // 00
+    CopyFunc<void> copy;         // 08
+    MoveFunc<void> move;         // 10
+    DestructFunc<void> destruct; // 18
 };
 RED4EXT_ASSERT_SIZE(CallbackHandler<void>, 0x20);
+RED4EXT_ASSERT_OFFSET(CallbackHandler<void>, invoke, 0x00);
+RED4EXT_ASSERT_OFFSET(CallbackHandler<void>, copy, 0x08);
+RED4EXT_ASSERT_OFFSET(CallbackHandler<void>, move, 0x10);
+RED4EXT_ASSERT_OFFSET(CallbackHandler<void>, destruct, 0x18);
 
-template<typename T, size_t Size = DefaultFixedBufferSize>
-class FixedCallback;
+template<typename T, size_t InlineSize = DefaultFixedCallbackBufferSize>
+class Callback;
 
-template<typename R, typename... Args, size_t Size>
-class FixedCallback<R (*)(Args...), Size>
+template<typename R, typename... Args, size_t InlineSize>
+class Callback<R (*)(Args...), InlineSize>
 {
 public:
-    FixedCallback(Detail::UnboundFunctionPtr<R, Args...> aFunc)
+    using HandlerPtr = CallbackHandler<R, Args...>*;
+
+    static_assert(InlineSize >= sizeof(void*), "Buffer size can't be less than pointer size");
+
+    Callback(R (*aFunc)(Args...)) noexcept
     {
-        Detail::UnboundFunctionTarget<R, Args...> target{aFunc};
-        Initialize(buffer, &target);
+        using TargetType = Detail::UnboundFunctionTarget<R, Args...>;
+
+        static_assert(sizeof(TargetType) <= InlineSize, "Function size is too big for this callback");
+
+        TargetType target{aFunc};
+        InitializeHandler(&target);
     }
 
     template<typename C>
-    FixedCallback(C* aContext, Detail::MemberFunctionPtr<C, R, Args...> aFunc)
+    Callback(C* aContext, R (C::*aFunc)(Args...)) noexcept
     {
-        Detail::MemberFunctionTarget<C, R, Args...> target{aContext, aFunc};
-        Initialize(buffer, &target);
+        using TargetType = Detail::MemberFunctionTarget<C, R, Args...>;
+
+        static_assert(sizeof(TargetType) <= InlineSize, "Function size is too big for this callback");
+
+        TargetType target{aContext, aFunc};
+        InitializeHandler(&target);
     }
 
     template<typename L>
     requires Detail::IsClosure<L, R, Args...>
-    FixedCallback(L&& aClosure)
+    Callback(L&& aClosure) noexcept
     {
         using TargetType = Detail::ClosureTarget<L, R, Args...>;
 
-        static_assert(sizeof(TargetType) <= Size, "Closure stack size is too big for callback");
+        static_assert(sizeof(TargetType) <= InlineSize, "Closure size is too big for this callback");
 
-        Initialize(buffer, reinterpret_cast<TargetType*>(&aClosure));
+        InitializeHandler(reinterpret_cast<TargetType*>(&aClosure));
     }
 
-    FixedCallback(const FixedCallback& aOther)
+    Callback(const Callback& aOther) noexcept
     {
-        CopyHandler(aOther);
-        CopyTarget(buffer, aOther.buffer);
+        CopyHandlerFrom(aOther.handler);
+        CopyTargetFrom(aOther.buffer);
     }
 
-    FixedCallback(FixedCallback&& aOther) noexcept
+    Callback(Callback&& aOther) noexcept
     {
-        CopyHandler(aOther);
-        MoveTarget(buffer, aOther.buffer);
+        MoveHandlerFrom(aOther.handler);
+        MoveTargetFrom(aOther.buffer);
     }
 
-    ~FixedCallback()
+    Callback& operator=(const Callback& aOther)
     {
-        DestroyTarget(buffer);
+        if (this != std::addressof(aOther))
+        {
+            DestroyTarget();
+            CopyHandlerFrom(aOther.handler);
+            CopyTargetFrom(aOther.buffer);
+        }
+
+        return *this;
+    }
+
+    Callback& operator=(Callback&& aOther) noexcept
+    {
+        if (this != std::addressof(aOther))
+        {
+            DestroyTarget();
+            MoveHandlerFrom(aOther.handler);
+            MoveTargetFrom(aOther.buffer);
+        }
+
+        return *this;
+    }
+
+    ~Callback()
+    {
+        DestroyTarget();
         ResetHandler();
     }
 
-    R operator()(Args&&... aArgs)
+    R operator()(Args&&... aArgs) const
     {
         return InvokeTarget(buffer, std::forward<Args>(aArgs)...);
     }
 
-    uint8_t buffer[Size];
-    CallbackHandler<R, Args...>* handler;
+    uint8_t buffer[InlineSize];
+    HandlerPtr handler;
 
-protected:
-    FixedCallback() = default;
-
+private:
     template<class TargetType>
-    inline void Initialize(void* aDst, TargetType* aSrc)
+    void InitializeHandler(TargetType* aSrc) noexcept
     {
         using HandlerImpl = Detail::CallbackHandlerImpl<TargetType>;
-        using HandlerFactory = Detail::CallbackHandlerBuilder<HandlerImpl, R, Args...>;
+        using HandlerFactory = Detail::CallbackHandlerFactory<HandlerImpl, R, Args...>;
 
-        handler = HandlerFactory::Build();
-        handler->copy(aDst, aSrc);
+        handler = HandlerFactory::Get();
+        handler->copy(buffer, aSrc);
     }
 
-    inline void CopyHandler(FixedCallback& aOther)
+    void CopyHandlerFrom(HandlerPtr aHandler) noexcept
     {
-        handler = aOther.handler;
+        handler = aHandler;
     }
 
-    inline void ResetHandler()
+    void MoveHandlerFrom(HandlerPtr& aHandler) noexcept
+    {
+        handler = aHandler;
+        aHandler = nullptr;
+    }
+
+    void ResetHandler() noexcept
     {
         handler = nullptr;
     }
 
-    inline R InvokeTarget(void* aTarget, Args&&... aArgs)
+    R InvokeTarget(Args&&... aArgs) const
     {
-        return (handler->invoke)(aTarget, std::forward<Args>(aArgs)...);
+        return handler->invoke(buffer, std::forward<Args>(aArgs)...);
     }
 
-    inline void CopyTarget(void* aDst, void* aSrc)
+    void CopyTargetFrom(void* aTarget)
     {
         if (handler)
         {
-            handler->copy(aDst, aSrc);
+            handler->copy(buffer, aTarget);
         }
     }
 
-    inline void MoveTarget(void* aDst, void* aSrc)
+    void MoveTargetFrom(void* aTarget)
     {
         if (handler)
         {
-            handler->move(aDst, aSrc);
+            handler->move(buffer, aTarget);
         }
     }
 
-    inline void DestroyTarget(void* aTarget)
+    void DestroyTarget()
     {
         if (handler)
         {
-            handler->destruct(aTarget);
+            handler->destruct(buffer);
         }
     }
 };
-RED4EXT_ASSERT_SIZE(FixedCallback<void (*)()>, DefaultFixedBufferSize + 0x8);
-RED4EXT_ASSERT_OFFSET(FixedCallback<void (*)()>, handler, DefaultFixedBufferSize);
+RED4EXT_ASSERT_SIZE(Callback<void (*)()>, DefaultFixedCallbackBufferSize + 0x8);
+RED4EXT_ASSERT_OFFSET(Callback<void (*)()>, handler, DefaultFixedCallbackBufferSize);
 
-template<typename T, size_t Size = DefaultFlexibleBufferSize>
-class FlexibleCallback;
+template<typename T, size_t InlineSize = DefaultFlexCallbackBufferSize>
+class FlexCallback;
 
-template<typename R, typename... Args, size_t Size>
-class FlexibleCallback<R (*)(Args...), Size> : FixedCallback<R (*)(Args...), Size>
+template<typename R, typename... Args, size_t InlineSize>
+class FlexCallback<R (*)(Args...), InlineSize>
 {
 public:
-    using BaseType = FixedCallback<R (*)(Args...), Size>;
+    using HandlerPtr = CallbackHandler<R, Args...>*;
     using AllocatorType = Memory::DefaultAllocator;
 
-    FlexibleCallback(Detail::UnboundFunctionPtr<R, Args...> aFunc)
+    static_assert(InlineSize >= sizeof(void*), "Buffer size can't be less than pointer size");
+
+    FlexCallback(R (*aFunc)(Args...))
     {
-        Detail::UnboundFunctionTarget<R, Args...> target{aFunc};
-        SetBufferMode(sizeof(target));
-        BaseType::Initialize(GetBuffer(), &target);
+        using TargetType = Detail::UnboundFunctionTarget<R, Args...>;
+
+        TargetType target{aFunc};
+        InitializeBuffer(sizeof(TargetType));
+        InitializeHandler(&target);
     }
 
     template<typename C>
-    FlexibleCallback(C* aContext, Detail::MemberFunctionPtr<C, R, Args...> aFunc)
+    FlexCallback(C* aContext, R (C::*aFunc)(Args...))
     {
-        Detail::MemberFunctionTarget<C, R, Args...> target{aContext, aFunc};
-        SetBufferMode(sizeof(target));
-        BaseType::Initialize(GetBuffer(), &target);
+        using TargetType = Detail::MemberFunctionTarget<C, R, Args...>;
+
+        TargetType target{aContext, aFunc};
+        InitializeBuffer(sizeof(TargetType));
+        InitializeHandler(&target);
     }
 
     template<typename L>
     requires Detail::IsClosure<L, R, Args...>
-    FlexibleCallback(L&& aClosure)
+    FlexCallback(L&& aClosure)
     {
         using TargetType = Detail::ClosureTarget<L, R, Args...>;
 
-        SetBufferMode(sizeof(TargetType));
-        BaseType::Initialize(GetBuffer(), reinterpret_cast<TargetType*>(&aClosure));
+        InitializeBuffer(sizeof(TargetType));
+        InitializeHandler(reinterpret_cast<TargetType*>(&aClosure));
     }
 
-    FlexibleCallback(const FlexibleCallback& aOther)
+    FlexCallback(const FlexCallback& aOther)
     {
-        BaseType::CopyHandler(aOther);
-        SetBufferMode(aOther.GetSize());
-        BaseType::CopyTarget(GetBuffer(), aOther.GetBuffer());
+        InitializeBuffer(aOther.GetSize(), aOther.allocator);
+        CopyHandlerFrom(aOther.handler);
+        CopyTargetFrom(aOther.GetBuffer());
     }
 
-    FlexibleCallback(FlexibleCallback&& aOther) noexcept
+    FlexCallback(FlexCallback&& aOther) noexcept
     {
-        BaseType::CopyHandler(aOther);
-        SetBufferMode(aOther.GetSize());
-        BaseType::MoveTarget(GetBuffer(), aOther.GetBuffer());
+        InitializeBuffer(aOther.GetSize(), aOther.allocator);
+        MoveHandlerFrom(aOther.handler);
+        MoveTargetFrom(aOther.GetBuffer());
     }
 
-    ~FlexibleCallback()
+    FlexCallback& operator=(const FlexCallback& aOther)
     {
-        BaseType::DestroyTarget(GetBuffer());
+        if (this != std::addressof(aOther))
+        {
+            DestroyTarget();
+            ResetBuffer();
+            InitializeBuffer(aOther.GetSize(), aOther.allocator);
+            CopyHandlerFrom(aOther.handler);
+            CopyTargetFrom(aOther.GetBuffer());
+        }
+
+        return *this;
+    }
+
+    FlexCallback& operator=(FlexCallback&& aOther) noexcept
+    {
+        if (this != std::addressof(aOther))
+        {
+            DestroyTarget();
+            ResetBuffer();
+            InitializeBuffer(aOther.GetSize(), aOther.allocator);
+            MoveHandlerFrom(aOther.handler);
+            MoveTargetFrom(aOther.GetBuffer());
+        }
+
+        return *this;
+    }
+
+    ~FlexCallback()
+    {
+        DestroyTarget();
         ResetBuffer();
-        BaseType::ResetHandler();
+        ResetHandler();
     }
 
-    R operator()(Args&&... aArgs)
+    R operator()(Args&&... aArgs) const
     {
-        return BaseType::InvokeTarget(GetBuffer(), std::forward<Args>(aArgs)...);
+        return InvokeTarget(std::forward<Args>(aArgs)...);
     }
 
-    uint64_t unk20;
-    uint32_t extendedBufferSize;
+    uint8_t buffer[InlineSize];
+    HandlerPtr handler;
+    Memory::IAllocator* allocator;
+    uint32_t extendedSize;
 
 protected:
     static constexpr uint32_t ExtendedFlag = 0x80000000;
     static constexpr uint32_t SizeMask = ~ExtendedFlag;
 
-    inline bool IsExtendedMode()
+    template<class TargetType>
+    void InitializeHandler(TargetType* aSrc) noexcept
     {
-        return extendedBufferSize != 0;
+        using HandlerImpl = Detail::CallbackHandlerImpl<TargetType>;
+        using HandlerFactory = Detail::CallbackHandlerFactory<HandlerImpl, R, Args...>;
+
+        handler = HandlerFactory::Get();
+        handler->copy(GetBuffer(), aSrc);
     }
 
-    inline bool GetSize()
+    void CopyHandlerFrom(HandlerPtr aHandler) noexcept
     {
-        return extendedBufferSize & SizeMask;
+        handler = aHandler;
     }
 
-    inline void SetBufferMode(uint32_t aSize)
+    void MoveHandlerFrom(HandlerPtr& aHandler) noexcept
     {
-        if (aSize > Size)
+        handler = aHandler;
+        aHandler = nullptr;
+    }
+
+    void ResetHandler() noexcept
+    {
+        handler = nullptr;
+    }
+
+    void InitializeBuffer(uint32_t aSize)
+    {
+        if (aSize > InlineSize)
         {
-            extendedBufferSize = aSize;
-            extendedBufferSize |= ExtendedFlag;
+            if (!allocator)
+            {
+                allocator = AllocatorType::Get();
+            }
 
-            auto extendedBufferPtr = AllocatorType::Get()->Alloc(aSize).memory;
-            *reinterpret_cast<void**>(BaseType::buffer) = extendedBufferPtr;
+            auto bufferPtr = reinterpret_cast<void**>(buffer);
+            *bufferPtr = allocator->Alloc(aSize).memory;
+
+            extendedSize = aSize;
+            extendedSize |= ExtendedFlag;
         }
         else
         {
-            extendedBufferSize = 0;
+            extendedSize = 0;
         }
     }
 
-    inline void ResetBuffer()
+    void InitializeBuffer(uint32_t aSize, Memory::IAllocator* aAllocator)
+    {
+        allocator = aAllocator;
+
+        InitializeBuffer(aSize);
+    }
+
+    [[nodiscard]] inline bool IsInlineMode() const noexcept
+    {
+        return extendedSize == 0;
+    }
+
+    [[nodiscard]] inline bool IsExtendedMode() const noexcept
+    {
+        return extendedSize != 0;
+    }
+
+    [[nodiscard]] inline uint32_t GetSize() const noexcept
     {
         if (IsExtendedMode())
         {
-            AllocatorType::Get()->Free(GetBuffer());
-            extendedBufferSize = 0;
+            return extendedSize & SizeMask;
+        }
+
+        return InlineSize;
+    }
+
+    [[nodiscard]] void* GetBuffer() noexcept
+    {
+        if (IsExtendedMode())
+        {
+            return *reinterpret_cast<void**>(buffer);
+        }
+
+        return buffer;
+    }
+
+    void ResetBuffer()
+    {
+        if (IsExtendedMode())
+        {
+            allocator->Free(GetBuffer());
+            extendedSize = 0;
         }
     }
 
-    inline void* GetBuffer()
+    inline R InvokeTarget(Args&&... aArgs) const
     {
-        if (IsExtendedMode())
-        {
-            return *reinterpret_cast<void**>(BaseType::buffer);
-        }
+        return handler->invoke(GetBuffer(), std::forward<Args>(aArgs)...);
+    }
 
-        return BaseType::buffer;
+    void CopyTargetFrom(void* aOther)
+    {
+        if (handler)
+        {
+            handler->copy(GetBuffer(), aOther);
+        }
+    }
+
+    void MoveTargetFrom(void* aOther)
+    {
+        if (handler)
+        {
+            handler->move(GetBuffer(), aOther);
+        }
+    }
+
+    void DestroyTarget()
+    {
+        if (handler)
+        {
+            handler->destruct(GetBuffer());
+        }
     }
 };
-RED4EXT_ASSERT_SIZE(FlexibleCallback<void (*)()>, DefaultFlexibleBufferSize + 0x18);
-RED4EXT_ASSERT_OFFSET(FlexibleCallback<void (*)()>, extendedBufferSize, DefaultFlexibleBufferSize + 0x10);
+RED4EXT_ASSERT_SIZE(FlexCallback<void (*)()>, DefaultFlexCallbackBufferSize + 0x18);
+RED4EXT_ASSERT_OFFSET(FlexCallback<void (*)()>, extendedSize, DefaultFlexCallbackBufferSize + 0x10);
 } // namespace RED4ext

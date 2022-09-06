@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -235,7 +237,7 @@ enum class EInputKey : uint32_t
     IK_UnknownDF = 223,
     IK_UnknownE0 = 224,
     IK_UnknownE1 = 225,
-    IK_UnknownE2 = 226,
+    IK_IntlBackslash = 226,
     IK_MouseHover = 227,
     IK_MouseX = 228,
     IK_MouseY = 229,
@@ -279,3 +281,5 @@ enum class EInputKey : uint32_t
     IK_Count = 267,
 };
 } // namespace RED4ext
+
+// clang-format on

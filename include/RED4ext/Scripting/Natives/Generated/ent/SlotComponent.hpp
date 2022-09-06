@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -32,3 +34,5 @@ RED4EXT_ASSERT_OFFSET(SlotComponent, slots, 0x120);
 } // namespace ent
 using SlotComponent = ent::SlotComponent;
 } // namespace RED4ext
+
+// clang-format on

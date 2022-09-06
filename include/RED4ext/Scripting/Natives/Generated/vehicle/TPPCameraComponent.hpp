@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -211,3 +213,5 @@ RED4EXT_ASSERT_OFFSET(TPPCameraComponent, isInAir, 0x2E0);
 //char (*__kaboom)[offsetof(TPPCameraComponent, isInAir)] = 1;
 } // namespace vehicle
 } // namespace RED4ext
+
+// clang-format on

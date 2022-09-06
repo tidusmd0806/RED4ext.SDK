@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -81,3 +83,5 @@ struct AutonomousData : ISerializable
 RED4EXT_ASSERT_SIZE(AutonomousData, 0x150);
 } // namespace vehicle
 } // namespace RED4ext
+
+// clang-format on

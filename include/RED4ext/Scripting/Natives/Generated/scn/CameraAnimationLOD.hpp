@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -15,6 +17,7 @@ struct CameraAnimationLOD
     static constexpr const char* NAME = "scnCameraAnimationLOD";
     static constexpr const char* ALIAS = NAME;
 
+#pragma warning(suppress : 4324)
     alignas(16) StaticArray<scn::AnimationMotionSample, 3> trajectory; // 00
     StaticArray<StaticArray<float, 7>, 3> tracks; // A0
     uint8_t unk104[0x110 - 0x104]; // 104
@@ -22,3 +25,5 @@ struct CameraAnimationLOD
 RED4EXT_ASSERT_SIZE(CameraAnimationLOD, 0x110);
 } // namespace scn
 } // namespace RED4ext
+
+// clang-format on

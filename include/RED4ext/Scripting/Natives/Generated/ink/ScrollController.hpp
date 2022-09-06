@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -32,11 +34,16 @@ struct ScrollController : ink::WidgetLogicController
     bool useGlobalInput; // F8
     uint8_t unkF9[0xFC - 0xF9]; // F9
     float position; // FC
-    float scrollDelta; // 100
-    Vector2 viewportSize; // 104
-    Vector2 contentSize; // 10C
-    uint8_t unk114[0x178 - 0x114]; // 114
+    float desiredSetupPosition; // 100
+    bool contentSmallerThanViewport; // 104
+    uint8_t unk105[0x108 - 0x105]; // 105
+    float scrollDelta; // 108
+    Vector2 viewportSize; // 10C
+    Vector2 contentSize; // 114
+    uint8_t unk11C[0x180 - 0x11C]; // 11C
 };
-RED4EXT_ASSERT_SIZE(ScrollController, 0x178);
+RED4EXT_ASSERT_SIZE(ScrollController, 0x180);
 } // namespace ink
 } // namespace RED4ext
+
+// clang-format on

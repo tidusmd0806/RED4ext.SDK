@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -29,7 +31,8 @@ struct Metadata : save::GameMetadata
     uint32_t fileSize; // 398
     bool isForced; // 39C
     bool isCheckpoint; // 39D
-    uint8_t unk39E[0x3A0 - 0x39E]; // 39E
+    uint8_t unk39E[0x39F - 0x39E]; // 39E
+    bool isModded; // 39F
     uint64_t initialLoadingScreenID; // 3A0
     bool isStoryMode; // 3A8
     bool isPointOfNoReturn; // 3A9
@@ -39,3 +42,5 @@ struct Metadata : save::GameMetadata
 RED4EXT_ASSERT_SIZE(Metadata, 0x3B0);
 } // namespace save
 } // namespace RED4ext
+
+// clang-format on

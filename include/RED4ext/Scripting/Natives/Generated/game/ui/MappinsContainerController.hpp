@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <RED4ext/Common.hpp>
@@ -80,3 +82,5 @@ RED4EXT_ASSERT_OFFSET(MappinsContainerController, poiMappinPoints, 0x208);
 } // namespace game::ui
 using MappinsContainerController = game::ui::MappinsContainerController;
 } // namespace RED4ext
+
+// clang-format on

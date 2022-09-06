@@ -443,6 +443,7 @@ RED4EXT_INLINE void EnumFileDescriptor::EmitFile(std::filesystem::path aFilePath
     std::ofstream o(aFilePath);
 
     o << "#pragma once" << std::endl << std::endl;
+    o << "// clang-format off" << std::endl << std::endl;
 
     o << "// This file is generated from the Game's Reflection data" << std::endl << std::endl;
 
@@ -564,7 +565,8 @@ RED4EXT_INLINE void EnumFileDescriptor::EmitFile(std::filesystem::path aFilePath
         o << "using " << alias << " = " << nameQualified << ";" << std::endl;
     }
 
-    o << "} // namespace RED4ext" << std::endl;
+    o << "} // namespace RED4ext" << std::endl << std::endl;
+    o << "// clang-format on" << std::endl;
 }
 
 RED4EXT_INLINE BitfieldFileDescriptor::BitfieldFileDescriptor(const RED4ext::CBitfield* pBitfield,
@@ -614,6 +616,7 @@ RED4EXT_INLINE void BitfieldFileDescriptor::EmitFile(std::filesystem::path aFile
     std::ofstream o(aFilePath);
 
     o << "#pragma once" << std::endl << std::endl;
+    o << "// clang-format off" << std::endl << std::endl;
 
     o << "// This file is generated from the Game's Reflection data" << std::endl << std::endl;
 
@@ -691,7 +694,8 @@ RED4EXT_INLINE void BitfieldFileDescriptor::EmitFile(std::filesystem::path aFile
         o << "using " << alias << " = " << nameQualified << ";" << std::endl;
     }
 
-    o << "} // namespace RED4ext" << std::endl;
+    o << "} // namespace RED4ext" << std::endl << std::endl;
+    o << "// clang-format on" << std::endl;
 }
 
 RED4EXT_INLINE void ClassDependencyBuilder::ToFileDescriptor(ClassFileDescriptor& aFd, NameTransformer aNameTransformer,
@@ -792,8 +796,8 @@ RED4EXT_INLINE void ClassDependencyBuilder::ToFileDescriptor(ClassFileDescriptor
             std::string propTypeNameQualified = TypeToString(prop.second->type, aQualifiedTransformer, aVerbose);
             std::string propName = prop.second->name.ToString();
 
-            std::get<1>(propList)->push_back(
-                {propTypeName, propTypeNameQualified, propName, prop.first, prop.second->type->GetSize()});
+            std::get<1>(propList)->push_back({propTypeName, propTypeNameQualified, propName, prop.first,
+                                              prop.second->type->GetSize(), prop.second->type->GetAlignment()});
         }
     }
 }
@@ -938,6 +942,7 @@ RED4EXT_INLINE void ClassFileDescriptor::EmitFile(std::filesystem::path aFilePat
     std::ofstream o(aFilePath);
 
     o << "#pragma once" << std::endl << std::endl;
+    o << "// clang-format off" << std::endl << std::endl;
 
     o << "// This file is generated from the Game's Reflection data" << std::endl << std::endl;
 
@@ -1029,6 +1034,12 @@ RED4EXT_INLINE void ClassFileDescriptor::EmitFile(std::filesystem::path aFilePat
                 o.unsetf(std::ios::hex | std::ios::uppercase);
             }
 
+            // Ugly check, but I don't care for now.
+            if (prop.alignment >= sizeof(void*) && prop.type.starts_with("alignas"))
+            {
+                o << "#pragma warning(suppress : 4324)" << std::endl;
+            }
+
             o << "        " << prop.typeQualified << " ";
 
             bool isSanitized = false;
@@ -1081,6 +1092,12 @@ RED4EXT_INLINE void ClassFileDescriptor::EmitFile(std::filesystem::path aFilePat
                   << "[0x" << gapEnd << " - 0x" << gapStart << "]; // " << gapStart << std::endl;
 
                 o.unsetf(std::ios::hex | std::ios::uppercase);
+            }
+
+            // Ugly check, but I don't care for now.
+            if (prop.alignment >= sizeof(void*) && prop.type.starts_with("alignas"))
+            {
+                o << "#pragma warning(suppress : 4324)" << std::endl;
             }
 
             o << "    " << prop.typeQualified << " ";
@@ -1150,7 +1167,8 @@ RED4EXT_INLINE void ClassFileDescriptor::EmitFile(std::filesystem::path aFilePat
         o << "using " << alias << " = " << nameQualified << ";" << std::endl;
     }
 
-    o << "} // namespace RED4ext" << std::endl;
+    o << "} // namespace RED4ext" << std::endl << std::endl;
+    o << "// clang-format on" << std::endl;
 }
 
 void EmitBulkGenerated(std::filesystem::path aFilePath, const std::set<std::string>& aIncludes)

@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -14,8 +16,10 @@ struct GameNotificationsLayer : ink::FullScreenLayer
     static constexpr const char* NAME = "inkGameNotificationsLayer";
     static constexpr const char* ALIAS = NAME;
 
-    uint8_t unk148[0x1A0 - 0x148]; // 148
+    uint8_t unk150[0x1A8 - 0x150]; // 150
 };
-RED4EXT_ASSERT_SIZE(GameNotificationsLayer, 0x1A0);
+RED4EXT_ASSERT_SIZE(GameNotificationsLayer, 0x1A8);
 } // namespace ink
 } // namespace RED4ext
+
+// clang-format on

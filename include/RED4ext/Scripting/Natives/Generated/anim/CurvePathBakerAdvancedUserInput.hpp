@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -15,8 +17,11 @@ struct CurvePathBakerAdvancedUserInput
     static constexpr const char* NAME = "animCurvePathBakerAdvancedUserInput";
     static constexpr const char* ALIAS = NAME;
 
+#pragma warning(suppress : 4324)
     alignas(8) StaticArray<anim::CurvePathPartInput, 3> partsInputs; // 00
 };
 RED4EXT_ASSERT_SIZE(CurvePathBakerAdvancedUserInput, 0x80);
 } // namespace anim
 } // namespace RED4ext
+
+// clang-format on

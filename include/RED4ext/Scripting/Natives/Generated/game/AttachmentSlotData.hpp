@@ -1,5 +1,7 @@
 #pragma once
 
+// clang-format off
+
 // This file is generated from the Game's Reflection data
 
 #include <cstdint>
@@ -22,12 +24,13 @@ struct AttachmentSlotData
     uint8_t unk18[0x28 - 0x18]; // 18
     ItemID activeItemID; // 28
     ItemID prevItemID; // 38
-    uint64_t unk48[2];
-    Handle<data::AttachmentSlot_Record> record;
-    uint64_t unk68;
-    DynArray<void*> unk70;
+    uint8_t unk48[0x58 - 0x48]; // 48
+    ItemID appearanceItemID; // 58
+    uint8_t unk68[0x90 - 0x68]; // 68
 };
-RED4EXT_ASSERT_SIZE(AttachmentSlotData, 0x80);
+RED4EXT_ASSERT_SIZE(AttachmentSlotData, 0x90);
 } // namespace game
 using AttachmentSlotData = game::AttachmentSlotData;
 } // namespace RED4ext
+
+// clang-format on
