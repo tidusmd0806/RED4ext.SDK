@@ -19,7 +19,7 @@ struct Component : ent::IComponent, PSInterface
 {
     static constexpr const char* NAME = "gameComponent";
     static constexpr const char* ALIAS = "GameComponent";
-    static constexpr const uintptr_t VFT_RVA = 0x330D588;
+    static constexpr const uintptr_t VFT_RVA = gameComponent_VFT_RVA;
 
 // overridden virtuals
 

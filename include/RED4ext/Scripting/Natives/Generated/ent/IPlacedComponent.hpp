@@ -21,7 +21,7 @@ struct IPlacedComponent : IComponent
 {
     static constexpr const char* NAME = "entIPlacedComponent";
     static constexpr const char* ALIAS = "IPlacedComponent";
-    static constexpr const uintptr_t VFT_RVA = 0x32AEA70;
+    static constexpr const uintptr_t VFT_RVA = entIPlacedComponent_VFT_RVA;
 
     virtual void sub_238();
     virtual void sub_240();

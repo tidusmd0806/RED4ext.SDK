@@ -15,7 +15,7 @@ struct GameSession : game::BaseGameSession
 {
     static constexpr const char* NAME = "gameGameSession";
     static constexpr const char* ALIAS = NAME;    
-    static constexpr const uintptr_t VFT_RVA = 0x3399CE0;
+    static constexpr const uintptr_t VFT_RVA = gameGameSession_VFT_RVA;
 
     virtual ~GameSession() override;
     // registers BaseGameSession/Initialize, SetGameStatus callbacks

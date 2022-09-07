@@ -15,7 +15,7 @@ struct ComponentPS : game::PersistentState
 {
     static constexpr const char* NAME = "gameComponentPS";
     static constexpr const char* ALIAS = "GameComponentPS";
-    static constexpr const uintptr_t VFT_RVA = 0x330DB88;
+    static constexpr const uintptr_t VFT_RVA = gameComponentPS_VFT_RVA;
 
     inline virtual void sub_130() { };
     inline virtual void sub_138() { };

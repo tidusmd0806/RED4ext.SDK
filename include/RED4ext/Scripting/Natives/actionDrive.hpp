@@ -11,7 +11,7 @@ namespace action {
 
 struct Drive : ActionBase
 {
-    static constexpr const uintptr_t VFT_RVA = 0x35FFC18;
+    // static constexpr const uintptr_t VFT_RVA = 0x35FFC18;
     
     // removes chase state, adds parked
     virtual void sub_28() override;

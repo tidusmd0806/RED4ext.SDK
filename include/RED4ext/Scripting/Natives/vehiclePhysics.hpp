@@ -49,7 +49,7 @@ struct UnkC8 {
 #pragma pack(push, 1)
 struct Physics
 {
-    static constexpr const uintptr_t VFT_RVA = 0x34316C8;
+    static constexpr const uintptr_t VFT_RVA = 0x3497B78;
 
     virtual ~Physics();
     virtual uint64_t SetVehicle(vehicle::BaseObject *);
@@ -209,7 +209,7 @@ struct UnkD10 {
 
 struct WheeledPhysics : Physics 
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3431EE0;
+    static constexpr const uintptr_t VFT_RVA = 0x3498388;
 
     // 1.52 RVA: 0x1D0DB70 / 30464880
     /// @pattern 40 56 41 56 48 83 EC 38 48 89 5C 24 58 4C 8B F1 48 89 7C 24 68 4C 89 7C 24 30 8B F2 E8 1F C9 FD
@@ -393,7 +393,7 @@ RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
 
 struct CarPhysics : WheeledPhysics
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3431C10;
+    static constexpr const uintptr_t VFT_RVA = 0x34980C0;
 
 // overrides
 
@@ -509,7 +509,7 @@ RED4EXT_ASSERT_OFFSET(CarPhysics, unkE78, 0xE78);
 
 struct BikePhysics : WheeledPhysics
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3431A30;
+    // static constexpr const uintptr_t VFT_RVA = 0x3431A30;
 
     virtual ~BikePhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
@@ -555,7 +555,7 @@ struct BikePhysics : WheeledPhysics
 
 struct TankPhysics : Physics
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3432650;
+    // static constexpr const uintptr_t VFT_RVA = 0x3432650;
     
     virtual ~TankPhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;

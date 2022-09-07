@@ -42,7 +42,7 @@ enum class ERTTIType : uint8_t
 
 struct CBaseRTTIType
 {
-    static constexpr const uintptr_t VFT_RVA = 0x30807E0;
+    // static constexpr const uintptr_t VFT_RVA = 0x30807E0;
     
     CBaseRTTIType();
     virtual ~CBaseRTTIType() = default; // 00
@@ -116,7 +116,7 @@ RED4EXT_ASSERT_SIZE(CBaseRTTIType, 0x10);
 
 struct CClass : CBaseRTTIType
 {
-    static constexpr const uintptr_t VFT_RVA = 0x30805D0;
+    // static constexpr const uintptr_t VFT_RVA = 0x30805D0;
 
     struct Flags
     {

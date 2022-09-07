@@ -25,7 +25,7 @@ namespace world { struct RuntimeScene;  } //struct RuntimeInfo;
 
 struct CBaseEngine
 {
-    static constexpr const uintptr_t VFT_RVA = 0x31A27D8;
+    // static constexpr const uintptr_t VFT_RVA = 0x31A27D8;
 
     // https://github.com/yamashi/RED4ext/commit/2d30f32826276458f86da8b4c26940924044564d
     struct UnkC0
@@ -47,7 +47,7 @@ struct CBaseEngine
 
     struct Unk108
     {
-        static constexpr const uintptr_t VFT_RVA = 0x31A2920;
+        // static constexpr const uintptr_t VFT_RVA = 0x31A2920;
 
         int64_t unk0;
         int64_t unk8;
@@ -184,7 +184,7 @@ RED4EXT_ASSERT_OFFSET(CBaseEngine, unkC0, 0xC0);
 
 struct BaseGameEngine : CBaseEngine
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3374328;
+    // static constexpr const uintptr_t VFT_RVA = 0x3374328;
 
     virtual CBaseRTTIType* GetNativeType() override;      // 00
     virtual CBaseRTTIType* GetParentType() override;      // 08
@@ -205,7 +205,7 @@ RED4EXT_ASSERT_OFFSET(BaseGameEngine, watchdogThread, 0x2D8);
 
 struct CGameFramework
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3599FE8;
+    // static constexpr const uintptr_t VFT_RVA = 0x3599FE8;
 
     virtual Memory::IAllocator* GetAllocator();
     virtual void Destruct(char);
@@ -230,7 +230,7 @@ RED4EXT_ASSERT_OFFSET(CGameFramework, gameInstance, 0x10);
 
 struct Unk328
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3599380;
+    // static constexpr const uintptr_t VFT_RVA = 0x3599380;
 
     virtual void sub_00();
     virtual void sub_08();
@@ -277,7 +277,7 @@ RED4EXT_ASSERT_SIZE(Unk328, 0x70);
 
 struct CGameEngine : BaseGameEngine
 {
-    static constexpr const uintptr_t VFT_RVA = 0x3591C30;
+    // static constexpr const uintptr_t VFT_RVA = 0x3591C30;
 
     virtual CBaseRTTIType* GetNativeType() override;      // 00
     virtual CBaseRTTIType* GetParentType() override;      // 08

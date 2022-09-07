@@ -70,7 +70,7 @@ struct TPPCameraComponent : game::CameraComponent
 {
     static constexpr const char* NAME = "vehicleTPPCameraComponent";
     static constexpr const char* ALIAS = "vehicleTPPCameraComponent";
-    static constexpr const uintptr_t VFT_RVA = 0x342E350;
+    static constexpr const uintptr_t VFT_RVA = vehicleTPPCameraComponent_VFT_RVA;
 
     virtual bool sub_320(HeadLookAtStruct *a2);
     virtual bool sub_328();

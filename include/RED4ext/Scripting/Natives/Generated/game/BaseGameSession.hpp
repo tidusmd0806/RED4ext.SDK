@@ -19,7 +19,7 @@ struct BaseGameSession
 {
     static constexpr const char* NAME = "gameBaseGameSession";
     static constexpr const char* ALIAS = NAME;
-    static constexpr const uintptr_t VFT_RVA = 0x3306710;
+    static constexpr const uintptr_t VFT_RVA = gameBaseGameSession_VFT_RVA;
 
     virtual ~BaseGameSession();
     // registers SetupRuntimeScene, LoadGame, OnGamePrepared callbacks

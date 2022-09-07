@@ -29,7 +29,6 @@ namespace ent {
 // {
 //     static constexpr const char* NAME = "entEntityTemplate";
 //     static constexpr const char* ALIAS = NAME;
-//     static constexpr const uintptr_t VFT_RVA = 0x32A2E58;
 
 //     virtual void sub_20(Handle<ISerializable>*) override;
 

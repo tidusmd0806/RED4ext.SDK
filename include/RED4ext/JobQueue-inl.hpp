@@ -94,7 +94,7 @@ RED4EXT_INLINE void RED4ext::JobQueue::Wait(JobHandle& aJob)
     unk10.Join(aJob);
 }
 
-RED4EXT_INLINE [[nodiscard]] RED4ext::JobHandle RED4ext::JobQueue::Capture()
+RED4EXT_INLINE RED4ext::JobHandle RED4ext::JobQueue::Capture()
 {
     using func_t = JobHandle* (*)(JobQueue*, JobHandle*);
     RelocFunc<func_t> func(Addresses::JobQueue_Capture);

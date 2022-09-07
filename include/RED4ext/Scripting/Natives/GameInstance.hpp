@@ -54,7 +54,7 @@ void __fastcall LoadGameSystemsData(DynArray<GameSystemData> *rcx0);
 
 struct GameInstance : IGameInstance
 {
-    static constexpr const uintptr_t VFT_RVA = 0x35FC738;
+    // static constexpr const uintptr_t VFT_RVA = 0x35FC738;
 
     virtual ~GameInstance() override;                                      // 00
     // creates some systems, calls systems' sub_190, sub198

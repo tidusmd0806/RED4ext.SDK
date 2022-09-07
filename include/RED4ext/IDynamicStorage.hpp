@@ -8,7 +8,7 @@
 namespace RED4ext {
 
 struct IDynamicStorage {
-    static constexpr const uintptr_t VFT_RVA = 0x30DF830;
+    // static constexpr const uintptr_t VFT_RVA = 0x30DF830;
 
     virtual ~IDynamicStorage();                                     // 00
     virtual void* GetInstance(const CClass* aType);                 // 08

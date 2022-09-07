@@ -12,7 +12,7 @@ namespace action {
     
 struct DriveChaseTarget : Drive
 {
-    static constexpr const uintptr_t VFT_RVA = 0x35FEE40;
+    // static constexpr const uintptr_t VFT_RVA = 0x35FEE40;
     
     float unk118;
     float unk11C;

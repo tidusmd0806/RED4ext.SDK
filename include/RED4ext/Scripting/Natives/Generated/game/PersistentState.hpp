@@ -18,7 +18,7 @@ struct PersistentState : IScriptable
 {
     static constexpr const char* NAME = "gamePersistentState";
     static constexpr const char* ALIAS = "PersistentState";
-    static constexpr const uintptr_t VFT_RVA = 0x331DC50;
+    static constexpr const uintptr_t VFT_RVA = gamePersistentState_VFT_RVA;
 
     // checks with persistencySystem to see if this class is destructible
     inline virtual bool CanBeDestructed() override
