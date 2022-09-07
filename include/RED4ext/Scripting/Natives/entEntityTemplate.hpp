@@ -25,7 +25,7 @@ struct EntityTemplate : res::StreamedResource
 {
     static constexpr const char* NAME = "entEntityTemplate";
     static constexpr const char* ALIAS = NAME;
-    static constexpr const uintptr_t VFT_RVA = 0x32A2E58;
+    static constexpr const uintptr_t VFT_RVA = entEntityTemplate_VFT_RVA;
 
     virtual void sub_20(Handle<ISerializable>*) override;
 

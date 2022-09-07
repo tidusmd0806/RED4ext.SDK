@@ -64,7 +64,7 @@ struct Object : ent::GameEntity, PSInterface
 {
     static constexpr const char* NAME = "gameObject";
     static constexpr const char* ALIAS = "GameObject";
-    static constexpr const uintptr_t VFT_RVA = 0x33156C0;
+    static constexpr const uintptr_t VFT_RVA = gameObject_VFT_RVA;
     
 // overridden virtuals
 

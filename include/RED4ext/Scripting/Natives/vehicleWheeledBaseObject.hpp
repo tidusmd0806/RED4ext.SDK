@@ -13,7 +13,7 @@ struct WheeledBaseObject : vehicle::BaseObject
 {
     static constexpr const char* NAME = "vehicleWheeledBaseObject";
     static constexpr const char* ALIAS = "WheeledObject";
-    static constexpr const uintptr_t VFT_RVA = 0x342EFA0;
+    static constexpr const uintptr_t VFT_RVA = vehicleWheeledBaseObject_VFT_RVA;
 
 // overrides
 
