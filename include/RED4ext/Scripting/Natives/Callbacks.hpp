@@ -69,9 +69,6 @@ struct CallbackStruct
 
 struct CallbackManager
 {
-    static constexpr const char* NAME = "CallbackManager";
-    static constexpr const char* ALIAS = NAME;
-
     // 1.52 RVA: 0x2BC1620 / 45880864
     /// @pattern 48 89 6C 24 20 56 57 41 54 48 83 EC 20 4C 8B 41 38 41 BC FF FF 00 00 0F B7 FA 48 8B F1 48 C1 E7
     __int64 __fastcall Unknown1(uint16_t a2);
@@ -87,7 +84,7 @@ struct CallbackManager
 
     // 1.52 RVA: 0x2BC1B60 / 45882208
     /// @pattern 40 56 41 56 48 83 EC 48 48 83 3A 00 48 8B F2 4C 8B F1 0F 84 F2 00 00 00 48 89 5C 24 60 48 83 C1
-    void __fastcall AddToUnk00(HandleBase *a2);
+    void __fastcall AddToUnk00(Handle<IScriptable> *a2);
 
     // 1.52 RVA: 0x2BC1C80 / 45882496
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 56 57 41 54 41 56 41 57 48 83 EC 40 48 8B E9 48 8B F2 48 83 C1 5B
@@ -124,10 +121,8 @@ struct CallbackManager
 };
 // ASSERT 0x60 etc
 
-struct Callback
+struct CallbackThing
 {
-    static constexpr const char* NAME = "Callback";
-    static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT_RVA = 0x35EB980;
 
     virtual int64_t __fastcall Destruct(int16_t, int64_t);
@@ -135,7 +130,7 @@ struct Callback
     virtual CallbackId * __fastcall AddCallbackWithAction(int16_t asyncId, CallbackStorage *callbackStorage, CName action);
     
     CallbackManager * callbackManager;
-    HandleBase componentHandle;
+    Handle<IScriptable> componentHandle;
     uint16_t listenerIndex;
     CallbackId ids[512];
     uint32_t numIds;

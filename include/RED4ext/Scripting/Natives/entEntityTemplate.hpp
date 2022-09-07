@@ -56,8 +56,8 @@ struct EntityTemplate : res::StreamedResource
     void * unk238;
     uint64_t datasize;
     DataBuffer compiledData; // 248
-    DynArray<TResourceAsyncReference<CResource>> resolvedDependencies; // 270
-    DynArray<TResourceReference<CResource>> inplaceResources; // 280
+    DynArray<ResourceAsyncReference<CResource>> resolvedDependencies; // 270
+    DynArray<ResourceReference<CResource>> inplaceResources; // 280
     uint8_t unk290[0x2A0 - 0x290]; // 290
     uint16_t compiledEntityLODFlags; // 2A0
     uint8_t unk2A2[0x2B0 - 0x2A2]; // 2A2

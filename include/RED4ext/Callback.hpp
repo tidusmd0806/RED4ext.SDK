@@ -89,8 +89,8 @@ public:
     }
 
     template<typename L>
-    requires Detail::IsClosure<L, R, Args...>
-    Callback(L&& aClosure) noexcept
+    requires Detail::IsClosure<L, R, Args...> Callback(L&& aClosure)
+    noexcept
     {
         using TargetType = Detail::ClosureTarget<L, R, Args...>;
 
@@ -240,8 +240,7 @@ public:
     }
 
     template<typename L>
-    requires Detail::IsClosure<L, R, Args...>
-    FlexCallback(L&& aClosure)
+    requires Detail::IsClosure<L, R, Args...> FlexCallback(L&& aClosure)
     {
         using TargetType = Detail::ClosureTarget<L, R, Args...>;
 

@@ -291,7 +291,7 @@ struct UpdateManagerHolder {
         Unk1 unk01, 
         IUpdatableSystem *system,
         const char *nameStr, 
-        const FixedCallback<void (*)(Unk2* unk2, float* deltaTime, void* unkStruct)>&);
+        const Callback<void (*)(Unk2* unk2, float* deltaTime, void* unkStruct)>&);
 
 };
 

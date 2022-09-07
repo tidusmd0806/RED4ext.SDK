@@ -15,7 +15,7 @@ struct BaseStream;
 struct CProperty;
 struct CClassFunction;
 struct CClassStaticFunction;
-struct Callback;
+//struct Callback;
 struct CallbackDefinition;
 struct CallbackStorage;
 
@@ -197,7 +197,7 @@ struct CClass : CBaseRTTIType
 
     // 1.52 RVA: 0x1F4BD0 / 2051024
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B F2 48 8B E9 66 0F 1F 44 00 00
-    __int64 __fastcall AddCallback(Callback *a2);
+    //__int64 __fastcall AddCallback(Callback<void*(*)()> *a2);
 
     // 1.52 RVA: 0x1F4C80 / 2051200
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 41 0F B7 B8 C0 02 00 00 48 8B DA 48 8B F1 66 83 FF

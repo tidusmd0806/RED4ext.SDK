@@ -28,7 +28,7 @@ struct RuntimeDescription
     // set to "03_night_city"
     CString str;
     // 0x445666BF489EC042
-    ResourceAsyncReference resource;
+    ResourceAsyncReference<CResource> resource;
 };
 
 struct RuntimeInfo : IScriptable

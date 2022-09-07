@@ -135,16 +135,16 @@ struct Object : ent::GameEntity, PSInterface
     CName audioResourceName; // 1C8
     game::PlayerSocket playerSocket; // 1D0
     float visibilityCheckDistance; // 1F8
-    RED4ext::game::Object::Flags flags;
+    Flags flags;
     uint8_t unk1FD[3];
-    RED4ext::HandleBase owner;
+    Handle<ISerializable> owner;
     uint64_t unk210; // 210
     Handle<ent::SlotComponent> uiSlotComponent; // 218
     IGameInstance * gameInstance2; // 228
     red::TagList gameObjectTags; // 230
 };
 RED4EXT_ASSERT_SIZE(Object, 0x240);
-RED4EXT_ASSERT_OFFSET(Object, persistentState, 0x168);
+//RED4EXT_ASSERT_OFFSET(Object, persistentState, 0x168);
  } // namespace game
 using GameObject = game::Object;
 } // namespace RED4ext

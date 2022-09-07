@@ -40,7 +40,7 @@ struct Vehicle_Record : game::data::SpawnableObject_Record
     uint8_t fxCollision[3];
     uint8_t vehDriveModelDataAI[3];
     uint8_t vehAirControlAI[3];
-    uint8_t vehPassR_ProceduralFFPCameraParams[3];
+    uint8_t vehPassR_ProceduralFPPCameraParams[3];
     uint8_t vehPassCombatR_FPPCameraParams[3];
     uint8_t vehDriver_FPPCameraParams[3];
     uint8_t vehPassCombatL_FPPCameraParams[3];
@@ -59,6 +59,7 @@ struct Vehicle_Record : game::data::SpawnableObject_Record
     uint8_t vehPassCombatL_ProceduralFPPCameraParams[3];
     uint8_t vehBehaviorData[3];
     uint8_t vehWheelDimensionsSetup[3];
+    uint8_t fxWheelsDecalsFrontOverride[3];
     uint8_t fxWheelsDecals[3];
     uint8_t affiliation[3];
     uint8_t vehDriveModelData[3];
@@ -72,7 +73,6 @@ struct Vehicle_Record : game::data::SpawnableObject_Record
     uint8_t vehicleUIData[3];
     uint8_t vehImpactTraffic[3];
     uint8_t trafficSuspension[3];
-    uint8_t interiorDamageColor[3];
     uint8_t leftBlinkerlightColor[3];
     uint8_t preventionPassengers[3];
     uint8_t headlightColor[3];
@@ -82,8 +82,10 @@ struct Vehicle_Record : game::data::SpawnableObject_Record
     uint8_t attachmentSlots[3];
     uint8_t brakelightColor[3];
     uint8_t tppCameraPresets[3];
+    uint8_t utilityLightColor[3];
     uint8_t weapons[3];
     uint8_t randomPassengers[3];
+    uint8_t interiorDamageColor[3];
     uint8_t queryOnlyExceptions[3];
     uint8_t displayName[3];
     uint8_t widgetStyleSheetPath[3];

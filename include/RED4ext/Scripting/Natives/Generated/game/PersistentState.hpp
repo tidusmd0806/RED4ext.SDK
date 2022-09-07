@@ -21,9 +21,9 @@ struct PersistentState : IScriptable
     static constexpr const uintptr_t VFT_RVA = 0x331DC50;
 
     // checks with persistencySystem to see if this class is destructible
-    inline virtual bool sub_D0() override
+    inline virtual bool CanBeDestructed() override
     {
-        RelocFunc<decltype(&PersistentState::sub_D0)> call(VFT_RVA, 0xD0);
+        RelocFunc<decltype(&PersistentState::CanBeDestructed)> call(VFT_RVA, 0xD0);
         return call(this);
     };
 

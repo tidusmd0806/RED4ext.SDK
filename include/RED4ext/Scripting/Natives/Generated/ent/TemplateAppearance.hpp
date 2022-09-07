@@ -20,7 +20,7 @@ struct TemplateAppearance
     static constexpr const char* ALIAS = NAME;
 
     CName name; // 00
-    TResourceAsyncReference<appearance::AppearanceResource> appearanceResource; // 08
+    ResourceAsyncReference<appearance::AppearanceResource> appearanceResource; // 08
     CName appearanceName; // 10
 };
 RED4EXT_ASSERT_SIZE(TemplateAppearance, 0x18);
