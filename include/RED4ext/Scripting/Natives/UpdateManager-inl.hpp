@@ -13,7 +13,7 @@ RED4EXT_INLINE void UpdateManagerHolder::RegisterBucketUpdate(
         const char *nameStr, 
         const Callback<void (*)(Unk2* unk2, float* deltaTime, void* unkStruct)> &callback)
 {
-    RelocFunc<decltype(&UpdateManagerHolder::RegisterBucketUpdate)> call(0xB17640);
+    RelocFunc<decltype(&UpdateManagerHolder::RegisterBucketUpdate)> call(0xB214C0);
     return call(this, unk02, unk01, system, nameStr, callback);
 }
 }

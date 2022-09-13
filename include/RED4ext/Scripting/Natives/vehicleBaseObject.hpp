@@ -508,16 +508,18 @@ struct BaseObject : game::Object
 // non-virtual methods
 
     // 1.52 RVA: 0x1C60690 / 29755024
+    // 1.6 RVA:  0x1C8D240 / 29938240
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 20 57 48 83 EC 30 8B B1 50 02 00 00 41 0F B6 E8 8B FA
     inline void __fastcall SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3) {
-        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C60690);
+        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C8D240);
         call(this, a2, a3);
     }
 
     // 1.52 RVA: 0x1C4C4F0 / 29672688
-    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8 0D
-    void __fastcall UnsetPhysicsStates() {
-        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C4C4F0);
+    // 1.6 RVA:  0x1C78F70 / 29855600
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8
+    inline void __fastcall UnsetPhysicsStates() {
+        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C78F70);
         call(this);
     }
 
@@ -620,9 +622,10 @@ struct BaseObject : game::Object
     RED4ext::WorldTransform *__fastcall PostMovePhysicsStateZero(float deltaTime, float *a3);
 
     // 1.52 RVA: 0x1C5D800 / 29743104
+    // 1.6 RVA:  0x1C8A390 / 29926288
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 48 8D B1 88 03 00 00 48 8B FA 48 8B CE 48 8D 54 24
     inline action::ActionBase **__fastcall CreateAction(action::ActionBase **action_p, action::Type type) {
-        RED4ext::RelocFunc<decltype(&BaseObject::CreateAction)> call(0x1C5D800);
+        RED4ext::RelocFunc<decltype(&BaseObject::CreateAction)> call(0x1C8A390);
         return call(this, action_p, type);
     }
 

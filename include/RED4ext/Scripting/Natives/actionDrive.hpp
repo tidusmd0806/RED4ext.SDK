@@ -17,10 +17,10 @@ struct Drive : ActionBase
     virtual void sub_28() override;
 
     // a setup maybe
-    inline virtual bool sub_88(move::Component* moveComponent, vehicle::AutonomousData* autonomousData) {
+    inline virtual bool sub_88(move::Component* moveComponent, vehicle::AutonomousData* autonomousData);/* {
         RelocFunc<decltype(&Drive::sub_88)> call(VFT_RVA, 0x88);
         return call(this, moveComponent, autonomousData);
-    }
+    }*/
     virtual void sub_90(uint64_t, uint64_t);
     // update - if true, action ends
     virtual bool sub_98();

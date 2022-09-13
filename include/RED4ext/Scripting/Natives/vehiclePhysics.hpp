@@ -529,8 +529,8 @@ struct BikePhysics : WheeledPhysics
     BikePhysics();
 
     // 1.52 RVA: 0x1D06B00 / 30436096
-    static constexpr const uintptr_t AnimationUpdateAddr = 0x1D06B00;
-    /// @pattern 48 89 5C 24 10 57 48 83 EC 40 48 8B 81 20 0D 00 00 48 8B D9 F3 0F 10 81 E4 00 00 00 0F 57 05 8D
+    static constexpr const uintptr_t AnimationUpdateAddr = 0x1D33270;
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 40 48 8B 81 20 0D 00 00 48 8B D9 F3 0F 10 81 E4 00 00 00 0F 57 05
     __int64 __fastcall AnimationUpdate();
 
     BikeBaseObject* bikeObject;
