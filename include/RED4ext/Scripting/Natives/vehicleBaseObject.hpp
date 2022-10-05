@@ -718,6 +718,7 @@ struct BaseObject : game::Object
     float unk5F4;
     float unk5F8;
     uint8_t permanantStun2;
+    // gravity related
     uint8_t unk5FD;
     uint16_t permanantStun1;
     float unk600;
@@ -727,7 +728,8 @@ struct BaseObject : game::Object
     uint8_t unk607;
     // timer that counts down to zero (min value)
     float unk608;
-    float unk60C;
+    // added to on collision
+    int32_t unk60C;
     uint8_t important;
     uint8_t ignoreImpulses;
     uint8_t unk612;
