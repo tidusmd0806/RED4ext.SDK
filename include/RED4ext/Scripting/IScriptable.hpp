@@ -16,7 +16,10 @@ struct IScriptable : ISerializable
     static constexpr const uintptr_t VFT_RVA = IScriptable_VFT_RVA;
 
     virtual CClass* GetNativeType() override;
-    virtual CClass* GetType() override;
+    IScriptable();
+
+    ~IScriptable() override;
+    CClass* GetType() override;
 
     virtual void sub_D8(int64_t a1, int64_t a2); // D8
     virtual void sub_E0();                       // E0
@@ -27,6 +30,7 @@ struct IScriptable : ISerializable
     virtual void sub_108();                      // 108
 
     void* GetValueHolder();
+    void DestructValueHolder();
 
     template<typename ReturnT = void, typename... Args, typename = std::enable_if_t<!std::is_same_v<ReturnT, void>>>
     std::optional<ReturnT> ExecuteFunction(CName aFunc, Args&&... aArgs)

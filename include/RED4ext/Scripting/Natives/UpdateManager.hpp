@@ -285,7 +285,9 @@ struct UpdateManagerHolder {
     void *__fastcall UpdateSystems(void *unkStruct, float a3, __int64 a4);
 
     // 1.52 RVA: 0xB17640 / 11630144
+    // 1.6 RVA: 0xB214C0 / 11670720
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC 70 48 8B 9C 24 A8 00
+    /// @nth 0/2
     void __fastcall RegisterBucketUpdate(
         Unk2 unk02, 
         Unk1 unk01, 

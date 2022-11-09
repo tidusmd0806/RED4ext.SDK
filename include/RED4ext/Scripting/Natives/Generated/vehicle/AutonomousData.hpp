@@ -19,6 +19,21 @@ namespace vehicle { struct BaseObject; }
 namespace vehicle { struct PortalsList; }
 
 namespace vehicle { 
+
+struct AutoDataUnkC8
+{
+  virtual void sub_00();
+  virtual void sub_08();
+  virtual void sub_10(float **);
+  virtual void sub_18();
+  virtual void sub_20();
+
+  DynArray<void*> unk08;
+  Vector4 *unk18;
+  void *unk20;
+  uint8_t unk28;
+};
+
 struct AutonomousData : ISerializable
 {
     static constexpr const char* NAME = "vehicleAutonomousData";
@@ -37,7 +52,9 @@ struct AutonomousData : ISerializable
     NodeRef splineRefBackwards; // 78
     game::EntityReference vehicleRef; // 80
     Vector3 targetPosition; // B8
-    uint8_t unkC4[0xD8 - 0xC4]; // C4
+    uint8_t unkC4[4];
+    AutoDataUnkC8 *unkC8;
+    uint64_t unkD0;
     TweakDBID drivingID; // D8
     float distanceMin; // E0
     float distanceMax; // E4

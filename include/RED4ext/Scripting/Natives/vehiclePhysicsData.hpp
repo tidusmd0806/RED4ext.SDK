@@ -61,15 +61,19 @@ struct PhysicsData
     BaseObject* vehicle;
     uint64_t unk188;
     Box bounds;
-    uint32_t unk1B0;
+    // gravity enabled
+    uint8_t unk1B0;
+    uint8_t unk1B1;
+    uint8_t unk1B2;
+    uint8_t unk1B3;
     // set to 100000.0 in a function
-    float alternativeChassisMass;
+    float alternativeChassisMass; // 1B4
     uint8_t usesAlternativeChassisMass;
     uint8_t unk1B9;
     uint8_t unk1BA;
     uint8_t unk1BB;
     float total_mass;
-    float chassis_mass;
+    float chassis_mass; // 1C0
     uint8_t usesInertiaTensor;
     uint8_t unk1C5;
     uint8_t unk1C6;

@@ -19,6 +19,7 @@ struct IGameSystem : IUpdatableSystem
     static constexpr const char* NAME = "gameIGameSystem";
     static constexpr const char* ALIAS = "IGameSystem";
     // static constexpr const uintptr_t VFT_RVA = 0x31B53F0;
+    static constexpr const uintptr_t VFT_RVA = 0x3214700;
 
     struct HighLow
     {

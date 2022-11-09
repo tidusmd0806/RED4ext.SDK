@@ -36,7 +36,7 @@ struct WidgetBaseComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "WidgetBaseComponent";
     static constexpr const char* ALIAS = NAME;
-    static constexpr const uintptr_t VFT_RVA = WidgetBaseComponent_VFT_RVA;
+    //static constexpr const uintptr_t VFT_RVA = WidgetBaseComponent_VFT_RVA;
 
     virtual void * sub_258(void *);
     virtual bool sub_260();

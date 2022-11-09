@@ -19,7 +19,7 @@ struct CProperty
         uint64_t isInline : 1;       // 02
         uint64_t b3 : 1;             // 03
         uint64_t b4 : 1;             // 04
-        uint64_t hasDefault : 1;     // 05
+        uint64_t isScripted : 1;     // 05
         uint64_t isReturn : 1;       // 06
         uint64_t b7 : 1;             // 07
         uint64_t isLocalVar : 1;     // 08
@@ -34,7 +34,7 @@ struct CProperty
         uint64_t isProtected : 1;    // 11
         uint64_t isPublic : 1;       // 12
         uint64_t b19 : 2;            // 13
-        uint64_t hasValueHolder : 1; // 15 - When true, acquire value from holder (isScripted?)
+        uint64_t inValueHolder : 1; // 15 - When true, acquire value from holder
         uint64_t arrayRelated : 5;   // 16
         uint64_t isHandle : 1;       // 1B
         uint64_t isPersistent : 1;   // 1C
@@ -47,6 +47,7 @@ struct CProperty
         uint64_t arrayRelated2 : 1;  // 23
         uint64_t b36 : 1;            // 24
         uint64_t isNotSavable : 1;   // 25
+
     };
     RED4EXT_ASSERT_SIZE(Flags, 0x8);
 
@@ -110,7 +111,7 @@ private:
     T* GetValuePtr(ScriptInstance aInstance) const
     {
         void* holder = aInstance;
-        if (flags.hasValueHolder)
+        if (flags.inValueHolder)
         {
             /*auto scriptable = static_cast<IScriptable*>(aInstance);
             holder = scriptable->GetValueHolder();*/

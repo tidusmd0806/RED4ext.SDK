@@ -13,6 +13,17 @@ RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetNativeType()
     return call(this);
 }
 
+RED4EXT_INLINE RED4ext::IScriptable::IScriptable()
+    : valueHolder(nullptr)
+    , unk30(nullptr)
+{
+}
+
+RED4EXT_INLINE RED4ext::IScriptable::~IScriptable()
+{
+    DestructValueHolder();
+}
+
 RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetType()
 {
     if (unk30)
@@ -58,4 +69,11 @@ RED4EXT_INLINE void* RED4ext::IScriptable::GetValueHolder()
     using func_t = void* (*)(IScriptable*);
     RelocFunc<func_t> func(Addresses::IScriptable_GetValueHolder);
     return func(this);
+}
+
+RED4EXT_INLINE void RED4ext::IScriptable::DestructValueHolder()
+{
+    using func_t = void* (*)(IScriptable*);
+    RelocFunc<func_t> func(Addresses::IScriptable_DestructValueHolder);
+    func(this);
 }
