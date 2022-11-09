@@ -203,14 +203,14 @@ RED4EXT_INLINE RED4ext::CClass::CClass(CName aName, uint32_t aSize, Flags aFlags
     , referenceProps(Memory::RTTIAllocator::Get())
     , referencePropTypes(Memory::RTTIAllocator::Get())
     , propsWithDefaults(Memory::ScriptAllocator::Get())
-    , defaultValues(Memory::ScriptAllocator::Get())
+    , defaults(Memory::ScriptAllocator::Get())
     , unk180(Memory::RTTIAllocator::Get())
-    , callbacks(Memory::RTTIAllocator::Get())
-    , callbackTypeId(-1)
+    , listeners(Memory::RTTIAllocator::Get())
+    , eventTypeId(-1)
     , unk2C4(-1)
     , classSetupState(0xE6)
 {
-    std::memset(callbackTypes, 0, sizeof(callbackTypes));
+    std::memset(listening, 0, sizeof(listening));
 }
 
 RED4EXT_INLINE RED4ext::CName RED4ext::CClass::GetName() const
@@ -327,10 +327,10 @@ RED4EXT_INLINE bool RED4ext::CClass::sub_D0() const
     return func(this);
 }
 
-RED4EXT_INLINE RED4ext::ScriptInstance RED4ext::CClass::AllocInstance(bool aZeroMemory) const
+RED4EXT_INLINE RED4ext::ScriptInstance RED4ext::CClass::CreateInstance(bool aZeroMemory) const
 {
     using func_t = ScriptInstance (*)(const CClass*, uint32_t, bool);
-    RelocFunc<func_t> func(Addresses::CClass_AllocInstance);
+    RelocFunc<func_t> func(Addresses::CClass_CreateInstance);
     return func(this, GetSize(), aZeroMemory);
 }
 
@@ -357,6 +357,13 @@ RED4EXT_INLINE RED4ext::CProperty* RED4ext::CClass::GetProperty(CName aName)
     using func_t = CProperty* (*)(CClass*, CName);
     RelocFunc<func_t> func(Addresses::CClass_GetProperty);
     return func(this, aName);
+}
+
+RED4EXT_INLINE void RED4ext::CClass::GetProperties(DynArray<CProperty*>& aProps)
+{
+    using func_t = CProperty* (*)(CClass*, DynArray<CProperty*>&);
+    RelocFunc<func_t> func(Addresses::CClass_GetProperties);
+    func(this, aProps);
 }
 
 RED4EXT_INLINE RED4ext::CClassFunction* RED4ext::CClass::GetFunction(CName aShortName) const
@@ -395,6 +402,13 @@ RED4EXT_INLINE void RED4ext::CClass::RegisterFunction(CClassFunction* aFunc)
     {
         funcs.PushBack(aFunc);
     }
+}
+
+RED4EXT_INLINE void RED4ext::CClass::ClearScriptedData()
+{
+    using func_t = void (*)(CClass*);
+    RelocFunc<func_t> func(Addresses::CClass_ClearScriptedData);
+    func(this);
 }
 
 RED4EXT_INLINE RED4ext::CEnum::CEnum(CName aName, int8_t aActualSize, Flags aFlags)

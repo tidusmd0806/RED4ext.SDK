@@ -23,6 +23,14 @@ struct IAllocator;
 //namespace game { struct IGameSystem; struct GameFeatureManager; }
 namespace world { struct RuntimeScene;  } //struct RuntimeInfo;
 
+enum class EEngineState : int32_t
+{
+    Idle = 0,
+    BaseInitialization = 1,
+    Initialization = 2,
+    Running = 3
+};
+
 struct CBaseEngine
 {
     // static constexpr const uintptr_t VFT_RVA = 0x31A27D8;
@@ -76,7 +84,7 @@ struct CBaseEngine
     virtual void sub_28() = 0;
     // something with SystemMenuPause CName
     virtual void sub_30() = 0;
-    virtual void sub_38() = 0;
+    virtual void Terminate(int32_t aExitStatus) = 0;
     // increment unk44, etc
     virtual void sub_40() = 0;
     // decrement unk44, etc
@@ -113,71 +121,70 @@ struct CBaseEngine
     // doesn't actually exist, start of an interface
     // virtual void sub_100() = 0;                      // 100
 
-    double unk8;                 // 08
-    float unk10;                 // 10
-    float unk14;                 // 14
-    float unk18;                 // 18
-    float unk1C;                 // 1C
-    float unk20;                 // 20
-    int64_t unk28;               // 28
-    int32_t unk30;               // 30
-    int8_t unk34;                // 34
-    int64_t unk38;               // 38
-    int8_t unk40;                // 40
-    // mutex for unk44
-    SharedMutex unk41;           // 41
-    int32_t unk44;               // 44
-    int8_t unk48;                // 48
-    int8_t unk49;                // 49
-    int8_t unk4A;                // 4A
-    int8_t unk4B;                // 4B
-    int32_t unk4C;               // 4C
-    int32_t unk50;               // 50
-    int8_t unk54;                // 54
-    int8_t unattended1;          // 55
-    int8_t unattended2;          // 56
-    int8_t unk57;                // 57
-    int8_t unk58;                // 58
-    int16_t unk5A;               // 5A
-    int32_t interopStartingPort; // 5C
-    CString unk60;               // 60
-    DynArray<void*> unk80;       // 80
-    int64_t unk90;               // 90
-    int64_t unk98;               // 98 - audio related
-    int64_t unkA0;               // A0
-    int64_t unkA8;               // A8
-    int64_t unkB0;               // B0
-    int64_t unkB8;               // B8
-    UnkC0* unkC0;                // C0
-    double unkC8;                // C8
-    double unkD0;                // D0
-    int32_t unkD8;               // D8
-    int64_t unkE0;               // E0
-    int64_t unkE8;               // E8
-    int64_t unkF0;               // F0
-    volatile int32_t unkF8;      // F8
-    int32_t unkFC;               // FC
-    int32_t unk100;              // 100
-    Unk108* unk108;              // 108
-    Unk110 unk110;               // 110
-    CString unk120;              // 120
-    CString unk140;              // 140
-    int32_t unk160;              // 160
-    int8_t unk164;               // 164
-    int64_t unk168;              // 168
-    int64_t unk170;              // 170
-    int64_t unk178;              // 178
-    int64_t unk180;              // 180
-    int8_t unk188[178];          // 188
-    int32_t unk23C;              // 23C
-    int8_t unk240[64];           // 240
-    DynArray<void*> unk280;      // 280
-    DynArray<void*> unk290;      // 290
-    int64_t unk2A0;              // 2A0
-    int64_t unk2A8;              // 2A8
-    int64_t unk2B0;              // 2B0
-    int64_t unk2B8;              // 2B8
-    int32_t unk2C0;              // 2B0
+    double unk8;                               // 08
+    float unk10;                               // 10
+    float unk14;                               // 14
+    float unk18;                               // 18
+    float unk1C;                               // 1C
+    float unk20;                               // 20
+    int64_t unk28;                             // 28
+    int32_t unk30;                             // 30
+    int8_t unk34;                              // 34
+    uint64_t scriptsTimestamp;                 // 38
+    int8_t unk40;                              // 40
+    SharedMutex terminationLock;               // 41
+    int32_t unk44;                             // 44
+    int8_t terminating;                        // 48
+    int8_t unk49;                              // 49
+    int8_t unk4A;                              // 4A
+    int8_t unk4B;                              // 4B
+    int32_t exitStatus;                        // 4C
+    int32_t unk50;                             // 50
+    bool scriptsLoaded;                        // 54
+    bool scriptsSilentCompilation;             // 55
+    bool scriptsSilentValidation;              // 56
+    int8_t unk57;                              // 57
+    int8_t unk58;                              // 58
+    int16_t unk5A;                             // 5A
+    int32_t interopStartingPort;               // 5C
+    CString scriptsCompilationErrors;          // 60
+    DynArray<CString> scriptsValidationErrors; // 80
+    int64_t unk90;                             // 90
+    int64_t unk98;                             // 98
+    int64_t unkA0;                             // A0
+    int64_t unkA8;                             // A8
+    int64_t unkB0;                             // B0
+    int64_t unkB8;                             // B8
+    UnkC0* unkC0;                              // C0
+    double unkC8;                              // C8
+    double unkD0;                              // D0
+    int32_t unkD8;                             // D8
+    int64_t unkE0;                             // E0
+    int64_t unkE8;                             // E8
+    int64_t unkF0;                             // F0
+    volatile EEngineState engineState;         // F8
+    int32_t unkFC;                             // FC
+    int32_t unk100;                            // 100
+    Unk108* unk108;                            // 108
+    Unk110 unk110;                             // 110
+    CString buildString;                       // 120
+    CString scriptsBlobPath;                   // 140
+    int32_t unk160;                            // 160
+    int8_t unk164;                             // 164
+    int64_t unk168;                            // 168
+    int64_t unk170;                            // 170
+    int64_t unk178;                            // 178
+    int64_t unk180;                            // 180
+    int8_t unk188[178];                        // 188
+    int32_t unk23C;                            // 23C
+    int8_t unk240[64];                         // 240
+    DynArray<void*> unk280;                    // 280
+    DynArray<void*> unk290;                    // 290
+    int64_t unk2A0;                            // 2A0
+    int64_t unk2A8;                            // 2A8
+    int64_t unk2B0;                            // 2B0
+    int64_t unk2B8;                            // 2B8
+    int32_t unk2C0;                            // 2B0
 };
 RED4EXT_ASSERT_SIZE(CBaseEngine, 0x2C8);
 RED4EXT_ASSERT_OFFSET(CBaseEngine, unkC0, 0xC0);

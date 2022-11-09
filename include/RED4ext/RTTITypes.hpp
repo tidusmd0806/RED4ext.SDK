@@ -4,9 +4,11 @@
 
 #include <RED4ext/CName.hpp>
 #include <RED4ext/CString.hpp>
+#include <RED4ext/Callback.hpp>
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/HashMap.hpp>
 #include <RED4ext/InstanceType.hpp>
+#include <RED4ext/Map.hpp>
 #include <RED4ext/Utils.hpp>
 
 namespace RED4ext
@@ -18,6 +20,7 @@ struct CClassStaticFunction;
 //struct Callback;
 struct CallbackDefinition;
 struct CallbackStorage;
+struct Variant;
 
 enum class ERTTIType : uint8_t
 {
@@ -143,11 +146,16 @@ struct CClass : CBaseRTTIType
     };
     RED4EXT_ASSERT_SIZE(CClass::Flags, 0x4);
 
-    struct DefaultValue
+    struct Listener
     {
-        uint64_t type;
-        uint64_t value;
+        Callback<void (*)(IScriptable&, Handle<IScriptable>&), 16> callback; // 00
+        CName callbackName;                                                  // 18
+        int16_t eventTypeId;                                                 // 20
+        bool isScripted;                                                     // 22
     };
+    RED4EXT_ASSERT_SIZE(CClass::Listener, 0x28);
+    RED4EXT_ASSERT_OFFSET(CClass::Listener, callbackName, 0x18);
+    RED4EXT_ASSERT_OFFSET(CClass::Listener, isScripted, 0x22);
 
     CClass(CName aName, uint32_t aSize, Flags aFlags);
 
@@ -174,14 +182,17 @@ struct CClass : CBaseRTTIType
     virtual void DestructCls(ScriptInstance aMemory) const = 0;  // E0
     virtual void* AllocMemory() const = 0;                       // E8
 
-    ScriptInstance AllocInstance(bool aZeroMemory = false) const;
+    ScriptInstance CreateInstance(bool aZeroMemory = false) const;
 
     bool IsA(const CBaseRTTIType* aType) const;
 
     CProperty* GetProperty(CName aName);
     CClassFunction* GetFunction(CName aShortName) const;
+    void GetProperties(DynArray<CProperty*>& aProps);
 
     void RegisterFunction(CClassFunction* aFunc);
+
+    void ClearScriptedData();
 
     [[deprecated("Use 'ConstructCls()' instead.")]]
     inline void InitCls(ScriptInstance aMemory) const
@@ -211,6 +222,11 @@ struct CClass : CBaseRTTIType
     /// @pattern 8B 41 70 45 84 C0 74 06 0B C2 89 41 70 C3 F7 D2 23 D0 89 51 70 C3
     void __fastcall ApplyFlags(Flags a2, bool set);
 
+    [[deprecated("Use 'CreateInstance()' instead.")]]
+    inline ScriptInstance AllocInstance(bool aZeroMemory = false) const
+    {
+        return CreateInstance(aZeroMemory);
+    }
 
     CClass* parent;                              // 10
     CName name;                                  // 18
@@ -230,15 +246,13 @@ struct CClass : CBaseRTTIType
     HashMap<CName, CProperty*> propsByName;      // E8
     DynArray<CProperty*> allProps;               // 118 - More entries than 0x28, will contain native props
     DynArray<CProperty*> persistentProps;        // 128
-    DynArray<CProperty*> referenceProps;         // 138
+    DynArray<CProperty*> referenceProps;         // 138 - Only RT_Class types?
     DynArray<void*> referencePropTypes;      // 148 - CBaseRTTIType* with an unknown uint32_t value at 0x0C
-    DynArray<CName> propsWithDefaults;           // 158
-    DynArray<DefaultValue*> defaultValues;       // 168
-    int64_t unk178;                              // 178
+    Map<CName, Variant*> defaults;               // 158
     HashMap<void*, void*> unk180;                // 180
-    DynArray<CallbackStorage> callbacks;         // 1B0
-    int32_t callbackTypes[64];                   // 1C0 - Bits are toggled here if a type's id is supported in a callback
-    int16_t callbackTypeId;                      // 2C0 - Types used in callbacks get assigned one at runtime
+    DynArray<Listener> listeners;                // 1B0 - Event listeners
+    int8_t listening[256];                       // 1C0 - Bitmask of event types that this class listens to
+    int16_t eventTypeId;                         // 2C0 - Assigned to event classes only
     int32_t unk2C4;                              // 2C4
     SharedMutex propsLock;                       // 2C8
     uint8_t classSetupState;                     // 2C9
