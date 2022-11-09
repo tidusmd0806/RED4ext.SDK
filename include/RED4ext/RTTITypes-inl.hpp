@@ -202,7 +202,6 @@ RED4EXT_INLINE RED4ext::CClass::CClass(CName aName, uint32_t aSize, Flags aFlags
     , persistentProps(Memory::RTTIAllocator::Get())
     , referenceProps(Memory::RTTIAllocator::Get())
     , referencePropTypes(Memory::RTTIAllocator::Get())
-    , propsWithDefaults(Memory::ScriptAllocator::Get())
     , defaults(Memory::ScriptAllocator::Get())
     , unk180(Memory::RTTIAllocator::Get())
     , listeners(Memory::RTTIAllocator::Get())
