@@ -102,18 +102,20 @@ struct ActionBase
     virtual void sub_80();
 
     // 1.52 RVA: 0x3C09E0 / 3934688
-    // 1.6 RVA:  0x3C5910 / 3954960
+    // 1.6  RVA: 0x3C5910 / 3954960
+    // 1.61 RVA: 0x3C5F70
     /// @pattern F0 FF 41 08 C3
     inline void __fastcall Lock() {
-        RelocFunc<decltype(&ActionBase::Lock)> call(0x3C5910);
+        RelocFunc<decltype(&ActionBase::Lock)> call(0x3C5F70);
         return call(this);
     }
 
     // 1.52 RVA: 0x1B034D0 / 28325072
-    // 1.6 RVA: 0x1B2F080 / 28504192
+    // 1.6  RVA: 0x1B2F080 / 28504192
+    // 1.61 RVA: 0x1B2F170
     /// @pattern B8 FF FF FF FF F0 0F C1 41 08 83 F8 01 75 0C 48 8B D1 48 
     inline int32_t __fastcall Unlock() {
-        RelocFunc<decltype(&ActionBase::Unlock)> call(0x1B2F080);
+        RelocFunc<decltype(&ActionBase::Unlock)> call(0x1B2F170);
         return call(this);
     }
 

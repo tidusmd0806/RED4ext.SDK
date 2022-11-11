@@ -331,52 +331,53 @@ struct BaseObject : game::Object
     static constexpr const char* ALIAS = "VehicleObject";
     static constexpr const uintptr_t VFT_RVA = vehicleBaseObject_VFT_RVA;
 
-    static constexpr const uintptr_t On_vehicleChangeMovableEvent_Addr = 29694240;
-    static constexpr const uintptr_t On_vehicleChangeStateEvent_Addr = 1656944; // empty function
-    static constexpr const uintptr_t On_gameinteractionsChoiceEvent_Addr = 1656944; // empty function
-    static constexpr const uintptr_t On_vehicleToggleQuestForceBrakingEvent_Addr = 29706032;
-    static constexpr const uintptr_t On_vehicleToggleQuestCustomFPPLockOffEvent_Addr = 1656944; // empty function
-    static constexpr const uintptr_t On_vehicleToggleQuestWeaponEnabledEvent_Addr = 29706048;
-    static constexpr const uintptr_t On_vehicleTeleportEvent_Addr = 29705616;
-    static constexpr const uintptr_t On_vehicleAIMountedE3Hack_Addr = 29696608;
-    static constexpr const uintptr_t On_vehicleAudioEvent_Addr = 29694096;
-    static constexpr const uintptr_t On_vehicleStartedMountingEvent_Addr = 29703392;
-    static constexpr const uintptr_t On_vehicleFinishedMountingEvent_Addr = 29696720;
-    static constexpr const uintptr_t On_vehicleDriveToPointEvent_Addr = 29698016;
-    static constexpr const uintptr_t On_vehicleDriveToNodeRefEvent_Addr = 29698192;
-    static constexpr const uintptr_t On_vehicleDriveToGameObjectEvent_Addr = 29698080;
-    static constexpr const uintptr_t On_vehicleDriveFollowEvent_Addr = 29697472;
-    static constexpr const uintptr_t On_vehicleDriveFollowSplineEvent_Addr = 29697632;
-    static constexpr const uintptr_t On_vehicleStopDriveToPointEvent_Addr = 29704640;
-    static constexpr const uintptr_t On_vehicleStartDynamicMovementEvent_Addr = 29702896;
-    static constexpr const uintptr_t On_vehicleStealEvent_Addr = 29704624;
-    static constexpr const uintptr_t On_gameeventsHitEvent_Addr = 29698608;
-    static constexpr const uintptr_t On_gameeventsVehicleDestructionEvent_Addr = 29706128;
-    static constexpr const uintptr_t On_enteventsPhysicalImpulseEvent_Addr = 29701792;
-    static constexpr const uintptr_t On_vehicleJoinTrafficVehicleEvent_Addr = 29701472;
-    static constexpr const uintptr_t On_vehicleDriveSplineReverseEvent_Addr = 29694112;
-    static constexpr const uintptr_t On_vehicleStartConvoyEvent_Addr = 29694480;
-    static constexpr const uintptr_t On_vehicleAssignConvoyEvent_Addr = 29694256;
-    static constexpr const uintptr_t On_vehicleDetachPartEvent_Addr = 29696560;
-    static constexpr const uintptr_t On_vehicleDetachAllPartsEvent_Addr = 29696544;
-    static constexpr const uintptr_t On_vehicleHasExplodedEvent_Addr = 29698256;
-    static constexpr const uintptr_t On_vehicleOnPartDetachedEvent_Addr = 29701504;
-    static constexpr const uintptr_t On_vehicleGridDestructionEvent_Addr = 29694608;
-    static constexpr const uintptr_t On_vehicleToggleRadioReceiverEvent_Addr = 29706080;
-    static constexpr const uintptr_t On_vehicleVehicleAudioMultipliersEvent_Addr = 29706096;
-    static constexpr const uintptr_t On_vehicleChangeRadioReceiverStationEvent_Addr = 29694176;
-    static constexpr const uintptr_t On_vehicleChangeRadioTierEvent_Addr = 29694208;
-    static constexpr const uintptr_t On_entAppearanceChangeFinishEvent_Addr = 29696704;
-    static constexpr const uintptr_t On_entAppearanceStatusEvent_Addr = 29756944;
-    static constexpr const uintptr_t On_entAppearanceMeshLoadedEvent_Addr = 29696704;
-    static constexpr const uintptr_t On_vehicleDoneActionEvent_Addr = 29690304;
-    static constexpr const uintptr_t On_gameCrowdEntityReuseEvent_Addr = 29694512;
-    static constexpr const uintptr_t On_gameQuestOrSceneSetVehiclePhysicsActive_Addr = 29694240;
-    static constexpr const uintptr_t On_gamePlayerTakeControlAsParent_Addr = 1656944; // empty function
-    static constexpr const uintptr_t On_gamePlayerTakeControlAsChild_Addr = 29702176;
-    static constexpr const uintptr_t On_gamePlayerReleaseControlAsParent_Addr = 1656944; // empty function
-    static constexpr const uintptr_t On_gamePlayerReleaseControlAsChild_Addr = 29701936;
-    static constexpr const uintptr_t On_vehicleGlassDestructionEvent_Addr = 29697968;
+    // 1.6 RVAs
+    // static constexpr const uintptr_t On_vehicleChangeMovableEvent_Addr = 29694240;
+    // static constexpr const uintptr_t On_vehicleChangeStateEvent_Addr = 1656944; // empty function
+    // static constexpr const uintptr_t On_gameinteractionsChoiceEvent_Addr = 1656944; // empty function
+    // static constexpr const uintptr_t On_vehicleToggleQuestForceBrakingEvent_Addr = 29706032;
+    // static constexpr const uintptr_t On_vehicleToggleQuestCustomFPPLockOffEvent_Addr = 1656944; // empty function
+    // static constexpr const uintptr_t On_vehicleToggleQuestWeaponEnabledEvent_Addr = 29706048;
+    // static constexpr const uintptr_t On_vehicleTeleportEvent_Addr = 29705616;
+    // static constexpr const uintptr_t On_vehicleAIMountedE3Hack_Addr = 29696608;
+    // static constexpr const uintptr_t On_vehicleAudioEvent_Addr = 29694096;
+    // static constexpr const uintptr_t On_vehicleStartedMountingEvent_Addr = 29703392;
+    // static constexpr const uintptr_t On_vehicleFinishedMountingEvent_Addr = 29696720;
+    // static constexpr const uintptr_t On_vehicleDriveToPointEvent_Addr = 29698016;
+    // static constexpr const uintptr_t On_vehicleDriveToNodeRefEvent_Addr = 29698192;
+    // static constexpr const uintptr_t On_vehicleDriveToGameObjectEvent_Addr = 29698080;
+    // static constexpr const uintptr_t On_vehicleDriveFollowEvent_Addr = 29697472;
+    // static constexpr const uintptr_t On_vehicleDriveFollowSplineEvent_Addr = 29697632;
+    // static constexpr const uintptr_t On_vehicleStopDriveToPointEvent_Addr = 29704640;
+    // static constexpr const uintptr_t On_vehicleStartDynamicMovementEvent_Addr = 29702896;
+    // static constexpr const uintptr_t On_vehicleStealEvent_Addr = 29704624;
+    // static constexpr const uintptr_t On_gameeventsHitEvent_Addr = 29698608;
+    // static constexpr const uintptr_t On_gameeventsVehicleDestructionEvent_Addr = 29706128;
+    // static constexpr const uintptr_t On_enteventsPhysicalImpulseEvent_Addr = 29701792;
+    // static constexpr const uintptr_t On_vehicleJoinTrafficVehicleEvent_Addr = 29701472;
+    // static constexpr const uintptr_t On_vehicleDriveSplineReverseEvent_Addr = 29694112;
+    // static constexpr const uintptr_t On_vehicleStartConvoyEvent_Addr = 29694480;
+    // static constexpr const uintptr_t On_vehicleAssignConvoyEvent_Addr = 29694256;
+    // static constexpr const uintptr_t On_vehicleDetachPartEvent_Addr = 29696560;
+    // static constexpr const uintptr_t On_vehicleDetachAllPartsEvent_Addr = 29696544;
+    // static constexpr const uintptr_t On_vehicleHasExplodedEvent_Addr = 29698256;
+    // static constexpr const uintptr_t On_vehicleOnPartDetachedEvent_Addr = 29701504;
+    // static constexpr const uintptr_t On_vehicleGridDestructionEvent_Addr = 29694608;
+    // static constexpr const uintptr_t On_vehicleToggleRadioReceiverEvent_Addr = 29706080;
+    // static constexpr const uintptr_t On_vehicleVehicleAudioMultipliersEvent_Addr = 29706096;
+    // static constexpr const uintptr_t On_vehicleChangeRadioReceiverStationEvent_Addr = 29694176;
+    // static constexpr const uintptr_t On_vehicleChangeRadioTierEvent_Addr = 29694208;
+    // static constexpr const uintptr_t On_entAppearanceChangeFinishEvent_Addr = 29696704;
+    // static constexpr const uintptr_t On_entAppearanceStatusEvent_Addr = 29756944;
+    // static constexpr const uintptr_t On_entAppearanceMeshLoadedEvent_Addr = 29696704;
+    // static constexpr const uintptr_t On_vehicleDoneActionEvent_Addr = 29690304;
+    // static constexpr const uintptr_t On_gameCrowdEntityReuseEvent_Addr = 29694512;
+    // static constexpr const uintptr_t On_gameQuestOrSceneSetVehiclePhysicsActive_Addr = 29694240;
+    // static constexpr const uintptr_t On_gamePlayerTakeControlAsParent_Addr = 1656944; // empty function
+    // static constexpr const uintptr_t On_gamePlayerTakeControlAsChild_Addr = 29702176;
+    // static constexpr const uintptr_t On_gamePlayerReleaseControlAsParent_Addr = 1656944; // empty function
+    // static constexpr const uintptr_t On_gamePlayerReleaseControlAsChild_Addr = 29701936;
+    // static constexpr const uintptr_t On_vehicleGlassDestructionEvent_Addr = 29697968;
 
 
 // overridden member functions
@@ -508,18 +509,20 @@ struct BaseObject : game::Object
 // non-virtual methods
 
     // 1.52 RVA: 0x1C60690 / 29755024
-    // 1.6 RVA:  0x1C8D240 / 29938240
+    // 1.6  RVA: 0x1C8D240 / 29938240
+    // 1.61 RVA: 0x1C8D4C0
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 20 57 48 83 EC 30 8B B1 50 02 00 00 41 0F B6 E8 8B FA
     inline void __fastcall SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3) {
-        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C8D240);
+        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C8D4C0);
         call(this, a2, a3);
     }
 
     // 1.52 RVA: 0x1C4C4F0 / 29672688
-    // 1.6 RVA:  0x1C78F70 / 29855600
+    // 1.6  RVA: 0x1C78F70 / 29855600
+    // 1.61 RVA: 0x1C791E0
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8
     inline void __fastcall UnsetPhysicsStates() {
-        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C78F70);
+        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C791E0);
         call(this);
     }
 

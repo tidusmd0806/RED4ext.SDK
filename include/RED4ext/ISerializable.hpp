@@ -20,7 +20,9 @@ struct ISerializable
 {
     //static constexpr const char* NAME = "ISerializable";
     //static constexpr const char* ALIAS = NAME;
-    static constexpr const uintptr_t VFT_RVA = 0x30D70A8;
+    // 1.6  RVA: 0x30D70A8
+    // 1.61 RVA: 0x30DC038
+    static constexpr const uintptr_t VFT_RVA = 0x30DC038;
 
     // 1.52 RVA: 0x1AB240 / 1749568
     /// @pattern 40 53 48 83 EC 20 48 8D 05 7B DA EC 02 48 8B D9 48 89 01 33 C0 48 89 41 08 48 89 41 10 48 89 41
