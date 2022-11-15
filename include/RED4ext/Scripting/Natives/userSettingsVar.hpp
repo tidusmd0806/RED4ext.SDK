@@ -14,7 +14,8 @@ struct SettingsVar : IScriptable
 {
     static constexpr const char* NAME = "userSettingsVar";
     static constexpr const char* ALIAS = "ConfigVar";
-    static constexpr const uintptr_t VFT_RVA = 0x31801C8;
+    // 1.6  RVA: 0x1D3EB10
+    // static constexpr const uintptr_t VFT_RVA = 0x31801C8;
 
     RuntimeSettingsVar * runtimeVar; // 40
 };
