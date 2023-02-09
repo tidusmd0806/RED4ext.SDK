@@ -14,10 +14,12 @@ struct IUpdatableSystem : IScriptable
 {
     static constexpr const char* NAME = "IUpdatableSystem";
     static constexpr const char* ALIAS = NAME;
-    // static constexpr const uintptr_t VFT_RVA = 0x31A6470;
+
+    // vft is before "CVariableStoragePtr" string
     // 1.6  RVA: 0x3205788
     // 1.61 RVA: 0x320A8A8
-    static constexpr const uintptr_t VFT_RVA = 0x320A8A8;
+    // 1.62 RVA: 0x320D998
+    static constexpr const uintptr_t VFT_RVA = 0x320D998;
 
 
     // 1.52 RVA: 0xA779C0 / 10975680

@@ -511,18 +511,20 @@ struct BaseObject : game::Object
     // 1.52 RVA: 0x1C60690 / 29755024
     // 1.6  RVA: 0x1C8D240 / 29938240
     // 1.61 RVA: 0x1C8D4C0
+    // 1.62 RVA: 0x1C8DBB0
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 20 57 48 83 EC 30 8B B1 50 02 00 00 41 0F B6 E8 8B FA
     inline void __fastcall SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3) {
-        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C8D4C0);
+        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C8DBB0);
         call(this, a2, a3);
     }
 
     // 1.52 RVA: 0x1C4C4F0 / 29672688
     // 1.6  RVA: 0x1C78F70 / 29855600
     // 1.61 RVA: 0x1C791E0
+    // 1.62 RVA: 0x1C798D0
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8
     inline void __fastcall UnsetPhysicsStates() {
-        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C791E0);
+        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C798D0);
         call(this);
     }
 

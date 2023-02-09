@@ -49,9 +49,11 @@ struct UnkC8 {
 #pragma pack(push, 1)
 struct Physics
 {
+    // after "VehicleTeleportationIfFallsUnderWorld" string
     // 1.6  RVA: 0x3497B78
     // 1.61 RVA: 0x349CDC8
-    static constexpr const uintptr_t VFT_RVA = 0x349CDC8;
+    // 1.62 RVA: 0x349FF08
+    static constexpr const uintptr_t VFT_RVA = 0x349FF08;
 
     virtual ~Physics();
     virtual uint64_t SetVehicle(vehicle::BaseObject *);
@@ -211,9 +213,11 @@ struct UnkD10 {
 
 struct WheeledPhysics : Physics 
 {
+    // after "EnableSmoothWheelContacts" string
     // 1.6  RVA: 0x3498388
     // 1.61 RVA: 0x349D5D8
-    static constexpr const uintptr_t VFT_RVA = 0x349D5D8;
+    // 1.62 RVA: 0x34A0718
+    static constexpr const uintptr_t VFT_RVA = 0x34A0718;
 
     // 1.52 RVA: 0x1D0DB70 / 30464880
     /// @pattern 40 56 41 56 48 83 EC 38 48 89 5C 24 58 4C 8B F1 48 89 7C 24 68 4C 89 7C 24 30 8B F2 E8 1F C9 FD
@@ -397,9 +401,11 @@ RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
 
 struct CarPhysics : WheeledPhysics
 {
+    // a little after "VehiclePassenger" string
     // 1.6  RVA: 0x34980C0
     // 1.61 RVA: 0x349D310
-    static constexpr const uintptr_t VFT_RVA = 0x349D310;
+    // 1.62 RVA: 0x34A0450
+    static constexpr const uintptr_t VFT_RVA = 0x34A0450;
 
 // overrides
 
@@ -515,9 +521,11 @@ RED4EXT_ASSERT_OFFSET(CarPhysics, unkE78, 0xE78);
 
 struct BikePhysics : WheeledPhysics
 {
+    // a little after "BikeHackTiltCalcValue" string
     // 1.6  RVA: 0x3431A30
-    // 1.61 RVA: 
-    // static constexpr const uintptr_t VFT_RVA = 0x3431A30;
+    // 1.61 RVA: 0x349D130
+    // 1.62 RVA: 0x34A0270
+    static constexpr const uintptr_t VFT_RVA = 0x34A0270;
 
     virtual ~BikePhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
@@ -538,7 +546,7 @@ struct BikePhysics : WheeledPhysics
 
     // 1.52 RVA: 0x1D06B00 / 30436096
     // 1.61 RVA: 0x1D33630
-    static constexpr const uintptr_t AnimationUpdateAddr = 0x1D33630;
+    // static constexpr const uintptr_t AnimationUpdateAddr = 0x1D33630;
     /// @pattern 48 89 5C 24 10 57 48 83 EC 40 48 8B 81 20 0D 00 00 48 8B D9 F3 0F 10 81 E4 00 00 00 0F 57 05
     __int64 __fastcall AnimationUpdate();
 

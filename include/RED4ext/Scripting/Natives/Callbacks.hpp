@@ -123,7 +123,8 @@ struct CallbackManager
 
 struct CallbackThing
 {
-    static constexpr const uintptr_t VFT_RVA = 0x35EB980;
+    // pre 1.61
+    // static constexpr const uintptr_t VFT_RVA = 0x35EB980;
 
     virtual int64_t __fastcall Destruct(int16_t, int64_t);
     virtual int64_t __fastcall AddCallback(int16_t asyncId, CallbackStorage *callbackStorage);

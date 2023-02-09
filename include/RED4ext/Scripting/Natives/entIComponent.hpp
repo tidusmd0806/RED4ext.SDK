@@ -20,9 +20,12 @@ struct IComponent : IScriptable
 {
     static constexpr const char* NAME = "entIComponent";
     static constexpr const char* ALIAS = "IComponent";
+
+    // a little after "entIComponent" string
     // 1.6  RVA: 0x33045E0
     // 1.61 RVA: 0x33097A0
-    static constexpr const uintptr_t VFT_RVA = 0x33097A0;
+    // 1.62 RVA: 0x330C8E0
+    static constexpr const uintptr_t VFT_RVA = 0x330C8E0;
 
     //virtual CClass* GetNativeType() override
     //{
