@@ -114,10 +114,10 @@ struct ActionBase
     // 1.6  RVA: 0x1B2F080 / 28504192
     // 1.61 RVA: 0x1B2F170
     /// @pattern B8 FF FF FF FF F0 0F C1 41 08 83 F8 01 75 0C 48 8B D1 48 
-    inline int32_t __fastcall Unlock() {
-        RelocFunc<decltype(&ActionBase::Unlock)> call(0x1B2F170);
-        return call(this);
-    }
+    // inline int32_t __fastcall Unlock() {
+    //     RelocFunc<decltype(&ActionBase::Unlock)> call(0x1B2F170);
+    //     return call(this);
+    // }
 
 
     // 1.52 RVA: 0x1B03630 / 28325424

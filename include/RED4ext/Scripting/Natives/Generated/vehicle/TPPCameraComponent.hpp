@@ -77,7 +77,7 @@ struct TPPCameraComponent : game::CameraComponent
     
     // 1.52 RVA: 0x1CC4600 / 30164480
     /// @pattern 48 8B C4 48 89 58 18 48 89 78 20 55 48 8D 68 D8 48 81 EC 20 01 00 00 0F 28 05 12 6F 3B 01 0F 57
-    Vector3* __fastcall UnkTPPCameraAdjustments(Vector4 *placeholderPosition, TPPCameraPreset *preset);
+    // Vector3* __fastcall UnkTPPCameraAdjustments(Vector4 *placeholderPosition, TPPCameraPreset *preset);
 
 
     //virtual void ent::TargetedCameraInterface::sub_00() override;

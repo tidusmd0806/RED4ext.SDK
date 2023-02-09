@@ -17,11 +17,11 @@ struct ActionInterface {
 
     // 1.52 RVA: 0x1B21550 / 28448080
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B F2 48 81 C1 EA 00 00 00 E8 AF 9E 01
-    uint8_t __fastcall AddItem(void *);
+    // uint8_t __fastcall AddItem(void *);
 
     // 1.52 RVA: 0x1B216C0 / 28448448
     /// @pattern 48 89 5C 24 10 57 48 83 EC 30 48 8B 41 58 48 8B FA 48 8B 98 28 02 00 00 E8 43 E4 AB FF 4C 8B 03
-    Handle<void> *__fastcall GetActionsFactory(Handle<void> *);
+    // Handle<void> *__fastcall GetActionsFactory(Handle<void> *);
 
     // 1.52 RVA: 0x1B21870 / 28448880
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 30 0F 29 74 24

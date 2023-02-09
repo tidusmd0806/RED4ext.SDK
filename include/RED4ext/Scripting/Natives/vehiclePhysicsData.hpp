@@ -27,11 +27,11 @@ struct PhysicsData
 
     // 1.52 RVA: 0x1CE2020 / 30285856
     /// @pattern 40 53 48 83 EC 20 F2 0F 10 02 48 8B D9 F2 0F 11 81 50 01 00 00 8B 42 08 89 81 58 01 00 00 0F 10
-    double __fastcall ResetWithWorldTransform(WorldTransform* worldTransform);
+    // double __fastcall ResetWithWorldTransform(WorldTransform* worldTransform);
 
     // 1.52 RVA: 0x1CE1560 / 30283104
     /// @pattern 48 8D 81 B4 01 00 00 48 8D 54 24 08 48 3B D0 74 08 F3 0F 11 08 C6 40 04 01 E9 D2 F6 FF FF
-    void __fastcall SetUsesAlternativeChassisMass(float);
+    // void __fastcall SetUsesAlternativeChassisMass(float);
 
     // 1.52 RVA: 0x1CE0F90 / 30281616
     /// @pattern C6 81 B8 01 00 00 00 E9 B4 FC FF FF
@@ -43,7 +43,7 @@ struct PhysicsData
 
     // 1.52 RVA: 0x1CE1E60 / 30285408
     /// @pattern 4C 8B 02 4C 8B D1 F3 0F 10 05 AA B8 39 01 4C 8B DA 41 0F B7 80 C0 00 00 00 45 0F B6 88 C2 00 00
-    void __fastcall LoadPhysicsStructFromTweaks(Handle<game::data::VehicleDriveModelData_Record> *a2);
+    // void __fastcall LoadPhysicsStructFromTweaks(Handle<game::data::VehicleDriveModelData_Record> *a2);
 
     Vector3 force;
     Vector3 torque;

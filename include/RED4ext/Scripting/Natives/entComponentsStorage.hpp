@@ -27,7 +27,7 @@ struct ComponentsStorage : ISerializable
 
     // 1.52 RVA: 0x1040100 / 17039616
     /// @pattern 48 83 C1 30 E9 77 20 3B FF
-    DynArray<Handle<IComponent>> * __fastcall CopyComponents(DynArray<Handle<IComponent>> *a2);
+    // DynArray<Handle<IComponent>> * __fastcall CopyComponents(DynArray<Handle<IComponent>> *a2);
 
     // 1.52 RVA: 0x103FBB0 / 17038256
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 41 56 48 83 EC 30 8B 5A 0C 48 8D 71 30 8B 49 3C 4C
@@ -43,7 +43,7 @@ struct ComponentsStorage : ISerializable
 
     // 1.52 RVA: 0x103FC70 / 17038448
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B 59 30 48 8B F2 8B 79 3C 48 C1 E7 04 48 03 FB
-    void __fastcall SomethingCRUIDs( __int64 a2);
+    // void __fastcall SomethingCRUIDs( __int64 a2);
 
     // 1.52 RVA: 0x103FCF0 / 17038576
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 30 48 8B 59 30 33 ED 8B 41 3C 48 8B F1

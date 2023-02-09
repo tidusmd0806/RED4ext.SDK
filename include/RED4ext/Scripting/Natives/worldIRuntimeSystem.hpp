@@ -17,7 +17,7 @@ struct IRuntimeSystem : IUpdatableSystem
 
     // 1.52 RVA: 0xB7C220 / 12042784
     /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 92 B7 EF FF 48 8D 05 1B E7 64 02 66 C7 43 40 00 00 48 89 03 48 8B
-    IRuntimeSystem();
+    // IRuntimeSystem();
 
     virtual RED4ext::CClass* GetNativeType() override;
     virtual ~IRuntimeSystem() override;
@@ -44,7 +44,7 @@ struct IRuntimeSystem : IUpdatableSystem
     // 1.52 RVA: 0xB7C480 / 12043392
     // might create jobs for callbacks - returns unkThing**
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 20 48 8B EA 66 C7 44 24 30 00 00 0F B7
-    void ** __fastcall Setup_sub_168(void **unkThing, RuntimeScene *runtimeScene, void *a3, RuntimeScene::Flags *a5);
+    // void ** __fastcall Setup_sub_168(void **unkThing, RuntimeScene *runtimeScene, void *a3, RuntimeScene::Flags *a5);
 
     RuntimeScene::Flags flags; // 40
 };

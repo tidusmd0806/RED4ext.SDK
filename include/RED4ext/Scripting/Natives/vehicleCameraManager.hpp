@@ -27,7 +27,7 @@ struct CameraManager : IScriptable
 
     // 1.52 RVA: 0x1C6C270 / 29803120
     /// @pattern 48 89 5C 24 20 55 56 57 48 8B EC 48 83 EC 60 48 8B F9 48 8B F2 48 8B 49 50 48 85 C9 74 05 E8 6D
-    __int64 __fastcall LoadTweaks(Handle<Vehicle_Record>* record);
+    // __int64 __fastcall LoadTweaks(Handle<Vehicle_Record>* record);
 
     // 1.52 RVA: 0x1C6A550 / 29795664
     /// @pattern 83 B9 90 00 00 00 01 75 19 48 8B 49 50 8B 91 2C 05 00 00 85 D2 74 08 83 FA 01 75 06 B0 01 C3 B0

@@ -66,11 +66,11 @@ struct Entity : IScriptable
 
     // 1.52 RVA: 0x1031BF0 / 16980976
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 57 48 83 EC 20 80 A1 5C 01 00 00 F9 48 8B F1 48 83 C1 70 E8 6E 5D
-    char __fastcall SetAnimatedVisualComponentFlags();
+    // char __fastcall SetAnimatedVisualComponentFlags();
 
     // 1.52 RVA: 0x103B3F0 / 17019888
     /// @pattern 40 55 53 57 48 8D 6C 24 B9 48 81 EC B0 00 00 00 48 83 C1 70 E8 77 C5 3F FF 48 8B 18 8B 78 0C 48
-    void __fastcall ProcessIPlacedComponents();
+    // void __fastcall ProcessIPlacedComponents();
 
     // 1.52 RVA: 0x1037B30 / 17005360
     /// @pattern 40 56 48 83 EC 50 48 89 5C 24 68 48 8B F1 48 89 7C 24 48 48 8B DA 8B BA 00 01 00 00 48 C1 E7 04
@@ -78,11 +78,11 @@ struct Entity : IScriptable
 
     // 1.52 RVA: 0x1035260 / 16994912
     /// @pattern 48 89 5C 24 08 57 48 83 EC 30 48 8B 02 48 8B D9 48 89 44 24 20 48 8D 4C 24 20 48 8B 42 08 48 8B
-    void __fastcall SomethingListeners2(Handle<IScriptable> *a2);
+    // void __fastcall SomethingListeners2(Handle<IScriptable> *a2);
 
     // 1.52 RVA: 0x1035300 / 16995072
     /// @pattern 48 83 C1 70 E9 77 26 40 FF
-    DynArray<Handle<IComponent>> *__fastcall GetComponents();
+    // DynArray<Handle<IComponent>> *__fastcall GetComponents();
 
     enum Flags : uint8_t {
         Unk1 = 0x1,

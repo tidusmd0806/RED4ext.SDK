@@ -39,16 +39,16 @@ struct RuntimeScene
     // has a maximum 0x41/65 systems (58 exist in the .csv)
     // Loads all worldNode types, cnames & strings at the end
     /// @pattern 48 89 5C 24 18 48 89 54 24 10 55 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 D9 48 81 EC C0 00 00
-    void **__fastcall SetupRuntimeSystems(void **unkThing, char *a3);
+    // void **__fastcall SetupRuntimeSystems(void **unkThing, char *a3);
 
     // 1.52 RVA: 0xB7BDE0 / 12041696
     // calls GameTools->sub_50, systems->sub_188
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 8B F9 48 8B 0D AC 20 34 03 48 85 C9 74 06 48 8B 01 FF 50 50 8B
-    __int64 __fastcall Systems188();
+    // __int64 __fastcall Systems188();
 
     // 1.52 RVA: 0xB7C130 / 12042544
     /// @pattern 40 57 48 83 EC 20 83 B9 10 04 00 00 00 48 8B F9 0F 84 B4 00 00 00 48 8B 89 A0 02 00 00 48 89 5C
-    __int64 __fastcall Systems190();
+    // __int64 __fastcall Systems190();
 
     Handle<IRuntimeSystem> systems[0x41];
     // 0x410: set to 0x41 when loaded. potential interface

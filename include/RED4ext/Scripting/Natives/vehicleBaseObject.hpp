@@ -72,7 +72,7 @@ struct Unk580
 
     // 1.52 RVA: 0x1C3D700 / 29611776
     /// @pattern 40 56 48 83 EC 50 48 8B F1 48 8B 89 38 01 00 00 E8 8B 1C 01 00 84 C0 0F 84 B5 01 00 00 4C 8B 86
-    void __fastcall UpdateAudio();
+    // void __fastcall UpdateAudio();
 
     // 1.52 RVA: 0x1C3C0A0 / 29606048
     /// @pattern 48 8B C4 55 41 56 41 57 48 8D 6C 24 80 48 81 EC 80 01 00 00 0F 28 C2 0F 29 78 A8 F3 0F 58 81 C0
@@ -104,7 +104,7 @@ struct Unk580
 
     // 1.52 RVA: 0x1C35A20 / 29579808
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B B9 A0 03 00 00 48 8B D9 48 85 FF 74 15 48 8B CF E8 6F 14 B0
-    ~Unk580();
+    // ~Unk580();
 
     int64_t unk00;
     uint64_t unk08[32];
@@ -206,7 +206,7 @@ struct Unk568 {
 
     // 1.52 RVA: 0x1ABAA40 / 28027456
     /// @pattern 0F 10 02 0F 11 81 C0 00 00 00 C3
-    void __fastcall SetRotationalVelocityMaybe(Vector4 *);
+    // void __fastcall SetRotationalVelocityMaybe(Vector4 *);
 
     // 1.52 RVA: 0x1ABAA50 / 28027472
     /// @pattern 48 83 EC 58 0F 29 74 24 40 0F 29 7C 24 30 44 0F 29 44 24 20 44 0F 29 4C 24 10 44 0F 10 0A 44 0F
@@ -251,7 +251,7 @@ struct Unk568 {
 struct Unk570 {
     // 1.52 RVA: 0x1CFA220 / 30384672
     /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
-    void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
+    // void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
 
     // BaseObject *vehicle;
     // void *animationController;
@@ -570,7 +570,7 @@ struct BaseObject : game::Object
 
     // 1.52 RVA: 0x1C49080 / 29659264
     /// @pattern 48 83 EC 48 48 89 5C 24 50 48 8B D9 48 89 74 24 60 48 8D 4A 20 4C 89 74 24 38 48 8B F2 E8 8E 52
-    void __fastcall ClearFinishMountingDelay(void *);
+    // void __fastcall ClearFinishMountingDelay(void *);
 
     // 1.52 RVA: 0x1C491C0 / 29659584
     /// @pattern C7 81 B4 08 00 00 00 00 80 3F C7 81 B8 08 00 00 00 00 80 3F C7 81 BC 08 00 00 00 00 80 3F C7 81
@@ -582,7 +582,7 @@ struct BaseObject : game::Object
 
     // 1.52 RVA: 0x126CE00 / 19320320
     /// @pattern 48 8D 81 88 03 00 00 C3
-    action::ActionInterface *__fastcall GetInterface();
+    // action::ActionInterface *__fastcall GetInterface();
 
     // 1.52 RVA: 0x72FE70 / 7536240
     /// @pattern 48 8B 81 B8 02 00 00 C3
@@ -594,7 +594,7 @@ struct BaseObject : game::Object
 
     // 1.52 RVA: 0x1C5F7B0 / 29751216
     /// @pattern 48 8B C4 55 41 56 48 8D 68 98 48 81 EC 58 01 00 00 83 B9 4C 09 00 00 00 4C 8B F1 0F 84 00 04 00
-    void __fastcall ProcessWeapons();
+    // void __fastcall ProcessWeapons();
 
     // 1.52 RVA: 0x1C5F740 / 29751104
     /// @pattern 8B 91 50 02 00 00 F7 C2 EE FF FF FF 74 03 B0 01 C3 8B C2 C1 E8 04 A8 01 75 19 F6 C2 01 74 14 BA

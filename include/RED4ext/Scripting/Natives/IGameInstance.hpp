@@ -40,12 +40,12 @@ struct IGameInstance // : IDynamicStorage
 
     // 1.52 RVA: 0x2CFF000 / 47181824
     /// @pattern 40 55 53 56 57 41 56 48 8D 6C 24 C9 48 81 EC B0 00 00 00 48 8B F1 E8 A5 E7 C9 FF 48 8D 05 5E BC
-    IGameInstance();
+    // IGameInstance();
 
     // 1.52 RVA: 0x29CA390 / 43819920
     // calls sub20 with some unknown values from a1
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B F9 48 8B DA 0F B6 4A 32 E8 67 DC 1E 00 0F B6 47 08 48 8D 54
-    static void *__fastcall FrameworkSetupCallback(uint64_t *a1, uint64_t a2);
+    // static void *__fastcall FrameworkSetupCallback(uint64_t *a1, uint64_t a2);
 
     // 1.52 RVA: 0x2CFFC40 / 47184960
     // sets gameIsLoading to true
@@ -55,12 +55,12 @@ struct IGameInstance // : IDynamicStorage
     // 1.52 RVA: 0x2D005A0 / 47187360
     // Uses a struct to call system->sub_150
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 57 48 83 EC 20 48 8B F1 48 8B DA 0F B6 4A 32 E8 52 7A EB FF 48 8B
-    static void __fastcall OnGameLoad(uint64_t *a1, __int64 a2);
+    // static void __fastcall OnGameLoad(uint64_t *a1, __int64 a2);
 
     // 1.52 RVA: 0x2D00650 / 47187536
     // passes in a struct to set gameIsLoading to false
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B F9 0F B6 4A 32 E8 AA 79 EB FF 48 8B 47 08 80 38 00 75 0A 48
-    static void __fastcall OnPostGameLoad(uint64_t *a1, __int64 a2);
+    // static void __fastcall OnPostGameLoad(uint64_t *a1, __int64 a2);
 
     // 1.52 RVA: 0x2D00090 / 47186064
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 8B 59 38 8B 79 44 48 C1 E7 04 48 03 FB 48 3B DF 74 18 0F 1F 00
@@ -78,7 +78,7 @@ struct IGameInstance // : IDynamicStorage
     // 1.52 RVA: 0x2D006B0 / 47187632
     // calls system->sub_180
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 57 48 83 EC 20 48 8B F1 48 8B DA 0F B6 4A 32 E8 42 79 EB FF 48 8B
-    static void *__fastcall OnStreamingWorldLoaded(uint64_t *a1, __int64 a2);
+    // static void *__fastcall OnStreamingWorldLoaded(uint64_t *a1, __int64 a2);
 
     // 1.52 RVA: 0x2D00400 / 47186944
     // calls system->sub_120(a2)

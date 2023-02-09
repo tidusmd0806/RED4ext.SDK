@@ -220,7 +220,7 @@ struct CGameFramework
 
     // 1.52 RVA: 0x138AF20 / 20492064
     /// @pattern 48 8B 49 10 48 85 C9 0F 85 33 58 97 01 C3
-    void __fastcall Systems168o170(bool a2);
+    // void __fastcall Systems168o170(bool a2);
 
     // 1.52 RVA: 0x138B060 / 20492384
     // then call engine->sub_80, sets stateMachine to 4?
@@ -319,11 +319,11 @@ struct CGameEngine : BaseGameEngine
 
     // 1.52 RVA: 0x29919A0 / 43588000
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B F9 0F B6 4A 32 E8 5A 66 22 00 48 8B 87 C0 00 00 00 8B 10 85
-    static void __fastcall InitializeScriptsDebugger(uint64_t *a1, uint64_t a2);
+    // static void __fastcall InitializeScriptsDebugger(uint64_t *a1, uint64_t a2);
 
     // 1.52 RVA: 0x2991B50 / 43588432
     /// @pattern 48 89 5C 24 18 48 89 6C 24 20 56 48 83 EC 60 48 8B F1 48 8B DA 0F B6 4A 32 E8 A2 64 22 00 48 8B
-    static void __fastcall InitializeGameFramework(uint64_t * a1, uint64_t a2);
+    // static void __fastcall InitializeGameFramework(uint64_t * a1, uint64_t a2);
 
     int64_t unk2E0;            // 2E0
     int64_t unk2E8;            // 2E8

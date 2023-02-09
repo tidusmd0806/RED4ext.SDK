@@ -124,7 +124,7 @@ struct Physics
 
     // 1.52 RVA: 0x1CEB5E0 / 30324192
     /// @pattern 48 8B 49 60 E9 87 48 A4 FE
-    PhysicsData *__fastcall GetPhysicsData();
+    // PhysicsData *__fastcall GetPhysicsData();
 
     // 1.52 RVA: 0x1CEB920 / 30325024
     /// @pattern 48 8B 41 68 F3 0F 10 40 10 0F 2F 40 20 0F 96 C0 C3
@@ -132,11 +132,11 @@ struct Physics
 
     // 1.52 RVA: 0x1CEB940 / 30325056
     /// @pattern 48 83 EC 28 48 8B 49 60 E8 23 45 A4 FE 48 8B C8 48 83 C4 28 E9 F7 5B FF FF
-    bool __fastcall UsesAlternativeChassisMass();
+    // bool __fastcall UsesAlternativeChassisMass();
 
     // 1.52 RVA: 0x1CEBAE0 / 30325472
     /// @pattern F6 C2 01 74 3B 53 48 83 EC 40 48 8B D9 48 8D 54 24 20 48 8B 49 60 E8 35 A7 34 FF F2 0F 10 00 F2
-    void __fastcall UpdateWorldTransform2FromParent(char a2);
+    // void __fastcall UpdateWorldTransform2FromParent(char a2);
 
     // 1.52 RVA: 0x1CEC3F0 / 30327792
     /// @pattern 48 89 5C 24 10 48 89 6C 24 20 56 57 41 56 48 83 EC 20 48 8B 01 4C 8B F1 FF 90 40 01 00 00 48 8D
@@ -148,11 +148,11 @@ struct Physics
 
     // 1.52 RVA: 0x1CEC530 / 30328112
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 8B F9 48 8B DA 48 8B 49 60 E8 27 39 A4 FE 48 8B C8 48 8B D3 E8
-    void __fastcall ResetWithWorldTransform(WorldTransform *worldTransform);
+    // void __fastcall ResetWithWorldTransform(WorldTransform *worldTransform);
 
     // 1.52 RVA: 0x1CEC5E0 / 30328288
     /// @pattern 48 83 EC 28 48 8B 49 60 84 D2 74 19 E8 7F 38 A4 FE F3 0F 10 0D DF 0F 3D 01 48 8B C8 48 83 C4 28
-    __int64 __fastcall SetUsesAlternativeChassisMass(bool uses);
+    // __int64 __fastcall SetUsesAlternativeChassisMass(bool uses);
 
     // 1.52 RVA: 0x1CED2A0 / 30331552
     /// @pattern 40 53 48 81 EC 80 00 00 00 4C 8B 41 60 0F 57 C0 F3 0F 7F 44 24 20 48 8B D9 44 0F 29 44 24 50 44
@@ -221,7 +221,7 @@ struct WheeledPhysics : Physics
 
     // 1.52 RVA: 0x1D0DB70 / 30464880
     /// @pattern 40 56 41 56 48 83 EC 38 48 89 5C 24 58 4C 8B F1 48 89 7C 24 68 4C 89 7C 24 30 8B F2 E8 1F C9 FD
-    WheeledPhysics(unsigned int wheels);
+    // WheeledPhysics(unsigned int wheels);
     
     // 1.52 RVA: 0x1D12E00 / 30486016
     /// @pattern 40 53 48 83 EC 40 45 33 C0 0F 29 74 24 30 48 8B D9 0F 29 7C 24 20 0F 57 FF 44 39 81 C0 05 00 00
@@ -474,7 +474,7 @@ struct CarPhysics : WheeledPhysics
 
     // 1.52 RVA: 0x1D09090 / 30445712
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 BA 04 00 00 00 48 8B D9 E8 C9 4A 00 00 48 8D 05 62 8B 72 01 33 FF
-    CarPhysics();
+    // CarPhysics();
 
     // 1.52 RVA: 0x1D0C290 / 30458512
     /// @pattern 48 89 5C 24 18 56 48 81 EC D0 00 00 00 48 8B F1 0F 29 B4 24 C0 00 00 00 48 8B 89 20 0D 00 00 BA
@@ -542,7 +542,7 @@ struct BikePhysics : WheeledPhysics
 
     // 1.52 RVA: 0x1D04210 / 30425616
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 BA 02 00 00 00 48 8B D9 E8 49 99 00 00 33 FF 48 8D 05 00 D8 72 01
-    BikePhysics();
+    // BikePhysics();
 
     // 1.52 RVA: 0x1D06B00 / 30436096
     // 1.61 RVA: 0x1D33630
