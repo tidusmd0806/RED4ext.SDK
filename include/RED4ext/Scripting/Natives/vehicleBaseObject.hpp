@@ -627,10 +627,11 @@ struct BaseObject : game::Object
     RED4ext::WorldTransform *__fastcall PostMovePhysicsStateZero(float deltaTime, float *a3);
 
     // 1.52 RVA: 0x1C5D800 / 29743104
-    // 1.6 RVA:  0x1C8A390 / 29926288
+    // 1.6  RVA: 0x1C8A390 / 29926288
+    // 1.62 RVA: 0x1C8AD00 (not used)
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 48 8D B1 88 03 00 00 48 8B FA 48 8B CE 48 8D 54 24
     inline action::ActionBase **__fastcall CreateAction(action::ActionBase **action_p, action::Type type) {
-        RED4ext::RelocFunc<decltype(&BaseObject::CreateAction)> call(0x1C8A390);
+        RED4ext::RelocFunc<decltype(&BaseObject::CreateAction)> call(0x1C8AD00);
         return call(this, action_p, type);
     }
 
