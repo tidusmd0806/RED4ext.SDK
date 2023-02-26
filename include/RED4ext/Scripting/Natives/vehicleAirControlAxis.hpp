@@ -40,7 +40,7 @@ struct AirControlAxis
     float maxAngleCompensation;
     float zeroAngleThreshold;
     float maxAngleToCompensateThreshold;
-    float unk5C[12];
+    RED4ext::Vector4 unk5C[3];
 };
 #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(AirControlAxis, 0xB0);

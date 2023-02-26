@@ -103,7 +103,7 @@ struct Entity : IScriptable
     ScriptGameInstance* scriptGameInstance; // C0
     Handle<void> unkC8;
     CallbackManager callbackManager; // D8
-    red::TagList entityTags;
+    red::TagList entityTags; // 138
     void * unk148;
     float updatingTransform;
     uint8_t customCameraTarget;
@@ -118,6 +118,9 @@ struct Entity : IScriptable
     uint8_t unk15E;
     uint8_t unk15F;
 };
+RED4EXT_ASSERT_OFFSET(Entity, tweakRecord, 0x48);
+RED4EXT_ASSERT_OFFSET(Entity, currentAppearance, 0x50);
+RED4EXT_ASSERT_OFFSET(Entity, entityTags, 0x138);
 } // namespace ent
 } // namespace RED4ext
 

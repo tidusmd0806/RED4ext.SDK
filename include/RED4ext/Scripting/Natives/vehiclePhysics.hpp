@@ -68,6 +68,7 @@ struct Physics
     virtual uint64_t FixedUpdate_PreSolve(uint64_t, float);
     // also called w/o arg?
     // sets this->velocity from physicsData->velocity
+    // applies water resistance
     virtual void sub_50(float deltaTime);
     virtual uint64_t sub_58(float deltaTime);
     // empty
@@ -90,7 +91,7 @@ struct Physics
     virtual bool IsInAirFromVehicle();
     virtual bool SomethingOrientationIsInAir();
     // return 0
-    virtual void sub_D0();
+    virtual bool sub_D0();
     virtual void sub_D8(char);
     virtual double Return1D();
     virtual float Return1F();
@@ -162,10 +163,14 @@ struct Physics
     /// @pattern 48 8B 41 60 C3
     BaseObject *__fastcall GetVehicle();
 
+    // 1.6 RVA: 0x1D3FC50 / 30669904
+    /// @pattern 40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 D0 00 00 00 48 8B CB 84 C0 74 25 E8 62 FA FF FF 85 C0
+    bool __fastcall IsInAirFromVehicle_func();
+
     uint64_t unk08;
     Vector3 velocity; // 10
     uint32_t unk1C;
-    uint8_t unk20;
+    uint8_t unk20; // checked in fixed update
     uint8_t unk21[7];
     uint64_t unk28;
     WorldTransform worldTransform; // 30
@@ -208,7 +213,27 @@ struct Physics
 
 struct UnkD10 {
 
+    // 1.6 RVA: 0x1D3E8E0 / 30664928
+    /// @pattern 85 D2 0F 84 C2 01 00 00 48 8B C4 48 89 70 18 57 48 83 EC 70 48 89 58 08 8B FA 48 89 68 10 48 8B
+    void __fastcall Reset(int numWheels);
 
+    struct Wheel {
+        uint8_t unk00[32];
+        RED4ext::Vector3 unk20;
+        uint8_t unk2C[96];
+        RED4ext::Vector3 unk8C;
+        RED4ext::CName physMaterial;
+        uint8_t unkA0[52];
+        uint8_t unkD4;
+        uint8_t unkD5[3099];
+        bool unkCF0;
+        bool unkCF1;
+        uint8_t unkCF2[2];
+        float unkCF4;
+        float unkCF8;
+        float relatedToAir;
+    } wheel[4];
+    uint32_t numWheels;
 };
 
 struct WheeledPhysics : Physics 
@@ -240,6 +265,63 @@ struct WheeledPhysics : Physics
     /// @pattern 40 53 48 81 EC A0 00 00 00 44 0F B6 D2 4C 8D 89 D0 05 00 00 41 0F B6 C0 48 8B D9 4D 69 C2 30 01
     void __fastcall FourWheelTorque(unsigned __int8 rearWheelIndex, unsigned __int8 frontWheelIndex, float a4, RED4ext::Transform *transform);
 
+    // 1.6 RVA: 0x1D450D0 / 30691536
+    /// @pattern 48 8B C4 53 41 54 41 56 48 83 EC 60 48 89 68 10 48 8D 99 D0 05 00 00 48 89 70 18 45 33 E4 48 89
+    __int64 __fastcall insert2_math(__int64 a2);
+
+    // 1.52 RVA: 0x1D11A50 / 30480976
+    /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 57 48 81 EC C0 00 00 00 0F 29 70 E8 48 8B F1 48 8B 89 F8 00 00
+    void __fastcall UpdatePassengerAnim(anim::AnimFeature_VehiclePassenger *);
+    
+    // 1.6 RVA: 0x1D194B0 / 30512304
+    /// @pattern 84 D2 74 27 C6 81 B4 00 00 00 01 C7 81 AC 00 00 00 FF FF FF FF C7 81 B0 00 00 00 00 00 00 00 48
+    __int64 __fastcall SetIsMovingOthers(char a2);
+
+    // 1.6 RVA: 0x1D19890 / 30513296
+    /// @pattern 48 89 5C 24 10 57 48 81 EC 90 00 00 00 48 8B 41 60 48 8B F9 48 8B 98 C0 00 00 00 E8 E0 30 E1 FF
+    // RED4ext::WorldTransform *__fastcall CheckBoundarySystem();
+
+    // 1.6 RVA: 0x1D44670 / 30688880
+    /// @pattern 48 8B C4 55 41 54 41 57 48 8D A8 F8 FE FF FF 48 81 EC F0 01 00 00 44 0F 29 48 88 4C 8B E1 48 89
+    void __fastcall TurningRollFactorStuff(float timeDelta);
+
+    // 1.6 RVA: 0x1D44270 / 30687856
+    /// @pattern 40 56 57 48 81 EC D8 00 00 00 8B B9 C0 05 00 00 48 8B F1 44 0F 29 84 24 90 00 00 00 44 0F 28 C1
+    void __fastcall SetupInsert();
+
+    // 1.6 RVA: 0x1D3FCA0 / 30669984
+    // checks EnableSmoothWheelContacts too
+    /// @pattern 80 3D 11 67 B0 02 00 74 0F 0F 57 C0 0F 2F 81 10 0C 00 00 73 03 B0 01 C3 32 C0 C3
+    // bool __fastcall CheckSmoothWheelContactDecreaseTime();
+
+    // 1.6 RVA: 0x1D3C3E0 / 30655456
+    /// @pattern 48 8B C4 48 89 58 10 48 89 68 18 56 41 56 41 57 48 81 EC B0 00 00 00 8B A9 C0 05 00 00 4C 8D B9
+    float *__fastcall FourWheelTorqueStuff(float timeDelta);
+
+    // 1.52 RVA: 0x1D12040 / 30482496
+    // 1.6  RVA: 0x1D3E7A0 / 30664608
+    // 1.62 RVA: 0x1D3F260
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 30 48 8B F9 41 0F B6 49 32 E8 ? ? ? 00 48 8B 4F 08 80 B9 B4 00 00
+    static void __fastcall FixedUpdate(__int64, __int64, __int64, __int64);
+
+    // 1.6 RVA: 0x1D3F2E0 / 30667488
+    /// @pattern 40 56 48 83 EC 30 8B B1 C0 05 00 00 0F 29 74 24 20 0F 57 F6 85 F6 74 3B 48 89 5C 24 40 48 8D 99
+    float __fastcall Unk15CStuff();
+
+    // 1.6 RVA: 0x1D57350 / 30765904
+    /// @pattern 48 8B C4 55 41 56 48 8D A8 08 F8 FF FF 48 81 EC E8 08 00 00 4C 8B 01 48 89 58 10 48 8B D9 48 89
+    static double __fastcall ApplyWaterResistance(void * waterParams, float timeDelta);
+
+    // 1.6  RVA: 0x1D16ED0 / 30502608
+    // 1.62 RVA: 0x1D17990 / 30505360
+    /// @pattern 40 53 48 83 EC 30 48 8B D9 0F 29 74 24 20 48 8B 49 60 0F 28 F1 E8 ? ? F6 FF 84 C0 74 45 48 8B
+    void __fastcall ProcessAirControl(float timeDelta);
+
+    // 1.6  RVA: 0x1D408B0 / 30673072
+    // 1.62 RVA: 0x1D41370 / 30675824
+    /// @pattern 89 54 24 10 55 57 41 57 48 8D AC 24 D0 EF FF FF B8 30 11 00 00 E8 ? ? ? 00 48 2B E0 80 79 20
+    void __fastcall SomethingWheelRayTrace(unsigned int wheelIndex_1);
+
 // overrides
 
     virtual ~WheeledPhysics() override;
@@ -268,9 +350,11 @@ struct WheeledPhysics : Physics
     virtual bool UpdatePhysicsStuff() override;
     virtual bool IsInAirFromVehicle() override;
     // virtual bool SomethingOrientationIsInAir() override;
-    virtual void sub_D0() override;
+    // get unk20
+    virtual bool sub_D0() override;
+    // calcs unk20
     virtual void sub_D8(char) override;
-    // get e4
+    // get turn rate
     virtual double Return1D() override;
     // get max wheel turn deg
     virtual float Return1F() override;
@@ -294,10 +378,10 @@ struct WheeledPhysics : Physics
     virtual bool sub_150(uint64_t);
     virtual bool sub_158(uint64_t, uint64_t);
     virtual uint32_t GetWheelUnk90(uint64_t, uint64_t);
-    // returns 0
-    virtual bool sub_168(uint64_t);
-    // returns 0
-    virtual bool sub_170(uint64_t);
+    // returns 0 here, is index 1 or 2 for car, 0 for bike - isRIght?
+    virtual bool isRightWheel(uint64_t wheel_index);
+    // returns 0 here, is index 2 or 3 for car, is index 1 - isBack?
+    virtual bool isBackWheel(uint64_t wheel_index);
     // empty
     virtual void UpdateTilt(float deltaTime);
     virtual void VehiclePhysicsUpdate();
@@ -308,10 +392,6 @@ struct WheeledPhysics : Physics
     virtual void UpdateVehRotW(float deltaTime);
     // returns 1f
     virtual void sub_1A8(uint32_t);
-
-    // 1.52 RVA: 0x1D11A50 / 30480976
-    /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 57 48 81 EC C0 00 00 00 0F 29 70 E8 48 8B F1 48 8B 89 F8 00 00
-    void __fastcall UpdatePassengerAnim(anim::AnimFeature_VehiclePassenger *);
 
     uint32_t unkD0;
     float unkD4;
@@ -341,7 +421,10 @@ struct WheeledPhysics : Physics
     uint8_t unkB91;
     uint8_t unkB92;
     uint8_t unkB93;
-    uint32_t unkB94[6];
+    uint32_t unkB94[3];
+    float unkBA0; // timer of some sort, stuff in SomeFixedUpdate
+    float unkBA4; // if not equal to unkBA8, add (diff * timeDelta * 4)
+    float unkBA8;
     float antiSwaybarDampingScalor;
     float turningRollFactor;
     float turningRollFactorWeakContactMul;
@@ -381,8 +464,15 @@ struct WheeledPhysics : Physics
     float slopeTractionReductionMax;
     float slopeTractionReductionFactor;
     float unkC38;
-    float unkC3C;
-    Vector4 unkC40;
+    uint8_t unkC3C;
+    uint8_t unkC3D;
+    uint8_t unkC3E;
+    uint8_t unkC3F;
+    float unkC40;
+    float unkC44;
+    float unkC48;
+    float unkC4C;
+    // VelocitySmoothingTime - PIDs?
     Matrix unkC50;
     Matrix unkC90;
     uint32_t unkCD0[4];
@@ -458,9 +548,9 @@ struct CarPhysics : WheeledPhysics
     virtual bool sub_158(uint64_t, uint64_t) override;
     // virtual uint32_t GetWheelUnk90(uint64_t, uint64_t) override;
     // is rear wheel maybe
-    virtual bool sub_168(uint64_t) override;
+    virtual bool isRightWheel(uint64_t) override;
     // also rear wheel maybe
-    virtual bool sub_170(uint64_t) override;
+    virtual bool isBackWheel(uint64_t) override;
     // virtual void UpdateTilt(float deltaTime) override;
     virtual void VehiclePhysicsUpdate() override;
     // update steering
@@ -535,7 +625,7 @@ struct BikePhysics : WheeledPhysics
     virtual uint64_t UpdateBlackboard() override;
     virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record>*) override;
     virtual bool sub_158(uint64_t, uint64_t) override;
-    virtual bool sub_170(uint64_t) override;
+    virtual bool isBackWheel(uint64_t) override;
     virtual void UpdateTilt(float deltaTime) override;
     virtual void UpdateTurn() override;
     virtual void UpdateSuspensionAnimation() override;

@@ -35,7 +35,7 @@ struct PhysicsData
 
     // 1.52 RVA: 0x1CE0F90 / 30281616
     /// @pattern C6 81 B8 01 00 00 00 E9 B4 FC FF FF
-    void __fastcall vehiclePhysicsData_SetUsesNormalChassisMass();
+    void __fastcall SetUsesNormalChassisMass();
 
     // 1.52 RVA: 0x1CE0C50 / 30280784
     /// @pattern 48 83 EC 38 4C 8B 81 80 01 00 00 0F 57 C0 F3 0F 7F 44 24 20 49 8B 80 D8 02 00 00 48 85 C0 0F 84
@@ -44,6 +44,10 @@ struct PhysicsData
     // 1.52 RVA: 0x1CE1E60 / 30285408
     /// @pattern 4C 8B 02 4C 8B D1 F3 0F 10 05 AA B8 39 01 4C 8B DA 41 0F B7 80 C0 00 00 00 45 0F B6 88 C2 00 00
     // void __fastcall LoadPhysicsStructFromTweaks(Handle<game::data::VehicleDriveModelData_Record> *a2);
+
+    // 1.6 RVA: 0x1D0CCE0 / 30461152
+    /// @pattern 48 83 EC 28 F3 0F 10 42 08 F3 0F 5C 81 78 01 00 00 F3 0F 10 1A F3 0F 5C 99 70 01 00 00 F3 0F 10
+    void __fastcall ApplyTorqueWithOffset(RED4ext::Vector3 *offset, RED4ext::Vector4 *addedTorque);
 
     Vector3 force;
     Vector3 torque;

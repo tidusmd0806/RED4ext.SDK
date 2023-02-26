@@ -16,10 +16,18 @@ struct WheeledBaseObject : vehicle::BaseObject
     static constexpr const char* NAME = "vehicleWheeledBaseObject";
     static constexpr const char* ALIAS = "WheeledObject";
 
-    void * interactionsMaybe;
-	  void * transmissionData;
-	  void * engineData;
-	  void * burnoutData;
+    struct Unk980
+    {
+        WheeledBaseObject * vehicle;
+        float unk08;
+        float timer;
+        bool unk10;
+        uint8_t unk11[233];
+    } * unk980;
+
+    void * transmissionData;
+    void * engineData;
+    void * burnoutData;
 };
 RED4EXT_ASSERT_SIZE(WheeledBaseObject, 0x9A0);
 } // namespace vehicle

@@ -7,6 +7,7 @@
 #include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector3.hpp>
 #include <RED4ext/Scripting/Natives/Generated/vehicle/BaseObject.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
 
 namespace RED4ext
 {
@@ -16,35 +17,64 @@ struct VehiclePhysicsInsert2
     static constexpr const char* NAME = "physicsVehiclePhysicsInsert2";
     static constexpr const char* ALIAS = NAME;
 
-    RED4ext::Vector3 position2;
-    float unk0C[7];
+    // 1.6 RVA: 0x1D50CC0 / 30739648
+    /// @pattern 48 83 EC 28 0F 2E 15 75 B6 39 01 0F 29 74 24 10 0F 28 F1 0F 29 3C 24 0F 28 FB F3 0F 11 B1 60 01
+    // __int64 __fastcall Unk15CStuff(float a2, float a3, float a4);
+
+    // 1.6 RVA: 0x1D50CA0 / 30739616
+    /// @pattern F3 0F 11 89 60 01 00 00 F3 0F 11 89 5C 01 00 00 C7 81 68 01 00 00 00 00 00 00 C3
+    void __fastcall SetsUnk160Unk15C(float a2);
+
+    RED4ext::Vector3 worldPosition;
+    RED4ext::Vector3 unk0C;
+    float unk18;
+    RED4ext::Vector3 unk1C;
     RED4ext::Vector3 position3;
-    float unk34[2];
+    float unk34;
+    float unk38;
     uint32_t unk3C;
-    void* unk40;
-    void* unk48;
+    RED4ext::vehicle::PhysicsData *physicsData;
+    void *unk48;
     RED4ext::Vector3 unk50;
     RED4ext::Vector3 unk5C;
-    float unk68[14];
-    CName physMaterial;
+    RED4ext::Vector3 unk68;
+    RED4ext::Vector4 unk74;
+    RED4ext::Vector3 unk84;
+    RED4ext::Vector4 unk90;
+    RED4ext::CName physMaterial;
     int32_t unkA8[3];
     float relatedToInAir;
     float unkB8[2];
     RED4ext::Vector4 unkC0;
     RED4ext::Vector4 unkD0;
     RED4ext::Vector4 unkE0;
-    RED4ext::Vector4 unkF0;
+    float unkF0;
+    float unkF4;
+    float turnAngle;
+    float unkFC;
     RED4ext::Vector4 unk100;
-    RED4ext::Vector4 unk110;
-    RED4ext::Vector4 unk120;
+    float unk110;
+    float unk114;
+    float unk118;
+    float unk11C;
+    float unk120;
+    float unk124;
+    float unk128;
+    float unk12C;
     float unk130[2];
     float unk138;
     float unk13C[4];
     uint8_t unk14C;
-    uint8_t unk14D;
+    uint8_t unk14D; // set to 1 in an update where position is set to INF
     uint16_t unk14E;
-    RED4ext::Vector4 position;
-    RED4ext::Vector4 PID;
+    float unk150;
+    float unk154;
+    float unk158;
+    float unk15C;
+    float unk160;
+    float unk164;
+    float unk168;
+    float unk16C;
 };
 RED4EXT_ASSERT_SIZE(VehiclePhysicsInsert2, 0x170);
 } // namespace physics

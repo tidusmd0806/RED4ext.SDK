@@ -15,8 +15,14 @@ struct VehicleAirControl_Record : game::data::TweakDBRecord
 {
     static constexpr const char* NAME = "gamedataVehicleAirControl_Record";
     static constexpr const char* ALIAS = "VehicleAirControl_Record";
-
-    uint8_t unk48[0x60 - 0x48]; // 48
+    
+    uint8_t yaw[3]; // 48
+    uint8_t pitch[3];
+    uint8_t roll[3];
+    uint8_t velocityPID[3];
+    uint8_t anglePID[3];
+    uint8_t flippedOverRecoveryPID[3];
+    uint8_t massReference[3];
 };
 RED4EXT_ASSERT_SIZE(VehicleAirControl_Record, 0x60);
 } // namespace game::data

@@ -216,7 +216,9 @@ struct Unk568 {
     /// @pattern 48 83 EC 48 0F 10 61 30 0F 28 DC 0F 29 74 24 30 0F 59 DC 0F 29 7C 24 20 44 0F 29 44 24 10 44 0F
     void __fastcall SetLinearVelocityEtc(Vector4 *);
 
-	float unk00[8]; // ",	0,	0x80000400,	-1,	32);
+    float unk00[3];
+    float turnRelated;
+    float unk10[4];
 	WorldTransform worldTransform; // ",	0X20,	0x60000400,	get_struc_id("RED4ext::WorldTransform"),	32);
 	Vector4 linearVelocity; // ",	0X40,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
 	Vector4 acceleration; // ",	0X50,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
@@ -250,33 +252,36 @@ struct Unk568 {
 
 struct Unk570 {
     // 1.52 RVA: 0x1CFA220 / 30384672
-    /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
-    // void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
+    //           48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
+    // 1.6  RVA: 0x1D27B90 / 30571408
+    // 1.62 RVA: 0x1D28650
+    /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 48 89 4C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 30 FD
+    void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
 
-    // BaseObject *vehicle;
-    // void *animationController;
-    // RED4ext::anim::AnimFeature_VehiclePassenger *vehiclePassenger;
-    // RED4ext::RefCnt *vehiclePassegner::ref;
-    // RED4ext::DynArray unk20;
-    // RED4ext::DynArray unk30;
-    // RED4ext::DynArray unk40;
-    // uint64_t unk48[2];
-    // RED4ext::DynArray unk60;
-    // RED4ext::DynArray unk70;
-    // uint64_t veh_engine_throttle_input;
-    // uint64_t unk88;
-    // uint64_t veh_motion_blur_scale;
-    // uint64_t unk98;
-    // uint64_t unkA0;
-    // uint64_t unkA8;
-    // RED4ext::DynArray unkB0;
-    // RED4ext::DynArray unkC0;
-    // RED4ext::HashMap unkD0;
-    // RED4ext::HashMap unk100;
-    // RED4ext::HashMap unk130;
-    // uint64_t unk160;
-    // RED4ext::DynArray unk168;
-    // uint64_t unk178;
+    BaseObject *vehicle;
+    void *animationController;
+    // Handle<anim::AnimFeature_VehiclePassenger> vehiclePassenger;
+    Handle<void*> vehiclePassenger;
+    DynArray<void*> unk20;
+    DynArray<void*> unk30;
+    DynArray<void*> unk40;
+    uint64_t unk48[2];
+    DynArray<void*> unk60;
+    DynArray<void*> unk70;
+    uint64_t veh_engine_throttle_input;
+    uint64_t unk88;
+    uint64_t veh_motion_blur_scale;
+    uint64_t unk98;
+    uint64_t unkA0;
+    uint64_t unkA8;
+    DynArray<void*> unkB0;
+    DynArray<void*> unkC0;
+    HashMap<void*, void*> unkD0;
+    HashMap<void*, void*> unk100;
+    HashMap<void*, void*> unk130;
+    uint64_t unk160;
+    DynArray<void*> unk168;
+    uint64_t unk178;
 };
 
 struct Unk588 {

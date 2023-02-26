@@ -17,24 +17,43 @@ struct VehiclePhysicsInsert1
     static constexpr const char* NAME = "physicsVehiclePhysicsInsert1";
     static constexpr const char* ALIAS = NAME;
 
-    RED4ext::Vector4 unk00;
+    // 1.6 RVA: 0x1D5A6C0 / 30779072
+    /// @pattern 40 53 48 83 EC 30 F3 0F 10 41 08 48 8B D9 F3 0F 5C 81 DC 00 00 00 0F 29 74 24 20 F3 0F 10 71 18
+    float __fastcall SinMath(float a2);
+
+    float unk00;
+    float unk04;
+    float unk08;
+    float unk0C;
     RED4ext::Vector4 unk10;
-    RED4ext::Vector4 unk20;
+    float unk20;
+    float unk24;
+    float unk28;
+    float unk2C;
     uint32_t unk30;
     RED4ext::Vector3 unk34;
     RED4ext::Quaternion unk40;
-    void* physx3Thing1;
+    void *physx3Thing1;
     uint64_t unk58;
-    RED4ext::Vector4 unk60;
+    float unk60;
+    float unk64;
+    float unk68;
+    float unk6C;
     RED4ext::Quaternion unk70;
     RED4ext::Vector4 unk80;
     RED4ext::Vector4 unk90;
     RED4ext::Vector4 unkA0;
-    RED4ext::Vector4 unkB0;
+    float unkB0;
+    float unkB4;
+    float unkB8;
+    float unkBC;
     RED4ext::Vector4 unkC0;
-    RED4ext::Vector4 unkD0;
+    float unkD0;
+    float unkD4;
+    float unkD8;
+    float unkDC;
     uint64_t unkE0;
-    void* parent3;
+    void *parent3;
     RED4ext::Handle<void> vehicleWheelDimensionsPreset;
     RED4ext::Handle<void> vehicleWheelDrivingPreset;
     RED4ext::Handle<void> vehicleWheelRolePreset;
