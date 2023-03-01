@@ -45,9 +45,23 @@ struct PhysicsData
     /// @pattern 4C 8B 02 4C 8B D1 F3 0F 10 05 AA B8 39 01 4C 8B DA 41 0F B7 80 C0 00 00 00 45 0F B6 88 C2 00 00
     // void __fastcall LoadPhysicsStructFromTweaks(Handle<game::data::VehicleDriveModelData_Record> *a2);
 
-    // 1.6 RVA: 0x1D0CCE0 / 30461152
+    // adds to force & computes torque
+    // 1.6  RVA: 0x1D0D2E0 / 30462688
+    // 1.62 RVA: 0x1D0DDA0 / 30465440
+    /// @pattern 48 83 EC 28 F3 41 0F 10 00 F3 0F 58 01 F3 0F 10 0D ? ? ? 01 0F 29 74 24 10 C7 44 24 0C 00 00
+    void __fastcall ApplyForceAtPosition(RED4ext::Vector3 *position, RED4ext::Vector3 *force);
+
+    // 1.6  RVA: 0x1D0CCE0 / 30461152
+    // 1.62 RVA: 0x1D0D7A0 / 30463904
     /// @pattern 48 83 EC 28 F3 0F 10 42 08 F3 0F 5C 81 78 01 00 00 F3 0F 10 1A F3 0F 5C 99 70 01 00 00 F3 0F 10
-    void __fastcall ApplyTorqueWithOffset(RED4ext::Vector3 *offset, RED4ext::Vector4 *addedTorque);
+    void __fastcall ApplyTorqueAtPosition(RED4ext::Vector3 *position, RED4ext::Vector3 *torque);
+
+
+    // add vector to torque
+    // 1.6  RVA: 0x1D0D4C0
+    // 1.61 RVA: 0x1D0D880
+    /// @pattern F3 0F 10 41 0C F3 0F 58 02 F3 0F 11 41 0C F3 0F 10 4A 04 F3 0F 58 49 10 F3 0F 11 49 10 F3 0F 10
+    void __fastcall AddTorque(RED4ext::Vector3 *torque);
 
     Vector3 force;
     Vector3 torque;

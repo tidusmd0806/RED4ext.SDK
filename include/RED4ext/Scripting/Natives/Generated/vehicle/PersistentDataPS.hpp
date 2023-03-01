@@ -28,7 +28,22 @@ struct PersistentDataPS : game::ComponentPS
     //     call(this, on);
     // }
 
-    uint32_t flags; // 68
+    // 1.6  RVA: 0x1CD26F0 / 30222064
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 30 8B DA 49 8B F0 48 8B D1 48 8B F9 48 8D 4C 24 20 45
+    void __fastcall UpdateWheelRuntime(unsigned int wheelIndex, RED4ext::vehicle::WheelRuntimePSData *a3);
+
+    // 1.6  RVA: 0x1CD1150 / 30216528
+    // 1.62 RVA: 0x1CD1A10 / 30218768
+    /// @pattern 40 53 48 83 EC 30 48 8B D9 48 8B D1 48 8D 4C 24 20 45 33 C0 E8 ? ? 51 FE 0F 28 1D ? ? 40 01
+    void __fastcall ResetQuestEnforceTransform();
+
+    enum class Flags : uint32_t {
+        Awake = 0x2,
+        QuestBraking = 0x4,
+        PlayerControlled = 0x2000,
+        InAir = 0x4000,
+        PlayerControlledMaybe = 0x20000,
+    } flags; // 68
     float autopilotPos; // 6C
     float autopilotCurrentSpeed; // 70
     uint8_t unk74[0x78 - 0x74]; // 74

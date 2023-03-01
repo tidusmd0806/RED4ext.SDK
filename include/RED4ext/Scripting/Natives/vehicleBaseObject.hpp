@@ -290,20 +290,132 @@ struct Unk588 {
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 30 48 89 11 48 8B C2 C7 81 50 03 00 00 00 00 00 00 48
     __int64 __fastcall Unknown(BaseObject *vehicle, __int64 a3);
 
-    uint64_t unk00;
+    // 1.6 RVA: 0x1C6D380 / 29807488
+    /// @pattern 48 83 C1 10 E9 B7 1B 00 00
+    void __fastcall UpdateTransform(RED4ext::Transform *a2);
+
+    RED4ext::vehicle::BaseObject *vehicle;
     uint8_t affectsTPPAudio;
     uint32_t unk0C;
     uint32_t unk10;
     uint32_t unk14;
-    uint64_t unk18;
-    uint64_t unk20;
+    RED4ext::Handle<void*> unk18;
     uint64_t unk28;
-    uint64_t unk30;
-    uint64_t unk38;
-    uint64_t unk40;
-    uint64_t unk48[100];
-    uint64_t companionRelated;
+    void * unk30;
+    void * unk38;
+    struct Unk40 {
+        uint32_t unk00[3];
+        uint32_t unk0C;
+        float unk10;
+        uint32_t unk14;
+        uint32_t unk18;
+        uint32_t unk1C;
+        float unk20;
+        float unk24;
+    } * unk40;
+    uint32_t unk48;
+    uint32_t unk4C;
+    uint64_t unk50;
+    float unk58;
+    float unk5C;
+    float unk60;
+    float unk64;
+    uint8_t unk68;
+    uint8_t unk69;
+    uint8_t unk6A;
+    uint8_t unk6B;
+    uint8_t unk6C;
+    uint8_t unk6D;
+    uint8_t unk6E;
+    uint8_t unk6F;
+    uint8_t unk70;
+    uint8_t unk71;
+    uint8_t unk72;
+    uint8_t unk73;
+    uint8_t unk74;
+    uint8_t unk75;
+    uint8_t unk76;
+    uint8_t unk77;
+    uint64_t unk78;
+    RED4ext::Matrix unk80;
+    float unkC0;
+    float unkC4;
+    float unkC8;
+    float unkCC;
+    uint64_t unkD0[8];
+    float unk110;
+    float unk114;
+    uint64_t uk118[7];
+    uint32_t unk150;
+    uint32_t unk154;
+    float unk158;
+    uint32_t unk15C;
+    void * unk160;
+    float unk168;
+    float unk16C;
+    float unk170;
+    float unk174;
+    uint64_t unk178;
+    float unk180;
+    float unk184;
+    float unk188;
+    float unk18C;
+    float unk190;
+    float unk194;
+    uint32_t unk198;
+    float unk19C;
+    uint64_t unk1A0;
+    uint64_t unk1A8[5];
+    RED4ext::Vector4 unk1D0;
+    RED4ext::Vector4 unk1E0;
+    RED4ext::Transform unk1F0;
+    uint32_t unk210;
+    uint32_t unk214;
+    RED4ext::Transform unk218;
+    uint64_t unk238;
+    uint64_t unk240;
+    uint64_t unk248[5];
+    RED4ext::Transform unk270;
+    uint64_t unk290;
+    uint64_t unk298;
+    uint64_t unk2A0;
+    uint64_t unk2A8;
+    float unk2B0;
+    uint32_t unk2B4;
+    uint8_t unk2B8;
+    uint8_t unk2B9;
+    uint8_t unk2BA;
+    uint8_t unk2BB;
+    uint8_t unk2BC;
+    uint8_t unk2BD;
+    uint8_t unk2BE;
+    uint8_t unk2BF;
+    uint16_t unk2C0;
+    uint8_t unk2C2;
+    uint8_t tweak2C3[3];
+    uint8_t tweak2C6[3];
+    uint8_t tweak2C9[3];
+    uint8_t tweak2CC[3];
+    uint8_t tweak2CF[3];
+    float unk2D4;
+    float unk2D8;
+    uint8_t unk2DC;
+    uint8_t unk2DD;
+    uint8_t unk2DE;
+    uint8_t unk2DF;
+    uint64_t unk2E0[2];
+    RED4ext::Transform unk2F0;
+    uint64_t unk310[9];
+    void * unk358;
+    void * unk360;
+    void * companionRelated;
+    void * unk370;
+    uint32_t unk378;
+    uint32_t unk37C;
+    RED4ext::SharedMutex unk380;
 };
+
+RED4EXT_ASSERT_SIZE(Unk588, 0x388);
 
 struct Unk368
 {
@@ -311,7 +423,7 @@ struct Unk368
   uint64_t unk08;
   move::Component *moveComponent;
   void *unk18;
-  BaseObject *vehicle;
+  vehicle::BaseObject *vehicle;
 };
 
 
@@ -433,7 +545,7 @@ struct BaseObject : game::Object
     virtual float __fastcall sub_298();
 
     // Empty function
-    virtual void __fastcall sub_2A0();
+    virtual void __fastcall sub_2A0(RED4ext::Transform *);
 
     // Something with blackboard and effect data
     virtual uint64_t __fastcall sub_2A8();
@@ -450,10 +562,10 @@ struct BaseObject : game::Object
     // Raytraces, decides isOnGround, physics sub_C0 - only runs if physicsState == 0
     virtual void __fastcall sub_2C8();
 
-    // Empty function, calls physics sub_118
-    virtual void __fastcall sub_2D0();
+    // Empty function, calls physics->sub_118 with same params
+    virtual void __fastcall sub_2D0(void *, RED4ext::Transform *);
 
-    // Empty function, calls physics sub_120
+    // Empty function, calls physics sub_120/UpdateWheelAnimations
     virtual void __fastcall sub_2D8();
 
     // Something with the entity stored separately flag, maybe mounting related, calls sub_310
@@ -751,9 +863,18 @@ struct BaseObject : game::Object
     uint8_t highPriorityDriving;
     uint8_t unk617;
     DynArray<void*> uiComponents;
-    Matrix unk628;
+    float unk628;
+    float unk62C;
+    // updated & compared to each other - some bigger struct
+    float unk630;
+    float unk634;
+    Vector4 unk638;
+    Vector4 unk648;
+    Vector4 unk658;
     Matrix unk668;
-    float unk6A8[18];
+    float unk6A8[10];
+    // comes from unk588 maybe
+    RED4ext::Transform unk6D0;
     uint64_t unk6F0[2];
     float max_tolerance_radius;
     float acc_pid_p;

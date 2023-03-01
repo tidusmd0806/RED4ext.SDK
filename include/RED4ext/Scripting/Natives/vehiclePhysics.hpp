@@ -35,13 +35,17 @@ struct UnkC8 {
   Vector3 unk04;
   Vector4 linearVelocity;
   Vector4 angularVelocity;
+  // some sort of timeDelta
   float unk30;
   float unk34;
   float unk38;
   float unk3C;
   WorldTransform unk40;
+  // another timeDelta
   float unk60;
+  // another timeDelta
   float unk64;
+  // used in force calculation
   float unk68;
   float unk6C;
 };
@@ -106,7 +110,7 @@ struct Physics
     // empty
     virtual void sub_110();
     // empty
-    virtual void sub_118();
+    virtual void sub_118(void *, RED4ext::Transform *);
     // updates some animation stuff, sub_120
     virtual uint64_t UpdateWheelAnimations();
     // update blackboard, effectdata
@@ -185,8 +189,21 @@ struct Physics
     WorldTransform worldTransform2; // 80
     // Set to 1.0 when awake, counts down when sleep conditions are met - when 0.0, vehicle enters sleep state, and is set to -1.0
     float sleepTimer;
+    // counts from 0.5 down to 0.0
     float unkA4;
     float setTo0point5;
+    /*
+    0x00011a70 on ground, 
+    0x00011a84 in air, 
+    0xffffffff in water, 
+    0x00012d45 above water
+    0x00013404 sliding
+    0x00013f53 hitting ground
+    0x00014aa8 upsidedown over ground
+    0x00014659
+    0x00014aad
+    0x00014a9d
+    */
     int32_t unkAC;
     float unkB0;
     // computed from chassis component
@@ -218,17 +235,48 @@ struct UnkD10 {
     void __fastcall Reset(int numWheels);
 
     struct Wheel {
-        uint8_t unk00[32];
+        // uint8_t unk00[32];
+        // RED4ext::Vector3 unk20;
+        // uint8_t unk2C[96];
+        // RED4ext::Vector3 unk8C;
+        // RED4ext::CName physMaterial;
+        // uint8_t unkA0[52];
+        // uint8_t unkD4;
+        // uint8_t unkD5[3099];
+        // bool unkCF0;
+        // bool unkCF1;
+        // uint8_t unkCF2[2];
+        // float unkCF4;
+        // float unkCF8;
+        // float relatedToAir;
+
+        // location of wheel
+        RED4ext::Transform unk00;
         RED4ext::Vector3 unk20;
-        uint8_t unk2C[96];
+        float unk2C[21];
+        // related to insert2->unk150
+        RED4ext::Vector3 unk80;
         RED4ext::Vector3 unk8C;
         RED4ext::CName physMaterial;
-        uint8_t unkA0[52];
-        uint8_t unkD4;
-        uint8_t unkD5[3099];
+        // location of raytrace below wheel?
+        RED4ext::Transform unkA0;
+        uint32_t unkC0[2];
+        // related to physics->unkCD0
+        int32_t unkC8;
+        uint32_t unkCC[2];
+        float unkD4;
+        uint32_t unkD8;
+        uint32_t unkDC;
+        struct UnkE0 {
+            uint8_t unk00[96];
+        } unkE0[2];
+        uint8_t unk1A0[2880];
+        uint32_t numE0;
+        uint8_t unkCE4[12];
         bool unkCF0;
         bool unkCF1;
-        uint8_t unkCF2[2];
+        uint8_t unkCF2;
+        uint8_t unkCF3;
         float unkCF4;
         float unkCF8;
         float relatedToAir;
@@ -267,7 +315,7 @@ struct WheeledPhysics : Physics
 
     // 1.6 RVA: 0x1D450D0 / 30691536
     /// @pattern 48 8B C4 53 41 54 41 56 48 83 EC 60 48 89 68 10 48 8D 99 D0 05 00 00 48 89 70 18 45 33 E4 48 89
-    __int64 __fastcall insert2_math(__int64 a2);
+    void __fastcall Update();
 
     // 1.52 RVA: 0x1D11A50 / 30480976
     /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 57 48 81 EC C0 00 00 00 0F 29 70 E8 48 8B F1 48 8B 89 F8 00 00
@@ -407,17 +455,11 @@ struct WheeledPhysics : Physics
     uint8_t unkF6;
     uint8_t unkF7;
     WheeledBaseObject* wheeledObject;
-    physics::VehiclePhysicsInsert1 wheel1;
-    physics::VehiclePhysicsInsert1 wheel2;
-    physics::VehiclePhysicsInsert1 wheel3;
-    physics::VehiclePhysicsInsert1 wheel4;
-    uint32_t wheelCount;
+    physics::VehiclePhysicsInsert1 insert1[4];
+    uint32_t insert1Count;
     uint32_t unk5C4[3];
-    physics::VehiclePhysicsInsert2 insert1;
-    physics::VehiclePhysicsInsert2 insert2;
-    physics::VehiclePhysicsInsert2 insert3;
-    physics::VehiclePhysicsInsert2 insert4;
-    uint8_t insertCount;
+    physics::VehiclePhysicsInsert2 insert2[4];
+    uint8_t insert2Count;
     uint8_t unkB91;
     uint8_t unkB92;
     uint8_t unkB93;
@@ -620,7 +662,7 @@ struct BikePhysics : WheeledPhysics
     virtual ~BikePhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
     virtual void sub_30(uint32_t *, float*) override;
-    virtual void sub_118() override;
+    virtual void sub_118(void *, RED4ext::Transform *) override;
     virtual uint64_t UpdateWheelAnimations() override;
     virtual uint64_t UpdateBlackboard() override;
     virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record>*) override;

@@ -48,6 +48,7 @@ struct VehiclePhysicsInsert2
     RED4ext::Vector4 unkC0;
     RED4ext::Vector4 unkD0;
     RED4ext::Vector4 unkE0;
+    // related to torque?
     float unkF0;
     float unkF4;
     float turnAngle;
@@ -57,9 +58,11 @@ struct VehiclePhysicsInsert2
     float unk114;
     float unk118;
     float unk11C;
+    // related to torque?
     float unk120;
     float unk124;
     float unk128;
+    // time since touching the ground
     float unk12C;
     float unk130[2];
     float unk138;
@@ -67,9 +70,7 @@ struct VehiclePhysicsInsert2
     uint8_t unk14C;
     uint8_t unk14D; // set to 1 in an update where position is set to INF
     uint16_t unk14E;
-    float unk150;
-    float unk154;
-    float unk158;
+    RED4ext::Vector3 unk150;
     float unk15C;
     float unk160;
     float unk164;
