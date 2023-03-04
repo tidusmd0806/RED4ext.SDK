@@ -43,107 +43,170 @@ struct HeadLookAtStruct
   float rotationSpeed;
 };
 
+struct TPPCameraSmoothFloat
+{
+  float currentValue;
+  float targetValue;
+  float timeToChange;
+  float deltaValue;
+};
+
+struct TPPCameraSmoothQuaternion
+{
+  Quaternion currentValue;
+  Quaternion targetValue;
+  float timeToChange;
+  float unk[3];
+  Quaternion deltaValue;
+};
+
+
 struct TPPCameraData
 {
-    WorldTransform transform; // unk568.unk44
+    RED4ext::Vector4 linearVelocity;
+    RED4ext::Quaternion orientation;
     float yawDelta;
     float pitchDelta;
-    bool isUsingMouse;
+    uint8_t isUsingMouse;
     uint8_t unk29;
     uint8_t unk2A;
     uint8_t unk2B;
     float unk2C;
     uint8_t isInAir;
-    float unk34;
+    uint8_t unk31[7];
     float unk38;
     float unk3C;
-    Vector4 unk40; // unk568.unkC0
-    float unk50;   // unk568.unk110
+    RED4ext::Vector4 angularVelocity;
+    float affectsPitch;
     uint8_t unk54;
     uint8_t unk55;
     uint8_t unk56;
     uint8_t unk57;
-    void* cameraSystem;
+    void *cameraSystem;
 };
 
-struct TPPCameraComponent : game::CameraComponent
+struct TPPCameraUpdate
+{
+  TPPCameraPreset *preset;
+  // also some sort of time delta
+  float anotherDeltaTime;
+  float deltaTime;
+  Transform transform;
+  Vector4 locationFromOffset;
+};
+
+
+struct TPPCameraComponent : public game::CameraComponent
 {
     static constexpr const char* NAME = "vehicleTPPCameraComponent";
     static constexpr const char* ALIAS = "vehicleTPPCameraComponent";
     static constexpr const uintptr_t VFT_RVA = vehicleTPPCameraComponent_VFT_RVA;
 
+// virtual overrides
+
+    void TargetedCameraInterface_CopyParameters(void *);
+    Vector3* TargetedCameraInterface_GetInitialPosition(Vector3 *);
+    Quaternion* TargetedCameraInterface_GetInitialOrientation(Quaternion*);
+
+    // updates preset1 & preset2
+    // does autoCentering math
+    // updates yaw, pitch
+    // calls UpdateSmoothValues
+    // airFlowDistortion math
+    // calls UpdatePosition
+    // calls Update
+    // 1.6 RVA: 0x1CF4250 / 30360144
+    /// @pattern 48 89 5C 24 20 55 56 57 48 8D 6C 24 F0 48 81 EC 10 01 00 00 44 0F 29 94 24 C0 00 00 00 48 8B F2
+    void __fastcall TargetedCameraInterface_Update(float *a2);
+
+    const char* TargetedCameraInterface_GetTypeName();
+    
+    // calls GetLocationFromOffset at the beginning, Update at the end
+    // 1.6 RVA: 0x1CF2410 / 30352400
+    /// @pattern 48 8B C4 48 89 70 18 48 89 78 20 55 48 8D 68 A8 48 81 EC 50 01 00 00 0F 29 78 D8 48 8B F9 0F 57
+    void TargetedCameraInterface_sub_58();
+
+// new virtuals
+
     virtual bool sub_320(HeadLookAtStruct *a2);
     virtual bool sub_328();
-    
+
+// methods
+
+    // 1.6 RVA: 0x1CF3C10 / 30358544
+    /// @pattern F3 0F 10 42 04 8B 02 F3 0F 10 4A 08 F3 0F 11 81 B4 02 00 00 F3 0F 11 89 B8 02 00 00 89 81 B0 02
+    __int64 __fastcall UpdateData(void * a2);
+
+    // 1.6  RVA: 0x1CF47B0 / 30361520
+    // 1.62 RVA: 0x1CF5270 / 30364272
+    /// @pattern 40 53 48 81 EC 90 00 00 00 F3 0F 10 15 ? ? 3E 01 0F 57 C0 F3 0F 2A 81 20 03 00 00 48 8B D9 F3
+    void __fastcall Update();
+
     // 1.52 RVA: 0x1CC4600 / 30164480
-    /// @pattern 48 8B C4 48 89 58 18 48 89 78 20 55 48 8D 68 D8 48 81 EC 20 01 00 00 0F 28 05 12 6F 3B 01 0F 57
-    // Vector3* __fastcall UnkTPPCameraAdjustments(Vector4 *placeholderPosition, TPPCameraPreset *preset);
+    // 1.6  RVA: 0x1CF0CB0 / 30346416
+    // 1.62 RVA: 0x1CF1770 / 30349168
+    /// @pattern 48 8B C4 48 89 58 18 48 89 78 20 55 48 8D 68 D8 48 81 EC 20 01 00 00 0F 28 05 ? ? ? 01 0F 57
+    Vector4 *__fastcall GetLocationFromOffset(Vector4 *location, Vector3 *lookAtOffset);
 
+    // updates airFlowDistortionSpeed, currentSpeed, drivingDirectionSmooth, angularVelocitySmooth, isInAir, currentBoomLength
+    // 1.6 RVA: 0x1CF54E0 / 30364896
+    /// @pattern 48 89 5C 24 08 57 48 81 EC 80 00 00 00 F3 0F 10 05 AB 69 3E 01 0F 57 E4 F3 0F 2A A1 24 03 00 00
+    // __int64 __fastcall UpdateSmoothValues(TPPCameraUpdate *update);
 
-    //virtual void ent::TargetedCameraInterface::sub_00() override;
+    // called before Update
+    // uses preset to update pitch, unk480
+    // updates unkWorldPosition470
+    // updates boomLength
+    // updates initialTransform
+    // calls UpdatePitch(v4, unk340, update)
+    // 1.6 RVA: 0x1CF4970 / 30361968
+    /// @pattern 48 8B C4 48 89 58 18 48 89 70 20 55 57 41 56 48 8D 68 C8 48 81 EC 20 01 00 00 0F B6 B9 8A 04 00
+    void __fastcall UpdatePosition(TPPCameraUpdate *update);
+
+    // updates cameraDirection
+    // updates cameraPitch from slopeAdjustment
+    // 1.6  RVA: 0x1CF5DB0 / 30367152
+    // 1.62 RVA: 0x1CF6870 / 30369904
+    /// @pattern 48 8B C4 48 89 58 08 57 48 81 EC 90 00 00 00 F3 0F 10 05 ? ? 3E 01 0F 57 ED 0F 29 70 E8 49 8B
+    void __fastcall UpdatePitch(Vector4 *localPosition, Vector3 *cameraPosition, TPPCameraUpdate *update);
+
+    // uses driving direction variables, a3 is unkTransform340 & update->locationFromOffset, and X from unkWorldPosition470
+    // 1.6 RVA: 0x1CF57B0 / 30365616
+    /// @pattern 48 8B C4 F3 0F 11 58 20 53 56 57 48 81 EC 10 01 00 00 F3 0F 10 81 D8 04 00 00 49 8B F8 F3 0F 10
+    void __fastcall GetYaw(float *yaw, Vector4 *a3, float isInAir);
 
     Handle<BaseObject> vehicle;
-    WorldTransform unkWorldTransform; // start of TPP data
-    float yawDelta;
-    float pitchDelta;
-    uint8_t isUsingMouse;
-    uint8_t unk2E1;
-    uint8_t unk2E2;
-    uint8_t unk2E3;
-    float unk2E4; // data.unk2C
-    uint8_t isInAir;
-    uint8_t unk2E9[7];
-    float unk2F0;
-    float unk2F4;
-    Vector4 unk2F8; // data.unk40
-    uint32_t unk300; // data.unk50
-    uint8_t unk304; // data.unk54
-    uint8_t unk305;
-    uint8_t unk306;
-    uint8_t unk307;
-    float unk308;
-    float unk30C;
+    TPPCameraData data;
     void* runtimePhysicsSystem;
     uint64_t unk318;
-    WorldTransform unkWorldTransform320;
+    // position set in Target::sub_58, orientation set in Update()
+    WorldTransform initialTransform;
+    // position set in Target::sub_58
     WorldTransform unkWorldTransform340;
     WorldPosition unkWorldPosition360;
     Handle<ChassisComponent> chassis;
     float pitch;
     float yaw;
-    float currentSpeed;
-    Vector3 unkPID38C;
-    float airFlowDistortionSpeed;
-    Vector3 unkPID39C;
-    float currentBoomLength;
-    float unk3AC;
-    float unk3B0;
-    float unk3B4;
+    TPPCameraSmoothFloat currentSpeed;
+    TPPCameraSmoothFloat airFlowDistortionSpeed;
+    TPPCameraSmoothFloat currentBoomLength;
     uint32_t unk3B8;
     uint32_t unk3BC;
-    Quaternion q1;
-    Vector3 unkPID2;
-    Vector3 unkPID3;
-    float unk3E8;
-    float unk3EC;
-    Quaternion q4;
-    Quaternion q5;
-    float unk410;
-    float unk414;
-    float unk418;
-    Vector3 PID2;
-    uint64_t unk428;
-    Quaternion q7;
-    float unk440;
-    Vector3 PID3;
+    TPPCameraSmoothQuaternion angularVelocitySmooth;
+    TPPCameraSmoothQuaternion drivingDirectionSmooth;
+    TPPCameraSmoothFloat isInAir;
     float autoCenterTimer;
     float boomLength;
     float cameraPitch;
-    Vector3 otherPosition;
+    Vector3 cameraDirection;
     float slopeCorretionInAirLastValue;
-    float unk46C;
-    Vector4 unk470; // result of some calc
-    float unk480;
+    float currentAirFlowDistortionSpeed;
+    // result of some calc, only keeps Z comp of part of another transform
+    // X is unaffected if cameraLocked
+    WorldPosition unkWorldPosition470;
+    // when 0.0, unkTransform340 is updated directly from initialTransform, yaw = 0.0 - some sort of time value to ease
+    // how much cam should be centered - min of 1.0 if timer threshold exceeded
+    float centeringDelta;
     uint8_t collisionDetection;
     uint8_t elasticBoomVelocity;
     uint8_t elasticBoomAcceleration;
@@ -194,21 +257,15 @@ struct TPPCameraComponent : game::CameraComponent
     float timeSinceLastMovement;
     TPPCameraPreset preset2;
     uint32_t presetIndex2;
-    float unk590;
-    float unk594;
-    float unk598;
-    float unk59C;
-    float unk5A0;
-    float unk5A4;
-    float unk5A8;
-    float unk5AC;
-    float unk5B0;
+    float airFlowDistortionAmplitude;
+    TPPCameraSmoothFloat airFlowDistortionXSmooth;
+    TPPCameraSmoothFloat airFlowDistortionYSmooth;
     float unk5B4;
     float airFlowDistortionX;
     float airFlowDistortionY;
 };
 RED4EXT_ASSERT_SIZE(TPPCameraComponent, 0x5C0);
-RED4EXT_ASSERT_OFFSET(TPPCameraComponent, isInAir, 0x2E0);
+RED4EXT_ASSERT_OFFSET(TPPCameraComponent, data.isInAir, 0x2E0);
 //char (*__kaboom)[sizeof(TPPCameraComponent)] = 1;
 //char (*__kaboom)[offsetof(TPPCameraComponent, isInAir)] = 1;
 } // namespace vehicle

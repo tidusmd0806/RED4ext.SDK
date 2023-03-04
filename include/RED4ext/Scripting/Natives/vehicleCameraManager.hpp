@@ -47,7 +47,7 @@ struct CameraManager : IScriptable
     void __fastcall Update();
 
     void * unk40; 
-    float customTarget; 
+    uint32_t customTarget; 
     float unk4C;
     Handle<TPPCameraComponent> tppCamera; 
     Handle<game::FPPCameraComponent> fppCamera;
@@ -56,16 +56,7 @@ struct CameraManager : IScriptable
     uint32_t activeCameraType; 
     float SensitivityConfig_Base_pad; 
     float SensitivityConfig_Base_mouse; 
-    float SensitivityConfig_UserTPP_padX; 
-    float SensitivityConfig_UserTPP_padY; 
-    float SensitivityConfig_UserTPP_mouseX;
-    float SensitivityConfig_UserTPP_mouseY; 
-    float SensitivityConfig_UserVehicleFPP_padX;
-    float SensitivityConfig_UserVehicleFPP_padY; 
-    float SensitivityConfig_UserVehicleFPP_mouseX;
-    float SensitivityConfig_UserVehicleFPP_mouseY; 
-    float cameraPlaneSettings_CameraCurves_sensitivityDebugEnabled; // BC 
-    uint8_t data[96]; // C0,   0x60000400, get_struc_id("RED4ext::vehicle::TPPCameraData"),    96);
+    vehicle::TPPCameraData data;
     void * photoModeCamera; // 120,  0x35500400, 0XFFFFFFFFFFFFFFFF, 8,  0XFFFFFFFFFFFFFFFF, 0,  0x000009);
     void * unk128; // 128,  0x30000400, -1, 8);
     float unk130; // 130,  0x80000400, -1, 4);

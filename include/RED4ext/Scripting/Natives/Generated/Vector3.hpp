@@ -6,6 +6,7 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
+//#include <RED4ext/Scripting/Natives/Generated/Vector4.hpp>
 
 namespace RED4ext
 {
@@ -23,7 +24,15 @@ struct alignas(0x4) Vector3
         this->Y += rhs.Y;
         this->Z += rhs.Z;
         return *this;
-    } 
+    }
+
+    Vector3 operator+(const Vector3& rhs) const {
+        return Vector3(this->X + rhs.X, this->Y + rhs.Y, this->Z + rhs.Z);
+    }
+
+    Vector3 operator-() {
+        return Vector3(-this->X, -this->Y, -this->Z);
+    }
 };
 RED4EXT_ASSERT_SIZE(Vector3, 0xC);
 } // namespace RED4ext

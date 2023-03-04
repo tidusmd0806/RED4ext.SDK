@@ -15,7 +15,7 @@ namespace RED4ext
 namespace ent { 
 struct BaseCameraComponent
     : ent::IPlacedComponent
-    , ent::TargetedCameraInterface
+    , public ent::TargetedCameraInterface
 {
     static constexpr const char* NAME = "entBaseCameraComponent";
     static constexpr const char* ALIAS = "entCameraComponent";
