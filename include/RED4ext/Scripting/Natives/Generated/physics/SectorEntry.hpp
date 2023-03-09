@@ -20,7 +20,12 @@ struct SectorEntry
     uint64_t sectorHash; // 20
     uint32_t entryOffset; // 28
     uint32_t entrySize; // 2C
-    uint8_t unk30[0x40 - 0x30]; // 30
+    uint8_t unk30;
+    uint8_t unk31;
+    // status of loading?
+    uint8_t unk32;
+    SharedMutex unk33;
+    uint8_t unk34[0x40 - 0x34]; // 33
 };
 RED4EXT_ASSERT_SIZE(SectorEntry, 0x40);
 } // namespace physics

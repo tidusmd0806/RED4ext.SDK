@@ -23,6 +23,8 @@ struct SystemBody : physics::ISystemObject
     static constexpr const char* NAME = "physicsSystemBody";
     static constexpr const char* ALIAS = NAME;
 
+    static constexpr const uintptr_t VFT_RVA = physicsSystemBody_VFT_RVA;
+
     DynArray<Handle<physics::ICollider>> collisionShapes; // 38
     uint8_t unk48[0x49 - 0x48]; // 48
     bool isQueryBodyOnly; // 49

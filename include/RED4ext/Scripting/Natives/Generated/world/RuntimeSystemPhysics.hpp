@@ -19,6 +19,12 @@ struct RuntimeSystemPhysics : world::IRuntimeSystem
     
     static constexpr const uintptr_t VFT_RVA = worldRuntimeSystemPhysics_VFT_RVA;
 
+    // virtual (last)
+    // 1.6 RVA: 0xB27000 / 11694080
+    /// @pattern 40 53 48 83 EC 40 8B 41 58 48 8B D9 48 8D 4C 24 50 89 44 24 50 E8 46 35 99 FF 48 8B 8B 80 01 00
+    __int64 __fastcall FreeGeos();
+
+
     uint8_t unk48[0x1B0 - 0x48]; // 48
     Handle<physics::GeometryCache> geoCache; // 1B0
     uint8_t unk1C0[0x1F8 - 0x1C0]; // 1C0

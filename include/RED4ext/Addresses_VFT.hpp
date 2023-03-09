@@ -1619,7 +1619,7 @@
 #define DelayedUIRefreshEvent_VFT_RVA 0x30E1580
 #define GTFManager_VFT_RVA 0x3614A68
 #define CParticleInitializerSpawnCircle_VFT_RVA 0x32014A8
-#define gameEffectObjectFilter_PlayerIgnoreFriendlyAndAlive_VFT_RVA
+// #define gameEffectObjectFilter_PlayerIgnoreFriendlyAndAlive_VFT_RVA
 #define sampleBullet_VFT_RVA 0x341A760
 #define sampleScreenProjectionLogicController_VFT_RVA 0x31B0B50
 #define ComputerBannerWidgetController_VFT_RVA 0x31B0B50
@@ -7135,7 +7135,7 @@
 #define CrosshairGameController_Jailbreak_Power_VFT_RVA 0x35996B0
 #define ActivateCoverDecisions_VFT_RVA 0x33BC2A0
 #define Air_VFT_RVA 0x33BC2A0
-#define gameEffectObjectFilter_HitRepresentation_Raycast_VFT_RVA 0x
+// #define gameEffectObjectFilter_HitRepresentation_Raycast_VFT_RVA 0x
 #define inkGridWidget_VFT_RVA 0x31C4AB0
 #define animAnimNode_FloatInterpolation_VFT_RVA 0x316F300
 #define Toilet_VFT_RVA 0x33F8568
@@ -8087,7 +8087,7 @@
 #define WardrobeControllerPS_VFT_RVA 0x337DFB0
 #define gameprojectileSlideTrajectoryParams_VFT_RVA 0x34345B0
 #define AIMoveOnSplineCommand_VFT_RVA 0x33CFAE8
-#define gamestateMachineplayeractionsLocomotionForceIdle_VFT_RVA 0x
+// #define gamestateMachineplayeractionsLocomotionForceIdle_VFT_RVA 0x
 #define Crosshair_Power_Tactician_VFT_RVA 0x35996B0
 #define HackingDataDef_VFT_RVA 0x333CE20
 #define ChromaticAberrationAreaSettings_VFT_RVA 0x3216B58
@@ -8148,7 +8148,7 @@
 #define LeftHandCyberwareChargeActionDecisions_VFT_RVA 0x33BC2A0
 #define gameinteractionsCHotSpotAreaFilterDefinition_VFT_RVA 0x33A9
 #define HitTriggeredCallback_VFT_RVA 0x33EB240
-#define gameEffectObjectProvider_SweepMelee_MantisBlades_VFT_RVA 0x
+// #define gameEffectObjectProvider_SweepMelee_MantisBlades_VFT_RVA 0x
 #define GiveRewardEffector_VFT_RVA 0x33EEB40
 #define VehicleFlightDef_VFT_RVA 0x333CE20
 #define inkWaitingSignSystem_VFT_RVA 0x31ECF88
@@ -8429,7 +8429,7 @@
 #define UseSecurityLocker_VFT_RVA 0x337D598
 #define AIbehaviorActionUnmountNodeDefinition_VFT_RVA 0x34BB1B8
 #define gameDisableAimAssist_VFT_RVA 0x34673D8
-#define AIbehaviorStackScriptPassiveExpressionDefinition_VFT_RVA 0x
+// #define AIbehaviorStackScriptPassiveExpressionDefinition_VFT_RVA 0x
 #define Build_ScriptConditionType_VFT_RVA 0x30E59C0
 #define AIVehiclePanicCommand_VFT_RVA 0x33D2F50
 #define CycleObjectiveDecisions_VFT_RVA 0x33BC2A0
@@ -8667,7 +8667,7 @@
 #define gamedataVehicleImpactTraffic_Record_VFT_RVA 0x329D988
 #define FriendlyTargetWeaponChangeCallback_VFT_RVA 0x33D8248
 #define MenuScenario_BodyTypeSelection_VFT_RVA 0x31D3AD8
-#define gamestateMachineparameterTypeClimbParametersBase_VFT_RVA 0x
+// #define gamestateMachineparameterTypeClimbParametersBase_VFT_RVA 0x
 #define DropPointModule_VFT_RVA 0x33F8568
 #define PlayerStateMachineTestThreeOutput_VFT_RVA 0x30E59C0
 #define IdleTier5Decisions_VFT_RVA 0x33BC2A0
@@ -8963,7 +8963,7 @@
 #define workWorkspotTree_VFT_RVA 0x33B3ED0
 #define gameStatusEffectComponentReplicatedState_VFT_RVA 0x345EA50
 #define gameuiPanzerBullet_VFT_RVA 0x35B0B88
-#define vehicleHasVehicleBeenFlippedOverForSomeTimeEvent_VFT_RVA 0x
+// #define vehicleHasVehicleBeenFlippedOverForSomeTimeEvent_VFT_RVA 0x
 #define sampleVisWireMaster_VFT_RVA 0x3381BE0
 #define gameEffectObjectFilter_OnlyNearest_Pierce_VFT_RVA 0x33FD368
 #define workWorkspotItemOverride_VFT_RVA 0x33AF910
@@ -9234,7 +9234,7 @@
 #define animAnimNode_TriggerBranch_VFT_RVA 0x317F3C8
 #define HitHistory_VFT_RVA 0x30E59C0
 #define gameJournalQuestSubObjective_VFT_RVA 0x34F7FB8
-#define gameuiCharacterCustomizationBrokenNoseController_VFT_RVA 0x
+// #define gameuiCharacterCustomizationBrokenNoseController_VFT_RVA 0x
 #define QuestMappinController_VFT_RVA 0x35A9AF8
 #define questMoveOnSplineAdditionalParams_VFT_RVA 0x3525508
 #define questOpenPhotoMode_NodeType_VFT_RVA 0x354DF80
@@ -9825,7 +9825,7 @@
 #define AIFollowerCombatCommand_VFT_RVA 0x334E6B8
 #define inkInputDeviceCallback_VFT_RVA 0x31CA2E0
 #define audioMeleeRigMapItem_VFT_RVA 0x3115900
-#define AIbehaviorWaitingMountCommandConditionDefinition_VFT_RVA 0x
+// #define AIbehaviorWaitingMountCommandConditionDefinition_VFT_RVA 0x
 #define AIbehaviorNodeRefToObjectTaskDefinition_VFT_RVA 0x34CA1E0
 #define CombatGadgetWaitForUnequipEvents_VFT_RVA 0x33BC2A0
 #define VehicleDoorClose_VFT_RVA 0x337D598
