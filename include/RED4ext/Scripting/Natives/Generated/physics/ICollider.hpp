@@ -23,6 +23,21 @@ struct ICollider : ISerializable
     static constexpr const char* NAME = "physicsICollider";
     static constexpr const char* ALIAS = NAME;
 
+    virtual void sub_D8() = 0;
+    virtual void sub_E0() = 0;
+    virtual void sub_E8() = 0;
+    virtual void sub_F0() = 0;
+    virtual void sub_F8() = 0;
+    virtual void sub_100() = 0;
+    virtual void sub_108();
+    virtual void sub_110();
+    virtual void sub_118();
+    virtual bool sub_120();
+    virtual void sub_128();
+    virtual void sub_130() = 0;
+    virtual void sub_138();
+    virtual void sub_140() = 0;
+
     Transform localToBody; // 30
     CName material; // 50
     DynArray<physics::ApperanceMaterial> materialApperanceOverrides; // 58

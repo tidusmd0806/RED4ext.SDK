@@ -239,7 +239,7 @@ enum class RTTI_VFT : long {
   inkTypographyResource = inkTypographyResource_VFT_RVA,
   gameDebugTimeState = gameDebugTimeState_VFT_RVA,
   gameEntityStubSystem = gameEntityStubSystem_VFT_RVA,
-  ExpressionTreeCParametrizationNodeReadIntDefinition = ExpressionTreeCParametrizationNodeReadIntDefinition_VFT_RVA,
+  //ExpressionTreeCParametrizationNodeReadIntDefinition = ExpressionTreeCParametrizationNodeReadIntDefinition_VFT_RVA,
   gamedataRoachRaceBackground_Record = gamedataRoachRaceBackground_Record_VFT_RVA,
   gamePlayerStatsListener = gamePlayerStatsListener_VFT_RVA,
   worldDecorationProxyMeshNode = worldDecorationProxyMeshNode_VFT_RVA,
@@ -406,7 +406,7 @@ enum class RTTI_VFT : long {
   questCombatNodeParams_SwitchWeapon = questCombatNodeParams_SwitchWeapon_VFT_RVA,
   EffectExecutor_TrackTargets = EffectExecutor_TrackTargets_VFT_RVA,
   TimerGameController = TimerGameController_VFT_RVA,
-  AIbehaviorActionRotateToPositionTreeNodeDefinition = AIbehaviorActionRotateToPositionTreeNodeDefinition_VFT_RVA,
+  //AIbehaviorActionRotateToPositionTreeNodeDefinition = AIbehaviorActionRotateToPositionTreeNodeDefinition_VFT_RVA,
   gameinteractionsInteractionBaseEvent = gameinteractionsInteractionBaseEvent_VFT_RVA,
   AccessBreachListener = AccessBreachListener_VFT_RVA,
   worldAreaShapeNode = worldAreaShapeNode_VFT_RVA,
@@ -601,7 +601,7 @@ enum class RTTI_VFT : long {
   questLootTokenManager_NodeType = questLootTokenManager_NodeType_VFT_RVA,
   sampleVisClueMaster = sampleVisClueMaster_VFT_RVA,
   NotifySecuritySystemCombatEvent = NotifySecuritySystemCombatEvent_VFT_RVA,
-  gamedataAvoidLineOfSightSelectionParameters_Record = gamedataAvoidLineOfSightSelectionParameters_Record_VFT_RVA,
+  //gamedataAvoidLineOfSightSelectionParameters_Record = gamedataAvoidLineOfSightSelectionParameters_Record_VFT_RVA,
   DropPointRequest = DropPointRequest_VFT_RVA,
   worldInterestingConversationsAreaNotifierInstance = worldInterestingConversationsAreaNotifierInstance_VFT_RVA,
   gamedataSubstat_Record = gamedataSubstat_Record_VFT_RVA,
@@ -976,7 +976,7 @@ enum class RTTI_VFT : long {
   entLODDefinition = entLODDefinition_VFT_RVA,
   worldBlockoutArea = worldBlockoutArea_VFT_RVA,
   VehicleFlightContextDecisions = VehicleFlightContextDecisions_VFT_RVA,
-  gameuiCharacterCustomizationPersonalLinkController = gameuiCharacterCustomizationPersonalLinkController_VFT_RVA,
+  //gameuiCharacterCustomizationPersonalLinkController = gameuiCharacterCustomizationPersonalLinkController_VFT_RVA,
   inkShapeCollectionResource = inkShapeCollectionResource_VFT_RVA,
   HitData_Humanoid = HitData_Humanoid_VFT_RVA,
   RenderProxyCustomData_MaterialParams = RenderProxyCustomData_MaterialParams_VFT_RVA,
@@ -1197,7 +1197,7 @@ enum class RTTI_VFT : long {
   CheckPhaseState = CheckPhaseState_VFT_RVA,
   audioEnvelopeSettings = audioEnvelopeSettings_VFT_RVA,
   PSD_Trigger = PSD_Trigger_VFT_RVA,
-  AIbehaviorActionSlideToWorldPositionNodeDefinition = AIbehaviorActionSlideToWorldPositionNodeDefinition_VFT_RVA,
+  //AIbehaviorActionSlideToWorldPositionNodeDefinition = AIbehaviorActionSlideToWorldPositionNodeDefinition_VFT_RVA,
   FastForwardSelfRemovalDecisions = FastForwardSelfRemovalDecisions_VFT_RVA,
   TestNPCOutsideNavmeshEvent = TestNPCOutsideNavmeshEvent_VFT_RVA,
   gamestateMachineeventAddOnDemandStateMachine = gamestateMachineeventAddOnDemandStateMachine_VFT_RVA,
@@ -1251,7 +1251,7 @@ enum class RTTI_VFT : long {
   gameuiPhotoModeMenuController = gameuiPhotoModeMenuController_VFT_RVA,
   inkanimTextValueProgressInterpolator = inkanimTextValueProgressInterpolator_VFT_RVA,
   NPCLocomotionTypePrereqState = NPCLocomotionTypePrereqState_VFT_RVA,
-  gamestateMachineplayeractionsLocomotionForceFreeze = gamestateMachineplayeractionsLocomotionForceFreeze_VFT_RVA,
+  //gamestateMachineplayeractionsLocomotionForceFreeze = gamestateMachineplayeractionsLocomotionForceFreeze_VFT_RVA,
   gamedataAISquadORCondition_Record = gamedataAISquadORCondition_Record_VFT_RVA,
   HighLevelStateMapping = HighLevelStateMapping_VFT_RVA,
   gamedataApplyLightPresetEffector_Record = gamedataApplyLightPresetEffector_Record_VFT_RVA,
@@ -1515,7 +1515,7 @@ enum class RTTI_VFT : long {
   SwimmingForceFreezeDecisions = SwimmingForceFreezeDecisions_VFT_RVA,
   AIRandomTasks = AIRandomTasks_VFT_RVA,
   PlayTransformAnimationDeviceOperation = PlayTransformAnimationDeviceOperation_VFT_RVA,
-  gameeventsDeviceRegisterCameraControlOnPuppetEvent = gameeventsDeviceRegisterCameraControlOnPuppetEvent_VFT_RVA,
+  //gameeventsDeviceRegisterCameraControlOnPuppetEvent = gameeventsDeviceRegisterCameraControlOnPuppetEvent_VFT_RVA,
   SearchPatternMappingLookat = SearchPatternMappingLookat_VFT_RVA,
   animImportFacialPoseDesc = animImportFacialPoseDesc_VFT_RVA,
   gamedataGadget_Record = gamedataGadget_Record_VFT_RVA,
@@ -1550,12 +1550,12 @@ enum class RTTI_VFT : long {
   RequestComputerMainMenuWidgetsUpdateEvent = RequestComputerMainMenuWidgetsUpdateEvent_VFT_RVA,
   MenuScenario_SingleplayerMenu = MenuScenario_SingleplayerMenu_VFT_RVA,
   gamePhotoModeCameraObject = gamePhotoModeCameraObject_VFT_RVA,
-  AICTreeNodeActionAnimationCurvePathDynamicDefinition_VFT_RV
+  //AICTreeNodeActionAnimationCurvePathDynamicDefinition_VFT_RV
   PlayerHasMantisBladesEquippedPrereq = PlayerHasMantisBladesEquippedPrereq_VFT_RVA,
   animImportFacialInitialControlsDesc = animImportFacialInitialControlsDesc_VFT_RVA,
   gamedataThreatTrackingPresetBase_Record = gamedataThreatTrackingPresetBase_Record_VFT_RVA,
   gameLootSlotSingleAppearance = gameLootSlotSingleAppearance_VFT_RVA,
-  gamedataAbsoluteZLimiterCoverSelectionParameters_Record_VFT
+  //gamedataAbsoluteZLimiterCoverSelectionParameters_Record_VFT
   gameeventsTargetHitEvent = gameeventsTargetHitEvent_VFT_RVA,
   RequestTakeControl = RequestTakeControl_VFT_RVA,
   AnimFeature_SimpleIkSystem = AnimFeature_SimpleIkSystem_VFT_RVA,
@@ -1598,7 +1598,7 @@ enum class RTTI_VFT : long {
   AmmoStateHitCallback = AmmoStateHitCallback_VFT_RVA,
   NetworkMinigameGridCellController = NetworkMinigameGridCellController_VFT_RVA,
   UIScriptableSystemSetBackpackFilter = UIScriptableSystemSetBackpackFilter_VFT_RVA,
-  questCharacterManagerParameters_SetAttitudeGroupForPuppet_V
+  //questCharacterManagerParameters_SetAttitudeGroupForPuppet_V
   inkEngagementScreenState = inkEngagementScreenState_VFT_RVA,
   DoorProximityDetectorControllerPS = DoorProximityDetectorControllerPS_VFT_RVA,
   gamedataDriveHelperType_Record = gamedataDriveHelperType_Record_VFT_RVA,
@@ -1647,13 +1647,13 @@ enum class RTTI_VFT : long {
   IsPlayerPrereqState = IsPlayerPrereqState_VFT_RVA,
   ButtonCursorStateView = ButtonCursorStateView_VFT_RVA,
   NPCRarityPrereqState = NPCRarityPrereqState_VFT_RVA,
-  gameEffectParameter_FloatEvaluator_ValueOrBlackboard_VFT_RV
+  //gameEffectParameter_FloatEvaluator_ValueOrBlackboard_VFT_RV
   AIbehaviorSelectorTreeNodeDefinition = AIbehaviorSelectorTreeNodeDefinition_VFT_RVA,
   gamedataGrenadeDeliveryMethod_Record = gamedataGrenadeDeliveryMethod_Record_VFT_RVA,
   QuestListItemHoverOverEvent = QuestListItemHoverOverEvent_VFT_RVA,
   RestoreStatPoolEffector = RestoreStatPoolEffector_VFT_RVA,
   PatchNotePopupController = PatchNotePopupController_VFT_RVA,
-  scnCheckPlayerTargetNodeDistanceInterruptCondition = scnCheckPlayerTargetNodeDistanceInterruptCondition_VFT_RVA,
+  //scnCheckPlayerTargetNodeDistanceInterruptCondition = scnCheckPlayerTargetNodeDistanceInterruptCondition_VFT_RVA,
   LibTreeDefTreeVariableTreeRefList = LibTreeDefTreeVariableTreeRefList_VFT_RVA,
   gamedataVehicleDestructibleWheel_Record = gamedataVehicleDestructibleWheel_Record_VFT_RVA,
   BountyCollectedNotificationViewData = BountyCollectedNotificationViewData_VFT_RVA,
@@ -2020,7 +2020,7 @@ enum class RTTI_VFT : long {
   worldNodeEditorData = worldNodeEditorData_VFT_RVA,
   HitIsRicochetPrereqState = HitIsRicochetPrereqState_VFT_RVA,
   worldBakedDestructionNodeInstance = worldBakedDestructionNodeInstance_VFT_RVA,
-  gamehitRepresentationEventsSetMultipleScaleMultipliers_Mult
+  //gamehitRepresentationEventsSetMultipleScaleMultipliers_Mult
   TeleportCommandHandler = TeleportCommandHandler_VFT_RVA,
   gameinfluenceSeparationAgent = gameinfluenceSeparationAgent_VFT_RVA,
   gameCoverInstance = gameCoverInstance_VFT_RVA,
@@ -2040,7 +2040,7 @@ enum class RTTI_VFT : long {
   DefaultTransitionStatusEffectListener = DefaultTransitionStatusEffectListener_VFT_RVA,
   gamePhotoModeObjectPositionProvider = gamePhotoModeObjectPositionProvider_VFT_RVA,
   entReleasePreloadedEffectEvent = entReleasePreloadedEffectEvent_VFT_RVA,
-  gameEntityTemplateToAppearancesAndColorVariantsMap = gameEntityTemplateToAppearancesAndColorVariantsMap_VFT_RVA,
+  //gameEntityTemplateToAppearancesAndColorVariantsMap = gameEntityTemplateToAppearancesAndColorVariantsMap_VFT_RVA,
   audioMeleeHitSoundMetadata = audioMeleeHitSoundMetadata_VFT_RVA,
   gameCrowdPhaseTimePeriod = gameCrowdPhaseTimePeriod_VFT_RVA,
   IsScannerTarget = IsScannerTarget_VFT_RVA,
@@ -2068,12 +2068,12 @@ enum class RTTI_VFT : long {
   VehicleForwardRaceClockUpdateEvent = VehicleForwardRaceClockUpdateEvent_VFT_RVA,
   gameJournalDescriptorResource = gameJournalDescriptorResource_VFT_RVA,
   questSetScanningState_NodeType = questSetScanningState_NodeType_VFT_RVA,
-  gameuiCharacterCustomizationSystem_OnReFinalizeStateComplet
+  //gameuiCharacterCustomizationSystem_OnReFinalizeStateComplet
   HitShieldEvent = HitShieldEvent_VFT_RVA,
   inkanimVideoInterpolator = inkanimVideoInterpolator_VFT_RVA,
   questGameplayRestrictions_NodeType = questGameplayRestrictions_NodeType_VFT_RVA,
   CategoryClickedEvent = CategoryClickedEvent_VFT_RVA,
-  AIbehaviorCheckDistanceToCompanionConditionDefinition_VFT_R
+  //AIbehaviorCheckDistanceToCompanionConditionDefinition_VFT_R
   QuickSlotsManager = QuickSlotsManager_VFT_RVA,
   gamestateMachineplayeractionsVehicleDrive = gamestateMachineplayeractionsVehicleDrive_VFT_RVA,
   PauseMenuListItemData = PauseMenuListItemData_VFT_RVA,
@@ -2105,7 +2105,7 @@ enum class RTTI_VFT : long {
   UiRadialContextEvents = UiRadialContextEvents_VFT_RVA,
   entAnimExternalEvent = entAnimExternalEvent_VFT_RVA,
   TarotMainGameController = TarotMainGameController_VFT_RVA,
-  gamestateMachineplayeractionsLocomotionSwimmingStart_VFT_RV
+  //gamestateMachineplayeractionsLocomotionSwimmingStart_VFT_RV
   gameuiQuestMappinController = gameuiQuestMappinController_VFT_RVA,
   StatusEffectDecisions = StatusEffectDecisions_VFT_RVA,
   PlaySFXEffector = PlaySFXEffector_VFT_RVA,
@@ -2142,7 +2142,7 @@ enum class RTTI_VFT : long {
   worldPrefabNodeInstance = worldPrefabNodeInstance_VFT_RVA,
   AIbehaviorNodeRefToInstanceTaskDefinition = AIbehaviorNodeRefToInstanceTaskDefinition_VFT_RVA,
   UI_InventoryDef = UI_InventoryDef_VFT_RVA,
-  gameEffectObjectFilter_HitRepresentation_SweepOverTime_Box_
+  //gameEffectObjectFilter_HitRepresentation_SweepOverTime_Box_
   EnableDocumentEvent = EnableDocumentEvent_VFT_RVA,
   UpgradeItemRequest = UpgradeItemRequest_VFT_RVA,
   AIFlatheadSetSoloModeCommand = AIFlatheadSetSoloModeCommand_VFT_RVA,
@@ -2239,7 +2239,7 @@ enum class RTTI_VFT : long {
   CallAction = CallAction_VFT_RVA,
   questSpawner_NodeType = questSpawner_NodeType_VFT_RVA,
   inkCacheWidgetReference = inkCacheWidgetReference_VFT_RVA,
-  questEnforceScreenSpaceReflectionsUberQuality_NodeType_VFT_
+  //questEnforceScreenSpaceReflectionsUberQuality_NodeType_VFT_
   InventoryItemAttachmentsList = InventoryItemAttachmentsList_VFT_RVA,
   audioDynamicReverbSettings = audioDynamicReverbSettings_VFT_RVA,
   ElectricLightController = ElectricLightController_VFT_RVA,
@@ -2311,7 +2311,7 @@ enum class RTTI_VFT : long {
   worldAIDirectorSpawnNode = worldAIDirectorSpawnNode_VFT_RVA,
   AIbehaviorParallelNodeDefinition = AIbehaviorParallelNodeDefinition_VFT_RVA,
   RequestDismembermentEvent = RequestDismembermentEvent_VFT_RVA,
-  gameEffectExecutor_PhysicalImpulseFromInstigator = gameEffectExecutor_PhysicalImpulseFromInstigator_VFT_RVA,
+  //gameEffectExecutor_PhysicalImpulseFromInstigator = gameEffectExecutor_PhysicalImpulseFromInstigator_VFT_RVA,
   gameInventoryChangedEvent = gameInventoryChangedEvent_VFT_RVA,
   animInertializationRotationLimit = animInertializationRotationLimit_VFT_RVA,
   worldOffMeshSmartObjectNodeInstance = worldOffMeshSmartObjectNodeInstance_VFT_RVA,
@@ -2399,7 +2399,7 @@ enum class RTTI_VFT : long {
   gameCrowdMemberComponent = gameCrowdMemberComponent_VFT_RVA,
   SendAIBheaviorReactionStim = SendAIBheaviorReactionStim_VFT_RVA,
   VehiclePurchaseDataDef = VehiclePurchaseDataDef_VFT_RVA,
-  gameuiCharacterCustomizationSystem_OnOptionUpdatedEvent_VFT
+  //gameuiCharacterCustomizationSystem_OnOptionUpdatedEvent_VFT
   IncreaseTraitLevel = IncreaseTraitLevel_VFT_RVA,
   PhotoModeFrame = PhotoModeFrame_VFT_RVA,
   MessengerContactSyncBackEvent = MessengerContactSyncBackEvent_VFT_RVA,
@@ -2469,7 +2469,7 @@ enum class RTTI_VFT : long {
   InventoryItemDataComparator = InventoryItemDataComparator_VFT_RVA,
   GOGProfileLogicController = GOGProfileLogicController_VFT_RVA,
   ModStngsSelectorControllerListInt = ModStngsSelectorControllerListInt_VFT_RVA,
-  scnOverrideReturnConditions_InterruptionScenarioOperation_V
+  //scnOverrideReturnConditions_InterruptionScenarioOperation_V
   PonrRewardsGameController = PonrRewardsGameController_VFT_RVA,
   gamedataSpreadInitEffector_Record = gamedataSpreadInitEffector_Record_VFT_RVA,
   DEVICE_Actor = DEVICE_Actor_VFT_RVA,
@@ -2526,7 +2526,7 @@ enum class RTTI_VFT : long {
   gamedataPerkLevelUIData_Record = gamedataPerkLevelUIData_Record_VFT_RVA,
   audioInlinedAudioMetadata = audioInlinedAudioMetadata_VFT_RVA,
   CharacterCreationSummaryListItemData = CharacterCreationSummaryListItemData_VFT_RVA,
-  gamedataFriendlyTargetDistanceCoverSelectionParameters_Reco
+  //gamedataFriendlyTargetDistanceCoverSelectionParameters_Reco
   BodyDisposalPSMPrereq = BodyDisposalPSMPrereq_VFT_RVA,
   animAnimFeature_CrowdLocomotion = animAnimFeature_CrowdLocomotion_VFT_RVA,
   SceneTierVDecisions = SceneTierVDecisions_VFT_RVA,
@@ -2695,7 +2695,7 @@ enum class RTTI_VFT : long {
   vehicleWheeledBaseObject = vehicleWheeledBaseObject_VFT_RVA,
   AnimFeature_Container = AnimFeature_Container_VFT_RVA,
   scneventsUnequipItemFromPerformerByItem = scneventsUnequipItemFromPerformerByItem_VFT_RVA,
-  AIbehaviorCTreeNodeControlledByQuestNodeDefinition = AIbehaviorCTreeNodeControlledByQuestNodeDefinition_VFT_RVA,
+  //AIbehaviorCTreeNodeControlledByQuestNodeDefinition = AIbehaviorCTreeNodeControlledByQuestNodeDefinition_VFT_RVA,
   LocomotionPSMPrereqState = LocomotionPSMPrereqState_VFT_RVA,
   gameSquadMemberComponent = gameSquadMemberComponent_VFT_RVA,
   RefreshPerkAreas = RefreshPerkAreas_VFT_RVA,
@@ -2805,7 +2805,7 @@ enum class RTTI_VFT : long {
   gameSceneTier = gameSceneTier_VFT_RVA,
   gameuiPanzerCloud = gameuiPanzerCloud_VFT_RVA,
   NPCStatePrereq = NPCStatePrereq_VFT_RVA,
-  gameEffectObjectFilter_HitRepresentation_Sweep_Box = gameEffectObjectFilter_HitRepresentation_Sweep_Box_VFT_RVA,
+  //gameEffectObjectFilter_HitRepresentation_Sweep_Box = gameEffectObjectFilter_HitRepresentation_Sweep_Box_VFT_RVA,
   worldCompiledEffectInfo = worldCompiledEffectInfo_VFT_RVA,
   VehicleDriverContextDecisions = VehicleDriverContextDecisions_VFT_RVA,
   ProtectedEntities = ProtectedEntities_VFT_RVA,
@@ -2826,7 +2826,7 @@ enum class RTTI_VFT : long {
   gamedataAITicketCheck_Record = gamedataAITicketCheck_Record_VFT_RVA,
   DoorSystemUIPS = DoorSystemUIPS_VFT_RVA,
   gamedataObjectActionReference_Record = gamedataObjectActionReference_Record_VFT_RVA,
-  scnOverrideInterruptConditions_InterruptionScenarioOperatio
+  //scnOverrideInterruptConditions_InterruptionScenarioOperatio
   CoverCommandParams = CoverCommandParams_VFT_RVA,
   AIbehaviorAgentInfoDebuggerCommandEntry = AIbehaviorAgentInfoDebuggerCommandEntry_VFT_RVA,
   DismembermentDebrisEvent = DismembermentDebrisEvent_VFT_RVA,
@@ -2895,11 +2895,11 @@ enum class RTTI_VFT : long {
   HitOperationsTrigger = HitOperationsTrigger_VFT_RVA,
   WaterAreaSettings = WaterAreaSettings_VFT_RVA,
   ShardForceSelectionEvent = ShardForceSelectionEvent_VFT_RVA,
-  animAnimNodeSourceChannel_ReferenceTransformVector = animAnimNodeSourceChannel_ReferenceTransformVector_VFT_RVA,
+  //animAnimNodeSourceChannel_ReferenceTransformVector = animAnimNodeSourceChannel_ReferenceTransformVector_VFT_RVA,
   questCombatNodeParams_ShootAt = questCombatNodeParams_ShootAt_VFT_RVA,
   gameTutorialOverlayUserData = gameTutorialOverlayUserData_VFT_RVA,
   MeleeChargedHoldEvents = MeleeChargedHoldEvents_VFT_RVA,
-  AIbehaviorActionRotateToObjectHeadingTreeNodeDefinition_VFT
+  //AIbehaviorActionRotateToObjectHeadingTreeNodeDefinition_VFT
   StanceNPCStatePrereq = StanceNPCStatePrereq_VFT_RVA,
   mpServerGameSession = mpServerGameSession_VFT_RVA,
   audioPlayerWeaponSettings = audioPlayerWeaponSettings_VFT_RVA,
@@ -3165,7 +3165,7 @@ enum class RTTI_VFT : long {
   animAnimStateTransitionCondition_AnyAnimEnd = animAnimStateTransitionCondition_AnyAnimEnd_VFT_RVA,
   AIbehaviorActionMoveOnSplineNodeDefinition = AIbehaviorActionMoveOnSplineNodeDefinition_VFT_RVA,
   CrosshairGameController_Jailbreak_Smart = CrosshairGameController_Jailbreak_Smart_VFT_RVA,
-  gamestateMachineparameterTypeActionLocomotionParameters_VFT
+  //gamestateMachineparameterTypeActionLocomotionParameters_VFT
   AddOrRemoveListenerEvent = AddOrRemoveListenerEvent_VFT_RVA,
   SetBooleanArgumentWhenActive = SetBooleanArgumentWhenActive_VFT_RVA,
   inkanimAnimationController = inkanimAnimationController_VFT_RVA,
@@ -3408,7 +3408,7 @@ enum class RTTI_VFT : long {
   gamedataPerkUtility_Record = gamedataPerkUtility_Record_VFT_RVA,
   inkTextInputWidget = inkTextInputWidget_VFT_RVA,
   RequestReleaseControl = RequestReleaseControl_VFT_RVA,
-  gameEffectParameter_StringEvaluator_ValueOrBlackboard_VFT_R
+  //gameEffectParameter_StringEvaluator_ValueOrBlackboard_VFT_R
   GetAccess = GetAccess_VFT_RVA,
   IsDriverActive = IsDriverActive_VFT_RVA,
   questScene_NodeType = questScene_NodeType_VFT_RVA,
@@ -3473,7 +3473,7 @@ enum class RTTI_VFT : long {
   questVarComparison_ConditionType = questVarComparison_ConditionType_VFT_RVA,
   DelayedHandleQuickLoadEvent = DelayedHandleQuickLoadEvent_VFT_RVA,
   gameEntitySpawnerEvent = gameEntitySpawnerEvent_VFT_RVA,
-  AIbehaviorExtractVehicleSlotWorkspotTaskDefinition = AIbehaviorExtractVehicleSlotWorkspotTaskDefinition_VFT_RVA,
+  //AIbehaviorExtractVehicleSlotWorkspotTaskDefinition = AIbehaviorExtractVehicleSlotWorkspotTaskDefinition_VFT_RVA,
   RefreshPingEffector = RefreshPingEffector_VFT_RVA,
   worldRuntimeSystemCamera = worldRuntimeSystemCamera_VFT_RVA,
   entAppearanceLODsDistanceOverrideEvent = entAppearanceLODsDistanceOverrideEvent_VFT_RVA,
@@ -3536,7 +3536,7 @@ enum class RTTI_VFT : long {
   gameuiDelayedNextVOEvt = gameuiDelayedNextVOEvt_VFT_RVA,
   gamestateMachineplayeractionsLocomotionBraindance = gamestateMachineplayeractionsLocomotionBraindance_VFT_RVA,
   DiodeControlComponent = DiodeControlComponent_VFT_RVA,
-  gamedataAISubActionGeneratePointOfInterestTarget_Record_VFT
+  //gamedataAISubActionGeneratePointOfInterestTarget_Record_VFT
   NetworkAreaController = NetworkAreaController_VFT_RVA,
   inkUniformGridWidget = inkUniformGridWidget_VFT_RVA,
   QuestForceAttitude = QuestForceAttitude_VFT_RVA,
@@ -3603,7 +3603,7 @@ enum class RTTI_VFT : long {
   WebsiteLoadingSpinner = WebsiteLoadingSpinner_VFT_RVA,
   AICommand = AICommand_VFT_RVA,
   LeftHandCyberwareWaitForUnequipEvents = LeftHandCyberwareWaitForUnequipEvents_VFT_RVA,
-  AIbehaviorDistanceToTargetObjectConditionDefinition = AIbehaviorDistanceToTargetObjectConditionDefinition_VFT_RVA,
+  //AIbehaviorDistanceToTargetObjectConditionDefinition = AIbehaviorDistanceToTargetObjectConditionDefinition_VFT_RVA,
   gameEffectPostAction_Beam_RicochetPreview = gameEffectPostAction_Beam_RicochetPreview_VFT_RVA,
   PlayBinkDeviceOperation = PlayBinkDeviceOperation_VFT_RVA,
   ModStngsMainGameController = ModStngsMainGameController_VFT_RVA,
@@ -3611,7 +3611,7 @@ enum class RTTI_VFT : long {
   ArcadeMachine = ArcadeMachine_VFT_RVA,
   audioParamMixerDecoratorMetadata = audioParamMixerDecoratorMetadata_VFT_RVA,
   RoyceHealthChangeListener = RoyceHealthChangeListener_VFT_RVA,
-  gamestateMachineplayeractionsLocomotionSwimmingDiving_VFT_R
+  //gamestateMachineplayeractionsLocomotionSwimmingDiving_VFT_R
   worldRuntimeSystemTransformAnimator = worldRuntimeSystemTransformAnimator_VFT_RVA,
   CrosshairGameController_Jailbreak_Tech = CrosshairGameController_Jailbreak_Tech_VFT_RVA,
   worldEntityProxyMeshNodeInstance = worldEntityProxyMeshNodeInstance_VFT_RVA,
@@ -3641,7 +3641,7 @@ enum class RTTI_VFT : long {
   NavigationFunctionalTests = NavigationFunctionalTests_VFT_RVA,
   questPlayEnv_OverrideGlobalLight = questPlayEnv_OverrideGlobalLight_VFT_RVA,
   AttributeAllocationData = AttributeAllocationData_VFT_RVA,
-  AIbehaviorInfluenceExcludeObstaclePointTaskDefinition_VFT_R
+  //AIbehaviorInfluenceExcludeObstaclePointTaskDefinition_VFT_R
   SetBraindanceState = SetBraindanceState_VFT_RVA,
   AIThreatSharedLastKnownPositionProvider = AIThreatSharedLastKnownPositionProvider_VFT_RVA,
   animAnimFeature_Crowd = animAnimFeature_Crowd_VFT_RVA,
@@ -3719,13 +3719,13 @@ enum class RTTI_VFT : long {
   SpiderbotHeavyProjectile = SpiderbotHeavyProjectile_VFT_RVA,
   QuickHackDurationListener = QuickHackDurationListener_VFT_RVA,
   worldCompiledCrowdParkingSpaceNode = worldCompiledCrowdParkingSpaceNode_VFT_RVA,
-  AIbehaviorWaitingNotMountedCommandConditionDefinition_VFT_R
+  //AIbehaviorWaitingNotMountedCommandConditionDefinition_VFT_R
   GlitchedTurretControllerPS = GlitchedTurretControllerPS_VFT_RVA,
   audioShockwaveGlobalSettings = audioShockwaveGlobalSettings_VFT_RVA,
   AIEntityLost = AIEntityLost_VFT_RVA,
   MeleeCrouchAttackEvents = MeleeCrouchAttackEvents_VFT_RVA,
   AIJoinTrafficEvent = AIJoinTrafficEvent_VFT_RVA,
-  gamestateMachineplayeractionsActionCycleTriggerMode = gamestateMachineplayeractionsActionCycleTriggerMode_VFT_RVA,
+  //gamestateMachineplayeractionsActionCycleTriggerMode = gamestateMachineplayeractionsActionCycleTriggerMode_VFT_RVA,
   LearnAction = LearnAction_VFT_RVA,
   gamedataAIValidCoversCond_Record = gamedataAIValidCoversCond_Record_VFT_RVA,
   MessengerContactSyncData = MessengerContactSyncData_VFT_RVA,
@@ -3746,7 +3746,7 @@ enum class RTTI_VFT : long {
   inkSaveMetadataInfo = inkSaveMetadataInfo_VFT_RVA,
   ScannerRequirementItemLogicController = ScannerRequirementItemLogicController_VFT_RVA,
   gamedeviceActionProperty = gamedeviceActionProperty_VFT_RVA,
-  gamestateMachineplayeractionsActionProjectileDetach = gamestateMachineplayeractionsActionProjectileDetach_VFT_RVA,
+  //gamestateMachineplayeractionsActionProjectileDetach = gamestateMachineplayeractionsActionProjectileDetach_VFT_RVA,
   gamebbScriptID_CName = gamebbScriptID_CName_VFT_RVA,
   gameuiAdvertLightColorPickerController = gameuiAdvertLightColorPickerController_VFT_RVA,
   SurveillanceCamera = SurveillanceCamera_VFT_RVA,
@@ -3964,7 +3964,7 @@ enum class RTTI_VFT : long {
   animAnimNode_SkAnimDecorator = animAnimNode_SkAnimDecorator_VFT_RVA,
   scnBraindanceJumpInProgress_ConditionType = scnBraindanceJumpInProgress_ConditionType_VFT_RVA,
   gameEffectData_PiercePreview = gameEffectData_PiercePreview_VFT_RVA,
-  gamedataKeepCurrentCoverCoverSelectionParameters_Record_VFT
+  //gamedataKeepCurrentCoverCoverSelectionParameters_Record_VFT
   inkEditorLayer = inkEditorLayer_VFT_RVA,
   DisposalDeviceControllerPS = DisposalDeviceControllerPS_VFT_RVA,
   TakedownGrapplePreyDecisions = TakedownGrapplePreyDecisions_VFT_RVA,
@@ -4022,7 +4022,7 @@ enum class RTTI_VFT : long {
   gameMovingPlatformTeleportTo = gameMovingPlatformTeleportTo_VFT_RVA,
   SlidingLadder = SlidingLadder_VFT_RVA,
   AIAggressiveReactionPresetCondition = AIAggressiveReactionPresetCondition_VFT_RVA,
-  gameEffectParameter_CNameEvaluator_ValueOrBlackboard_VFT_RV
+  //gameEffectParameter_CNameEvaluator_ValueOrBlackboard_VFT_RV
   animAnimNode_FPPCameraSharedVar = animAnimNode_FPPCameraSharedVar_VFT_RVA,
   StandLowGravityEvents = StandLowGravityEvents_VFT_RVA,
   worldStaticOccluderMeshNodeInstance = worldStaticOccluderMeshNodeInstance_VFT_RVA,
@@ -4297,7 +4297,7 @@ enum class RTTI_VFT : long {
   gsmState_Initialization = gsmState_Initialization_VFT_RVA,
   NCPDJobDoneNotification = NCPDJobDoneNotification_VFT_RVA,
   gameVisionModeHideEvent = gameVisionModeHideEvent_VFT_RVA,
-  animAnimDebuggerCommand_NormalizedProgressOutputApplied_VFT
+  //animAnimDebuggerCommand_NormalizedProgressOutputApplied_VFT
   worldDebugColoring_SameResourceName = worldDebugColoring_SameResourceName_VFT_RVA,
   FullAutoDecisions = FullAutoDecisions_VFT_RVA,
   entTriggerNotifier_ScriptInstance = entTriggerNotifier_ScriptInstance_VFT_RVA,
@@ -4426,10 +4426,10 @@ enum class RTTI_VFT : long {
   GOGProfileGameController = GOGProfileGameController_VFT_RVA,
   PopupStateUtils = PopupStateUtils_VFT_RVA,
   gamePingSystemReplicatedState = gamePingSystemReplicatedState_VFT_RVA,
-  AIbehaviorMoveAlongTrafficPathActionNodeDefinition = AIbehaviorMoveAlongTrafficPathActionNodeDefinition_VFT_RVA,
+  //AIbehaviorMoveAlongTrafficPathActionNodeDefinition = AIbehaviorMoveAlongTrafficPathActionNodeDefinition_VFT_RVA,
   PUPPET_ACtor = PUPPET_ACtor_VFT_RVA,
   TimeDilationPSMPrereqState = TimeDilationPSMPrereqState_VFT_RVA,
-  animAnimStateTransitionCondition_CompositeSimultaneous_VFT_
+  //animAnimStateTransitionCondition_CompositeSimultaneous_VFT_
   gameweaponeventsReloadInterruptedEvent = gameweaponeventsReloadInterruptedEvent_VFT_RVA,
   gamedataComputerScreenType_Record = gamedataComputerScreenType_Record_VFT_RVA,
   worldOffMeshSmartObjectNode = worldOffMeshSmartObjectNode_VFT_RVA,
@@ -4525,11 +4525,11 @@ enum class RTTI_VFT : long {
   SaveLocksManager = SaveLocksManager_VFT_RVA,
   AIbehaviorShouldJoinTrafficDefinition = AIbehaviorShouldJoinTrafficDefinition_VFT_RVA,
   UpdateMiniGameProgramsEvent = UpdateMiniGameProgramsEvent_VFT_RVA,
-  animAnimNode_SetDrivenKey_InternalsSetDrivenKeyEntryProvide
+  //animAnimNode_SetDrivenKey_InternalsSetDrivenKeyEntryProvide
   questInputHintGroup_NodeType = questInputHintGroup_NodeType_VFT_RVA,
   animCAnimationBufferBitwiseCompressed = animCAnimationBufferBitwiseCompressed_VFT_RVA,
   InspectableObjectComponent = InspectableObjectComponent_VFT_RVA,
-  questCharacterManagerVisuals_ChangeEntityAppearance = questCharacterManagerVisuals_ChangeEntityAppearance_VFT_RVA,
+  //questCharacterManagerVisuals_ChangeEntityAppearance = questCharacterManagerVisuals_ChangeEntityAppearance_VFT_RVA,
   gameUILocalizationDataPackage = gameUILocalizationDataPackage_VFT_RVA,
   scnRewindableSectionNode = scnRewindableSectionNode_VFT_RVA,
   inkSystemRequesResult = inkSystemRequesResult_VFT_RVA,
@@ -4663,7 +4663,7 @@ enum class RTTI_VFT : long {
   HandleRagdollOnDeathEvent = HandleRagdollOnDeathEvent_VFT_RVA,
   workScriptedCondition = workScriptedCondition_VFT_RVA,
   PhoneOnEvents = PhoneOnEvents_VFT_RVA,
-  gamedataFriendlyTargetAngleDistanceCoverSelectionParameters
+  //gamedataFriendlyTargetAngleDistanceCoverSelectionParameters
   scneventsBraindanceVisibilityEvent = scneventsBraindanceVisibilityEvent_VFT_RVA,
   worldStreamingTestSummary = worldStreamingTestSummary_VFT_RVA,
   gamedataAISubActionEquipOnBody_Record = gamedataAISubActionEquipOnBody_Record_VFT_RVA,
@@ -4813,7 +4813,7 @@ enum class RTTI_VFT : long {
   worldNavigationScriptCostModCircle = worldNavigationScriptCostModCircle_VFT_RVA,
   animSimpleBounceTrackOutput = animSimpleBounceTrackOutput_VFT_RVA,
   gamedataVendorType_Record = gamedataVendorType_Record_VFT_RVA,
-  gameuiSideScrollerMiniGamePlayerControllerAdvanced = gameuiSideScrollerMiniGamePlayerControllerAdvanced_VFT_RVA,
+  //gameuiSideScrollerMiniGamePlayerControllerAdvanced = gameuiSideScrollerMiniGamePlayerControllerAdvanced_VFT_RVA,
   UIInventoryItemTooltipWrapper = UIInventoryItemTooltipWrapper_VFT_RVA,
   inkCompoundWidget = inkCompoundWidget_VFT_RVA,
   CheckEquippedWeaponType = CheckEquippedWeaponType_VFT_RVA,
@@ -4847,7 +4847,7 @@ enum class RTTI_VFT : long {
   gameOnScannableBraindanceClueEnabledEvent = gameOnScannableBraindanceClueEnabledEvent_VFT_RVA,
   SubtitleLineLogicController = SubtitleLineLogicController_VFT_RVA,
   DeadBodyEvent = DeadBodyEvent_VFT_RVA,
-  gamestateMachineConsumableParameterWeakIScriptable = gamestateMachineConsumableParameterWeakIScriptable_VFT_RVA,
+  //gamestateMachineConsumableParameterWeakIScriptable = gamestateMachineConsumableParameterWeakIScriptable_VFT_RVA,
   inkHighwaySignLogicController = inkHighwaySignLogicController_VFT_RVA,
   StimBroadcasterComponent = StimBroadcasterComponent_VFT_RVA,
   gamedataEthnicity_Record = gamedataEthnicity_Record_VFT_RVA,
@@ -4865,15 +4865,15 @@ enum class RTTI_VFT : long {
   PingSquad = PingSquad_VFT_RVA,
   VehicleHornOffDelayEvent = VehicleHornOffDelayEvent_VFT_RVA,
   gamedataVehicleDefaultState_Record = gamedataVehicleDefaultState_Record_VFT_RVA,
-  scnOverrideTalkOnReturn_InterruptionScenarioOperation_VFT_R
+  //scnOverrideTalkOnReturn_InterruptionScenarioOperation_VFT_R
   ClimbDecisions = ClimbDecisions_VFT_RVA,
-  gamedataOwnerThreatCoverSelectionParameters_Record = gamedataOwnerThreatCoverSelectionParameters_Record_VFT_RVA,
+  //gamedataOwnerThreatCoverSelectionParameters_Record = gamedataOwnerThreatCoverSelectionParameters_Record_VFT_RVA,
   worldPackageNodeRefSerializer = worldPackageNodeRefSerializer_VFT_RVA,
   GrenadeAnimFeatureChangeEvent = GrenadeAnimFeatureChangeEvent_VFT_RVA,
   QuestHideFloor = QuestHideFloor_VFT_RVA,
   AIFloatArgumentInstancePS = AIFloatArgumentInstancePS_VFT_RVA,
   InventoryDataManagerV2 = InventoryDataManagerV2_VFT_RVA,
-  gamedataThreatDistanceCoverSelectionParameters_Record_VFT_R
+  //gamedataThreatDistanceCoverSelectionParameters_Record_VFT_R
   WeaponVendorActionWidgetController = WeaponVendorActionWidgetController_VFT_RVA,
   RevokeAuthorization = RevokeAuthorization_VFT_RVA,
   CurrentStanceNPCStatePrereq = CurrentStanceNPCStatePrereq_VFT_RVA,
@@ -5046,7 +5046,7 @@ enum class RTTI_VFT : long {
   gamemappinsIMappinData = gamemappinsIMappinData_VFT_RVA,
   SettingsMainGameController = SettingsMainGameController_VFT_RVA,
   MessengerUtils = MessengerUtils_VFT_RVA,
-  AIbehaviorWaitFormationPositionConditionDefinition = AIbehaviorWaitFormationPositionConditionDefinition_VFT_RVA,
+  //AIbehaviorWaitFormationPositionConditionDefinition = AIbehaviorWaitFormationPositionConditionDefinition_VFT_RVA,
   StatsViewController = StatsViewController_VFT_RVA,
   tachometerLogicController = tachometerLogicController_VFT_RVA,
   questVendorPanel_NodeType = questVendorPanel_NodeType_VFT_RVA,
@@ -5085,7 +5085,7 @@ enum class RTTI_VFT : long {
   ReevaluateOxygenEvent = ReevaluateOxygenEvent_VFT_RVA,
   ReleaseEvents = ReleaseEvents_VFT_RVA,
   ResurrectEvents = ResurrectEvents_VFT_RVA,
-  AIbehaviorActionUseCommunityWorkspotNodeDefinition = AIbehaviorActionUseCommunityWorkspotNodeDefinition_VFT_RVA,
+  //AIbehaviorActionUseCommunityWorkspotNodeDefinition = AIbehaviorActionUseCommunityWorkspotNodeDefinition_VFT_RVA,
   gameWorldBoundaryNodeInstance = gameWorldBoundaryNodeInstance_VFT_RVA,
   AIbehaviorDelegateTaskDefinition = AIbehaviorDelegateTaskDefinition_VFT_RVA,
   SecuritySystemController = SecuritySystemController_VFT_RVA,
@@ -5147,7 +5147,7 @@ enum class RTTI_VFT : long {
   gamedataChoiceCaptionPartType_Record = gamedataChoiceCaptionPartType_Record_VFT_RVA,
   gamedataPhotoModeFrame_Record = gamedataPhotoModeFrame_Record_VFT_RVA,
   ResetFrameDamage = ResetFrameDamage_VFT_RVA,
-  EffectObjectProvider_PhysicalCollisionTrapEntities = EffectObjectProvider_PhysicalCollisionTrapEntities_VFT_RVA,
+  //EffectObjectProvider_PhysicalCollisionTrapEntities = EffectObjectProvider_PhysicalCollisionTrapEntities_VFT_RVA,
   NPCTrackingPlayerPrereq = NPCTrackingPlayerPrereq_VFT_RVA,
   ScannerWeaponDetailed = ScannerWeaponDetailed_VFT_RVA,
   worldWorld = worldWorld_VFT_RVA,
@@ -5202,12 +5202,12 @@ enum class RTTI_VFT : long {
   gameeventsDeathDirectionEvent = gameeventsDeathDirectionEvent_VFT_RVA,
   gameinteractionsVisibleTargetPredicate = gameinteractionsVisibleTargetPredicate_VFT_RVA,
   FollowNPCDef = FollowNPCDef_VFT_RVA,
-  gameuiBodyPartsControllerCustomizationStateUpdater = gameuiBodyPartsControllerCustomizationStateUpdater_VFT_RVA,
+  //gameuiBodyPartsControllerCustomizationStateUpdater = gameuiBodyPartsControllerCustomizationStateUpdater_VFT_RVA,
   gameAttachmentSlotEventsPartAddedToSlotEvent = gameAttachmentSlotEventsPartAddedToSlotEvent_VFT_RVA,
   HUDManagerRegistrationRequest = HUDManagerRegistrationRequest_VFT_RVA,
   SetDestinationWaypoint = SetDestinationWaypoint_VFT_RVA,
   inkSetNextLoadingScreenEvent = inkSetNextLoadingScreenEvent_VFT_RVA,
-  gamedataTacticLimiterCoverSelectionParameters_Record_VFT_RV
+  //gamedataTacticLimiterCoverSelectionParameters_Record_VFT_RV
   BraindanceInputChangeEvent = BraindanceInputChangeEvent_VFT_RVA,
   gamedataVehicleDestructibleGlass_Record = gamedataVehicleDestructibleGlass_Record_VFT_RVA,
   gameContainerObjectSingleItem = gameContainerObjectSingleItem_VFT_RVA,
@@ -5524,7 +5524,7 @@ enum class RTTI_VFT : long {
   gameAttachmentSlotsScriptListener = gameAttachmentSlotsScriptListener_VFT_RVA,
   QuickMeleeDataDef = QuickMeleeDataDef_VFT_RVA,
   SpawnBoxEvaluator = SpawnBoxEvaluator_VFT_RVA,
-  gameEffectObjectSingleFilter_BlackboardBoolCondition_VFT_RV
+  //gameEffectObjectSingleFilter_BlackboardBoolCondition_VFT_RV
   MultiplayerMenuGameController = MultiplayerMenuGameController_VFT_RVA,
   gameNetrunnerPrototypeNodeSetupEvent = gameNetrunnerPrototypeNodeSetupEvent_VFT_RVA,
   questCharacterAim_ConditionType = questCharacterAim_ConditionType_VFT_RVA,
@@ -5543,7 +5543,7 @@ enum class RTTI_VFT : long {
   ComputerDocumentThumbnailWidgetController = ComputerDocumentThumbnailWidgetController_VFT_RVA,
   gameEffectOutputParameter_Variant = gameEffectOutputParameter_Variant_VFT_RVA,
   MeleeAttackCommandCleanup = MeleeAttackCommandCleanup_VFT_RVA,
-  AIbehaviorCrowdSettingsNameVehicleExpressionDefinition_VFT_
+  //AIbehaviorCrowdSettingsNameVehicleExpressionDefinition_VFT_
   worldTrafficPersistentLaneConnections = worldTrafficPersistentLaneConnections_VFT_RVA,
   questShowCustomQuestNotification_NodeType = questShowCustomQuestNotification_NodeType_VFT_RVA,
   AddStatusEffectToAttackEffector = AddStatusEffectToAttackEffector_VFT_RVA,
@@ -5588,7 +5588,7 @@ enum class RTTI_VFT : long {
   AIForceShootCommandParams = AIForceShootCommandParams_VFT_RVA,
   audioGroupingLimitMetadata = audioGroupingLimitMetadata_VFT_RVA,
   HitReactionMechComponent = HitReactionMechComponent_VFT_RVA,
-  AIbehaviorExtractMountParentStubPositionTaskDefinition_VFT_
+  //AIbehaviorExtractMountParentStubPositionTaskDefinition_VFT_
   CharacterCreationStatsMenu = CharacterCreationStatsMenu_VFT_RVA,
   WorkspotMapperComponent = WorkspotMapperComponent_VFT_RVA,
   ToggleDoorInteractionEvent = ToggleDoorInteractionEvent_VFT_RVA,
@@ -5685,7 +5685,7 @@ enum class RTTI_VFT : long {
   animAnimNode_StackTracksExtender = animAnimNode_StackTracksExtender_VFT_RVA,
   VirutalNestedListClassifier = VirutalNestedListClassifier_VFT_RVA,
   gameDelaySystem = gameDelaySystem_VFT_RVA,
-  gamehitRepresentationEventsSetSingleScaleMultiplier_AllShap
+  //gamehitRepresentationEventsSetSingleScaleMultiplier_AllShap
   EquipItemRightDecisions = EquipItemRightDecisions_VFT_RVA,
   ThrowingKnifeReloadListener = ThrowingKnifeReloadListener_VFT_RVA,
   gameuiCharacterCustomizationFeetController = gameuiCharacterCustomizationFeetController_VFT_RVA,
@@ -5712,7 +5712,7 @@ enum class RTTI_VFT : long {
   DodgeEvents = DodgeEvents_VFT_RVA,
   UI_CodexSystemDef = UI_CodexSystemDef_VFT_RVA,
   worldNodeInstanceRegistry = worldNodeInstanceRegistry_VFT_RVA,
-  AIbehaviorWaitingKeepMountedCommandConditionDefinition_VFT_
+  //AIbehaviorWaitingKeepMountedCommandConditionDefinition_VFT_
   animAnimNode_AimConstraint_ObjectRotationUp = animAnimNode_AimConstraint_ObjectRotationUp_VFT_RVA,
   AITargetTrackerManager = AITargetTrackerManager_VFT_RVA,
   VendorSellJunkPopupCloseData = VendorSellJunkPopupCloseData_VFT_RVA,
@@ -5849,7 +5849,7 @@ enum class RTTI_VFT : long {
   DisassembleDevice = DisassembleDevice_VFT_RVA,
   DisableWeakspotDelayedEvent = DisableWeakspotDelayedEvent_VFT_RVA,
   linkedClueTagEvent = linkedClueTagEvent_VFT_RVA,
-  gamestateMachineplayeractionsActionProjectileAttach = gamestateMachineplayeractionsActionProjectileAttach_VFT_RVA,
+  //gamestateMachineplayeractionsActionProjectileAttach = gamestateMachineplayeractionsActionProjectileAttach_VFT_RVA,
   SendSpiderbotToOverloadDevice = SendSpiderbotToOverloadDevice_VFT_RVA,
   entCorpseComponent = entCorpseComponent_VFT_RVA,
   SampleCounterDisplayComponent = SampleCounterDisplayComponent_VFT_RVA,
@@ -5873,7 +5873,7 @@ enum class RTTI_VFT : long {
   gamedataVendorWare_Record = gamedataVendorWare_Record_VFT_RVA,
   gameSmartObjectTransformSequenceDictionaryEntry = gameSmartObjectTransformSequenceDictionaryEntry_VFT_RVA,
   gamedataDroneAnimationSetup_Record = gamedataDroneAnimationSetup_Record_VFT_RVA,
-  gamedataAngleDistanceCoverSelectionParameters_Record_VFT_RV
+  //gamedataAngleDistanceCoverSelectionParameters_Record_VFT_RV
   gameSubStatModifierData_Deprecated = gameSubStatModifierData_Deprecated_VFT_RVA,
   SetPanicOnTrafficLane = SetPanicOnTrafficLane_VFT_RVA,
   BlockAmmoDrop = BlockAmmoDrop_VFT_RVA,
@@ -5893,7 +5893,7 @@ enum class RTTI_VFT : long {
   scnUnmountEvent = scnUnmountEvent_VFT_RVA,
   WeaponEquipEvent = WeaponEquipEvent_VFT_RVA,
   CPOMissionPlayerNotVoted = CPOMissionPlayerNotVoted_VFT_RVA,
-  gamedataRandomRatioCoverSelectionParameters_Record = gamedataRandomRatioCoverSelectionParameters_Record_VFT_RVA,
+  //gamedataRandomRatioCoverSelectionParameters_Record = gamedataRandomRatioCoverSelectionParameters_Record_VFT_RVA,
   CRenderTerrainCellCollector = CRenderTerrainCellCollector_VFT_RVA,
   gameBlackboardPrereqState = gameBlackboardPrereqState_VFT_RVA,
   AirThrustersDecisions = AirThrustersDecisions_VFT_RVA,
@@ -6007,7 +6007,7 @@ enum class RTTI_VFT : long {
   QuickSlotButtonTap = QuickSlotButtonTap_VFT_RVA,
   animAnimNode_CoordinateFromVector = animAnimNode_CoordinateFromVector_VFT_RVA,
   AnimFeature_ChestPress = AnimFeature_ChestPress_VFT_RVA,
-  questCharacterTriggeredCombatInSecuritySystem_ConditionType
+  //questCharacterTriggeredCombatInSecuritySystem_ConditionType
   ForceWalkEvents = ForceWalkEvents_VFT_RVA,
   InventorySlotTooltip = InventorySlotTooltip_VFT_RVA,
   CentaurShieldLookatController = CentaurShieldLookatController_VFT_RVA,
@@ -6174,7 +6174,7 @@ enum class RTTI_VFT : long {
   gameuiSetStickerImageEvent = gameuiSetStickerImageEvent_VFT_RVA,
   gameinteractionsCAabbDefinition = gameinteractionsCAabbDefinition_VFT_RVA,
   QuestDisableFixing = QuestDisableFixing_VFT_RVA,
-  gameuiCharacterCustomizationSystem_OnPresetAppliedEvent_VFT
+  //gameuiCharacterCustomizationSystem_OnPresetAppliedEvent_VFT
   worldDebugColoring_Climbable = worldDebugColoring_Climbable_VFT_RVA,
   appearanceCookedAppearanceData = appearanceCookedAppearanceData_VFT_RVA,
   entVertexAnimationMapper = entVertexAnimationMapper_VFT_RVA,
@@ -6426,7 +6426,7 @@ enum class RTTI_VFT : long {
   gamedataStatusEffect_Record = gamedataStatusEffect_Record_VFT_RVA,
   HitFlagPrereqState = HitFlagPrereqState_VFT_RVA,
   RequestDocumentThumbnailWidgetsUpdateEvent = RequestDocumentThumbnailWidgetsUpdateEvent_VFT_RVA,
-  questTransferItems_NodeTypeParams_TransferAllOperationData_
+  //questTransferItems_NodeTypeParams_TransferAllOperationData_
   questPuppetAIManagerNodeDefinition = questPuppetAIManagerNodeDefinition_VFT_RVA,
   StorageBlackboardDef = StorageBlackboardDef_VFT_RVA,
   AITreeNodeInterruptionDecoratorDefinition = AITreeNodeInterruptionDecoratorDefinition_VFT_RVA,
@@ -6566,7 +6566,7 @@ enum class RTTI_VFT : long {
   SequenceCallback = SequenceCallback_VFT_RVA,
   ThrowGrenadeCommandCleanup = ThrowGrenadeCommandCleanup_VFT_RVA,
   CEvaluatorVectorStartEnd = CEvaluatorVectorStartEnd_VFT_RVA,
-  gamedataAISubActionSetUnequipPrimaryWeapons_Record = gamedataAISubActionSetUnequipPrimaryWeapons_Record_VFT_RVA,
+  //gamedataAISubActionSetUnequipPrimaryWeapons_Record = gamedataAISubActionSetUnequipPrimaryWeapons_Record_VFT_RVA,
   SecuritySystemEnabled = SecuritySystemEnabled_VFT_RVA,
   EffectObjectProvider_TrapEntities = EffectObjectProvider_TrapEntities_VFT_RVA,
   UnlockCodexPartRequest = UnlockCodexPartRequest_VFT_RVA,
@@ -6668,7 +6668,7 @@ enum class RTTI_VFT : long {
   FinishedPathWithDoors = FinishedPathWithDoors_VFT_RVA,
   animAnimsetWithOverridesTagCondition = animAnimsetWithOverridesTagCondition_VFT_RVA,
   UI_ActiveWeaponDataDef = UI_ActiveWeaponDataDef_VFT_RVA,
-  gamehitRepresentationEventsResetSingleScaleMultiplier_VFT_R
+  //gamehitRepresentationEventsResetSingleScaleMultiplier_VFT_R
   questStreamingTestCheckpoint_NodeType = questStreamingTestCheckpoint_NodeType_VFT_RVA,
   LcdScreenBlackBoardDef = LcdScreenBlackBoardDef_VFT_RVA,
   animAnimNode_GraphSlotConditions = animAnimNode_GraphSlotConditions_VFT_RVA,
@@ -6690,7 +6690,7 @@ enum class RTTI_VFT : long {
   AIbehaviorScriptBase = AIbehaviorScriptBase_VFT_RVA,
   CrossingLightControllerPS = CrossingLightControllerPS_VFT_RVA,
   audioAppearanceToPlayerMetadata = audioAppearanceToPlayerMetadata_VFT_RVA,
-  questEntityManagerEnablePlayerTPPRepresentation_NodeType_VF
+  //questEntityManagerEnablePlayerTPPRepresentation_NodeType_VF
   NetworkMinigameProgramListController = NetworkMinigameProgramListController_VFT_RVA,
   TestBehaviorDelegate = TestBehaviorDelegate_VFT_RVA,
   gameuiDeleteInputHintBySourceEvent = gameuiDeleteInputHintBySourceEvent_VFT_RVA,
@@ -6723,7 +6723,7 @@ enum class RTTI_VFT : long {
   TCSInputXAxisEvent = TCSInputXAxisEvent_VFT_RVA,
   HidePuppetDelayEvent = HidePuppetDelayEvent_VFT_RVA,
   effectTrackItemDataMosh = effectTrackItemDataMosh_VFT_RVA,
-  gamedataAISubActionScaleDurationWithDistance_Record = gamedataAISubActionScaleDurationWithDistance_Record_VFT_RVA,
+  //gamedataAISubActionScaleDurationWithDistance_Record = gamedataAISubActionScaleDurationWithDistance_Record_VFT_RVA,
   gamedataVehicleBehaviorData_Record = gamedataVehicleBehaviorData_Record_VFT_RVA,
   inkClippedMenuScenarioData = inkClippedMenuScenarioData_VFT_RVA,
   gameeventsCoverHitEvent = gameeventsCoverHitEvent_VFT_RVA,
@@ -6773,7 +6773,7 @@ enum class RTTI_VFT : long {
   CoderControllerPS = CoderControllerPS_VFT_RVA,
   CombatState = CombatState_VFT_RVA,
   gameDeviceComponent = gameDeviceComponent_VFT_RVA,
-  gameuiarcadeRoachRaceSceneryObjectSpawnerController = gameuiarcadeRoachRaceSceneryObjectSpawnerController_VFT_RVA,
+  //gameuiarcadeRoachRaceSceneryObjectSpawnerController = gameuiarcadeRoachRaceSceneryObjectSpawnerController_VFT_RVA,
   DynamicTexture = DynamicTexture_VFT_RVA,
   StatsPlayTimeController = StatsPlayTimeController_VFT_RVA,
   inkHyperlinkCallback = inkHyperlinkCallback_VFT_RVA,
@@ -6795,7 +6795,7 @@ enum class RTTI_VFT : long {
   gameTelemetryPostMortemContainer = gameTelemetryPostMortemContainer_VFT_RVA,
   gameWeakspotComponent = gameWeakspotComponent_VFT_RVA,
   FillAnimWrapperInfoBasedOnEquippedItem = FillAnimWrapperInfoBasedOnEquippedItem_VFT_RVA,
-  AIbehaviorActionSceneAnimationMotionNodeDefinition = AIbehaviorActionSceneAnimationMotionNodeDefinition_VFT_RVA,
+  //AIbehaviorActionSceneAnimationMotionNodeDefinition = AIbehaviorActionSceneAnimationMotionNodeDefinition_VFT_RVA,
   MasterViabilityInterpreter = MasterViabilityInterpreter_VFT_RVA,
   gameEffectObjectProvider_QuerySphere_Value = gameEffectObjectProvider_QuerySphere_Value_VFT_RVA,
   ForceIdleDecisions = ForceIdleDecisions_VFT_RVA,
@@ -6927,14 +6927,14 @@ enum class RTTI_VFT : long {
   questTransferItem_NodeType = questTransferItem_NodeType_VFT_RVA,
   questPuppetsUnconscious = questPuppetsUnconscious_VFT_RVA,
   gameuiPanzerExplosion = gameuiPanzerExplosion_VFT_RVA,
-  gamestateMachineplayeractionsLocomotionSwimmingSurface_VFT_
+  //gamestateMachineplayeractionsLocomotionSwimmingSurface_VFT_
   DisplayGlass = DisplayGlass_VFT_RVA,
   AICTreeNodeFSMDefinition = AICTreeNodeFSMDefinition_VFT_RVA,
   animAnimNode_MultipleParentConstraint = animAnimNode_MultipleParentConstraint_VFT_RVA,
   questToggleWindow_NodeType = questToggleWindow_NodeType_VFT_RVA,
   CompareArgumentsVectors = CompareArgumentsVectors_VFT_RVA,
   ShardReadPopupData = ShardReadPopupData_VFT_RVA,
-  gameuiCharacterCustomizationSystem_OnAppearanceSwitchedEven
+  //gameuiCharacterCustomizationSystem_OnAppearanceSwitchedEven
   inkInGameMenuState = inkInGameMenuState_VFT_RVA,
   gamedataActionMapField_Record = gamedataActionMapField_Record_VFT_RVA,
   RequirementUserData = RequirementUserData_VFT_RVA,
@@ -6948,7 +6948,7 @@ enum class RTTI_VFT : long {
   ProgramTooltipEffectController = ProgramTooltipEffectController_VFT_RVA,
   ScoreboardLogicController = ScoreboardLogicController_VFT_RVA,
   OnlySingleStatusEffectFromInstigator = OnlySingleStatusEffectFromInstigator_VFT_RVA,
-  gameEffectExecutor_PhysicalImpulseFromInstigator_Value_VFT_
+  //gameEffectExecutor_PhysicalImpulseFromInstigator_Value_VFT_
   BeginThree = BeginThree_VFT_RVA,
   Crosshair_Power_Overture = Crosshair_Power_Overture_VFT_RVA,
   ItemPositionProvider = ItemPositionProvider_VFT_RVA,
@@ -7235,7 +7235,7 @@ enum class RTTI_VFT : long {
   worldWeatherAreaNotifier = worldWeatherAreaNotifier_VFT_RVA,
   gamedataCodexRecord_Record = gamedataCodexRecord_Record_VFT_RVA,
   MaterialTechnique = MaterialTechnique_VFT_RVA,
-  gamedataAISubActionSetUnequipSecondaryWeapons_Record_VFT_RV
+  //gamedataAISubActionSetUnequipSecondaryWeapons_Record_VFT_RV
   PickUpBodyAfterTakedownDecisions = PickUpBodyAfterTakedownDecisions_VFT_RVA,
   InkImageUtils = InkImageUtils_VFT_RVA,
   BasePerksMenuTooltipData = BasePerksMenuTooltipData_VFT_RVA,
@@ -7252,7 +7252,7 @@ enum class RTTI_VFT : long {
   MineDispenserPlaceEvents = MineDispenserPlaceEvents_VFT_RVA,
   AIbehaviorWaitJoinTrafficConditionDefinition = AIbehaviorWaitJoinTrafficConditionDefinition_VFT_RVA,
   ControlsActiveDecisions = ControlsActiveDecisions_VFT_RVA,
-  AIbehaviorDistanceToTargetPositionConditionDefinition_VFT_R
+  //AIbehaviorDistanceToTargetPositionConditionDefinition_VFT_R
   ActivatedDeviceCover = ActivatedDeviceCover_VFT_RVA,
   TargetKilledHitPrereqCondition = TargetKilledHitPrereqCondition_VFT_RVA,
   worldAugmentedRealityWorldMarkers = worldAugmentedRealityWorldMarkers_VFT_RVA,
@@ -7298,7 +7298,7 @@ enum class RTTI_VFT : long {
   AIThreatSharedBeliefPositionProvider = AIThreatSharedBeliefPositionProvider_VFT_RVA,
   gameBlackboardUpdateProxy = gameBlackboardUpdateProxy_VFT_RVA,
   AnimFeature_LeftHandCyberware = AnimFeature_LeftHandCyberware_VFT_RVA,
-  gamedataOwnerDistanceCoverSelectionParameters_Record_VFT_RV
+  //gamedataOwnerDistanceCoverSelectionParameters_Record_VFT_RV
   InstallKeylogger = InstallKeylogger_VFT_RVA,
   gamedataAISubActionActivateStrongArmsFX_Record = gamedataAISubActionActivateStrongArmsFX_Record_VFT_RVA,
   AimingStateEvents = AimingStateEvents_VFT_RVA,
@@ -7314,7 +7314,7 @@ enum class RTTI_VFT : long {
   LootingListItemController = LootingListItemController_VFT_RVA,
   SetTimeStampToArgumentFloat = SetTimeStampToArgumentFloat_VFT_RVA,
   StrikeDuration_Debug_VDB = StrikeDuration_Debug_VDB_VFT_RVA,
-  gamehitRepresentationEventsResetAllScaleMultipliers = gamehitRepresentationEventsResetAllScaleMultipliers_VFT_RVA,
+  //gamehitRepresentationEventsResetAllScaleMultipliers = gamehitRepresentationEventsResetAllScaleMultipliers_VFT_RVA,
   InventoryItemDisplayEquipmentArea = InventoryItemDisplayEquipmentArea_VFT_RVA,
   animAnimNode_FloorIkBase = animAnimNode_FloorIkBase_VFT_RVA,
   ArmsCWInSlotPrereq = ArmsCWInSlotPrereq_VFT_RVA,
@@ -7336,7 +7336,7 @@ enum class RTTI_VFT : long {
   questVehicleSpeed_ConditionType = questVehicleSpeed_ConditionType_VFT_RVA,
   gameMuppetInventory = gameMuppetInventory_VFT_RVA,
   audioGroupingCountableMetadata = audioGroupingCountableMetadata_VFT_RVA,
-  gamestateMachineplayeractionsHighLevelAiControlled = gamestateMachineplayeractionsHighLevelAiControlled_VFT_RVA,
+  //gamestateMachineplayeractionsHighLevelAiControlled = gamestateMachineplayeractionsHighLevelAiControlled_VFT_RVA,
   OnRepeat = OnRepeat_VFT_RVA,
   SimpleSwitchControllerPS = SimpleSwitchControllerPS_VFT_RVA,
   SecuritySystemUIPS = SecuritySystemUIPS_VFT_RVA,
@@ -7360,7 +7360,7 @@ enum class RTTI_VFT : long {
   inkButtonAnimatedController = inkButtonAnimatedController_VFT_RVA,
   IsVehicleDoorLocked = IsVehicleDoorLocked_VFT_RVA,
   animSTwoBonesIKSolverData = animSTwoBonesIKSolverData_VFT_RVA,
-  gamedataUICharacterCreationAttributesPreset_Record = gamedataUICharacterCreationAttributesPreset_Record_VFT_RVA,
+  //gamedataUICharacterCreationAttributesPreset_Record = gamedataUICharacterCreationAttributesPreset_Record_VFT_RVA,
   RemoveSecondaryDiodeLightPresetEvent = RemoveSecondaryDiodeLightPresetEvent_VFT_RVA,
   gamedataAISquadFilterByAICondition_Record = gamedataAISquadFilterByAICondition_Record_VFT_RVA,
   gamedataRigs_Record = gamedataRigs_Record_VFT_RVA,
@@ -7445,7 +7445,7 @@ enum class RTTI_VFT : long {
   gameObjectCarrierComponent = gameObjectCarrierComponent_VFT_RVA,
   SinglePlayerPrereq = SinglePlayerPrereq_VFT_RVA,
   ChargeMaxEvents = ChargeMaxEvents_VFT_RVA,
-  gamedataDistanceFromOthersCoverSelectionParameters_Record_V
+  //gamedataDistanceFromOthersCoverSelectionParameters_Record_V
   PerksMenuAttributeItemHoverOut = PerksMenuAttributeItemHoverOut_VFT_RVA,
   GogRegisterController = GogRegisterController_VFT_RVA,
   gamedataStatPoolCost_Record = gamedataStatPoolCost_Record_VFT_RVA,
@@ -7598,7 +7598,7 @@ enum class RTTI_VFT : long {
   grsHeistState = grsHeistState_VFT_RVA,
   NotVRReplacerPrereq = NotVRReplacerPrereq_VFT_RVA,
   gameuiarcadeArcadeScoreController = gameuiarcadeArcadeScoreController_VFT_RVA,
-  gameEffectParameter_QuatEvaluator_ValueOrBlackboard = gameEffectParameter_QuatEvaluator_ValueOrBlackboard_VFT_RVA,
+  //gameEffectParameter_QuatEvaluator_ValueOrBlackboard = gameEffectParameter_QuatEvaluator_ValueOrBlackboard_VFT_RVA,
   animAnimNode_Switch = animAnimNode_Switch_VFT_RVA,
   gameItemModParams = gameItemModParams_VFT_RVA,
   TrackQuestNotificationAction = TrackQuestNotificationAction_VFT_RVA,
@@ -7692,7 +7692,7 @@ enum class RTTI_VFT : long {
   questMultiplayerAIDirectorParams = questMultiplayerAIDirectorParams_VFT_RVA,
   questNPCLookAt_NodeType = questNPCLookAt_NodeType_VFT_RVA,
   MenuScenario_FinalBoards = MenuScenario_FinalBoards_VFT_RVA,
-  AIbehaviorIsAutopilotActiveVehicleExpressionDefinition_VFT_
+  //AIbehaviorIsAutopilotActiveVehicleExpressionDefinition_VFT_
   animAnimNode_FloatTrackDirectConnConstraint = animAnimNode_FloatTrackDirectConnConstraint_VFT_RVA,
   MenuScenario_Credits = MenuScenario_Credits_VFT_RVA,
   gamedataTrait_Record = gamedataTrait_Record_VFT_RVA,
@@ -7935,7 +7935,7 @@ enum class RTTI_VFT : long {
   StashController = StashController_VFT_RVA,
   worldBlockoutData = worldBlockoutData_VFT_RVA,
   gameContainerObjectAnimated = gameContainerObjectAnimated_VFT_RVA,
-  gameuiPersonalLinkControllerCustomizationStateUpdater_VFT_R
+  //gameuiPersonalLinkControllerCustomizationStateUpdater_VFT_R
   AutoSaveRequest = AutoSaveRequest_VFT_RVA,
   animAnimNodeDebugState = animAnimNodeDebugState_VFT_RVA,
   gameReplAnimTransformOperationRequest = gameReplAnimTransformOperationRequest_VFT_RVA,
@@ -7988,7 +7988,7 @@ enum class RTTI_VFT : long {
   BleedingEffectDamageUpdate = BleedingEffectDamageUpdate_VFT_RVA,
   inkScreenProjection = inkScreenProjection_VFT_RVA,
   MinigameGenerationRuleScalingPrograms = MinigameGenerationRuleScalingPrograms_VFT_RVA,
-  CombatRestrictMovementAreaPlayerEnterMainRMACondition_VFT_R
+  //CombatRestrictMovementAreaPlayerEnterMainRMACondition_VFT_R
   questTriggerCondition = questTriggerCondition_VFT_RVA,
   MeleeWeaponPSMPrereqState = MeleeWeaponPSMPrereqState_VFT_RVA,
   AIbehaviorMonitorConditionNodeDefinition = AIbehaviorMonitorConditionNodeDefinition_VFT_RVA,
@@ -8096,7 +8096,7 @@ enum class RTTI_VFT : long {
   OnVisitedJournalEntryEvent = OnVisitedJournalEntryEvent_VFT_RVA,
   TriggerContinuousAttackEffector = TriggerContinuousAttackEffector_VFT_RVA,
   worldTrafficPersistentLaneConnectionsResource = worldTrafficPersistentLaneConnectionsResource_VFT_RVA,
-  gamedataAISubActionChangeCoverSelectionPreset_Record_VFT_RV
+  //gamedataAISubActionChangeCoverSelectionPreset_Record_VFT_RV
   MorphTargetMesh = MorphTargetMesh_VFT_RVA,
   ToggleFactEffector = ToggleFactEffector_VFT_RVA,
   audioCombatVoSettings = audioCombatVoSettings_VFT_RVA,
@@ -8110,7 +8110,7 @@ enum class RTTI_VFT : long {
   ReflectorController = ReflectorController_VFT_RVA,
   inkWindowDrawMetrics = inkWindowDrawMetrics_VFT_RVA,
   ChangeRewardSettingsEvent = ChangeRewardSettingsEvent_VFT_RVA,
-  gameuiCharacterCreationPuppetPreviewGameController = gameuiCharacterCreationPuppetPreviewGameController_VFT_RVA,
+  //gameuiCharacterCreationPuppetPreviewGameController = gameuiCharacterCreationPuppetPreviewGameController_VFT_RVA,
   AICTreeNodeActionDynamicMoveToDefinition = AICTreeNodeActionDynamicMoveToDefinition_VFT_RVA,
   FocusModeOperations = FocusModeOperations_VFT_RVA,
   SetIsInBraindance = SetIsInBraindance_VFT_RVA,
@@ -8161,7 +8161,7 @@ enum class RTTI_VFT : long {
   DifficultySelectionMenu = DifficultySelectionMenu_VFT_RVA,
   PerksScreenStaticData = PerksScreenStaticData_VFT_RVA,
   CharacterCreationAttributeData = CharacterCreationAttributeData_VFT_RVA,
-  gameuiCharacterCustomizationSystem_OnRandomizeCompleteEvent
+  //gameuiCharacterCustomizationSystem_OnRandomizeCompleteEvent
   MinigameGenerationRuleOverridePrograms = MinigameGenerationRuleOverridePrograms_VFT_RVA,
   SceneScreen = SceneScreen_VFT_RVA,
   CraftingNotificationViewData = CraftingNotificationViewData_VFT_RVA,
@@ -8181,7 +8181,7 @@ enum class RTTI_VFT : long {
   VehicleBodyDisposalPerformedEvent = VehicleBodyDisposalPerformedEvent_VFT_RVA,
   gameuiTrackedMappinControllerCustomData = gameuiTrackedMappinControllerCustomData_VFT_RVA,
   vgVectorGraphicShape_Circle = vgVectorGraphicShape_Circle_VFT_RVA,
-  gamehitRepresentationEventsSetSingleScaleMultiplier_Multipl
+  //gamehitRepresentationEventsSetSingleScaleMultiplier_Multipl
   gameIsQuickhackPanelOpenedPrereqState = gameIsQuickhackPanelOpenedPrereqState_VFT_RVA,
   AnimFeature_SuperheroLand = AnimFeature_SuperheroLand_VFT_RVA,
   gameuiHoldIndicatorProgressCallback = gameuiHoldIndicatorProgressCallback_VFT_RVA,
@@ -8296,7 +8296,7 @@ enum class RTTI_VFT : long {
   gameEffectExecutor_SendStatusEffect = gameEffectExecutor_SendStatusEffect_VFT_RVA,
   CacheAnimationForPotentialRagdoll = CacheAnimationForPotentialRagdoll_VFT_RVA,
   worldInstancedOccluderNodeInstance = worldInstancedOccluderNodeInstance_VFT_RVA,
-  UIInventoryScriptableSystemInventoryQuantityChanged = UIInventoryScriptableSystemInventoryQuantityChanged_VFT_RVA,
+  //UIInventoryScriptableSystemInventoryQuantityChanged = UIInventoryScriptableSystemInventoryQuantityChanged_VFT_RVA,
   ResetBlockedHitsRequest = ResetBlockedHitsRequest_VFT_RVA,
   AOEEffector = AOEEffector_VFT_RVA,
   ReevaluatePresetEvent = ReevaluatePresetEvent_VFT_RVA,
@@ -8387,7 +8387,7 @@ enum class RTTI_VFT : long {
   AnimFeature_LadderEnterStyleData = AnimFeature_LadderEnterStyleData_VFT_RVA,
   gameuiDeathMenuGameController = gameuiDeathMenuGameController_VFT_RVA,
   animAnimEvent_Slide = animAnimEvent_Slide_VFT_RVA,
-  AIbehaviorPrepareReservedCrowdWorkspotNodeDefinition_VFT_RV
+  //AIbehaviorPrepareReservedCrowdWorkspotNodeDefinition_VFT_RV
   characterCreationSummaryListItem = characterCreationSummaryListItem_VFT_RVA,
   worldStaticFogVolumeNode = worldStaticFogVolumeNode_VFT_RVA,
   gameeventsKillRewardEvent = gameeventsKillRewardEvent_VFT_RVA,
@@ -8430,7 +8430,7 @@ enum class RTTI_VFT : long {
   UseSecurityLocker = UseSecurityLocker_VFT_RVA,
   AIbehaviorActionUnmountNodeDefinition = AIbehaviorActionUnmountNodeDefinition_VFT_RVA,
   gameDisableAimAssist = gameDisableAimAssist_VFT_RVA,
-  // AIbehaviorStackScriptPassiveExpressionDefinition = AIbehaviorStackScriptPassiveExpressionDefinition_VFT_RVA,
+   //AIbehaviorStackScriptPassiveExpressionDefinition = AIbehaviorStackScriptPassiveExpressionDefinition_VFT_RVA,
   Build_ScriptConditionType = Build_ScriptConditionType_VFT_RVA,
   AIVehiclePanicCommand = AIVehiclePanicCommand_VFT_RVA,
   CycleObjectiveDecisions = CycleObjectiveDecisions_VFT_RVA,
@@ -8571,7 +8571,7 @@ enum class RTTI_VFT : long {
   effectTrackItemEmissive = effectTrackItemEmissive_VFT_RVA,
   TraitTooltipData = TraitTooltipData_VFT_RVA,
   locVoResource = locVoResource_VFT_RVA,
-  RenderProxyCustomData_ClusteredProxyDisabledInstances_VFT_R
+  //RenderProxyCustomData_ClusteredProxyDisabledInstances_VFT_R
   AINavigationSystem = AINavigationSystem_VFT_RVA,
   ApplyEffectorEffector = ApplyEffectorEffector_VFT_RVA,
   UnlimitedUnlocked = UnlimitedUnlocked_VFT_RVA,
@@ -8598,7 +8598,7 @@ enum class RTTI_VFT : long {
   gameJournalFolderEntry = gameJournalFolderEntry_VFT_RVA,
   gameEthnicityPicker = gameEthnicityPicker_VFT_RVA,
   MenuScenario_Difficulty = MenuScenario_Difficulty_VFT_RVA,
-  gamestateMachineparameterTypeActionLocomotionBraindancePara
+  //gamestateMachineparameterTypeActionLocomotionBraindancePara
   sampleBulletGeneric = sampleBulletGeneric_VFT_RVA,
   OnOpenCodexAtEntryEvent = OnOpenCodexAtEntryEvent_VFT_RVA,
   gameinteractionsvisLootVisualizerDefinition = gameinteractionsvisLootVisualizerDefinition_VFT_RVA,
@@ -8827,7 +8827,7 @@ enum class RTTI_VFT : long {
   ActivatedDeviceIndustrialArm = ActivatedDeviceIndustrialArm_VFT_RVA,
   QuadRacerBonusCollisionLogic = QuadRacerBonusCollisionLogic_VFT_RVA,
   NcartTimetable = NcartTimetable_VFT_RVA,
-  AIbehaviorDriveCreateTrafficSlotTreeNodeDefinition = AIbehaviorDriveCreateTrafficSlotTreeNodeDefinition_VFT_RVA,
+  //AIbehaviorDriveCreateTrafficSlotTreeNodeDefinition = AIbehaviorDriveCreateTrafficSlotTreeNodeDefinition_VFT_RVA,
   inkVideoLayer = inkVideoLayer_VFT_RVA,
   SurveillanceCameraStatus = SurveillanceCameraStatus_VFT_RVA,
   audioRadioStationMetadataMap = audioRadioStationMetadataMap_VFT_RVA,
@@ -8851,7 +8851,7 @@ enum class RTTI_VFT : long {
   gamedataCoverSelectionPreset_Record = gamedataCoverSelectionPreset_Record_VFT_RVA,
   gameIsVisualizerActivePrereqState = gameIsVisualizerActivePrereqState_VFT_RVA,
   scnOverridePhantomParamsEvent = scnOverridePhantomParamsEvent_VFT_RVA,
-  gamedataClearLineOfSightCoverSelectionParameters_Record_VFT
+  //gamedataClearLineOfSightCoverSelectionParameters_Record_VFT
   BraindanceFlyEvents = BraindanceFlyEvents_VFT_RVA,
   animAnimNode_MathExpressionVector = animAnimNode_MathExpressionVector_VFT_RVA,
   gamestateMachineConsumableParameterCName = gamestateMachineConsumableParameterCName_VFT_RVA,
@@ -8948,7 +8948,7 @@ enum class RTTI_VFT : long {
   TextSectionLogicController = TextSectionLogicController_VFT_RVA,
   SecurityGateLockControllerPS = SecurityGateLockControllerPS_VFT_RVA,
   gamemappinsPointOfInterestMappin = gamemappinsPointOfInterestMappin_VFT_RVA,
-  gameEffectParameter_BoolEvaluator_ValueOrBlackboard = gameEffectParameter_BoolEvaluator_ValueOrBlackboard_VFT_RVA,
+  //gameEffectParameter_BoolEvaluator_ValueOrBlackboard = gameEffectParameter_BoolEvaluator_ValueOrBlackboard_VFT_RVA,
   UpdateNetworkVisualisationRequest = UpdateNetworkVisualisationRequest_VFT_RVA,
   worldPrefabProxyMeshNodeInstance = worldPrefabProxyMeshNodeInstance_VFT_RVA,
   LocomotionSwimming = LocomotionSwimming_VFT_RVA,
@@ -8988,7 +8988,7 @@ enum class RTTI_VFT : long {
   AnimationsLoaded = AnimationsLoaded_VFT_RVA,
   animAnimNodeSourceChannel_OrientationVector = animAnimNodeSourceChannel_OrientationVector_VFT_RVA,
   questTriggerNotifier_QuestInstance = questTriggerNotifier_QuestInstance_VFT_RVA,
-  animAnimStateTransitionCondition_IntEdgeGreaterFromZeroFeat
+  //animAnimStateTransitionCondition_IntEdgeGreaterFromZeroFeat
   AnimFeature_SceneGameplayOverrides = AnimFeature_SceneGameplayOverrides_VFT_RVA,
   UIInventoryItemModAttachment = UIInventoryItemModAttachment_VFT_RVA,
   gamedataCurrencyReward_Record = gamedataCurrencyReward_Record_VFT_RVA,
@@ -9065,10 +9065,10 @@ enum class RTTI_VFT : long {
   CEvaluatorFloatStartEnd = CEvaluatorFloatStartEnd_VFT_RVA,
   EffectExecutor_VisualEffectAtTarget = EffectExecutor_VisualEffectAtTarget_VFT_RVA,
   MeleeSafeAttackDecisions = MeleeSafeAttackDecisions_VFT_RVA,
-  AIbehaviorActionSlideToLocalPositionNodeDefinition = AIbehaviorActionSlideToLocalPositionNodeDefinition_VFT_RVA,
+  //AIbehaviorActionSlideToLocalPositionNodeDefinition = AIbehaviorActionSlideToLocalPositionNodeDefinition_VFT_RVA,
   audioVoiceTriggerPerSquadOrderMap = audioVoiceTriggerPerSquadOrderMap_VFT_RVA,
   AIbehaviorWaitTargetToFollowConditionDefinition = AIbehaviorWaitTargetToFollowConditionDefinition_VFT_RVA,
-  gamestateMachineparameterTypeActionLocomotionSwimmingParame
+  //gamestateMachineparameterTypeActionLocomotionSwimmingParame
   FastForwardAvailableEvents = FastForwardAvailableEvents_VFT_RVA,
   PhoneOffEvents = PhoneOffEvents_VFT_RVA,
   SecuritySystemSupport = SecuritySystemSupport_VFT_RVA,
@@ -9158,7 +9158,7 @@ enum class RTTI_VFT : long {
   SubCharUnequipRequest = SubCharUnequipRequest_VFT_RVA,
   ThrowableWeaponObject = ThrowableWeaponObject_VFT_RVA,
   gamestateMachineStateMachineDefinition = gamestateMachineStateMachineDefinition_VFT_RVA,
-  gameaudioeventsNotifyFootstepMaterialContextChanged = gameaudioeventsNotifyFootstepMaterialContextChanged_VFT_RVA,
+  //gameaudioeventsNotifyFootstepMaterialContextChanged = gameaudioeventsNotifyFootstepMaterialContextChanged_VFT_RVA,
   inkVariantDataSourceWrapper = inkVariantDataSourceWrapper_VFT_RVA,
   VehicleStartedUnmountingEvent = VehicleStartedUnmountingEvent_VFT_RVA,
   gameuiGlobalTvSystem = gameuiGlobalTvSystem_VFT_RVA,
@@ -9228,9 +9228,9 @@ enum class RTTI_VFT : long {
   gamedataUpgradingData_Record = gamedataUpgradingData_Record_VFT_RVA,
   BlacklistPlayer = BlacklistPlayer_VFT_RVA,
   entGarmentSkinnedMeshComponent = entGarmentSkinnedMeshComponent_VFT_RVA,
-  gamedataAISquadDistanceRelationToSectorCheck_Record = gamedataAISquadDistanceRelationToSectorCheck_Record_VFT_RVA,
+  //gamedataAISquadDistanceRelationToSectorCheck_Record = gamedataAISquadDistanceRelationToSectorCheck_Record_VFT_RVA,
   worldTrafficLightListenerComponent = worldTrafficLightListenerComponent_VFT_RVA,
-  gamedataClosestToOwnerCoverSelectionParameters_Record_VFT_R
+  //gamedataClosestToOwnerCoverSelectionParameters_Record_VFT_R
   ShootCommandHandler = ShootCommandHandler_VFT_RVA,
   animAnimNode_TriggerBranch = animAnimNode_TriggerBranch_VFT_RVA,
   HitHistory = HitHistory_VFT_RVA,
@@ -9275,7 +9275,7 @@ enum class RTTI_VFT : long {
   gamedataItemPartConnection_Record = gamedataItemPartConnection_Record_VFT_RVA,
   BasicInteractionInterpreter = BasicInteractionInterpreter_VFT_RVA,
   animAnimNode_SharedMetaPoseAdditive = animAnimNode_SharedMetaPoseAdditive_VFT_RVA,
-  gamestateMachineplayeractionsActionProjectileShowPreview_VF
+  //gamestateMachineplayeractionsActionProjectileShowPreview_VF
   effectTrackItemColorGrade = effectTrackItemColorGrade_VFT_RVA,
   OpenMenuRequest = OpenMenuRequest_VFT_RVA,
   vehicleToggleDoorWrapperEvent = vehicleToggleDoorWrapperEvent_VFT_RVA,
@@ -9455,7 +9455,7 @@ enum class RTTI_VFT : long {
   AutoSaveEvent = AutoSaveEvent_VFT_RVA,
   gameuiSetCategoryEnabledEvent = gameuiSetCategoryEnabledEvent_VFT_RVA,
   inkVisualStatePopStateMachineEvent = inkVisualStatePopStateMachineEvent_VFT_RVA,
-  gamedataPathSecurityCoverSelectionParameters_Record = gamedataPathSecurityCoverSelectionParameters_Record_VFT_RVA,
+  //gamedataPathSecurityCoverSelectionParameters_Record = gamedataPathSecurityCoverSelectionParameters_Record_VFT_RVA,
   ScannerAuthorization = ScannerAuthorization_VFT_RVA,
   StatCheckPrereq = StatCheckPrereq_VFT_RVA,
   gameUnequipByTDBIDRequest = gameUnequipByTDBIDRequest_VFT_RVA,
@@ -9479,7 +9479,7 @@ enum class RTTI_VFT : long {
   PlayInitFearAnimation = PlayInitFearAnimation_VFT_RVA,
   gameEffectObjectFilter_NoWeapon = gameEffectObjectFilter_NoWeapon_VFT_RVA,
   ForceDisableCarAlarm = ForceDisableCarAlarm_VFT_RVA,
-  animAnimStateTransitionCondition_ModifiedFloatVariable_VFT_
+  //animAnimStateTransitionCondition_ModifiedFloatVariable_VFT_
   animAnimNode_TagValue = animAnimNode_TagValue_VFT_RVA,
   AIISerializableArgumentInstancePS = AIISerializableArgumentInstancePS_VFT_RVA,
   gameCrowdTemplateEntry = gameCrowdTemplateEntry_VFT_RVA,
@@ -9574,7 +9574,7 @@ enum class RTTI_VFT : long {
   AttributeData = AttributeData_VFT_RVA,
   CPOMissionDataState = CPOMissionDataState_VFT_RVA,
   gamedataGameplayTagsPrereq_Record = gamedataGameplayTagsPrereq_Record_VFT_RVA,
-  gamedataAISquadDistanceRelationToTargetCheck_Record = gamedataAISquadDistanceRelationToTargetCheck_Record_VFT_RVA,
+  //gamedataAISquadDistanceRelationToTargetCheck_Record = gamedataAISquadDistanceRelationToTargetCheck_Record_VFT_RVA,
   MessangerItemRenderer = MessangerItemRenderer_VFT_RVA,
   inkTextValueProgressAnimationController = inkTextValueProgressAnimationController_VFT_RVA,
   ReadyDecisions = ReadyDecisions_VFT_RVA,
@@ -9587,7 +9587,7 @@ enum class RTTI_VFT : long {
   BlockReactionTask = BlockReactionTask_VFT_RVA,
   TransmogButtonView = TransmogButtonView_VFT_RVA,
   questCharacterManagerCombat_SetWeaponState = questCharacterManagerCombat_SetWeaponState_VFT_RVA,
-  AIbehaviorWaitSplineBackwardToFollowConditionDefinition_VFT
+  //AIbehaviorWaitSplineBackwardToFollowConditionDefinition_VFT
   VaultEvents = VaultEvents_VFT_RVA,
   audioGenericGameplayEventOccurredASTCD = audioGenericGameplayEventOccurredASTCD_VFT_RVA,
   ItemsPoolCachedData = ItemsPoolCachedData_VFT_RVA,
@@ -9615,7 +9615,7 @@ enum class RTTI_VFT : long {
   ArmorEquipGameController = ArmorEquipGameController_VFT_RVA,
   UIScriptableSystemSetComparisionTooltipDisabled = UIScriptableSystemSetComparisionTooltipDisabled_VFT_RVA,
   gameprojectileFollowEvent = gameprojectileFollowEvent_VFT_RVA,
-  gamedataUtilityLossCoverSelectionParameters_Record = gamedataUtilityLossCoverSelectionParameters_Record_VFT_RVA,
+  //gamedataUtilityLossCoverSelectionParameters_Record = gamedataUtilityLossCoverSelectionParameters_Record_VFT_RVA,
   GlobalLightingTrajectoryOverride = GlobalLightingTrajectoryOverride_VFT_RVA,
   GameEffectExecutor_StimOnHit = GameEffectExecutor_StimOnHit_VFT_RVA,
   CLSWeatherListener = CLSWeatherListener_VFT_RVA,
@@ -9655,7 +9655,7 @@ enum class RTTI_VFT : long {
   LiftStartDelayEvent = LiftStartDelayEvent_VFT_RVA,
   gameSimpleOccupantSlotSpawner = gameSimpleOccupantSlotSpawner_VFT_RVA,
   VendingTerminal = VendingTerminal_VFT_RVA,
-  AIbehaviorRecalculateVehicleWorkspotPositionTaskDefinition_
+  //AIbehaviorRecalculateVehicleWorkspotPositionTaskDefinition_
   animAnimNode_WorkspotHub = animAnimNode_WorkspotHub_VFT_RVA,
   worldRuntimeSystemBinkUpdate = worldRuntimeSystemBinkUpdate_VFT_RVA,
   gameSmartObjectAnimationDatabase = gameSmartObjectAnimationDatabase_VFT_RVA,
@@ -9797,7 +9797,7 @@ enum class RTTI_VFT : long {
   gamemappinsGrenadeMappin = gamemappinsGrenadeMappin_VFT_RVA,
   PreventionRegisterRequest = PreventionRegisterRequest_VFT_RVA,
   animAnimStateTransitionCondition_FootPhaseEvent = animAnimStateTransitionCondition_FootPhaseEvent_VFT_RVA,
-  gameuiCharacterCustomizationOptionVersionUpdateInfo = gameuiCharacterCustomizationOptionVersionUpdateInfo_VFT_RVA,
+  //gameuiCharacterCustomizationOptionVersionUpdateInfo = gameuiCharacterCustomizationOptionVersionUpdateInfo_VFT_RVA,
   worldRuntimeSystemRepellerComponents = worldRuntimeSystemRepellerComponents_VFT_RVA,
   gameuiDynamicIconLogicController = gameuiDynamicIconLogicController_VFT_RVA,
   AIbehaviorCombatModeTaskDefinition = AIbehaviorCombatModeTaskDefinition_VFT_RVA,
@@ -9923,7 +9923,7 @@ enum class RTTI_VFT : long {
   StaminabarWidgetGameController = StaminabarWidgetGameController_VFT_RVA,
   gameuiCharacterCustomizationSystem = gameuiCharacterCustomizationSystem_VFT_RVA,
   gameSaveSanitizationForbiddenAreaSystem = gameSaveSanitizationForbiddenAreaSystem_VFT_RVA,
-  gameTransformAnimation_Movement_PredefinedFunction = gameTransformAnimation_Movement_PredefinedFunction_VFT_RVA,
+  //gameTransformAnimation_Movement_PredefinedFunction = gameTransformAnimation_Movement_PredefinedFunction_VFT_RVA,
   MessengerForceSelectionEvent = MessengerForceSelectionEvent_VFT_RVA,
   gamedataDevice_Record = gamedataDevice_Record_VFT_RVA,
   inkServerInfo = inkServerInfo_VFT_RVA,

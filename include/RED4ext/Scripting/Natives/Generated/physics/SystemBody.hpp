@@ -25,15 +25,15 @@ struct SystemBody : physics::ISystemObject
 
     static constexpr const uintptr_t VFT_RVA = physicsSystemBody_VFT_RVA;
 
-    DynArray<Handle<physics::ICollider>> collisionShapes; // 38
+    DynArray<Handle<physics::ICollider>> collisionShapes; // 38, Setup
     uint8_t unk48[0x49 - 0x48]; // 48
-    bool isQueryBodyOnly; // 49
+    bool isQueryBodyOnly; // 49, Overrides
     uint8_t unk4A[0x50 - 0x4A]; // 4A
-    physics::SystemBodyParams params; // 50
-    Transform localToModel; // B0
-    CName mappedBoneName; // D0
+    physics::SystemBodyParams params; // 50, Setup
+    Transform localToModel; // B0, Setup
+    CName mappedBoneName; // D0, Ragdoll
     uint8_t unkD8[0xE0 - 0xD8]; // D8
-    Transform mappedBoneToBody; // E0
+    Transform mappedBoneToBody; // E0, Ragdoll
 };
 RED4EXT_ASSERT_SIZE(SystemBody, 0x100);
 } // namespace physics

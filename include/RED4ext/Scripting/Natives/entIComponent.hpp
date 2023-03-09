@@ -116,6 +116,7 @@ struct IComponent : IScriptable
     ResourcePath appearancePath;
     DynArray<Handle<void>> unk70;
     uint64_t unk80;
+    // flags - 2 is related to transform
     uint8_t unk88;
     uint8_t unk89;
     uint8_t unk8A;

@@ -6,6 +6,7 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
 // #include <RED4ext/Scripting/Natives/gameVehicleSystem.hpp>
 
 namespace RED4ext
@@ -59,7 +60,7 @@ enum class SystemType : char {
 
 struct BaseSystemDesc
 {
-    // a bit after "physicsGeometryKey"
+    // after "physicsGeometryKey" vft
     // 1.6  RVA: 0x313B3D0
     static constexpr const uintptr_t VFT_RVA = 0x313B3D0;
 
@@ -98,7 +99,7 @@ struct PhysicalSystemDesc : BaseSystemDesc
     uint64_t unk118;
     WorldTransform unk120;
     WorldPosition unk140;
-    uint8_t fallbackSimulationType;
+    physics::SimulationType fallbackSimulationType;
     uint8_t unk14D;
     uint8_t unk14E;
     uint8_t unk14F;
