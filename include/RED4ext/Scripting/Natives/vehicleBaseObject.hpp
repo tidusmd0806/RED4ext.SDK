@@ -22,6 +22,7 @@
 #include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
 #include <RED4ext/Scripting/Natives/actionActionBase.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPhysics.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/EffectBlackboard.hpp>
 #include <RED4ext/Scripting/Natives/Generated/audio/VehicleMetadata.hpp>
 #include <RED4ext/Scripting/Natives/Generated/vehicle/AutonomousData.hpp>
 #include <RED4ext/Scripting/Natives/Generated/move/Component.hpp>
@@ -251,6 +252,42 @@ struct Unk568 {
 };
 
 struct Unk570 {
+
+    struct Unk30 {
+        Handle<void*> unk00;
+        Handle<void*> unk10;
+        Handle<void*> unk20;
+        Handle<void*> unk30;
+        HashMap<void*, void*> unk40;
+        Handle<world::EffectBlackboard> effectBlackboard;
+    };
+
+    struct Unk40 {
+        Transform unk00;
+        Vector4 unk20;
+        uint64_t unk30;
+        uint8_t unk38;
+        uint32_t unk3C;
+        uint32_t unk40;
+        uint32_t unk44;
+        uint32_t unk48;
+        uint32_t unk4C;
+        float unk50;
+        float unk54;
+        float unk58;
+        float unk5C;
+        float unk60;
+        float unk64;
+        float unk68;
+        float unk6C;
+        float unk70;
+        float unk74;
+        float unk78;
+        bool unk7C;
+        bool unk7D;
+        uint8_t unk7E[2];
+    };
+
     // 1.52 RVA: 0x1CFA220 / 30384672
     //           48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
     // 1.6  RVA: 0x1D27B90 / 30571408
@@ -258,13 +295,22 @@ struct Unk570 {
     /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 48 89 4C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 30 FD
     void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
 
+    // adds things to unk20 for each wheel
+    // 1.6  RVA: 0x1D2A340 / 30581568
+    /// @pattern 48 8B C4 89 50 10 55 48 8D A8 78 FE FF FF 48 81 EC 80 02 00 00 41 80 78 7C 00 48 89 58 20 48 89
+    void __fastcall ProcessEffects(unsigned int wheelIndex, Unk40 *unk40, float deltaTime);
+
+    // 1.6  RVA: 0x1D271C0 / 30568896
+    /// @pattern 48 8B C4 55 41 55 41 57 48 8D 6C 24 90 48 81 EC 70 01 00 00 44 8B 41 4C 4C 8B E9 48 89 58 E0 48
+    void __fastcall UpdateEffectsBlackboard(unsigned int wheelCount);
+
     BaseObject *vehicle;
     void *animationController;
     // Handle<anim::AnimFeature_VehiclePassenger> vehiclePassenger;
     Handle<void*> vehiclePassenger;
     DynArray<void*> unk20;
-    DynArray<void*> unk30;
-    DynArray<void*> unk40;
+    DynArray<Unk30> unk30;
+    DynArray<Unk40> unk40;
     uint64_t unk48[2];
     DynArray<void*> unk60;
     DynArray<void*> unk70;
@@ -277,6 +323,7 @@ struct Unk570 {
     DynArray<void*> unkB0;
     DynArray<void*> unkC0;
     HashMap<void*, void*> unkD0;
+    // all materials used in fx, maybe by CName
     HashMap<void*, void*> unk100;
     HashMap<void*, void*> unk130;
     uint64_t unk160;

@@ -22,7 +22,7 @@ struct SystemBodyParams
     uint8_t unk01[0x8 - 0x1]; // 1
     float mass; // 08
     Vector3 inertia; // 0C
-    uint8_t unk18[0x20 - 0x18]; // 18
+    uint64_t allocator; // 18
     Transform comOffset; // 20
     float linearDamping; // 40
     float angularDamping; // 44

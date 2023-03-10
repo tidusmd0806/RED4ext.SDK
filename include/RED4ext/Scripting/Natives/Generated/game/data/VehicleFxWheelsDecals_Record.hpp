@@ -16,7 +16,10 @@ struct VehicleFxWheelsDecals_Record : game::data::TweakDBRecord
     static constexpr const char* NAME = "gamedataVehicleFxWheelsDecals_Record";
     static constexpr const char* ALIAS = "VehicleFxWheelsDecals_Record";
 
-    uint8_t unk48[0x58 - 0x48]; // 48
+    uint8_t materials[3];
+    uint8_t wet_material_overrides[3];
+    uint8_t rain_material_overrides[3];
+    uint8_t smear_materials[3];
 };
 RED4EXT_ASSERT_SIZE(VehicleFxWheelsDecals_Record, 0x58);
 } // namespace game::data
