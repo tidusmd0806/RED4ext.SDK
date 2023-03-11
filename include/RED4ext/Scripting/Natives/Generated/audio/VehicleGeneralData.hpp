@@ -41,7 +41,9 @@ struct VehicleGeneralData
     CName tyreBurstEvent; // 98
     CName collisionSoundEvent; // A0
     CName interiorReverbBus; // A8
-    CName skid; // B0
+    // B0
+    // veh_wheel_skid
+    CName skid;
     CName inclination; // B8
     CName impactVelocity; // C0
     CName dopplerShift; // C8

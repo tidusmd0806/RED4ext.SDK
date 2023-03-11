@@ -19,7 +19,7 @@ struct VehicleWheelMaterialsMap : audio::AudioMetadata
     static constexpr const char* ALIAS = NAME;
 
     DynArray<audio::VehicleWheelMaterialsMapItem> vehicleWheelMaterials; // 38
-    uint8_t unk48[0x70 - 0x48]; // 48
+    Map<CName, uint64_t> unk48;
 };
 RED4EXT_ASSERT_SIZE(VehicleWheelMaterialsMap, 0x70);
 } // namespace audio

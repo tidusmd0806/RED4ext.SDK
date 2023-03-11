@@ -33,7 +33,7 @@ namespace RED4ext
 namespace weapon { struct Object; }
 namespace AI { struct Archetype; }
 namespace game { struct VehicleSystem; }
-namespace world { struct RuntimeSystemPhysics; }
+namespace world { struct RuntimeSystemPhysics; struct RuntimeSystemEffects; }
 namespace ent { struct Entity; }
 namespace vehicle
 {
@@ -61,6 +61,63 @@ enum class Type : __int8
   Unknown = 0x5,
 };
 
+struct TireUpdate
+{
+  void *__vftable;
+  float unk08;
+  float unk0C;
+  float veh_tire_surface;
+  float veh_tire_lat_slip_ratio;
+  float veh_tire_long_slip_ratio;
+  float skidValue;
+  float skidValue2;
+  float unk24;
+  uint8_t veh_tire_contact;
+  uint8_t unk29;
+  uint8_t veh_tire_water;
+  uint8_t unk2B;
+  uint8_t unk2C;
+  uint8_t unk2D;
+  uint8_t unk2E;
+  uint8_t unk2F;
+};
+
+struct WheelUpdate
+{
+  TireUpdate tireUpdate[4];
+  uint64_t unk100[36];
+  uint32_t numWheels;
+  uint32_t unk1E4;
+  uint64_t unk1E8;
+  WorldTransform unk1F0;
+  Handle<void*> unk210;
+  Vector4 unk220;
+  uint64_t unk230[2];
+  Vector3 unk240;
+  uint32_t unk24C;
+  Vector4 linearVelocity;
+  Vector4 position;
+  float unk270;
+  float unk274;
+  float unk278;
+  float unk27C;
+  bool throttleValue2;
+  float brakeValue;
+  float unk288[2];
+  float unk290;
+  float unk294;
+};
+
+struct Unk580;
+
+struct TireParameterUpdate
+{
+  Unk580 *unk580;
+  uint64_t audioReference;
+  float *skidValue;
+  float *veh_tire_surface_value;
+};
+
 struct Unk580
 {
     // 1.52 RVA: 0x1C3A0B0 / 29597872
@@ -76,8 +133,9 @@ struct Unk580
     // void __fastcall UpdateAudio();
 
     // 1.52 RVA: 0x1C3C0A0 / 29606048
+    // 1.6  RVA: 0x1C68B10 / 29788944
     /// @pattern 48 8B C4 55 41 56 41 57 48 8D 6C 24 80 48 81 EC 80 01 00 00 0F 28 C2 0F 29 78 A8 F3 0F 58 81 C0
-    void __fastcall Unknown(__int64 a2, float a3, uint64_t *a4);
+    void __fastcall Update(__int64 a2, float a3, uint64_t *a4);
 
     // 1.52 RVA: 0x1C3BD10 / 29605136a
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 7C 24 20 41 54 41 56 41 57 48 83 EC 60 48 8B 81 B0 01 00 00
@@ -107,8 +165,27 @@ struct Unk580
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B B9 A0 03 00 00 48 8B D9 48 85 FF 74 15 48 8B CF E8 6F 14 B0
     // ~Unk580();
 
-    int64_t unk00;
-    uint64_t unk08[32];
+    // 1.6 RVA: 0x1C6A170 / 29794672
+    /// @pattern 40 56 48 83 EC 50 48 8B F1 48 8B 89 38 01 00 00 E8 7B 1E 01 00 84 C0 0F 84 B5 01 00 00 4C 8B 86
+    void __fastcall UpdateTPPinAudioSystem();
+    
+    // Called from Update
+    // 1.6 RVA: 0x1C6A810 / 29796368
+    /// @pattern 48 8B C4 48 89 50 10 55 56 57 41 56 48 8D 68 C8 48 81 EC 18 01 00 00 80 B9 00 04 00 00 03 41 0F
+    void __fastcall UpdateEvents(WheelUpdate *update, __int64 a3);
+
+    // 1.6 RVA: 0x1C62AE0 / 29764320
+    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 56 57 41 56 48 83 EC 70 48 8B 69 08 49 8B D8 4C 8B 01 48 8B F2 0F
+    static void __fastcall UpdateTireParameters(TireParameterUpdate * tpu, TireUpdate *tireUpdate);
+
+    uint64_t unk00;
+    uint32_t audioReference;
+    float unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    float unk1C;
+    uint64_t unk20[29];
     float unk108;
     float unk10C;
     float unk110;
@@ -175,7 +252,14 @@ struct Unk580
     uint8_t unk402;
     uint8_t unk403;
     float unk404;
-    uint64_t unk408;
+    uint8_t unk408;
+    uint8_t unk409;
+    uint8_t unk40A;
+    uint8_t unk40B;
+    uint8_t wheelEventsStarted;
+    uint8_t unk40D;
+    uint8_t unk40E;
+    uint8_t unk40F;
     uint64_t unk410;
     uint64_t unk418;
     float unk420;
@@ -186,10 +270,12 @@ struct Unk580
     uint64_t unk448;
     float unk450;
     float unk454;
-    uint64_t unk458;
+    float suspensionSqueekTimeout;
+    float unk45C;
     float unk460;
-
 };
+
+RED4EXT_ASSERT_OFFSET(Unk580, unk460, 0x460);
 
 struct Unk568 {
 
@@ -288,6 +374,36 @@ struct Unk570 {
         uint8_t unk7E[2];
     };
 
+    struct UnkA8 {
+        float unk00;
+        float unk04;
+        float unk08;
+        float unk0C;
+        float unk10;
+        float unk14;
+        float unk18;
+        float unk1C;
+        float unk20;
+        float unk24;
+        float unk28;
+        float unk2C;
+        float unk30;
+        float unk34;
+        RED4ext::CName unkParameterName;
+        float unk40;
+        float unk44;
+        RED4ext::CName unk48;
+        RED4ext::CName unk50;
+        RED4ext::CName unk58;
+        RED4ext::CName unk60;
+        RED4ext::CName unk68;
+        float un70[2];
+        float unk78;
+        float unk7C;
+        float unk80[56];
+    };
+
+
     // 1.52 RVA: 0x1CFA220 / 30384672
     //           48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
     // 1.6  RVA: 0x1D27B90 / 30571408
@@ -311,15 +427,13 @@ struct Unk570 {
     DynArray<void*> unk20;
     DynArray<Unk30> unk30;
     DynArray<Unk40> unk40;
-    uint64_t unk48[2];
+    Handle<world::EffectBlackboard> unk50;
     DynArray<void*> unk60;
     DynArray<void*> unk70;
-    uint64_t veh_engine_throttle_input;
-    uint64_t unk88;
-    uint64_t veh_motion_blur_scale;
-    uint64_t unk98;
-    uint64_t unkA0;
-    uint64_t unkA8;
+    Handle<world::EffectBlackboard> veh_engine_throttle_input;
+    Handle<world::EffectBlackboard> veh_motion_blur_scale;
+    world::RuntimeSystemEffects* runtimeSystemEffects;
+    UnkA8* unkA8;
     DynArray<void*> unkB0;
     DynArray<void*> unkC0;
     HashMap<void*, void*> unkD0;
@@ -652,7 +766,7 @@ struct BaseObject : game::Object
     // Something wheels
     virtual uint64_t __fastcall sub_350();
 
-    // Something vehicle audio
+    // Updates vehicle audio
     virtual uint64_t __fastcall sub_358();
 
     // Process vehicle weapons

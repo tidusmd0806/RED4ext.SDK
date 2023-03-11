@@ -92,7 +92,7 @@ struct Entity : IScriptable
 
     uint32_t unk40;
     uint32_t unk44;
-    uint64_t tweakRecord;
+    uint64_t audioReference;
     CName currentAppearance;
     uint64_t unk58;
     ResourcePath resource; // 60
@@ -118,7 +118,7 @@ struct Entity : IScriptable
     uint8_t unk15E;
     uint8_t unk15F;
 };
-RED4EXT_ASSERT_OFFSET(Entity, tweakRecord, 0x48);
+RED4EXT_ASSERT_OFFSET(Entity, audioReference, 0x48);
 RED4EXT_ASSERT_OFFSET(Entity, currentAppearance, 0x50);
 RED4EXT_ASSERT_OFFSET(Entity, entityTags, 0x138);
 } // namespace ent

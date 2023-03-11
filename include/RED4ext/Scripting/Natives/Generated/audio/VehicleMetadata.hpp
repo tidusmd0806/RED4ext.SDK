@@ -22,6 +22,10 @@ struct VehicleMetadata : audio::CustomEmitterMetadata
     static constexpr const char* NAME = "audioVehicleMetadata";
     static constexpr const char* ALIAS = NAME;
 
+    // 1.6  RVA: 0x3630F0 / 3551472
+    /// @pattern 41 FF C8 41 83 F8 25 0F 87 7A 01 00 00 49 63 C0 4C 8D 0D F9 CE C9 FF 45 8B 84 81 80 32 36 00 4D
+    CName *__fastcall GetEventData(CName *a2, int type);
+
     CName vehicleCollisionSettings; // 38
     CName vehicleGridDestructionSettings; // 40
     CName vehiclePartSettings; // 48
