@@ -31,11 +31,12 @@ struct IPlacedComponent : IComponent
     Handle<ITransformBinding> parentTransform; // 90
     DynArray<uint64_t[4]> unkA0;
     uint8_t unkB0[0xC0 - 0xB0]; // B0
-    WorldTransform worldTransform;
-    WorldTransform localTransform;// E0
+    WorldTransform localTransform; // C0
+    WorldTransform worldTransform; // E0
     Box bounds; // 100
 };
 RED4EXT_ASSERT_SIZE(IPlacedComponent, 0x120);
+RED4EXT_ASSERT_OFFSET(IPlacedComponent, unkB0, 0xB0);
 } // namespace ent
 using IPlacedComponent = ent::IPlacedComponent;
 } // namespace RED4ext

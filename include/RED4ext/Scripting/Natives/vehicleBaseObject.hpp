@@ -277,6 +277,7 @@ struct Unk580
 
 RED4EXT_ASSERT_OFFSET(Unk580, unk460, 0x460);
 
+// sound
 struct Unk568 {
 
     // 1.52 RVA: 0x1AB9B80 / 28023680
@@ -337,6 +338,7 @@ struct Unk568 {
 	float unk11C; // ",	0X11C,	0x80000400,	-1,	100);
 };
 
+// effects
 struct Unk570 {
 
     struct Unk30 {
@@ -351,7 +353,8 @@ struct Unk570 {
     struct Unk40 {
         Transform unk00;
         Vector4 unk20;
-        uint64_t unk30;
+        // .physmat etc
+        CName physicalMaterial;
         uint8_t unk38;
         uint32_t unk3C;
         uint32_t unk40;
@@ -376,8 +379,8 @@ struct Unk570 {
 
     struct UnkA8 {
         float unk00;
-        float unk04;
-        float unk08;
+        float impactThreshold;
+        float scratch_threshold;
         float unk0C;
         float unk10;
         float unk14;
@@ -389,20 +392,70 @@ struct Unk570 {
         float unk2C;
         float unk30;
         float unk34;
-        RED4ext::CName unkParameterName;
+        CName veh_impact_force_name;
         float unk40;
         float unk44;
-        RED4ext::CName unk48;
-        RED4ext::CName unk50;
-        RED4ext::CName unk58;
-        RED4ext::CName unk60;
-        RED4ext::CName unk68;
-        float un70[2];
+        CName unk48;
+        CName unk50;
+        CName unk58;
+        CName veh_speed_name;
+        // CName veh_angular_speed_name;
+        CName veh_wheel_angular_speed_name;
+        CName unkParameterName70;
         float unk78;
         float unk7C;
-        float unk80[56];
+        float unk80;
+        float unk84;
+        float unk88;
+        float unk8C;
+        float unk90;
+        float unk94;
+        float unk98;
+        float unk9C;
+        float unkA0;
+        float unkA4;
+        float unkA8[2];
+        float unkB0;
+        float unkB4;
+        float unkB8[42];
     };
 
+    struct FxLookup {
+        CName skid_marks_particle;
+        CName tire_tracks_particle;
+        bool particles_loaded;
+        bool extra_byte_for_fun;
+        CName skid_marks_decal;
+        CName tire_tracks_decal;
+        bool decals_loaded;
+        CName wet_skid_marks_particle;
+        CName wet_tire_tracks_particle;
+        bool wet_particles_loaded;
+        CName wet_skid_marks_decal;
+        CName wet_tire_tracks_decal;
+        bool wet_decals_loaded;
+        CName rain_skid_marks_particle;
+        CName rain_tire_tracks_particle;
+        bool rain_particles_loaded;
+        CName rain_skid_marks_decal;
+        CName rain_tire_tracks_decal;
+        bool rain_decals_loaded;
+    };
+
+    struct CollisionFxLookup {
+        CName impact_particles;
+        CName impact_decal;
+        CName scratch_particles;
+        CName scratch_decal;
+    };
+
+    struct SmearFxLookup {
+        CName skid_marks_decal;
+        CName tire_tracks_decal;
+        bool loaded;
+        uint32_t unk1C;
+        float distance;
+    };
 
     // 1.52 RVA: 0x1CFA220 / 30384672
     //           48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
@@ -420,30 +473,71 @@ struct Unk570 {
     /// @pattern 48 8B C4 55 41 55 41 57 48 8D 6C 24 90 48 81 EC 70 01 00 00 44 8B 41 4C 4C 8B E9 48 89 58 E0 48
     void __fastcall UpdateEffectsBlackboard(unsigned int wheelCount);
 
+    // 1.6  RVA: 0x1D2A340 / 30581568
+    /// @pattern 48 8B C4 89 50 10 55 48 8D A8 78 FE FF FF 48 81 EC 80 02 00 00 41 80 78 7C 00 48 89 58 20 48 89
+    void __fastcall WheelEffectUpdate(unsigned int wheelIndex, Unk40 *unk40Thing, float deltaTime);
+
+    // 1.6  RVA: 0x1D241A0 / 30556576
+    /// @pattern 48 89 5C 24 08 48 89 7C 24 10 4C 8D 89 D0 00 00 00 4C 8B C2 41 8B 59 08 48 8B F9 85 DB 0F 84 BC
+    CollisionFxLookup *__fastcall GetCollisionFxForMaterial(CName material);
+
+    // 1.6  RVA: 0x1D24320 / 30556960
+    /// @pattern 48 89 5C 24 08 4C 8B CA 48 8B D9 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84
+    FxLookup * __fastcall GetFxForMaterial(CName material, char isBackWheel);
+
+    // 1.6  RVA: 0x1D24290 / 30556816
+    /// @pattern 4C 8B CA 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84 C0 BA 30 01 00 00 41 B8
+    SmearFxLookup *__fastcall GetSmearFxForMaterial(CName material, char isBackWheel);
+    
+    // 1.6  RVA: 0x1D25A50 / 30562896
+    /// @pattern 48 8B C4 48 89 58 08 48 89 70 18 48 89 78 20 48 89 50 10 55 41 54 41 55 41 56 41 57 48 8D A8 98
+    void __fastcall ProcessImpactScratch(Vector3 *a2, Vector3 *offset, Vector3 *a4, Vector3 *a5, float impact, float scratch, CName material);
+
+    // 1.6  RVA: 0x1D2B870 / 30586992
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 4C 24 20 55 41 54 41 55 41 56 41 57 48 8D AC
+    /// @nth 1/4
+    bool __fastcall TireTrackEffectStart(Unk30 *a2, FxLookup *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
+
+    // 1.6  RVA: 0x1D2AF10 / 30584592
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 4C 24 20 55 41 54 41 55 41 56 41 57 48 8D AC
+    /// @nth 0/4
+    bool __fastcall SkidMarkEffectStart(Unk30 *unk30, FxLookup *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
+
+
     BaseObject *vehicle;
     void *animationController;
     // Handle<anim::AnimFeature_VehiclePassenger> vehiclePassenger;
     Handle<void*> vehiclePassenger;
-    DynArray<void*> unk20;
+    DynArray<Handle<world::EffectBlackboard>> unk20;
     DynArray<Unk30> unk30;
     DynArray<Unk40> unk40;
     Handle<world::EffectBlackboard> unk50;
     DynArray<void*> unk60;
+    // list of collision effects
     DynArray<void*> unk70;
     Handle<world::EffectBlackboard> veh_engine_throttle_input;
     Handle<world::EffectBlackboard> veh_motion_blur_scale;
     world::RuntimeSystemEffects* runtimeSystemEffects;
     UnkA8* unkA8;
-    DynArray<void*> unkB0;
-    DynArray<void*> unkC0;
-    HashMap<void*, void*> unkD0;
-    // all materials used in fx, maybe by CName
-    HashMap<void*, void*> unk100;
-    HashMap<void*, void*> unk130;
-    uint64_t unk160;
-    DynArray<void*> unk168;
-    uint64_t unk178;
+    DynArray<Vector4> unkB0;
+    DynArray<Vector3> unkC0;
+    // unkD0, collision effects
+    HashMap<CName, CollisionFxLookup> collisionFxLookup;
+    // unk100, all materials used in wheel fx, maybe by CName, paired wtih unk168, ref'd in GetEffectsForMaterial
+    HashMap<CName, FxLookup> fxLookup;
+    // unk130, wheel fx, paired with unk198, ref'd in GetEffectsForMaterial_2
+    HashMap<CName, SmearFxLookup> smearFxLookup;
+    uint64_t physMaterial;
+    // unk168, front override of unk100
+    HashMap<CName, FxLookup> fxLookupFront;
+    // unk198, front override of unk130
+    HashMap<CName, SmearFxLookup> smearFxLookupFront;
+    CName defaultMaterial;
+    DynArray<Handle<void*>> unk1D0;
 };
+
+RED4EXT_ASSERT_SIZE(Unk570::Unk30, 0x80);
+RED4EXT_ASSERT_SIZE(Unk570::Unk40, 0x80);
 
 struct Unk588 {
 
