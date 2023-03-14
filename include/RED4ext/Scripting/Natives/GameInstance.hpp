@@ -1,7 +1,6 @@
 #pragma once
 
 #include <RED4ext/IDynamicStorage.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/RuntimeScene.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/RuntimeInfo.hpp>
 // #include <RED4ext/Scripting/Natives/Generated/game/GameFeatureManager.hpp>

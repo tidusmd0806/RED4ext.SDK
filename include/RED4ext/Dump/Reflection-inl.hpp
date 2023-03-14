@@ -67,7 +67,7 @@ RED4EXT_INLINE void Dump(std::filesystem::path filePath, bool aVerbose, bool aEx
                 for (uint32_t i = 0; i < classType->allProps.size; ++i)
                 {
                     auto prop = classType->allProps.entries[i];
-                    if (!prop->flags.hasValueHolder)
+                    if (!prop->flags.inValueHolder)
                     {
                         builder.mPropertyMap.emplace(prop->valueOffset, prop);
                     }

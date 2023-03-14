@@ -23,8 +23,8 @@ struct CompiledNodeInstanceSetupInfo
     RED4ext::Vector3 boundsMin; // 38
     RED4ext::Vector3 boundsMax; // 44
     uint64_t unk50; // 50
-    RED4ext::ResourceAsyncReference questPrefabRef; // 58
-    RED4ext::ResourceAsyncReference prefabDataRef; // 60
+    uint64_t questPrefabRef; // 58
+    uint64_t prefabDataRef; // 60
     uint64_t unk68; // 68
     uint32_t unk70; // 70
     uint32_t unk74; // 74

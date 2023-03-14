@@ -8,7 +8,7 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
 
-#include <RED4ext/Scripting/worldRuntimeInfo.hpp>
+#include <RED4ext/Scripting/Natives/worldRuntimeInfo.hpp>
 
 namespace RED4ext
 {

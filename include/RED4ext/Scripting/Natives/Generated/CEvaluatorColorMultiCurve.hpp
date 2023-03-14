@@ -11,12 +11,11 @@
 
 namespace RED4ext
 {
-struct CEvaluatorColorMultiCurve : IEvaluatorColor
+struct CEvaluatorColorMultiCurve : IEvaluatorColor, CRTTIMultiChannelCurveType
 {
     static constexpr const char* NAME = "CEvaluatorColorMultiCurve";
     static constexpr const char* ALIAS = NAME;
 
-    ChannelCurve:Float curves; // 30
     uint32_t numberOfCurveSamples; // 68
     uint8_t unk6C[0x70 - 0x6C]; // 6C
 };

@@ -8,7 +8,6 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector3.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector4.hpp>
-#include "Addresses.hpp"
 
 struct EulerAngles;
 struct Matrix;

@@ -36,7 +36,7 @@ struct IGameInstance // : IDynamicStorage
     virtual void SomethingAutoSave_sub_1C0() { }              
     virtual void Systems130();                            // 58
     // returns value of GameSystemData flags
-    virtual uint8_t sub_60(GameSystemData*, byte*);                      // 60
+    virtual uint8_t sub_60(GameSystemData*, uint8_t *);                      // 60
 
     // 1.52 RVA: 0x2CFF000 / 47181824
     /// @pattern 40 55 53 56 57 41 56 48 8D 6C 24 C9 48 81 EC B0 00 00 00 48 8B F1 E8 A5 E7 C9 FF 48 8D 05 5E BC
@@ -50,7 +50,7 @@ struct IGameInstance // : IDynamicStorage
     // 1.52 RVA: 0x2CFFC40 / 47184960
     // sets gameIsLoading to true
     /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 D9 48 81 EC F0 00 00
-    __int64 __fastcall RegisterGameLoadCallbacks(__int64 a2, byte *a3, __int64 a4);
+    __int64 __fastcall RegisterGameLoadCallbacks(__int64 a2, uint8_t  *a3, __int64 a4);
 
     // 1.52 RVA: 0x2D005A0 / 47187360
     // Uses a struct to call system->sub_150

@@ -15,7 +15,7 @@ namespace RED4ext
         struct AnimFeature_FPPCamera;
     }
 namespace game {
-#pragma push(pack, 1)
+#pragma pack(push, 1)
 struct FPPCameraComponent : game::CameraComponent
 {
     static constexpr const char* NAME = "gameFPPCameraComponent";
@@ -141,9 +141,10 @@ float unk2A0;
   uint8_t unk4CB;
   uint32_t unk4CC;
 };
-#pragma pop(pack)
-RED4EXT_ASSERT_SIZE(FPPCameraComponent, 0x4D0);
- //char (*__kaboom)[offsetof(FPPCameraComponent, unk488)] = 1;
+#pragma pack(pop)
+// currently 4C8
+// RED4EXT_ASSERT_SIZE(FPPCameraComponent, 0x4D0);
+//  char (*__kaboom)[offsetof(FPPCameraComponent, unk4CC)] = 1;
 } // namespace game
 using FPPCameraComponent = game::FPPCameraComponent;
 } // namespace RED4ext

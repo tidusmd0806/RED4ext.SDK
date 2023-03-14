@@ -35,7 +35,7 @@ struct IRuntimeSystem : IUpdatableSystem
     virtual void sub_160();
     // create callbacks?
     virtual void sub_168(RuntimeScene*, uint64_t _a3, void** unkThing);
-    virtual uint64_t sub_170(uint64_t, byte*);
+    virtual uint64_t sub_170(uint64_t, uint8_t*);
     virtual uint64_t sub_178(uint64_t, uint64_t);
     virtual uint64_t sub_180();
     virtual void sub_188(uint64_t);
