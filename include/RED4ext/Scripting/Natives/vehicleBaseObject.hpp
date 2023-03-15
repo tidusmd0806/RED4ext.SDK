@@ -118,6 +118,117 @@ struct TireParameterUpdate
   float *veh_tire_surface_value;
 };
 
+
+struct AudioMetadataManager {   
+    // 1.6 RVA: 0x371F50 / 3612496
+    /// @pattern 48 89 5C 24 08 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 30 33 ED 48 8D 05 EB 75 DA 02 48 89 01
+    // 1.62 RVA: 0x372520 / 3613984
+    /// @pattern 48 89 5C 24 08 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 30 33 ED 48 8D 05 1B F1 DA 02 48 89 01
+    virtual ~AudioMetadataManager();
+
+    // after base\sound\event\eventsmetadata.json
+    static constexpr const uintptr_t VFT_RVA = 0x3121658;
+
+    static constexpr const uintptr_t SINGLETON = 0x3F5F8F0;
+
+    // 1.6  RVA: 0x371100 / 3608832
+    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 56 57 41 56 48 83 EC 20 48 8D 05 3F 84 DA 02 4C 8B F1 48 89 01 48
+    RED4ext::audio::MetadataManager *__fastcall Create();
+
+    Map<struct {
+        CClass *cls;
+        CName name;
+    }, Handle<audio::AcousticConstantsPreset>> unk08;
+    Map<CName, uint32_t> switchGroupMapping;
+    Map<CName, uint32_t> switchMapping;
+    Map<CName, uint32_t> stateGroupMapping;
+    Map<CName, uint32_t> stateMapping;
+    Map<CName, uint32_t> gameParameterMapping;
+    Map<CName, uint32_t> busMapping;
+    // event name mapping
+    RED4ext::Map<CName, audio::AudioEventMetadata> events;
+    RED4ext::Handle<loc::VoiceTagListResource> locVoiceTagListResource;
+    uint64_t unk158;
+    HashMap unk160;
+    RED4ext::DynArray<RED4ext::CName> unk1B0;
+    uint64_t unk1A0;
+}
+
+struct AudioThing {
+    RED4ext::Transform one;
+    RED4ext::Quaternion two;
+    RED4ext::Transform three;
+    RED4ext::Quaternion four;
+    RED4ext::Quaternion five;
+    struct {
+        uint64_t unk00;
+        uint64_t * unk08;   
+    } * unk70;
+    uint8_t unk78[8];
+    world::RuntimeSystemEffects * worldRuntimeSystemEffects;
+    uint64_t unk88;
+    uint64_t unk90;
+    uint64_t * callbackID;
+    uint64_t unkA0;
+    uint64_t unkA8;
+    struct {
+        void* unk00[10];
+    } * unkB0[2];
+    struct {
+        // 1.6  RVA: 0x2CA0F10 / 46796560
+        /// @pattern 40 55 41 57 48 8D AC 24 08 FE FF FF 48 81 EC F8 02 00 00 4C 8B F9 48 8D 8D 90 00 00 00 E8 DE 0E
+        char __fastcall AKAudioLoad(struct AkMemSettings *a2);
+
+        AudioThing * audioThing;
+        uint64_t unk08;
+        uint64_t unk10;
+        void * callback;
+        void *unk20;
+        uint32_t flags;
+        uint64_t unk30;
+        uint64_t unk38;
+        uint64_t unk40;
+        struct BankManager {
+
+            // 1.6  RVA: 0x2CACBC0 / 46844864
+            /// @pattern 48 83 EC 28 80 B9 A8 01 00 00 00 75 10 E8 BE 05 00 00 84 C0 74 07 B0 01 48 83 C4 28 C3 32 C0 48
+            bool __fastcall LoadBanksMaybe(__int64);
+
+            HashMap<CName, uint32_t> vehicleBanks;
+            Hashmap<CName, void *> musicBanks;
+            uint64_t unk;
+            HashMap<CName, Handle<CName>> vehicleBanksAdditional;
+            uint64_t unk30[33];
+            uint64_t unk1A0;
+            uint8_t unk1A8;
+            uint8_t unk1A9;
+            uint16_t unk1AA;
+            uint16_t unk1AC;
+            uint16_t unk1AE;
+            uint64_t unk1B0;
+        } * bankManager;
+        uint64_t* unk50;
+        audio::Metadata * audioMetadataManager;
+        uint64_t *unk60;
+        uint64_t *unk68;
+        uint64_t *unk70;
+        uint64_t *unk78;
+        uint64_t *unk80;
+        uint64_t unk88;
+        RED4ext::Quaternion unk90;
+        RED4ext::Quaternion unkA0;
+        RED4ext::Vector4 unkB0; 
+    } *audioSystemUnk;
+    uint64_t unkC8[13];
+    uint64_t unk130;
+    uint64_t unk138[5];
+    uint64_t unk160;
+    uint64_t unk168[20];
+    RED4ext::SharedMutex unk208;
+    uint64_t unk210[2];
+};
+
+// Audio
 struct Unk580
 {
     // 1.52 RVA: 0x1C3A0B0 / 29597872
@@ -199,8 +310,8 @@ struct Unk580
     uint32_t unk130;
     uint32_t unk134;
     BaseObject *vehicle;
-    uint64_t player_audio_resource_hash;
-    uint64_t traffic_audio_resource_hash;
+    CName player_audio_resource_hash;
+    CName traffic_audio_resource_hash;
     Unk580 *self;
     uint32_t unk158;
     uint32_t unk15C;
@@ -212,7 +323,9 @@ struct Unk580
     uint8_t unk165;
     uint8_t unk166;
     uint8_t unk167;
-    uint64_t unk168[2];
+    // radio_car_sports_npc, etc
+    CName radioStation;
+    uint64_t unk170;
     uint64_t *unk178;
     uint8_t unk180;
     uint8_t unk181;
@@ -277,7 +390,7 @@ struct Unk580
 
 RED4EXT_ASSERT_OFFSET(Unk580, unk460, 0x460);
 
-// sound
+// more physics
 struct Unk568 {
 
     // 1.52 RVA: 0x1AB9B80 / 28023680
