@@ -16,6 +16,7 @@
 #include <RED4ext/GameEngine.hpp>
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
 #include <RED4ext/Scripting/Natives/Generated/red/Taglist.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/EntityID.hpp>
 
 namespace RED4ext
 {
@@ -84,15 +85,20 @@ struct Entity : IScriptable
     /// @pattern 48 83 C1 70 E9 77 26 40 FF
     // DynArray<Handle<IComponent>> *__fastcall GetComponents();
 
-    enum Flags : uint8_t {
+    enum class ComponentFlags : uint8_t {
         Unk1 = 0x1,
         hasAnimatedComponent = 0x2,
         hasVisualControllerComponent = 0x4
     };
+    enum class EntityFlags : uint8_t {
+        Unk1 = 0x1,
+        IsAttached = 0x2,
+        DoesNotHavePlaceholder = 0x4
+    };
 
     uint32_t unk40;
     uint32_t unk44;
-    uint64_t audioReference;
+    EntityID entityID;
     CName currentAppearance;
     uint64_t unk58;
     ResourcePath resource; // 60
@@ -104,21 +110,22 @@ struct Entity : IScriptable
     Handle<void> unkC8;
     CallbackManager callbackManager; // D8
     red::TagList entityTags; // 138
+    // isReplicated = unk148 != 0
     void * unk148;
     float updatingTransform;
     uint8_t customCameraTarget;
-    uint8_t unk155;
-    uint8_t entityStoredSeparatelyMode;
+    int8_t controllingPeerID;
+    EntityFlags entityFlags;
     uint8_t unk157;
     uint16_t unk158;
     uint8_t unk15A;
     uint8_t renderSceneLayerMask;
-    Flags flags;
+    ComponentFlags componentFlags;
     uint8_t unk15D;
     uint8_t unk15E;
     uint8_t unk15F;
 };
-RED4EXT_ASSERT_OFFSET(Entity, audioReference, 0x48);
+RED4EXT_ASSERT_OFFSET(Entity, entityID, 0x48);
 RED4EXT_ASSERT_OFFSET(Entity, currentAppearance, 0x50);
 RED4EXT_ASSERT_OFFSET(Entity, entityTags, 0x138);
 } // namespace ent

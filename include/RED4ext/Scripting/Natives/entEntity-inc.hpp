@@ -22,7 +22,8 @@ RED4EXT_INLINE Vector2 * __fastcall Entity::sub_120(Vector2 * a1, Vector2 * a2) 
 }
 
 RED4EXT_INLINE bool __fastcall Entity::sub_130() {
-    return this->flags & Flags::Unk1;
+    RelocFunc<decltype(&Entity::sub_130)> call(VFT_RVA, 0x130);
+    return call(this);
 }
 
 RED4EXT_INLINE void Entity::sub_138()

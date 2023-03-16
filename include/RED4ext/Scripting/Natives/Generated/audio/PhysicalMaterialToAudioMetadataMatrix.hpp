@@ -19,7 +19,7 @@ struct PhysicalMaterialToAudioMetadataMatrix : audio::AudioMetadata
     static constexpr const char* ALIAS = NAME;
 
     DynArray<audio::AudioMaterialMetadataMapItem> physicalToAudioMaterialAssignments; // 38
-    uint8_t unk48[0x70 - 0x48]; // 48
+    Map<CName, CName> unk48[0x70 - 0x48]; // 48
 };
 RED4EXT_ASSERT_SIZE(PhysicalMaterialToAudioMetadataMatrix, 0x70);
 } // namespace audio
