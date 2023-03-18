@@ -55,11 +55,11 @@ struct VehiclePhysicsInsert2
     float unkFC;
     RED4ext::Vector4 unk100;
     float unk110;
-    float unk114;
-    float unk118;
-    float unk11C;
+    float visualDisplacement;
+    float logicalSpringCompression;
+    float swaybarDisplacement;
     // related to torque?
-    float unk120;
+    float dampedSpringForce;
     float unk124;
     float unk128;
     // time since touching the ground

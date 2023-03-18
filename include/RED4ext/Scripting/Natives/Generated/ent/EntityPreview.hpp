@@ -26,7 +26,9 @@ struct EntityPreview : ent::Entity
     void * unk188;
     void * unk190;
     uint32_t unk198;
+    uint32_t unk19C;
     uint32_t unk1A0;
+    uint32_t unk1A4;
     void * unk1A8;
     void * unk1B0;
 };

@@ -125,6 +125,8 @@ struct Entity : IScriptable
     uint8_t unk15E;
     uint8_t unk15F;
 };
+RED4EXT_ASSERT_SIZE(Entity, 0x160);
+// char (*__kaboom)[sizeof(Entity)] = 1;
 RED4EXT_ASSERT_OFFSET(Entity, entityID, 0x48);
 RED4EXT_ASSERT_OFFSET(Entity, currentAppearance, 0x50);
 RED4EXT_ASSERT_OFFSET(Entity, entityTags, 0x138);

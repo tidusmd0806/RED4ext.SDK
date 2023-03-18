@@ -7,12 +7,14 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/IActionsFactory.hpp>
+#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
 
 namespace RED4ext
 {
+namespace action { struct ActionBase; }
 namespace game { 
 
-using CreateAction_t = action::ActionBase *(__fastcall *)(__int64, _DWORD *, unsigned int);
+using CreateAction_t = action::ActionBase *(__fastcall *)(__int64, uint32_t *, unsigned int);
 
 struct CActionsFactory : game::IActionsFactory
 {
@@ -36,7 +38,7 @@ struct CActionsFactory : game::IActionsFactory
     uint64_t unk290;
     uint32_t numActionsCleanup;
     uint32_t unk29C;
-    HashMap actions;
+    HashMap<uint64_t, uint64_t> actions;
     uint32_t totalSize;
     uint32_t unk2D4;
 };

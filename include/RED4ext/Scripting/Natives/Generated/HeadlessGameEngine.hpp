@@ -17,7 +17,7 @@ struct HeadlessGameEngine : BaseGameEngine
 
     uint8_t unk2D0[0x2D8 - 0x2D0]; // 2D0
 };
-RED4EXT_ASSERT_SIZE(HeadlessGameEngine, 0x2D8);
+RED4EXT_ASSERT_SIZE(HeadlessGameEngine, 0x2E8);
 } // namespace RED4ext
 
 // clang-format on

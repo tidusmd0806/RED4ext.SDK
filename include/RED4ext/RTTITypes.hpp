@@ -610,8 +610,7 @@ RED4EXT_ASSERT_SIZE(CRTTILegacySingleChannelCurveType, 0x48);
 RED4EXT_ASSERT_OFFSET(CRTTILegacySingleChannelCurveType, name, 0x10);
 RED4EXT_ASSERT_OFFSET(CRTTILegacySingleChannelCurveType, curveType, 0x38);
 
-struct CRTTIMultiChannelCurveType : CBaseRTTIType
-{
+struct IMultiChannelCurveType {
     CName name;               // 10
     CBaseRTTIType* curveType; // 18
     int64_t unk20;            // 20
@@ -620,6 +619,10 @@ struct CRTTIMultiChannelCurveType : CBaseRTTIType
     int64_t unk38;            // 38
     int32_t unk40;            // 40
     int16_t unk44;            // 44
+};
+
+struct CRTTIMultiChannelCurveType : CBaseRTTIType, IMultiChannelCurveType
+{
 };
 RED4EXT_ASSERT_SIZE(CRTTIMultiChannelCurveType, 0x48);
 RED4EXT_ASSERT_OFFSET(CRTTIMultiChannelCurveType, name, 0x10);

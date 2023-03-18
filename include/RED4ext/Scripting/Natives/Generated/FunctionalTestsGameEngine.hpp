@@ -17,7 +17,7 @@ struct FunctionalTestsGameEngine : CGameEngine
 
     uint8_t unk340[0x3340 - 0x340]; // 340
 };
-RED4EXT_ASSERT_SIZE(FunctionalTestsGameEngine, 0x3340);
+RED4EXT_ASSERT_SIZE(FunctionalTestsGameEngine, 0x3348);
 } // namespace RED4ext
 
 // clang-format on

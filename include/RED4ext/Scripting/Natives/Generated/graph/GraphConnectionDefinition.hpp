@@ -8,10 +8,11 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/Scripting/Natives/Generated/graph/IGraphObjectDefinition.hpp>
+#include <RED4ext\Scripting\Natives\Generated\graph\GraphSocketDefinition.hpp>
 
 namespace RED4ext
 {
-namespace graph { struct GraphSocketDefinition; }
+// namespace graph { struct GraphSocketDefinition; }
 
 namespace graph { 
 struct GraphConnectionDefinition : graph::IGraphObjectDefinition

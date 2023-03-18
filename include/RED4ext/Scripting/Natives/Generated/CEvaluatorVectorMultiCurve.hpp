@@ -11,7 +11,7 @@
 
 namespace RED4ext
 {
-struct CEvaluatorVectorMultiCurve : IEvaluatorVector, CRTTIMultiChannelCurveType
+struct CEvaluatorVectorMultiCurve : IEvaluatorVector, IMultiChannelCurveType
 {
     static constexpr const char* NAME = "CEvaluatorVectorMultiCurve";
     static constexpr const char* ALIAS = NAME;
@@ -20,6 +20,7 @@ struct CEvaluatorVectorMultiCurve : IEvaluatorVector, CRTTIMultiChannelCurveType
     uint8_t unk74[0x78 - 0x74]; // 74
 };
 RED4EXT_ASSERT_SIZE(CEvaluatorVectorMultiCurve, 0x78);
+// char (*__kaboom)[sizeof(CEvaluatorVectorMultiCurve)] = 1;
 } // namespace RED4ext
 
 // clang-format on

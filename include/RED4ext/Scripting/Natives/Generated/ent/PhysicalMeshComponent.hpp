@@ -26,7 +26,7 @@ struct PhysicalMeshComponent : ent::MeshComponent
     Handle<physics::FilterData> filterData; // 210
     uint8_t unk220[0x228 - 0x220]; // 220
     CName visibilityAnimationParam; // 228
-    uint8_t unk230[0x238 - 0x230]; // 230
+    uint64_t geoCacheKey; // 230
     physics::FilterDataSource filterDataSource; // 238
     physics::SimulationType simulationType; // 239
     bool startInactive; // 23A

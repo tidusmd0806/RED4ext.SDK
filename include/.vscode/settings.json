@@ -9,5 +9,6 @@
         "*.xl": "yaml",
         "*.idc": "cpp",
         "vftenum": "c"
-    }
+    },
+    "git.ignoreLimitWarning": true
 }

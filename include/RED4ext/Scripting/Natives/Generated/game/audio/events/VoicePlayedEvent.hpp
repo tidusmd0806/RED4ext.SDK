@@ -19,7 +19,7 @@ struct VoicePlayedEvent : red::Event
     static constexpr const char* ALIAS = "VoicePlayedEvent";
 
     CName eventName; // 40
-    audio::VoGruntType gruntType; // 48
+    RED4ext::audio::VoGruntType gruntType; // 48
     bool isV; // 4C
     uint8_t unk4D[0x50 - 0x4D]; // 4D
 };

@@ -40,7 +40,6 @@ struct BaseGameSession
     // register InitializeWorldStreaming, InitializeGame callbacks
     virtual void sub_40(void * a2, void* a3);
         
-    void *__vftable;
     void *updateManagerHolder;
     GameInstance *gameInstance;
     world::RuntimeScene *runtimeScene;
@@ -50,7 +49,7 @@ struct BaseGameSession
     uint8_t unk29;
     uint8_t unk2A;
 };
-//RED4EXT_ASSERT_SIZE(BaseGameSession, 0x30);
+RED4EXT_ASSERT_SIZE(BaseGameSession, 0x30);
 } // namespace game
 } // namespace RED4ext
 

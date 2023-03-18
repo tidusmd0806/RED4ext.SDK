@@ -5,28 +5,29 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/NativeTypes.hpp>
+#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
+#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
+#include <RED4ext/Scripting/Natives/Generated/AI/CAgent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/audio/VehicleMetadata.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/EntityID.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/data/Vehicle_Record.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/IBlackboard.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/interactions/Component.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/Object.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/OccupantSlotComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/Puppet.hpp>
+#include <RED4ext/Scripting/Natives/Generated/move/Component.hpp>
+#include <RED4ext/Scripting/Natives/Generated/vehicle/AutonomousData.hpp>
+#include <RED4ext/Scripting/Natives/Generated/vehicle/CameraManager.hpp>
+#include <RED4ext/Scripting/Natives/Generated/vehicle/ChassisComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/vehicle/Controller.hpp>
+#include <RED4ext/Scripting/Natives/Generated/vehicle/PersistentDataPS.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/EffectBlackboard.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPhysics.hpp>
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
+#include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/ChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/OccupantSlotComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/data/Vehicle_Record.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/Controller.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/CameraManager.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/interactions/Component.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/Puppet.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/IBlackboard.hpp>
-#include <RED4ext/Scripting/Natives/Generated/AI/CAgent.hpp>
-#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
-#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
-#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPhysics.hpp>
-#include <RED4ext/Scripting/Natives/Generated/world/EffectBlackboard.hpp>
-#include <RED4ext/Scripting/Natives/Generated/audio/VehicleMetadata.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/AutonomousData.hpp>
-#include <RED4ext/Scripting/Natives/Generated/move/Component.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/PersistentDataPS.hpp>
 #include <RED4ext\Scripting\Natives\Generated\red\ResourceReferenceScriptToken.hpp>
 
 namespace RED4ext
@@ -36,7 +37,7 @@ namespace AI { struct Archetype; }
 namespace game { struct VehicleSystem; }
 namespace world { struct RuntimeSystemPhysics; struct RuntimeSystemEffects; }
 namespace ent { struct Entity; }
-namespace audio { struct GameParameterStorage; struct BankManager; struct Metadata; struct Emitters; }
+namespace audio { struct GameParameterStorage; struct BankManager; struct Metadata; struct Emitters; struct EmitterPositions; struct EmitterPosition; }
 namespace vehicle
 {
 struct Physics;
@@ -112,9 +113,6 @@ struct WheelUpdate
 
 struct Unk580;
 
-
-
-
 struct TireParameterUpdate
 {
     Unk580 *unk580;
@@ -125,65 +123,6 @@ struct TireParameterUpdate
         RED4ext::CName emitterName;
     } * variables;
     float *veh_tire_surface_value;
-};
-
-struct AudioThing {
-    RED4ext::Transform one;
-    RED4ext::Quaternion two;
-    RED4ext::Transform three;
-    RED4ext::Quaternion four;
-    RED4ext::Quaternion five;
-    struct {
-        uint64_t unk00;
-        uint64_t * unk08;   
-    } * unk70;
-    uint8_t unk78[8];
-    world::RuntimeSystemEffects * worldRuntimeSystemEffects;
-    uint64_t unk88;
-    uint64_t unk90;
-    uint64_t * callbackID;
-    uint64_t unkA0;
-    uint64_t unkA8;
-    struct {
-        void* unk00[10];
-    } * unkB0[2];
-    struct {
-        // 1.6  RVA: 0x2CA0F10 / 46796560
-        /// @pattern 40 55 41 57 48 8D AC 24 08 FE FF FF 48 81 EC F8 02 00 00 4C 8B F9 48 8D 8D 90 00 00 00 E8 DE 0E
-        char __fastcall AKAudioLoad(struct AkMemSettings *a2);
-
-        AudioThing * audioThing;
-        uint64_t unk08;
-        uint64_t unk10;
-        void * callback;
-        void *unk20;
-        uint32_t flags;
-        uint64_t unk30;
-        uint64_t unk38;
-        uint64_t unk40;
-        audio::BankManager * bankManager;
-        uint64_t* unk50;
-        audio::Metadata * audioMetadataManager;
-        uint64_t *unk60;
-        audio::Emitters *emitters;
-        uint64_t *unk70;
-        uint64_t *unk78;
-        uint64_t *unk80;
-        uint64_t unk88;
-        RED4ext::Quaternion unk90;
-        RED4ext::Quaternion unkA0;
-        RED4ext::Vector4 unkB0; 
-    } *audioSystemUnk;
-    uint64_t unkC8[13];
-    // E8 use in play/stop
-    uint64_t unk130;
-    // used in event creation
-    uint64_t unk138[5];
-    audio::GameParameterStorage *globalParameters;
-    uint64_t *unk168[8];
-    uint64_t unk169[12];
-    SharedMutex unk208;
-    uint64_t unk210[2];
 };
 
 struct EntityEmitter {

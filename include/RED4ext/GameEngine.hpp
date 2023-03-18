@@ -22,6 +22,7 @@ struct IAllocator;
 }
 //namespace game { struct IGameSystem; struct GameFeatureManager; }
 namespace world { struct RuntimeScene;  } //struct RuntimeInfo;
+namespace audio { struct Thing; }
 
 enum class EEngineState : int32_t
 {
@@ -150,7 +151,7 @@ struct CBaseEngine
     CString scriptsCompilationErrors;          // 60
     DynArray<CString> scriptsValidationErrors; // 80
     int64_t unk90;                             // 90
-    int64_t unk98;                             // 98
+    audio::Thing *audioThing;                             // 98
     int64_t unkA0;                             // A0
     int64_t unkA8;                             // A8
     int64_t unkB0;                             // B0

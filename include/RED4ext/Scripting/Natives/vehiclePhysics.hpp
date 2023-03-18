@@ -57,6 +57,8 @@ struct Physics
     // 1.6  RVA: 0x3497B78
     // 1.61 RVA: 0x349CDC8
     // 1.62 RVA: 0x349FF08
+    /// @pattern 56 65 68 69 63 6C 65 54 65 6C 65 70 6F 72 74 61 74 69 6F 6E 49 66 46 61 6C 6C 73 55 6E 64 65 72
+    /// @offset -40
     static constexpr const uintptr_t VFT_RVA = 0x349FF08;
 
     virtual ~Physics();
@@ -290,6 +292,8 @@ struct WheeledPhysics : Physics
     // 1.6  RVA: 0x3498388
     // 1.61 RVA: 0x349D5D8
     // 1.62 RVA: 0x34A0718
+    /// @pattern 45 6E 61 62 6C 65 53 6D 6F 6F 74 68 57 68 65 65 6C 43 6F 6E 74 61 63 74 73 00 00 00 00 00 00 00
+    /// @offset -32
     static constexpr const uintptr_t VFT_RVA = 0x34A0718;
 
     // 1.52 RVA: 0x1D0DB70 / 30464880
@@ -537,6 +541,8 @@ struct CarPhysics : WheeledPhysics
     // 1.6  RVA: 0x34980C0
     // 1.61 RVA: 0x349D310
     // 1.62 RVA: 0x34A0450
+    /// @pattern 56 65 68 69 63 6C 65 50 61 73 73 65 6E 67 65 72 00 00 00 00 3B DF 7F 3F 00 00 C8 C1 00 00 00 00
+    /// @offset -48
     static constexpr const uintptr_t VFT_RVA = 0x34A0450;
 
 // overrides
@@ -657,6 +663,8 @@ struct BikePhysics : WheeledPhysics
     // 1.6  RVA: 0x3431A30
     // 1.61 RVA: 0x349D130
     // 1.62 RVA: 0x34A0270
+    /// @pattern 42 69 6B 65 48 61 63 6B 54 69 6C 74 43 61 6C 63 56 61 6C 75 65 00 00 00
+    /// @offset -30
     static constexpr const uintptr_t VFT_RVA = 0x34A0270;
 
     virtual ~BikePhysics() override;

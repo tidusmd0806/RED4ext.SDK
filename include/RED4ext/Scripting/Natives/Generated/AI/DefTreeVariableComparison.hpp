@@ -25,7 +25,7 @@ struct DefTreeVariableComparison : LibTreeDefTreeVariableBoolBase
     CName referenceVariableShortName; // 58
     CName referenceType; // 60
     Variant referenceValue; // 68
-    EComparisonType operator; // 80
+    EComparisonType _operator; // 80
     uint8_t unk84[0x88 - 0x84]; // 84
 };
 RED4EXT_ASSERT_SIZE(DefTreeVariableComparison, 0x88);

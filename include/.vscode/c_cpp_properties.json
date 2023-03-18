@@ -4,17 +4,19 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/*",
-                "C:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "WIN32_LEAN_AND_MEAN",
+                "WINVER=0x0601",
+                "_WIN32_WINNT=0x0601"
             ],
             "windowsSdkVersion": "10.0.22000.0",
             "compilerPath": "cl.exe",
             "cStandard": "c17",
-            "cppStandard": "c++17",
+            "cppStandard": "c++20",
             "intelliSenseMode": "windows-msvc-x64"
         }
     ],

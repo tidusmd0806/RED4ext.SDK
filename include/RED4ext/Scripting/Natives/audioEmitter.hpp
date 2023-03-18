@@ -54,6 +54,27 @@ struct Emitters {
     HashMap<ent::EntityID, Emitter> entities;
     SharedMutex entitiesMutex;
 };
+struct EmitterPosition
+{
+    Vector4 position;
+    uint64_t unk10[2];
+    uint64_t entityID;
+    uint16_t unk28;
+    uint16_t unk2A;
+    uint16_t unk2C;
+    uint8_t unk2E;
+    uint8_t unk2F;
+};
+
+struct EmitterPositions
+{
+    EmitterPosition emitterPosition[4096];
+    HashMap::NodeList<CName, EmitterPosition> nodeList;
+    HashMap<CName, CName> entities;
+    Map<CName, uint32_t> unk48;
+    uint64_t unk70;
+    SharedMutex entitiesMutex;
+};
 
 } // namespace audio
 } // namespace RED4ext

@@ -17,7 +17,7 @@ struct DebugGameEngine : CGameEngine
 
     uint8_t unk340[0x3F0 - 0x340]; // 340
 };
-RED4EXT_ASSERT_SIZE(DebugGameEngine, 0x3F0);
+RED4EXT_ASSERT_SIZE(DebugGameEngine, 0x3F8);
 } // namespace RED4ext
 
 // clang-format on

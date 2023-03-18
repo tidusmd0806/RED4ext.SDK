@@ -20,8 +20,8 @@ struct VoiceEvent : red::Event
     static constexpr const char* ALIAS = "VoicePlayEvent";
 
     CName eventName; // 40
-    audio::VoGruntType gruntType; // 48
-    audio::VoGruntInterruptMode gruntInterruptMode; // 4C
+    RED4ext::audio::VoGruntType gruntType; // 48
+    RED4ext::audio::VoGruntInterruptMode gruntInterruptMode; // 4C
     bool isV; // 50
     uint8_t unk51[0x58 - 0x51]; // 51
 };

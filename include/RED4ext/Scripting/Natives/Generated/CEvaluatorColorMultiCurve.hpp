@@ -11,7 +11,7 @@
 
 namespace RED4ext
 {
-struct CEvaluatorColorMultiCurve : IEvaluatorColor, CRTTIMultiChannelCurveType
+struct CEvaluatorColorMultiCurve : IEvaluatorColor, IMultiChannelCurveType
 {
     static constexpr const char* NAME = "CEvaluatorColorMultiCurve";
     static constexpr const char* ALIAS = NAME;
