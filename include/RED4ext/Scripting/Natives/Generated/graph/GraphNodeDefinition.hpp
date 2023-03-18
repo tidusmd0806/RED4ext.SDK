@@ -9,21 +9,17 @@
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/Scripting/Natives/Generated/graph/IGraphObjectDefinition.hpp>
+// #include <RED4ext/Scripting/Natives/Generated/graph/GraphSocketDefinition.hpp>
 
-namespace RED4ext
-{
-namespace graph { struct GraphSocketDefinition; }
-
-namespace graph { 
-struct GraphNodeDefinition : graph::IGraphObjectDefinition
+namespace RED4ext::graph { 
+struct GraphNodeDefinition : IGraphObjectDefinition
 {
     static constexpr const char* NAME = "graphGraphNodeDefinition";
     static constexpr const char* ALIAS = NAME;
 
-    DynArray<Handle<graph::GraphSocketDefinition>> sockets; // 30
+    DynArray<Handle<IGraphObjectDefinition>> sockets; // 30
 };
 RED4EXT_ASSERT_SIZE(GraphNodeDefinition, 0x40);
-} // namespace graph
 } // namespace RED4ext
 
 // clang-format on

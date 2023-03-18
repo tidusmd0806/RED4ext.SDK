@@ -17,6 +17,7 @@
 #include <RED4ext/Scripting/Natives/Generated/game/OccupantSlotComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/Puppet.hpp>
 #include <RED4ext/Scripting/Natives/Generated/move/Component.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Matrix.hpp>
 #include <RED4ext/Scripting/Natives/Generated/vehicle/AutonomousData.hpp>
 #include <RED4ext/Scripting/Natives/Generated/vehicle/CameraManager.hpp>
 #include <RED4ext/Scripting/Natives/Generated/vehicle/ChassisComponent.hpp>
@@ -26,8 +27,8 @@
 #include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPhysics.hpp>
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
 #include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
+// #include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+// #include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
 #include <RED4ext\Scripting\Natives\Generated\red\ResourceReferenceScriptToken.hpp>
 
 namespace RED4ext

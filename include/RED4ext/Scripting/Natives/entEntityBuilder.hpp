@@ -4,7 +4,12 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
+#include <RED4ext/DynArray.hpp>
+#include <RED4ext/HashMap.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
+#include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/Entity.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/EntityTemplate.hpp>
 
 namespace RED4ext { 
 
@@ -62,7 +67,7 @@ struct EntityBuilder
     void *unkA8;
     Handle<Entity> entity;
     DynArray<Handle<IComponent>> components;
-    DynArray<ResourceReference> resolvedDependencies;
+    DynArray<ResourceReference<CResource>> resolvedDependencies;
     DynArray<void*> unkE0;
     uint64_t unkF0;
     red::TagList tags;

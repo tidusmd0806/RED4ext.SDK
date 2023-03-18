@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePID.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Vector4.hpp>
 
 namespace RED4ext
 {
@@ -40,7 +41,7 @@ struct AirControlAxis
     float maxAngleCompensation;
     float zeroAngleThreshold;
     float maxAngleToCompensateThreshold;
-    RED4ext::Vector4 unk5C[3];
+    Vector4 unk5C[3];
 };
 #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(AirControlAxis, 0xB0);

@@ -13,13 +13,13 @@
 namespace RED4ext
 {
 namespace quest { 
-struct VehicleSpeed_ConditionType : quest::IVehicleConditionType
+struct VehicleSpeed_ConditionType : IVehicleConditionType
 {
     static constexpr const char* NAME = "questVehicleSpeed_ConditionType";
     static constexpr const char* ALIAS = NAME;
 
-    game::EntityReference vehicleRef; // 38
-    vehicle::EVehicleSpeedConditionType comparisonType; // 70
+    RED4ext::game::EntityReference vehicleRef; // 38
+    RED4ext::vehicle::EVehicleSpeedConditionType comparisonType; // 70
     float speed; // 74
 };
 RED4EXT_ASSERT_SIZE(VehicleSpeed_ConditionType, 0x78);

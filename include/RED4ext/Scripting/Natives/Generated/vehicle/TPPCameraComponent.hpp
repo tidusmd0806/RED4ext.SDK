@@ -11,13 +11,11 @@
 #include <RED4ext/Scripting/Natives/Generated/Vector3.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Quaternion.hpp>
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/BaseObject.hpp>
+// #include <RED4ext/Scripting/Natives/Generated/vehicle/BaseObject.hpp>
 #include <RED4ext/Scripting/Natives/Generated/vehicle/ChassisComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/CameraComponent.hpp>
 
-namespace RED4ext
-{
-namespace vehicle {
+namespace RED4ext::vehicle {
 
 struct BaseObject;
 struct TPPCameraPreset
@@ -140,7 +138,7 @@ struct TPPCameraComponent : public game::CameraComponent
     // 1.6  RVA: 0x1CF47B0 / 30361520
     // 1.62 RVA: 0x1CF5270 / 30364272
     /// @pattern 40 53 48 81 EC 90 00 00 00 F3 0F 10 15 ? ? 3E 01 0F 57 C0 F3 0F 2A 81 20 03 00 00 48 8B D9 F3
-    void __fastcall Update();
+    void __fastcall UpdateTPP();
 
     // 1.52 RVA: 0x1CC4600 / 30164480
     // 1.6  RVA: 0x1CF0CB0 / 30346416
@@ -268,7 +266,6 @@ RED4EXT_ASSERT_SIZE(TPPCameraComponent, 0x5C0);
 RED4EXT_ASSERT_OFFSET(TPPCameraComponent, data.isInAir, 0x2E0);
 //char (*__kaboom)[sizeof(TPPCameraComponent)] = 1;
 //char (*__kaboom)[offsetof(TPPCameraComponent, isInAir)] = 1;
-} // namespace vehicle
 } // namespace RED4ext
 
 // clang-format on

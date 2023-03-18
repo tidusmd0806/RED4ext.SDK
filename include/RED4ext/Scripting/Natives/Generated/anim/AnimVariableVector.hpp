@@ -22,7 +22,7 @@ struct AnimVariableVector : anim::AnimVariable
     float z; // 40
     float w; // 44
     uint8_t unk48[0x50 - 0x48]; // 48
-    Vector4 _default; // 50
+    Vector4 default_; // 50
     Vector4 min; // 60
     Vector4 max; // 70
 };

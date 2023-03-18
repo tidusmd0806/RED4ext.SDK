@@ -9,18 +9,19 @@
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/Scripting/Natives/Generated/graph/IGraphObjectDefinition.hpp>
+// #include <RED4ext/Scripting/Natives/Generated/graph/GraphNodeDefinition.hpp>
 
 namespace RED4ext
 {
-namespace graph { struct GraphNodeDefinition; }
+// namespace graph { struct GraphNodeDefinition; }
 
 namespace graph { 
-struct GraphDefinition : graph::IGraphObjectDefinition
+struct GraphDefinition : IGraphObjectDefinition
 {
     static constexpr const char* NAME = "graphGraphDefinition";
     static constexpr const char* ALIAS = NAME;
 
-    DynArray<Handle<graph::GraphNodeDefinition>> nodes; // 30
+    DynArray<Handle<IGraphObjectDefinition>> nodes; // 30
 };
 RED4EXT_ASSERT_SIZE(GraphDefinition, 0x40);
 } // namespace graph

@@ -16,7 +16,7 @@ struct LocomotionStateType : audio::AudioMetadata
     static constexpr const char* NAME = "audioLocomotionStateType";
     static constexpr const char* ALIAS = NAME;
 
-    bool _void; // 38
+    bool void_; // 38
     uint8_t unk39[0x40 - 0x39]; // 39
 };
 RED4EXT_ASSERT_SIZE(LocomotionStateType, 0x40);

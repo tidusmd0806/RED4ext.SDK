@@ -8,21 +8,22 @@
 
 namespace RED4ext
 {
+namespace vehicle { struct BaseObject; }
 namespace game { 
 
 // AIbehaviorEventHandler maybe? could be optimization artifact
 struct VehicleInterface2 {
     virtual void sub_00();
     virtual void sub_08();
-}
+};
 
 // dynamic array of some sort? used elsewhere
 struct VehicleInterface3 {
     virtual void sub_00();
     virtual void sub_08();
-}
+};
 
-struct VehicleSystem : game::IVehicleSystem, VehicleInterface2, VehicleInterface3
+struct VehicleSystem : IVehicleSystem, VehicleInterface2, VehicleInterface3
 {
     static constexpr const char* NAME = "gameVehicleSystem";
     static constexpr const char* ALIAS = "VehicleSystem";
@@ -31,7 +32,7 @@ struct VehicleSystem : game::IVehicleSystem, VehicleInterface2, VehicleInterface
 // virtuals
 
     // gets unk179AB pointers 
-    uint64_t ** virtual sub_380(void ** a2);
+    virtual uint64_t ** sub_380(void ** a2);
 
 // methods
 
@@ -86,19 +87,20 @@ struct VehicleSystem : game::IVehicleSystem, VehicleInterface2, VehicleInterface
     uint32_t unk206A4;
     uint64_t unk206A8[28];
     uint8_t unk20788;
-    RED4ext::SharedMutex unk20789;
+    SharedMutex unk20789;
     uint8_t unk2078A;
     uint8_t unk2078B;
     uint8_t unk2078C;
     uint8_t unk2078D;
     uint8_t unk2078E;
     uint8_t unk2078F;
-    RED4ext::Map<uint32_t, RED4ext::vehicle::Unk588> unk20790;
+    // Map<uint32_t, RED4ext::vehicle::Unk588> unk20790;
+    Map<uint32_t, uint64_t> unk20790;
     uint64_t unk207B8[4];
-    RED4ext::SharedMutex unk207D8;
-    RED4ext::DynArray unk207E0;
+    SharedMutex unk207D8;
+    DynArray<uint64_t> unk207E0;
     uint64_t unk207F0[19];
-    RED4ext::SharedMutex unk20888;
+    SharedMutex unk20888;
     uint64_t unk20890[6];
 };
 RED4EXT_ASSERT_SIZE(VehicleSystem, 0x208C0);

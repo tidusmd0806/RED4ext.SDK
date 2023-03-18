@@ -17,9 +17,9 @@ struct VehicleInterface1 {
     virtual void sub_18();
     virtual void sub_20();
     virtual void sub_28();
-}
+};
 
-struct IVehicleSystem : game::IGameSystem, VehicleInterface1
+struct IVehicleSystem : IGameSystem, VehicleInterface1
 {
     static constexpr const char* NAME = "gameIVehicleSystem";
     static constexpr const char* ALIAS = "IVehicleSystem";

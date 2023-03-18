@@ -15,7 +15,7 @@ namespace RED4ext
 namespace vehicle { struct PortalsList; }
 
 namespace quest::vehicle { 
-struct ToNodeParams : quest::VehicleSpecificCommandParams
+struct ToNodeParams : RED4ext::quest::VehicleSpecificCommandParams
 {
     static constexpr const char* NAME = "questvehicleToNodeParams";
     static constexpr const char* ALIAS = NAME;
@@ -28,7 +28,7 @@ struct ToNodeParams : quest::VehicleSpecificCommandParams
     float speedInTraffic; // 44
     bool forceGreenLights; // 48
     uint8_t unk49[0x50 - 0x49]; // 49
-    Handle<vehicle::PortalsList> portals; // 50
+    Handle<RED4ext::vehicle::PortalsList> portals; // 50
     bool trafficTryNeighborsForStart; // 60
     bool trafficTryNeighborsForEnd; // 61
     uint8_t unk62[0x68 - 0x62]; // 62

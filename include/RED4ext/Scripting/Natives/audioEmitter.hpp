@@ -6,10 +6,10 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/EntityID.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Vector4.hpp>
+#include <RED4ext/HashMap.hpp>
 
-namespace RED4ext
-{
-namespace audio
+namespace RED4ext::audio
 {
 
 struct GameParameter {
@@ -27,15 +27,17 @@ struct GameParameterStorage {
     /// @pattern 48 89 5C 24 20 55 57 41 56 48 83 EC 60 0F 29 74 24 50 4C 8B F1 0F 29 7C 24 40 48 83 C1 20 0F 28
     float *__fastcall SetValue(CName gameParameter, float value, float timeSinceMaybe);
 
-    DynArray<GameParameter> gameParameters;
-    DynArray<CName> switchGroups;
-    SharedMutex gameParameterMutex;
+    DynArray<GameParameter> gameParameters; // 00
+    DynArray<CName> switchGroups; // 10
+    SharedMutex gameParameterMutex; // 20
+    uint8_t unk[7];
 };
+RED4EXT_ASSERT_SIZE(GameParameterStorage, 0x28); 
 
 struct Emitter {
-    RED4ext::CName emitterName;
-    Emitter * parent;
-    GameParameterStorage parameters;
+    RED4ext::CName emitterName; // 00
+    Emitter * parent; // 08
+    GameParameterStorage parameters; // 10
 };
 
 RED4EXT_ASSERT_SIZE(Emitter, 0x38); 
@@ -69,12 +71,11 @@ struct EmitterPosition
 struct EmitterPositions
 {
     EmitterPosition emitterPosition[4096];
-    HashMap::NodeList<CName, EmitterPosition> nodeList;
+    HashMap<CName, EmitterPosition>::NodeList nodeList;
     HashMap<CName, CName> entities;
     Map<CName, uint32_t> unk48;
     uint64_t unk70;
     SharedMutex entitiesMutex;
 };
 
-} // namespace audio
-} // namespace RED4ext
+} // namespace RED4ext::audio

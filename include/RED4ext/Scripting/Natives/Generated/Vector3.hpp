@@ -19,6 +19,10 @@ struct alignas(0x4) Vector3
     float Y; // 04
     float Z; // 08
 
+    Vector3(float x, float y, float z) : X(x), Y(y), Z(z) {
+
+    }
+
     Vector3& operator+=(const Vector3& rhs) {
         this->X += rhs.X;
         this->Y += rhs.Y;

@@ -8,20 +8,20 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/Scripting/Natives/Generated/graph/IGraphObjectDefinition.hpp>
-#include <RED4ext\Scripting\Natives\Generated\graph\GraphSocketDefinition.hpp>
+// #include <RED4ext/Scripting/Natives/Generated/graph/GraphSocketDefinition.hpp>
 
 namespace RED4ext
 {
 // namespace graph { struct GraphSocketDefinition; }
 
 namespace graph { 
-struct GraphConnectionDefinition : graph::IGraphObjectDefinition
+struct GraphConnectionDefinition : IGraphObjectDefinition
 {
     static constexpr const char* NAME = "graphGraphConnectionDefinition";
     static constexpr const char* ALIAS = NAME;
 
-    WeakHandle<graph::GraphSocketDefinition> source; // 30
-    WeakHandle<graph::GraphSocketDefinition> destination; // 40
+    WeakHandle<IGraphObjectDefinition> source; // 30
+    WeakHandle<IGraphObjectDefinition> destination; // 40
 };
 RED4EXT_ASSERT_SIZE(GraphConnectionDefinition, 0x50);
 } // namespace graph

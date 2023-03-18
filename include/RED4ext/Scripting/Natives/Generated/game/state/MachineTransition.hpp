@@ -14,13 +14,13 @@ namespace RED4ext
 namespace game::state { struct MachineFunctor; }
 
 namespace game::state { 
-struct MachineTransition : graph::GraphConnectionDefinition
+struct MachineTransition : RED4ext::graph::GraphConnectionDefinition
 {
     static constexpr const char* NAME = "gamestateMachineTransition";
     static constexpr const char* ALIAS = NAME;
 
     uint8_t unk50[0x58 - 0x50]; // 50
-    Handle<game::state::MachineFunctor> transitionCondition; // 58
+    Handle<RED4ext::game::state::MachineFunctor> transitionCondition; // 58
     uint8_t unk68[0x88 - 0x68]; // 68
 };
 RED4EXT_ASSERT_SIZE(MachineTransition, 0x88);

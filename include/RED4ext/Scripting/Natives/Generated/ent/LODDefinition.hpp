@@ -17,6 +17,10 @@ struct LODDefinition : ISerializable
     static constexpr const char* NAME = "entLODDefinition";
     static constexpr const char* ALIAS = NAME;
 
+    virtual CClass* GetNativeType() override {
+        return this->GetType();
+    }
+
     StaticArray<float, 4> backgroundDistanceLODs; // 30
     StaticArray<float, 4> regularDistanceLODs; // 44
     StaticArray<float, 4> cinematicDistanceLODs; // 58

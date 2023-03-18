@@ -14,14 +14,14 @@
 namespace RED4ext
 {
 namespace quest { 
-struct VehicleDoor_ConditionType : quest::IVehicleConditionType
+struct VehicleDoor_ConditionType : IVehicleConditionType
 {
     static constexpr const char* NAME = "questVehicleDoor_ConditionType";
     static constexpr const char* ALIAS = NAME;
 
-    game::EntityReference vehicleRef; // 38
-    vehicle::EVehicleDoor door; // 70
-    vehicle::VehicleDoorState state; // 74
+    RED4ext::game::EntityReference vehicleRef; // 38
+    RED4ext::vehicle::EVehicleDoor door; // 70
+    RED4ext::vehicle::VehicleDoorState state; // 74
 };
 RED4EXT_ASSERT_SIZE(VehicleDoor_ConditionType, 0x78);
 } // namespace quest

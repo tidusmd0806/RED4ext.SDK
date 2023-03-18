@@ -11,7 +11,7 @@
 namespace RED4ext
 {
 namespace game::state { 
-struct MachineStateMachineDefinition : graph::GraphDefinition
+struct MachineStateMachineDefinition : RED4ext::graph::GraphDefinition
 {
     static constexpr const char* NAME = "gamestateMachineStateMachineDefinition";
     static constexpr const char* ALIAS = NAME;

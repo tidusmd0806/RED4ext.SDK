@@ -6,16 +6,17 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
+#include <RED4ext/Scripting/Natives/GameTime.hpp>
 
 namespace RED4ext
 {
-struct GameTime
-{
-    static constexpr const char* NAME = "GameTime";
-    static constexpr const char* ALIAS = NAME;
+// struct GameTime
+// {
+//     static constexpr const char* NAME = "GameTime";
+//     static constexpr const char* ALIAS = NAME;
 
-    int32_t seconds; // 00
-};
+//     int32_t seconds; // 00
+// };
 RED4EXT_ASSERT_SIZE(GameTime, 0x4);
 } // namespace RED4ext
 

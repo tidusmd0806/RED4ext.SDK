@@ -4,6 +4,11 @@
 
 // This file is generated from the Game's Reflection data
 
+#include <xmmintrin.h> //SSE
+#include <emmintrin.h> //SSE 2
+#include <smmintrin.h> // SSE4.1
+#include <immintrin.h> //avx2
+
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector3.hpp>
@@ -48,10 +53,10 @@ struct Quaternion
     }
 
     Quaternion(__m128 m) {
-        this->i = m.m128_f32[0];
-        this->j = m.m128_f32[1];
-        this->k = m.m128_f32[2];
-        this->r = m.m128_f32[3];
+        this->i = m[0];
+        this->j = m[1];
+        this->k = m[2];
+        this->r = m[3];
     }
 
     Quaternion(Vector3 complex, float real) : Quaternion(complex.X, complex.Y, complex.Z, real) {

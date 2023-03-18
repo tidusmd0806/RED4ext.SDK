@@ -13,12 +13,12 @@
 namespace RED4ext
 {
 namespace quest { 
-struct AudioSwitchNodeType : quest::IAudioNodeType
+struct AudioSwitchNodeType : IAudioNodeType
 {
     static constexpr const char* NAME = "questAudioSwitchNodeType";
     static constexpr const char* ALIAS = NAME;
 
-    audio::AudSwitch switch; // 40
+    audio::AudSwitch switch_; // 40
     bool isMusic; // 50
     uint8_t unk51[0x58 - 0x51]; // 51
     game::EntityReference objectRef; // 58

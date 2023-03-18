@@ -19,9 +19,13 @@ struct VehicleSlotsState : ISerializable
     static constexpr const char* NAME = "vehicleVehicleSlotsState";
     static constexpr const char* ALIAS = "VehicleSlotsState";
 
-    vehicle::VehicleDoorState vehicleDoorState; // 30
-    vehicle::EVehicleWindowState vehicleWindowState; // 34
-    vehicle::VehicleDoorInteractionState vehicleInteractionState; // 38
+    virtual CClass* GetNativeType() override {
+        return this->GetType();
+    }
+
+    RED4ext::vehicle::VehicleDoorState vehicleDoorState; // 30
+    RED4ext::vehicle::EVehicleWindowState vehicleWindowState; // 34
+    RED4ext::vehicle::VehicleDoorInteractionState vehicleInteractionState; // 38
     uint8_t unk3C[0x40 - 0x3C]; // 3C
 };
 RED4EXT_ASSERT_SIZE(VehicleSlotsState, 0x40);

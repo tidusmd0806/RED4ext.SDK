@@ -17,7 +17,7 @@ struct AnimVariableFloat : anim::AnimVariable
     static constexpr const char* ALIAS = NAME;
 
     float value; // 38
-    float _default; // 3C
+    float default_; // 3C
     float min; // 40
     float max; // 44
 };

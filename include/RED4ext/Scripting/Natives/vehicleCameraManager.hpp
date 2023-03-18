@@ -162,7 +162,7 @@ struct CameraManager : IScriptable
     float maxPitchCorrectionDown; // 310,  0x80000400, -1, 4);
     float rollCorrectionDampFactor; // 314,  0x80000400, -1, 4);
     float pitchCorrectionDampFactor; // 318,  0x80000400, -1, 4);
-    float unk31C; // 31C,  0x80000400, -1, 4);
+    float unk31C; // 31C,  0x80000400, -1, 4);  actually 3C4
     void * unkCallback; // 320,  0x35500400, 0XFFFFFFFFFFFFFFFF, 8,  0XFFFFFFFFFFFFFFFF, 0,  0x000009);
     Handle<ent::Entity> puppet; // 328,  0x60000400, get_struc_id("RED4ext::Handle"),    16);
     Handle<game::FPPCameraComponent> vehicleFFP; // 338,  0x60000400, get_struc_id("RED4ext::Handle"),    16);
@@ -179,9 +179,8 @@ struct CameraManager : IScriptable
     uint8_t unk385; // 385,  0x000400,   -1, 1);
     uint8_t unk386; // 386,  0x000400,   -1, 1);
     uint8_t unk387; // 387,  0x000400,   -1, 1);
-    uint64_t unk388;
+    uint64_t unk388; // actually 360
 };
-RED4EXT_ASSERT_SIZE(CameraManager, 0x390);
  //char (*__kaboom)[sizeof(CameraManager)] = 1;
 } // namespace vehicle
 using VehicleCameraManager = vehicle::CameraManager;

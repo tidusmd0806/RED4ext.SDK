@@ -12,12 +12,12 @@
 namespace RED4ext
 {
 namespace quest { 
-struct VehicleSummoned_ConditionType : quest::IVehicleConditionType
+struct VehicleSummoned_ConditionType : IVehicleConditionType
 {
     static constexpr const char* NAME = "questVehicleSummoned_ConditionType";
     static constexpr const char* ALIAS = NAME;
 
-    vehicle::ESummonedVehicleType type; // 38
+    RED4ext::vehicle::ESummonedVehicleType type; // 38
     uint8_t unk3C[0x40 - 0x3C]; // 3C
 };
 RED4EXT_ASSERT_SIZE(VehicleSummoned_ConditionType, 0x40);

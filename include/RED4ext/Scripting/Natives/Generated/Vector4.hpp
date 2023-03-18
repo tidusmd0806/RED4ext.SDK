@@ -35,12 +35,12 @@ struct Vector4
 
     }
     
-    Vector4(__m128 m) : X(m.m128_f32[0]), Y(m.m128_f32[1]), Z(m.m128_f32[2]), W(m.m128_f32[3]) {
-    }
+    // Vector4(__m128 m) : X(m.m128_f32[0]), Y(m.m128_f32[1]), Z(m.m128_f32[2]), W(m.m128_f32[3]) {
+    // }
 
-    operator __m128() const {
-        return *(__m128*)(this);
-    }
+    // operator __m128() const {
+    //     return *(__m128*)(this);
+    // }
 
     operator Vector3() const {
         return Vector3(this->X, this->Y, this->Z);

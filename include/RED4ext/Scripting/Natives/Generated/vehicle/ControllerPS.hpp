@@ -15,17 +15,17 @@
 namespace RED4ext
 {
 namespace vehicle { 
-struct ControllerPS : game::ComponentPS
+struct ControllerPS : RED4ext::game::ComponentPS
 {
     static constexpr const char* NAME = "vehicleControllerPS";
     static constexpr const char* ALIAS = NAME;
 
 #pragma warning(suppress : 4324)
-    alignas(8) StaticArray<vehicle::VehicleSlotsState, 6> vehicleDoors; // 68
-    vehicle::EState state; // 1F0
+    alignas(8) StaticArray<RED4ext::vehicle::VehicleSlotsState, 6> vehicleDoors; // 68
+    RED4ext::vehicle::EState state; // 1F0
     bool isAlarmOn; // 1F4
     uint8_t unk1F5[0x1F8 - 0x1F5]; // 1F5
-    vehicle::ELightMode lightMode; // 1F8
+    RED4ext::vehicle::ELightMode lightMode; // 1F8
     uint8_t unk1FC[0x200 - 0x1FC]; // 1FC
 };
 RED4EXT_ASSERT_SIZE(ControllerPS, 0x200);

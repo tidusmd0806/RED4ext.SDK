@@ -10,7 +10,7 @@
 #include <RED4ext/Scripting/Natives/Generated/Matrix.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsInsert1.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsInsert2.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/BaseObject.hpp>
+// #include <RED4ext/Scripting/Natives/Generated/vehicle/BaseObject.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePID.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
 #include <RED4ext/Scripting/Natives/vehicleWaterParams.hpp>

@@ -11,7 +11,7 @@
 namespace RED4ext
 {
 namespace mp { 
-struct ClientGameSession : mp::GameSession
+struct ClientGameSession : RED4ext::mp::GameSession
 {
     static constexpr const char* NAME = "mpClientGameSession";
     static constexpr const char* ALIAS = NAME;
