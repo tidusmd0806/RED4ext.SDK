@@ -15,7 +15,7 @@ struct GameAudioSystem : game::IGameAudioSystem
 {
     static constexpr const char* NAME = "gameGameAudioSystem";
     static constexpr const char* ALIAS = "AudioSystem";
-    static constexpr const uintptr_t VFT_RVA = gameGameAudioSystem_VFT_RVA;
+    static constexpr const uintptr_t VFT = gameGameAudioSystem_VFT_Addr;
 
     // EnableAdaptiveTriggerEffects
     virtual void sub_1A0();

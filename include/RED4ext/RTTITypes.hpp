@@ -47,7 +47,7 @@ struct CBaseRTTIType
 {
     /// @pattern 45 78 70 65 63 74 65 64 20 70 72 6F 70 65 72 74 79 20 6E 61 6D 65 20 69 6E 20 70 61 74 68 00
     /// @offset -48
-    static constexpr const uintptr_t VFT_RVA = 0x30807E0;
+    static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;
     
     CBaseRTTIType();
     virtual ~CBaseRTTIType() = default; // 00
@@ -123,7 +123,7 @@ struct CClass : CBaseRTTIType
 {
     /// @pattern 45 64 69 74 41 6C 6C 43 6C 61 73 73 50 72 6F 70
     /// @offset -32
-    static constexpr const uintptr_t VFT_RVA = 0x30805D0;
+    static constexpr const uintptr_t VFT = CClass_VFT_Addr;
 
     struct Flags
     {

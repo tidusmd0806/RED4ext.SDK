@@ -18,26 +18,26 @@ struct PersistentState : IScriptable
 {
     static constexpr const char* NAME = "gamePersistentState";
     static constexpr const char* ALIAS = "PersistentState";
-    // static constexpr const uintptr_t VFT_RVA = 0x;
+    // static constexpr const uintptr_t VFT = 0x;
 
     // checks with persistencySystem to see if this class is destructible
     inline virtual bool CanBeDestructed() override
     {
-        RelocFunc<decltype(&PersistentState::CanBeDestructed)> call(VFT_RVA, 0xD0);
+        RelocFunc<decltype(&PersistentState::CanBeDestructed)> call(VFT, 0xD0);
         return call(this);
     };
 
     // increment some count, sets currentThreadId
     inline virtual void sub_F8() override
     {
-        RelocFunc<decltype(&PersistentState::sub_F8)> call(VFT_RVA, 0xF8);
+        RelocFunc<decltype(&PersistentState::sub_F8)> call(VFT, 0xF8);
         return call(this);
     };
 
     // decrement some count
     inline virtual void sub_100() override
     {
-        RelocFunc<decltype(&PersistentState::sub_100)> call(VFT_RVA, 0x100);
+        RelocFunc<decltype(&PersistentState::sub_100)> call(VFT, 0x100);
         return call(this);
     };
 

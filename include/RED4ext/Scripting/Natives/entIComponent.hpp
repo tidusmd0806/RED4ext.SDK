@@ -25,7 +25,7 @@ struct IComponent : IScriptable
     // 1.6  RVA: 0x33045E0
     // 1.61 RVA: 0x33097A0
     // 1.62 RVA: 0x330C8E0
-    static constexpr const uintptr_t VFT_RVA = 0x330C8E0;
+    static constexpr const uintptr_t VFT = 0x330C8E0;
 
     //virtual CClass* GetNativeType() override
     //{
@@ -34,13 +34,13 @@ struct IComponent : IScriptable
 
     inline virtual bool sub_58() override
     {
-        RelocFunc<decltype(&IComponent::sub_58)> call(VFT_RVA, 0x58);
+        RelocFunc<decltype(&IComponent::sub_58)> call(VFT, 0x58);
         return call(this);
     }
 
     inline virtual void* sub_C0(void* a1) override
     {
-        RelocFunc<decltype(&IComponent::sub_C0)> call(VFT_RVA, 0xC0);
+        RelocFunc<decltype(&IComponent::sub_C0)> call(VFT, 0xC0);
         return call(this, a1);
     }
 

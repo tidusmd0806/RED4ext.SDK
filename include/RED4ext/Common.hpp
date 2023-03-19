@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <RED4ext/Addresses-VFT.hpp>
+#include <RED4ext/Addresses-Found.hpp>
 
 #ifdef RED4EXT_STATIC_LIB
 #undef RED4EXT_HEADER_ONLY

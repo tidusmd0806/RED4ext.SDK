@@ -11,14 +11,14 @@ namespace action {
 
 struct Drive : ActionBase
 {
-    // static constexpr const uintptr_t VFT_RVA = 0x35FFC18;
+    // static constexpr const uintptr_t VFT = 0x35FFC18;
     
     // removes chase state, adds parked
     virtual void sub_28() override;
 
     // a setup maybe
     inline virtual bool sub_88(move::Component* moveComponent, vehicle::AutonomousData* autonomousData);/* {
-        RelocFunc<decltype(&Drive::sub_88)> call(VFT_RVA, 0x88);
+        RelocFunc<decltype(&Drive::sub_88)> call(VFT, 0x88);
         return call(this, moveComponent, autonomousData);
     }*/
     virtual void sub_90(uint64_t, uint64_t);

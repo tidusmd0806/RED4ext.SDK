@@ -51,7 +51,7 @@ struct MetadataManager {
     float __fastcall GetValueInMapForName(Map<CName, uint32_t> *map, CName parameterName);
 
     // after base\sound\event\eventsmetadata.json
-    static constexpr const uintptr_t VFT_RVA = 0x3121658;
+    static constexpr const uintptr_t VFT = 0x3121658;
 
     static constexpr const uintptr_t SINGLETON = 0x3F5F8F0;
 

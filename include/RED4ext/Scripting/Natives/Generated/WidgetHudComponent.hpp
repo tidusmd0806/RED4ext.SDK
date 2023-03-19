@@ -16,7 +16,7 @@ namespace cp { struct PlayerSystem; }
 
 struct WidgetHudComponent_Interface
 {
-    // static constexpr const uintptr_t VFT_RVA = 0x35559B8;
+    // static constexpr const uintptr_t VFT = 0x35559B8;
 
     virtual void WHCI_sub_00();
     virtual void WHCI_sub_08();
@@ -36,7 +36,7 @@ struct WidgetHudComponent : WidgetHudComponentInterface, WidgetHudComponent_Inte
 {
     static constexpr const char* NAME = "WidgetHudComponent";
     static constexpr const char* ALIAS = NAME;
-    static constexpr const uintptr_t VFT_RVA = WidgetHudComponent_VFT_RVA;
+    static constexpr const uintptr_t VFT = WidgetHudComponent_VFT_Addr;
 };
 RED4EXT_ASSERT_SIZE(WidgetHudComponent, 0x210);
 } // namespace RED4ext

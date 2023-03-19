@@ -13,7 +13,7 @@ struct IRuntimeSystem : IUpdatableSystem
 {
     static constexpr const char* NAME = "worldIRuntimeSystem";
     static constexpr const char* ALIAS = NAME;
-    // static constexpr const uintptr_t VFT_RVA = 0x31CA950;
+    // static constexpr const uintptr_t VFT = 0x31CA950;
 
     // 1.52 RVA: 0xB7C220 / 12042784
     /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 92 B7 EF FF 48 8D 05 1B E7 64 02 66 C7 43 40 00 00 48 89 03 48 8B

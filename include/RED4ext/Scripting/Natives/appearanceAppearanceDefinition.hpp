@@ -24,7 +24,7 @@ struct AppearanceDefinition : ISerializable
 {
     static constexpr const char* NAME = "appearanceAppearanceDefinition";
     static constexpr const char* ALIAS = NAME;
-    static constexpr const uintptr_t VFT_RVA = appearanceAppearanceDefinition_VFT_RVA;
+    static constexpr const uintptr_t VFT = appearanceAppearanceDefinition_VFT_Addr;
 
     // 1.52 RVA: 0xFDDF20 / 16637728
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B F9 E8 09 D3 1C FF 48 8D 05 FA 46 2B 02 33 F6

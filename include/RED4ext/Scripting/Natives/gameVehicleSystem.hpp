@@ -27,7 +27,7 @@ struct VehicleSystem : IVehicleSystem, VehicleInterface2, VehicleInterface3
 {
     static constexpr const char* NAME = "gameVehicleSystem";
     static constexpr const char* ALIAS = "VehicleSystem";
-    static constexpr const uintptr_t VFT_RVA = gameVehicleSystem_VFT_RVA;
+    static constexpr const uintptr_t VFT = gameVehicleSystem_VFT_Addr;
 
 // virtuals
 

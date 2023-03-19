@@ -17,7 +17,7 @@ struct RuntimeSystemPhysics : world::IRuntimeSystem
     static constexpr const char* NAME = "worldRuntimeSystemPhysics";
     static constexpr const char* ALIAS = NAME;
     
-    static constexpr const uintptr_t VFT_RVA = worldRuntimeSystemPhysics_VFT_RVA;
+    static constexpr const uintptr_t VFT = worldRuntimeSystemPhysics_VFT_Addr;
 
     // virtual (last)
     // 1.6 RVA: 0xB27000 / 11694080

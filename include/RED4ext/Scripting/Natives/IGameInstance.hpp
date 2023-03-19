@@ -14,7 +14,7 @@ namespace Memory {
 struct GameSystemData;
 struct IGameInstance // : IDynamicStorage
 {
-    // static constexpr const uintptr_t VFT_RVA = 0x35FAC80;
+    // static constexpr const uintptr_t VFT = 0x35FAC80;
 
     virtual ~IGameInstance();                                     // 00
     virtual IScriptable* GetInstance(const CClass* aType);  // 08

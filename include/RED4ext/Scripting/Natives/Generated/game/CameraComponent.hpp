@@ -22,7 +22,7 @@ struct CameraComponent : public ent::BaseCameraComponent, WorldPositionInterface
 {
     static constexpr const char* NAME = "gameCameraComponent";
     static constexpr const char* ALIAS = "CameraComponent";
-    static constexpr const uintptr_t VFT_RVA = gameCameraComponent_VFT_RVA;
+    static constexpr const uintptr_t VFT = gameCameraComponent_VFT_Addr;
 
     CName animParamFovOverrideWeight; // 1D8
     CName animParamFovOverrideValue; // 1E0

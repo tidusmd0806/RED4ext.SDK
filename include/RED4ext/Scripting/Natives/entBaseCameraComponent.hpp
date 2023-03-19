@@ -19,7 +19,7 @@ struct BaseCameraComponent
 {
     static constexpr const char* NAME = "entBaseCameraComponent";
     static constexpr const char* ALIAS = "entCameraComponent";
-    static constexpr const uintptr_t VFT_RVA = entBaseCameraComponent_VFT_RVA;
+    static constexpr const uintptr_t VFT = entBaseCameraComponent_VFT_Addr;
 
     virtual void sub_258();
     virtual void sub_260();

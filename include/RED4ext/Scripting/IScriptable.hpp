@@ -13,7 +13,7 @@ namespace RED4ext
 struct CBaseFunction;
 struct IScriptable : ISerializable
 {
-    static constexpr const uintptr_t VFT_RVA = IScriptable_VFT_RVA;
+    static constexpr const uintptr_t VFT = IScriptable_VFT_Addr;
 
     virtual CClass* GetNativeType() override;
     IScriptable();

@@ -763,7 +763,7 @@ struct BaseObject : game::Object
 {
     static constexpr const char* NAME = "vehicleBaseObject";
     static constexpr const char* ALIAS = "VehicleObject";
-    static constexpr const uintptr_t VFT_RVA = vehicleBaseObject_VFT_RVA;
+    static constexpr const uintptr_t VFT = vehicleBaseObject_VFT_Addr;
 
     // 1.6 RVAs
     // static constexpr const uintptr_t On_vehicleChangeMovableEvent_Addr = 29694240;

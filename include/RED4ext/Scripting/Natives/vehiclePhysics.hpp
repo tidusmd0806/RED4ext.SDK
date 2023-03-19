@@ -59,7 +59,7 @@ struct Physics
     // 1.62 RVA: 0x349FF08
     /// @pattern 56 65 68 69 63 6C 65 54 65 6C 65 70 6F 72 74 61 74 69 6F 6E 49 66 46 61 6C 6C 73 55 6E 64 65 72
     /// @offset -40
-    static constexpr const uintptr_t VFT_RVA = 0x349FF08;
+    static constexpr const uintptr_t VFT = vehiclePhysics_VFT_Addr;
 
     virtual ~Physics();
     virtual uint64_t SetVehicle(vehicle::BaseObject *);
@@ -294,7 +294,7 @@ struct WheeledPhysics : Physics
     // 1.62 RVA: 0x34A0718
     /// @pattern 45 6E 61 62 6C 65 53 6D 6F 6F 74 68 57 68 65 65 6C 43 6F 6E 74 61 63 74 73 00 00 00 00 00 00 00
     /// @offset -32
-    static constexpr const uintptr_t VFT_RVA = 0x34A0718;
+    static constexpr const uintptr_t VFT = vehicleWheeledPhysics_VFT_Addr;
 
     // 1.52 RVA: 0x1D0DB70 / 30464880
     /// @pattern 40 56 41 56 48 83 EC 38 48 89 5C 24 58 4C 8B F1 48 89 7C 24 68 4C 89 7C 24 30 8B F2 E8 1F C9 FD
@@ -543,7 +543,7 @@ struct CarPhysics : WheeledPhysics
     // 1.62 RVA: 0x34A0450
     /// @pattern 56 65 68 69 63 6C 65 50 61 73 73 65 6E 67 65 72 00 00 00 00 3B DF 7F 3F 00 00 C8 C1 00 00 00 00
     /// @offset -48
-    static constexpr const uintptr_t VFT_RVA = 0x34A0450;
+    static constexpr const uintptr_t VFT = vehicleCarPhysics_VFT_Addr;
 
 // overrides
 
@@ -665,7 +665,7 @@ struct BikePhysics : WheeledPhysics
     // 1.62 RVA: 0x34A0270
     /// @pattern 42 69 6B 65 48 61 63 6B 54 69 6C 74 43 61 6C 63 56 61 6C 75 65 00 00 00
     /// @offset -30
-    static constexpr const uintptr_t VFT_RVA = 0x34A0270;
+    static constexpr const uintptr_t VFT = vehicleBikePhysics_VFT_Addr;
 
     virtual ~BikePhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
@@ -712,7 +712,7 @@ struct BikePhysics : WheeledPhysics
 
 struct TankPhysics : Physics
 {
-    // static constexpr const uintptr_t VFT_RVA = 0x3432650;
+    // static constexpr const uintptr_t VFT = 0x3432650;
     
     virtual ~TankPhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;

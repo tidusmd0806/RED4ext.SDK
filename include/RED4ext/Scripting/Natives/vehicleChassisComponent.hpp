@@ -62,7 +62,7 @@ struct BaseSystemDesc
 {
     // after "physicsGeometryKey" vft
     // 1.6  RVA: 0x313B3D0
-    static constexpr const uintptr_t VFT_RVA = 0x313B3D0;
+    static constexpr const uintptr_t VFT = 0x313B3D0;
 
     // checks multiple things
     virtual bool IsEnabled();
@@ -94,7 +94,7 @@ struct PhysicalSystemDesc : BaseSystemDesc
 {
     // after BaseSystemDesc's
     // 1.6  RVA: 0x313B3F0
-    static constexpr const uintptr_t VFT_RVA = 0x313B3F0;
+    static constexpr const uintptr_t VFT = 0x313B3F0;
     uint64_t unk110;
     uint64_t unk118;
     WorldTransform unk120;
@@ -112,7 +112,7 @@ struct BaseSystemKey
     // just after "TimeDeltaOverride"
     // 1.6  RVA: 0x313A550
     // 1.62 RVA: 0x3142700
-    static constexpr const uintptr_t VFT_RVA = 0x3142700;
+    static constexpr const uintptr_t VFT = 0x3142700;
 
     virtual void sub_00();
     // iterates through physicsSystemResource->bodies
@@ -154,7 +154,7 @@ struct PhysicalSystemKey : BaseSystemKey
     // just after 3BC43730h & 3F266666h
     // 1.6  RVA: 0x313D790
     // 1.62 RVA: 0x314592C
-    static constexpr const uintptr_t VFT_RVA = 0x314592C;
+    static constexpr const uintptr_t VFT = 0x314592C;
 
     // PhysX D6Joints
     DynArray<void*> joints;

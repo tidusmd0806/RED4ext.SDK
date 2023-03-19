@@ -15,7 +15,7 @@ struct TargetedCameraInterface
 {
     static constexpr const char* NAME = "entCameraInterface";
     static constexpr const char* ALIAS = NAME;
-    // static constexpr const uintptr_t VFT_RVA = 0x3297558;
+    // static constexpr const uintptr_t VFT = 0x3297558;
 
     virtual void sub_00() = 0;
     virtual void sub_08() = 0;

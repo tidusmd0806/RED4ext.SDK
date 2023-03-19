@@ -36,7 +36,7 @@ struct WidgetHudComponentInterface : WidgetBaseComponent
 
     static constexpr const char* NAME = "WidgetHudComponentInterface";
     static constexpr const char* ALIAS = NAME;
-    static constexpr const uintptr_t VFT_RVA = WidgetHudComponentInterface_VFT_RVA;
+    static constexpr const uintptr_t VFT = WidgetHudComponentInterface_VFT_Addr;
 
     // something with world::ui::IWidgetGameControllerType
     virtual void * sub_258(void *) override;

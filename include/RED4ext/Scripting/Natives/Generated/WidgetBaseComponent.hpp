@@ -15,7 +15,7 @@ namespace ent { struct Entity; }
 
 struct WidgetBaseComponent_Helper
 {
-    // static constexpr const uintptr_t VFT_RVA = 0x33029D8;
+    // static constexpr const uintptr_t VFT = 0x33029D8;
 
     virtual ~WidgetBaseComponent_Helper() = default;
     virtual void WBCI_sub_08();
@@ -36,7 +36,7 @@ struct WidgetBaseComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "WidgetBaseComponent";
     static constexpr const char* ALIAS = NAME;
-    //static constexpr const uintptr_t VFT_RVA = WidgetBaseComponent_VFT_RVA;
+    //static constexpr const uintptr_t VFT = WidgetBaseComponent_VFT_Addr;
 
     virtual void * sub_258(void *);
     virtual bool sub_260();

@@ -22,7 +22,7 @@ namespace ent { struct SlotComponent; }
 namespace game {
 
 struct IComponentHelper {
-    // static constexpr const uintptr_t VFT_RVA = 0x30DF830;
+    // static constexpr const uintptr_t VFT = 0x30DF830;
 
     virtual void * Destruct(uint8_t);
     virtual bool HasComponent(uint64_t name);
@@ -38,7 +38,7 @@ struct IComponentHelper {
 
 struct ComponentHelper : IComponentHelper
 {
-    // static constexpr const uintptr_t VFT_RVA = 0x32CED50;
+    // static constexpr const uintptr_t VFT = 0x32CED50;
 
     virtual void * Destruct(uint8_t) override;
     virtual bool HasComponent(uint64_t name) override;
@@ -50,7 +50,7 @@ struct ComponentHelper : IComponentHelper
 
 struct EntityComponentHelper : IComponentHelper
 {
-    // static constexpr const uintptr_t VFT_RVA = 0x329FDF8;
+    // static constexpr const uintptr_t VFT = 0x329FDF8;
 
     virtual void * Destruct(uint8_t) override;
     virtual bool HasComponent(uint64_t name) override;
@@ -64,7 +64,7 @@ struct Object : ent::GameEntity, PSInterface
 {
     static constexpr const char* NAME = "gameObject";
     static constexpr const char* ALIAS = "GameObject";
-    static constexpr const uintptr_t VFT_RVA = gameObject_VFT_RVA;
+    static constexpr const uintptr_t VFT = gameObject_VFT_Addr;
     
 // overridden virtuals
 

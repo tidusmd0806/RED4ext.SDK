@@ -14,7 +14,7 @@ struct CarBaseObject : vehicle::WheeledBaseObject
 {
     static constexpr const char* NAME = "vehicleCarBaseObject";
     static constexpr const char* ALIAS = "CarObject";
-    static constexpr const uintptr_t VFT_RVA = vehicleCarBaseObject_VFT_RVA;
+    static constexpr const uintptr_t VFT = vehicleCarBaseObject_VFT_Addr;
 
     PID pitchPID;
     PID rollPID;
