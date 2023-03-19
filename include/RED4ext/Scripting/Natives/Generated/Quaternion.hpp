@@ -53,10 +53,10 @@ struct Quaternion
     }
 
     Quaternion(__m128 m) {
-        this->i = m[0];
-        this->j = m[1];
-        this->k = m[2];
-        this->r = m[3];
+        this->i = m.m128_f32[0];
+        this->j = m.m128_f32[1];
+        this->k = m.m128_f32[2];
+        this->r = m.m128_f32[3];
     }
 
     Quaternion(Vector3 complex, float real) : Quaternion(complex.X, complex.Y, complex.Z, real) {

@@ -66,17 +66,26 @@ struct CBaseGameApplication
     virtual void sub_68() = 0;       // 68
     virtual void sub_70() = 0;       // 70
 
-    CString unk8;    // 08
-    CString unk28;   // 28
-    CString unk48;   // 48
-    CString unk68;   // 68
-    CString unk88;   // 88
-    CString unkA8;   // A8
-    CString unkC8;   // C8
+    // 08 - default
+    CString unk8;
+    // 28 - Default
+    CString unk28;
+    // 48
+    CString unk48;
+    // 68 - /engine/ path
+    CString unk68;
+    // 88 - /r6/ path
+    CString unk88;
+    // A8 - /engine/editor/ path
+    CString unkA8;
+    // C8 - /r6/cache/ path
+    CString unkC8;
+    // E8 - /r6/depot/mapping.xml path
     CString unkE8;   // E8
     uint8_t unk108;  // 108
     uint64_t unk110; // 110
-    uint64_t unk118; // 118
+    // 118 - resourceGameDepot
+    uint64_t unk118;
     uint64_t unk120; // 120
     uint64_t unk128; // 128
 };

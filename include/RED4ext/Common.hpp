@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cstddef>
-#include <RED4ext/Addresses_VFT.hpp>
+#include <RED4ext/Addresses-VFT.hpp>
 
 #ifdef RED4EXT_STATIC_LIB
 #undef RED4EXT_HEADER_ONLY

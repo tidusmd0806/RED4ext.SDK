@@ -19,6 +19,10 @@ struct alignas(0x4) Vector3
     float Y; // 04
     float Z; // 08
 
+    Vector3() : Vector3(0.0, 0.0, 0.0) {
+
+    }
+
     Vector3(float x, float y, float z) : X(x), Y(y), Z(z) {
 
     }
