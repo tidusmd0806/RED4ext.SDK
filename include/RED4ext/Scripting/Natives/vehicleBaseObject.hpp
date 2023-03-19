@@ -423,62 +423,50 @@ struct Unk570 {
         uint32_t unk48;
         uint32_t unk4C;
         float unk50;
-        float unk54;
-        float unk58;
-        float unk5C;
-        float unk60;
-        float unk64;
-        float unk68;
-        float unk6C;
-        float unk70;
-        float unk74;
-        float unk78;
-        bool unk7C;
-        bool unk7D;
+        WorldPosition unk54;
+        Vector3 unk60;
+        float wheelAngularSpeed;
+        float visualDisplacementClamped;
+        float wheelLatSlip;
+        float wheelLongSlip;
+        bool isUnderwater;
+        bool condition;
         uint8_t unk7E[2];
     };
 
-    struct UnkA8 {
-        float unk00;
-        float impactThreshold;
-        float scratch_threshold;
-        float unk0C;
-        float unk10;
-        float unk14;
-        float unk18;
-        float unk1C;
-        float unk20;
-        float unk24;
-        float unk28;
-        float unk2C;
-        float unk30;
-        float unk34;
-        CName veh_impact_force_name;
-        float unk40;
-        float unk44;
-        CName unk48;
-        CName unk50;
-        CName unk58;
-        CName veh_speed_name;
-        // CName veh_angular_speed_name;
-        CName veh_wheel_angular_speed_name;
-        CName unkParameterName70;
-        float unk78;
-        float unk7C;
-        float unk80;
-        float unk84;
-        float unk88;
-        float unk8C;
-        float unk90;
-        float unk94;
-        float unk98;
-        float unk9C;
-        float unkA0;
-        float unkA4;
-        float unkA8[2];
-        float unkB0;
-        float unkB4;
-        float unkB8[42];
+    struct FxSettings {
+        float decalNormalOffset = 0.05;
+        float impactNormalForceThreshold = 1.0;
+        float impactTangentialForceThreshold = 1.0;
+        float wheelAngularSpeedThreshold = 0.03;
+        float wheelLongSlipThreshold = 2.0;
+        float wheelLatSlipThreshold = 2.5;
+        float scratchPositionTolerance = 0.1;
+        float minTimeBetweenImpulses = 0.1;
+        float minDistanceBetweenImpulses = 0.2;
+        float impulseRadius_Min = 0.2;
+        float impulseRadius_Max = 0.6;
+        float impulseStrength_Min = 0.0007;
+        float impulseStrength_Max = 0.001;
+        float rainMoistureThreshold = 0.2;
+        CName paramImpactForce = "veh_impact_force";
+        CName paramScratchForce = "veh_scratch_force";
+        CName paramLongSlip = "veh_long_slip";
+        CName paramLatSlip = "veh_lat_slip";
+        CName paramTotalSlip = "veh_total_slip";
+        CName paramVehicleSpeed = "veh_speed";
+        CName paramWheelAngularSpeed = "veh_wheel_angular_speed";
+        CName paramEngineRPM = "veh_engine_rpm";
+        float paramImpactForce_Max = 20.0;
+        float paramScratchForce_Max = 20.0;
+        float paramLongSlip_Max = 15.0;
+        float paramLatSlip_Max = 6.0;
+        float paramVehicleSpeed_Min = 0.0;
+        float paramVehicleSpeed_Max = 120.0;
+        float paramWheelAngularSpeed_Min = 0.0;
+        float paramWheelAngularSpeed_Max = 90.0;
+        float paramEngineRPM_Min = 0.0;
+        float paramEngineRPM_Max = 4800.0;
     };
 
     // struct FxLookup {
@@ -537,7 +525,7 @@ struct Unk570 {
 
     // 1.6  RVA: 0x1D2A340 / 30581568
     /// @pattern 48 8B C4 89 50 10 55 48 8D A8 78 FE FF FF 48 81 EC 80 02 00 00 41 80 78 7C 00 48 89 58 20 48 89
-    void __fastcall WheelEffectUpdate(unsigned int wheelIndex, Unk40 *unk40Thing, float deltaTime);
+    void __fastcall WheelEffectUpdate(unsigned int wheelIndex, Unk40 *unk40, float deltaTime);
 
     // 1.6  RVA: 0x1D241A0 / 30556576
     /// @pattern 48 89 5C 24 08 48 89 7C 24 10 4C 8D 89 D0 00 00 00 4C 8B C2 41 8B 59 08 48 8B F9 85 DB 0F 84 BC
@@ -580,7 +568,7 @@ struct Unk570 {
     Handle<world::EffectBlackboard> veh_engine_throttle_input;
     Handle<world::EffectBlackboard> veh_motion_blur_scale;
     world::RuntimeSystemEffects* runtimeSystemEffects;
-    UnkA8* unkA8;
+    FxSettings* fxSettings;
     DynArray<Vector4> unkB0;
     DynArray<Vector3> unkC0;
     // unkD0, collision effects

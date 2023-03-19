@@ -428,8 +428,8 @@ struct WheeledPhysics : Physics
     virtual bool sub_148(uint64_t);
     // returns 0
     virtual bool sub_150(uint64_t);
-    virtual bool sub_158(uint64_t, uint64_t);
-    virtual uint32_t GetWheelUnk90(uint64_t, uint64_t);
+    virtual float GetWheelLatSlip(float multiplier, uint32_t wheelIndex);
+    virtual float GetWheelLongSlip(float multiplier, uint32_t wheelIndex);
     // returns 0 here, is index 1 or 2 for car, 0 for bike - isRIght?
     virtual bool isRightWheel(uint64_t wheel_index);
     // returns 0 here, is index 2 or 3 for car, is index 1 - isBack?
@@ -593,8 +593,8 @@ struct CarPhysics : WheeledPhysics
     virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record>*) override;
     virtual bool sub_148(uint64_t) override;
     virtual bool sub_150(uint64_t) override;
-    virtual bool sub_158(uint64_t, uint64_t) override;
-    // virtual uint32_t GetWheelUnk90(uint64_t, uint64_t) override;
+    virtual float GetWheelLatSlip(float multiplier, uint32_t wheelIndex) override;
+    // virtual float GetWheelLongSlip(float multiplier, uint32_t wheelIndex) override;
     // is rear wheel maybe
     virtual bool isRightWheel(uint64_t) override;
     // also rear wheel maybe
@@ -674,7 +674,7 @@ struct BikePhysics : WheeledPhysics
     virtual uint64_t UpdateWheelAnimations() override;
     virtual uint64_t UpdateBlackboard() override;
     virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record>*) override;
-    virtual bool sub_158(uint64_t, uint64_t) override;
+    virtual float GetWheelLatSlip(float multiplier, uint32_t wheelIndex) override;
     virtual bool isBackWheel(uint64_t) override;
     virtual void UpdateTilt(float deltaTime) override;
     virtual void UpdateTurn() override;

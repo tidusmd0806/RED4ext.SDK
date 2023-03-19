@@ -40,8 +40,10 @@ struct VehiclePhysicsInsert1
     float unk68;
     float unk6C;
     RED4ext::Quaternion unk70;
-    RED4ext::Vector4 unk80;
-    RED4ext::Vector4 unk90;
+    RED4ext::Vector3 unk80;
+    float latSlip;
+    float longSlip;
+    RED4ext::Vector3 unk94;
     RED4ext::Vector4 unkA0;
     float unkB0;
     float unkB4;

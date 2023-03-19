@@ -61,6 +61,8 @@ struct ISerializable
     virtual void* sub_C8(void* a1);                                                     // C8
     virtual bool CanBeDestructed();                                                     // D0
 
+    bool IsOfClass(const CClass* cls);
+
     WeakHandle<ISerializable> ref;   // 00 - Initialized in Handle ctor
     WeakHandle<ISerializable> unk18; // 18
     uint64_t unk28;                  // 28 - Incremental ID set in ISerializable ctor, can be zero

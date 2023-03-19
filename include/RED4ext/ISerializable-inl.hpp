@@ -146,3 +146,12 @@ RED4EXT_INLINE bool RED4ext::ISerializable::CanBeDestructed()
 {
     return true;
 }
+
+RED4EXT_INLINE bool RED4ext::ISerializable::IsOfClass(const RED4ext::CClass * cls) {
+    auto type = this->GetNativeType();
+    bool isOfClass = false;
+    do {
+        isOfClass |= type == cls;
+    } while (type = type->parent);
+    return isOfClass;
+}
