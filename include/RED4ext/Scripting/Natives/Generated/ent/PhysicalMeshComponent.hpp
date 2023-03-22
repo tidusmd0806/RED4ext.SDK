@@ -11,18 +11,20 @@
 #include <RED4ext/Scripting/Natives/Generated/ent/MeshComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/FilterDataSource.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
+#include <RED4ext/Scripting/Natives/physicsCollisionInterface.hpp>
 
 namespace RED4ext
 {
 namespace physics { struct FilterData; }
 
 namespace ent { 
-struct PhysicalMeshComponent : ent::MeshComponent
+    // CollisionInterface
+struct PhysicalMeshComponent : ent::MeshComponent, physics::CollisionInterface
 {
     static constexpr const char* NAME = "entPhysicalMeshComponent";
     static constexpr const char* ALIAS = "PhysicalMeshComponent";
 
-    uint8_t unk1E0[0x210 - 0x1E0]; // 1E0
+    uint8_t unk1E8[0x210 - 0x1E8]; // 1E8
     Handle<physics::FilterData> filterData; // 210
     uint8_t unk220[0x228 - 0x220]; // 220
     CName visibilityAnimationParam; // 228

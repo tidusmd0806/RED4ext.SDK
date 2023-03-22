@@ -89,7 +89,8 @@ struct IComponent : IScriptable
      virtual void sub_1D0();
      virtual void sub_1D8();
      virtual bool sub_1E0();
-     virtual void sub_1E8();
+     // maybe enable/disable?
+     virtual void sub_1E8(bool a1);
      // called on gather event listeners, after registered
      virtual uint64_t sub_1F0(Handle<CallbackManager>*);
      virtual void sub_1F8();

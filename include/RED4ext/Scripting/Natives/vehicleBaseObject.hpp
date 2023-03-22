@@ -403,11 +403,13 @@ struct MaterialFx {
 struct Unk570 {
 
     struct Unk30 {
+        // some transform storage
         Handle<void*> unk00;
         Handle<void*> unk10;
         Handle<void*> unk20;
         Handle<void*> unk30;
-        HashMap<void*, void*> unk40;
+        // some material lookup for smear distances
+        HashMap<CName, float> unk40;
         Handle<world::EffectBlackboard> effectBlackboard;
     };
 
@@ -418,12 +420,10 @@ struct Unk570 {
         CName physicalMaterial;
         uint8_t unk38;
         uint32_t unk3C;
-        uint32_t unk40;
-        uint32_t unk44;
-        uint32_t unk48;
-        uint32_t unk4C;
+        Vector3 unk40;
+        float unk4C;
         float unk50;
-        WorldPosition unk54;
+        WorldPosition decalNormal;
         Vector3 unk60;
         float wheelAngularSpeed;
         float visualDisplacementClamped;
@@ -434,6 +434,9 @@ struct Unk570 {
         uint8_t unk7E[2];
     };
 
+    RED4EXT_ASSERT_SIZE(Unk40, 0x80);
+
+    // default values taken from TweakDB
     struct FxSettings {
         float decalNormalOffset = 0.05;
         float impactNormalForceThreshold = 1.0;
@@ -461,6 +464,12 @@ struct Unk570 {
         float paramScratchForce_Max = 20.0;
         float paramLongSlip_Max = 15.0;
         float paramLatSlip_Max = 6.0;
+        float paramWheelLongSlip_Min;
+        float paramWheelLongSlip_Max;
+        float paramWheelLatSlip_Min;
+        float paramWheelLatSlip_Max;
+        float paramTotalSlip_Min;
+        float paramTotalSlip_Max;
         float paramVehicleSpeed_Min = 0.0;
         float paramVehicleSpeed_Max = 120.0;
         float paramWheelAngularSpeed_Min = 0.0;
@@ -823,7 +832,7 @@ struct BaseObject : game::Object
     // Somethign with unk388 & vehicle controller, sub_1F8
     virtual uint64_t __fastcall OnTakeControl(game::ComponentHelper*) override; 
 
-    // Also sends out some red event
+    // Also sends out some red event - maybe teleport?
     virtual uint64_t __fastcall sub_218(WorldTransform*) override;
 
 // new member functions

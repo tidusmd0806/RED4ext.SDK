@@ -11,6 +11,7 @@
 namespace RED4ext
 {
 namespace world { 
+// CollisionInterface
 struct DynamicMeshNodeInstance : world::MeshNodeInstance
 {
     static constexpr const char* NAME = "worldDynamicMeshNodeInstance";

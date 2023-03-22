@@ -17,6 +17,7 @@ too many matches for gameVehicleSystem_Interpolation (2)
 too many matches for gameVehicleSystem_PreUpdateAndPreMove (7)
 too many matches for gameVehicleSystem_PostMove (2)
 no matches for physicsGeometryCache_FreeKey
+no matches for physicsGeoCacheID_Something2
 no matches for vehicleChassisComponent_Unknown1
 no matches for vehicleCameraManager_ShouldUseSomeListener
 no matches for vehicleCameraManager_Update
@@ -192,6 +193,7 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #define entEntity_SomethingListeners_Addr 0x104DDE0
 #define entIComponent_SetEntity_Addr 0x10542F0
 #define entMeshComponent_Load_Addr 0x10A88D0
+#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x115DC00
 #define entSlotComponent_GetSlotGlobalTransform_Addr 0x115D2A0
 #define entSlotComponent_GetSlotIndex_Addr 0x115D150
 #define entSlotComponent_GetSlotLocalTransform_Addr 0x115D8A0
@@ -208,6 +210,9 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #define gameVehicleSystem_BeginUpdate_Addr 0x1CE37A0
 #define gameVehicleSystem_UpdateVehicleArrays_Addr 0x1CE6FD0
 #define physicsColliderSphere_createHandleWithRadius_Addr 0x42DA20
+#define physicsGeoCacheID_GetSystemKey_Addr 0x46BA70
+#define physicsGeoCacheID_Unk_Addr 0x449500
+#define physicsGeoKeyStorage_TestUnk2E2068_Addr 0x46B110
 #define physicsGeometryCache_FreeAlwaysLoaded_Addr 0x442CC0
 #define physicsGeometryCache_FreeGeometryKey_Addr 0x442FB0
 #define physicsGeometryCache_FreeSector_Addr 0x443160
@@ -253,7 +258,9 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #define vehicleCameraManager_IsTPP_Addr 0x1C976E0
 #define vehicleCarPhysics_AnimationUpdate_Addr 0x1D394B0
 #define vehicleCarPhysics_VFT_Addr 0x34A0450
+#define vehicleChassisComponent_BigUpdate_Addr 0x1C9EF60
 #define vehicleChassisComponent_SomethingIfEnabled_Addr 0x1C9EBE0
+#define vehicleChassisComponent_UpdatePhysicsState_Addr 0x1C9E890
 #define vehiclePID_GetCorrection_Addr 0x1D36140
 #define vehiclePID_Initialize_Addr 0x1D36150
 #define vehiclePID_Process_Addr 0x1D36170

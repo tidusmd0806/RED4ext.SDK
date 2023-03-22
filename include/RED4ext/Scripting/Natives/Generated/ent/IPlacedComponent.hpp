@@ -25,7 +25,8 @@ struct IPlacedComponent : IComponent
 
     virtual void sub_238();
     virtual void sub_240();
-    virtual void sub_248();
+    // get bounding box maybe?
+    virtual void sub_248(Box* boundingBox);
     virtual void GetFlags();
 
     Handle<ITransformBinding> parentTransform; // 90

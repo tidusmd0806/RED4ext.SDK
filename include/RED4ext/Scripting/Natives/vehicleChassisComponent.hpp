@@ -5,9 +5,13 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/NativeTypes.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
+#include <RED4ext/Scripting/Natives/physicsGeoCacheStorage.hpp>
+#include <RED4ext/Scripting/Natives/physicsCollisionInterface.hpp>
 // #include <RED4ext/Scripting/Natives/gameVehicleSystem.hpp>
+#include <RED4ext/Addresses-Found.hpp>
 
 namespace RED4ext
 {
@@ -15,12 +19,23 @@ namespace physics { struct SystemResource; }
 namespace game { struct VehicleSystem; }
 
 namespace vehicle { 
-struct ChassisComponent : ent::IPlacedComponent
+
+struct ChassisComponent : ent::IPlacedComponent, physics::CollisionInterface
 {
     static constexpr const char* NAME = "vehicleChassisComponent";
     static constexpr const char* ALIAS = NAME;
 
+    // creates collider & geoCacheIDs
     // virtual sub_178(uint64_t);
+
+    // references geoCacheIDs and unk180
+    // virtual sub_180();
+    
+    // turns on/off collision based on a1 
+    virtual void sub_1E8(bool a1);
+
+    // something with playerOnly geoCacheID
+    virtual void CollisionInterface_08(WorldTransform*, bool);
 
     // 1.52 RVA: 0x1C6FCA0 / 29818016
     /// @pattern 4C 8B DC 53 48 83 EC 70 8B 81 60 01 00 00 48 8B D9 49 8D 4B 08 41 89 43 08 E8 82 60 7D FE 84 C0
@@ -30,12 +45,22 @@ struct ChassisComponent : ent::IPlacedComponent
     /// @pattern 40 53 48 83 EC 20 80 B9 8B 00 00 00 00 48 8B D9 74 2F 8B 81 60 01 00 00 48 8D 4C 24 30 89 44 24
     void __fastcall SomethingIfEnabled();
 
-    uint64_t unk120;
+    // 1.6 RVA: 0x1C9E610 / 30008848
+    /// @pattern 40 55 41 55 48 8D AC 24 78 F9 FF FF 48 81 EC 88 07 00 00 8B 81 60 01 00 00 4C 8B E9 48 8D 8D B0
+    char __fastcall BigUpdate();
+
+    // 1.6 RVA: 0x1C9DF40 / 30007104
+    /// @pattern 48 89 5C 24 18 55 56 57 48 83 EC 60 48 8B 79 50 41 0F B6 E8 8B F2 48 8B D9 48 85 FF 0F 84 9F 01
+    inline void __fastcall UpdatePhysicsState(uint32_t a2, bool unset) {
+      RelocFunc<decltype(&ChassisComponent::UpdatePhysicsState)> call(vehicleChassisComponent_UpdatePhysicsState_Addr);
+      return call(this, a2, unset);
+    } 
+
     Ref<physics::SystemResource> collisionResource; // 128
     Ref<physics::SystemResource> optionalPlayerOnlyCollisionResource; // 140
     uint64_t unk158;
-    uint32_t geoCacheRelated;
-    uint32_t geoCacheRelated_PlayerOnly;
+    physics::GeoCacheID geoCacheID;
+    physics::GeoCacheID geoCacheID_PlayerOnly;
     uint64_t unk168[3];
     uint64_t unk180;
     game::VehicleSystem* vehicleSystem;
@@ -127,7 +152,8 @@ struct BaseSystemKey
     virtual void sub_40();
     virtual void sub_48() = 0;
     virtual void sub_50();
-    virtual void sub_58();
+    // called a lot
+    virtual bool sub_58(uint32_t index, unsigned int a3, unsigned int a4, Transform *transform, unsigned int a6, char a7);
     virtual void sub_60();
     virtual void sub_68();
     virtual void sub_70();
@@ -137,10 +163,7 @@ struct BaseSystemKey
     // num of handles used
     uint32_t numHandles;
     uint32_t unk2C;
-    uint8_t geoCacheThing;
-    uint8_t unk31;
-    uint8_t unk32;
-    uint8_t unk33;
+    physics::GeoCacheID geoCacheID;
     // some index in a global array/storage of refCounts (inc on creation, dec on deletion)
     SystemType type;
     uint8_t unk35;

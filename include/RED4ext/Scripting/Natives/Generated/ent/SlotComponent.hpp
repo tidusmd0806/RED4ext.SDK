@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/DynArray.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/FallbackSlot.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/Slot.hpp>
@@ -35,6 +36,11 @@ struct SlotComponent : ent::IPlacedComponent
     // 1.6 RVA: 0x115CAC0 / 18205376
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 20 49 8B D9 49 8B F8 48 8B F1 85 D2 78 72 3B 91 2C 01
     bool __fastcall GetSlotLocalTransform(int slotIndex, WorldTransform *offset, WorldTransform *transform);
+
+    // 1.6  RVA: 0x115CE20 / 18206240
+    // 1.62 RVA: 0x115DC00 / 18209792
+    /// @pattern 48 89 5C 24 08 57 48 83 EC 60 0F 28 05 ? ? ? 01 33 C0 49 8B F8 48 89 44 24 20 4C 8D 44 24 20
+    bool __fastcall GetLocalSlotTransformFromIndex(int slotIndex, Transform *transform);
 
     DynArray<ent::Slot> slots; // 120
     DynArray<ent::FallbackSlot> fallbackSlots; // 130

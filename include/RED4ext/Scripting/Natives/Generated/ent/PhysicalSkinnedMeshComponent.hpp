@@ -21,7 +21,9 @@ struct PhysicalSkinnedMeshComponent : ent::SkinnedMeshComponent
     static constexpr const char* NAME = "entPhysicalSkinnedMeshComponent";
     static constexpr const char* ALIAS = "PhysicalSkinnedMeshComponent";
 
-    uint8_t unk270[0x2A8 - 0x270]; // 270
+    void * collisionVft;
+    DynArray<void*> unk278;
+    uint8_t unk270[0x2A8 - 0x288]; // 270
     Handle<physics::FilterData> filterData; // 2A8
     uint8_t unk2B8[0x2CC - 0x2B8]; // 2B8
     physics::SimulationType simulationType; // 2CC

@@ -144,9 +144,9 @@ RED4EXT_INLINE bool IComponent::sub_1E0() {
     return call(this);
 }
 
-RED4EXT_INLINE void IComponent::sub_1E8() {
+RED4EXT_INLINE void IComponent::sub_1E8(bool a1) {
     RelocFunc<decltype(&IComponent::sub_1E8)> call(VFT, 0x1E8);
-    return call(this);
+    return call(this, a1);
 }
 
 RED4EXT_INLINE uint64_t IComponent::sub_1F0(Handle<CallbackManager>* a1) {
