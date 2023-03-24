@@ -23,6 +23,12 @@ namespace RED4ext
 namespace anim { struct IRigIkSetup; }
 
 namespace anim { 
+
+struct Lookup {
+    CName name;
+    uint32_t index;
+};
+
 struct Rig : CResource
 {
     static constexpr const char* NAME = "animRig";
@@ -35,7 +41,10 @@ struct Rig : CResource
     DynArray<int16_t> distanceCategoryToLodMap; // 80
     int32_t turnOffLOD; // 90
     bool turningOffUpdateAndSample; // 94
-    uint8_t unk95[0xB8 - 0x95]; // 95
+    uint8_t unk95[3];
+    // boneName lookup for referencePoseMS
+    DynArray<Lookup> unk98;
+    uint8_t unkA8[16];
     DynArray<QsTransform> aPoseLS; // B8
     DynArray<QsTransform> aPoseMS; // C8
     uint8_t unkD8[0xE8 - 0xD8]; // D8

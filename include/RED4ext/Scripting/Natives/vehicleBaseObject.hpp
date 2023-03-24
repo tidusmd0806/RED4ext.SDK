@@ -1066,6 +1066,10 @@ struct BaseObject : game::Object
         return call(this, action_p, type);
     }
 
+    // 1.6  RVA: 0x164D380 / 23384960
+    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 40 4C 8B F9 49
+//    static Handle<RED4ext::ent::AnimatedComponent> *__fastcall GetAnimatedComponentWithName(Handle<RED4ext::ent::AnimatedComponent> *handle, RED4ext::vehicle::BaseObject *vehicle, RED4ext::CName name);
+
     world::RuntimeSystemPhysics* physicsSystem;
     // resets when isOnGround, counts up otherwise
     float airTimer;

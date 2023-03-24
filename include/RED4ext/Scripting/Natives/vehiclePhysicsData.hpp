@@ -79,7 +79,7 @@ struct PhysicsData
     BaseObject* vehicle;
     uint64_t unk188;
     Box bounds;
-    // gravity enabled
+    // gravity enabled, related to PxActorFlag
     uint8_t unk1B0;
     uint8_t unk1B1;
     uint8_t unk1B2;

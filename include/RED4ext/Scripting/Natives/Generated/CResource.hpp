@@ -15,7 +15,24 @@ struct CResource : ISerializable
 {
     static constexpr const char* NAME = "CResource";
     static constexpr const char* ALIAS = NAME;
-    // static constexpr const uintptr_t VFT = 0x307E448;
+
+    /// @pattern 43 52 65 73 6F 75 72 63 65 00 00 00 00 00 00 00
+    /// @offset -256
+    static constexpr const uintptr_t VFT = 0x307E448;
+
+    virtual void sub_D8();
+    virtual void sub_E0();
+    virtual void sub_E8();
+    virtual void sub_F0();
+    virtual void sub_F8();
+    virtual void sub_100();
+    virtual void sub_108();
+    virtual void sub_110();
+    virtual void sub_118();
+    virtual bool * sub_120();
+    virtual void sub_128();
+    virtual void sub_130();
+    virtual void sub_138();
 
     uint8_t unk30[0x38 - 0x30]; // 30
     ECookingPlatform cookingPlatform; // 38

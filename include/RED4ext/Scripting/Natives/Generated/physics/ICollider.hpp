@@ -26,7 +26,9 @@ struct ICollider : ISerializable
     virtual void sub_D8() = 0;
     virtual void sub_E0() = 0;
     virtual void * CreatePxShape(Vector3 * descUnk140, void * descUnkB0, bool one, void * descUnkC0) = 0;
-    virtual void sub_F0() = 0;
+    // called in a loop in a big chassis update
+    // get bounds?
+    virtual Box * sub_F0(Box * bounds) = 0;
     virtual void sub_F8() = 0;
     virtual void sub_100() = 0;
     virtual void sub_108();

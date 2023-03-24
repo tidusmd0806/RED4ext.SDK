@@ -28,9 +28,14 @@ struct AnimatedComponent : ent::ISkinableComponent
     static constexpr const char* NAME = "entAnimatedComponent";
     static constexpr const char* ALIAS = "AnimatedComponent";
 
+    // 1.6  RVA: 0xFDBD50 / 16629072
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 48 8B F9 49 8B F0 48 8B 89 40 01 00 00 48 8B DA 48
+    bool __fastcall GetReferencePoseMSForName(CName a2, Transform *a3);
+
     CName audioAltName; // 130
     Ref<anim::Rig> rig; // 138
     Ref<anim::AnimGraph> graph; // 150
+    // some system - animation?
     uint8_t unk168[0x180 - 0x168]; // 168
     red::TagList animTags; // 180
     anim::AnimSetup animations; // 190

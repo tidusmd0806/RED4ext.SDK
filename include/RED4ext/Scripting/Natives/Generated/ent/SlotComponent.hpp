@@ -47,7 +47,7 @@ struct SlotComponent : ent::IPlacedComponent
     // 0x28 big
     DynArray<uintptr_t> unk140;
     HashMap<CName, int32_t> slotIndexLookup;
-    uint64_t unk180;
+    uint64_t animatedComponent;
     uint64_t unk188;
     uintptr_t unk190;
     uint8_t unk198;

@@ -65,6 +65,7 @@ struct Physics
     virtual uint64_t SetVehicle(vehicle::BaseObject *);
     virtual uint64_t sub_10();
     virtual uint64_t sub_18();
+    // sets mass & inertia tensor
     virtual uint64_t sub_20();
     virtual uint64_t UpdateTransform();
     virtual void sub_30(uint32_t *, float*);
@@ -119,6 +120,7 @@ struct Physics
     virtual uint64_t UpdateBlackboard();
     virtual void sub_130();
     virtual uint64_t sub_138();
+    // populates some variables along with most of insert1
     virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record> *);
 
     // 1.52 RVA: 0x1CEB5B0 / 30324144
@@ -399,6 +401,7 @@ struct WheeledPhysics : Physics
     // virtual uint64_t sub_A0(uint64_t) override;
     // virtual uint64_t IntializeVectorQuaternion(uint64_t) override;
     virtual uint64_t sub_B0(int, float) override;
+    // references geoCacheID
     virtual bool UpdatePhysicsStuff() override;
     virtual bool IsInAirFromVehicle() override;
     // virtual bool SomethingOrientationIsInAir() override;
@@ -436,20 +439,21 @@ struct WheeledPhysics : Physics
     virtual bool isBackWheel(uint64_t wheel_index);
     // empty
     virtual void UpdateTilt(float deltaTime);
-    virtual void VehiclePhysicsUpdate();
-    virtual void UpdateTurn();
+    virtual void VehiclePhysicsUpdate(float deltaTime);
+    virtual void UpdateTurn(float deltaTime);
     // throw error
     virtual void UpdateSuspensionAnimation();
-    virtual void UpdateVehicleLinearVelocityStuff();
+    virtual void UpdateVehicleLinearVelocityStuff(float deltaTime);
     virtual void UpdateVehRotW(float deltaTime);
     // returns 1f
     virtual void sub_1A8(uint32_t);
 
-    uint32_t unkD0;
-    float unkD4;
+    // or maybe type?
+    uint32_t numDriveWheels;
+    float frontBackWheelDistance;
     float unkD8;
     float unkDC;
-    float unkE0;
+    float frontBackBias;
     float turnRate;
     uint32_t unkE8;
     uint32_t unkEC;
@@ -600,12 +604,12 @@ struct CarPhysics : WheeledPhysics
     // also rear wheel maybe
     virtual bool isBackWheel(uint64_t) override;
     // virtual void UpdateTilt(float deltaTime) override;
-    virtual void VehiclePhysicsUpdate() override;
+    virtual void VehiclePhysicsUpdate(float deltaTime) override;
     // update steering
-    virtual void UpdateTurn() override;
+    virtual void UpdateTurn(float deltaTime) override;
     // update wheel blackbords
     virtual void UpdateSuspensionAnimation() override;
-    // virtual void UpdateVehicleLinearVelocityStuff() override;
+    // virtual void UpdateVehicleLinearVelocityStuff(float deltaTime) override;
     // virtual void UpdateVehRotW(float deltaTime) override;
     // get insert pointers
     virtual void sub_1A8(uint32_t) override;
@@ -631,11 +635,11 @@ struct CarPhysics : WheeledPhysics
     float veh_curr_turn_input;
     float veh_bank_body_f_b;
     float veh_bank_body_l_r;
-    float unkD90;
-    float minLongSlipRatioMaybe;
+    float latPeriodSquared;
+    float latPeriodTimesDampingSquared;
     float unkD98[3];
-    float swaybarLengthScalarMaybe;
-    float minLongFrictionCoefMaybe;
+    float longPeriodSquared;
+    float longPeriodTimesDampingSquared;
     float unkDAC[5];
     WorldTransform wt1;
     WorldTransform wt2;
@@ -677,7 +681,7 @@ struct BikePhysics : WheeledPhysics
     virtual float GetWheelLatSlip(float multiplier, uint32_t wheelIndex) override;
     virtual bool isBackWheel(uint64_t) override;
     virtual void UpdateTilt(float deltaTime) override;
-    virtual void UpdateTurn() override;
+    virtual void UpdateTurn(float deltaTime) override;
     virtual void UpdateSuspensionAnimation() override;
 
     // 1.52 RVA: 0x1D04210 / 30425616
