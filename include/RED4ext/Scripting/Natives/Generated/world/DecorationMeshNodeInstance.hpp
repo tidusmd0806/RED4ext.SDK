@@ -11,7 +11,7 @@
 namespace RED4ext
 {
 namespace world { 
-    // also inherits CollisionInterface
+    // also inherits ent::ITransformAttachable
 struct DecorationMeshNodeInstance : world::MeshNodeInstance
 {
     static constexpr const char* NAME = "worldDecorationMeshNodeInstance";

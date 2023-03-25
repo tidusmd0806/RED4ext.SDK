@@ -30,8 +30,16 @@ struct IPlacedComponent : IComponent
     virtual void GetFlags();
 
     Handle<ITransformBinding> parentTransform; // 90
+    // reated to Transform Attachements - double Handle struct
     DynArray<uint64_t[4]> unkA0;
-    uint8_t unkB0[0xC0 - 0xB0]; // B0
+    uint8_t unkB0;
+    // set based on arg passed to UpdateBindings
+    uint8_t unkB1;
+    // related to unkA0 updates?
+    // hasUpdate?
+    uint8_t unkB2;
+    uint8_t unkB3[5];
+    uint64_t unkB8;
     WorldTransform localTransform; // C0
     WorldTransform worldTransform; // E0
     Box bounds; // 100

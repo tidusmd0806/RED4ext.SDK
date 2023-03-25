@@ -10,6 +10,7 @@
 #include <RED4ext/Scripting/Natives/entEntity.hpp>
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/PersistentState.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/IAttachment.hpp>
 
 namespace RED4ext
 {
@@ -25,7 +26,9 @@ struct IComponent : IScriptable
     // 1.6  RVA: 0x33045E0
     // 1.61 RVA: 0x33097A0
     // 1.62 RVA: 0x330C8E0
-    static constexpr const uintptr_t VFT = 0x330C8E0;
+    /// @pattern 65 6E 74 49 43 6F 6D 70  6F 6E 65 6E 74 00 00 00
+    /// @offset -32
+    static constexpr const uintptr_t VFT = entIComponent_VFT_Addr;
 
     //virtual CClass* GetNativeType() override
     //{
@@ -115,12 +118,17 @@ struct IComponent : IScriptable
     uint64_t unk58;
     CRUID id; // 60
     ResourcePath appearancePath;
-    DynArray<Handle<void>> unk70;
-    uint64_t unk80;
+    // entITransformAttachements, etc
+    DynArray<Handle<ent::IAttachment>> attachments;
+    uint16_t transform_offset;
+    uint16_t unk82;
+    uint32_t unk84;
     // flags - 2 is related to transform
+    // 0x2: ignore updates? 
     uint8_t unk88;
     uint8_t unk89;
-    uint8_t unk8A;
+    // mutex for attachements
+    SharedMutex unk8A;
     bool isEnabled; // 8B
     bool isReplicable; // 8C
     uint8_t unk8D[0x90 - 0x8D]; // 8D

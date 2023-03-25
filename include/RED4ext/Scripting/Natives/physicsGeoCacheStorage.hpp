@@ -5,6 +5,7 @@
 #include <RED4ext/Addresses-Found.hpp>
 #include <RED4ext/Common.hpp>
 #include <cstdint>
+#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 
 namespace RED4ext::physics
 {
@@ -38,10 +39,6 @@ struct GeoCacheID
     uint16_t id;
     uint8_t unk02;
     uint8_t unk03;
-};
-
-struct GeoStuffID {
-    uint32_t id;
 };
 
 // actually PhysicalBodyInterface runtime
@@ -151,7 +148,12 @@ struct GeoThing
     RED4ext::SharedMutex* unk18;
 };
 
-struct GeoCacheStuff
+struct GeoStuffID {
+    uint16_t id;
+    uint16_t unk38_match;
+};
+
+struct GeoStuff
 {
     SharedMutex unk00;
     Handle<void*> unk08;
@@ -159,17 +161,33 @@ struct GeoCacheStuff
     uint32_t unk28;
     uint32_t unk2C;
     uint64_t unk30;
-    uint64_t unk38;
-    uint64_t unk40[31];
+    uint8_t unk38[256];
     uint32_t unk138;
     uint32_t unk13C;
-    // index'd by unk2A2054
+        // index'd by unk2A2054
     uint64_t unk140[256];
     uint32_t unk940;
     uint32_t unk944;
-    uint32_t unk948;
-    uint32_t unk94C;
-    uint64_t unk950[255];
+    // index'd by GeoStuffID.id
+    struct Unk948 {
+        // 1.6  RVA: 0x497F50 / 4816720
+        /// @pattern 40 55 53 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 F8 FE FF FF 48 81 EC 08 02 00 00 4C 8B F1 0F
+        __int64 __fastcall Kick(float a2);
+
+        // stored in unk2A2054 upon enable collision
+        uint32_t unk00;
+        uint32_t unk04;
+        uint64_t unk08[2];
+        void * aggregate;
+        uint64_t unk20[4];
+        uint8_t unk40[6];
+        SharedMutex unk46;
+        DynArray<Handle<BaseSystemKey>> systemKeys;
+        uint8_t state;
+        uint64_t unk60[26];
+        uint32_t unk130;
+        Vector3 offset;
+    } * unk948[256];
     uint32_t unk1148;
     uint32_t unk114C;
 };
@@ -188,8 +206,8 @@ struct GeoKeyStorage
     uint32_t unk200C;
     uint32_t unk2010;
     // index'd by GeoCacheID - Handle to physics::PhysicalSystemKey
-    Handle<BaseSystemKey> unk2014[65535];
-    uint32_t unk102008;
+    Handle<BaseSystemKey> systemKeys[65535];
+    uint32_t numSystemKeys;
     uint32_t unk10200C;
     // index'd by GeoCacheID
     uint16_t unk102010[65536];
@@ -200,24 +218,28 @@ struct GeoKeyStorage
     // index'd by GeoCacheID
     uint64_t unk122018[65535];
     uint32_t unk1A2010;
-    // index'd by GeoCacheID - phyicsSystemDesc->unkA0
+    // index'd by GeoCacheID - phyicsSystemDesc->unkA0, worldTransforms?
     uint64_t unk1A2018[65535];
     uint32_t unk222010;
-    // index'd by GeoCacheID - physicsSystemDesc->unkA8 / ChassisComponent's unk120/interface
-    uint64_t unk222018[65535];
+    // index'd by GeoCacheID
+    ent::ITransformAttachable interfaces[65535];
     uint32_t unk2A2010;
     uint32_t unk2A2014;
     // physicsSystemDesc types
     uint32_t refCounts_2A2018[15];
     // index'd by GeoCacheID
+    // Unk948.unk00 assign here when collision is enabled
+    // -1 assigned when disabled
     uint32_t unk2A2054[32753];
     uint64_t unk2C2018[16384];
     uint32_t unk2E2018[14];
     uint32_t unk2E2050;
     // mutex for unk2E2058
     SharedMutex unk2E2054;
-    DynArray<void*> unk2E2058;
+    // geoCacheID storage? size 4 bytes
+    DynArray<uint32_t> unk2E2058;
     // index'd by GeoCacheID >> 5
+    // used to track if geometry has been setup?
     int unk2E2068[2048];
 };
 } // namespace RED4ext::physics

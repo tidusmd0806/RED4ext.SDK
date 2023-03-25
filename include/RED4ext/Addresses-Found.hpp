@@ -39,9 +39,12 @@ no matches for MetadataManager
 no matches for audioMetadataManager_GetValueInMapForName
 no matches for physicsVehiclePhysicsInsert1_ReferencePoseSetup
 no matches for audioThing_GetEmitterPosition
-no matches for audioThing__anonymous7_AKAudioLoad
+no matches for audioThing__anonymous8_AKAudioLoad
 */
 
+#ifndef BaseStream_ReadWriteHandleID_Addr
+#define BaseStream_ReadWriteHandleID_Addr 0x7117C0
+#endif
 #ifndef CBaseRTTIType_VFT_Addr
 #define CBaseRTTIType_VFT_Addr 0x30E6CD0
 #endif
@@ -59,6 +62,9 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #endif
 #ifndef CGameFramework_Systems_120_128_130_Addr
 #define CGameFramework_Systems_120_128_130_Addr 0x13A19A0
+#endif
+#ifndef CMesh_GetParameterOfType_Addr
+#define CMesh_GetParameterOfType_Addr 0xA10550
 #endif
 #ifndef CResource_VFT_Addr
 #define CResource_VFT_Addr 0x30E4928
@@ -114,6 +120,9 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #ifndef ISerializable_VFT_Addr
 #define ISerializable_VFT_Addr 0x30DF1A8
 #endif
+#ifndef IUpdatableSystem_VFT_Addr
+#define IUpdatableSystem_VFT_Addr 0x320D998
+#endif
 #ifndef Quaternion_GetYaw_Addr
 #define Quaternion_GetYaw_Addr 0x65CD80
 #endif
@@ -122,9 +131,6 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #endif
 #ifndef Quaternion_ToMatrix_Addr
 #define Quaternion_ToMatrix_Addr 0x1CA130
-#endif
-#ifndef RegisterBucketUpdate_Addr
-#define RegisterBucketUpdate_Addr 0xB21E30
 #endif
 #ifndef Unk568_Addr
 #define Unk568_Addr 0x1AE07B0
@@ -522,8 +528,14 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #ifndef entIComponent_SetEntity_Addr
 #define entIComponent_SetEntity_Addr 0x10542F0
 #endif
+#ifndef entIComponent_VFT_Addr
+#define entIComponent_VFT_Addr 0x330C8E0
+#endif
 #ifndef entMeshComponent_Load_Addr
 #define entMeshComponent_Load_Addr 0x10A88D0
+#endif
+#ifndef entPhysicalMeshComponent_ProcessSystemResource_Addr
+#define entPhysicalMeshComponent_ProcessSystemResource_Addr 0x10C8A10
 #endif
 #ifndef entSlotComponent_GetLocalSlotTransformFromIndex_Addr
 #define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x115DC00
@@ -563,6 +575,9 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #endif
 #ifndef gameIGameSystem_Unset_Addr
 #define gameIGameSystem_Unset_Addr 0xAF70D0
+#endif
+#ifndef gameIGameSystem_VFT_Addr
+#define gameIGameSystem_VFT_Addr 0x321C920
 #endif
 #ifndef gameObject_CallScriptFunction_Addr
 #define gameObject_CallScriptFunction_Addr 0x1404190
@@ -659,6 +674,9 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #endif
 #ifndef physicsGeometryCache_sub_7FF75B922410_Addr
 #define physicsGeometryCache_sub_7FF75B922410_Addr 0x442D40
+#endif
+#ifndef physicsSystemResource_GetFromCMesh_Addr
+#define physicsSystemResource_GetFromCMesh_Addr 0xA34E90
 #endif
 #ifndef physicsVehiclePhysicsInsert1_SinMath_Addr
 #define physicsVehiclePhysicsInsert1_SinMath_Addr 0x1D5B1D0
@@ -881,6 +899,9 @@ no matches for audioThing__anonymous7_AKAudioLoad
 #endif
 #ifndef vehicleTPPCameraComponent_UpdateTPP_Addr
 #define vehicleTPPCameraComponent_UpdateTPP_Addr 0x1CF5270
+#endif
+#ifndef vehicleTankPhysics_VFT_Addr
+#define vehicleTankPhysics_VFT_Addr 0x34A0E90
 #endif
 #ifndef vehicleUnk568_CopyOverCollisionForce_Addr
 #define vehicleUnk568_CopyOverCollisionForce_Addr 0x1AE1700

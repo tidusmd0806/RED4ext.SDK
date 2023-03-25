@@ -716,7 +716,10 @@ struct BikePhysics : WheeledPhysics
 
 struct TankPhysics : Physics
 {
-    // static constexpr const uintptr_t VFT = 0x3432650;
+    // after VehicleSystem_NPCCollision
+    /// @pattern 56 65 68 69 63 6C 65 53 79 73 74 65 6D 5F 4E 50 43 43 6F 6C 6C 69 73 69 6F 6E 00 00 00 00 00 00
+    /// @offset -64
+    static constexpr const uintptr_t VFT = vehicleTankPhysics_VFT_Addr;
     
     virtual ~TankPhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;

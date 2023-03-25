@@ -24,6 +24,7 @@ struct CMaterialInstance;
 struct CResource;
 struct IMaterial;
 struct IRenderResourceBlob;
+struct CClass;
 namespace mesh { struct MeshAppearance; }
 namespace mesh { struct MeshParameter; }
 
@@ -31,6 +32,13 @@ struct CMesh : res::StreamedResource
 {
     static constexpr const char* NAME = "CMesh";
     static constexpr const char* ALIAS = NAME;
+
+    // gets unk208
+    virtual uint64_t sub_138();
+
+    // 1.6  RVA: 0xA0FC40 / 10550336
+    /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B 59 70 49 8B E8 8B 79 7C 48 8B
+    Handle<mesh::MeshParameter> *__fastcall GetParameterOfType(Handle<mesh::MeshParameter>*handle, CClass *cls);
 
     Box boundingBox; // 40
     Vector3 surfaceAreaPerAxis; // 60

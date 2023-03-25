@@ -20,11 +20,12 @@ struct IGameSystem : IUpdatableSystem
     static constexpr const char* ALIAS = "IGameSystem";
 
     // after "gameIGameSystem" string
-    // static constexpr const uintptr_t VFT = 0x31B53F0;
     // 1.6  RVA: 0x3214700
     // 1.61 RVA: 0x3219820
     // 1.62 RVA: 0x321C920
-    static constexpr const uintptr_t VFT = 0x321C920;
+    /// @pattern 67 61 6D 65 49 47 61 6D  65 53 79 73 74 65 6D 00
+    /// @offset -16
+    static constexpr const uintptr_t VFT = gameIGameSystem_VFT_Addr;
 
     struct HighLow
     {

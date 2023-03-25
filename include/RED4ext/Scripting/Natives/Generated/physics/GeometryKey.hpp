@@ -11,12 +11,50 @@
 namespace RED4ext
 {
 namespace physics { 
+
+enum class StaticCollisionShapeCategory : uint32_t {
+    Interior = 0,
+    Exterior = 1,
+    Architecture = 2,
+    Decoration = 3,
+    Other = 4
+};
+
+enum class QueryUseCase : uint16_t {
+    Default = 0,
+    ActionAnimation = 1,
+    AI = 2,
+    AnimationComponent = 3,
+    Audio = 4,
+    AudioHedgehog = 5,
+    Components = 6,
+    Debug = 7,
+    Gameplay = 8,
+    GeomDescription = 9,
+    LineOfSightTests = 10,
+    Navigation = 11,
+    Nodes = 12,
+    Ragdoll = 13,
+    Scripts = 14,
+    VehicleAI = 15,
+    Vehicles = 16,
+    VehicleChassis = 17,
+    VehiclesCrowd = 18,
+    VehicleWheel = 19,
+    VehicleStreamingHack = 20,
+    VehicleWater = 21,
+    WorldUI = 22,
+    GameEffects = 23,
+    GameProjectiles = 24
+};
+
 struct GeometryKey
 {
     static constexpr const char* NAME = "physicsGeometryKey";
     static constexpr const char* ALIAS = NAME;
 
     NativeArray<uint8_t, 12> ta; // 00
+    // ShapeType maybe?
     // 3
     // 4 does something with PxTriangleMesh
     // 5

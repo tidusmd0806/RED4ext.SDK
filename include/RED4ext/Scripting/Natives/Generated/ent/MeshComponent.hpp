@@ -27,13 +27,18 @@ struct MeshComponent : ent::IVisualComponent
     static constexpr const char* ALIAS = "MeshComponent";
     static constexpr const uintptr_t VFT = entMeshComponent_VFT_Addr;
 
+    // gets unk140
+    virtual bool sub_258(Handle<void*> unk);
+
     // 1.52 RVA: 0x1092580 / 17376640
     /// @pattern 48 89 5C 24 18 57 48 81 EC A0 01 00 00 48 83 B9 58 01 00 00 00 0F B6 FA 48 8B D9 0F 84 C2 01 00
     void __fastcall Load(bool a2);
 
-    uint8_t unk140[0x150 - 0x140]; // 140
+    Handle<void*> unk140;
     RaRef<CMesh> mesh; // 150
-    uint8_t unk158[0x178 - 0x158]; // 158
+    Handle<CMesh> meshHandle;
+    uint64_t unk168;
+    uint64_t unk170;
     Vector3 visualScale; // 178
     ERenderingPlane renderingPlane; // 184
     ERenderObjectType objectTypeID; // 188

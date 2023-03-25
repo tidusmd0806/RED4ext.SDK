@@ -12,6 +12,7 @@
 
 namespace RED4ext
 {
+struct CMesh;
 namespace physics { struct SystemBody; }
 namespace physics { struct SystemJoint; }
 
@@ -20,6 +21,10 @@ struct SystemResource : CResource
 {
     static constexpr const char* NAME = "physicsSystemResource";
     static constexpr const char* ALIAS = NAME;
+
+    // 1.6  RVA: 0xA34580 / 10700160
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 20 41 56 48 83 EC 40 48 8B DA 48 8B F9 E8 80 64 FF FF
+    static Handle<SystemResource> *__fastcall GetFromCMesh(Handle<SystemResource> *systemResource, CMesh *cmesh);
 
     DynArray<Handle<physics::SystemBody>> bodies; // 40
     DynArray<Handle<physics::SystemJoint>> joints; // 50

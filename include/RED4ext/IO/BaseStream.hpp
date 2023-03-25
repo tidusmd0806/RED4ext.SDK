@@ -14,6 +14,16 @@ struct EngineAllocator;
 
 struct BaseStream
 {
+    enum class Flags : int32_t {
+      // write?
+      unk1 = 0x1,
+      // if not set, instance calls sub_A0 & sub_A8 in sub_40
+      unk2 = 0x2,
+      unk80000 = 0x80000,
+      // used by CMesh in its sub_40
+      unk100000 = 0x100000
+    };
+
     BaseStream(int32_t aFlags = 0);
 
     virtual Memory::EngineAllocator* GetAllocator(); // 00
@@ -33,9 +43,20 @@ struct BaseStream
         return ReadWrite(aBuffer, sizeof(T));
     }
 
+    // 4 byte value written/read for CMeshMaterialEntry
+    // 1.6  RVA: 0x710E90 / 7409296
+    /// @pattern 40 55 53 57 48 8B EC 48 83 EC 60 F6 41 08 01 48 8B DA 48 8B F9 0F 84 8A 00 00 00 48 8B 49 10 C7
+    void __fastcall ReadWriteHandleID(Handle<void> *handle);
+
     int32_t flags; // 08
     int32_t unkC;  // 0C
-    int64_t unk10; // 10
+    // involved in handle resolving
+    struct {
+        // writes handle ID into id
+        virtual void sub_18(Handle<void> * handle, uint32_t id);
+        // resolves handle from ID
+        virtual void sub_48(uint32_t id, Handle<void> * handle);
+    } * unk10; // 10
     int64_t unk18; // 18
 };
 RED4EXT_ASSERT_SIZE(BaseStream, 0x20);

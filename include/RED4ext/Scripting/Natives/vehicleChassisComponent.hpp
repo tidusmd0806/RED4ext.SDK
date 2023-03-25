@@ -7,7 +7,7 @@
 #include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
-#include <RED4ext/Scripting/Natives/physicsCollisionInterface.hpp>
+#include <RED4ext/Scripting/Natives/entITransformAttachable.hpp>
 #include <RED4ext/Scripting/Natives/physicsGeoCacheStorage.hpp>
 #include <RED4ext/Scripting/Natives/physicsStateValue.hpp>
 #include <cstdint>
@@ -33,10 +33,14 @@ namespace vehicle
 
 struct ChassisComponent
     : ent::IPlacedComponent
-    , physics::CollisionInterface
+    , ent::ITransformAttachable
 {
     static constexpr const char* NAME = "vehicleChassisComponent";
     static constexpr const char* ALIAS = NAME;
+
+    /// @pattern 20 8A 67 5B F7 7F 00 00 6D 5F 63 6F 6C 6C 69 73 69 6F 6E 52 65 73 6F 75 72 63 65 00 00 00 00 00
+    /// @offset 24
+    // static constexpr const uintptr_t ITransformAttachable::VFT = 0;
 
     // virtuals
 
@@ -50,7 +54,7 @@ struct ChassisComponent
     virtual void sub_1E8(bool a1);
 
     // something with playerOnly geoCacheID
-    virtual void CollisionInterface_08(WorldTransform*, bool);
+    virtual void ITransformAttachable_08(WorldTransform*, bool);
 
     // non-virtual methods
 
@@ -163,7 +167,7 @@ struct BaseSystemDesc
     uint64_t unk60[7];
     uint8_t unk98;
     uint64_t unkA0;
-    uint64_t unkA8;
+    ent::ITransformAttachable interface;
     uint64_t unkB0;
     uint8_t unkB8;
     uint64_t unkC0[1];
@@ -202,10 +206,10 @@ struct BaseSystemKey
     // iterates through physicsSystemResource->bodies
     // creates rigid bodies through physx, sets them up
     virtual void Process(PhysicalSystemDesc*);
-    virtual void sub_10();
+    virtual void sub_10(RED4ext::physics::GeoStuffID*);
     // does something with aggregate/bodies
-    virtual void * sub_18(RED4ext::physics::GeoStuffID);
-    virtual void sub_20();
+    virtual void sub_18(RED4ext::physics::GeoStuffID*);
+    virtual void sub_20(RED4ext::physics::GeoStuffID*);
     virtual void sub_28();
     virtual void sub_30();
     virtual void sub_38();
@@ -238,9 +242,42 @@ struct BaseSystemKey
     SystemType type;
     uint8_t unk35;
     uint8_t unk36;
-    // flags like 0x40 are checked
-    uint8_t unk37;
+    enum class Flags : uint8_t {
+        // checked when enabling/disabling collision
+        unk40 = 0x40,
+    } flags;
+    // 
     uint64_t unk38;
+
+//    void DisableCollision() {
+//        if (flags.unk40) {
+//            if (unk38 == 0) {
+//                // add to unk948.systemKeys
+//            }
+//            unk38 = 2;
+//        } else {
+//            if (unk38 != 0) {
+//                // remove from unk948.systemKeys
+//                // set unk2A2054[geoCacheID.id] to -1
+//            }
+//            unk38 = 0;
+//        }
+//    }
+//
+//    void EnableCollision() {
+//        if (flags.unk40) {
+//            if (unk38 != 0) {
+//                // remove from unk948.systemKeys
+//            }
+//            unk38 = 0;
+//        } else {
+//            if (unk38 == 0) {
+//                // add to unk948.systemKeys
+//                // set unk2A2054 to unk948.unk00
+//            }
+//            unk38 = 1;
+//        }
+//    }
 };
 
 struct PhysicalSystemKey : BaseSystemKey
@@ -250,6 +287,21 @@ struct PhysicalSystemKey : BaseSystemKey
     // 1.62 RVA: 0x314592C
     static constexpr const uintptr_t VFT = 0x314592C;
 
+    // offsets bodies from unk948.offset
+    // runs aggregate->sub_60 or sub_78
+    // put bodies to sleep if they're not kinematic
+    // set flags to 0x40
+    virtual void sub_10(RED4ext::physics::GeoStuffID *);
+
+    // unsets flags 0x40
+    // runs aggregate->sub_80 or sub_70
+    //
+    virtual void sub_18(RED4ext::physics::GeoStuffID *);
+
+    virtual uint32_t sub_48() = 0;
+    // handles stateValue.unk18 as well
+    virtual bool sub_50(uint32_t bodyIndex, uint32_t shapeIndex, physics::StateValue updateType, void* data, size_t dataSize);
+    virtual bool sub_58(uint32_t bodyIndex, uint32_t shapeIndex, physics::StateValue updateType, void* data, size_t dataSize, bool wakeOption);
     // PhysX D6Joints
     DynArray<void*> joints;
     // PxRigidBody*

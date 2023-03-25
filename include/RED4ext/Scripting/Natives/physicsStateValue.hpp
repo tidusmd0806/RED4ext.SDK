@@ -78,6 +78,7 @@ enum class StateValue : uint32_t {
     Gravity = 0x16,
     // IsQueryOnly?
     hasOneFlag = 0x17,
+    // used in PhysicalSystemKey->sub_50 to get unk35
     unk18 = 0x18,
     getNbShapes = 0x19,
     unk1D = 0x1D,
