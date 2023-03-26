@@ -84,8 +84,10 @@ struct GeometryCache : CResource
     DeferredDataBuffer alwaysLoadedSectorDDB; // 80
     uint8_t unkD8[0xE0 - 0xD8]; // D8
     physics::SectorEntry alwaysLoadedSector; // E0
+    // GeometryKey.ta to Handle<physx::PxBase>
     HashMap<uint64_t, uint64_t> unk120; // 120
     HashMap<uint64_t, uint64_t> unk150; // 150
+    // for unk120
     SharedMutex unk180;
     uint64_t unk188;
 };

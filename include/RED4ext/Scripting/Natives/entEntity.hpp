@@ -111,15 +111,15 @@ struct Entity : IScriptable
     CallbackManager callbackManager; // D8
     red::TagList entityTags; // 138
     // isReplicated = unk148 != 0
-    void * unk148;
-    float updatingTransform;
-    uint8_t customCameraTarget;
-    int8_t controllingPeerID;
-    EntityFlags entityFlags;
-    uint8_t unk157;
-    uint16_t unk158;
-    uint8_t unk15A;
-    uint8_t renderSceneLayerMask;
+    void * unk148; // 148
+    float updatingTransform; // 150
+    uint8_t customCameraTarget; // 154
+    int8_t controllingPeerID; // 155
+    EntityFlags entityFlags; // 156
+    uint8_t unk157; // 157
+    uint16_t unk158; // 158
+    uint8_t unk15A; // 15A
+    uint8_t renderSceneLayerMask; // 15B
     ComponentFlags componentFlags;
     uint8_t unk15D;
     uint8_t unk15E;

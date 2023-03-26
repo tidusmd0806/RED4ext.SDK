@@ -48,16 +48,49 @@ enum class QueryUseCase : uint16_t {
     GameProjectiles = 24
 };
 
+enum class PhysicalSystemOwner : uint8_t {
+    Unknown = 0,
+    BakedDestructionNode = 1,
+    ClothMeshNode = 2,
+    CollisionAreaNode = 3,
+    DecorationMeshNode = 4,
+    DynamicMeshNode = 5,
+    InstancedDestructibleNode = 6,
+    PhysicalDestructionNode = 7,
+    PhysicalTriggerNode = 8,
+    StaticMeshNode = 9,
+    TerrainCollisionNode = 10,
+    WaterPatchNode = 11,
+    WorldCollisionNode = 12,
+    BakedDestructionComponent = 13,
+    ClothComponent = 14,
+    ColliderComponent = 15,
+    PhysicalDestructionComponent = 16,
+    PhysicalMeshComponent = 17,
+    PhysicalSkinnedMeshComponent = 18,
+    PhysicalTriggerComponent = 19,
+    SimpleColliderComponent = 20,
+    SkinnedClothComponent = 21,
+    StateMachineComponent = 22,
+    VehicleChassisComponent = 23,
+    PhysicalParticleSystem = 24,
+    PhotoModeSystem = 25,
+    RagdollBinder = 26,
+    FoliageDestruction = 27,
+    EntityProxy = 28
+};
+
 struct GeometryKey
 {
     static constexpr const char* NAME = "physicsGeometryKey";
     static constexpr const char* ALIAS = NAME;
 
-    NativeArray<uint8_t, 12> ta; // 00
-    // ShapeType maybe?
-    // 3
-    // 4 does something with PxTriangleMesh
-    // 5
+    // 0x0, key used to look-up physx object in a hashmap
+    NativeArray<uint8_t, 12> ta;
+    // 0xC, type of physx Entity, likely ShapeType
+    // 3 PxConvexMesh
+    // 4 PxTriangleMesh
+    // 5 PxHeightField
     uint8_t pe;
     uint8_t unk0D[0x10 - 0xD]; // D
 };

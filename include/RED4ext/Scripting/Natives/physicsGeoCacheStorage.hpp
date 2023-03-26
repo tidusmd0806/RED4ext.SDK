@@ -11,39 +11,9 @@ namespace RED4ext::physics
 
 struct BaseSystemKey;
 
-struct GeoCacheID
-{
-    // 1.6 RVA: 0x448BD0 / 4492240
-    /// @pattern 4C 8B DC 53 56 48 83 EC 68 8B 01 48 8B D9 49 8D 4B 08 41 89 43 08 48 8B F2 E8 52 25 02 00 48 85
-    bool __fastcall Unk(void* a2);
-
-    // 1.6 RVA: 0x46AC90 / 4631696
-    /// @pattern 48 89 5C 24 10 57 48 83 EC 20 8B 01 48 8B FA 48 8B D9 89 44 24 30 48 8B 0D FB 4D D1 03 48 8D 54
-    bool __fastcall Something2(__int64 a2);
-
-    // 1.6  RVA: 0x44B2B0 / 4502192
-    /// @pattern 40 53 48 83 EC 30 8B 01 4C 8D 44 24 40 48 8B 0D E4 47 D3 03 48 8D 54 24 20 89 44 24 40 E8 3E F1
-    bool __fastcall GetKeyUnk37_0x40();
-
-    // only used by types 2, 3, 5, 6, 10, 12, 13
-    // 1.6  RVA: 0x46B140 / 4632896
-    // 1.62 RVA: 0x46BA70 / 4635248
-    /// @pattern 40 53 48 83 EC 30 8B 01 4C 8D 44 24 40 48 8B 0D ? ? D1 03 48 8D 54 24 20 89 44 24 40 E8 AE F2
-    inline BaseSystemKey* __fastcall GetSystemKey()
-    {
-        RelocFunc<decltype(&GeoCacheID::GetSystemKey)> call(physicsGeoCacheID_GetSystemKey_Addr);
-        return call(this);
-    }
-
-    uint16_t id;
-    uint8_t unk02;
-    uint8_t unk03;
-};
-
 // actually PhysicalBodyInterface runtime
 struct GeoThing
 {
-
     // 1.6  RVA: 0x44C410 / 4506640
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9 41
     /// @nth 1/2
@@ -114,7 +84,7 @@ struct GeoThing
 
     // 1.6  RVA: 0x446C80 / 4484224
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 8B 02 49 8B D8 48 8D 54 24 30 89 44 24 30 48 8B F9 E8 70 00 00 00
-    GeoThing* __fastcall GetThingWithLock(GeoCacheID* p_geoCacheID, SharedMutex* a3);
+    GeoThing* __fastcall GetThingWithLock(ProxyId* p_ProxyId, SharedMutex* a3);
 
     // 1.6  RVA: 0x44CA20 / 4508192
     /// @pattern 48 89 5C 24 08 48 89 74 24 18 F3 0F 11 4C 24 10 57 48 83 EC 50 8B 41 10 41 0F B6 F9 40 80 F7 01
@@ -142,7 +112,7 @@ struct GeoThing
 
     uint64_t gcs_unk140;
     void* gks_unk122018;
-    uint32_t geoCacheID;
+    uint32_t ProxyId;
     uint32_t unk14;
     RED4ext::SharedMutex* unk18;
 };
@@ -191,11 +161,17 @@ struct GeoStuff
     uint32_t unk114C;
 };
 
+struct InitialState {
+    WorldTransform worldTransform;
+    Vector4 linearVelocity;
+    Vector4 angularVelocity;
+};
+
 struct GeoKeyStorage
 {
     // 1.6 RVA: 0x46A7E0 / 4630496
     /// @pattern 48 89 74 24 10 57 48 83 EC 20 44 8B 02 48 8B F2 48 8B F9 41 83 F8 FF 74 67 B8 FF FF 00 00 66 44
-    bool __fastcall TestUnk2E2068(GeoCacheID* p_geoCacheID);
+    bool __fastcall TestUnk2E2068(ProxyId* p_ProxyId);
 
     SharedMutex unk0000;
     uint64_t unk0008[1023];
@@ -204,29 +180,25 @@ struct GeoKeyStorage
     uint32_t unk2008;
     uint32_t unk200C;
     uint32_t unk2010;
-    // index'd by GeoCacheID - Handle to physics::PhysicalSystemKey
-    Handle<BaseSystemKey> systemKeys[65535];
-    uint32_t numSystemKeys;
+    // index'd by ProxyId - Handle to physics::PhysicalSystemKey
+    StaticArray<Handle<BaseSystemKey>, 65535> systemKeys;
     uint32_t unk10200C;
-    // index'd by GeoCacheID
+    // index'd by ProxyId
     uint16_t unk102010[65536];
     uint16_t unk122010;
     uint16_t unk122012;
     uint16_t unk122014;
     uint16_t unk122016;
-    // index'd by GeoCacheID
-    uint64_t unk122018[65535];
-    uint32_t unk1A2010;
-    // index'd by GeoCacheID - phyicsSystemDesc->unkA0, worldTransforms?
-    uint64_t unk1A2018[65535];
-    uint32_t unk222010;
-    // index'd by GeoCacheID
-    ent::ITransformAttachable interfaces[65535];
-    uint32_t unk2A2010;
+    // index'd by ProxyId
+    StaticArray<uint64_t, 65535> unk122018;
+    // index'd by ProxyId - phyicsSystemDesc->unkA0, worldTransforms?
+    StaticArray<NativeArray<InitialState>*, 65535> unk1A2018;
+    // index'd by ProxyId
+    StaticArray<ent::ITransformAttachable, 65535> interfaces;
     uint32_t unk2A2014;
     // physicsSystemDesc types
     uint32_t refCounts_2A2018[15];
-    // index'd by GeoCacheID
+    // index'd by ProxyId
     // Unk948.unk00 assign here when collision is enabled
     // -1 assigned when disabled
     uint32_t unk2A2054[32753];
@@ -235,10 +207,11 @@ struct GeoKeyStorage
     uint32_t unk2E2050;
     // mutex for unk2E2058
     SharedMutex unk2E2054;
-    // geoCacheID storage? size 4 bytes
+    // ProxyId storage? size 4 bytes
     DynArray<uint32_t> unk2E2058;
-    // index'd by GeoCacheID >> 5
+    // index'd by ProxyId >> 5
     // used to track if geometry has been setup?
-    int unk2E2068[2048];
+    int unk2E2068[1024];
 };
+// RED4EXT_ASSERT_SIZE(GeoKeyStorage, 0x2E3068);
 } // namespace RED4ext::physics

@@ -115,82 +115,18 @@ struct ChassisComponent
     uint64_t unk158;
     physics::GeoCacheID geoCacheID;
     physics::GeoCacheID geoCacheID_PlayerOnly;
-    uint32_t geoStuffID;
-    RED4ext::SharedMutex sharedMutex;
+    physics::GeoStuffID geoStuffID;
+    SharedMutex sharedMutex;
     uint32_t unk170;
-    // related to having multiple shapes in a body? shapeMask for vehicleBottom presets?
-    uint32_t unk174;
+    // colliders that have chassis_bottom tag - seems to extend past 32bits
+    // 1 << shape_index
+    uint32_t chassisBottomMask;
     uint64_t unk178;
-    uint64_t unk180;
+    NativeArray<physics::InitialState, 16> * initialStates;
     game::VehicleSystem* vehicleSystem;
 };
 RED4EXT_ASSERT_SIZE(ChassisComponent, 0x190);
 
-enum class SystemType : char
-{
-    PhysicalSystemDesc = 0x1,
-    CharacterControllerDesc = 0x2,
-    DestructionDesc = 0x3,
-    ParticleSystemDesc = 0x4,
-    TriggerDesc = 0x5,
-    ClothDesc = 0x6,
-    WorldCollisionDesc = 0x7,
-    TerrainDesc = 0x8,
-    SimpleColliderDesc = 0x9,
-    AggregateSystemDesc = 0xA,
-    CharacterObstacleDesc = 0xB,
-    Ragdoll = 0xC,
-    FoliageDestructionDesc = 0xD
-};
-
-struct BaseSystemDesc
-{
-    // after "physicsGeometryKey" vft
-    // 1.6  RVA: 0x313B3D0
-    static constexpr const uintptr_t VFT = 0x313B3D0;
-
-    // checks multiple things
-    virtual bool IsEnabled();
-    virtual CString* GetName();
-    virtual uint32_t GetMaxEntries();
-    virtual uint8_t GetType();
-
-    Handle<ent::Entity> entity;
-    Handle<ent::IComponent> component;
-    // num of handles used
-    uint32_t numHandles;
-    uint32_t unk2C;
-    uint64_t unk30[6];
-    uint64_t unk60[7];
-    uint8_t unk98;
-    uint64_t unkA0;
-    ent::ITransformAttachable attachable;
-    uint64_t unkB0;
-    uint8_t unkB8;
-    uint64_t unkC0[1];
-    uint8_t isStatic;
-    uint64_t unkD0[5];
-    SystemType type;
-    Handle<physics::SystemResource> resource;
-};
-RED4EXT_ASSERT_OFFSET(BaseSystemDesc, resource, 0x100);
-
-struct PhysicalSystemDesc : BaseSystemDesc
-{
-    // after BaseSystemDesc's
-    // 1.6  RVA: 0x313B3F0
-    static constexpr const uintptr_t VFT = 0x313B3F0;
-    uint64_t unk110;
-    uint64_t unk118;
-    WorldTransform unk120;
-    WorldPosition unk140;
-    physics::SimulationType fallbackSimulationType;
-    uint8_t unk14D;
-    uint8_t unk14E;
-    uint8_t unk14F;
-    uint8_t enableSelfCollision;
-    uint8_t hasSystemBodyParams;
-};
 
 struct BaseSystemKey
 {
@@ -236,7 +172,8 @@ struct BaseSystemKey
     uint32_t unk2C;
     physics::GeoCacheID geoCacheID;
     // some index in a global array/storage of refCounts (inc on creation, dec on deletion)
-    SystemType type;
+    ProxyType type;
+    // set from desc.unkB8 (0x17 for chassis)
     uint8_t unk35;
     uint8_t unk36;
     enum class Flags : uint8_t {
@@ -307,12 +244,6 @@ struct PhysicalSystemKey : BaseSystemKey
     void* aggregate;
     uint8_t unk68;
 };
-
-// calls PhysicalSystemKey->Process
-// 1.6 RVA: 0x448DF0 / 4492784
-/// @pattern 40 55 53 41 54 41 57 48 8B EC 48 83 EC 68 48 8B 02 4C 8B E1 48 8B CA 4C 8B FA FF 10 84 C0 0F 84
-uint32_t* __fastcall ProcessPhysicalSystem(uint32_t* a1, PhysicalSystemDesc* desc);
-
 } // namespace vehicle
 } // namespace RED4ext
 
@@ -349,10 +280,6 @@ char __fastcall pxRigidBody_Update(void* pxRigidBody, RED4ext::physics::StateVal
 /// @pattern 48 89 5C 24 18 48 89 74 24 20 57 48 83 EC 60 8B 1A 0F 57 C0 0F 29 44 24 40 48 8D 54 24 70 0F 28
 RED4ext::Transform* __fastcall GeoCacheID_GetGlobalPose(RED4ext::Transform* a1, int* p_geoCacheID,
                                                         unsigned int bodyIndex);
-
-// 1.6 RVA: 0x449F60 / 4497248
-/// @pattern 48 89 5C 24 10 57 48 83 EC 40 8B 19 8B FA 48 8B 0D 33 5B D3 03 48 8D 54 24 60 C7 44 24 50 00 00
-__int64 __fastcall geoCacheID_GetNbShapes(int* p_geoCacheID, unsigned int bodyIndex);
 
 // 1.6  RVA: 0x44A800 / 4499456
 /// @pattern 48 89 5C 24 08 48 89 74 24 18 57 48 83 EC 50 8B 02 48 8B D9 41 8B D0 89 44 24 68 48 8D 4C 24 68

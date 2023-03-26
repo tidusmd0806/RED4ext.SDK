@@ -30,6 +30,9 @@ struct MeshComponent : ent::IVisualComponent
     // gets unk140
     virtual bool sub_258(Handle<void*> unk);
 
+    // get LOD level?
+    virtual uint8_t sub_290();
+
     // 1.52 RVA: 0x1092580 / 17376640
     /// @pattern 48 89 5C 24 18 57 48 81 EC A0 01 00 00 48 83 B9 58 01 00 00 00 0F B6 FA 48 8B D9 0F 84 C2 01 00
     void __fastcall Load(bool a2);
