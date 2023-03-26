@@ -11,16 +11,16 @@ no matches for WidgetHudComponentInterface
 no matches for ~WidgetHudComponentInterface
 no matches for AppearanceDefinition
 no matches for audioVehicleMetadata_GetEventData
+no matches for physicsGeoCacheID_Something2
+no matches for physicsGeoCacheID_GetKeyUnk37_0x40
+too many matches for physicsGeoThing_SetCMassLocalPose (10)
+no matches for physicsGeoThing_UpdateGlobalPose
 too many matches for entVisualControllerComponent_GetAppearanceDependency (2)
 no matches for gameVehicleSystem_SingleFixedStep
 too many matches for gameVehicleSystem_Interpolation (2)
 too many matches for gameVehicleSystem_PreUpdateAndPreMove (7)
 too many matches for gameVehicleSystem_PostMove (2)
 no matches for physicsGeometryCache_FreeKey
-no matches for physicsGeoCacheID_Something2
-no matches for physicsGeoCacheID_GetKeyUnk37_0x40
-too many matches for physicsGeoThing_SetCMassLocalPose (10)
-no matches for physicsGeoThing_UpdateGlobalPose
 no matches for vehicleChassisComponent_Unknown1
 no matches for vehicleChassisComponent_SetDampingToPoint4
 too many matches for GeoCacheID_GetGlobalPose (2)
@@ -131,6 +131,9 @@ no matches for audioThing__anonymous8_AKAudioLoad
 #endif
 #ifndef Quaternion_ToMatrix_Addr
 #define Quaternion_ToMatrix_Addr 0x1CA130
+#endif
+#ifndef RegisterBucketUpdate_Addr
+#define RegisterBucketUpdate_Addr 0xB21E30
 #endif
 #ifndef Unk568_Addr
 #define Unk568_Addr 0x1AE07B0
@@ -531,6 +534,9 @@ no matches for audioThing__anonymous8_AKAudioLoad
 #ifndef entIComponent_VFT_Addr
 #define entIComponent_VFT_Addr 0x330C8E0
 #endif
+#ifndef entITransformAttachable_VFT_Addr
+#define entITransformAttachable_VFT_Addr 0x32120C0
+#endif
 #ifndef entMeshComponent_Load_Addr
 #define entMeshComponent_Load_Addr 0x10A88D0
 #endif
@@ -605,6 +611,9 @@ no matches for audioThing__anonymous8_AKAudioLoad
 #endif
 #ifndef physicsGeoKeyStorage_TestUnk2E2068_Addr
 #define physicsGeoKeyStorage_TestUnk2E2068_Addr 0x46B110
+#endif
+#ifndef physicsGeoStuffUnk948_Kick_Addr
+#define physicsGeoStuffUnk948_Kick_Addr 0x498880
 #endif
 #ifndef physicsGeoThing_CleanUp_Addr
 #define physicsGeoThing_CleanUp_Addr 0x448420

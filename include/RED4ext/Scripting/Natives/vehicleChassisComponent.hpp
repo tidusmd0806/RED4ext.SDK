@@ -12,9 +12,6 @@
 #include <RED4ext/Scripting/Natives/physicsStateValue.hpp>
 #include <cstdint>
 
-// #include <RED4ext/Scripting/Natives/gameVehicleSystem.hpp>
-#include <RED4ext/Addresses-Found.hpp>
-
 namespace RED4ext
 {
 namespace physics
@@ -167,7 +164,7 @@ struct BaseSystemDesc
     uint64_t unk60[7];
     uint8_t unk98;
     uint64_t unkA0;
-    ent::ITransformAttachable interface;
+    ent::ITransformAttachable attachable;
     uint64_t unkB0;
     uint8_t unkB8;
     uint64_t unkC0[1];

@@ -13,7 +13,7 @@ struct ITransformAttachable {
 
     /// @pattern 44 65 63 6F 72 61 74 69 6F 6E 4E 6F 64 65 00 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 00
     /// @offset -16
-    static constexpr const uintptr_t VFT = 0;
+    static constexpr const uintptr_t VFT = entITransformAttachable_VFT_Addr;
 
     virtual ~ITransformAttachable();
     // called from OnSimulate_PushDirtyTransformData when flags & 0x40 or unk38 == 2
