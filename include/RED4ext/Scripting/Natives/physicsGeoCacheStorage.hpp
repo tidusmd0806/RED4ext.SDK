@@ -9,9 +9,10 @@
 namespace RED4ext::physics
 {
 
-struct BaseSystemKey;
+struct BaseProxy;
 
 // actually PhysicalBodyInterface runtime
+// or just Proxy??
 struct GeoThing
 {
     // 1.6  RVA: 0x44C410 / 4506640
@@ -84,7 +85,7 @@ struct GeoThing
 
     // 1.6  RVA: 0x446C80 / 4484224
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 8B 02 49 8B D8 48 8D 54 24 30 89 44 24 30 48 8B F9 E8 70 00 00 00
-    GeoThing* __fastcall GetThingWithLock(ProxyId* p_ProxyId, SharedMutex* a3);
+    GeoThing* __fastcall GetThingWithLock(ProxyId* proxyId, SharedMutex* a3);
 
     // 1.6  RVA: 0x44CA20 / 4508192
     /// @pattern 48 89 5C 24 08 48 89 74 24 18 F3 0F 11 4C 24 10 57 48 83 EC 50 8B 41 10 41 0F B6 F9 40 80 F7 01
@@ -112,7 +113,7 @@ struct GeoThing
 
     uint64_t gcs_unk140;
     void* gks_unk122018;
-    uint32_t ProxyId;
+    ProxyId proxyId;
     uint32_t unk14;
     RED4ext::SharedMutex* unk18;
 };
@@ -151,7 +152,7 @@ struct GeoStuff
         uint64_t unk20[4];
         uint8_t unk40[6];
         SharedMutex unk46;
-        DynArray<Handle<BaseSystemKey>> systemKeys;
+        DynArray<Handle<BaseProxy>> systemKeys;
         uint8_t state;
         uint64_t unk60[26];
         uint32_t unk130;
@@ -171,7 +172,7 @@ struct GeoKeyStorage
 {
     // 1.6 RVA: 0x46A7E0 / 4630496
     /// @pattern 48 89 74 24 10 57 48 83 EC 20 44 8B 02 48 8B F2 48 8B F9 41 83 F8 FF 74 67 B8 FF FF 00 00 66 44
-    bool __fastcall TestUnk2E2068(ProxyId* p_ProxyId);
+    bool __fastcall TestUnk2E2068(ProxyId* proxyId);
 
     SharedMutex unk0000;
     uint64_t unk0008[1023];
@@ -181,7 +182,7 @@ struct GeoKeyStorage
     uint32_t unk200C;
     uint32_t unk2010;
     // index'd by ProxyId - Handle to physics::PhysicalSystemKey
-    StaticArray<Handle<BaseSystemKey>, 65535> systemKeys;
+    StaticArray<Handle<BaseProxy>, 65535> systemKeys;
     uint32_t unk10200C;
     // index'd by ProxyId
     uint16_t unk102010[65536];
@@ -208,7 +209,7 @@ struct GeoKeyStorage
     // mutex for unk2E2058
     SharedMutex unk2E2054;
     // ProxyId storage? size 4 bytes
-    DynArray<uint32_t> unk2E2058;
+    DynArray<ProxyId> unk2E2058;
     // index'd by ProxyId >> 5
     // used to track if geometry has been setup?
     int unk2E2068[1024];

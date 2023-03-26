@@ -113,8 +113,8 @@ struct ChassisComponent
     Ref<physics::SystemResource> collisionResource;                   // 128
     Ref<physics::SystemResource> optionalPlayerOnlyCollisionResource; // 140
     uint64_t unk158;
-    physics::GeoCacheID geoCacheID;
-    physics::GeoCacheID geoCacheID_PlayerOnly;
+    physics::ProxyId proxyId;
+    physics::ProxyId proxyId_PlayerOnly;
     physics::GeoStuffID geoStuffID;
     SharedMutex sharedMutex;
     uint32_t unk170;
@@ -126,124 +126,6 @@ struct ChassisComponent
     game::VehicleSystem* vehicleSystem;
 };
 RED4EXT_ASSERT_SIZE(ChassisComponent, 0x190);
-
-
-struct BaseSystemKey
-{
-    // just after "TimeDeltaOverride"
-    // 1.6  RVA: 0x313A550
-    // 1.62 RVA: 0x3142700
-    static constexpr const uintptr_t VFT = 0x3142700;
-
-    virtual void sub_00();
-    // iterates through physicsSystemResource->bodies
-    // creates rigid bodies through physx, sets them up
-    virtual void Process(PhysicalSystemDesc*);
-    virtual void sub_10(RED4ext::physics::GeoStuffID*);
-    // does something with aggregate/bodies
-    virtual void sub_18(RED4ext::physics::GeoStuffID*);
-    virtual void sub_20(RED4ext::physics::GeoStuffID*);
-    virtual void sub_28();
-    virtual void sub_30();
-    virtual void sub_38();
-    virtual void sub_40();
-    // number of rigidBodies
-    virtual uint32_t sub_48() = 0;
-    // similar to sub_58, but seems to be mostly reads/gets
-    // gets rigidFlag & 4 != 1
-    virtual bool sub_50(uint32_t bodyIndex, uint32_t shapeIndex, physics::StateValue updateType, void* data,
-                        size_t dataSize);
-    // does different things based on updateType
-    // calls pxRigidBody_Update & returns 1 if successful/handled
-    // if bodyIndex belongs to a PxRigidBody, the processing continues
-    // 12: PxRigidBodyExt::addForce
-    // 15: setLinearVelocity & setAngularVelocity
-    // 73: setRigidBodyFlag(4, data), setRigidBodyFlag(64, data)
-    virtual bool sub_58(uint32_t bodyIndex, uint32_t shapeIndex, physics::StateValue updateType, void* data,
-                        size_t dataSize, bool wakeOption);
-    virtual void sub_60();
-    virtual void sub_68();
-    virtual void sub_70();
-
-    Handle<ent::Entity> entity;
-    Handle<ent::IComponent> component;
-    // num of handles used
-    uint32_t numHandles;
-    uint32_t unk2C;
-    physics::GeoCacheID geoCacheID;
-    // some index in a global array/storage of refCounts (inc on creation, dec on deletion)
-    ProxyType type;
-    // set from desc.unkB8 (0x17 for chassis)
-    uint8_t unk35;
-    uint8_t unk36;
-    enum class Flags : uint8_t {
-        // checked when enabling/disabling collision
-        unk40 = 0x40,
-    } flags;
-    // 
-    uint64_t unk38;
-
-//    void DisableCollision() {
-//        if (flags.unk40) {
-//            if (unk38 == 0) {
-//                // add to unk948.systemKeys
-//            }
-//            unk38 = 2;
-//        } else {
-//            if (unk38 != 0) {
-//                // remove from unk948.systemKeys
-//                // set unk2A2054[geoCacheID.id] to -1
-//            }
-//            unk38 = 0;
-//        }
-//    }
-//
-//    void EnableCollision() {
-//        if (flags.unk40) {
-//            if (unk38 != 0) {
-//                // remove from unk948.systemKeys
-//            }
-//            unk38 = 0;
-//        } else {
-//            if (unk38 == 0) {
-//                // add to unk948.systemKeys
-//                // set unk2A2054 to unk948.unk00
-//            }
-//            unk38 = 1;
-//        }
-//    }
-};
-
-struct PhysicalSystemKey : BaseSystemKey
-{
-    // just after 3BC43730h & 3F266666h
-    // 1.6  RVA: 0x313D790
-    // 1.62 RVA: 0x314592C
-    static constexpr const uintptr_t VFT = 0x314592C;
-
-    // offsets bodies from unk948.offset
-    // runs aggregate->sub_60 or sub_78
-    // put bodies to sleep if they're not kinematic
-    // set flags to 0x40
-    virtual void sub_10(RED4ext::physics::GeoStuffID *);
-
-    // unsets flags 0x40
-    // runs aggregate->sub_80 or sub_70
-    //
-    virtual void sub_18(RED4ext::physics::GeoStuffID *);
-
-    virtual uint32_t sub_48() = 0;
-    // handles stateValue.unk18 as well
-    virtual bool sub_50(uint32_t bodyIndex, uint32_t shapeIndex, physics::StateValue updateType, void* data, size_t dataSize);
-    virtual bool sub_58(uint32_t bodyIndex, uint32_t shapeIndex, physics::StateValue updateType, void* data, size_t dataSize, bool wakeOption);
-    // PhysX D6Joints
-    DynArray<void*> joints;
-    // PxRigidBody*
-    DynArray<void*> bodies;
-    // PxAggregate*
-    void* aggregate;
-    uint8_t unk68;
-};
 } // namespace vehicle
 } // namespace RED4ext
 

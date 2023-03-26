@@ -6,16 +6,16 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyDesc.hpp>
+#include <RED4ext/Scripting/Natives/physicsBaseProxyDesc.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/FilterData.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
 
 namespace RED4ext {
 namespace physics {
 
-struct PhysicalSystemDesc : ProxyDesc
+struct PhysicalSystemProxyDesc : BaseProxyDesc
 {
-    // after ProxyDesc's
+    // after BaseProxyDesc's
     // 1.6  RVA: 0x313B3F0
     static constexpr const uintptr_t VFT = 0x313B3F0;
     physics::FilterData * filterDataStart;

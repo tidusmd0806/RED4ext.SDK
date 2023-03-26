@@ -14,7 +14,7 @@
 namespace RED4ext {
 namespace ent { struct Entity; struct IComponent; }
 namespace physics {
-struct ProxyDesc
+struct BaseProxyDesc
 {
     // after "physicsGeometryKey" vft
     // 1.6  RVA: 0x313B3D0
