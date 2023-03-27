@@ -193,7 +193,7 @@ RED4EXT_INLINE RED4ext::CClass::CClass(CName aName, uint32_t aSize, Flags aFlags
     , overriddenProps(Memory::RTTIAllocator::Get())
     , funcs(Memory::RTTIAllocator::Get())
     , staticFuncs(Memory::RTTIAllocator::Get())
-    , unk78(Memory::RTTIAllocator::Get())
+    , funcsByName(Memory::RTTIAllocator::Get())
     , unkA8(Memory::RTTIAllocator::Get())
     , unkD8(0)
     , unkE0(0)

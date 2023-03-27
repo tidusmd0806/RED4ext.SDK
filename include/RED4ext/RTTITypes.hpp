@@ -243,7 +243,7 @@ struct CClass : CBaseRTTIType
     uint32_t holderSize;                         // 6C
     Flags flags;                                 // 70
     uint32_t alignment;                          // 74
-    HashMap<void*, void*> unk78;                 // 78
+    HashMap<CName, CClassFunction*> funcsByName; // 78
     HashMap<void*, void*> unkA8;                 // A8
     int64_t unkD8;                               // D8
     int64_t unkE0;                               // E0 - default instance?
@@ -251,7 +251,7 @@ struct CClass : CBaseRTTIType
     DynArray<CProperty*> allProps;               // 118 - More entries than 0x28, will contain native props
     DynArray<CProperty*> persistentProps;        // 128
     DynArray<CProperty*> referenceProps;         // 138 - Only RT_Class types?
-    DynArray<void*> referencePropTypes;      // 148 - CBaseRTTIType* with an unknown uint32_t value at 0x0C
+    DynArray<void*> referencePropTypes;          // 148 - CBaseRTTIType* with an unknown uint32_t value at 0x0C
     Map<CName, Variant*> defaults;               // 158
     HashMap<void*, void*> unk180;                // 180
     DynArray<Listener> listeners;                // 1B0 - Event listeners

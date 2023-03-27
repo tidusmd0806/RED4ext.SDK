@@ -66,6 +66,8 @@ struct ISerializable
     virtual bool CanBeDestructed();                                                     // D0
 
     bool IsOfClass(const CClass* cls);
+    operator const WeakHandle<ISerializable>&() const noexcept;
+    operator Handle<ISerializable>() noexcept;
 
     WeakHandle<ISerializable> ref;   // 00 - Initialized in Handle ctor
     WeakHandle<ISerializable> unk18; // 18 - Owner/parent
