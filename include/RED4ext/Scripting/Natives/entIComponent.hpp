@@ -11,6 +11,7 @@
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/PersistentState.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IAttachment.hpp>
+#include <RED4ext/Scripting/Natives/ScriptGameInstance.hpp>
 
 namespace RED4ext
 {
@@ -61,17 +62,18 @@ struct IComponent : IScriptable
      // Get persistent state
      virtual Handle<game::PersistentState>* sub_158(Handle<game::PersistentState>*);
      // called on initialize components
-     // isReplicable?
      virtual bool sub_160();
-     virtual void sub_168();
+     // IsReplicable
+     virtual bool sub_168();
      // OnMeshesLoaded
      virtual void sub_170();
      // called on initialize components
      // unk88 |= 1
-     // Internal_LoadResources?
-     virtual uint64_t sub_178(WorldTransform*);
+     // actually Initialize
+     virtual uint64_t sub_178(void* entityInit);
      // unk88 &= -2u
-     virtual void sub_180();
+     // PreUninitialize
+     virtual void sub_180(ScriptGameInstance* scriptGameInstance);
      // this, 160, 1A8, then 190 called when initializing
      // struct of entity, scriptGameIntance, runtimeScene
      // on game editor attach?
@@ -81,12 +83,18 @@ struct IComponent : IScriptable
      // on game editor detach
      //   unk88 &= ~2u;
      //   unk88 |= 8u;
+     // passed struct {
+        // ent::Entity*;
+        // scriptGameInstance*;
+        // runtime*;
+        // unk158
+     // }
      virtual bool sub_198(void*);
      virtual void sub_1A0();
      virtual void sub_1A8();
      // OnPostSnapshotApplied
      virtual void sub_1B0();
-     virtual void sub_1B8();
+     virtual bool sub_1B8();
      virtual void sub_1C0();
      virtual void sub_1C8();
      virtual void sub_1D0();
@@ -100,8 +108,10 @@ struct IComponent : IScriptable
      // OnRenderSelection
      virtual uint64_t sub_200(uint64_t);
      virtual void sub_208();
-     virtual uint64_t Initialize();
-     virtual void sub_218();
+     // actually OnRequestComponents
+     virtual void Initialize(void *);
+     // PostInitialize
+     virtual void sub_218(void*);
      virtual void sub_220(void*);
      virtual const char * sub_228();
      // called on initialize components
@@ -115,6 +125,7 @@ struct IComponent : IScriptable
     CName name; // 40
     CName appearanceName; // 48 "player"
     Entity* entity; // 50
+    // netIComponentState related
     uint64_t unk58;
     CRUID id; // 60
     ResourcePath appearancePath;

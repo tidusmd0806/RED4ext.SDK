@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/physicsBaseProxy.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
 
 namespace RED4ext::physics {
 struct PhysicalSystemProxy : BaseProxy
@@ -20,12 +21,12 @@ struct PhysicalSystemProxy : BaseProxy
     // runs aggregate->sub_60 or sub_78
     // put bodies to sleep if they're not kinematic
     // set flags to 0x40
-    virtual void sub_10(RED4ext::physics::GeoStuffID *);
+    virtual void sub_10(ProxyCacheID *);
 
     // unsets flags 0x40
     // runs aggregate->sub_80 or sub_70
     //
-    virtual void sub_18(RED4ext::physics::GeoStuffID *);
+    virtual void sub_18(ProxyCacheID *);
 
     virtual uint32_t sub_48() = 0;
     // handles stateValue.unk18 as well

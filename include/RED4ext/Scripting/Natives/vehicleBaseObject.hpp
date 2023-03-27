@@ -822,7 +822,7 @@ struct BaseObject : game::Object
 
     virtual CClass* __fastcall GetNativeType() override;
 
-    virtual void __fastcall OnRequestComponents(char *) override;
+    virtual void __fastcall OnRequestComponents(void *) override;
 
     virtual CString* __fastcall sub_1C0(CString*) override;
 

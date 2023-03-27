@@ -22,7 +22,8 @@ struct IRTTISystem
     virtual CClass* GetClass(CName aName) = 0;                                                   // 10
     virtual CEnum* GetEnum(CName aName) = 0;                                                     // 18
     virtual CBitfield* GetBitfield(CName aName) = 0;                                             // 20
-    virtual void sub_28() = 0;                                                                   // 28
+    // related to constexpr const functions?
+    virtual void* sub_28(CName name) = 0;                                                        // 28
     virtual CGlobalFunction* GetFunction(CName aName) = 0;                                       // 30
     virtual void sub_38() = 0;                                                                   // 38
     virtual void GetNativeTypes(DynArray<CBaseRTTIType*>& aTypes) = 0;                           // 40
@@ -42,6 +43,7 @@ struct IRTTISystem
     virtual void sub_A8() = 0;                                                                // A8
     virtual void AddRegisterCallback(Callback<void (*)()>) = 0;                               // B0
     virtual void AddPostRegisterCallback(Callback<void (*)()>) = 0;                           // B8
+    // related to replicated/net stuff
     virtual void sub_C0() = 0;                                                                // C0
     virtual void sub_C8() = 0;                                                                // C8
     virtual void CreateScriptedClass(CName aName, CClass::Flags aFlags, CClass* aParent) = 0; // D0
@@ -76,8 +78,8 @@ struct CRTTISystem : IRTTISystem
     HashMap<CName, CBaseRTTIType*> types;             // 10
     HashMap<uint64_t, CBaseRTTIType*> typesByAsyncId; // 40
     HashMap<CName, uint32_t> typeAsyncIds;            // 70
-    HashMap<CName, CGlobalFunction*> funcs;           // A0
-    HashMap<uint64_t, CGlobalFunction*> funcsByHash;  // D0
+    HashMap<CName, CGlobalFunction*> funcs;           // A0 - used by GetFunction, GetGlobalFunctions, GetClassFunctions
+    HashMap<uint64_t, CGlobalFunction*> funcsByHash;  // D0 - used by sub_28
     HashMap<void*, void*> unkF8;                      // F8
     DynArray<void*> unk130;                           // 130
     DynArray<void*> unk140;                           // 140

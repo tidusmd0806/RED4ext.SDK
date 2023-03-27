@@ -33,6 +33,10 @@ struct ISerializable
     /// @pattern 40 53 48 83 EC 20 48 8D 05 7B DA EC 02 48 8B D9 48 89 01 33 C0 48 89 41 08 48 89 41 10 48 89 41
     //ISerializable() = default;
 
+    // 1.6  RVA: 0x1AFD70 / 1768816
+    /// @pattern 40 53 48 83 EC 50 4C 8B C2 48 8B D9 48 85 D2 0F 84 C5 00 00 00 48 8B 42 10 0F 57 C0 66 0F 7F 44
+    void __fastcall SetOwner(ISerializable *owner);
+
     virtual CClass* GetNativeType() = 0;                                                // 00
     virtual CClass* GetType();                                                          // 08
     virtual Memory::IAllocator* GetAllocator();                                         // 10
@@ -41,7 +45,6 @@ struct ISerializable
     virtual void sub_28();                                                              // 28
     virtual bool sub_30();                                                              // 30
     virtual void sub_38();                                                              // 38
-    // 
     virtual bool sub_40(BaseStream* aStream);                                           // 40
     virtual bool sub_48(int64_t a1);                                                    // 48
     virtual bool sub_50(int64_t a1);                                                    // 50
@@ -65,7 +68,7 @@ struct ISerializable
     bool IsOfClass(const CClass* cls);
 
     WeakHandle<ISerializable> ref;   // 00 - Initialized in Handle ctor
-    WeakHandle<ISerializable> unk18; // 18
+    WeakHandle<ISerializable> unk18; // 18 - Owner/parent
     uint64_t unk28;                  // 28 - Incremental ID set in ISerializable ctor, can be zero
 };
 RED4EXT_ASSERT_SIZE(ISerializable, 0x30);

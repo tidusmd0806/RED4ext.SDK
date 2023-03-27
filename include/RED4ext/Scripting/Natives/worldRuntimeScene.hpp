@@ -49,11 +49,79 @@ struct RuntimeScene
     // 1.52 RVA: 0xB7C130 / 12042544
     /// @pattern 40 57 48 83 EC 20 83 B9 10 04 00 00 00 48 8B F9 0F 84 B4 00 00 00 48 8B 89 A0 02 00 00 48 89 5C
     // __int64 __fastcall Systems190();
+    
+/*
+ 1 - In Preview
+ 2 - In Singleplayer
+ 3 - On Client (with visuals)
+ 4 - On Headless Client (without visuals)
+ 5 - On Headless Server (without visuals)
+ 6 - On Server (with visuals)
+ 7 - Run RenderDebug in Profiling
 
-    Handle<IRuntimeSystem> systems[0x41];
-    // 0x410: set to 0x41 when loaded. potential interface
-    uint32_t numOfSystems;
-    uint32_t unk414;
+System Name                                    1  2  3  4  5  6  7
+-------------------------------------------------------------------
+FunctionalTestsRuntimeSystem                   x  x  x          
+InternalFunctionalTestsRuntimeSystem           x  x  x          
+netEntitySystem                                      x  x  x  x 
+toolsRuntimeSystemPreviewSpawn                 x                
+workWorkspotSystem                             x  x  x  x  x  x 
+worldNodeInstanceRegistry                      x  x  x  x  x  x 
+worldRuntimeEntityRegistry                     x  x  x  x  x  x 
+worldAnimationSystem                           x  x  x  x  x  x 
+worldCorpseSystem                              x  x  x  x  x  x 
+worldRuntimeSystemAudio                        x  x  x        x 
+worldRuntimeSystemBinkUpdate                   x  x  x        x 
+worldRuntimeSystemCamera                       x                
+worldRuntimeSystemDebugRendering               x  x  x        x 
+worldRuntimeSystemDismemberment                x  x  x  x  x  x 
+worldRuntimeSystemEffects                      x  x  x  x  x  x 
+worldRuntimeSystemEffectAttachments            x  x  x        x 
+worldRuntimeSystemEntity                       x  x  x  x  x  x 
+worldRuntimeSystemDestruction                  x  x  x  x  x  x 
+worldRuntimeSystemEntityAppearanceChanger      x  x  x  x  x  x 
+worldRuntimeSystemEntityTransforms             x  x  x  x  x  x 
+worldRuntimeSystemEnvironment                  x  x  x        x 
+worldRuntimeSystemWeather                      x  x  x  x  x  x 
+worldRuntimeSystemWeatherDebugging             x  x             
+worldRuntimeSystemGI                           x                
+worldRuntimeSystemInspector                    x  x  x        x 
+worldRuntimeSystemMarkers                      x  x  x  x  x  x 
+worldRuntimeSystemMoverComponents              x  x  x     x  x 
+worldRuntimeSystemNavigation                   x  x  x  x  x  x 
+worldRuntimeSystemNodeStreaming                x  x  x  x  x  x 
+worldRuntimeSystemPhysics                      x  x  x  x  x  x 
+worldRuntimeSystemPrefabInstancing             x                
+worldRuntimeSystemRemoteViews                  x  x  x        x 
+worldRuntimeSystemRendering                    x  x  x        x 
+worldRuntimeSystemRepellerComponents           x  x  x  x  x  x 
+worldRuntimeSystemScenes                       x  x  x     x  x 
+worldRuntimeSystemSnapSovler                   x                
+worldRuntimeSystemTerrain                      x                
+worldRuntimeSystemCompiledTerrain              x                
+worldRuntimeSystemTraffic                      x  x  x  x  x  x 
+worldRuntimeSystemTransformAnimator            x  x  x  x  x  x 
+worldRuntimeSystemTriggers                     x  x  x  x  x  x 
+worldRuntimeSystemVisibility                   x  x  x        x 
+worldRuntimeSystemWorldStreaming                  x  x  x  x  x  x 
+worldRuntimeSystemStreamingQuery                  x  x  x  x  x 
+worldgeometryRuntimeSystemGeomDescription      x  x  x  x  x  x 
+worldRuntimeSystemMetrics                      x  x  x        x  x 
+worldRuntimeSystemWorldDebugging               x  x  x        x 
+worldRuntimeSystemSmartObjects                 x  x  x  x  x  x 
+navRuntimeSystemPathfinding                    x  x  x  x  x  x 
+worlduiRuntimeSystemUI                         x  x  x          
+worldRuntimeSystemEntityTransactor             x  x  x  x  x  x 
+worldRuntimeSystemSphereTreeGen                x  x             
+gameRuntimeSystemLights                        x  x  x        x 
+worldRuntimeSystemFoliage                      x  x  x          
+worldRuntimeSystemEntityVisualController       x  x  x        x 
+toolsBugFlagsSystem                            x  x  x          
+debugRuntimeSystemSpeedSplinePreview           x                
+entRuntimeSystemEditorMeshes                   x                
+*/
+
+    StaticArray<Handle<IRuntimeSystem>, 0x41> systems;
     GameInstance* gameInstance;
     uint64_t unk420;
     RuntimeInfo runtimeInfo;

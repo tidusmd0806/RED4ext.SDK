@@ -64,7 +64,7 @@ RED4EXT_INLINE bool IComponent::sub_160() {
     return call(this);
 }
 
-RED4EXT_INLINE void IComponent::sub_168() {
+RED4EXT_INLINE bool IComponent::sub_168() {
     RelocFunc<decltype(&IComponent::sub_168)> call(VFT, 0x168);
     return call(this);
 }
@@ -74,14 +74,14 @@ RED4EXT_INLINE void IComponent::sub_170() {
     return call(this);
 }
 
-RED4EXT_INLINE uint64_t IComponent::sub_178(WorldTransform* a1) {
+RED4EXT_INLINE uint64_t IComponent::sub_178(void* a1) {
     RelocFunc<decltype(&IComponent::sub_178)> call(VFT, 0x178);
     return call(this, a1);
 }
 
-RED4EXT_INLINE void IComponent::sub_180() {
+RED4EXT_INLINE void IComponent::sub_180(ScriptGameInstance* a1) {
     RelocFunc<decltype(&IComponent::sub_180)> call(VFT, 0x180);
-    return call(this);
+    return call(this, a1);
 }
 
 RED4EXT_INLINE void IComponent::sub_188(void* a1) {
@@ -114,7 +114,7 @@ RED4EXT_INLINE void IComponent::sub_1B0() {
     return call(this);
 }
 
-RED4EXT_INLINE void IComponent::sub_1B8() {
+RED4EXT_INLINE bool IComponent::sub_1B8() {
     RelocFunc<decltype(&IComponent::sub_1B8)> call(VFT, 0x1B8);
     return call(this);
 }
@@ -169,14 +169,14 @@ RED4EXT_INLINE void IComponent::sub_208() {
     return call(this);
 }
 
-RED4EXT_INLINE uint64_t IComponent::Initialize() {
+RED4EXT_INLINE void IComponent::Initialize(void * a1) {
     RelocFunc<decltype(&IComponent::Initialize)> call(VFT, 0x210);
-    return call(this);
+    return call(this, a1);
 }
 
-RED4EXT_INLINE void IComponent::sub_218() {
+RED4EXT_INLINE void IComponent::sub_218(void * a1) {
     RelocFunc<decltype(&IComponent::sub_218)> call(VFT, 0x218);
-    return call(this);
+    return call(this, a1);
 }
 
 RED4EXT_INLINE void IComponent::sub_220(void* a1) {

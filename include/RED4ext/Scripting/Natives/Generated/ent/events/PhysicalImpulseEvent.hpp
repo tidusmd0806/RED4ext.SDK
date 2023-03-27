@@ -8,6 +8,7 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector3.hpp>
 #include <RED4ext/Scripting/Natives/Generated/red/Event.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyID.hpp>
 
 namespace RED4ext
 {
@@ -22,7 +23,7 @@ struct PhysicalImpulseEvent : red::Event
     Vector3 worldPosition; // 50
     float radius; // 5C
     uint32_t shapeIndex; // 60
-    uint8_t unk64[0x68 - 0x64]; // 64
+    physics::ProxyID proxyID; // 64
 };
 RED4EXT_ASSERT_SIZE(PhysicalImpulseEvent, 0x68);
 } // namespace ent::events

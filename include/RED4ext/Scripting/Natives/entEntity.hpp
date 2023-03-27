@@ -20,6 +20,7 @@
 
 namespace RED4ext
 {
+namespace world { struct RuntimeScene; }
 namespace ent
 {
 //struct ComponentsStorage;
@@ -30,16 +31,47 @@ struct Entity : IScriptable
     static constexpr const char* ALIAS = "Entity";
     static constexpr const uintptr_t VFT = entEntity_VFT_Addr;
     
+    // Setup callbacks:
+    // entity->OnRequestComponents(void *)
+    // components->Initialize(void*)
+    // something special with AnimatedComponent
+    // something else with ANimatedComponent & VisualC
+    // entity->sub_140(void *, uint16_t*)
+
+        // InitializeComponents:
+        // * set components->entity
+        // * components->sub160() && entity->unk148
+        //   * components->sub_230()
+        //   * set components->unk58 based on entity->unk148
+        // * components->sub178(void* entityInit)
+
+        // GatherEventListeners:
+        // * entity->sub_180(Handle<CallbackManager>*)
+        // * components->sub_1F0(Handle<CallbackManager>*)
+
+        // ResolveRequestedComponentsAndFinish:
+        // * PostInitializeEvent
+        // * components->sub_218(void*)
+
+    // PreUninitializeEvent
+    // * entity->sub_150()
+    // * components->sub_180(scriptGameInstance)
+
     virtual void __fastcall sub_110() { }
-    virtual float __fastcall sub_118();
+    inline virtual float __fastcall sub_118() {
+        return 1.0;
+    }
     virtual Vector2* __fastcall sub_120(Vector2* a1, Vector2* a2);
-    virtual void __fastcall sub_128();
+    inline virtual bool __fastcall sub_128() {
+        return 1;
+    }
     virtual bool __fastcall sub_130();
     virtual void sub_138();
 
     // called when components are loaded
     virtual void __fastcall sub_140(Handle<void>*, int16_t*) { };
     virtual void __fastcall sub_148(uintptr_t) { };
+    // PreUninitialize
     virtual void __fastcall sub_150() { };
     virtual void __fastcall Attach(void *) { };
     virtual uintptr_t __fastcall Detach() { };
@@ -47,15 +79,16 @@ struct Entity : IScriptable
     virtual void __fastcall sub_170() { };
     virtual uintptr_t __fastcall sub_178();
 
-    // GatherEventListeners maybe
+    // GatherEventListeners
     virtual void __fastcall sub_180(Handle<CallbackManager>*) { };
-    virtual void __fastcall OnRequestComponents(char *) { };
+    virtual void __fastcall OnRequestComponents(void *) { };
     virtual void __fastcall sub_190() { };
     virtual void __fastcall sub_198() { };
     virtual void __fastcall sub_1A0() { };
     virtual uintptr_t __fastcall CopyComponentsToStorage(EntityDefinition * definition, void * a2);
     virtual RED4ext::CClass* __fastcall sub_1B0();
-    virtual void __fastcall sub_1B8();
+    // IsReplicable
+    virtual bool __fastcall sub_1B8();
     virtual CString* __fastcall sub_1C0(CString*); // Get "<UNKNOWN>"
 
     /// @pattern 48 89 5C 24 08 57 48 81 EC 00 01 00 00 48 8B 02 48 8B FA 48 89 41 60 48 8B D9 48 8B 42 08 48 89
@@ -100,6 +133,7 @@ struct Entity : IScriptable
     uint32_t unk44;
     EntityID entityID;
     CName currentAppearance;
+    // maybe ProxyCacheID?
     uint64_t unk58;
     ResourcePath resource; // 60
     uint64_t unk68;

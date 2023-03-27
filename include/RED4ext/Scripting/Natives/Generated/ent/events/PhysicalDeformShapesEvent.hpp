@@ -8,7 +8,7 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/Scripting/Natives/Generated/red/Event.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyId.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyID.hpp>
 
 namespace RED4ext
 {
@@ -19,7 +19,7 @@ struct PhysicalDeformShapesEvent : red::Event
     static constexpr const char* ALIAS = "PhysicalDeformShapesEvent";
 
     DynArray<int32_t> shapes; // 40
-    physics::ProxyId proxyId; // 50
+    physics::ProxyID proxyID; // 50
     float value; // 54
 };
 RED4EXT_ASSERT_SIZE(PhysicalDeformShapesEvent, 0x58);

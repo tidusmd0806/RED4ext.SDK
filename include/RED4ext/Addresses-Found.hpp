@@ -11,10 +11,10 @@ no matches for WidgetHudComponentInterface
 no matches for ~WidgetHudComponentInterface
 no matches for AppearanceDefinition
 no matches for audioVehicleMetadata_GetEventData
-no matches for physicsGeoCacheID_Something2
-no matches for physicsGeoCacheID_GetKeyUnk37_0x40
-too many matches for physicsGeoThing_SetCMassLocalPose (10)
-no matches for physicsGeoThing_UpdateGlobalPose
+no matches for physicsProxyID_Something2
+no matches for physicsProxyID_GetKeyUnk37_0x40
+too many matches for physicsProxyHelper_SetCMassLocalPose (10)
+no matches for physicsProxyHelper_UpdateGlobalPose
 too many matches for entVisualControllerComponent_GetAppearanceDependency (2)
 no matches for gameVehicleSystem_SingleFixedStep
 too many matches for gameVehicleSystem_Interpolation (2)
@@ -23,8 +23,8 @@ too many matches for gameVehicleSystem_PostMove (2)
 no matches for physicsGeometryCache_FreeKey
 no matches for vehicleChassisComponent_Unknown1
 no matches for vehicleChassisComponent_SetDampingToPoint4
-too many matches for GeoCacheID_GetGlobalPose (2)
-no matches for geoCacheID_GetNbShapes
+too many matches for ProxyID_GetGlobalPose (2)
+no matches for ProxyID_GetNbShapes
 no matches for vehicleCameraManager_ShouldUseSomeListener
 no matches for vehicleCameraManager_Update
 too many matches for worldEffectBlackboard_SetValue (2)
@@ -603,53 +603,53 @@ no matches for audioThing__anonymous8_AKAudioLoad
 #ifndef physicsFilterData_VFT_Addr
 #define physicsFilterData_VFT_Addr 0x3140AB0
 #endif
-#ifndef physicsGeoCacheID_GetSystemKey_Addr
-#define physicsGeoCacheID_GetSystemKey_Addr 0x46BA70
+#ifndef physicsProxyID_GetProxy_Addr
+#define physicsProxyID_GetProxy_Addr 0x46BA70
 #endif
-#ifndef physicsGeoCacheID_Unk_Addr
-#define physicsGeoCacheID_Unk_Addr 0x449500
+#ifndef physicsProxyID_Unk_Addr
+#define physicsProxyID_Unk_Addr 0x449500
 #endif
 #ifndef physicsGeoKeyStorage_TestUnk2E2068_Addr
 #define physicsGeoKeyStorage_TestUnk2E2068_Addr 0x46B110
 #endif
-#ifndef physicsGeoStuffUnk948_Kick_Addr
-#define physicsGeoStuffUnk948_Kick_Addr 0x498880
+#ifndef physicsProxyCacheMangerUnk948_Kick_Addr
+#define physicsProxyCacheMangerUnk948_Kick_Addr 0x498880
 #endif
-#ifndef physicsGeoThing_CleanUp_Addr
-#define physicsGeoThing_CleanUp_Addr 0x448420
+#ifndef physicsProxyHelper_UpdateProxyCache_Addr
+#define physicsProxyHelper_UpdateProxyCache_Addr 0x448420
 #endif
-#ifndef physicsGeoThing_GetThingWithLock_Addr
-#define physicsGeoThing_GetThingWithLock_Addr 0x4475B0
+#ifndef physicsProxyHelper_GetThingWithLock_Addr
+#define physicsProxyHelper_GetThingWithLock_Addr 0x4475B0
 #endif
-#ifndef physicsGeoThing_SetAngularDamping_Addr
-#define physicsGeoThing_SetAngularDamping_Addr 0x44C100
+#ifndef physicsProxyHelper_SetAngularDamping_Addr
+#define physicsProxyHelper_SetAngularDamping_Addr 0x44C100
 #endif
-#ifndef physicsGeoThing_SetCCD_Addr
-#define physicsGeoThing_SetCCD_Addr 0x44E470
+#ifndef physicsProxyHelper_SetCCD_Addr
+#define physicsProxyHelper_SetCCD_Addr 0x44E470
 #endif
-#ifndef physicsGeoThing_SetGravity_Addr
-#define physicsGeoThing_SetGravity_Addr 0x44CA30
+#ifndef physicsProxyHelper_SetGravity_Addr
+#define physicsProxyHelper_SetGravity_Addr 0x44CA30
 #endif
-#ifndef physicsGeoThing_SetIsQueryable_Addr
-#define physicsGeoThing_SetIsQueryable_Addr 0x44CC30
+#ifndef physicsProxyHelper_SetIsQueryable_Addr
+#define physicsProxyHelper_SetIsQueryable_Addr 0x44CC30
 #endif
-#ifndef physicsGeoThing_SetLinearDamping_Addr
-#define physicsGeoThing_SetLinearDamping_Addr 0x44CF50
+#ifndef physicsProxyHelper_SetLinearDamping_Addr
+#define physicsProxyHelper_SetLinearDamping_Addr 0x44CF50
 #endif
-#ifndef physicsGeoThing_SetMassAndUpdateInertia_Addr
-#define physicsGeoThing_SetMassAndUpdateInertia_Addr 0x44D350
+#ifndef physicsProxyHelper_SetMassAndUpdateInertia_Addr
+#define physicsProxyHelper_SetMassAndUpdateInertia_Addr 0x44D350
 #endif
-#ifndef physicsGeoThing_SetQueryFilterData_Addr
-#define physicsGeoThing_SetQueryFilterData_Addr 0x44D9B0
+#ifndef physicsProxyHelper_SetQueryFilterData_Addr
+#define physicsProxyHelper_SetQueryFilterData_Addr 0x44D9B0
 #endif
-#ifndef physicsGeoThing_SetSimulationFilterData_Addr
-#define physicsGeoThing_SetSimulationFilterData_Addr 0x44DDB0
+#ifndef physicsProxyHelper_SetSimulationFilterData_Addr
+#define physicsProxyHelper_SetSimulationFilterData_Addr 0x44DDB0
 #endif
-#ifndef physicsGeoThing_SetSimulationShape_Addr
-#define physicsGeoThing_SetSimulationShape_Addr 0x44CD40
+#ifndef physicsProxyHelper_SetSimulationShape_Addr
+#define physicsProxyHelper_SetSimulationShape_Addr 0x44CD40
 #endif
-#ifndef physicsGeoThing_Unlock_Addr
-#define physicsGeoThing_Unlock_Addr 0x4476C0
+#ifndef physicsProxyHelper_Unlock_Addr
+#define physicsProxyHelper_Unlock_Addr 0x4476C0
 #endif
 #ifndef physicsGeometryCache_FreeAlwaysLoaded_Addr
 #define physicsGeometryCache_FreeAlwaysLoaded_Addr 0x442CC0
@@ -801,8 +801,8 @@ no matches for audioThing__anonymous8_AKAudioLoad
 #ifndef vehicleChassisComponent_GetCollisionShapes_Addr
 #define vehicleChassisComponent_GetCollisionShapes_Addr 0x1C9D520
 #endif
-#ifndef vehicleChassisComponent_GetGeoThingAndLock_Addr
-#define vehicleChassisComponent_GetGeoThingAndLock_Addr 0x1C9D190
+#ifndef vehicleChassisComponent_GetProxyHelperAndLock_Addr
+#define vehicleChassisComponent_GetProxyHelperAndLock_Addr 0x1C9D190
 #endif
 #ifndef vehicleChassisComponent_SetFilterData_Addr
 #define vehicleChassisComponent_SetFilterData_Addr 0x1C9CC50

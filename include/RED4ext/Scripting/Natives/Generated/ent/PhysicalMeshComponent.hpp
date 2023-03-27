@@ -12,7 +12,7 @@
 #include <RED4ext/Scripting/Natives/Generated/physics/FilterDataSource.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
 #include <RED4ext/Scripting/Natives/entITransformAttachable.hpp>
-#include <RED4ext/Scripting/Natives/physicsGeoCacheStorage.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
 
 namespace RED4ext
 {
@@ -37,10 +37,10 @@ struct PhysicalMeshComponent : ent::MeshComponent, ent::ITransformAttachable
     // disable/cleanup something?
     virtual void sub_180();
 
-    // sets geoStuffID, runs sub_2A0
+    // sets proxyCacheID, runs sub_2A0
     virtual void sub_188(void * a2);
 
-    // geoCache & Stuff
+    // proxyID & Stuff
     virtual bool sub_198(void *);
 
     // verify mesh collider stuff
@@ -53,7 +53,7 @@ struct PhysicalMeshComponent : ent::MeshComponent, ent::ITransformAttachable
     virtual bool sub_2A0();
     virtual bool sub_2A8();
 
-    // creates physicalResource & populates geoCacheID & geoStuffID
+    // creates physicalResource & populates proxyID & proxyCacheID
     virtual bool sub_2B0();
 
     // 1.6  RVA: 0x10C7C30 / 17595440
@@ -63,10 +63,10 @@ struct PhysicalMeshComponent : ent::MeshComponent, ent::ITransformAttachable
     uint64_t unk1E8;
     Transform bodyTransform;
     Handle<physics::FilterData> filterData; // 210
-    uint8_t unk220[0x228 - 0x220]; // 220
+    NativeArray<physics::InitialState, 16> * initialStats; // 220
     CName visibilityAnimationParam; // 228
-    physics::GeoCacheID geoCacheID;
-    physics::GeoStuffID geoStuffID;
+    physics::ProxyID proxyID;
+    physics::ProxyCacheID proxyCacheID;
     physics::FilterDataSource filterDataSource; // 238
     physics::SimulationType simulationType; // 239
     bool startInactive; // 23A

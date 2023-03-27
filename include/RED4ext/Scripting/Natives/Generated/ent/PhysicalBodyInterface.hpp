@@ -16,7 +16,7 @@ struct PhysicalBodyInterface : IScriptable
     static constexpr const char* NAME = "entPhysicalBodyInterface";
     static constexpr const char* ALIAS = "PhysicalBodyInterface";
 
-    physics::GeoCacheID geoCacheID;
+    physics::ProxyID proxyID;
     uint32_t bodyIndex;
 };
 RED4EXT_ASSERT_SIZE(PhysicalBodyInterface, 0x48);

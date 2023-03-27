@@ -401,7 +401,7 @@ struct WheeledPhysics : Physics
     // virtual uint64_t sub_A0(uint64_t) override;
     // virtual uint64_t IntializeVectorQuaternion(uint64_t) override;
     virtual uint64_t sub_B0(int, float) override;
-    // references geoCacheID
+    // references proxyID
     virtual bool UpdatePhysicsStuff() override;
     virtual bool IsInAirFromVehicle() override;
     // virtual bool SomethingOrientationIsInAir() override;

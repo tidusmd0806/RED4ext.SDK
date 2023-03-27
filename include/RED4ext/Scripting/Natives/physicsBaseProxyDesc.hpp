@@ -35,7 +35,7 @@ struct BaseProxyDesc
     uint64_t unk60[7];
     uint8_t unk98;
     // set with chassis.unk180, stored at GeoKeyStorage::unk1A2018
-    NativeArrayInitialState, 32> * initialStates;
+    NativeArray<InitialState, 32> * initialStates;
     ent::ITransformAttachable attachable;
     uint64_t unkB0;
     // 0x17 for chassis
@@ -44,8 +44,8 @@ struct BaseProxyDesc
     uint8_t isStatic;
     uint64_t unkD0[5];
     ProxyType type;
-    HandleSystemResource> resource;
+    Handle<SystemResource> resource;
 };
-RED4EXT_ASSERT_OFFSET(ProxyDesc, resource, 0x100);
+RED4EXT_ASSERT_OFFSET(BaseProxyDesc, resource, 0x100);
 }
 }

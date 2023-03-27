@@ -8,8 +8,10 @@
 #include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
 #include <RED4ext/Scripting/Natives/entITransformAttachable.hpp>
-#include <RED4ext/Scripting/Natives/physicsGeoCacheStorage.hpp>
-#include <RED4ext/Scripting/Natives/physicsStateValue.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyID.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
+#include <RED4ext/Scripting/Natives/physicsInitialState.hpp>
 #include <cstdint>
 
 namespace RED4ext
@@ -20,17 +22,13 @@ struct SystemResource;
 struct ICollider;
 struct FilterData;
 } // namespace physics
-namespace game
-{
-struct VehicleSystem;
-}
+
+namespace game { struct VehicleSystem; }
 
 namespace vehicle
 {
 
-struct ChassisComponent
-    : ent::IPlacedComponent
-    , ent::ITransformAttachable
+struct ChassisComponent : ent::IPlacedComponent, ent::ITransformAttachable
 {
     static constexpr const char* NAME = "vehicleChassisComponent";
     static constexpr const char* ALIAS = NAME;
@@ -41,16 +39,16 @@ struct ChassisComponent
 
     // virtuals
 
-    // creates collider & geoCacheIDs
+    // creates collider & proxyIDs
     // virtual sub_178(uint64_t);
 
-    // references geoCacheIDs and unk180
+    // references proxyIDs and unk180
     // virtual sub_180();
 
     // turns on/off collision based on a1
     virtual void sub_1E8(bool a1);
 
-    // something with playerOnly geoCacheID
+    // something with playerOnly proxyID
     virtual void ITransformAttachable_08(WorldTransform*, bool);
 
     // non-virtual methods
@@ -83,11 +81,11 @@ struct ChassisComponent
 
     // 1.6  RVA: 0x1C9C840 / 30001216
     /// @pattern 40 53 48 83 EC 20 8B 81 60 01 00 00 4C 8D 81 6C 01 00 00 48 8B DA 89 44 24 30 48 8B CB 48 8D 54
-    inline physics::GeoThing* __fastcall GetGeoThingAndLock(physics::GeoThing* geoThing)
+    inline physics::ProxyHelper* __fastcall GetProxyHelperAndLock(physics::ProxyHelper* proxyHelper)
     {
-        RelocFunc<decltype(&ChassisComponent::GetGeoThingAndLock)> call(
-            vehicleChassisComponent_GetGeoThingAndLock_Addr);
-        return call(this, geoThing);
+        RelocFunc<decltype(&ChassisComponent::GetProxyHelperAndLock)> call(
+            vehicleChassisComponent_GetProxyHelperAndLock_Addr);
+        return call(this, proxyHelper);
     }
 
     // 1.6  RVA: 0x1C9C110 / 29999376
@@ -113,9 +111,9 @@ struct ChassisComponent
     Ref<physics::SystemResource> collisionResource;                   // 128
     Ref<physics::SystemResource> optionalPlayerOnlyCollisionResource; // 140
     uint64_t unk158;
-    physics::ProxyId proxyId;
-    physics::ProxyId proxyId_PlayerOnly;
-    physics::GeoStuffID geoStuffID;
+    physics::ProxyID proxyID;
+    physics::ProxyID proxyID_PlayerOnly;
+    physics::ProxyCacheID proxyCacheID;
     SharedMutex sharedMutex;
     uint32_t unk170;
     // colliders that have chassis_bottom tag - seems to extend past 32bits
@@ -128,42 +126,3 @@ struct ChassisComponent
 RED4EXT_ASSERT_SIZE(ChassisComponent, 0x190);
 } // namespace vehicle
 } // namespace RED4ext
-
-// 1.6 RVA: 0x4B8750 / 4949840
-/// @pattern 48 8B C4 48 89 58 10 55 56 57 41 54 41 56 48 8D 68 A9 48 81 EC F0 00 00 00 44 0F 29 50 88 49 8B
-char __fastcall pxRigidBody_Get(void* data, __int64 a2, RED4ext::physics::StateValue updateType,
-                                void* rigidBody, uint32_t shapeIndex);
-
-// does different things based on updateType:
-// 1:  setKinematicTarget(a3)
-// 2:  setGlobalPose(a3) don't wake
-// 3:  setGlobalPose(a3)
-// 4:  setLinearVelocity(a3)
-// 5:  setAngularVelocity(a3)
-// 7:  setLinearDamping(a3)
-// 8:  setAngularDamping(a3)
-// 13: if a3 putToSleep() else wakeUp()
-// 16: PxRigidBodyExt::setMassAndUpdateInertia
-// 17: setMassSpaceInertiaTensor(a3)
-// 21: setRigidBodyFlag(1, a3)
-// 22: setActorFlag(2, a3 == 0)
-// 32: shapes[shapeIndex]->setSimulationFilterData(a3), sets all if shapeIndex == -1
-// 33: shapes[shapeIndex]->setQueryFilterData(a3), sets all if shapeIndex == -1
-// 34: shapes[shapeIndex]->setLocalPose(a3), sets all if shapeIndex == -1
-// 38: setCMassLocalPose(a3)
-// 41: shapes[shapeIndex]->setFlag(2, a3), sets all if shapeIndex == -1
-// 42: shapes[shapeIndex]->setFlag(1, a3), sets all if shapeIndex == -1
-// 1.6 RVA: 0x4B9570 / 4953456
-/// @pattern 48 8B C4 55 56 57 41 56 48 8D 68 B1 48 81 EC D8 00 00 00 44 0F 29 48 98 49 8B F0 44 0F 29 50 88
-char __fastcall pxRigidBody_Update(void* pxRigidBody, RED4ext::physics::StateValue updateType, void* a3,
-                                   __int64 a4, unsigned int shapeIndex, char isAsleep);
-
-// 1.6 RVA: 0x44AF80 / 4501376
-/// @pattern 48 89 5C 24 18 48 89 74 24 20 57 48 83 EC 60 8B 1A 0F 57 C0 0F 29 44 24 40 48 8D 54 24 70 0F 28
-RED4ext::Transform* __fastcall GeoCacheID_GetGlobalPose(RED4ext::Transform* a1, int* p_geoCacheID,
-                                                        unsigned int bodyIndex);
-
-// 1.6  RVA: 0x44A800 / 4499456
-/// @pattern 48 89 5C 24 08 48 89 74 24 18 57 48 83 EC 50 8B 02 48 8B D9 41 8B D0 89 44 24 68 48 8D 4C 24 68
-RED4ext::Transform* __fastcall GetShapeLocalPos(RED4ext::Transform*, RED4ext::physics::GeoCacheID* p_geoCacheID,
-                                                unsigned int bodyIndex, uint32_t shapeIndex);
