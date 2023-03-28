@@ -47,24 +47,15 @@ struct GameOptionFloat : GameOption {
 struct __declspec(align(8)) GameOptionManager {
     // 1.52 RVA: 0x2B9DC60 / 45735008
     /// @pattern 48 83 EC 58 48 8B 05 DD 7A 03 02 48 85 C0 0F 85 58 01 00 00 E8 87 09 00 00 48 8D 48 08 FF 15 4D
-    inline static GameOptionManager* __fastcall Get() {
-        RelocFunc<decltype(&GameOptionManager::Get)> call(0x2B9DC60);
-        return call();
-    }
+    static GameOptionManager* __fastcall Get();
 
     // 1.52 RVA: 0x2B9DE90 / 45735568
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 41 56 48 83 EC 20 4C 8B F1 49 8B D9 48 8B 49 10 49
-    inline bool __fastcall GetGameOption(const char *category, const char *prop, CString &value) {
-        RelocFunc<decltype(&GameOptionManager::GetGameOption)> call(0x2B9DE90);
-        return call(this, category, prop, value);
-    }
+    bool __fastcall GetGameOption(const unsigned char *category, const unsigned char *prop, CString &value);
   
     // 1.52 RVA: 0x2B9E570 / 45737328
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B E9 49 8B D9 48 8B 49 10 49 8B
-    inline bool __fastcall SetGameOption(const char *category, const char *prop, CString *value) {
-        RelocFunc<decltype(&GameOptionManager::SetGameOption)> call(0x2B9E570);
-        return call(this, category, prop, value);
-    }
+    bool __fastcall SetGameOption(const unsigned char *category, const unsigned char *prop, CString *value);
 
     struct Unk00 {
         struct Entry {

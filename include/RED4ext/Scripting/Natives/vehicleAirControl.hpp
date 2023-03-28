@@ -39,7 +39,7 @@ struct AirControl
 
     // 1.6 RVA: 0x1D11050 / 30478416
     /// @pattern 48 89 5C 24 08 57 48 83 EC 30 41 8B C0 4C 69 C0 B0 00 00 00 0F 29 74 24 20 0F 28 F3 49 8D 04 08
-    // void __fastcall ProcessAxisVector4(char dl0, unsigned int axis, float timeDelta);
+    // void __fastcall ProcessAxisVector4(bool dl0, unsigned int axis, float timeDelta);
 
     // 1.6  RVA: 0x1D0FBC0 / 30473152
     /// @pattern 40 53 48 83 EC 20 0F 57 C0 48 8B D9 0F 2F 81 40 02 00 00 73 16 48 8B 09 E8 43 A2 F6 FF F3 0F 5E

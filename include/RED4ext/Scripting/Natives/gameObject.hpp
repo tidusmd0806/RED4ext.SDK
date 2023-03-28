@@ -118,7 +118,7 @@ struct Object : ent::GameEntity, PSInterface
 
     // 1.52 RVA: 0x13ECC30 / 20892720
     /// @pattern 48 89 4C 24 08 55 56 57 48 81 EC 90 00 00 00 48 8D 6C 24 30 41 83 78 08 01 48 8D 8D 80 00 00 00
-    bool __fastcall CallScriptFunction(void * a1, uintptr_t a2, char a3);
+    bool __fastcall CallScriptFunction(void * a1, uintptr_t a2, uint8_t a3);
 
     struct Flags
     {

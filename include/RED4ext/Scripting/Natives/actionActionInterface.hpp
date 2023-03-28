@@ -32,10 +32,7 @@ struct ActionInterface {
     // 1.61 RVA: 0x1B4D220
     // 1.62 RVA: 0x1B4D910
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 41 54 41 55 41 56 41 57 48 83 EC 20 48 8D A9 E8
-    inline __int64 __fastcall EndActions() {
-        RED4ext::RelocFunc<decltype(&ActionInterface::EndActions)> call(0x1B4D910);
-        return call(this);
-    }
+    __int64 __fastcall EndActions();
 
     // 1.52 RVA: 0x1B4D2E0 / 28627680
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B F1 41 0F B6 F8 48 81 C1 E8 00

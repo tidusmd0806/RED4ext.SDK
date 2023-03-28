@@ -42,11 +42,7 @@ struct ProxyID
     // 1.6  RVA: 0x46B140 / 4632896
     // 1.62 RVA: 0x46BA70 / 4635248
     /// @pattern 40 53 48 83 EC 30 8B 01 4C 8D 44 24 40 48 8B 0D ? ? D1 03 48 8D 54 24 20 89 44 24 40 E8 AE F2
-    inline BaseProxy * __fastcall GetProxy()
-    {
-        RelocFunc<decltype(&ProxyID::GetProxy)> call(physicsProxyID_GetProxy_Addr);
-        return call(this);
-    }
+    BaseProxy * __fastcall GetProxy();
 
     // 1.6  RVA: 0x46AC90 / 4631696
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 8B 01 48 8B FA 48 8B D9 89 44 24 30 48 8B 0D FB 4D D1 03 48 8D 54

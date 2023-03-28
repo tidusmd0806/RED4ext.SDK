@@ -125,7 +125,7 @@ struct Physics
 
     // 1.52 RVA: 0x1CEB5B0 / 30324144
     /// @pattern 80 79 50 00 75 03 32 C0 C3 F2 0F 10 41 30 F2 0F 11 02 8B 41 38 89 42 08 B0 01 0F 10 41 40 0F 11
-    char __fastcall ReadWorldTransform(WorldTransform *a2);
+    bool __fastcall ReadWorldTransform(WorldTransform *a2);
 
     // 1.52 RVA: 0x1CEB370 / 30323568
     /// @pattern 48 89 5C 24 20 55 41 56 41 57 48 8D 6C 24 B9 48 81 EC B0 00 00 00 4C 8B F1 41 0F B6 D8 48 8B 49
@@ -145,7 +145,7 @@ struct Physics
 
     // 1.52 RVA: 0x1CEBAE0 / 30325472
     /// @pattern F6 C2 01 74 3B 53 48 83 EC 40 48 8B D9 48 8D 54 24 20 48 8B 49 60 E8 35 A7 34 FF F2 0F 10 00 F2
-    // void __fastcall UpdateWorldTransform2FromParent(char a2);
+    // void __fastcall UpdateWorldTransform2FromParent(bool a2);
 
     // 1.52 RVA: 0x1CEC3F0 / 30327792
     /// @pattern 48 89 5C 24 10 48 89 6C 24 20 56 57 41 56 48 83 EC 20 48 8B 01 4C 8B F1 FF 90 40 01 00 00 48 8D
@@ -329,7 +329,7 @@ struct WheeledPhysics : Physics
     
     // 1.6 RVA: 0x1D194B0 / 30512304
     /// @pattern 84 D2 74 27 C6 81 B4 00 00 00 01 C7 81 AC 00 00 00 FF FF FF FF C7 81 B0 00 00 00 00 00 00 00 48
-    __int64 __fastcall SetIsMovingOthers(char a2);
+    __int64 __fastcall SetIsMovingOthers(bool a2);
 
     // 1.6 RVA: 0x1D19890 / 30513296
     /// @pattern 48 89 5C 24 10 57 48 81 EC 90 00 00 00 48 8B 41 60 48 8B F9 48 8B 98 C0 00 00 00 E8 E0 30 E1 FF

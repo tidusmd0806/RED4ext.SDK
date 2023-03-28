@@ -15,70 +15,42 @@ struct ProxyHelper
     // 1.6  RVA: 0x44C410 / 4506640
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9 41
     /// @nth 1/2
-    inline ProxyHelper *__fastcall SetSimulationShape(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex)
-    {
-        RelocFunc<decltype(&ProxyHelper::SetSimulationShape)> call(physicsProxyHelper_SetSimulationShape_Addr);
-        return call(this, enabled, bodyIndex, shapeIndex);
-    }
+    ProxyHelper *__fastcall SetSimulationShape(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex);
     
     // 1.6  RVA: 0x44DB40 / 4512576
     /// @pattern 48 89 5C 24 18 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F8 48 85 C9 0F 85 9D
     /// @nth 6/7
-    inline ProxyHelper *__fastcall SetCCD(bool enabled, int bodyIndex)
-    {
-        RelocFunc<decltype(&ProxyHelper::SetCCD)> call(physicsProxyHelper_SetCCD_Addr);
-        return call(this, enabled, bodyIndex);
-    }
+    ProxyHelper *__fastcall SetCCD(bool enabled, int bodyIndex);
 
     // 1.6  RVA: 0x44D480 / 4510848
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9
     /// @nth 3/4
-    inline ProxyHelper* __fastcall SetSimulationFilterData(void* simulationFilter, int bodyIndex, int shapeIndex)
-    {
-        RelocFunc<decltype(&ProxyHelper::SetSimulationFilterData)> call(physicsProxyHelper_SetSimulationFilterData_Addr);
-        return call(this, simulationFilter, bodyIndex, shapeIndex);
-    }
+    ProxyHelper* __fastcall SetSimulationFilterData(void* simulationFilter, int bodyIndex, int shapeIndex);
 
     // 1.6  RVA: 0x44D080 / 4509824
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9
     /// @nth 1/4 
-    inline ProxyHelper* __fastcall SetQueryFilterData(void* queryFilter, uint32_t bodyIndex, unsigned int shapeIndex)
-    {
-        RelocFunc<decltype(&ProxyHelper::SetQueryFilterData)> call(physicsProxyHelper_SetQueryFilterData_Addr);
-        return call(this, queryFilter, bodyIndex, shapeIndex);
-    }
+    ProxyHelper* __fastcall SetQueryFilterData(void* queryFilter, uint32_t bodyIndex, unsigned int shapeIndex);
 
     // 1.6  RVA: 0x44C300 / 4506368
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9 41
     /// @nth 0/2
-    inline ProxyHelper* __fastcall SetIsQueryable(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex) 
-    {
-        RelocFunc<decltype(&ProxyHelper::SetIsQueryable)> call(physicsProxyHelper_SetIsQueryable_Addr);
-        return call(this, enabled, bodyIndex, shapeIndex);
-    }
+    ProxyHelper* __fastcall SetIsQueryable(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex);
 
     // 1.6  RVA: 0x44C620 / 4507168
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F8 48 8B F2 48 85
     /// @nth 3/10
-    inline ProxyHelper* __fastcall SetLinearDamping(float* linearDamping, uint32_t bodyIndex)
-    {
-        RelocFunc<decltype(&ProxyHelper::SetLinearDamping)> call(physicsProxyHelper_SetLinearDamping_Addr);
-        return call(this, linearDamping, bodyIndex);
-    }
+    ProxyHelper* __fastcall SetLinearDamping(float* linearDamping, uint32_t bodyIndex);
 
     // 1.6  RVA: 0x44B7D0 / 4503504
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F8 48 8B F2 48 85
     /// @nth 0/10
-    inline ProxyHelper* __fastcall SetAngularDamping(float* angularDamp, uint32_t bodyIndex)
-    {
-        RelocFunc<decltype(&ProxyHelper::SetAngularDamping)> call(physicsProxyHelper_SetAngularDamping_Addr);
-        return call(this, angularDamp, bodyIndex);
-    }
+    ProxyHelper* __fastcall SetAngularDamping(float* angularDamp, uint32_t bodyIndex);
 
     // 1.6  RVA: 0x44C100 / 4505856
     /// @pattern 48 89 5C 24 18 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F8 48 85 C9 0F 85 9D
     /// @nth 1/7
-    ProxyHelper* __fastcall SetGravity(char flag, uint32_t bodyIndex);
+    ProxyHelper* __fastcall SetGravity(bool flag, uint32_t bodyIndex);
 
     // 1.6  RVA: 0x44C820 / 4507680
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F8 48 8B F2 48 85
@@ -94,7 +66,7 @@ struct ProxyHelper
 
     // 1.6  RVA: 0x44CA20 / 4508192
     /// @pattern 48 89 5C 24 08 48 89 74 24 18 F3 0F 11 4C 24 10 57 48 83 EC 50 8B 41 10 41 0F B6 F9 40 80 F7 01
-    ProxyHelper* __fastcall SetMassAndUpdateInertia(float chassisMass, uint32_t bodyIndex, char shouldWake);
+    ProxyHelper* __fastcall SetMassAndUpdateInertia(float chassisMass, uint32_t bodyIndex, bool shouldWake);
 
     // 1.6  RVA: 0x44D980 / 4512128
     /// @pattern 4C 8B DC 49 89 5B 08 49 89 73 10 57 48 83 EC 70 F3 0F 10 05 08 E5 C8 02 41 0F B6 F9 66 0F 6E 12
@@ -103,19 +75,11 @@ struct ProxyHelper
     // assigns proxyCacheEntry to the proxyID in manager
     // 1.6  RVA: 0x447AF0 / 4487920
     /// @pattern 40 53 48 83 EC 20 48 8B 51 08 48 8B D9 48 85 D2 74 18 8B 02 48 8D 4C 24 30 89 44 24 30 E8 7E 31
-    inline char __fastcall UpdateProxyCache()
-    {
-        RelocFunc<decltype(&ProxyHelper::UpdateProxyCache)> call(physicsProxyHelper_UpdateProxyCache_Addr);
-        return call(this);
-    }
+    bool __fastcall UpdateProxyCache();
 
     // 1.6  RVA: 0x446D90 / 4484496
     /// @pattern 48 8B 51 18 48 85 D2 74 04 33 C0 86 02 C3
-    inline __int64 __fastcall Unlock()
-    {
-        RelocFunc<decltype(&ProxyHelper::Unlock)> call(physicsProxyHelper_Unlock_Addr);
-        return call(this);
-    }
+    __int64 __fastcall Unlock();
 
     ProxyCache * proxyCache;
     ProxyCacheEntry * proxyCacheEntry;

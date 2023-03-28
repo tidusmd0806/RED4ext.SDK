@@ -103,7 +103,7 @@ struct BaseProxy {
 
 // 1.6 RVA: 0x4B8750 / 4949840
 /// @pattern 48 8B C4 48 89 58 10 55 56 57 41 54 41 56 48 8D 68 A9 48 81 EC F0 00 00 00 44 0F 29 50 88 49 8B
-char __fastcall pxRigidBody_Get(void* data, __int64 a2, RED4ext::physics::StateValue updateType,
+bool __fastcall pxRigidBody_Get(void* data, __int64 a2, RED4ext::physics::StateValue updateType,
                                 void* rigidBody, uint32_t shapeIndex);
 
 // does different things based on updateType:
@@ -127,8 +127,8 @@ char __fastcall pxRigidBody_Get(void* data, __int64 a2, RED4ext::physics::StateV
 // 42: shapes[shapeIndex]->setFlag(1, a3), sets all if shapeIndex == -1
 // 1.6 RVA: 0x4B9570 / 4953456
 /// @pattern 48 8B C4 55 56 57 41 56 48 8D 68 B1 48 81 EC D8 00 00 00 44 0F 29 48 98 49 8B F0 44 0F 29 50 88
-char __fastcall pxRigidBody_Update(void* pxRigidBody, RED4ext::physics::StateValue updateType, void* a3,
-                                   __int64 a4, unsigned int shapeIndex, char isAsleep);
+bool __fastcall pxRigidBody_Update(void* pxRigidBody, RED4ext::physics::StateValue updateType, void* a3,
+                                   __int64 a4, unsigned int shapeIndex, bool isAsleep);
 
 // 1.6 RVA: 0x44AF80 / 4501376
 /// @pattern 48 89 5C 24 18 48 89 74 24 20 57 48 83 EC 60 8B 1A 0F 57 C0 0F 29 44 24 40 48 8D 54 24 70 0F 28

@@ -63,7 +63,7 @@ struct ChassisComponent : ent::IPlacedComponent, ent::ITransformAttachable
 
     // 1.6 RVA: 0x1C9E610 / 30008848
     /// @pattern 40 55 41 55 48 8D AC 24 78 F9 FF FF 48 81 EC 88 07 00 00 8B 81 60 01 00 00 4C 8B E9 48 8D 8D B0
-    char __fastcall BigUpdate();
+    bool __fastcall BigUpdate();
 
     // may set CCD based on the Z component of vehicle->unk568->linearVelocity (unk48) abs(Z) <= 13.0
     // 1.6 RVA: 0x1C9FE40 / 30015040
@@ -73,7 +73,7 @@ struct ChassisComponent : ent::IPlacedComponent, ent::ITransformAttachable
     // 1.6  RVA: 0x1C9CBD0 / 30002128
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 30 48 8B DA 48 8B F9 45 84 C0 74 1C 48 8D B1 40 01 00
     Handle<RED4ext::physics::ICollider>** __fastcall GetCollisionShapes(Handle<RED4ext::physics::ICollider>** start_end,
-                                                                        char playerOnly);
+                                                                        bool playerOnly);
 
     // 1.6  RVA: 0x1C9BED0 / 29998800
     /// @pattern 48 83 EC 48 41 0F 10 60 10 4D 8B C8 0F 29 74 24 30 0F 28 DC 0F 59 DC C7 44 24 0C 00 00 80 3F 0F
@@ -81,16 +81,11 @@ struct ChassisComponent : ent::IPlacedComponent, ent::ITransformAttachable
 
     // 1.6  RVA: 0x1C9C840 / 30001216
     /// @pattern 40 53 48 83 EC 20 8B 81 60 01 00 00 4C 8D 81 6C 01 00 00 48 8B DA 89 44 24 30 48 8B CB 48 8D 54
-    inline physics::ProxyHelper* __fastcall GetProxyHelperAndLock(physics::ProxyHelper* proxyHelper)
-    {
-        RelocFunc<decltype(&ChassisComponent::GetProxyHelperAndLock)> call(
-            vehicleChassisComponent_GetProxyHelperAndLock_Addr);
-        return call(this, proxyHelper);
-    }
+    physics::ProxyHelper* __fastcall GetProxyHelperAndLock(physics::ProxyHelper* proxyHelper);
 
     // 1.6  RVA: 0x1C9C110 / 29999376
     /// @pattern 40 53 48 83 EC 40 8B 81 60 01 00 00 48 8B D9 48 8D 4C 24 50 89 44 24 50 E8 33 F1 7A FE 84 C0 74
-    char __fastcall SetDampingToPoint4();
+    bool __fastcall SetDampingToPoint4();
 
     // does some bit testing on unk174 & shapeIndex for setting with filterDataBottom
     // 1.6  RVA: 0x1C9C300 / 29999872
@@ -99,12 +94,7 @@ struct ChassisComponent : ent::IPlacedComponent, ent::ITransformAttachable
 
     // 1.6 RVA: 0x1C9DF40 / 30007104
     /// @pattern 48 89 5C 24 18 55 56 57 48 83 EC 60 48 8B 79 50 41 0F B6 E8 8B F2 48 8B D9 48 85 FF 0F 84 9F 01
-    inline void __fastcall UpdatePhysicsState(uint32_t a2, bool unset)
-    {
-        RelocFunc<decltype(&ChassisComponent::UpdatePhysicsState)> call(
-            vehicleChassisComponent_UpdatePhysicsState_Addr);
-        return call(this, a2, unset);
-    }
+    void __fastcall UpdatePhysicsState(uint32_t a2, bool unset);
 
     // data
 

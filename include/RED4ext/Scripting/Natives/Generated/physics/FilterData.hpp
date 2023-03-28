@@ -28,10 +28,7 @@ struct FilterData : ISerializable
 
     // 1.6  RVA: 0x43C990 / 4442512
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B DA 48 8B F9 E8 CB 2F 02 00 4C 8B C3 48 8D 54 24 30 48 8B C8
-    inline void __fastcall LoadPreset( CName name) {
-        RelocFunc<decltype(&FilterData::LoadPreset)> call(physicsFilterData_LoadPreset_Addr);
-        return call(this, name);
-    }
+    void __fastcall LoadPreset(CName name);
 
     physics::QueryFilter queryFilter; // 30
     physics::SimulationFilter simulationFilter; // 40

@@ -76,7 +76,7 @@ struct CallbackManager
     // &ids
     // // 1.52 RVA: 0x2BC17C0 / 45881280
     // /// @pattern 48 89 5C 24 18 56 57 41 54 41 56 41 57 48 83 EC 30 8B 71 0C 4C 8B F2 8B 51 08 4D 8B F9 45 8B E0
-    // __int64 __fastcall Unknown2(__int64, unsigned int, char *);
+    // __int64 __fastcall Unknown2(__int64, unsigned int, unsigned char *);
 
     // 1.52 RVA: 0x2BC1780 / 45881216
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 8B F9 48 83 C1 5B E8 EA 9C F7 FF 83 7F 2C 00 B9 FF FF FF FF 0F

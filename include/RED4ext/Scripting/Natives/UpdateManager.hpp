@@ -13,7 +13,7 @@ namespace RED4ext
 struct CGameFramework;
 struct IUpdatableSystem;
 
-enum class UpdateTickGroup : char
+enum class UpdateTickGroup : unsigned char
 {
     // TierSystem, MountingFacility, HitRepresentationSystem
     // AIDirectorSystem, UpdateTime, Damage, TrafficSystemMovement
@@ -71,7 +71,7 @@ enum class UpdateTickGroup : char
     Unknown = 0xD
 };
 
-enum class Unk1 : char
+enum class Unk1 : unsigned char
 {
     // Entities/PreTick, MovingPlatforms/Tick, PuppetUpdaterSystem/PreTick, ReactionSystem::Update
     Entities_PreTick = 0x0,
@@ -109,7 +109,7 @@ enum class Unk1 : char
 };
 
 // UpdateManagerHolder->UpdateSystems only fires Unk2 < (1 << 2)
-enum class Unk2 : char
+enum class Unk2 : unsigned char
 {
     VeryCommon = 0x0, // Most are this
     FoliageDestructionTick = 0x1,

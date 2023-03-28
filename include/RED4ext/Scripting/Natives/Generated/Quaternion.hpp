@@ -14,11 +14,10 @@
 #include <RED4ext/Scripting/Natives/Generated/Vector3.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector4.hpp>
 
-struct EulerAngles;
-struct Matrix;
-
 namespace RED4ext
 {
+struct EulerAngles;
+struct Matrix;
 struct Quaternion
 {
     static constexpr const char* NAME = "Quaternion";

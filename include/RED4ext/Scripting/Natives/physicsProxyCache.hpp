@@ -38,7 +38,7 @@ struct ProxyCache {
     // 1.6  RVA: 0x46B1C0 / 4633024
     /// @pattern 48 85 D2 0F 84 43 01 00 00 53 55 56 41 55 48 83 EC 38 8B 81 84 00 00 00 41 8B F1 41 8B E8 48 8B
     void __fastcall AddToCache(ProxyCacheEntry *entry, int bodyIndex, int shapeIndex, 
-        StateValue updateType, void *data, size_t Size, char wake);
+        StateValue updateType, void *data, size_t Size, bool wake);
 
     // calls proxy->sub_50 if proxyCacheEntry doesn't exist
     // gets from Cache if it exists and matches query

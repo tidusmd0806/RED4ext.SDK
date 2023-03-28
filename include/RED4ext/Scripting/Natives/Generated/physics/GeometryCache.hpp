@@ -29,7 +29,7 @@ struct GeometryCache : CResource
     /// @pattern 48 8B C4 55 41 56 41 57 48 8D 68 98 48 81 EC 50 01 00 00 4C 8B F1 44 8B FA 3B 51 5C 0F 87 30 03
     __int64 __fastcall LoadSectorGeometriesSetup(uint32_t);
 
-    struct LoadSectorGeometries {
+    struct LoadSectorGeometriesStruct {
         uint32_t numSectors;
         uint32_t unk04;
         DynArray<GeometryKey> sectorGeometries;
@@ -39,7 +39,7 @@ struct GeometryCache : CResource
 
     // 1.6 RVA: 0x43FD90 / 4455824
     /// @pattern 40 55 41 55 48 8D 6C 24 E8 48 81 EC 18 01 00 00 48 8B 41 30 0F 57 C0 4C 8B E9 F3 0F 7F 44 24 20
-    static void __fastcall LoadSectorGeometries(LoadSectorGeometries*);
+    static void __fastcall LoadSectorGeometries(LoadSectorGeometriesStruct*);
 
     // 1.6 RVA: 0x440390 / 4457360
     /// @pattern 40 55 41 55 48 8D 6C 24 E8 48 81 EC 18 01 00 00 48 8B 41 28 0F 57 C0 4C 8B E9 F3 0F 7F 44 24 20
@@ -67,7 +67,7 @@ struct GeometryCache : CResource
 
     // 1.6 RVA: 0x4428F0 / 4466928
     /// @pattern 48 89 5C 24 20 48 89 54 24 10 57 48 83 EC 40 48 8D B9 81 01 00 00 48 8B D9 48 8B CF E8 DF E4 74
-    char __fastcall FreeKey(__int64 rdx0);
+    bool __fastcall FreeKey(__int64 rdx0);
 
     // 1.6 RVA: 0x441520 / 4461856
     /// @pattern 4C 89 4C 24 20 48 89 54 24 10 48 89 4C 24 08 55 53 56 57 41 54 41 55 41 56 48 8D 6C 24 E1 48 81
@@ -75,7 +75,7 @@ struct GeometryCache : CResource
 
     // 1.6 RVA: 0x442410 / 4465680
     /// @pattern 40 53 55 56 57 48 81 EC A8 00 00 00 0F B6 42 0C 48 8B F9 3C 04 0F 85 D9 00 00 00 44 8B 42 04 48
-    char __fastcall sub_7FF75B922410(GeometryKey *geoKey);
+    bool __fastcall sub_7FF75B922410(GeometryKey *geoKey);
 
     DynArray<DeferredDataBuffer> bufferTableSectors; // 40
     DynArray<physics::SectorEntry> sectorEntries; // 50

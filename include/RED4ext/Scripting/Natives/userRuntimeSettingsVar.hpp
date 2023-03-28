@@ -88,7 +88,7 @@ struct RuntimeSettingsVar
     {
         return new Memory::DefaultAllocator();
     }
-    virtual RuntimeSettingsVar * __fastcall Deinitialize(char shouldFree)
+    virtual RuntimeSettingsVar * __fastcall Deinitialize(bool shouldFree)
     {
         if (displayNameKeys.capacity)
         {
@@ -103,7 +103,7 @@ struct RuntimeSettingsVar
     virtual bool __fastcall WasModifiedSinceLastSave() = 0;
     virtual bool __fastcall HasChange() = 0;
     virtual bool __fastcall IsDefault() = 0;
-    virtual bool __fastcall RestoreDefault(char) = 0;
+    virtual bool __fastcall RestoreDefault(uint8_t) = 0;
     virtual void __fastcall UpdateValue(void* value) = 0;
     virtual void __fastcall ApplyChange() = 0;
     virtual void __fastcall RevertChange() = 0;
@@ -159,7 +159,7 @@ struct RuntimeSettingsVarBool : public RuntimeSettingsVar
         return value == defaultValue;
     }
 
-    virtual bool __fastcall RestoreDefault(char a1) override
+    virtual bool __fastcall RestoreDefault(uint8_t a1) override
     {
         auto wasDefault = IsDefault();
         if (wasDefault)
@@ -282,7 +282,7 @@ struct RuntimeSettingsVarFloat : public RuntimeSettingsVar
         return value == defaultValue;
     }
 
-    virtual bool __fastcall RestoreDefault(char a1) override
+    virtual bool __fastcall RestoreDefault(uint8_t a1) override
     {
         auto wasDefault = IsDefault();
         if (wasDefault)
@@ -418,7 +418,7 @@ struct RuntimeSettingsVarInt : public RuntimeSettingsVar
         return value == defaultValue;
     }
 
-    virtual bool __fastcall RestoreDefault(char a1) override
+    virtual bool __fastcall RestoreDefault(uint8_t a1) override
     {
         auto wasDefault = IsDefault();
         if (wasDefault)
@@ -540,7 +540,7 @@ struct RuntimeSettingsVarIntList : public RuntimeSettingsVar
         return value == defaultValue;
     }
 
-    virtual bool __fastcall RestoreDefault(char a1) override
+    virtual bool __fastcall RestoreDefault(uint8_t a1) override
     {
         auto wasDefault = IsDefault();
         if (!wasDefault)
@@ -688,7 +688,7 @@ struct RuntimeSettingsVarNameList : RuntimeSettingsVar
         return value == defaultValue;
     }
 
-    virtual bool __fastcall RestoreDefault(char a1) override
+    virtual bool __fastcall RestoreDefault(uint8_t a1) override
     {
         auto wasDefault = IsDefault();
         if (!wasDefault)

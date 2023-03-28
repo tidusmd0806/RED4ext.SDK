@@ -168,5 +168,5 @@ RED4EXT_ASSERT_OFFSET(Entity, entityTags, 0x138);
 } // namespace RED4ext
 
 #ifdef RED4EXT_HEADER_ONLY
-#include <RED4ext/Scripting/Natives/entEntity-inc.hpp>
+#include <RED4ext/Scripting/Natives/entEntity-inl.hpp>
 #endif

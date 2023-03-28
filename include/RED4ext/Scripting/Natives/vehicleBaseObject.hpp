@@ -49,7 +49,7 @@ struct BaseObject;
 
 //struct Interface : game::Object::Interface
 //{
-//    virtual uint64_t __fastcall Destruct(char a1) override; // 00
+//    virtual uint64_t __fastcall Destruct(bool a1) override; // 00
 //
 //    // Returns 0
 //    virtual uint64_t __fastcall sub_08() override;
@@ -148,7 +148,7 @@ struct Unk580
 {
     // 1.52 RVA: 0x1C3A0B0 / 29597872
     /// @pattern 80 E2 01 88 91 CA 03 00 00 C3
-    void __fastcall Update3CA(char a2);
+    void __fastcall Update3CA(bool a2);
 
     // 1.52 RVA: 0x1C370D0 / 29585616
     /// @pattern 40 53 48 83 EC 20 80 B9 D6 03 00 00 00 48 8B DA 74 09 48 8B 81 B0 01 00 00 EB 07 48 8B 81 B8 01
@@ -542,11 +542,11 @@ struct Unk570 {
 
     // 1.6  RVA: 0x1D24320 / 30556960
     /// @pattern 48 89 5C 24 08 4C 8B CA 48 8B D9 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84
-    MaterialFx * __fastcall GetFxForMaterial(CName material, char isBackWheel);
+    MaterialFx * __fastcall GetFxForMaterial(CName material, bool isBackWheel);
 
     // 1.6  RVA: 0x1D24290 / 30556816
     /// @pattern 4C 8B CA 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84 C0 BA 30 01 00 00 41 B8
-    SmearFxLookup *__fastcall GetSmearFxForMaterial(CName material, char isBackWheel);
+    SmearFxLookup *__fastcall GetSmearFxForMaterial(CName material, bool isBackWheel);
     
     // 1.6  RVA: 0x1D25A50 / 30562896
     /// @pattern 48 8B C4 48 89 58 08 48 89 70 18 48 89 78 20 48 89 50 10 55 41 54 41 55 41 56 41 57 48 8D A8 98
@@ -944,20 +944,14 @@ struct BaseObject : game::Object
     // 1.61 RVA: 0x1C8D4C0
     // 1.62 RVA: 0x1C8DBB0
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 20 57 48 83 EC 30 8B B1 50 02 00 00 41 0F B6 E8 8B FA
-    inline void __fastcall SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3) {
-        RelocFunc<decltype(&BaseObject::SetPhysicsState)> call(0x1C8DBB0);
-        call(this, a2, a3);
-    }
+    void __fastcall SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3);
 
     // 1.52 RVA: 0x1C4C4F0 / 29672688
     // 1.6  RVA: 0x1C78F70 / 29855600
     // 1.61 RVA: 0x1C791E0
     // 1.62 RVA: 0x1C798D0
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8
-    inline void __fastcall UnsetPhysicsStates() {
-        RelocFunc<decltype(&BaseObject::UnsetPhysicsStates)> call(0x1C798D0);
-        call(this);
-    }
+    void __fastcall UnsetPhysicsStates();
 
     // 1.52 RVA: 0x1C4D3A0 / 29676448
     /// @pattern 48 8B 81 B8 02 00 00 F3 0F 10 80 BC 01 00 00 C3
@@ -1061,10 +1055,7 @@ struct BaseObject : game::Object
     // 1.6  RVA: 0x1C8A390 / 29926288
     // 1.62 RVA: 0x1C8AD00 (not used)
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 48 8D B1 88 03 00 00 48 8B FA 48 8B CE 48 8D 54 24
-    inline action::ActionBase **__fastcall CreateAction(action::ActionBase **action_p, action::Type type) {
-        RED4ext::RelocFunc<decltype(&BaseObject::CreateAction)> call(0x1C8AD00);
-        return call(this, action_p, type);
-    }
+    action::ActionBase **__fastcall CreateAction(action::ActionBase **action_p, action::Type type);
 
     // 1.6  RVA: 0x164D380 / 23384960
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 40 4C 8B F9 49
