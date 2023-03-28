@@ -60,7 +60,11 @@ struct ProxyHelper
     // 1.6  RVA: 0x44C620 / 4507168
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F8 48 8B F2 48 85
     /// @nth 3/10
-    ProxyHelper* __fastcall SetLinearDamping(float* linearDamping, uint32_t bodyIndex);
+    inline ProxyHelper* __fastcall SetLinearDamping(float* linearDamping, uint32_t bodyIndex)
+    {
+        RelocFunc<decltype(&ProxyHelper::SetLinearDamping)> call(physicsProxyHelper_SetLinearDamping_Addr);
+        return call(this, linearDamping, bodyIndex);
+    }
 
     // 1.6  RVA: 0x44B7D0 / 4503504
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F8 48 8B F2 48 85
