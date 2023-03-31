@@ -1,6 +1,7 @@
 #pragma once
 
-#include <RED4ext/Common.hpp>
+#include <cstdint>
+#include <RED4ext/RED4ext.hpp>
 
 namespace RED4ext
 {
@@ -73,7 +74,7 @@ struct RuntimeSettings
     uint32_t unk270;
     uint32_t unk274;
 };
-#pragma pop(push)
+#pragma pack(pop)
 RED4EXT_ASSERT_SIZE(RuntimeSettings, 0x278);
 // char (*__kaboom)[sizeof(RuntimeSettings)] = 1;
 

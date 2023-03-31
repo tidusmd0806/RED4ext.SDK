@@ -49,9 +49,9 @@ RED4EXT_INLINE void IComponent::sub_148() {
     return call(this);
 }
 
-RED4EXT_INLINE void IComponent::sub_150() {
+RED4EXT_INLINE void IComponent::sub_150(void *a1) {
     RelocFunc<decltype(&IComponent::sub_150)> call(VFT, 0x150);
-    return call(this);
+    return call(this, a1);
 }
 
 RED4EXT_INLINE Handle<game::PersistentState>* IComponent::sub_158(Handle<game::PersistentState>* a1) {
@@ -99,9 +99,9 @@ RED4EXT_INLINE bool IComponent::sub_198(void *a1) {
     return call(this, a1);
 }
 
-RED4EXT_INLINE void IComponent::sub_1A0() {
+RED4EXT_INLINE void IComponent::sub_1A0(void *a1) {
     RelocFunc<decltype(&IComponent::sub_1A0)> call(VFT, 0x1A0);
-    return call(this);
+    return call(this, a1);
 }
 
 RED4EXT_INLINE void IComponent::sub_1A8() {

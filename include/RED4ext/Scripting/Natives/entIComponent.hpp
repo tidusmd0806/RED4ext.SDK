@@ -50,6 +50,7 @@ struct IComponent : IScriptable
 
 
      virtual void sub_110();
+     // related to attachments, maybe
      virtual bool sub_118(CName, void*);
      virtual bool sub_120(CName, void*);
      virtual void sub_128();
@@ -58,7 +59,8 @@ struct IComponent : IScriptable
      virtual void sub_140();
      // after callback is registered
      virtual void sub_148();
-     virtual void sub_150();
+     // called in Entity/Remove And Reapply
+     virtual void sub_150(void * componentHelper);
      // Get persistent state
      virtual Handle<game::PersistentState>* sub_158(Handle<game::PersistentState>*);
      // called on initialize components
@@ -90,7 +92,8 @@ struct IComponent : IScriptable
         // unk158
      // }
      virtual bool sub_198(void*);
-     virtual void sub_1A0();
+     // called before entity->sub_168()
+     virtual void sub_1A0(void * entityUnk158);
      virtual void sub_1A8();
      // OnPostSnapshotApplied
      virtual void sub_1B0();

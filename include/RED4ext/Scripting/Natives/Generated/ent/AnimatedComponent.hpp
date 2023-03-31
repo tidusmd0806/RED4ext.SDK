@@ -10,6 +10,7 @@
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/NativeTypes.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 #include <RED4ext/Scripting/Natives/Generated/anim/AnimSetup.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/AnimTrackParameter.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/ISkinableComponent.hpp>
@@ -27,6 +28,8 @@ struct AnimatedComponent : ent::ISkinableComponent
 {
     static constexpr const char* NAME = "entAnimatedComponent";
     static constexpr const char* ALIAS = "AnimatedComponent";
+    static constexpr const uintptr_t VFT = entAnimatedComponent_VFT_Addr;
+
 
     // 1.6  RVA: 0xFDBD50 / 16629072
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 48 8B F9 49 8B F0 48 8B 89 40 01 00 00 48 8B DA 48

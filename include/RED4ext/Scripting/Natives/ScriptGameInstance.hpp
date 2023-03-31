@@ -21,6 +21,7 @@ struct ScriptGameInstance
     int64_t unk10;
 };
 RED4EXT_ASSERT_SIZE(ScriptGameInstance, 0x18);
+//char (*__kaboom)[sizeof(ScriptGameInstance)] = 1;
 } // namespace RED4ext
 
 #ifdef RED4EXT_HEADER_ONLY

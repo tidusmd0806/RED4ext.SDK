@@ -23,7 +23,7 @@ struct NodeInstanceRegistry : INodeInstanceRegistry
     uint32_t unk5C;
     // int8_t unk60[0x20058 - 0x60];
     
-    #pragma pack(1)
+    #pragma pack(push, 1)
     struct NodeInstanceRegistryItem
     {
       ResourceAsyncReference<CResource> unk00;
@@ -31,6 +31,7 @@ struct NodeInstanceRegistry : INodeInstanceRegistry
       uint64_t unk10;
       uint32_t unk18;
     } items[0x2000];
+    #pragma pack(pop)
 
     // RED4ext::ResourceAsyncReference unk60[0x4000-1];
     uint64_t unk20058;

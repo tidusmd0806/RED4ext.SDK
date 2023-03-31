@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/IRuntimeSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/Factory.hpp>
 
 namespace RED4ext
 {
@@ -16,7 +17,14 @@ struct RuntimeSystemEntity : world::IRuntimeSystem
     static constexpr const char* NAME = "worldRuntimeSystemEntity";
     static constexpr const char* ALIAS = NAME;
 
-    uint8_t unk48[0xA8 - 0x48]; // 48
+    // scene, maybe
+    void *unk48;
+    uint64_t unk50;
+    uint64_t unk58;
+    DynArray<ent::Factory> factories;
+    SharedMutex unk70;
+    // uint64_t unk78;
+    HashMap<uint64_t, uint64_t> unk80;
 };
 RED4EXT_ASSERT_SIZE(RuntimeSystemEntity, 0xA8);
 } // namespace world

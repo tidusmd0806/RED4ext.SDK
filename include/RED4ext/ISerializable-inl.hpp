@@ -172,3 +172,9 @@ RED4EXT_INLINE RED4ext::ISerializable::operator RED4ext::Handle<RED4ext::ISerial
         return Handle<ISerializable>(this);
     }
 }
+
+
+RED4EXT_INLINE const char* RED4ext::ISerializable::ToString()
+{
+    return GetNativeType()->name.ToString();
+}

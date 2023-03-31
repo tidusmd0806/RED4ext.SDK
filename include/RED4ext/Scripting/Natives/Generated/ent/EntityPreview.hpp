@@ -18,8 +18,7 @@ struct EntityPreview : ent::Entity
 
     virtual uintptr_t __fastcall CopyComponentsToStorage(EntityDefinition * definition, void * a2) override;
 
-    void * unk160;
-    void * unk168;
+    Handle<Entity> unk160;
     void * unk170;
     void * unk178;
     void * unk180;

@@ -29,9 +29,13 @@ struct IPlacedComponent : IComponent
     virtual void sub_248(Box* boundingBox);
     virtual void GetFlags();
 
+    struct UnkA0 {
+        uint64_t unk00[4];
+    };
+
     Handle<ITransformBinding> parentTransform; // 90
     // reated to Transform Attachements - double Handle struct
-    DynArray<uint64_t[4]> unkA0;
+    DynArray<UnkA0> unkA0;
     uint8_t unkB0;
     // set based on arg passed to UpdateBindings
     uint8_t unkB1;

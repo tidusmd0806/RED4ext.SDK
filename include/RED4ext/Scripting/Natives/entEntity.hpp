@@ -17,6 +17,7 @@
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
 #include <RED4ext/Scripting/Natives/Generated/red/Taglist.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/EntityID.hpp>
+#include <RED4ext/Scripting/Natives/worldRuntimeScene.hpp>
 
 namespace RED4ext
 {
@@ -61,6 +62,7 @@ struct Entity : IScriptable
     inline virtual float __fastcall sub_118() {
         return 1.0;
     }
+    //tick??
     virtual Vector2* __fastcall sub_120(Vector2* a1, Vector2* a2);
     inline virtual bool __fastcall sub_128() {
         return 1;
@@ -75,7 +77,8 @@ struct Entity : IScriptable
     virtual void __fastcall sub_150() { };
     virtual void __fastcall Attach(void *) { };
     virtual uintptr_t __fastcall Detach() { };
-    virtual void __fastcall sub_168(uint16_t) { };
+    // called after calling components->sub_1A0()
+    virtual void __fastcall sub_168(uint16_t unk158) { };
     virtual void __fastcall sub_170() { };
     virtual uintptr_t __fastcall sub_178();
 
@@ -83,7 +86,9 @@ struct Entity : IScriptable
     virtual void __fastcall sub_180(Handle<CallbackManager>*) { };
     virtual void __fastcall OnRequestComponents(void *) { };
     virtual void __fastcall sub_190() { };
+    // tick2??
     virtual void __fastcall sub_198() { };
+    // called once attache from EntityPreview
     virtual void __fastcall sub_1A0() { };
     virtual uintptr_t __fastcall CopyComponentsToStorage(EntityDefinition * definition, void * a2);
     virtual RED4ext::CClass* __fastcall sub_1B0();
@@ -91,6 +96,7 @@ struct Entity : IScriptable
     virtual bool __fastcall sub_1B8();
     virtual CString* __fastcall sub_1C0(CString*); // Get "<UNKNOWN>"
 
+    // calls CopyCompponentsToStorage
     /// @pattern 48 89 5C 24 08 57 48 81 EC 00 01 00 00 48 8B 02 48 8B FA 48 89 41 60 48 8B D9 48 8B 42 08 48 89
     uint64_t SetupEntityAndComponents(EntityDefinition* definition);
 
@@ -118,18 +124,30 @@ struct Entity : IScriptable
     /// @pattern 48 83 C1 70 E9 77 26 40 FF
     // DynArray<Handle<IComponent>> *__fastcall GetComponents();
 
+    // 1.6  RVA: 0x1046880 / 17066112
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 64 24 20 55 41 56 41 57 48 8B EC 48 81 EC 80
+    void __fastcall SetRuntime(__int64 a2);
+
     enum class ComponentFlags : uint8_t {
-        Unk1 = 0x1,
+        unk1 = 0x1,
         hasAnimatedComponent = 0x2,
-        hasVisualControllerComponent = 0x4
+        hasVisualControllerComponent = 0x4,
+        // related to runtime
+        unk8 = 0x8,
+        // components need initialized?
+        unk20 = 0x20
     };
-    enum class EntityFlags : uint8_t {
-        Unk1 = 0x1,
-        IsAttached = 0x2,
-        DoesNotHavePlaceholder = 0x4
+    enum class EntityState : uint8_t {
+        Detached = 2,
+        WillAttach = 3,
+        Attached = 4,
+        WillDetach = 5,
+        Preuninitialize = 6,
+        Uninitialized = 7,
     };
 
     uint32_t unk40;
+    // related to entity system - id?
     uint32_t unk44;
     EntityID entityID;
     CName currentAppearance;
@@ -139,7 +157,7 @@ struct Entity : IScriptable
     uint64_t unk68;
     ComponentsStorage componentsStorage; // 70
     void* placeholder; // B0
-    void* runtime; // B8
+    world::RuntimeScene* runtime; // B8
     ScriptGameInstance* scriptGameInstance; // C0
     Handle<void> unkC8;
     CallbackManager callbackManager; // D8
@@ -147,13 +165,14 @@ struct Entity : IScriptable
     // isReplicated = unk148 != 0
     void * unk148; // 148
     float updatingTransform; // 150
-    uint8_t customCameraTarget; // 154
-    int8_t controllingPeerID; // 155
-    EntityFlags entityFlags; // 156
+    uint8_t customCameraTarget = 0; // 154
+    int8_t controllingPeerID = -1; // 155
+    EntityState entityState; // 156
     uint8_t unk157; // 157
-    uint16_t unk158; // 158
-    uint8_t unk15A; // 15A
-    uint8_t renderSceneLayerMask; // 15B
+    uint16_t unk158 = 0; // 158
+    // factoryID
+    uint8_t unk15A = 2; // 15A
+    uint8_t renderSceneLayerMask = 1; // 15B
     ComponentFlags componentFlags;
     uint8_t unk15D;
     uint8_t unk15E;

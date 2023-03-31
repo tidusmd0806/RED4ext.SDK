@@ -13,14 +13,16 @@ namespace game {
 
 // AIbehaviorEventHandler maybe? could be optimization artifact
 struct VehicleInterface2 {
-    virtual void sub_00();
+    virtual ~VehicleInterface2();
     virtual void sub_08();
 };
 
 // dynamic array of some sort? used elsewhere
 struct VehicleInterface3 {
-    virtual void sub_00();
-    virtual void sub_08();
+    virtual ~VehicleInterface3();
+    // references vehicleVsVehicleCollisions & trafficVsTrafficCollisions
+    // sets up all chassis filterData in unkED00
+    virtual void sub_08(void *);
 };
 
 struct VehicleSystem : IVehicleSystem, VehicleInterface2, VehicleInterface3
@@ -30,6 +32,66 @@ struct VehicleSystem : IVehicleSystem, VehicleInterface2, VehicleInterface3
     static constexpr const uintptr_t VFT = gameVehicleSystem_VFT_Addr;
 
 // virtuals
+
+    virtual void __fastcall sub_1A8() override;
+    virtual void __fastcall sub_1B0() override;
+    virtual void __fastcall sub_1B8() override;
+    virtual void __fastcall sub_1C0() override;
+    virtual void __fastcall sub_1C8() override;
+    virtual void __fastcall sub_1D0() override;
+    virtual void __fastcall sub_1D8() override;
+    virtual void __fastcall sub_1E0() override;
+    virtual void __fastcall sub_1E8() override;
+    virtual void __fastcall sub_1F0() override;
+    virtual void __fastcall sub_1F8() override;
+    virtual void __fastcall sub_200() override;
+    virtual void __fastcall sub_208() override;
+    virtual void __fastcall sub_210() override;
+    virtual void __fastcall sub_218() override;
+    virtual void __fastcall sub_220() override;
+    virtual void __fastcall sub_228() override;
+    virtual void __fastcall sub_230() override;
+    virtual void __fastcall sub_238() override;
+    virtual void __fastcall sub_240() override;
+    virtual void __fastcall sub_248() override;
+    virtual void __fastcall sub_250() override;
+    virtual void __fastcall sub_258() override;
+    virtual void __fastcall sub_260() override;
+    virtual void __fastcall sub_268() override;
+    virtual void __fastcall sub_270() override;
+    virtual void __fastcall sub_278() override;
+    virtual void __fastcall sub_280() override;
+    virtual void __fastcall sub_288() override;
+    virtual void __fastcall sub_290() override;
+    virtual void __fastcall sub_298() override;
+    virtual void __fastcall sub_2A0() override;
+    virtual void __fastcall sub_2A8() override;
+    virtual void __fastcall sub_2B0() override;
+    virtual void __fastcall sub_2B8() override;
+    virtual void __fastcall sub_2C0() override;
+    virtual void __fastcall sub_2C8() override;
+    virtual void __fastcall sub_2D0() override;
+    virtual void __fastcall sub_2D8() override;
+    virtual void __fastcall sub_2E0() override;
+    virtual void __fastcall sub_2E8() override;
+    virtual void __fastcall sub_2F0() override;
+    virtual void __fastcall sub_2F8() override;
+    virtual void __fastcall sub_300() override;
+    virtual void __fastcall sub_308() override;
+    virtual void __fastcall sub_310() override;
+    virtual void __fastcall sub_318() override;
+    virtual void __fastcall sub_320() override;
+    virtual void __fastcall sub_328() override;
+    virtual void *__fastcall sub_330() override;
+    virtual void __fastcall sub_338() override;
+    virtual void __fastcall sub_340() override;
+    virtual void __fastcall sub_348() override;
+    virtual void __fastcall sub_350() override;
+    virtual void __fastcall sub_358() override;
+    virtual void __fastcall sub_360() override;
+    virtual void __fastcall sub_368() override;
+    virtual void __fastcall sub_370() override;
+    virtual void __fastcall sub_378() override;
 
     // gets unk179AB pointers 
     virtual uint64_t ** sub_380(void ** a2);
@@ -63,6 +125,16 @@ struct VehicleSystem : IVehicleSystem, VehicleInterface2, VehicleInterface3
     // 1.6 RVA: 0x1CED0A0 / 30331040
     /// @pattern 48 89 74 24 10 48 89 7C 24 18 41 56 48 83 EC 30 48 8B 44 24 60 4C 8B F1 41 8B F9 41 8B F0 0F B6
     static void __fastcall PostMove(RED4ext::game::VehicleSystem **vehicleSystem_p, __int64 a2, unsigned int a3, unsigned int a4, __int64 a5);
+
+    // something with vehicle->unk368
+    // 1.6  RVA: 0x1C8AA80 / 29928064
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B F9 0F B6 4A 32 E8 2A 30 F8 00 48 8B 0F F3 0F 10 4F 08 48 8B
+    static void *__fastcall FixedUpdate_PreSolve(__int64, __int64);
+
+    // calls vehicle->sub_2B8
+    // 1.6  RVA: 0x1C8A9F0 / 29927920
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 30 48 8B F9 0F B6 4A 32 E8 BA 30 F8 00 0F B6 47 0C 4C 8D 47 18 F3 0F
+    static void *__fastcall FixedUpdate(__int64, __int64);
 
     uint64_t unk50[3];
     uint64_t unk78;

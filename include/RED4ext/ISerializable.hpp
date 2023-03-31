@@ -37,7 +37,7 @@ struct ISerializable
     /// @pattern 40 53 48 83 EC 50 4C 8B C2 48 8B D9 48 85 D2 0F 84 C5 00 00 00 48 8B 42 10 0F 57 C0 66 0F 7F 44
     void __fastcall SetOwner(ISerializable *owner);
 
-    virtual CClass* GetNativeType() = 0;                                                // 00
+    virtual CClass* GetNativeType() = 0;                                          // 00
     virtual CClass* GetType();                                                          // 08
     virtual Memory::IAllocator* GetAllocator();                                         // 10
     virtual ~ISerializable() = default;                                                 // 18
@@ -68,6 +68,8 @@ struct ISerializable
     bool IsOfClass(const CClass* cls);
     operator const WeakHandle<ISerializable>&() const noexcept;
     operator Handle<ISerializable>() noexcept;
+
+    [[nodiscard]] const char* ToString();
 
     WeakHandle<ISerializable> ref;   // 00 - Initialized in Handle ctor
     WeakHandle<ISerializable> unk18; // 18 - Owner/parent

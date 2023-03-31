@@ -6,27 +6,65 @@
 #include <RED4ext/Common.hpp>
 
 #include <RED4ext/Scripting/Natives/worldRuntimeInfo.hpp>
-// #include <RED4ext/GameEngine.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemRendering.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemAudio.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemNavigation.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPrefabInstancing.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemMarkers.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemPhysics.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/AnimationSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemDebugRendering.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemTriggers.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEntity.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemScenes.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemVisibility.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeEntityRegistry.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEnvironment.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/geometry/RuntimeSystemGeomDescription.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEffects.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemSmartObjects.hpp>
+#include <RED4ext/Scripting/Natives/Generated/nav/RuntimeSystemPathfinding.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEntityTransactor.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/RuntimeSystemEditorMeshes.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemTraffic.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemSnapSovler.hpp>
+#include <RED4ext/Scripting/Natives/Generated/debug/RuntimeSystemSpeedSplinePreview.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/CorpseSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemWorldStreaming.hpp>
+#include <RED4ext/Scripting/Natives/Generated/net/EntitySystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/InternalFunctionalTestsRuntimeSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/FunctionalTestsRuntimeSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/work/WorkspotSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemRemoteViews.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEntityAppearanceChanger.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/NodeInstanceRegistry.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEntityTransforms.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/ui/RuntimeSystemUI.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemMoverComponents.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemTransformAnimator.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemWeather.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemBinkUpdate.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemNodeStreaming.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemFoliage.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemDismemberment.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEffectAttachments.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemRepellerComponents.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemCompiledTerrain.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemCamera.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemEntityVisualController.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemDestruction.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/RuntimeSystemLights.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeSystemStreamingQuery.hpp>
 
 namespace RED4ext
 {
 namespace world { 
-struct IRuntimeSystem;
+// struct IRuntimeSystem;
 struct GameInstance;
 struct RuntimeScene
 {
     static constexpr const char* NAME = "worldRuntimeScene";
     static constexpr const char* ALIAS = NAME;
-
-    struct Flags {
-        bool inPreview;
-        bool inSingleplayer;
-        bool onClientWithVisuals;
-        bool onClientWithoutVisuals;
-        bool onHeadlessServerWithoutVisuals;
-        bool onServer;
-        bool RenderDebugInProfiling;
-    };
 
     // 1.52 RVA: 0xB7BE60 / 12041824
     // calls SetupRuntimeSystems with new unkThing & a2
@@ -34,7 +72,8 @@ struct RuntimeScene
     uint32_t __fastcall SetupWithLogging(unsigned char *a2, __int64 a3, uint32_t *a4);
 
     // 1.52 RVA: 0xB7BA20 / 12040736
-    // creates isystems from children of world::IRuntimeSystem, calls systems->sub_128, which returns an index for storage
+    // creates isystems from children of world::IRuntimeSystem
+    // calls systems->sub_128, which returns an index for storage
     // looks at engine\systems\runtime_systems_startup.csv for the flags for each system
     // has a maximum 0x41/65 systems (58 exist in the .csv)
     // Loads all worldNode types, cnames & strings at the end
@@ -59,69 +98,135 @@ struct RuntimeScene
  6 - On Server (with visuals)
  7 - Run RenderDebug in Profiling
 
-System Name                                    1  2  3  4  5  6  7
--------------------------------------------------------------------
-FunctionalTestsRuntimeSystem                   x  x  x          
-InternalFunctionalTestsRuntimeSystem           x  x  x          
-netEntitySystem                                      x  x  x  x 
-toolsRuntimeSystemPreviewSpawn                 x                
-workWorkspotSystem                             x  x  x  x  x  x 
-worldNodeInstanceRegistry                      x  x  x  x  x  x 
-worldRuntimeEntityRegistry                     x  x  x  x  x  x 
-worldAnimationSystem                           x  x  x  x  x  x 
-worldCorpseSystem                              x  x  x  x  x  x 
-worldRuntimeSystemAudio                        x  x  x        x 
-worldRuntimeSystemBinkUpdate                   x  x  x        x 
-worldRuntimeSystemCamera                       x                
-worldRuntimeSystemDebugRendering               x  x  x        x 
-worldRuntimeSystemDismemberment                x  x  x  x  x  x 
-worldRuntimeSystemEffects                      x  x  x  x  x  x 
-worldRuntimeSystemEffectAttachments            x  x  x        x 
-worldRuntimeSystemEntity                       x  x  x  x  x  x 
-worldRuntimeSystemDestruction                  x  x  x  x  x  x 
-worldRuntimeSystemEntityAppearanceChanger      x  x  x  x  x  x 
-worldRuntimeSystemEntityTransforms             x  x  x  x  x  x 
-worldRuntimeSystemEnvironment                  x  x  x        x 
-worldRuntimeSystemWeather                      x  x  x  x  x  x 
-worldRuntimeSystemWeatherDebugging             x  x             
-worldRuntimeSystemGI                           x                
-worldRuntimeSystemInspector                    x  x  x        x 
-worldRuntimeSystemMarkers                      x  x  x  x  x  x 
-worldRuntimeSystemMoverComponents              x  x  x     x  x 
-worldRuntimeSystemNavigation                   x  x  x  x  x  x 
-worldRuntimeSystemNodeStreaming                x  x  x  x  x  x 
-worldRuntimeSystemPhysics                      x  x  x  x  x  x 
-worldRuntimeSystemPrefabInstancing             x                
-worldRuntimeSystemRemoteViews                  x  x  x        x 
-worldRuntimeSystemRendering                    x  x  x        x 
-worldRuntimeSystemRepellerComponents           x  x  x  x  x  x 
-worldRuntimeSystemScenes                       x  x  x     x  x 
-worldRuntimeSystemSnapSovler                   x                
-worldRuntimeSystemTerrain                      x                
-worldRuntimeSystemCompiledTerrain              x                
-worldRuntimeSystemTraffic                      x  x  x  x  x  x 
-worldRuntimeSystemTransformAnimator            x  x  x  x  x  x 
-worldRuntimeSystemTriggers                     x  x  x  x  x  x 
-worldRuntimeSystemVisibility                   x  x  x        x 
-worldRuntimeSystemWorldStreaming                  x  x  x  x  x  x 
-worldRuntimeSystemStreamingQuery                  x  x  x  x  x 
-worldgeometryRuntimeSystemGeomDescription      x  x  x  x  x  x 
-worldRuntimeSystemMetrics                      x  x  x        x  x 
-worldRuntimeSystemWorldDebugging               x  x  x        x 
-worldRuntimeSystemSmartObjects                 x  x  x  x  x  x 
-navRuntimeSystemPathfinding                    x  x  x  x  x  x 
-worlduiRuntimeSystemUI                         x  x  x          
-worldRuntimeSystemEntityTransactor             x  x  x  x  x  x 
-worldRuntimeSystemSphereTreeGen                x  x             
-gameRuntimeSystemLights                        x  x  x        x 
-worldRuntimeSystemFoliage                      x  x  x          
-worldRuntimeSystemEntityVisualController       x  x  x        x 
-toolsBugFlagsSystem                            x  x  x          
-debugRuntimeSystemSpeedSplinePreview           x                
-entRuntimeSystemEditorMeshes                   x                
+sub_128 System Name                                    1  2  3  4  5  6  7  
+--------------------------------------------------------------------------
+        toolsBugFlagsSystem                            x  x  x              
+        toolsRuntimeSystemPreviewSpawn                 x                    
+        worldRuntimeSystemGI                           x                    
+        worldRuntimeSystemInspector                    x  x  x        x     
+        worldRuntimeSystemMetrics                      x  x  x        x  x  
+        worldRuntimeSystemSphereTreeGen                x  x                 
+        worldRuntimeSystemTerrain                      x                    
+        worldRuntimeSystemWeatherDebugging             x  x                 
+        worldRuntimeSystemWorldDebugging               x  x  x        x     
+00      worldRuntimeSystemRendering                    x  x  x        x     
+01      worldRuntimeSystemAudio                        x  x  x        x     
+02      worldRuntimeSystemNavigation                   x  x  x  x  x  x     
+03      worldRuntimeSystemPrefabInstancing             x                    
+05      worldRuntimeSystemMarkers                      x  x  x  x  x  x     
+06      worldRuntimeSystemPhysics                      x  x  x  x  x  x     
+07      worldAnimationSystem                           x  x  x  x  x  x     
+08      worldRuntimeSystemDebugRendering               x  x  x        x     
+09      worldRuntimeSystemTriggers                     x  x  x  x  x  x     
+10      worldRuntimeSystemEntity                       x  x  x  x  x  x     
+11      worldRuntimeSystemScenes                       x  x  x     x  x     
+12      worldRuntimeSystemVisibility                   x  x  x        x     
+13      worldRuntimeEntityRegistry                     x  x  x  x  x  x     
+14      worldRuntimeSystemEnvironment                  x  x  x        x     
+16      worldgeometryRuntimeSystemGeomDescription      x  x  x  x  x  x     
+17      worldRuntimeSystemEffects                      x  x  x  x  x  x     
+18      worldRuntimeSystemSmartObjects                 x  x  x  x  x  x     
+19      navRuntimeSystemPathfinding                    x  x  x  x  x  x     
+20      worldRuntimeSystemEntityTransactor             x  x  x  x  x  x     
+22      entRuntimeSystemEditorMeshes                   x                    
+23      worldRuntimeSystemTraffic                      x  x  x  x  x  x     
+24      worldRuntimeSystemSnapSovler                   x                    
+25      debugRuntimeSystemSpeedSplinePreview           x                    
+26      worldCorpseSystem                              x  x  x  x  x  x     
+27      worldRuntimeSystemWorldStreaming                  x  x  x  x  x  x  
+28      netEntitySystem                                      x  x  x  x     
+29      InternalFunctionalTestsRuntimeSystem           x  x  x              
+30      FunctionalTestsRuntimeSystem                   x  x  x              
+31      workWorkspotSystem                             x  x  x  x  x  x     
+33      worldRuntimeSystemRemoteViews                  x  x  x        x     
+34      worldRuntimeSystemEntityAppearanceChanger      x  x  x  x  x  x     
+35      worldNodeInstanceRegistry                      x  x  x  x  x  x     
+36      worldRuntimeSystemEntityTransforms             x  x  x  x  x  x     
+37      worlduiRuntimeSystemUI                         x  x  x              
+38      worldRuntimeSystemMoverComponents              x  x  x     x  x     
+39      worldRuntimeSystemTransformAnimator            x  x  x  x  x  x     
+40      worldRuntimeSystemWeather                      x  x  x  x  x  x     
+41      worldRuntimeSystemBinkUpdate                   x  x  x        x     
+42      worldRuntimeSystemNodeStreaming                x  x  x  x  x  x     
+47      worldRuntimeSystemFoliage                      x  x  x              
+48      worldRuntimeSystemDismemberment                x  x  x  x  x  x     
+51      worldRuntimeSystemEffectAttachments            x  x  x        x     
+52      worldRuntimeSystemRepellerComponents           x  x  x  x  x  x     
+54      worldRuntimeSystemCompiledTerrain              x                    
+57      worldRuntimeSystemCamera                       x                    
+59      worldRuntimeSystemEntityVisualController       x  x  x        x     
+62      worldRuntimeSystemDestruction                  x  x  x  x  x  x     
+63      gameRuntimeSystemLights                        x  x  x        x     
+64      worldRuntimeSystemStreamingQuery                  x  x  x  x  x     
 */
 
-    StaticArray<Handle<IRuntimeSystem>, 0x41> systems;
+    Handle<RuntimeSystemRendering> worldRuntimeSystemRendering;
+    Handle<RuntimeSystemAudio> worldRuntimeSystemAudio;
+    Handle<RuntimeSystemNavigation> worldRuntimeSystemNavigation;
+    Handle<RuntimeSystemPrefabInstancing> worldRuntimeSystemPrefabInstancing;
+    Handle<void> unk04;
+    Handle<RuntimeSystemMarkers> worldRuntimeSystemMarkers;
+    Handle<RuntimeSystemPhysics> worldRuntimeSystemPhysics;
+    Handle<AnimationSystem> worldAnimationSystem;
+    Handle<RuntimeSystemDebugRendering> worldRuntimeSystemDebugRendering;
+    Handle<RuntimeSystemTriggers> worldRuntimeSystemTriggers;
+    Handle<RuntimeSystemEntity> worldRuntimeSystemEntity;
+    Handle<RuntimeSystemScenes> worldRuntimeSystemScenes;
+    Handle<RuntimeSystemVisibility> worldRuntimeSystemVisibility;
+    Handle<RuntimeEntityRegistry> worldRuntimeEntityRegistry;
+    Handle<RuntimeSystemEnvironment> worldRuntimeSystemEnvironment;
+    Handle<void> unk15;
+    Handle<geometry::RuntimeSystemGeomDescription> worldgeometryRuntimeSystemGeomDescription;
+    Handle<RuntimeSystemEffects> worldRuntimeSystemEffects;
+    Handle<RuntimeSystemSmartObjects> worldRuntimeSystemSmartObjects;
+    Handle<nav::RuntimeSystemPathfinding> navRuntimeSystemPathfinding;
+    Handle<RuntimeSystemEntityTransactor> worldRuntimeSystemEntityTransactor;
+    Handle<void> unk21;
+    Handle<ent::RuntimeSystemEditorMeshes> entRuntimeSystemEditorMeshes;
+    Handle<RuntimeSystemTraffic> worldRuntimeSystemTraffic;
+    Handle<RuntimeSystemSnapSovler> worldRuntimeSystemSnapSovler;
+    Handle<debug::RuntimeSystemSpeedSplinePreview> debugRuntimeSystemSpeedSplinePreview;
+    Handle<CorpseSystem> worldCorpseSystem;
+    Handle<RuntimeSystemWorldStreaming> worldRuntimeSystemWorldStreaming;
+    Handle<net::EntitySystem> netEntitySystem;
+    Handle<InternalFunctionalTestsRuntimeSystem> InternalFunctionalTestsRuntimeSystem;
+    Handle<FunctionalTestsRuntimeSystem> FunctionalTestsRuntimeSystem;
+    Handle<work::WorkspotSystem> workWorkspotSystem;
+    Handle<void> unk32;
+    Handle<RuntimeSystemRemoteViews> worldRuntimeSystemRemoteViews;
+    Handle<RuntimeSystemEntityAppearanceChanger> worldRuntimeSystemEntityAppearanceChanger;
+    Handle<NodeInstanceRegistry> worldNodeInstanceRegistry;
+    Handle<RuntimeSystemEntityTransforms> worldRuntimeSystemEntityTransforms;
+    Handle<ui::RuntimeSystemUI> worlduiRuntimeSystemUI;
+    Handle<RuntimeSystemMoverComponents> worldRuntimeSystemMoverComponents;
+    Handle<RuntimeSystemTransformAnimator> worldRuntimeSystemTransformAnimator;
+    Handle<RuntimeSystemWeather> worldRuntimeSystemWeather;
+    Handle<RuntimeSystemBinkUpdate> worldRuntimeSystemBinkUpdate;
+    Handle<RuntimeSystemNodeStreaming> worldRuntimeSystemNodeStreaming;
+    Handle<void> unk43;
+    Handle<void> unk44;
+    Handle<void> unk45;
+    Handle<void> unk46;
+    Handle<RuntimeSystemFoliage> worldRuntimeSystemFoliage;
+    Handle<RuntimeSystemDismemberment> worldRuntimeSystemDismemberment;
+    Handle<void> unk49;
+    Handle<void> unk50;
+    Handle<RuntimeSystemEffectAttachments> worldRuntimeSystemEffectAttachments;
+    Handle<RuntimeSystemRepellerComponents> worldRuntimeSystemRepellerComponents;
+    Handle<void> unk53;
+    Handle<RuntimeSystemCompiledTerrain> worldRuntimeSystemCompiledTerrain;
+    Handle<void> unk55;
+    Handle<void> unk56;
+    Handle<RuntimeSystemCamera> worldRuntimeSystemCamera;
+    Handle<void> unk58;
+    Handle<RuntimeSystemEntityVisualController> worldRuntimeSystemEntityVisualController;
+    Handle<void> unk60;
+    Handle<void> unk61;
+    Handle<RuntimeSystemDestruction> worldRuntimeSystemDestruction;
+    Handle<game::RuntimeSystemLights> gameRuntimeSystemLights;
+    Handle<RuntimeSystemStreamingQuery> worldRuntimeSystemStreamingQuery;
+    uint32_t numSystems;
+    uint32_t unk414;
     GameInstance* gameInstance;
     uint64_t unk420;
     RuntimeInfo runtimeInfo;

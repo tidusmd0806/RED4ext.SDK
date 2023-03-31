@@ -8,18 +8,27 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/IRuntimeSystem.hpp>
 
-namespace RED4ext
-{
-namespace world { 
-struct RuntimeSystemRendering : world::IRuntimeSystem
+namespace RED4ext::world { 
+
+struct RenderingInterface1 {
+    // removes a1 from unk60
+    virtual void sub_00(uint64_t a1);
+};
+
+// same as VehicleInterface3 i think
+struct RenderingInterface2 {
+    virtual ~RenderingInterface2();
+    virtual void sub_08();
+};
+
+struct RuntimeSystemRendering : world::IRuntimeSystem, RenderingInterface1, RenderingInterface2
 {
     static constexpr const char* NAME = "worldRuntimeSystemRendering";
     static constexpr const char* ALIAS = NAME;
 
-    uint8_t unk48[0x120 - 0x48]; // 48
+    uint64_t unk48[25];
 };
 RED4EXT_ASSERT_SIZE(RuntimeSystemRendering, 0x120);
-} // namespace world
 } // namespace RED4ext
 
 // clang-format on

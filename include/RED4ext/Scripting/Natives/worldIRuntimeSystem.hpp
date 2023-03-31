@@ -4,11 +4,12 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/Scripting/Natives/worldRuntimeScene.hpp>
+#include <RED4ext/Scripting/Natives/IUpdatableSystem.hpp>
 
 namespace RED4ext
 {
 namespace world { 
+struct RuntimeScene;
 struct IRuntimeSystem : IUpdatableSystem
 {
     static constexpr const char* NAME = "worldIRuntimeSystem";
@@ -46,7 +47,16 @@ struct IRuntimeSystem : IUpdatableSystem
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 20 48 8B EA 66 C7 44 24 30 00 00 0F B7
     // void ** __fastcall Setup_sub_168(void **unkThing, RuntimeScene *runtimeScene, void *a3, RuntimeScene::Flags *a5);
 
-    RuntimeScene::Flags flags; // 40
+    struct Flags {
+      bool inPreview;
+      bool inSingleplayer;
+      bool onClientWithVisuals;
+      bool onClientWithoutVisuals;
+      bool onHeadlessServerWithoutVisuals;
+      bool onServer;
+      bool RenderDebugInProfiling;
+      bool unk8;
+    } flags; // 40
 };
 RED4EXT_ASSERT_SIZE(IRuntimeSystem, 0x48);
 } // namespace world
