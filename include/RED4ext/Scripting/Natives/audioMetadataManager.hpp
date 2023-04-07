@@ -42,7 +42,7 @@ struct MetadataManager {
     MetadataManager();
 
     // 1.6 RVA: 0x371F50 / 3612496
-    // 1.62 RVA: 0x372520 / 3613984
+    // 1.61hf1 RVA: 0x372520 / 3613984
     /// @pattern 48 89 5C 24 08 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 30 33 ED 48 8D 05 ? ? DA 02 48 89 01
     virtual ~MetadataManager();
 

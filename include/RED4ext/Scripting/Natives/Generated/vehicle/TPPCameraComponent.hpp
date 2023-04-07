@@ -136,13 +136,13 @@ struct TPPCameraComponent : public game::CameraComponent
     __int64 __fastcall UpdateData(void * a2);
 
     // 1.6  RVA: 0x1CF47B0 / 30361520
-    // 1.62 RVA: 0x1CF5270 / 30364272
+    // 1.61hf1 RVA: 0x1CF5270 / 30364272
     /// @pattern 40 53 48 81 EC 90 00 00 00 F3 0F 10 15 ? ? 3E 01 0F 57 C0 F3 0F 2A 81 20 03 00 00 48 8B D9 F3
     void __fastcall UpdateTPP();
 
     // 1.52 RVA: 0x1CC4600 / 30164480
     // 1.6  RVA: 0x1CF0CB0 / 30346416
-    // 1.62 RVA: 0x1CF1770 / 30349168
+    // 1.61hf1 RVA: 0x1CF1770 / 30349168
     /// @pattern 48 8B C4 48 89 58 18 48 89 78 20 55 48 8D 68 D8 48 81 EC 20 01 00 00 0F 28 05 ? ? ? 01 0F 57
     Vector4 *__fastcall GetLocationFromOffset(Vector4 *location, Vector3 *lookAtOffset);
 
@@ -164,7 +164,7 @@ struct TPPCameraComponent : public game::CameraComponent
     // updates cameraDirection
     // updates cameraPitch from slopeAdjustment
     // 1.6  RVA: 0x1CF5DB0 / 30367152
-    // 1.62 RVA: 0x1CF6870 / 30369904
+    // 1.61hf1 RVA: 0x1CF6870 / 30369904
     /// @pattern 48 8B C4 48 89 58 08 57 48 81 EC 90 00 00 00 F3 0F 10 05 ? ? 3E 01 0F 57 ED 0F 29 70 E8 49 8B
     void __fastcall UpdatePitch(Vector4 *localPosition, Vector3 *cameraPosition, TPPCameraUpdate *update);
 

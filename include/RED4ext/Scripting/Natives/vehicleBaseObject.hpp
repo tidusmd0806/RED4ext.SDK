@@ -519,7 +519,7 @@ struct Unk570 {
     // 1.52 RVA: 0x1CFA220 / 30384672
     //           48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
     // 1.6  RVA: 0x1D27B90 / 30571408
-    // 1.62 RVA: 0x1D28650
+    // 1.61hf1 RVA: 0x1D28650
     /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 48 89 4C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 30 FD
     void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
 
@@ -942,14 +942,14 @@ struct BaseObject : game::Object
     // 1.52 RVA: 0x1C60690 / 29755024
     // 1.6  RVA: 0x1C8D240 / 29938240
     // 1.61 RVA: 0x1C8D4C0
-    // 1.62 RVA: 0x1C8DBB0
+    // 1.61hf1 RVA: 0x1C8DBB0
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 20 57 48 83 EC 30 8B B1 50 02 00 00 41 0F B6 E8 8B FA
     void __fastcall SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3);
 
     // 1.52 RVA: 0x1C4C4F0 / 29672688
     // 1.6  RVA: 0x1C78F70 / 29855600
     // 1.61 RVA: 0x1C791E0
-    // 1.62 RVA: 0x1C798D0
+    // 1.61hf1 RVA: 0x1C798D0
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8
     void __fastcall UnsetPhysicsStates();
 
@@ -1053,7 +1053,7 @@ struct BaseObject : game::Object
 
     // 1.52 RVA: 0x1C5D800 / 29743104
     // 1.6  RVA: 0x1C8A390 / 29926288
-    // 1.62 RVA: 0x1C8AD00 (not used)
+    // 1.61hf1 RVA: 0x1C8AD00 (not used)
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 48 8D B1 88 03 00 00 48 8B FA 48 8B CE 48 8D 54 24
     action::ActionBase **__fastcall CreateAction(action::ActionBase **action_p, action::Type type);
 

@@ -14,7 +14,7 @@ struct PhysicalSystemProxy : BaseProxy
 {
     // just after 3BC43730h & 3F266666h
     // 1.6  RVA: 0x313D790
-    // 1.62 RVA: 0x314592C
+    // 1.61hf1 RVA: 0x314592C
     static constexpr const uintptr_t VFT = 0x314592C;
 
     // offsets bodies from unk948.offset

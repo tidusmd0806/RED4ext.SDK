@@ -33,7 +33,7 @@ struct PersistentDataPS : game::ComponentPS
     void __fastcall UpdateWheelRuntime(unsigned int wheelIndex, RED4ext::vehicle::WheelRuntimePSData *a3);
 
     // 1.6  RVA: 0x1CD1150 / 30216528
-    // 1.62 RVA: 0x1CD1A10 / 30218768
+    // 1.61hf1 RVA: 0x1CD1A10 / 30218768
     /// @pattern 40 53 48 83 EC 30 48 8B D9 48 8B D1 48 8D 4C 24 20 45 33 C0 E8 ? ? 51 FE 0F 28 1D ? ? 40 01
     void __fastcall ResetQuestEnforceTransform();
 

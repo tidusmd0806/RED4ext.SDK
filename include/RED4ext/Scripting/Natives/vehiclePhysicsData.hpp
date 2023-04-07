@@ -47,12 +47,12 @@ struct PhysicsData
 
     // adds to force & computes torque
     // 1.6  RVA: 0x1D0D2E0 / 30462688
-    // 1.62 RVA: 0x1D0DDA0 / 30465440
+    // 1.61hf1 RVA: 0x1D0DDA0 / 30465440
     /// @pattern 48 83 EC 28 F3 41 0F 10 00 F3 0F 58 01 F3 0F 10 0D ? ? ? 01 0F 29 74 24 10 C7 44 24 0C 00 00
     void __fastcall ApplyForceAtPosition(RED4ext::Vector3 *position, RED4ext::Vector3 *force);
 
     // 1.6  RVA: 0x1D0CCE0 / 30461152
-    // 1.62 RVA: 0x1D0D7A0 / 30463904
+    // 1.61hf1 RVA: 0x1D0D7A0 / 30463904
     /// @pattern 48 83 EC 28 F3 0F 10 42 08 F3 0F 5C 81 78 01 00 00 F3 0F 10 1A F3 0F 5C 99 70 01 00 00 F3 0F 10
     void __fastcall ApplyTorqueAtPosition(RED4ext::Vector3 *position, RED4ext::Vector3 *torque);
 

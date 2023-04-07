@@ -18,7 +18,7 @@ struct BaseProxyDesc;
 struct BaseProxy {
     // just after "TimeDeltaOverride"
     // 1.6  RVA: 0x313A550
-    // 1.62 RVA: 0x3142700
+    // 1.61hf1 RVA: 0x3142700
     static constexpr const uintptr_t VFT = 0x3142700;
 
     virtual void sub_00();

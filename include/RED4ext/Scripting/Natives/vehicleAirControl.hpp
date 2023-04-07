@@ -21,7 +21,7 @@ struct AirControl
 
     // 1.6  RVA: 0x1D108A0 / 30476448
     // 1.61 RVA: 0x1D10C60
-    // 1.62 RVA: 0x1D11360
+    // 1.61hf1 RVA: 0x1D11360
     /// @pattern 48 89 5C 24 20 56 48 83 EC 60 0F 29 74 24 50 48 8B F1 0F 57 F6 44 0F 29 44 24 30 0F 2E 71 08 44
     void __fastcall Process(float a2);
 

@@ -18,7 +18,7 @@ struct IUpdatableSystem : IScriptable
     // vft is before "CVariableStoragePtr" string, or after IUpdatableSystem
     // 1.6  RVA: 0x3205788
     // 1.61 RVA: 0x320A8A8
-    // 1.62 RVA: 0x320D998
+    // 1.61hf1 RVA: 0x320D998
     /// @pattern 49 55 70 64 61 74 61 62 6C 65 53 79 73 74 65 6D 00
     /// @offset -264
     static constexpr const uintptr_t VFT = IUpdatableSystem_VFT_Addr;

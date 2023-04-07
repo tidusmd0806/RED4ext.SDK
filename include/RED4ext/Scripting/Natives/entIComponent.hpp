@@ -26,7 +26,7 @@ struct IComponent : IScriptable
     // a little after "entIComponent" string
     // 1.6  RVA: 0x33045E0
     // 1.61 RVA: 0x33097A0
-    // 1.62 RVA: 0x330C8E0
+    // 1.61hf1 RVA: 0x330C8E0
     /// @pattern 65 6E 74 49 43 6F 6D 70  6F 6E 65 6E 74 00 00 00
     /// @offset -32
     static constexpr const uintptr_t VFT = entIComponent_VFT_Addr;

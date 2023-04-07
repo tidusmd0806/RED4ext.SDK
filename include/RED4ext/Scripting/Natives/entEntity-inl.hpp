@@ -34,7 +34,7 @@ RED4EXT_INLINE void Entity::sub_138()
 
 
 // 1.61 RVA: 0x1046140
-// 1.62 RVA: 0x1046F30
+// 1.61hf1 RVA: 0x1046F30
 //RED4EXT_INLINE uint64_t Entity::SetupEntityAndComponents(EntityDefinition* definition)
 //{
 //    RelocFunc<decltype(&Entity::SetupEntityAndComponents)> call(0x1046F30);

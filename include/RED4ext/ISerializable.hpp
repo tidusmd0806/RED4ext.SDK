@@ -24,7 +24,7 @@ struct ISerializable
     // after "ISerializable" string
     // 1.6  RVA: 0x30D70A8
     // 1.61 RVA: 0x30DC038
-    // 1.62 RVA: 0x30DF0B8
+    // 1.61hf1 RVA: 0x30DF0B8
     /// @pattern 00 49 53 65 72 69 61 6C 69 7A 61 62 6C 65 00 00 00
     /// @offset -257
     static constexpr const uintptr_t VFT = ISerializable_VFT_Addr;

@@ -40,7 +40,7 @@ struct SlotComponent : ent::IPlacedComponent
     bool __fastcall GetSlotLocalTransform(int slotIndex, WorldTransform *offset, WorldTransform *transform);
 
     // 1.6  RVA: 0x115CE20 / 18206240
-    // 1.62 RVA: 0x115DC00 / 18209792
+    // 1.61hf1 RVA: 0x115DC00 / 18209792
     /// @pattern 48 89 5C 24 08 57 48 83 EC 60 0F 28 05 ? ? ? 01 33 C0 49 8B F8 48 89 44 24 20 4C 8D 44 24 20
     bool __fastcall GetLocalSlotTransformFromIndex(int slotIndex, Transform *transform);
 

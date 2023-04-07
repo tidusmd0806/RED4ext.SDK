@@ -56,7 +56,7 @@ struct Physics
     // after "VehicleTeleportationIfFallsUnderWorld" string
     // 1.6  RVA: 0x3497B78
     // 1.61 RVA: 0x349CDC8
-    // 1.62 RVA: 0x349FF08
+    // 1.61hf1 RVA: 0x349FF08
     /// @pattern 56 65 68 69 63 6C 65 54 65 6C 65 70 6F 72 74 61 74 69 6F 6E 49 66 46 61 6C 6C 73 55 6E 64 65 72
     /// @offset -40
     static constexpr const uintptr_t VFT = vehiclePhysics_VFT_Addr;
@@ -293,7 +293,7 @@ struct WheeledPhysics : Physics
     // after "EnableSmoothWheelContacts" string
     // 1.6  RVA: 0x3498388
     // 1.61 RVA: 0x349D5D8
-    // 1.62 RVA: 0x34A0718
+    // 1.61hf1 RVA: 0x34A0718
     /// @pattern 45 6E 61 62 6C 65 53 6D 6F 6F 74 68 57 68 65 65 6C 43 6F 6E 74 61 63 74 73 00 00 00 00 00 00 00
     /// @offset -32
     static constexpr const uintptr_t VFT = vehicleWheeledPhysics_VFT_Addr;
@@ -354,7 +354,7 @@ struct WheeledPhysics : Physics
 
     // 1.52 RVA: 0x1D12040 / 30482496
     // 1.6  RVA: 0x1D3E7A0 / 30664608
-    // 1.62 RVA: 0x1D3F260
+    // 1.61hf1 RVA: 0x1D3F260
     /// @pattern 48 89 5C 24 10 57 48 83 EC 30 48 8B F9 41 0F B6 49 32 E8 ? ? ? 00 48 8B 4F 08 80 B9 B4 00 00
     static void __fastcall FixedUpdate(__int64, __int64, __int64, __int64);
 
@@ -367,12 +367,12 @@ struct WheeledPhysics : Physics
     static double __fastcall ApplyWaterResistance(void * waterParams, float timeDelta);
 
     // 1.6  RVA: 0x1D16ED0 / 30502608
-    // 1.62 RVA: 0x1D17990 / 30505360
+    // 1.61hf1 RVA: 0x1D17990 / 30505360
     /// @pattern 40 53 48 83 EC 30 48 8B D9 0F 29 74 24 20 48 8B 49 60 0F 28 F1 E8 ? ? F6 FF 84 C0 74 45 48 8B
     void __fastcall ProcessAirControl(float timeDelta);
 
     // 1.6  RVA: 0x1D408B0 / 30673072
-    // 1.62 RVA: 0x1D41370 / 30675824
+    // 1.61hf1 RVA: 0x1D41370 / 30675824
     /// @pattern 89 54 24 10 55 57 41 57 48 8D AC 24 D0 EF FF FF B8 30 11 00 00 E8 ? ? ? 00 48 2B E0 80 79 20
     void __fastcall SomethingWheelRayTrace(unsigned int wheelIndex_1);
 
@@ -544,7 +544,7 @@ struct CarPhysics : WheeledPhysics
     // a little after "VehiclePassenger" string
     // 1.6  RVA: 0x34980C0
     // 1.61 RVA: 0x349D310
-    // 1.62 RVA: 0x34A0450
+    // 1.61hf1 RVA: 0x34A0450
     /// @pattern 56 65 68 69 63 6C 65 50 61 73 73 65 6E 67 65 72 00 00 00 00 3B DF 7F 3F 00 00 C8 C1 00 00 00 00
     /// @offset -48
     static constexpr const uintptr_t VFT = vehicleCarPhysics_VFT_Addr;
@@ -666,7 +666,7 @@ struct BikePhysics : WheeledPhysics
     // a little after "BikeHackTiltCalcValue" string
     // 1.6  RVA: 0x3431A30
     // 1.61 RVA: 0x349D130
-    // 1.62 RVA: 0x34A0270
+    // 1.61hf1 RVA: 0x34A0270
     /// @pattern 42 69 6B 65 48 61 63 6B 54 69 6C 74 43 61 6C 63 56 61 6C 75 65 00 00 00
     /// @offset -30
     static constexpr const uintptr_t VFT = vehicleBikePhysics_VFT_Addr;
