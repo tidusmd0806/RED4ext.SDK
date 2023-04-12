@@ -165,7 +165,7 @@ struct TPPCameraComponent : public game::CameraComponent
     // updates cameraPitch from slopeAdjustment
     // 1.6  RVA: 0x1CF5DB0 / 30367152
     // 1.61hf1 RVA: 0x1CF6870 / 30369904
-    /// @pattern 48 8B C4 48 89 58 08 57 48 81 EC 90 00 00 00 F3 0F 10 05 ? ? 3E 01 0F 57 ED 0F 29 70 E8 49 8B
+    /// @pattern 48 8B C4 48 89 58 08 57 48 81 EC 90 00 00 00 F3 0F 10 05 ?  ?  ?  01 0F 57 ED 0F 29 70 E8 49 8B
     void __fastcall UpdatePitch(Vector4 *localPosition, Vector3 *cameraPosition, TPPCameraUpdate *update);
 
     // uses driving direction variables, a3 is unkTransform340 & update->locationFromOffset, and X from unkWorldPosition470

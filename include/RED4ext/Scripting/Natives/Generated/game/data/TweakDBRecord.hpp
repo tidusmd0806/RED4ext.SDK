@@ -25,7 +25,7 @@ struct TweakDBRecord : IScriptable
 };
 RED4EXT_ASSERT_SIZE(TweakDBRecord, 0x48);
 } // namespace game::data
-using gamedataTweakDBRecord = game::data::TweakDBRecord;
+// using gamedataTweakDBRecord = game::data::TweakDBRecord;
 using TweakDBRecord = game::data::TweakDBRecord;
 } // namespace RED4ext
 
