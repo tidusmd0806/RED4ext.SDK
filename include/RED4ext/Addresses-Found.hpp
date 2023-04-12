@@ -13,7 +13,6 @@ count mismatch for _REUSED_ReturnZero8 (90)
 count mismatch for _REUSED_ReturnZero64 (55)
 count mismatch for _REUSED_ReturnOne (53)
 count mismatch for _REUSED_ReturnOne64 (24)
-
 no matches for GameOptionManager_Get
 no matches for IDynamicStorage
 no matches for physicsGeometryCache_FreeKey
@@ -47,7 +46,6 @@ no matches for physicsProxyHelper_UpdateGlobalPose
 no matches for vehicleChassisComponent_Unknown1
 no matches for vehicleChassisComponent_SetDampingToPoint4
 no matches for vehicleTPPCameraComponent_UpdateTPP
-no matches for vehicleTPPCameraComponent_UpdatePitch
 no matches for vehicleCameraManager_ShouldUseSomeListener
 no matches for vehicleCameraManager_Update
 no matches for vehiclePersistentDataPS_ResetQuestEnforceTransform
@@ -63,7 +61,7 @@ no matches for ~MetadataManager
 no matches for audioMetadataManager_GetValueInMapForName
 no matches for physicsVehiclePhysicsInsert1_ReferencePoseSetup
 no matches for audioThing_GetEmitterPosition
-no matches for audioThing(unnamedstructatC:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/include\/Scripting/Natives/audioThing.hpp:66:5)_AKAudioLoad
+no matches for audioThing(unnamedstructat)_AKAudioLoad
 */
 
 #ifndef BaseStream_ReadWriteHandleID_Addr
@@ -1055,6 +1053,9 @@ no matches for audioThing(unnamedstructatC:/Users/Jack/Documents/cyberpunk/fligh
 #endif
 #ifndef vehicleTPPCameraComponent_UpdateData_Addr
 #define vehicleTPPCameraComponent_UpdateData_Addr 0x1D064F0
+#endif
+#ifndef vehicleTPPCameraComponent_UpdatePitch_Addr
+#define vehicleTPPCameraComponent_UpdatePitch_Addr 0x1D08690
 #endif
 #ifndef vehicleTPPCameraComponent_UpdatePosition_Addr
 #define vehicleTPPCameraComponent_UpdatePosition_Addr 0x1D07250

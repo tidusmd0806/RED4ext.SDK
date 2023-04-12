@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::state
 {
-struct MachineState : graph::GraphNodeDefinition
+struct MachineState : RED4ext::graph::GraphNodeDefinition
 {
     static constexpr const char* NAME = "gamestateMachineState";
     static constexpr const char* ALIAS = NAME;

@@ -22,7 +22,7 @@ struct ItemPositionProviderWrapper : IScriptable
 RED4EXT_ASSERT_SIZE(ItemPositionProviderWrapper, 0x48);
 } // namespace ink
 using inkItemPositionProviderWrapper = ink::ItemPositionProviderWrapper;
-using inkItemPositionProvider = ink::ItemPositionProviderWrapper;
+// using inkItemPositionProvider = ink::ItemPositionProviderWrapper;
 } // namespace RED4ext
 
 // clang-format on

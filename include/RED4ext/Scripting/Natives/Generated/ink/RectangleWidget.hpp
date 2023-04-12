@@ -22,7 +22,7 @@ struct RectangleWidget : ink::BaseShapeWidget
 RED4EXT_ASSERT_SIZE(RectangleWidget, 0x240);
 } // namespace ink
 using inkRectangleWidget = ink::RectangleWidget;
-using inkRectangle = ink::RectangleWidget;
+// using inkRectangle = ink::RectangleWidget;
 } // namespace RED4ext
 
 // clang-format on

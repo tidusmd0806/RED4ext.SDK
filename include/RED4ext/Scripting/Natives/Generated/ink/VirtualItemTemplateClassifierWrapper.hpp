@@ -22,7 +22,7 @@ struct VirtualItemTemplateClassifierWrapper : IScriptable
 RED4EXT_ASSERT_SIZE(VirtualItemTemplateClassifierWrapper, 0x48);
 } // namespace ink
 using inkVirtualItemTemplateClassifierWrapper = ink::VirtualItemTemplateClassifierWrapper;
-using inkVirtualItemTemplateClassifier = ink::VirtualItemTemplateClassifierWrapper;
+// using inkVirtualItemTemplateClassifier = ink::VirtualItemTemplateClassifierWrapper;
 } // namespace RED4ext
 
 // clang-format on
