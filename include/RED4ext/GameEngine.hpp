@@ -212,7 +212,6 @@ RED4EXT_ASSERT_SIZE(BaseGameEngine, 0x2E0);
 RED4EXT_ASSERT_OFFSET(BaseGameEngine, watchdogThread, 0x2D8);
 
 struct CGameFramework
-{
     // static constexpr const uintptr_t VFT = 0x3599FE8;
 
     virtual Memory::IAllocator* GetAllocator();

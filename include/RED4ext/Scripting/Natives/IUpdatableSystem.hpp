@@ -1,14 +1,11 @@
 #pragma once
 
-// This file is generated from the Game's Reflection data
-
-#include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
 
 namespace RED4ext
 {
-struct UpdateManagerHolder;
+struct UpdateRegistrar;
 
 struct IUpdatableSystem : IScriptable
 {
@@ -36,7 +33,7 @@ struct IUpdatableSystem : IScriptable
     // static const char *__fastcall GetStringForUnk0(Unk0);
 
     // sub_110 - adds callbacks to the lookup - there are at least 10 dynarrays
-    virtual void RegisterUpdates(UpdateManagerHolder* holder) { }; 
+    virtual void OnRegisterUpdates(UpdateRegistrar* aRegistrar) { }; 
 };
 RED4EXT_ASSERT_SIZE(IUpdatableSystem, 0x40);
 

@@ -87,11 +87,12 @@ struct GameInstance : IGameInstance
      * @pattern 4C 89 44 24 18 48 89 54 24 10 48 89 4C 24 08 55 53 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 E1
     */
     __int64 *__fastcall Setup(void **unkThing, uint8_t *a3);
-    
-    HashMap<CBaseRTTIType*, Handle<game::IGameSystem>> systemInstances; // 08
-    DynArray<Handle<IScriptable>> gameSystems;                // 38
-    // 48: contains the ISystem to System mapping, System is listed twice if no interface
-    HashMap<CBaseRTTIType*, CBaseRTTIType*> interfaceMapping;
+
+    HashMap<CBaseRTTIType*, Handle<IScriptable>> systemMap;        // 08 - Maps implementation type to instance
+    DynArray<Handle<IScriptable>> systemInstances;                 // 38
+    HashMap<CBaseRTTIType*, CBaseRTTIType*> systemImplementations; // 48 - Maps interface type to implementation type
+    //uintptr_t unk78[(0x138 - 0x78) >> 3];                          // 78
+
     world::RuntimeScene * runtimeScene; // 78
     world::RuntimeInfo runtimeInfo; // 80
     // 0x100: 0x415643FF7B

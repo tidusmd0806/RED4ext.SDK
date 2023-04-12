@@ -4,124 +4,106 @@
 #include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
 #endif
 
-namespace RED4ext
-{
-namespace game
-{
+#include <RED4ext/Scripting/Natives/Generated/game/SaveLock.hpp>
+#include <RED4ext/Scripting/Natives/Generated/world/RuntimeScene.hpp>
 
-RED4EXT_INLINE CClass* IGameSystem::GetNativeType()
+RED4EXT_INLINE RED4ext::CClass* RED4ext::game::IGameSystem::GetNativeType()
 {
-    RelocFunc<decltype(&IGameSystem::GetNativeType)> call(VFT, 0x000);
+    RED4ext::RelocFunc<decltype(&RED4ext::game::IGameSystem::GetNativeType)> call(VFT, 0x000);
     return call(this);
 }
 
-RED4EXT_INLINE bool IGameSystem::WorldAttached(world::RuntimeScene * a1)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnWorldAttached(RED4ext::world::RuntimeScene* aScene)
 {
-    RelocFunc<decltype(&IGameSystem::WorldAttached)> call(VFT, 0x118);
-    return call(this, a1);
+    RED4EXT_UNUSED_PARAMETER(aScene);
 }
 
-RED4EXT_INLINE void IGameSystem::WorldPendingDetach(world::RuntimeScene * runtimeScene)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnBeforeWorldDetach(RED4ext::world::RuntimeScene* aScene)
 {
-    RelocFunc<decltype(&IGameSystem::WorldPendingDetach)> call(VFT, 0x120);
-    return call(this, runtimeScene);
+    RED4EXT_UNUSED_PARAMETER(aScene);
 }
 
-RED4EXT_INLINE void IGameSystem::WorldDetached(world::RuntimeScene * runtimeScene)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnWorldDetached(RED4ext::world::RuntimeScene* aScene)
 {
-    RelocFunc<decltype(&IGameSystem::WorldDetached)> call(VFT, 0x128);
-    return call(this, runtimeScene);
+    RED4EXT_UNUSED_PARAMETER(aScene);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_130()
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnAfterWorldDetach()
 {
-    RelocFunc<decltype(&IGameSystem::sub_130)> call(VFT, 0x130);
-    return call(this);
 }
 
-RED4EXT_INLINE uint32_t IGameSystem::sub_138(uint64_t a1, uint64_t a2)
+RED4EXT_INLINE uint32_t RED4ext::game::IGameSystem::OnBeforeGameSave(const RED4ext::JobGroup& aJobGroup, void* a2)
 {
-    RelocFunc<decltype(&IGameSystem::sub_138)> call(VFT, 0x138);
-    return call(this, a1, a2);
+    RED4EXT_UNUSED_PARAMETER(aJobGroup);
+    RED4EXT_UNUSED_PARAMETER(a2);
+
+    return 0;
 }
 
-RED4EXT_INLINE void IGameSystem::sub_140(uint64_t a1)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnGameSave(void* aStream)
 {
-    RelocFunc<decltype(&IGameSystem::sub_140)> call(VFT, 0x140);
-    return call(this, a1);
+    RED4EXT_UNUSED_PARAMETER(aStream);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_148()
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnAfterGameSave()
 {
-    RelocFunc<decltype(&IGameSystem::sub_148)> call(VFT, 0x148);
-    return call(this);
 }
 
-RED4EXT_INLINE void IGameSystem::OnGameLoad(void * a1, uint64_t a2, uint64_t a3)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnGameLoad(const RED4ext::JobGroup& aJobGroup, bool& aSuccess,
+                                                           void* aStream)
 {
-    RelocFunc<decltype(&IGameSystem::OnGameLoad)> call(VFT, 0x150);
-    return call(this, a1, a2, a3);
+    RED4EXT_UNUSED_PARAMETER(aJobGroup);
+    RED4EXT_UNUSED_PARAMETER(aSuccess);
+    RED4EXT_UNUSED_PARAMETER(aStream);
 }
 
-RED4EXT_INLINE bool IGameSystem::sub_158()
+RED4EXT_INLINE bool RED4ext::game::IGameSystem::OnGameRestored()
 {
-    RelocFunc<decltype(&IGameSystem::sub_158)> call(VFT, 0x158);
-    return call(this);
+    return true;
 }
 
-RED4EXT_INLINE void IGameSystem::OnGamePrepared()
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnGamePrepared()
 {
-    RelocFunc<decltype(&IGameSystem::OnGamePrepared)> call(VFT, 0x160);
-    return call(this);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_168()
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnGamePaused()
 {
-    RelocFunc<decltype(&IGameSystem::sub_168)> call(VFT, 0x168);
-    return call(this);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_170()
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnGameResumed()
 {
-    RelocFunc<decltype(&IGameSystem::sub_170)> call(VFT, 0x170);
-    return call(this);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_178(uintptr_t a1, bool a2)
+RED4EXT_INLINE void* RED4ext::game::IGameSystem::IsSavingLocked(RED4ext::game::SaveLock* aLock, bool a2)
 {
-    RelocFunc<decltype(&IGameSystem::sub_178)> call(VFT, 0x178);
-    return call(this, a1, a2);
+    RED4EXT_UNUSED_PARAMETER(a2);
+
+    *aLock = {};
+    return aLock;
 }
 
-RED4EXT_INLINE void IGameSystem::OnStreamingWorldLoaded(uint64_t a1, bool isGameLoaded, uint64_t a3)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnStreamingWorldLoaded(RED4ext::world::RuntimeScene* aScene,
+                                                                       uint64_t a2, const RED4ext::JobGroup& aJobGroup)
 {
-    RelocFunc<decltype(&IGameSystem::OnStreamingWorldLoaded)> call(VFT, 0x180);
-    return call(this, a1, isGameLoaded, a3);
+    RED4EXT_UNUSED_PARAMETER(aScene);
+    RED4EXT_UNUSED_PARAMETER(a2);
+    RED4EXT_UNUSED_PARAMETER(aJobGroup);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_188()
+RED4EXT_INLINE void RED4ext::game::IGameSystem::sub_188()
 {
-    RelocFunc<decltype(&IGameSystem::sub_188)> call(VFT, 0x188);
-    return call(this);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_190(IGameSystem::HighLow * hl)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::sub_190(void* a1)
 {
-    RelocFunc<decltype(&IGameSystem::sub_190)> call(VFT, 0x190);
-    return call(this, hl);
+    RED4EXT_UNUSED_PARAMETER(a1);
 }
 
-RED4EXT_INLINE void IGameSystem::Initialize(void ** unkThing)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnInitialize(const RED4ext::JobHandle& aJob)
 {
-    RelocFunc<decltype(&IGameSystem::Initialize)> call(VFT, 0x198);
-    return call(this, unkThing);
+    RED4EXT_UNUSED_PARAMETER(aJob);
 }
 
-RED4EXT_INLINE void IGameSystem::sub_1A0()
+RED4EXT_INLINE void RED4ext::game::IGameSystem::OnUninitialize()
 {
-    RelocFunc<decltype(&IGameSystem::sub_1A0)> call(VFT, 0x1A0);
-    return call(this);
 }
-
-} // namespace game
-} // namespace RED4ext

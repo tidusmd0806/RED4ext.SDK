@@ -4,13 +4,9 @@
 #include <RED4ext/Scripting/Natives/IUpdatableSystem.hpp>
 #endif
 
-namespace RED4ext
-{
+#include <RED4ext/SystemUpdate.hpp>
 
-RED4EXT_INLINE CClass* IUpdatableSystem::GetNativeType()
+RED4EXT_INLINE void RED4ext::IUpdatableSystem::OnRegisterUpdates(RED4ext::UpdateRegistrar* aRegistrar)
 {
-    RelocFunc<decltype(&IUpdatableSystem::GetNativeType)> call(VFT, 0x000);
-    return call(this);
+    RED4EXT_UNUSED_PARAMETER(aRegistrar);
 }
-
-} // namespace RED4ext
