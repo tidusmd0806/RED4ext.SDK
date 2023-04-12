@@ -13,64 +13,6 @@ namespace RED4ext
 struct CGameFramework;
 struct IUpdatableSystem;
 
-enum class UpdateTickGroup : unsigned char
-{
-    // TierSystem, MountingFacility, HitRepresentationSystem
-    // AIDirectorSystem, UpdateTime, Damage, TrafficSystemMovement
-    // Audio/FinishAsyncJob, Traffic_FrameStart, DebugCheatsSystem
-    // Navigation/Update, RuntimeSystemDestruction/WaitFractureCallbacks
-    // GameRules, RuntimeSystemNodeStreaming/ProcessNodes
-    // Multiplayer/UpdateTime, AnimationSystem_FrameBeginReset
-    // PlayerManager/Tick
-    FrameBegin = 0x0,
-    // Server/DeleteEntities
-    Multiplayer_UpdateStateSnapshots = 0x1,
-    // TrafficMovement/UpdateAvoidanceManager, Entities/UpdateState
-    EntityUpdateState = 0x2,
-    // EffectorSystem, vehicleMoveSystem, ApplyWind, VisionModeSystem
-    // TrafficSystemMovement_UpdateVehicles, PersistencySystem/HandlePSEvents
-    // WeatherSystem, TransformAnimator, PlayerSystem, FunctionalTests/OnPreWorldTick
-    // CorpseSystem_ExecuteTransaction, AnimationSystem_ExecuteTransaction
-    // ContainerManager/TickVisibility, ProjectileSystem/TickPreBuckets
-    PreBuckets = 0x3,
-    // Many are this
-    // ShootingAccuracySystem, TransformsHistorySystem
-    // EnvironmentDamageSystem, DeviceSystem/TickDeviceVisibility
-    // Audio, UI/RuntimeSystem/AudioHandlersUpdate
-    Buckets = 0x4,
-    // TransactionSystem, LightSystem, LootManager,
-    // ObjectCarrySystem, FootstepSystem, DelaySystem
-    // CooldownSystem, CombatQueriesSystem, InteractionManager
-    // DamageSystem/CallbackUpdate, WorkspotManager/PostBucketsTick
-    // PersistencySystem/UpdateCache, UpdateTriggers,
-    // WatchdogSystem/Log/FrameBegin, TrafficSystemMovement_UpdatePedestrians
-    // RuntimeSystemCamera/UpdateComponents, Corpses, Dismemberment/TickKick
-    // ContainerManager/Tick
-    PostBuckets = 0x5,
-    // ObjectPool, ItemFactory, CameraSystem, Traffic/Update, Dismemberment/TickFinish
-    CameraUpdate = 0x6,
-    // StatusEffectSystem, CameraSystem/PlayerAnim, UI/RuntimeSystem
-    // RuntimeSystemNodeStreaming/ProcessContent, PlayerManager/TickAim
-    PlayerAimUpdate = 0x7,
-    // gameFxSystem, gameEffectSystem, EffectAttachments, PhotoMode/AnimUpdate
-    // ProjectileSystem/TickPostCamera, TargetingSystem/TickKick
-    PostPlayerAimUpdate = 0x8,
-    // StimuliSystem, MinimapSystem, EntityStubHandlerProviderSystem
-    // EntityStubSystem, PopulationSystem/UpdateVisQueriesAfterPooling
-    // RuntimeSystemEffects/UpdateJobsKick, TargetingSystem/TickFinish
-    MappinsUpdate = 0x9,
-    // BlackboardSystem/FireCallbacks_SecondPass, RuntimeSystemEffects/UpdateJobsFinish
-    BlackboardCallbacks_SecondPass = 0xA,
-    // Audio, TrafficSystemMovement_Wait, AutoSaveSystem, EntityVisualController
-    // GOGRewards, UI/RuntimeSystem/FullscreenProcessing
-    // FlushPendingOccluders, AttachPendingProxies, EntityVisualController
-    // Telemetry, gameActivityCardsSystem, Physics/KickAndWaitSimulation
-    PreRenderUpdate = 0xB,
-    // Server/PreCaptureStateSnapshots
-    Multiplayer_CaptureStateSnapshots = 0xC,
-    Unknown = 0xD
-};
-
 enum class Unk1 : unsigned char
 {
     // Entities/PreTick, MovingPlatforms/Tick, PuppetUpdaterSystem/PreTick, ReactionSystem::Update

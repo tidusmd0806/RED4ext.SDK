@@ -25,7 +25,7 @@ struct IUpdatableSystem : IScriptable
     /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 82 7F 76 FF 48 8D 05 9B EA 72 02 48 89 03 48 8B C3 48 83 C4 20 5B
     //IUpdatableSystem();
     
-    virtual CClass* GetNativeType() override;
+    // virtual CClass* GetNativeType() override;
     virtual ~IUpdatableSystem() override = default;
 
     // 1.52 RVA: 0xA86060 / 11034720
@@ -33,7 +33,7 @@ struct IUpdatableSystem : IScriptable
     // static const char *__fastcall GetStringForUnk0(Unk0);
 
     // sub_110 - adds callbacks to the lookup - there are at least 10 dynarrays
-    virtual void OnRegisterUpdates(UpdateRegistrar* aRegistrar) { }; 
+    virtual void OnRegisterUpdates(UpdateRegistrar* aRegistrar); 
 };
 RED4EXT_ASSERT_SIZE(IUpdatableSystem, 0x40);
 

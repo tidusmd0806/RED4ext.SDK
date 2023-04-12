@@ -18,9 +18,9 @@ struct MoveSystem : vehicle::IMoveSystem
 
 // overrides
 
-    virtual void RegisterUpdates(UpdateManagerHolder* holder) override; 
-    virtual bool WorldAttached(world::RuntimeScene * runtimeScene) override;
-    virtual void WorldDetached(world::RuntimeScene * runtimeScene) override;
+    virtual void OnRegisterUpdates(UpdateRegistrar* holder) override; 
+    virtual void OnWorldAttached(world::RuntimeScene * runtimeScene) override;
+    virtual void OnWorldDetached(world::RuntimeScene * runtimeScene) override;
 
 // new virtuals
 
