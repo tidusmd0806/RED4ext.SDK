@@ -265,6 +265,7 @@ struct TPPCameraComponent : public game::CameraComponent
 RED4EXT_ASSERT_SIZE(TPPCameraComponent, 0x5C0);
 RED4EXT_ASSERT_OFFSET(TPPCameraComponent, data.isInAir, 0x2E0);
 //char (*__kaboom)[sizeof(TPPCameraComponent)] = 1;
+using vehicleTPPCameraComponent = vehicle::TPPCameraComponent;
 //char (*__kaboom)[offsetof(TPPCameraComponent, isInAir)] = 1;
 } // namespace RED4ext
 

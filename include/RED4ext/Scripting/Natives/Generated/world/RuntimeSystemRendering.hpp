@@ -8,7 +8,8 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/IRuntimeSystem.hpp>
 
-namespace RED4ext::world { 
+namespace RED4ext {
+namespace world { 
 
 struct RenderingInterface1 {
     // removes a1 from unk60
@@ -29,6 +30,8 @@ struct RuntimeSystemRendering : world::IRuntimeSystem, RenderingInterface1, Rend
     uint64_t unk48[25];
 };
 RED4EXT_ASSERT_SIZE(RuntimeSystemRendering, 0x120);
+}
+using worldRuntimeSystemRendering = world::RuntimeSystemRendering;
 } // namespace RED4ext
 
 // clang-format on

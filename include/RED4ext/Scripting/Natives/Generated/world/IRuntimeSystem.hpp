@@ -21,6 +21,7 @@ namespace world {
 // };
 RED4EXT_ASSERT_SIZE(IRuntimeSystem, 0x48);
 } // namespace world
+using worldIRuntimeSystem = world::IRuntimeSystem;
 } // namespace RED4ext
 
 // clang-format on

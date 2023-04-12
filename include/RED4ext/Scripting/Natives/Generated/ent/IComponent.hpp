@@ -39,6 +39,7 @@ namespace ent {
 // };
 RED4EXT_ASSERT_SIZE(IComponent, 0x90);
 } // namespace ent
+using entIComponent = ent::IComponent;
 using IComponent = ent::IComponent;
 } // namespace RED4ext
 

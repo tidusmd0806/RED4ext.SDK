@@ -30,6 +30,7 @@ struct ControllerPS : RED4ext::game::ComponentPS
 };
 RED4EXT_ASSERT_SIZE(ControllerPS, 0x200);
 } // namespace vehicle
+using vehicleControllerPS = vehicle::ControllerPS;
 } // namespace RED4ext
 
 // clang-format on

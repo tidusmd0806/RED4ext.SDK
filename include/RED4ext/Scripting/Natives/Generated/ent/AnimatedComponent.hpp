@@ -23,7 +23,8 @@ namespace anim { struct FacialSetup; }
 namespace anim { struct Rig; }
 namespace ent { struct AnimationControlBinding; }
 
-namespace ent { 
+namespace ent
+{
 struct AnimatedComponent : ent::ISkinableComponent
 {
     static constexpr const char* NAME = "entAnimatedComponent";
@@ -58,6 +59,7 @@ struct AnimatedComponent : ent::ISkinableComponent
 };
 RED4EXT_ASSERT_SIZE(AnimatedComponent, 0x2B0);
 } // namespace ent
+using entAnimatedComponent = ent::AnimatedComponent;
 using AnimatedComponent = ent::AnimatedComponent;
 } // namespace RED4ext
 

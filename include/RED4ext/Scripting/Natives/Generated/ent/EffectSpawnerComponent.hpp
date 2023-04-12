@@ -28,6 +28,7 @@ namespace ent {
 // };
 RED4EXT_ASSERT_SIZE(EffectSpawnerComponent, 0x220);
 } // namespace ent
+using entEffectSpawnerComponent = ent::EffectSpawnerComponent;
 } // namespace RED4ext
 
 // clang-format on

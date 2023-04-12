@@ -22,6 +22,7 @@ struct VehicleSummoned_ConditionType : IVehicleConditionType
 };
 RED4EXT_ASSERT_SIZE(VehicleSummoned_ConditionType, 0x40);
 } // namespace quest
+using questVehicleSummoned_ConditionType = quest::VehicleSummoned_ConditionType;
 } // namespace RED4ext
 
 // clang-format on

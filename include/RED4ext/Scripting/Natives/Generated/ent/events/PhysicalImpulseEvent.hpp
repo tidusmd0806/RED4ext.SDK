@@ -12,7 +12,8 @@
 
 namespace RED4ext
 {
-namespace ent::events { 
+namespace ent::events
+{
 struct PhysicalImpulseEvent : red::Event
 {
     static constexpr const char* NAME = "enteventsPhysicalImpulseEvent";
@@ -27,6 +28,7 @@ struct PhysicalImpulseEvent : red::Event
 };
 RED4EXT_ASSERT_SIZE(PhysicalImpulseEvent, 0x68);
 } // namespace ent::events
+using enteventsPhysicalImpulseEvent = ent::events::PhysicalImpulseEvent;
 using PhysicalImpulseEvent = ent::events::PhysicalImpulseEvent;
 } // namespace RED4ext
 

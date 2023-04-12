@@ -21,7 +21,8 @@ using inkILogicController = ink::IWidgetLogicController;
 
 namespace RED4ext
 {
-namespace ink {
+namespace ink
+{
 struct IWidgetLogicController : IScriptable
 {
     static constexpr const char* NAME = "inkIWidgetLogicController";
@@ -34,6 +35,7 @@ struct IWidgetLogicController : IScriptable
 };
 RED4EXT_ASSERT_SIZE(IWidgetLogicController, 0x78);
 } // namespace ink
+using inkIWidgetLogicController = ink::IWidgetLogicController;
 using inkILogicController = ink::IWidgetLogicController;
 } // namespace RED4ext
 */

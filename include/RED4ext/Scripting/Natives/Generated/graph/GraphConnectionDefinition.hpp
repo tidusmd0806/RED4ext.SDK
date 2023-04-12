@@ -25,6 +25,7 @@ struct GraphConnectionDefinition : IGraphObjectDefinition
 };
 RED4EXT_ASSERT_SIZE(GraphConnectionDefinition, 0x50);
 } // namespace graph
+using graphGraphConnectionDefinition = graph::GraphConnectionDefinition;
 } // namespace RED4ext
 
 // clang-format on

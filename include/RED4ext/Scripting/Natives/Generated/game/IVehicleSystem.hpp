@@ -21,6 +21,7 @@ namespace game {
 // };
 RED4EXT_ASSERT_SIZE(IVehicleSystem, 0x50);
 } // namespace game
+using gameIVehicleSystem = game::IVehicleSystem;
 using IVehicleSystem = game::IVehicleSystem;
 } // namespace RED4ext
 

@@ -51,6 +51,7 @@ struct IPlacedComponent : IComponent
 RED4EXT_ASSERT_SIZE(IPlacedComponent, 0x120);
 RED4EXT_ASSERT_OFFSET(IPlacedComponent, unkB0, 0xB0);
 } // namespace ent
+using entIPlacedComponent = ent::IPlacedComponent;
 using IPlacedComponent = ent::IPlacedComponent;
 } // namespace RED4ext
 

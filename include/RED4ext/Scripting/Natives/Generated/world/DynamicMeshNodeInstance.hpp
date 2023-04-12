@@ -21,6 +21,7 @@ struct DynamicMeshNodeInstance : world::MeshNodeInstance
 };
 RED4EXT_ASSERT_SIZE(DynamicMeshNodeInstance, 0x1C0);
 } // namespace world
+using worldDynamicMeshNodeInstance = world::DynamicMeshNodeInstance;
 } // namespace RED4ext
 
 // clang-format on

@@ -75,6 +75,7 @@ struct PhysicalMeshComponent : ent::MeshComponent, ent::ITransformAttachable
 };
 RED4EXT_ASSERT_SIZE(PhysicalMeshComponent, 0x240);
 } // namespace ent
+using entPhysicalMeshComponent = ent::PhysicalMeshComponent;
 using PhysicalMeshComponent = ent::PhysicalMeshComponent;
 } // namespace RED4ext
 

@@ -19,6 +19,7 @@ namespace vehicle {
 // };
 RED4EXT_ASSERT_SIZE(BikeBaseObject, 0x9A0);
 } // namespace vehicle
+using vehicleBikeBaseObject = vehicle::BikeBaseObject;
 using BikeObject = vehicle::BikeBaseObject;
 } // namespace RED4ext
 

@@ -40,6 +40,7 @@ namespace ent {
 //};
 RED4EXT_ASSERT_SIZE(ComponentsStorage, 0x40);
 } // namespace ent
+using entComponentsStorage = ent::ComponentsStorage;
 } // namespace RED4ext
 
 // clang-format on

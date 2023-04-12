@@ -146,6 +146,7 @@ float unk2A0;
 // RED4EXT_ASSERT_SIZE(FPPCameraComponent, 0x4D0);
 //  char (*__kaboom)[offsetof(FPPCameraComponent, unk4CC)] = 1;
 } // namespace game
+using gameFPPCameraComponent = game::FPPCameraComponent;
 using FPPCameraComponent = game::FPPCameraComponent;
 } // namespace RED4ext
 

@@ -19,6 +19,7 @@ struct CameraManagerFT : CameraManager
 };
 RED4EXT_ASSERT_SIZE(CameraManagerFT, 0x370);
 } // namespace vehicle
+using vehicleCameraManagerFT = vehicle::CameraManagerFT;
 using VehicleCameraManagerFT = vehicle::CameraManagerFT;
 } // namespace RED4ext
 

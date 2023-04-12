@@ -33,6 +33,7 @@ namespace ent {
 // };
 RED4EXT_ASSERT_SIZE(BaseCameraComponent, 0x1D0);
 } // namespace ent
+using entBaseCameraComponent = ent::BaseCameraComponent;
 using entCameraComponent = ent::BaseCameraComponent;
 } // namespace RED4ext
 

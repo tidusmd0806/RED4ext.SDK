@@ -99,6 +99,7 @@ struct AutonomousData : ISerializable
 };
 RED4EXT_ASSERT_SIZE(AutonomousData, 0x150);
 } // namespace vehicle
+using vehicleAutonomousData = vehicle::AutonomousData;
 } // namespace RED4ext
 
 // clang-format on

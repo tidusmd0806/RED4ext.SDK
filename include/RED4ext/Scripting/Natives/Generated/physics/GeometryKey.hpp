@@ -96,6 +96,7 @@ struct GeometryKey
 };
 RED4EXT_ASSERT_SIZE(GeometryKey, 0x10);
 } // namespace physics
+using physicsGeometryKey = physics::GeometryKey;
 } // namespace RED4ext
 
 // clang-format on

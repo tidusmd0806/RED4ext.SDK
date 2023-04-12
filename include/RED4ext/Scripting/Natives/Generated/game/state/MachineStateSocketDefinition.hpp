@@ -19,6 +19,7 @@ struct MachineStateSocketDefinition : RED4ext::graph::GraphSocketDefinition
 };
 RED4EXT_ASSERT_SIZE(MachineStateSocketDefinition, 0x58);
 } // namespace game::state
+using gamestateMachineStateSocketDefinition = game::state::MachineStateSocketDefinition;
 } // namespace RED4ext
 
 // clang-format on

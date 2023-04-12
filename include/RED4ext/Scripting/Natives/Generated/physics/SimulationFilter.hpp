@@ -43,6 +43,7 @@ struct SimulationFilter
 };
 RED4EXT_ASSERT_SIZE(SimulationFilter, 0x10);
 } // namespace physics
+using physicsSimulationFilter = physics::SimulationFilter;
 using SimulationFilter = physics::SimulationFilter;
 } // namespace RED4ext
 

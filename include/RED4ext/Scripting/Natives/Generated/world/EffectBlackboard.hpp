@@ -12,7 +12,8 @@
 
 namespace RED4ext
 {
-namespace world { 
+namespace world
+{
 struct EffectBlackboard : IScriptable
 {
     static constexpr const char* NAME = "worldEffectBlackboard";
@@ -27,6 +28,7 @@ struct EffectBlackboard : IScriptable
 };
 RED4EXT_ASSERT_SIZE(EffectBlackboard, 0x70);
 } // namespace world
+using worldEffectBlackboard = world::EffectBlackboard;
 } // namespace RED4ext
 
 // clang-format on

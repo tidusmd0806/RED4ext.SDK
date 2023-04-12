@@ -20,8 +20,9 @@ namespace world { struct EnvironmentDefinition; }
 namespace world { struct StreamingBlock; }
 namespace world { struct StreamingQueryDataResource; }
 
-namespace world { 
-struct StreamingWorld : RED4ext::CResource
+namespace world
+{
+struct StreamingWorld : CResource
 {
     static constexpr const char* NAME = "worldStreamingWorld";
     static constexpr const char* ALIAS = NAME;
@@ -66,6 +67,7 @@ struct StreamingWorld : RED4ext::CResource
 // RED4EXT_ASSERT_SIZE(StreamingWorld, 0x210);
 // char (*__kaboom)[sizeof(StreamingWorld)] = 1;
 } // namespace world
+using worldStreamingWorld = world::StreamingWorld;
 } // namespace RED4ext
 
 // clang-format on

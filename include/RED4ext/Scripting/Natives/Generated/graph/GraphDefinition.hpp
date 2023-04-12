@@ -25,6 +25,7 @@ struct GraphDefinition : IGraphObjectDefinition
 };
 RED4EXT_ASSERT_SIZE(GraphDefinition, 0x40);
 } // namespace graph
+using graphGraphDefinition = graph::GraphDefinition;
 } // namespace RED4ext
 
 // clang-format on

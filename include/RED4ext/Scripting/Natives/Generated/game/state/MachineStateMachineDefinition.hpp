@@ -20,6 +20,7 @@ struct MachineStateMachineDefinition : RED4ext::graph::GraphDefinition
 };
 RED4EXT_ASSERT_SIZE(MachineStateMachineDefinition, 0xB8);
 } // namespace game::state
+using gamestateMachineStateMachineDefinition = game::state::MachineStateMachineDefinition;
 } // namespace RED4ext
 
 // clang-format on

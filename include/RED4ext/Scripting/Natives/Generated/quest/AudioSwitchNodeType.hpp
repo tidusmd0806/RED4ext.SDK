@@ -27,6 +27,7 @@ struct AudioSwitchNodeType : IAudioNodeType
 };
 RED4EXT_ASSERT_SIZE(AudioSwitchNodeType, 0x98);
 } // namespace quest
+using questAudioSwitchNodeType = quest::AudioSwitchNodeType;
 } // namespace RED4ext
 
 // clang-format on

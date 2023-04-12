@@ -10,7 +10,10 @@
 #include <RED4ext/Scripting/Natives/Generated/WorldPosition.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IMoverComponent.hpp>
 
-namespace RED4ext::move { 
+namespace RED4ext
+{
+namespace move
+{
 struct Component : ent::IMoverComponent
 {
     static constexpr const char* NAME = "moveComponent";
@@ -71,6 +74,8 @@ struct Component : ent::IMoverComponent
   float unk2BC;
 };
 RED4EXT_ASSERT_SIZE(Component, 0x2C0);
+} // namespace move
+using moveComponent = move::Component;
 } // namespace RED4ext
 
 // clang-format on

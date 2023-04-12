@@ -44,6 +44,7 @@ struct CActionsFactory : game::IActionsFactory
 };
 RED4EXT_ASSERT_SIZE(CActionsFactory, 0x2D8);
 } // namespace game
+using gameCActionsFactory = game::CActionsFactory;
 } // namespace RED4ext
 
 // clang-format on

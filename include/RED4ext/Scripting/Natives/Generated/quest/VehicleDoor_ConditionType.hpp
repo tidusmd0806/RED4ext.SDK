@@ -25,6 +25,7 @@ struct VehicleDoor_ConditionType : IVehicleConditionType
 };
 RED4EXT_ASSERT_SIZE(VehicleDoor_ConditionType, 0x78);
 } // namespace quest
+using questVehicleDoor_ConditionType = quest::VehicleDoor_ConditionType;
 } // namespace RED4ext
 
 // clang-format on

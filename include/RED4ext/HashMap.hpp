@@ -35,6 +35,16 @@ struct HashMapHash<T, std::enable_if_t<std::is_same_v<T, uint32_t>>>
 };
 
 template<typename T>
+struct HashMapHash<T, std::enable_if_t<std::is_same_v<T, uint64_t>>>
+{
+    uint32_t operator()(const T& aKey) const noexcept
+    {
+        // Not 100% sure if this is correct, but checking quickly seems to be the case for 64bit integers.
+        return static_cast<uint32_t>(aKey) ^ ((aKey >> 32) & 0xFFFFFFFF);
+    }
+};
+
+template<typename T>
 struct HashMapHash<T, std::enable_if_t<std::is_pointer_v<T>>>
 {
     // Used in TweakDB, probably the same for all pointer keys
@@ -91,7 +101,7 @@ struct HashMap
                 else
                 {
                     Node* node = &nodes[nextIdx];
-                    nextIdx = -1;
+                    nextIdx = static_cast<uint32_t>(-1);
                     return node;
                 }
             }
@@ -334,7 +344,7 @@ struct HashMap
 
         for (uint32_t i = 0; i != aSize; ++i)
         {
-            newIndexTable[i] = -1;
+            newIndexTable[i] = static_cast<uint32_t>(-1);
         }
 
         if (capacity != 0)
@@ -360,7 +370,7 @@ struct HashMap
                         oldNode->~Node();
                     }
 
-                    indexTable[i] = -1;
+                    indexTable[i] = static_cast<uint32_t>(-1);
                 }
             }
 

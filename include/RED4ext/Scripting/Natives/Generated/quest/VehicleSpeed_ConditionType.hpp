@@ -24,6 +24,7 @@ struct VehicleSpeed_ConditionType : IVehicleConditionType
 };
 RED4EXT_ASSERT_SIZE(VehicleSpeed_ConditionType, 0x78);
 } // namespace quest
+using questVehicleSpeed_ConditionType = quest::VehicleSpeed_ConditionType;
 } // namespace RED4ext
 
 // clang-format on

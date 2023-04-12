@@ -24,6 +24,7 @@ namespace world {
 // };
 RED4EXT_ASSERT_SIZE(RuntimeInfo, 0x80);
 } // namespace world
+using worldRuntimeInfo = world::RuntimeInfo;
 using RuntimeInfo = world::RuntimeInfo;
 } // namespace RED4ext
 

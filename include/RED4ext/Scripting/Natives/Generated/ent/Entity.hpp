@@ -29,6 +29,7 @@ namespace ent
 // };
 RED4EXT_ASSERT_SIZE(Entity, 0x160);
 } // namespace ent
+using entEntity = ent::Entity;
 using Entity = ent::Entity;
 } // namespace RED4ext
 

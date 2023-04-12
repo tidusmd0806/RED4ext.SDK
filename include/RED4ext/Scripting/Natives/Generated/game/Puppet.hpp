@@ -10,7 +10,8 @@
 
 namespace RED4ext
 {
-namespace game { 
+namespace game
+{
 struct Puppet : game::PuppetBase
 {
     static constexpr const char* NAME = "gamePuppet";
@@ -21,6 +22,7 @@ struct Puppet : game::PuppetBase
 };
 RED4EXT_ASSERT_SIZE(Puppet, 0x588);
 } // namespace game
+using gamePuppet = game::Puppet;
 } // namespace RED4ext
 
 // clang-format on

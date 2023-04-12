@@ -27,6 +27,7 @@ namespace vehicle {
 // };
 RED4EXT_ASSERT_SIZE(ChassisComponent, 0x190);
 } // namespace vehicle
+using vehicleChassisComponent = vehicle::ChassisComponent;
 } // namespace RED4ext
 
 // clang-format on

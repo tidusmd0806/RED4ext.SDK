@@ -52,6 +52,7 @@ struct CameraComponent : public ent::BaseCameraComponent, WorldPositionInterface
 };
 RED4EXT_ASSERT_SIZE(CameraComponent, 0x2A0);
 } // namespace game
+using gameCameraComponent = game::CameraComponent;
 using CameraComponent = game::CameraComponent;
 } // namespace RED4ext
 

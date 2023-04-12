@@ -22,6 +22,7 @@ struct MachineTransitionDefinition : RED4ext::graph::GraphConnectionDefinition
 };
 RED4EXT_ASSERT_SIZE(MachineTransitionDefinition, 0x78);
 } // namespace game::state
+using gamestateMachineTransitionDefinition = game::state::MachineTransitionDefinition;
 } // namespace RED4ext
 
 // clang-format on

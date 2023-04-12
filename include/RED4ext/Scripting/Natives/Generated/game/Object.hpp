@@ -40,6 +40,7 @@ namespace game {
 // };
 RED4EXT_ASSERT_SIZE(Object, 0x240);
 } // namespace game
+using gameObject = game::Object;
 using GameObject = game::Object;
 } // namespace RED4ext
 

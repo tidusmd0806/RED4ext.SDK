@@ -17,7 +17,8 @@ namespace RED4ext
 {
 namespace physics { struct ICollider; }
 
-namespace physics { 
+namespace physics
+{
 struct SystemBody : physics::ISystemObject
 {
     static constexpr const char* NAME = "physicsSystemBody";
@@ -37,6 +38,7 @@ struct SystemBody : physics::ISystemObject
 };
 RED4EXT_ASSERT_SIZE(SystemBody, 0x100);
 } // namespace physics
+using physicsSystemBody = physics::SystemBody;
 } // namespace RED4ext
 
 // clang-format on

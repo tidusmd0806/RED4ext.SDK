@@ -23,6 +23,7 @@ namespace user {
 RED4EXT_ASSERT_SIZE(SettingsVar, 0x48);
 
 } // namespace user
+using userSettingsVar = user::SettingsVar;
 using ConfigVar = user::SettingsVar;
 } // namespace RED4ext
 

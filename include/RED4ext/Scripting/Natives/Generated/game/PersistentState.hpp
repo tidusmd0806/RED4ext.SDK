@@ -21,7 +21,8 @@ using PersistentState = game::PersistentState;
 
 namespace RED4ext
 {
-namespace game {
+namespace game
+{
 struct PersistentState : IScriptable
 {
     static constexpr const char* NAME = "gamePersistentState";
@@ -64,6 +65,7 @@ struct PersistentState : IScriptable
 };
 RED4EXT_ASSERT_SIZE(PersistentState, 0x68);
 } // namespace game
+using gamePersistentState = game::PersistentState;
 using PersistentState = game::PersistentState;
 } // namespace RED4ext
 */

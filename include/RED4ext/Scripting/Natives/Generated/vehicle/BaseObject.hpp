@@ -37,6 +37,7 @@ RED4EXT_ASSERT_OFFSET(BaseObject, weapons, 0x940);
 //char (*__kaboom)[sizeof(BaseObject)] = 1;
 //char (*__kaboom)[offsetof(BaseObject, weapons)] = 1;
 } // namespace vehicle
+using vehicleBaseObject = vehicle::BaseObject;
 using VehicleObject = vehicle::BaseObject;
 } // namespace RED4ext
 

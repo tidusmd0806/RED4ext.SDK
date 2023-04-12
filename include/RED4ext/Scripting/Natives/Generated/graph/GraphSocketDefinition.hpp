@@ -28,6 +28,7 @@ struct GraphSocketDefinition : IGraphObjectDefinition
 };
 RED4EXT_ASSERT_SIZE(GraphSocketDefinition, 0x58);
 } // namespace graph
+using graphGraphSocketDefinition = graph::GraphSocketDefinition;
 } // namespace RED4ext
 
 // clang-format on

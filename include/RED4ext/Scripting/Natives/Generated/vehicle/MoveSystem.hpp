@@ -10,7 +10,8 @@
 
 namespace RED4ext
 {
-namespace vehicle { 
+namespace vehicle
+{
 struct MoveSystem : vehicle::IMoveSystem
 {
     static constexpr const char* NAME = "vehicleMoveSystem";
@@ -71,6 +72,7 @@ struct MoveSystem : vehicle::IMoveSystem
 };
 RED4EXT_ASSERT_SIZE(MoveSystem, 0x90);
 } // namespace vehicle
+using vehicleMoveSystem = vehicle::MoveSystem;
 using MoveSystem = vehicle::MoveSystem;
 } // namespace RED4ext
 

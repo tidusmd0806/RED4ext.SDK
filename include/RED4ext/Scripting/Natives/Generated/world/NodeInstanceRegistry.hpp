@@ -42,6 +42,7 @@ struct NodeInstanceRegistry : INodeInstanceRegistry
 RED4EXT_ASSERT_SIZE(NodeInstanceRegistry, 0x60100);
 // char (*__kaboom)[sizeof(NodeInstanceRegistry)] = 1;
 } // namespace world
+using worldNodeInstanceRegistry = world::NodeInstanceRegistry;
 } // namespace RED4ext
 
 // clang-format on

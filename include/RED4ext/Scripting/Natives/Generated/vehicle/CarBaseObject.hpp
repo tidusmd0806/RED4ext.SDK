@@ -25,6 +25,7 @@ struct CarBaseObject : vehicle::WheeledBaseObject
 };
 RED4EXT_ASSERT_SIZE(CarBaseObject, 0x9F0);
 } // namespace vehicle
+using vehicleCarBaseObject = vehicle::CarBaseObject;
 using CarObject = vehicle::CarBaseObject;
 } // namespace RED4ext
 

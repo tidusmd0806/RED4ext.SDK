@@ -21,6 +21,7 @@ namespace world {
 // };
 RED4EXT_ASSERT_SIZE(RuntimeScene, 0x4B0);
 } // namespace world
+using worldRuntimeScene = world::RuntimeScene;
 } // namespace RED4ext
 
 // clang-format on

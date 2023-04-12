@@ -52,6 +52,7 @@ namespace appearance {
 // };
 RED4EXT_ASSERT_SIZE(AppearanceDefinition, 0x1D8);
 } // namespace appearance
+using appearanceAppearanceDefinition = appearance::AppearanceDefinition;
 } // namespace RED4ext
 
 // clang-format on

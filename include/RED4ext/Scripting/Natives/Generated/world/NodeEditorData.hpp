@@ -16,7 +16,8 @@
 
 namespace RED4ext
 {
-namespace world { 
+namespace world
+{
 struct NodeEditorData : ISerializable
 {
     static constexpr const char* NAME = "worldNodeEditorData";
@@ -51,6 +52,7 @@ struct NodeEditorData : ISerializable
 };
 RED4EXT_ASSERT_SIZE(NodeEditorData, 0x120);
 } // namespace world
+using worldNodeEditorData = world::NodeEditorData;
 } // namespace RED4ext
 
 // clang-format on

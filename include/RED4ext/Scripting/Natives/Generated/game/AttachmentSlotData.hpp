@@ -30,6 +30,7 @@ struct AttachmentSlotData
 };
 RED4EXT_ASSERT_SIZE(AttachmentSlotData, 0x90);
 } // namespace game
+using gameAttachmentSlotData = game::AttachmentSlotData;
 using AttachmentSlotData = game::AttachmentSlotData;
 } // namespace RED4ext
 

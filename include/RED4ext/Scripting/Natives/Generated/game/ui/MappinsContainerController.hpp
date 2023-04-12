@@ -80,6 +80,7 @@ RED4EXT_ASSERT_SIZE(MappinsContainerController, 0x2D0);
 RED4EXT_ASSERT_OFFSET(MappinsContainerController, questMappinPoints, 0x1E0);
 RED4EXT_ASSERT_OFFSET(MappinsContainerController, poiMappinPoints, 0x208);
 } // namespace game::ui
+using gameuiMappinsContainerController = game::ui::MappinsContainerController;
 using MappinsContainerController = game::ui::MappinsContainerController;
 } // namespace RED4ext
 
