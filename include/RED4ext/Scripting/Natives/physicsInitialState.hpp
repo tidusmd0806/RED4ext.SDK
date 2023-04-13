@@ -4,7 +4,7 @@
 
 #include <RED4ext/Common.hpp>
 #include <cstdint>
-#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
+#include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
 
 namespace RED4ext::physics
 {

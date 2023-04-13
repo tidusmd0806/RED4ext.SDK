@@ -230,12 +230,12 @@ struct UpdateManagerHolder {
     // 1.6 RVA: 0xB214C0 / 11670720
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC 70 48 8B 9C 24 A8 00
     /// @nth 0/2
-    void __fastcall RegisterBucketUpdate(
-        Unk2 unk02, 
-        Unk1 unk01, 
-        IUpdatableSystem *system,
-        const char *nameStr, 
-        const Callback<void (*)(Unk2* unk2, float deltaTime, void* unkStruct)>&);
+    // void __fastcall RegisterBucketUpdate(
+    //     Unk2 unk02, 
+    //     Unk1 unk01, 
+    //     IUpdatableSystem *system,
+    //     const char *nameStr, 
+    //     const Callback<void (*)(Unk2* unk2, float deltaTime, void* unkStruct)>&);
 
 };
 

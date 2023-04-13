@@ -28,7 +28,6 @@ no matches for audioVehicleMetadata_GetEventData
 no matches for physicsProxyID_Something2
 no matches for physicsProxyID_GetKeyUnk37_0x40
 no matches for physicsProxyID_GetNbShapes
-no matches for physicsProxyID_GetProxy
 no matches for physicsProxyID_UpdateProxyCacheEntry
 too many matches for physics_ProxyID_GetGlobalPose (2)
 no matches for physicsProxyCacheID_EnableCollision
@@ -61,7 +60,7 @@ no matches for ~MetadataManager
 no matches for audioMetadataManager_GetValueInMapForName
 no matches for physicsVehiclePhysicsInsert1_ReferencePoseSetup
 no matches for audioThing_GetEmitterPosition
-no matches for audioThing(unnamedstructat)_AKAudioLoad
+no matches for audioThing(unnamedstructatC:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/include\/Scripting/Natives/audioThing.hpp:66:5)_AKAudioLoad
 */
 
 #ifndef BaseStream_ReadWriteHandleID_Addr
@@ -534,6 +533,9 @@ no matches for audioThing(unnamedstructat)_AKAudioLoad
 #endif
 #ifndef physicsProxyHelper_UpdateProxyCache_Addr
 #define physicsProxyHelper_UpdateProxyCache_Addr 0x4571C0
+#endif
+#ifndef physicsProxyID_GetProxy_Addr
+#define physicsProxyID_GetProxy_Addr 0x47A810
 #endif
 #ifndef physicsProxyID_ProcessProxyDesc_Addr
 #define physicsProxyID_ProcessProxyDesc_Addr 0x4584C0

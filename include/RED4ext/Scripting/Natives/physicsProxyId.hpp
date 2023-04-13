@@ -41,7 +41,7 @@ struct ProxyID
     // only used by types 2, 3, 5, 6, 10, 12, 13
     // 1.6  RVA: 0x46B140 / 4632896
     // 1.62 RVA: 0x46BA70 / 4635248
-    /// @pattern 40 53 48 83 EC 30 8B 01 4C 8D 44 24 40 48 8B 0D ? ? D1 03 48 8D 54 24 20 89 44 24 40 E8 AE F2
+    /// @pattern 40 53 48 83 EC 30 8B 01 4C 8D 44 24 40 48 8B 0D ? ? ? 03 48 8D 54 24 20 89 44 24 40 E8 AE F2
     BaseProxy * __fastcall GetProxy();
 
     // 1.6  RVA: 0x46AC90 / 4631696

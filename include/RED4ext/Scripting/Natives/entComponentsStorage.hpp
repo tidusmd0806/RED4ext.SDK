@@ -11,10 +11,9 @@
 
 namespace RED4ext
 {
-namespace ent { struct IComponent; }
-
 namespace ent { 
-struct ComponentsStorage : ISerializable
+struct IComponent;
+struct ComponentsStorage : RED4ext::ISerializable
 {
     static constexpr const char* NAME = "entComponentsStorage";
     static constexpr const char* ALIAS = NAME;
