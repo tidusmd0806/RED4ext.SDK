@@ -116,7 +116,8 @@ def get_groups() -> List[Group]:
         ]),
 
         Group(name='CString', functions=[
-            Item(name='ctor', pattern='48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 33 FF', expected=20, index=0),
+            Item(name='ctor_str', pattern='48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 33 FF', expected=20, index=0),
+            Item(name='ctor_span', pattern='48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 33 C0 41 8B F8 48 8B F2'),
             Item(name='copy', pattern='40 53 48 83 EC 20 48 8B D9 48 3B CA', expected=7, index=0),
             Item(name='dtor', pattern='40 53 48 83 EC 20 48 8B D9 8B 49 14 8B C1 C1 E8', expected=1, index=0)
         ]),
@@ -171,7 +172,7 @@ def get_groups() -> List[Group]:
             Item(name='Vault::ReallocAligned', pattern='48 89 5C 24 18 56 57 41 56 48 83 EC 40', expected=16, index=0),
             Item(name='Vault::Free', pattern='48 89 5C 24 10 57 48 83 EC 20 4C 8B 81 00 C9 00 00', expected=1, index=0),
             Item(name='Vault::Unk1', pattern='48 89 5C 24 08 57 48 83 EC 20 4C 8B 81 00 C9 00 00', expected=2, index=0),
-            Item(name='PoolStorage::OOM', pattern='48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56', expected=1339, index=0)
+            Item(name='PoolStorage::OOM', pattern='48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 48 89 7C 24 20 41 56 48 83 EC ? 48 8B 59 ?', expected=27, index=0)
         ]),
 
         Group(name='Streams', functions=[

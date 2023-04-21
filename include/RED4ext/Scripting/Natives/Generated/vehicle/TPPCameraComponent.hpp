@@ -97,7 +97,7 @@ struct TPPCameraUpdate
 struct TPPCameraComponent : public game::CameraComponent
 {
     static constexpr const char* NAME = "vehicleTPPCameraComponent";
-    static constexpr const char* ALIAS = "vehicleTPPCameraComponent";
+    static constexpr const char* ALIAS = NAME;
     static constexpr const uintptr_t VFT = vehicleTPPCameraComponent_VFT_Addr;
 
 // virtual overrides

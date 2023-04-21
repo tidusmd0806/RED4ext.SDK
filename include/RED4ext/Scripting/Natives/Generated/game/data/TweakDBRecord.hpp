@@ -4,6 +4,16 @@
 
 // This file is generated from the Game's Reflection data
 
+#include <RED4ext/Scripting/Natives/gamedataTweakDBRecord.hpp>
+
+namespace RED4ext
+{
+RED4EXT_ASSERT_SIZE(game::data::TweakDBRecord, 0x48);
+using gamedataTweakDBRecord = game::data::TweakDBRecord;
+using TweakDBRecord = game::data::TweakDBRecord;
+} // namespace RED4ext
+
+/*
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
@@ -28,5 +38,6 @@ RED4EXT_ASSERT_SIZE(TweakDBRecord, 0x48);
 // using gamedataTweakDBRecord = game::data::TweakDBRecord;
 using TweakDBRecord = game::data::TweakDBRecord;
 } // namespace RED4ext
+*/
 
 // clang-format on
