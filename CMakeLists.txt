@@ -8,6 +8,8 @@ project(
   LANGUAGES CXX
 )
 
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+
 # -----------------------------------------------------------------------------
 # General configuration / options / variables
 # -----------------------------------------------------------------------------
@@ -24,6 +26,8 @@ endif()
 
 option(RED4EXT_HEADER_ONLY "Use the header only version of the library." OFF)
 cmake_dependent_option(RED4EXT_USE_PCH "Use precompiled headers to speed up compilation time." OFF "NOT RED4EXT_HEADER_ONLY" OFF)
+
+set(CYBERPUNK_2077_GAME_DIR "C:/Program Files (x86)/Steam/steamapps/common/Cyberpunk 2077" CACHE STRING "Cyberpunk 2077 game directory")
 
 set(RED4EXT_CMAKE_DIR "${PROJECT_SOURCE_DIR}/cmake")
 set(RED4EXT_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include/")
@@ -50,6 +54,14 @@ if(PROJECT_IS_TOP_LEVEL)
     endif()
   endif()
 endif()
+
+# -----------------------------------------------------------------------------
+# Automatically Generate Addresses
+# -----------------------------------------------------------------------------
+add_custom_target(all_addresses
+  COMMAND ${CMAKE_COMMAND} -D PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR} -D PROJECT_BINARY_DIR="${PROJECT_BINARY_DIR}" -D CYBERPUNK_2077_GAME_DIR="${CYBERPUNK_2077_GAME_DIR}" -P ${CMAKE_MODULE_PATH}/FindAllAddresses.cmake
+  USES_TERMINAL
+)
 
 # -----------------------------------------------------------------------------
 # Main library
