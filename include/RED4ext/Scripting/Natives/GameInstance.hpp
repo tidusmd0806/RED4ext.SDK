@@ -41,9 +41,12 @@ struct GameSystemData
   bool onServer;
 };
 
+// look for base\\systems\\game_systems_startup.csv
 // 1.52 RVA: 0x2D028A0 / 47196320
+// 1.6 RVA: 0x2D5BCD0 / 47561936
 // inits array, calls LoadGameSystemsData
-/// @pattern 40 53 48 83 EC 20 48 8B D9 48 8D 4C 24 30 E8 FD F9 48 FD 48 8B D0 48 8B CB E8 12 29 4A FD 48 8D
+/// @pattern 40 53 48 83 EC 20 48 8B D9 48 8D 4C 24 30 E8 ?  ?  ?  FD 48 8B D0 48 8B CB E8 ?  ?  ?  FD 48 8D
+/// @nth 6/7
 DynArray<GameSystemData> *__fastcall GetGameSystemsData(DynArray<GameSystemData> *gameSystemsData);
 
 // 1.52 RVA: 0x2D028E0 / 47196384
