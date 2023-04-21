@@ -63,6 +63,11 @@ add_custom_target(all_addresses
   USES_TERMINAL
 )
 
+add_custom_target(update_red4ext
+  COMMAND git pull
+  USES_TERMINAL
+)
+
 # -----------------------------------------------------------------------------
 # Main library
 # -----------------------------------------------------------------------------
