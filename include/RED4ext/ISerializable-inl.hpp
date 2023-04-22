@@ -20,6 +20,7 @@ RED4EXT_INLINE RED4ext::Memory::IAllocator* RED4ext::ISerializable::GetAllocator
 
 RED4EXT_INLINE void RED4ext::ISerializable::sub_20(Handle<ISerializable>* a1)
 {
+    RED4EXT_UNUSED_PARAMETER(a1);
 }
 
 RED4EXT_INLINE void RED4ext::ISerializable::sub_28()
