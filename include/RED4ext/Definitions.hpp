@@ -1955,7 +1955,7 @@ inline bool RED4ext::vehicle::Physics::ReadWorldTransform(RED4ext::WorldTransfor
     return call(this, a1);
 }
 
-inline void RED4ext::BaseStream::ReadWriteHandleID(RED4ext::Handle<void>* a1) {
+inline void RED4ext::BaseStream::ReadWriteHandleID(void* a1) {
     RED4ext::RelocFunc<decltype(&RED4ext::BaseStream::ReadWriteHandleID)> call(BaseStream_ReadWriteHandleID_Addr);
     return call(this, a1);
 }

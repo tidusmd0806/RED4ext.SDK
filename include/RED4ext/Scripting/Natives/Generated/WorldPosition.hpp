@@ -20,7 +20,13 @@ struct WorldPosition
     FixedPoint x; // 00
     FixedPoint y; // 04
     FixedPoint z; // 08
-    
+
+    WorldPosition() {
+        this->x.Bits = 0;
+        this->y.Bits = 0;
+        this->z.Bits = 0;
+    }
+
     WorldPosition(const Vector4& v) {
         this->x.Bits = (v.X * 131072);
         this->y.Bits = (v.Y * 131072);

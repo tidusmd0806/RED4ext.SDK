@@ -74,14 +74,16 @@ add_custom_target(all_definitions
 # -----------------------------------------------------------------------------
 # Update R4E Target
 # -----------------------------------------------------------------------------
-find_package(Git QUIET)
+if(NOT PROJECT_IS_TOP_LEVEL)
+  find_package(Git QUIET)
 
-if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
-  add_custom_target(update_red4ext
-    COMMAND ${GIT_EXECUTABLE} pull
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    USES_TERMINAL
-  )
+  if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
+    add_custom_target(update_red4ext
+      COMMAND ${GIT_EXECUTABLE} pull
+      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+      USES_TERMINAL
+    )
+  endif()
 endif()
 
 # -----------------------------------------------------------------------------
