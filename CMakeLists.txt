@@ -63,11 +63,17 @@ COMMAND ${CMAKE_COMMAND} -D PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR} -D PROJECT_
 USES_TERMINAL
 )
 
+# -----------------------------------------------------------------------------
+# Automatically Generate Definitions
+# -----------------------------------------------------------------------------
 add_custom_target(all_definitions
   COMMAND ${CMAKE_COMMAND} -D PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR} -D PROJECT_BINARY_DIR="${PROJECT_BINARY_DIR}" -D CYBERPUNK_2077_GAME_DIR="${CYBERPUNK_2077_GAME_DIR}" -P ${CMAKE_MODULE_PATH}/CreateDefinitions.cmake
   USES_TERMINAL
 )
 
+# -----------------------------------------------------------------------------
+# Update R4E Target
+# -----------------------------------------------------------------------------
 find_package(Git QUIET)
 
 if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
