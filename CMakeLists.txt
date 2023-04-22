@@ -68,10 +68,15 @@ add_custom_target(all_definitions
   USES_TERMINAL
 )
 
-add_custom_target(update_red4ext
-  COMMAND git pull
-  USES_TERMINAL
-)
+find_package(Git QUIET)
+
+if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
+  add_custom_target(update_red4ext
+    COMMAND ${GIT_EXECUTABLE} pull
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    USES_TERMINAL
+  )
+endif()
 
 # -----------------------------------------------------------------------------
 # Main library
