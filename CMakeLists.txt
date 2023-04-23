@@ -58,18 +58,22 @@ endif()
 # -----------------------------------------------------------------------------
 # Automatically Generate Addresses
 # -----------------------------------------------------------------------------
-add_custom_target(all_addresses
-COMMAND ${CMAKE_COMMAND} -D PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR} -D PROJECT_BINARY_DIR="${PROJECT_BINARY_DIR}" -D CYBERPUNK_2077_GAME_DIR="${CYBERPUNK_2077_GAME_DIR}" -P ${CMAKE_MODULE_PATH}/FindAllAddresses.cmake
-USES_TERMINAL
-)
+if(PROJECT_IS_TOP_LEVEL)
+  add_custom_target(all_addresses
+    COMMAND ${CMAKE_COMMAND} -D PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR} -D PROJECT_BINARY_DIR="${PROJECT_BINARY_DIR}" -D CYBERPUNK_2077_GAME_DIR="${CYBERPUNK_2077_GAME_DIR}" -P ${CMAKE_MODULE_PATH}/FindAllAddresses.cmake
+    USES_TERMINAL
+  )
+endif()
 
 # -----------------------------------------------------------------------------
 # Automatically Generate Definitions
 # -----------------------------------------------------------------------------
-add_custom_target(all_definitions
-  COMMAND ${CMAKE_COMMAND} -D PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR} -D PROJECT_BINARY_DIR="${PROJECT_BINARY_DIR}" -D CYBERPUNK_2077_GAME_DIR="${CYBERPUNK_2077_GAME_DIR}" -P ${CMAKE_MODULE_PATH}/CreateDefinitions.cmake
-  USES_TERMINAL
-)
+if(PROJECT_IS_TOP_LEVEL)
+  add_custom_target(all_definitions
+    COMMAND ${CMAKE_COMMAND} -D PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR} -D PROJECT_BINARY_DIR="${PROJECT_BINARY_DIR}" -D CYBERPUNK_2077_GAME_DIR="${CYBERPUNK_2077_GAME_DIR}" -P ${CMAKE_MODULE_PATH}/CreateDefinitions.cmake
+    USES_TERMINAL
+  )
+endif()
 
 # -----------------------------------------------------------------------------
 # Update R4E Target
