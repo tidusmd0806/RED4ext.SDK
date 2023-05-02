@@ -32,6 +32,6 @@ struct Scripts
      *     return true;
      * }
      */
-    bool (*Add)(PluginHandle aHandle, const char *aPath);
+    bool (*Add)(PluginHandle aHandle, const wchar_t *aPath);
 };
 } // namespace RED4ext::v0
