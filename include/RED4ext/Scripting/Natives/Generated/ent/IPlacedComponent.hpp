@@ -10,6 +10,7 @@
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/ITransformBinding.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/ITransformAttachment.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Box.hpp>
 
 namespace RED4ext
@@ -23,9 +24,14 @@ struct IPlacedComponent : IComponent
     static constexpr const char* ALIAS = "IPlacedComponent";
     // static constexpr const uintptr_t VFT = 0x;
 
-    virtual void sub_238();
+    // creates ent::HardAttachment with this as source, 0x238
+    virtual Handle<ent::ITransformAttachment>* CreateTransformAttachment(Handle<ent::ITransformAttachment>* aAttachment, 
+                                                                         CName name,
+                                                                         Handle<void>* aDestination);
+    // debug related? formats name to [%hs]
     virtual void sub_240();
     // get bounding box maybe?
+    // debugbreak here
     virtual void sub_248(Box* boundingBox);
     virtual void GetFlags();
 

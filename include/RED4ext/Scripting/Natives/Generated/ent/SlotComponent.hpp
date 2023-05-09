@@ -23,6 +23,10 @@ struct SlotComponent : ent::IPlacedComponent
     
     static constexpr const uintptr_t VFT = entSlotComponent_VFT_Addr;
 
+    // creates ent::SlotAttachment
+    virtual Handle<ent::ITransformAttachment>* CreateTransformAttachment(Handle<ent::ITransformAttachment>* aAttachment, 
+                                                                         CName name,
+                                                                         Handle<void>* aDestination) override;
     // 1.6 RVA: 0x115CEA0 / 18206368
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 56 48 83 EC 20 49 8B F0 48 8B D9 85 D2 0F 88 80 00 00 00 3B 91 2C
     // bool __fastcall GetSlotGlobalTransform(int slotIndex, WorldTransform *transform);
