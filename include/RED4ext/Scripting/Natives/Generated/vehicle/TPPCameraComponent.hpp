@@ -211,7 +211,7 @@ struct TPPCameraComponent : public game::CameraComponent
     uint8_t drivingDirectionCompensation;
     uint8_t slopeAdjustement;
     uint8_t airFlowDistortion;
-    uint8_t lockedCamera;
+    bool lockedCamera;
     uint8_t unk48B;
     float fov;
     float autoCenterStartTimeGamepad;

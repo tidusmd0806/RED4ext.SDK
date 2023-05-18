@@ -15,13 +15,13 @@ struct ITransformAttachable {
     /// @offset -16
     static constexpr const uintptr_t VFT = entITransformAttachable_VFT_Addr;
 
-    virtual ~ITransformAttachable();
+    virtual ~ITransformAttachable() = default;
     // called from OnSimulate_PushDirtyTransformData when flags & 0x40 or unk38 == 2
     // WT & bool comes from unk1A2018 - Transform is empty
-    virtual void ITransformAttachable_08(WorldTransform *, bool, Transform*);
+    virtual void ITransformAttachable_08(WorldTransform *, bool, Transform*) {};
     // empty for many implementations
     // called with idStorage.unk00, unk24 and unk28 from Physics/KickAndWaitSimulation/NotifyListeners
-    virtual void ITransformAttachable_10(uint64_t, uint32_t, uint32_t);
+    virtual void ITransformAttachable_10(uint64_t, uint32_t, uint32_t) {};
 };
 
 }

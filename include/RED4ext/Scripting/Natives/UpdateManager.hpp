@@ -142,7 +142,7 @@ struct UpdateManager {
 
     struct UpdateStorage 
     {
-        UpdateTickGroup group;
+        char group;
         Unk1 unk01;
         Unk2 unk02;
         uint8_t unk03;
