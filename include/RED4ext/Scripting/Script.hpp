@@ -10,8 +10,8 @@ struct CCompiledCode
 {
     uint32_t fileIndex;      // 00
     uint32_t unk04;      // 04
-    //DataBuffer bytecode; // 08
-    uint64_t bytecode[5];
+    DataBuffer bytecode; // 08
+    // uint64_t bytecode[5];
 };
 RED4EXT_ASSERT_SIZE(CCompiledCode, 0x30);
 RED4EXT_ASSERT_OFFSET(CCompiledCode, bytecode, 0x08);
