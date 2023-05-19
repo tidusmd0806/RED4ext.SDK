@@ -14,6 +14,7 @@ endforeach()
 set(ZOLTAN_ALL_ADDRESSES "${PROJECT_SOURCE_DIR}/include/RED4ext/Addresses-Found.hpp")
 
 execute_process(
-#   COMMAND "C:/Users/Jack/Documents/cyberpunk/zoltan/target/debug/zoltan-clang.exe"
-  COMMAND ${PROJECT_SOURCE_DIR}/tools/zoltan-clang.exe 
-  "${ZOLTAN_ALL_SIGNATURES}" "${CYBERPUNK_2077_GAME_DIR}/bin/x64/Cyberpunk2077.exe" -f "std=c++20" -f "I${PROJECT_SOURCE_DIR}/include" --c-output "${ZOLTAN_ALL_ADDRESSES}")
+  COMMAND "C:/Users/Jack/Documents/cyberpunk/zoltan/target/release/zoltan-clang.exe"
+  # COMMAND ${PROJECT_SOURCE_DIR}/tools/zoltan-clang.exe
+  "${PROJECT_SOURCE_DIR}/include/" -x "${CYBERPUNK_2077_GAME_DIR}/bin/x64/Cyberpunk2077.exe" -f "std=c++20" -f "I${PROJECT_SOURCE_DIR}/include" --c-output "${ZOLTAN_ALL_ADDRESSES}") 
+  # "${ZOLTAN_ALL_SIGNATURES}" -x "${CYBERPUNK_2077_GAME_DIR}/bin/x64/Cyberpunk2077.exe" -f "std=c++20" -f "I${PROJECT_SOURCE_DIR}/include" --c-output "${ZOLTAN_ALL_ADDRESSES}")
