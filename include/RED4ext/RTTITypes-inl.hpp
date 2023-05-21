@@ -326,9 +326,10 @@ RED4EXT_INLINE bool RED4ext::CClass::sub_D0() const
     return func(this);
 }
 
-RED4EXT_INLINE RED4ext::ScriptInstance RED4ext::CClass::CreateInstance(bool aZeroMemory) const
+template<typename T>
+RED4EXT_INLINE T RED4ext::CClass::CreateInstance(bool aZeroMemory) const
 {
-    using func_t = ScriptInstance (*)(const CClass*, uint32_t, bool);
+    using func_t = T (*)(const CClass*, uint32_t, bool);
     RelocFunc<func_t> func(Addresses::CClass_CreateInstance);
     return func(this, GetSize(), aZeroMemory);
 }

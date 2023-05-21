@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RED4ext/CName.hpp"
+#include "RED4ext/DynArray.hpp"
 #include <RED4ext/Common.hpp>
 #include <stdint.h>
 
@@ -10,19 +12,20 @@ namespace user
 {
 struct ConfigVarFlags
 {
-    uint32_t isInPreGame : 1;               // 0x001
-    uint32_t isInGame : 1;                  // 0x002
-    uint32_t isVisible : 1;                 // 0x004
-    uint32_t isPlatformSpecific : 1;        // 0x008
-    uint32_t isDynamic : 1;                 // 0x010
-    uint32_t unk20 : 1;                     // 0x020
-    uint32_t isInitialized : 1;             // 0x040
-    uint32_t listHasDisplayValues : 1;      // 0x080
-    uint32_t canBeRestoredToDefault : 1;    // 0x100
-    uint32_t isInput : 1;                   // 0x200
-    uint32_t isDisabled : 1;                // 0x400
+    uint32_t isInPreGame : 1;            // 0x001
+    uint32_t isInGame : 1;               // 0x002
+    uint32_t isVisible : 1;              // 0x004
+    uint32_t isPlatformSpecific : 1;     // 0x008
+    uint32_t isDynamic : 1;              // 0x010
+    uint32_t unk20 : 1;                  // 0x020
+    uint32_t isInitialized : 1;          // 0x040
+    uint32_t listHasDisplayValues : 1;   // 0x080
+    uint32_t canBeRestoredToDefault : 1; // 0x100
+    uint32_t isInput : 1;                // 0x200
+    uint32_t isDisabled : 1;             // 0x400
 };
-enum class EConfigVarFlags : int {
+enum class EConfigVarFlags : int
+{
     isInPreGame = 0x001,
     isInGame = 0x002,
     isVisible = 0x004,
@@ -35,6 +38,8 @@ enum class EConfigVarFlags : int {
     isInput = 0x200,
     isDisabled = 0x400,
 };
+DEFINE_ENUM_FLAG_OPERATORS(EConfigVarFlags);
+
 enum class EConfigVarType : char
 {
     Bool = 0,       // bool
@@ -87,9 +92,9 @@ enum class EConfigVarImportPolicy : char
 
 // 1.52  RVA: 0x2B9B330 / 45724464
 /// @pattern 40 53 48 83 EC 20 65 48 8B 04 25 58 00 00 00 8B 0D EB DF FF 01 BA 9C 07 00 00 48 8B 0C C8 8B 04
-void *__fastcall GetSettings();
+void* __fastcall GetSettings();
 
-// #pragma pack(push, 1)
+#pragma pack(push, 1)
 struct RuntimeSettingsVar
 {
     // vft RVA: 0x32BB5C8
@@ -102,10 +107,8 @@ struct RuntimeSettingsVar
     // 1.52 RVA: 0x2B97BC0 / 45710272
     /// @pattern 40 53 48 83 EC 20 48 89 51 10 48 8D 05 F7 39 72 00 48 8B 54 24 50 48 8B D9 48 89 01 4C 89 41 08
     RuntimeSettingsVar(CName groupPath, CName name, CName displayName, DynArray<CName>* displayNameKeys,
-                       CName description, RED4ext::user::EConfigVarType type,
-                       RED4ext::user::EConfigVarUpdatePolicy updatePolicy,
-                       RED4ext::user::EConfigVarImportPolicy importPolicy, RED4ext::user::ConfigVarFlags flags,
-                       uint32_t order);
+                       CName description, EConfigVarType type, EConfigVarUpdatePolicy updatePolicy,
+                       EConfigVarImportPolicy importPolicy, ConfigVarFlags flags, uint32_t order);
 
     RuntimeSettingsVar()
     {
@@ -409,14 +412,14 @@ struct RuntimeSettingsVarFloat : public RuntimeSettingsVar
         valueValidated = *(float*)value;
     }
 
-    float valueValidated;       // 48
-    float defaultValue;         // 4C
-    float valueInput;           // 50
-    float valueWrittenToFile;   // 54
-    float minValue;             // 58
-    float maxValue;             // 5C
-    float stepValue;            // 60
-    uint32_t unk64;             // 64
+    float valueValidated;     // 48
+    float defaultValue;       // 4C
+    float valueInput;         // 50
+    float valueWrittenToFile; // 54
+    float minValue;           // 58
+    float maxValue;           // 5C
+    float stepValue;          // 60
+    uint32_t unk64;           // 64
 };
 RED4EXT_ASSERT_SIZE(RuntimeSettingsVarFloat, 0x68);
 
@@ -429,14 +432,14 @@ struct RuntimeSettingsVarFloatList : public RuntimeSettingsVar
     /// @rva 0x35E8560
     static constexpr const uintptr_t VFT = userRuntimeSettingsVarFloatList_VFT_Addr;
 
-    float value;                    // 48
-    float valueValidated;           // 4C
-    float defaultValue;             // 50
-    float valueInput;               // 54
-    float valueWrittenToFile;       // 58
-    uint32_t unk5C;                 // 5C
-    DynArray<float> values;         // 60
-    DynArray<CName> displayValues;  // 70
+    float value;                   // 48
+    float valueValidated;          // 4C
+    float defaultValue;            // 50
+    float valueInput;              // 54
+    float valueWrittenToFile;      // 58
+    uint32_t unk5C;                // 5C
+    DynArray<float> values;        // 60
+    DynArray<CName> displayValues; // 70
 };
 RED4EXT_ASSERT_SIZE(RuntimeSettingsVarFloatList, 0x80);
 
@@ -701,14 +704,14 @@ struct RuntimeSettingsVarIntList : public RuntimeSettingsVar
         valueValidated = *(uint32_t*)value;
     }
 
-    int32_t value;                  // 48
-    int32_t valueValidated;         // 4C
-    int32_t defaultValue;           // 50
-    int32_t valueInput;             // 54
-    int32_t valueWrittenToFile;     // 58
-    int32_t unk5C;                  // 5C
-    DynArray<int32_t> values;       // 60
-    DynArray<CName> displayValues;  // 70
+    int32_t value;                 // 48
+    int32_t valueValidated;        // 4C
+    int32_t defaultValue;          // 50
+    int32_t valueInput;            // 54
+    int32_t valueWrittenToFile;    // 58
+    int32_t unk5C;                 // 5C
+    DynArray<int32_t> values;      // 60
+    DynArray<CName> displayValues; // 70
 };
 RED4EXT_ASSERT_SIZE(RuntimeSettingsVarIntList, 0x80);
 
@@ -863,23 +866,26 @@ struct RuntimeSettingsVarNameList : RuntimeSettingsVar
     // like this in FloatList, NameList, StringList, IntList
     virtual void __fastcall UpdateAll(void* aValue) override
     {
-        if ((bitfield & ConfigVarFlags::isDynamic) == 0 || values.size) {
+        if (!bitfield.isDynamic || values.size)
+        {
             valueWrittenToFile = *(uint32_t*)aValue;
             valueInput = *(uint32_t*)aValue;
             valueValidated = *(uint32_t*)aValue;
-        } else {
-            value = *aValue;
-            bitfield |= ConfigVarFlags::unk20;
+        }
+        else
+        {
+            value = *(CName*)aValue;
+            bitfield.unk20 = true;
         }
     }
 
-    CName value;                    // 48
-    uint32_t valueValidated;        // 50
-    uint32_t defaultValue;          // 54
-    uint32_t valueInput;            // 58
-    uint32_t valueWrittenToFile;    // 5C
-    DynArray<CName> values;         // 60
-    DynArray<CName> displayValues;  // 70
+    CName value;                   // 48
+    uint32_t valueValidated;       // 50
+    uint32_t defaultValue;         // 54
+    uint32_t valueInput;           // 58
+    uint32_t valueWrittenToFile;   // 5C
+    DynArray<CName> values;        // 60
+    DynArray<CName> displayValues; // 70
 };
 RED4EXT_ASSERT_SIZE(RuntimeSettingsVarNameList, 0x80);
 
@@ -892,15 +898,15 @@ struct RuntimeSettingsVarStringList : RuntimeSettingsVar
     /// @rva 0x32BB620
     static constexpr const uintptr_t VFT = userRuntimeSettingsVarStringList_VFT_Addr;
 
-    CString value;                  // 48
-    uint32_t valueValidated;        // 68
-    uint32_t defaultValue;          // 6C
-    uint32_t valueInput;            // 70
-    uint32_t valueWrittenToFile;    // 74
-    DynArray<CString> values;       // 78
-    DynArray<CName> displayValues;  // 88
+    CString value;                 // 48
+    uint32_t valueValidated;       // 68
+    uint32_t defaultValue;         // 6C
+    uint32_t valueInput;           // 70
+    uint32_t valueWrittenToFile;   // 74
+    DynArray<CString> values;      // 78
+    DynArray<CName> displayValues; // 88
 };
 RED4EXT_ASSERT_SIZE(RuntimeSettingsVarStringList, 0x98);
-// #pragma pack(pop)
+#pragma pack(pop)
 } // namespace user
 } // namespace RED4ext

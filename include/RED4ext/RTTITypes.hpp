@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RED4ext/ISerializable.hpp"
 #include <type_traits>
 
 #include <RED4ext/CName.hpp>
@@ -186,7 +187,10 @@ struct CClass : CBaseRTTIType
     virtual void DestructCls(ScriptInstance aMemory) const = 0;  // E0
     virtual void* AllocMemory() const = 0;                       // E8
 
-    ScriptInstance CreateInstance(bool aZeroMemory = false) const;
+    // ScriptInstance CreateInstance(bool aZeroMemory = false) const;
+
+    template<typename T = ScriptInstance>
+    T CreateInstance(bool aZeroMemory = false) const;
 
     bool IsA(const CBaseRTTIType* aType) const;
 
