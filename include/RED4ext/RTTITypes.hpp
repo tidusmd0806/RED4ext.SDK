@@ -11,6 +11,10 @@
 #include <RED4ext/InstanceType.hpp>
 #include <RED4ext/Map.hpp>
 #include <RED4ext/Utils.hpp>
+#include <RED4ext/Relocation.hpp>
+
+#define RTTICLASS(name) RED4ext::RelocPtr<RED4ext::CClass>(name##_Class_Addr)
+#define RTTITYPE(name) RED4ext::RelocFundamental<RED4ext::CBaseRTTIType>(name##_Type_VFT_Addr)
 
 namespace RED4ext
 {
