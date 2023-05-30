@@ -10,6 +10,7 @@ namespace RED4ext
 {
 struct CName
 {
+    /// @pattern
     constexpr CName(uint64_t aHash = 0) noexcept
         : hash(aHash)
     {

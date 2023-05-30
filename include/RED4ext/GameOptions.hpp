@@ -3,6 +3,10 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Relocation.hpp>
+#include <RED4ext/Map.hpp>
+#include <RED4ext/HashMap.hpp>
+#include <RED4ext/CString.hpp>
+#include <RED4ext/CName.hpp>
 
 namespace RED4ext {
 

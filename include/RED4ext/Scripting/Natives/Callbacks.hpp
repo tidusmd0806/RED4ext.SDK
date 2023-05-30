@@ -2,7 +2,8 @@
 
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Map.hpp>
-//#include <RED4ext/RTTITypes.hpp>
+#include <RED4ext/CName.hpp>
+#include <RED4ext/Scripting/IScriptable.hpp>
 //#include <RED4ext/Scripting/Natives/Generated/ent/IComponent.hpp>
 
 namespace RED4ext {

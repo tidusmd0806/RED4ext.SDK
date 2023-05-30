@@ -387,7 +387,7 @@
 #define physics_pxRigidBody_Get_Addr 0x4C7F30
 #define physics_pxRigidBody_Update_Addr 0x4C8D50
 #define userRuntimeSettingsVarBool_VFT_Addr 0x3698708
-#define userRuntimeSettingsVarFloatList_VFT_Addr 0x36987B8
+#define userRuntimeSettingsVarFloatList_VFT_Addr 0x3699430
 #define userRuntimeSettingsVarFloat_VFT_Addr 0x36993D8
 #define userRuntimeSettingsVarInt_VFT_Addr 0x3699380
 #define userRuntimeSettingsVarNameList_VFT_Addr 0x3698810

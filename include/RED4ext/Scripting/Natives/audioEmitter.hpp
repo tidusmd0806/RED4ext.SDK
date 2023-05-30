@@ -7,6 +7,7 @@
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/EntityID.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector4.hpp>
+#include <RED4ext/Map.hpp>
 #include <RED4ext/HashMap.hpp>
 
 namespace RED4ext::audio

@@ -4,6 +4,8 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
+#include <RED4ext/CString.hpp>
+#include <RED4ext/ISerializable.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/ActionReplicatedState.hpp>
 
 namespace RED4ext {

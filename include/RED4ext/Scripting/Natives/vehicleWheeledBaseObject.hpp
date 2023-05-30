@@ -36,7 +36,7 @@ struct WheeledBaseObject : vehicle::BaseObject
     virtual void __fastcall sub_2C8() override;
 
     // update engine data
-    virtual uint64_t __fastcall sub_310() override;
+    virtual uint64_t __fastcall sub_310(bool) override;
 
     // engineData
     virtual bool __fastcall sub_318() override;
