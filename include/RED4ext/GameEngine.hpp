@@ -150,12 +150,12 @@ struct CBaseEngine
     int32_t interopStartingPort;               // 5C
     CString scriptsCompilationErrors;          // 60
     DynArray<CString> scriptsValidationErrors; // 80
-    int64_t unk90;                             // 90
+    int64_t* unk90;                             // 90
     audio::Thing *audioThing;                             // 98
-    int64_t unkA0;                             // A0
+    int64_t* unkA0;                             // A0
     int64_t unkA8;                             // A8
     int64_t unkB0;                             // B0
-    int64_t unkB8;                             // B8
+    int64_t* unkB8;                             // B8
     UnkC0* unkC0;                              // C0
     double unkC8;                              // C8
     double unkD0;                              // D0
@@ -204,8 +204,8 @@ struct BaseGameEngine : CBaseEngine
     // LoadTweakDB, Blackboard, EnumerateWorlds, PSClassBindings
     virtual void sub_E0(uint64_t a2, uint64_t a3, uint64_t a4) override;
 
-    int64_t unk2C8;         // 2C8
-    int64_t unk2D0;         // 2D0
+    int64_t* unk2C8;         // 2C8
+    int64_t* unk2D0;         // 2D0
     int64_t watchdogThread; // 2D8
 };
 RED4EXT_ASSERT_SIZE(BaseGameEngine, 0x2E0);
@@ -332,12 +332,12 @@ struct CGameEngine : BaseGameEngine
     CGameFramework* framework; // 2F8
     int32_t unk300;            // 300
     int32_t unk304;            // 304
-    int64_t unk308;            // 308
-    int64_t unk310;            // 310
-    int64_t unk318;            // 318
-    int64_t unk320;            // 320
+    int64_t* unk308;            // 308
+    int64_t* unk310;            // 310
+    int64_t* unk318;            // 318
+    int64_t* unk320;            // 320
     Unk328 * unk328;            // 328
-    int64_t unk330;            // 330
+    int64_t* unk330;            // 330
     int64_t unk338;            // 338
     int32_t unk340;            // 340
 };
