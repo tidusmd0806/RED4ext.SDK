@@ -5,2579 +5,2004 @@
 #define ZOLTAN_EXPAND_THEN_STRINGISE(N) ZOLTAN_STRINGISE(N)
 #define __LINE_STR__ ZOLTAN_EXPAND_THEN_STRINGISE(__LINE__)
 
-#ifndef BaseStream_ReadWriteHandleID_Addr
-#define BaseStream_ReadWriteHandleID_Addr 0x720670
-#endif
-#ifndef CBaseRTTIType_VFT_Addr
-#define CBaseRTTIType_VFT_Addr 0x311F4D0
-#endif
-#ifndef CClass_AddEventCallbackType_Addr
-#define CClass_AddEventCallbackType_Addr 0x2034E0
-#endif
-#ifndef CClass_ApplyFlags_Addr
-#define CClass_ApplyFlags_Addr 0x206EF0
-#endif
-#ifndef CClass_SetupScriptCallbacks_Addr
-#define CClass_SetupScriptCallbacks_Addr 0x2035C0
-#endif
-#ifndef CClass_VFT_Addr
-#define CClass_VFT_Addr 0x311F2C0
-#endif
-#ifndef CGameFramework_Systems_120_128_130_Addr
-#define CGameFramework_Systems_120_128_130_Addr 0x13B3860
-#endif
-#ifndef CMesh_GetParameterOfType_Addr
-#define CMesh_GetParameterOfType_Addr 0xA1F2B0
-#endif
-#ifndef CallbackManager_AddCallback_Addr
-#define CallbackManager_AddCallback_Addr 0x2C53EB0
-#endif
-#ifndef CallbackManager_AddToUnk00_Addr
-#define CallbackManager_AddToUnk00_Addr 0x2C53D90
-#endif
-#ifndef CallbackManager_Unknown1_Addr
-#define CallbackManager_Unknown1_Addr 0x2C53850
-#endif
-#ifndef CallbackManager_Unknown6_Addr
-#define CallbackManager_Unknown6_Addr 0x2C54670
-#endif
-#ifndef GameInstance_GameInstance_Addr
+#define BaseStream_ReadWriteHandleID_Addr 0x720940
+#define CBaseRTTIType_VFT_Addr 0x3127510
+#define CClass_AddEventCallbackType_Addr 0x203700
+#define CClass_ApplyFlags_Addr 0x207110
+#define CClass_SetupScriptCallbacks_Addr 0x2037E0
+#define CClass_VFT_Addr 0x3127300
+#define CGameFramework_Systems_120_128_130_Addr 0x13B4F70
+#define CMesh_GetParameterOfType_Addr 0xA20870
+#define CallbackManager_AddCallback_Addr 0x2C5B940
+#define CallbackManager_AddToUnk00_Addr 0x2C5B820
+#define CallbackManager_Unknown1_Addr 0x2C5B2E0
+#define CallbackManager_Unknown6_Addr 0x2C5C100
 #define GameInstance_GameInstance_Addr                                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameInstance_GameInstance_Addr"                      \
               "is 0 - Zoltan found no matches for RED4ext::GameInstance::GameInstance\")")
-#endif
-#ifndef GameInstance_SetRuntimeScene_Addr
-#define GameInstance_SetRuntimeScene_Addr 0x2D9A920
-#endif
-#ifndef GameOptionManager_Get_Addr
+#define GameInstance_SetRuntimeScene_Addr 0x2DA2820
+#define GameInstance_Setup_Addr                                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameInstance_Setup_Addr"                             \
+              "is 0 - Zoltan found too many matches for RED4ext::GameInstance::Setup (16)\")")
 #define GameOptionManager_Get_Addr                                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameOptionManager_Get_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::GameOptionManager::Get\")")
-#endif
-#ifndef GameOptionManager_GetGameOption_Addr
-#define GameOptionManager_GetGameOption_Addr 0x2C30090
-#endif
-#ifndef GameOptionManager_SetGameOption_Addr
-#define GameOptionManager_SetGameOption_Addr 0x2C30770
-#endif
-#ifndef GetGameSystemsData_Addr
-#define GetGameSystemsData_Addr 0x2D9DC30
-#endif
-#ifndef IDynamicStorage_IDynamicStorage_Addr
+#define GameOptionManager_GetGameOption_Addr 0x2C37B20
+#define GameOptionManager_SetGameOption_Addr 0x2C38200
+#define GetGameSystemsData_Addr 0x2DA5B30
 #define IDynamicStorage_IDynamicStorage_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IDynamicStorage_IDynamicStorage_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::IDynamicStorage::IDynamicStorage\")")
-#endif
-#ifndef IGameInstance_RegisterGameLoadCallbacks_Addr
-#define IGameInstance_RegisterGameLoadCallbacks_Addr 0x2D9AFD0
-#endif
-#ifndef IGameInstance_RegisterStreamingWorldLoadedCallback_Addr
-#define IGameInstance_RegisterStreamingWorldLoadedCallback_Addr 0x2D9B4F0
-#endif
-#ifndef IGameInstance_Systems158_Addr
-#define IGameInstance_Systems158_Addr 0x2D9B460
-#endif
-#ifndef IGameInstance_Systems160_Addr
-#define IGameInstance_Systems160_Addr 0x2D9B420
-#endif
-#ifndef IGameInstance_Systems168o170_Addr
-#define IGameInstance_Systems168o170_Addr 0x2D9BAF0
-#endif
-#ifndef IGameInstance_Systems178_Addr
-#define IGameInstance_Systems178_Addr 0x2D9AE20
-#endif
-#ifndef IGameInstance_WorldDetached_Addr
-#define IGameInstance_WorldDetached_Addr 0x2D9AD90
-#endif
-#ifndef IGameInstance_WorldPendingDetach_Addr
-#define IGameInstance_WorldPendingDetach_Addr 0x2D9B790
-#endif
-#ifndef ISerializable_SetOwner_Addr
-#define ISerializable_SetOwner_Addr 0x1BA2A0
-#endif
-#ifndef ISerializable_VFT_Addr
-#define ISerializable_VFT_Addr 0x31179A8
-#endif
-#ifndef IUpdatableSystem_VFT_Addr
-#define IUpdatableSystem_VFT_Addr 0x3247C78
-#endif
-#ifndef LoadGameSystemsData_Addr
+#define IGameInstance_RegisterGameLoadCallbacks_Addr 0x2DA2ED0
+#define IGameInstance_RegisterStreamingWorldLoadedCallback_Addr 0x2DA33F0
+#define IGameInstance_Systems158_Addr 0x2DA3360
+#define IGameInstance_Systems160_Addr 0x2DA3320
+#define IGameInstance_Systems168o170_Addr 0x2DA39F0
+#define IGameInstance_Systems178_Addr 0x2DA2D20
+#define IGameInstance_WorldDetached_Addr 0x2DA2C90
+#define IGameInstance_WorldPendingDetach_Addr 0x2DA3690
+#define ISerializable_SetOwner_Addr 0x1BA4C0
+#define ISerializable_VFT_Addr 0x311F9E8
+#define IUpdatableSystem_VFT_Addr 0x3250228
 #define LoadGameSystemsData_Addr                                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: LoadGameSystemsData_Addr"                            \
               "is 0 - Zoltan found no matches for RED4ext::LoadGameSystemsData\")")
-#endif
-#ifndef Quaternion_GetYaw_Addr
-#define Quaternion_GetYaw_Addr 0x66BC30
-#endif
-#ifndef Quaternion_ToEulerAngles_Addr
-#define Quaternion_ToEulerAngles_Addr 0x567AD0
-#endif
-#ifndef Quaternion_ToMatrix_Addr
-#define Quaternion_ToMatrix_Addr 0x1D3F60
-#endif
-#ifndef REUSED_Break_Addr
-#define REUSED_Break_Addr 0x2A9D3D8
-#endif
-#ifndef REUSED_ReturnOne_Addr
-#define REUSED_ReturnOne_Addr 0x1BA160
-#endif
-#ifndef REUSED_ReturnOne64_Addr
-#define REUSED_ReturnOne64_Addr 0x20A990
-#endif
-#ifndef REUSED_ReturnZero_Addr
-#define REUSED_ReturnZero_Addr 0x1A2F50
-#endif
-#ifndef REUSED_ReturnZero64_Addr
-#define REUSED_ReturnZero64_Addr 0x1A36E0
-#endif
-#ifndef REUSED_ReturnZero8_Addr
-#define REUSED_ReturnZero8_Addr 0x1AD080
-#endif
-#ifndef UpdatableSystems_SetRuntimeScene_Addr
-#define UpdatableSystems_SetRuntimeScene_Addr 0xBAD3E0
-#endif
-#ifndef UpdateManager_IterateUnknown_Addr
-#define UpdateManager_IterateUnknown_Addr 0xAA01C0
-#endif
-#ifndef UpdateManager_PrepareFiring_Addr
-#define UpdateManager_PrepareFiring_Addr 0xA9F500
-#endif
-#ifndef UpdateManager_RegisterUpdate_Addr
-#define UpdateManager_RegisterUpdate_Addr 0xA9FC00
-#endif
-#ifndef UpdateManager_ReleaseUnknown_Addr
-#define UpdateManager_ReleaseUnknown_Addr 0xA9ED70
-#endif
-#ifndef UpdateManager_Setup_Addr
-#define UpdateManager_Setup_Addr                                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManager_Setup_Addr"                            \
-              "is 0 - Zoltan found too many matches for RED4ext::UpdateManager::Setup (2)\")")
-#endif
-#ifndef UpdateManagerUpdateStorage_Copy_Addr
-#define UpdateManagerUpdateStorage_Copy_Addr 0xA9EFF0
-#endif
-#ifndef UpdateManagerUpdateStorage_Copy_0_Addr
-#define UpdateManagerUpdateStorage_Copy_0_Addr 0xA9E850
-#endif
-#ifndef UpdateManagerUpdateStorage_FireCallback_Addr
+#define Quaternion_GetYaw_Addr 0x66BF00
+#define Quaternion_ToEulerAngles_Addr 0x567DA0
+#define Quaternion_ToMatrix_Addr 0x1D4180
+#define REUSED_Break_Addr 0x2AA4E68
+#define REUSED_ReturnOne_Addr 0x1BA380
+#define REUSED_ReturnOne64_Addr 0x20ABB0
+#define REUSED_ReturnZero_Addr 0x1A3170
+#define REUSED_ReturnZero64_Addr 0x1A3900
+#define REUSED_ReturnZero8_Addr 0x1AD2A0
+#define UpdatableSystems_SetRuntimeScene_Addr 0xBAEAF0
+#define UpdateManagerHolder_Something_Addr 0xAA0D40
+#define UpdateManagerHolder_UpdateSystems_Addr 0xAA0770
+#define UpdateManagerUpdateStorage_Copy_Addr 0xAA0670
+#define UpdateManagerUpdateStorage_Copy_0_Addr 0xA9FED0
 #define UpdateManagerUpdateStorage_FireCallback_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_FireCallback_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::UpdateManager::UpdateStorage::FireCallback\")")
-#endif
-#ifndef UpdateManagerHolder_Something_Addr
-#define UpdateManagerHolder_Something_Addr 0xA9F6C0
-#endif
-#ifndef UpdateManagerHolder_UpdateSystems_Addr
-#define UpdateManagerHolder_UpdateSystems_Addr 0xA9F0F0
-#endif
-#ifndef WidgetHudComponentInterface_WidgetHudComponentInterface_Addr
+#define UpdateManager_IterateUnknown_Addr 0xAA1840
+#define UpdateManager_PrepareFiring_Addr 0xAA0B80
+#define UpdateManager_RegisterUpdate_Addr 0xAA1280
+#define UpdateManager_ReleaseUnknown_Addr 0xAA03F0
+#define UpdateManager_Setup_Addr                                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManager_Setup_Addr"                            \
+              "is 0 - Zoltan found too many matches for RED4ext::UpdateManager::Setup (2)\")")
 #define WidgetHudComponentInterface_WidgetHudComponentInterface_Addr                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: WidgetHudComponentInterface_WidgetHudComponentInterface_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::WidgetHudComponentInterface::WidgetHudComponentInterface\")")
-#endif
-#ifndef WidgetHudComponentInterface__WidgetHudComponentInterface_Addr
 #define WidgetHudComponentInterface__WidgetHudComponentInterface_Addr                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: WidgetHudComponentInterface__WidgetHudComponentInterface_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::WidgetHudComponentInterface::~WidgetHudComponentInterface\")")
-#endif
-#ifndef actionActionBase_Lock_Addr
-#define actionActionBase_Lock_Addr 0x3D2E30
-#endif
-#ifndef actionActionBase_StartWithReplicatedState_Addr
-#define actionActionBase_StartWithReplicatedState_Addr 0x1B418C0
-#endif
-#ifndef actionActionInterface_EndActions_Addr
-#define actionActionInterface_EndActions_Addr 0x1B5F840
-#endif
-#ifndef actionActionInterface_IsAnimationiActive_Addr
-#define actionActionInterface_IsAnimationiActive_Addr 0x1B5FA10
-#endif
-#ifndef actionActionInterface_ProcessActions_Addr
-#define actionActionInterface_ProcessActions_Addr 0x1B5FB10
-#endif
-#ifndef appearanceAppearanceDefinition_AppearanceDefinition_Addr
-#define appearanceAppearanceDefinition_AppearanceDefinition_Addr                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: appearanceAppearanceDefinition_AppearanceDefinition_Addr"\
-              "is 0 - Zoltan found no matches for RED4ext::appearance::AppearanceDefinition::AppearanceDefinition\")")
-#endif
-#ifndef audioBankManager_LoadBank_Addr
-#define audioBankManager_LoadBank_Addr 0x2CE9650
-#endif
-#ifndef audioBankManager_LoadBanksMaybe_Addr
-#define audioBankManager_LoadBanksMaybe_Addr 0x2CE9430
-#endif
-#ifndef audioBankManager_UnloadBank_Addr
-#define audioBankManager_UnloadBank_Addr 0x2CEAD80
-#endif
-#ifndef audioEmitters_GetEmitterForEntityID_Addr
-#define audioEmitters_GetEmitterForEntityID_Addr 0x2CE2410
-#endif
-#ifndef audioEmitters_GetOrCreateEmitter_Addr
-#define audioEmitters_GetOrCreateEmitter_Addr 0x2CE2050
-#endif
-#ifndef audioGameParameterStorage_GetValue_Addr
-#define audioGameParameterStorage_GetValue_Addr 0x2CE18C0
-#endif
-#ifndef audioGameParameterStorage_SetValue_Addr
-#define audioGameParameterStorage_SetValue_Addr 0x2CE1A30
-#endif
-#ifndef audioMetadataManager_GetValueInMapForName_Addr
-#define audioMetadataManager_GetValueInMapForName_Addr                                                                 \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioMetadataManager_GetValueInMapForName_Addr"      \
-              "is 0 - Zoltan found no matches for RED4ext::audio::MetadataManager::GetValueInMapForName\")")
-#endif
-#ifndef audioMetadataManager_MetadataManager_Addr
-#define audioMetadataManager_MetadataManager_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioMetadataManager_MetadataManager_Addr"           \
-              "is 0 - Zoltan found no matches for RED4ext::audio::MetadataManager::MetadataManager\")")
-#endif
-#ifndef audioMetadataManager__MetadataManager_Addr
-#define audioMetadataManager__MetadataManager_Addr                                                                     \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioMetadataManager__MetadataManager_Addr"          \
-              "is 0 - Zoltan found no matches for RED4ext::audio::MetadataManager::~MetadataManager\")")
-#endif
-#ifndef audioThing_AKAudioLoad_Addr
-#define audioThing_AKAudioLoad_Addr                                                                                    \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioThing_AKAudioLoad_Addr"                         \
-              "is 0 - Zoltan found no matches for RED4ext::audio::Thing::AKAudioLoad\")")
-#endif
-#ifndef audioThing_GetEmitterPosition_Addr
-#define audioThing_GetEmitterPosition_Addr                                                                             \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioThing_GetEmitterPosition_Addr"                  \
-              "is 0 - Zoltan found no matches for RED4ext::audio::Thing::GetEmitterPosition\")")
-#endif
-#ifndef audioThing_UpdateEmitterPosition_Addr
-#define audioThing_UpdateEmitterPosition_Addr 0x73E4A0
-#endif
-#ifndef audio_UpdateGlobalParameter_Addr
-#define audio_UpdateGlobalParameter_Addr                                                                               \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audio_UpdateGlobalParameter_Addr"                    \
-              "is 0 - Zoltan found no matches for RED4ext::audio::UpdateGlobalParameter\")")
-#endif
-#ifndef audio_UpdateParameterForEntityID_Addr
-#define audio_UpdateParameterForEntityID_Addr                                                                          \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audio_UpdateParameterForEntityID_Addr"               \
-              "is 0 - Zoltan found no matches for RED4ext::audio::UpdateParameterForEntityID\")")
-#endif
-#ifndef audioVehicleMetadata_GetEventData_Addr
-#define audioVehicleMetadata_GetEventData_Addr                                                                         \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioVehicleMetadata_GetEventData_Addr"              \
-              "is 0 - Zoltan found no matches for RED4ext::audio::VehicleMetadata::GetEventData\")")
-#endif
-#ifndef entAnimatedComponent_GetReferencePoseMSForName_Addr
-#define entAnimatedComponent_GetReferencePoseMSForName_Addr 0xFEE160
-#endif
-#ifndef entComponentsStorage_AddComponent_Addr
-#define entComponentsStorage_AddComponent_Addr 0x1067430
-#endif
-#ifndef entComponentsStorage_AddComponents_Addr
-#define entComponentsStorage_AddComponents_Addr 0x1067510
-#endif
-#ifndef entComponentsStorage_FreeMemory_Addr
-#define entComponentsStorage_FreeMemory_Addr 0x1067650
-#endif
-#ifndef entComponentsStorage_GetComponentByCRUID_Addr
-#define entComponentsStorage_GetComponentByCRUID_Addr 0x1067720
-#endif
-#ifndef entComponentsStorage_GetSize_Addr
-#define entComponentsStorage_GetSize_Addr 0x8C0ED0
-#endif
-#ifndef entComponentsStorage_IsEmpty_Addr
-#define entComponentsStorage_IsEmpty_Addr 0x1072C00
-#endif
-#ifndef entEntity_ReassembleAppearance_Addr
-#define entEntity_ReassembleAppearance_Addr 0x1058670
-#endif
-#ifndef entEntity_SetRuntime_Addr
-#define entEntity_SetRuntime_Addr                                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SetRuntime_Addr"                           \
-              "is 0 - Zoltan found too many matches for RED4ext::ent::Entity::SetRuntime (2)\")")
-#endif
-#ifndef entEntity_SetupEntityAndComponents_Addr
-#define entEntity_SetupEntityAndComponents_Addr 0x1058550
-#endif
-#ifndef entEntity_SomethingListeners_Addr
-#define entEntity_SomethingListeners_Addr 0x105F400
-#endif
-#ifndef entIAttachment_IAttachment_Addr
-#define entIAttachment_IAttachment_Addr                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIAttachment_IAttachment_Addr"                     \
-              "is 0 - Zoltan found no matches for RED4ext::ent::IAttachment::IAttachment\")")
-#endif
-#ifndef entIComponent_SetEntity_Addr
-#define entIComponent_SetEntity_Addr 0x1065910
-#endif
-#ifndef entIComponent_VFT_Addr
-#define entIComponent_VFT_Addr 0x33472F0
-#endif
-#ifndef entITransformAttachable_VFT_Addr
-#define entITransformAttachable_VFT_Addr 0x324C430
-#endif
-#ifndef entMeshComponent_Load_Addr
-#define entMeshComponent_Load_Addr 0x10BA1B0
-#endif
-#ifndef entPhysicalMeshComponent_ProcessSystemResource_Addr
-#define entPhysicalMeshComponent_ProcessSystemResource_Addr 0x10DA2E0
-#endif
-#ifndef entSlotComponent_GetLocalSlotTransformFromIndex_Addr
-#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x116F4D0
-#endif
-#ifndef entSlotComponent_GetSlotGlobalTransform_Addr
-#define entSlotComponent_GetSlotGlobalTransform_Addr 0x116EB70
-#endif
-#ifndef entSlotComponent_GetSlotIndex_Addr
-#define entSlotComponent_GetSlotIndex_Addr 0x116EA20
-#endif
-#ifndef entSlotComponent_GetSlotLocalTransform_Addr
-#define entSlotComponent_GetSlotLocalTransform_Addr 0x116F170
-#endif
-#ifndef entVisualControllerComponent_GetAppearanceDependency_Addr
-#define entVisualControllerComponent_GetAppearanceDependency_Addr                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_GetAppearanceDependency_Addr"\
-              "is 0 - Zoltan found too many matches for RED4ext::ent::VisualControllerComponent::GetAppearanceDependency (2)\")")
-#endif
-#ifndef entVisualControllerComponent_LoadUnkD8_Addr
-#define entVisualControllerComponent_LoadUnkD8_Addr 0x11A2140
-#endif
-#ifndef entVisualControllerComponent_Set0xF4_Addr
-#define entVisualControllerComponent_Set0xF4_Addr 0x11A06D0
-#endif
-#ifndef entVisualControllerComponent_Unknown_Addr
-#define entVisualControllerComponent_Unknown_Addr 0x11A0590
-#endif
-#ifndef gameCActionsFactory_AddActionTypeManual_Addr
-#define gameCActionsFactory_AddActionTypeManual_Addr 0x29D5110
-#endif
-#ifndef gameGameAudioSystem_SetGlobalParameter_Addr
-#define gameGameAudioSystem_SetGlobalParameter_Addr 0x73D3A0
-#endif
-#ifndef gameGameAudioSystem_UpdateParameter_Addr
-#define gameGameAudioSystem_UpdateParameter_Addr                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameGameAudioSystem_UpdateParameter_Addr"            \
-              "is 0 - Zoltan found no matches for RED4ext::game::GameAudioSystem::UpdateParameter\")")
-#endif
-#ifndef gameIGameSystem_SetGameInstance_Addr
-#define gameIGameSystem_SetGameInstance_Addr 0xB07FB0
-#endif
-#ifndef gameIGameSystem_Unset_Addr
-#define gameIGameSystem_Unset_Addr 0xB08040
-#endif
-#ifndef gameIGameSystem_VFT_Addr
-#define gameIGameSystem_VFT_Addr 0x3257230
-#endif
-#ifndef gameObject_CallScriptFunction_Addr
-#define gameObject_CallScriptFunction_Addr 0x1416050
-#endif
-#ifndef gameVehicleSystem_BeginUpdate_Addr
-#define gameVehicleSystem_BeginUpdate_Addr 0x1CF56D0
-#endif
-#ifndef gameVehicleSystem_FixedUpdate_Addr
-#define gameVehicleSystem_FixedUpdate_Addr                                                                             \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_FixedUpdate_Addr"                  \
-              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate\")")
-#endif
-#ifndef gameVehicleSystem_FixedUpdate_PreSolve_Addr
-#define gameVehicleSystem_FixedUpdate_PreSolve_Addr                                                                    \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_FixedUpdate_PreSolve_Addr"         \
-              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate_PreSolve\")")
-#endif
-#ifndef gameVehicleSystem_Interpolation_Addr
-#define gameVehicleSystem_Interpolation_Addr                                                                           \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_Interpolation_Addr"                \
-              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::Interpolation (2)\")")
-#endif
-#ifndef gameVehicleSystem_PostMove_Addr
-#define gameVehicleSystem_PostMove_Addr                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_PostMove_Addr"                     \
-              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::PostMove (2)\")")
-#endif
-#ifndef gameVehicleSystem_PreUpdateAndPreMove_Addr
-#define gameVehicleSystem_PreUpdateAndPreMove_Addr                                                                     \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_PreUpdateAndPreMove_Addr"          \
-              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::PreUpdateAndPreMove (7)\")")
-#endif
-#ifndef gameVehicleSystem_SingleFixedStep_Addr
-#define gameVehicleSystem_SingleFixedStep_Addr                                                                         \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_SingleFixedStep_Addr"              \
-              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::SingleFixedStep\")")
-#endif
-#ifndef gameVehicleSystem_UpdateVehicleArrays_Addr
-#define gameVehicleSystem_UpdateVehicleArrays_Addr 0x1CF8F00
-#endif
-#ifndef physicsColliderSphere_createHandleWithRadius_Addr
-#define physicsColliderSphere_createHandleWithRadius_Addr 0x43C8D0
-#endif
-#ifndef physicsFilterData_LoadPreset_Addr
-#define physicsFilterData_LoadPreset_Addr 0x44C170
-#endif
-#ifndef physicsFilterData_VFT_Addr
-#define physicsFilterData_VFT_Addr 0x317ADB0
-#endif
-#ifndef physicsGeometryCache_FreeAlwaysLoaded_Addr
-#define physicsGeometryCache_FreeAlwaysLoaded_Addr 0x451B70
-#endif
-#ifndef physicsGeometryCache_FreeGeometryKey_Addr
-#define physicsGeometryCache_FreeGeometryKey_Addr 0x451E60
-#endif
-#ifndef physicsGeometryCache_FreeKey_Addr
-#define physicsGeometryCache_FreeKey_Addr                                                                              \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeKey_Addr"                   \
-              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeKey\")")
-#endif
-#ifndef physicsGeometryCache_FreeSector_Addr
-#define physicsGeometryCache_FreeSector_Addr 0x452010
-#endif
-#ifndef physicsGeometryCache_HasGeometryKey_Addr
-#define physicsGeometryCache_HasGeometryKey_Addr 0x4521F0
-#endif
-#ifndef physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr
-#define physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr 0x44FB70
-#endif
-#ifndef physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr
-#define physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr 0x452530
-#endif
-#ifndef physicsGeometryCache_LoadSectorGeometries_Addr
-#define physicsGeometryCache_LoadSectorGeometries_Addr 0x44F570
-#endif
-#ifndef physicsGeometryCache_LoadSectorGeometriesSetup_Addr
-#define physicsGeometryCache_LoadSectorGeometriesSetup_Addr 0x452890
-#endif
-#ifndef physicsGeometryCache_Unknown_Addr
-#define physicsGeometryCache_Unknown_Addr 0x4524C0
-#endif
-#ifndef physicsGeometryCache_sub_7FF75B921520_Addr
-#define physicsGeometryCache_sub_7FF75B921520_Addr 0x450D00
-#endif
-#ifndef physicsGeometryCache_sub_7FF75B922410_Addr
-#define physicsGeometryCache_sub_7FF75B922410_Addr 0x451BF0
-#endif
-#ifndef physics_GetShapeLocalPos_Addr
-#define physics_GetShapeLocalPos_Addr 0x459FE0
-#endif
-#ifndef physicsProxyCache_AddToCache_Addr
-#define physicsProxyCache_AddToCache_Addr 0x47A9A0
-#endif
-#ifndef physicsProxyCache_GetDataFromCache_Addr
-#define physicsProxyCache_GetDataFromCache_Addr 0x4C7A70
-#endif
-#ifndef physicsProxyCache_GetFromCacheOrGet_Addr
-#define physicsProxyCache_GetFromCacheOrGet_Addr 0x47A780
-#endif
-#ifndef physicsProxyCacheID_DisableCollision_Addr
-#define physicsProxyCacheID_DisableCollision_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCacheID_DisableCollision_Addr"           \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCacheID::DisableCollision\")")
-#endif
-#ifndef physicsProxyCacheID_EnableCollision_Addr
-#define physicsProxyCacheID_EnableCollision_Addr                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCacheID_EnableCollision_Addr"            \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCacheID::EnableCollision\")")
-#endif
-#ifndef physicsProxyCacheManagerUnk948_Kick_Addr
-#define physicsProxyCacheManagerUnk948_Kick_Addr 0x4A7730
-#endif
-#ifndef physicsProxyHelper_Create_Addr
-#define physicsProxyHelper_Create_Addr 0x4564F0
-#endif
-#ifndef physicsProxyHelper_GetThingWithLock_Addr
-#define physicsProxyHelper_GetThingWithLock_Addr 0x456460
-#endif
-#ifndef physicsProxyHelper_SetAngularDamping_Addr
-#define physicsProxyHelper_SetAngularDamping_Addr 0x45AFB0
-#endif
-#ifndef physicsProxyHelper_SetCCD_Addr
-#define physicsProxyHelper_SetCCD_Addr 0x45D320
-#endif
-#ifndef physicsProxyHelper_SetCMassLocalPose_Addr
-#define physicsProxyHelper_SetCMassLocalPose_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetCMassLocalPose_Addr"           \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::SetCMassLocalPose (10)\")")
-#endif
-#ifndef physicsProxyHelper_SetGravity_Addr
-#define physicsProxyHelper_SetGravity_Addr 0x45B8E0
-#endif
-#ifndef physicsProxyHelper_SetIsQueryable_Addr
-#define physicsProxyHelper_SetIsQueryable_Addr 0x45BAE0
-#endif
-#ifndef physicsProxyHelper_SetLinearDamping_Addr
-#define physicsProxyHelper_SetLinearDamping_Addr 0x45BE00
-#endif
-#ifndef physicsProxyHelper_SetMassAndUpdateInertia_Addr
-#define physicsProxyHelper_SetMassAndUpdateInertia_Addr 0x45C200
-#endif
-#ifndef physicsProxyHelper_SetQueryFilterData_Addr
-#define physicsProxyHelper_SetQueryFilterData_Addr 0x45C860
-#endif
-#ifndef physicsProxyHelper_SetSimulationFilterData_Addr
-#define physicsProxyHelper_SetSimulationFilterData_Addr 0x45CC60
-#endif
-#ifndef physicsProxyHelper_SetSimulationShape_Addr
-#define physicsProxyHelper_SetSimulationShape_Addr 0x45BBF0
-#endif
-#ifndef physicsProxyHelper_Unlock_Addr
-#define physicsProxyHelper_Unlock_Addr 0x456570
-#endif
-#ifndef physicsProxyHelper_UpdateGlobalPose_Addr
-#define physicsProxyHelper_UpdateGlobalPose_Addr                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateGlobalPose_Addr"            \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::UpdateGlobalPose\")")
-#endif
-#ifndef physicsProxyHelper_UpdateProxyCache_Addr
-#define physicsProxyHelper_UpdateProxyCache_Addr 0x4572D0
-#endif
-#ifndef physicsProxyID_GetKeyUnk37_0x40_Addr
-#define physicsProxyID_GetKeyUnk37_0x40_Addr                                                                           \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetKeyUnk37_0x40_Addr"                \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetKeyUnk37_0x40\")")
-#endif
-#ifndef physicsProxyID_GetNbShapes_Addr
-#define physicsProxyID_GetNbShapes_Addr                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetNbShapes_Addr"                     \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetNbShapes\")")
-#endif
-#ifndef physicsProxyID_GetProxy_Addr
-#define physicsProxyID_GetProxy_Addr 0x47A920
-#endif
-#ifndef physicsProxyID_ProcessProxyDesc_Addr
-#define physicsProxyID_ProcessProxyDesc_Addr 0x4585D0
-#endif
-#ifndef physicsProxyID_Something2_Addr
-#define physicsProxyID_Something2_Addr                                                                                 \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_Something2_Addr"                      \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::Something2\")")
-#endif
-#ifndef physicsProxyID_Unk_Addr
-#define physicsProxyID_Unk_Addr 0x4583B0
-#endif
-#ifndef physicsProxyID_UpdateProxyCacheEntry_Addr
-#define physicsProxyID_UpdateProxyCacheEntry_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_UpdateProxyCacheEntry_Addr"           \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::UpdateProxyCacheEntry\")")
-#endif
-#ifndef physics_ProxyID_GetGlobalPose_Addr
-#define physics_ProxyID_GetGlobalPose_Addr                                                                             \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_ProxyID_GetGlobalPose_Addr"                  \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyID_GetGlobalPose (2)\")")
-#endif
-#ifndef physicsProxyManager_GetProxyCache_Addr
-#define physicsProxyManager_GetProxyCache_Addr 0x479D40
-#endif
-#ifndef physicsProxyManager_GetProxyHandle_Addr
-#define physicsProxyManager_GetProxyHandle_Addr 0x479BF0
-#endif
-#ifndef physicsProxyManager_HasProxy_Addr
-#define physicsProxyManager_HasProxy_Addr 0x479FC0
-#endif
-#ifndef physicsProxyManager_SetProxyCacheID_Addr
-#define physicsProxyManager_SetProxyCacheID_Addr 0x47A330
-#endif
-#ifndef physicsProxyManager_TestUnk2E2068_Addr
-#define physicsProxyManager_TestUnk2E2068_Addr 0x479FC0
-#endif
-#ifndef physicsSystemResource_GetFromCMesh_Addr
-#define physicsSystemResource_GetFromCMesh_Addr 0xA43BF0
-#endif
-#ifndef physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr
-#define physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr                                                           \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr"\
-              "is 0 - Zoltan found no matches for RED4ext::physics::VehiclePhysicsInsert1::ReferencePoseSetup\")")
-#endif
-#ifndef physicsVehiclePhysicsInsert1_SinMath_Addr
-#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x1D6D100
-#endif
-#ifndef physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr
-#define physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr 0x1D636E0
-#endif
-#ifndef physics_pxRigidBody_Get_Addr
-#define physics_pxRigidBody_Get_Addr 0x4C7F30
-#endif
-#ifndef physics_pxRigidBody_Update_Addr
-#define physics_pxRigidBody_Update_Addr 0x4C8D50
-#endif
-#ifndef vehicleAirControl_ApplyTorque_Addr
-#define vehicleAirControl_ApplyTorque_Addr 0x1D217B0
-#endif
-#ifndef vehicleAirControl_GetAngularVelocity_Addr
-#define vehicleAirControl_GetAngularVelocity_Addr 0x1D225F0
-#endif
-#ifndef vehicleAirControl_Process_Addr
-#define vehicleAirControl_Process_Addr 0x1D23290
-#endif
-#ifndef vehicleBaseObject_CheckPhysicsStateActionInterface_Addr
-#define vehicleBaseObject_CheckPhysicsStateActionInterface_Addr 0x1C9EB70
-#endif
-#ifndef vehicleBaseObject_CreateAction_Addr
-#define vehicleBaseObject_CreateAction_Addr 0x1C9CC30
-#endif
-#ifndef vehicleBaseObject_GetCurveSetData_Addr
-#define vehicleBaseObject_GetCurveSetData_Addr 0x1C8C940
-#endif
-#ifndef vehicleBaseObject_GetDeceleration_Addr
-#define vehicleBaseObject_GetDeceleration_Addr 0x746530
-#endif
-#ifndef vehicleBaseObject_GetDisplayName_Addr
-#define vehicleBaseObject_GetDisplayName_Addr 0x1C8C700
-#endif
-#ifndef vehicleBaseObject_GetGravitationalForce_Addr
-#define vehicleBaseObject_GetGravitationalForce_Addr 0x1C8C6D0
-#endif
-#ifndef vehicleBaseObject_GetInverseMass_Addr
-#define vehicleBaseObject_GetInverseMass_Addr 0x1C8C6C0
-#endif
-#ifndef vehicleBaseObject_GetPhysicsData_Addr
-#define vehicleBaseObject_GetPhysicsData_Addr 0x746520
-#endif
-#ifndef vehicleBaseObject_GetTotalMass_Addr
-#define vehicleBaseObject_GetTotalMass_Addr 0x1C8C6B0
-#endif
-#ifndef vehicleBaseObject_GetUnk60C_Addr
-#define vehicleBaseObject_GetUnk60C_Addr 0x1C8C6F0
-#endif
-#ifndef vehicleBaseObject_GetUnk8E0_Addr
-#define vehicleBaseObject_GetUnk8E0_Addr 0x1C885B0
-#endif
-#ifndef vehicleBaseObject_GetVehicleSystem_Addr
-#define vehicleBaseObject_GetVehicleSystem_Addr 0x1C8CAC0
-#endif
-#ifndef vehicleBaseObject_GetWeaponOrientation_Addr
-#define vehicleBaseObject_GetWeaponOrientation_Addr 0x1C8CAF0
-#endif
-#ifndef vehicleBaseObject_HornForDuration_Addr
-#define vehicleBaseObject_HornForDuration_Addr 0x1C8D4A0
-#endif
-#ifndef vehicleBaseObject_HornForDurationDelayed_Addr
-#define vehicleBaseObject_HornForDurationDelayed_Addr 0x1C8D700
-#endif
-#ifndef vehicleBaseObject_PostMovePhysicsStateNotZero_Addr
-#define vehicleBaseObject_PostMovePhysicsStateNotZero_Addr 0x1C94310
-#endif
-#ifndef vehicleBaseObject_PostMovePhysicsStateZero_Addr
-#define vehicleBaseObject_PostMovePhysicsStateZero_Addr 0x1C94120
-#endif
-#ifndef vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr
-#define vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr 0x1C95070
-#endif
-#ifndef vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr
-#define vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr 0x1C94D70
-#endif
-#ifndef vehicleBaseObject_Reset8B4_Addr
-#define vehicleBaseObject_Reset8B4_Addr 0x1C884D0
-#endif
-#ifndef vehicleBaseObject_SetPhysicsState_Addr
-#define vehicleBaseObject_SetPhysicsState_Addr 0x1C9FAE0
-#endif
-#ifndef vehicleBaseObject_UnsetPhysicsStates_Addr
-#define vehicleBaseObject_UnsetPhysicsStates_Addr 0x1C8B800
-#endif
-#ifndef vehicleBaseObject_UpdatePhysicsSleepState_Addr
-#define vehicleBaseObject_UpdatePhysicsSleepState_Addr 0x1C951F0
-#endif
-#ifndef vehicleBikeBaseObject_EnableTiltControl_Addr
-#define vehicleBikeBaseObject_EnableTiltControl_Addr                                                                   \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikeBaseObject_EnableTiltControl_Addr"        \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::BikeBaseObject::EnableTiltControl\")")
-#endif
-#ifndef vehicleBikePhysics_AnimationUpdate_Addr
-#define vehicleBikePhysics_AnimationUpdate_Addr 0x1D45C60
-#endif
-#ifndef vehicleBikePhysics_VFT_Addr
-#define vehicleBikePhysics_VFT_Addr 0x34DAD06
-#endif
-#ifndef vehicleCameraManager_ChangeCamera_Addr
-#define vehicleCameraManager_ChangeCamera_Addr 0x1CA7290
-#endif
-#ifndef vehicleCameraManager_IsTPP_Addr
-#define vehicleCameraManager_IsTPP_Addr 0x1CA9610
-#endif
-#ifndef vehicleCameraManager_ShouldUseSomeListener_Addr
-#define vehicleCameraManager_ShouldUseSomeListener_Addr                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_ShouldUseSomeListener_Addr"     \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::ShouldUseSomeListener\")")
-#endif
-#ifndef vehicleCameraManager_Update_Addr
-#define vehicleCameraManager_Update_Addr                                                                               \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_Update_Addr"                    \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::Update\")")
-#endif
-#ifndef vehicleCarPhysics_AnimationUpdate_Addr
-#define vehicleCarPhysics_AnimationUpdate_Addr 0x1D4B3E0
-#endif
-#ifndef vehicleCarPhysics_VFT_Addr
-#define vehicleCarPhysics_VFT_Addr 0x34DAEF0
-#endif
-#ifndef vehicleChassisComponent_BigUpdate_Addr
-#define vehicleChassisComponent_BigUpdate_Addr 0x1CB0E90
-#endif
-#ifndef vehicleChassisComponent_GetCollisionShapes_Addr
-#define vehicleChassisComponent_GetCollisionShapes_Addr 0x1CAF450
-#endif
-#ifndef vehicleChassisComponent_GetProxyHelperAndLock_Addr
-#define vehicleChassisComponent_GetProxyHelperAndLock_Addr 0x1CAF0C0
-#endif
-#ifndef vehicleChassisComponent_SetDampingToPoint4_Addr
-#define vehicleChassisComponent_SetDampingToPoint4_Addr                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SetDampingToPoint4_Addr"     \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SetDampingToPoint4\")")
-#endif
-#ifndef vehicleChassisComponent_SetFilterData_Addr
-#define vehicleChassisComponent_SetFilterData_Addr 0x1CAEB80
-#endif
-#ifndef vehicleChassisComponent_SomethingIfEnabled_Addr
-#define vehicleChassisComponent_SomethingIfEnabled_Addr 0x1CB0B10
-#endif
-#ifndef vehicleChassisComponent_TransformWorldTransform_Addr
-#define vehicleChassisComponent_TransformWorldTransform_Addr 0x1CAE750
-#endif
-#ifndef vehicleChassisComponent_Unknown1_Addr
-#define vehicleChassisComponent_Unknown1_Addr                                                                          \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_Unknown1_Addr"               \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::Unknown1\")")
-#endif
-#ifndef vehicleChassisComponent_Update_Addr
-#define vehicleChassisComponent_Update_Addr 0x1CB26C0
-#endif
-#ifndef vehicleChassisComponent_UpdatePhysicsState_Addr
-#define vehicleChassisComponent_UpdatePhysicsState_Addr 0x1CB07C0
-#endif
-#ifndef vehiclePID_GetCorrection_Addr
-#define vehiclePID_GetCorrection_Addr 0x1D48070
-#endif
-#ifndef vehiclePID_Initialize_Addr
-#define vehiclePID_Initialize_Addr 0x1D48080
-#endif
-#ifndef vehiclePID_Process_Addr
-#define vehiclePID_Process_Addr 0x1D480A0
-#endif
-#ifndef vehiclePID_Reset_Addr
-#define vehiclePID_Reset_Addr 0x1D48060
-#endif
-#ifndef vehiclePID_UpdatePID_Addr
-#define vehiclePID_UpdatePID_Addr 0x1D48050
-#endif
-#ifndef vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr
-#define vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr"\
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::PersistentDataPS::ResetQuestEnforceTransform\")")
-#endif
-#ifndef vehiclePersistentDataPS_UpdateWheelRuntime_Addr
-#define vehiclePersistentDataPS_UpdateWheelRuntime_Addr 0x1CE4EE0
-#endif
-#ifndef vehiclePhysics_ComputeSleep_Addr
-#define vehiclePhysics_ComputeSleep_Addr 0x1D2C4D0
-#endif
-#ifndef vehiclePhysics_GetSomethingWaterParams_Addr
-#define vehiclePhysics_GetSomethingWaterParams_Addr 0x1D2AB50
-#endif
-#ifndef vehiclePhysics_GetVehicle_Addr
-#define vehiclePhysics_GetVehicle_Addr 0x377600
-#endif
-#ifndef vehiclePhysics_IsInAirFromVehicle_func_Addr
-#define vehiclePhysics_IsInAirFromVehicle_func_Addr 0x1D52640
-#endif
-#ifndef vehiclePhysics_LoadHasBeenFlippedOver_Addr
-#define vehiclePhysics_LoadHasBeenFlippedOver_Addr 0x1D2B620
-#endif
-#ifndef vehiclePhysics_ReadWorldTransform_Addr
-#define vehiclePhysics_ReadWorldTransform_Addr 0x1D2A7E0
-#endif
-#ifndef vehiclePhysics_SetUnkA0ToOne_Addr
-#define vehiclePhysics_SetUnkA0ToOne_Addr 0x1D2B750
-#endif
-#ifndef vehiclePhysics_UpdateDataWorldTransform_Addr
-#define vehiclePhysics_UpdateDataWorldTransform_Addr 0x1D2A5A0
-#endif
-#ifndef vehiclePhysics_VFT_Addr
-#define vehiclePhysics_VFT_Addr 0x34DA9A8
-#endif
-#ifndef vehiclePhysicsData_AddTorque_Addr
-#define vehiclePhysicsData_AddTorque_Addr 0x1D1FEB0
-#endif
-#ifndef vehiclePhysicsData_ApplyForceAtPosition_Addr
-#define vehiclePhysicsData_ApplyForceAtPosition_Addr 0x1D1FCD0
-#endif
-#ifndef vehiclePhysicsData_ApplyTorqueAtPosition_Addr
-#define vehiclePhysicsData_ApplyTorqueAtPosition_Addr 0x1D1F6D0
-#endif
-#ifndef vehiclePhysicsData_SetUsesNormalChassisMass_Addr
-#define vehiclePhysicsData_SetUsesNormalChassisMass_Addr 0x1D20130
-#endif
-#ifndef vehiclePhysicsData_UpdateChassis_Addr
-#define vehiclePhysicsData_UpdateChassis_Addr 0x1D1FDF0
-#endif
-#ifndef vehiclePhysicsData_UsesAlternativeChassisMass_Addr
-#define vehiclePhysicsData_UsesAlternativeChassisMass_Addr 0x1D20760
-#endif
-#ifndef vehicleTPPCameraComponent_GetLocationFromOffset_Addr
-#define vehicleTPPCameraComponent_GetLocationFromOffset_Addr 0x1D036A0
-#endif
-#ifndef vehicleTPPCameraComponent_GetYaw_Addr
-#define vehicleTPPCameraComponent_GetYaw_Addr 0x1D081A0
-#endif
-#ifndef vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr
-#define vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr 0x1D06C40
-#endif
-#ifndef vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr
-#define vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr 0x1D04E00
-#endif
-#ifndef vehicleTPPCameraComponent_UpdateData_Addr
-#define vehicleTPPCameraComponent_UpdateData_Addr 0x1D06600
-#endif
-#ifndef vehicleTPPCameraComponent_UpdatePitch_Addr
-#define vehicleTPPCameraComponent_UpdatePitch_Addr 0x1D087A0
-#endif
-#ifndef vehicleTPPCameraComponent_UpdatePosition_Addr
-#define vehicleTPPCameraComponent_UpdatePosition_Addr 0x1D07360
-#endif
-#ifndef vehicleTPPCameraComponent_UpdateTPP_Addr
-#define vehicleTPPCameraComponent_UpdateTPP_Addr                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_UpdateTPP_Addr"            \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::UpdateTPP\")")
-#endif
-#ifndef vehicleTankPhysics_VFT_Addr
-#define vehicleTankPhysics_VFT_Addr 0x34DB930
-#endif
-#ifndef vehicleUnk568_CopyOverCollisionForce_Addr
-#define vehicleUnk568_CopyOverCollisionForce_Addr 0x1AF3600
-#endif
-#ifndef vehicleUnk568_SetAcceleration_Addr
-#define vehicleUnk568_SetAcceleration_Addr 0x1AF3640
-#endif
-#ifndef vehicleUnk568_SetLinearVelocityEtc_Addr
-#define vehicleUnk568_SetLinearVelocityEtc_Addr 0x1AF3890
-#endif
-#ifndef vehicleUnk568_SetUnkD0_Addr
-#define vehicleUnk568_SetUnkD0_Addr 0x1AF3620
-#endif
-#ifndef vehicleUnk570_GetCollisionFxForMaterial_Addr
-#define vehicleUnk570_GetCollisionFxForMaterial_Addr 0x1D36B90
-#endif
-#ifndef vehicleUnk570_GetFxForMaterial_Addr
-#define vehicleUnk570_GetFxForMaterial_Addr 0x1D36D10
-#endif
-#ifndef vehicleUnk570_GetSmearFxForMaterial_Addr
-#define vehicleUnk570_GetSmearFxForMaterial_Addr 0x1D36C80
-#endif
-#ifndef vehicleUnk570_ProcessEffects_Addr
-#define vehicleUnk570_ProcessEffects_Addr 0x1D3CD30
-#endif
-#ifndef vehicleUnk570_ProcessImpactScratch_Addr
-#define vehicleUnk570_ProcessImpactScratch_Addr 0x1D38440
-#endif
-#ifndef vehicleUnk570_Setup_Addr
-#define vehicleUnk570_Setup_Addr 0x1D3A580
-#endif
-#ifndef vehicleUnk570_SkidMarkEffectStart_Addr
-#define vehicleUnk570_SkidMarkEffectStart_Addr 0x1D3D900
-#endif
-#ifndef vehicleUnk570_TireTrackEffectStart_Addr
-#define vehicleUnk570_TireTrackEffectStart_Addr 0x1D3E260
-#endif
-#ifndef vehicleUnk570_UpdateEffectsBlackboard_Addr
-#define vehicleUnk570_UpdateEffectsBlackboard_Addr 0x1D39BB0
-#endif
-#ifndef vehicleUnk570_WheelEffectUpdate_Addr
-#define vehicleUnk570_WheelEffectUpdate_Addr 0x1D3CD30
-#endif
-#ifndef vehicleUnk580_GetAudioResourceMetadata_Addr
-#define vehicleUnk580_GetAudioResourceMetadata_Addr 0x1C763D0
-#endif
-#ifndef vehicleUnk580_IsRadioReceiverActive_Addr
-#define vehicleUnk580_IsRadioReceiverActive_Addr 0x1C77180
-#endif
-#ifndef vehicleUnk580_NextRadioReceiverStation_Addr
-#define vehicleUnk580_NextRadioReceiverStation_Addr 0x1C79A90
-#endif
-#ifndef vehicleUnk580_SetRadioTier_Addr
-#define vehicleUnk580_SetRadioTier_Addr 0x1C79BD0
-#endif
-#ifndef vehicleUnk580_ShouldUseSomeAVListener_Addr
-#define vehicleUnk580_ShouldUseSomeAVListener_Addr 0x1C75E10
-#endif
-#ifndef vehicleUnk580_ToggleHorn_Addr
-#define vehicleUnk580_ToggleHorn_Addr 0x1C77A00
-#endif
-#ifndef vehicleUnk580_Update_Addr
-#define vehicleUnk580_Update_Addr 0x1C7B3A0
-#endif
-#ifndef vehicleUnk580_Update3CA_Addr
-#define vehicleUnk580_Update3CA_Addr 0x1C793B0
-#endif
-#ifndef vehicleUnk580_UpdateEvents_Addr
-#define vehicleUnk580_UpdateEvents_Addr 0x1C7D0A0
-#endif
-#ifndef vehicleUnk580_UpdateTPPinAudioSystem_Addr
-#define vehicleUnk580_UpdateTPPinAudioSystem_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateTPPinAudioSystem_Addr"           \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateTPPinAudioSystem\")")
-#endif
-#ifndef vehicleUnk580_UpdateTireParameters_Addr
-#define vehicleUnk580_UpdateTireParameters_Addr 0x1C75370
-#endif
-#ifndef vehicleUnk580_UpdateWheelEmitters_Addr
-#define vehicleUnk580_UpdateWheelEmitters_Addr 0x1C7B010
-#endif
-#ifndef vehicleUnk588_Unknown_Addr
-#define vehicleUnk588_Unknown_Addr 0x1C7EE20
-#endif
-#ifndef vehicleUnk588_UpdateTransform_Addr
-#define vehicleUnk588_UpdateTransform_Addr 0x1C7FC10
-#endif
-#ifndef vehicleUnkD10_Reset_Addr
-#define vehicleUnkD10_Reset_Addr 0x1D512D0
-#endif
-#ifndef vehicleWheeledPhysics_ApplyWaterResistance_Addr
-#define vehicleWheeledPhysics_ApplyWaterResistance_Addr 0x1D69D90
-#endif
-#ifndef vehicleWheeledPhysics_FixedUpdate_Addr
-#define vehicleWheeledPhysics_FixedUpdate_Addr 0x1D51190
-#endif
-#ifndef vehicleWheeledPhysics_FourWheelTorque_Addr
-#define vehicleWheeledPhysics_FourWheelTorque_Addr 0x1D4DA20
-#endif
-#ifndef vehicleWheeledPhysics_FourWheelTorqueStuff_Addr
-#define vehicleWheeledPhysics_FourWheelTorqueStuff_Addr 0x1D4EDD0
-#endif
-#ifndef vehicleWheeledPhysics_GetEnergy_Addr
-#define vehicleWheeledPhysics_GetEnergy_Addr 0x1D51F50
-#endif
-#ifndef vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr
-#define vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr 0x1D520C0
-#endif
-#ifndef vehicleWheeledPhysics_ProcessAirControl_Addr
-#define vehicleWheeledPhysics_ProcessAirControl_Addr 0x1D298C0
-#endif
-#ifndef vehicleWheeledPhysics_SetIsMovingOthers_Addr
-#define vehicleWheeledPhysics_SetIsMovingOthers_Addr 0x1D2BEA0
-#endif
-#ifndef vehicleWheeledPhysics_SetupInsert_Addr
-#define vehicleWheeledPhysics_SetupInsert_Addr 0x1D56C60
-#endif
-#ifndef vehicleWheeledPhysics_SomethingWheelRayTrace_Addr
-#define vehicleWheeledPhysics_SomethingWheelRayTrace_Addr 0x1D532A0
-#endif
-#ifndef vehicleWheeledPhysics_SomethingWheels_Addr
-#define vehicleWheeledPhysics_SomethingWheels_Addr 0x1D57E80
-#endif
-#ifndef vehicleWheeledPhysics_TurningRollFactorStuff_Addr
-#define vehicleWheeledPhysics_TurningRollFactorStuff_Addr 0x1D57060
-#endif
-#ifndef vehicleWheeledPhysics_Unk15CStuff_Addr
-#define vehicleWheeledPhysics_Unk15CStuff_Addr 0x1D51CD0
-#endif
-#ifndef vehicleWheeledPhysics_Update_Addr
-#define vehicleWheeledPhysics_Update_Addr 0x1D57AC0
-#endif
-#ifndef vehicleWheeledPhysics_UpdatePassengerAnim_Addr
-#define vehicleWheeledPhysics_UpdatePassengerAnim_Addr 0x1D50BA0
-#endif
-#ifndef vehicleWheeledPhysics_VFT_Addr
-#define vehicleWheeledPhysics_VFT_Addr 0x34DB1B8
-#endif
-#ifndef worldEffectBlackboard_SetValue_Addr
-#define worldEffectBlackboard_SetValue_Addr                                                                            \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldEffectBlackboard_SetValue_Addr"                 \
-              "is 0 - Zoltan found too many matches for RED4ext::world::EffectBlackboard::SetValue (2)\")")
-#endif
-#ifndef worldRuntimeScene_SetupWithLogging_Addr
-#define worldRuntimeScene_SetupWithLogging_Addr 0xB97840
-#endif
-#ifndef worldRuntimeSystemPhysics_FreeGeos_Addr
-#define worldRuntimeSystemPhysics_FreeGeos_Addr                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldRuntimeSystemPhysics_FreeGeos_Addr"             \
-              "is 0 - Zoltan found no matches for RED4ext::world::RuntimeSystemPhysics::FreeGeos\")")
-#endif
-#ifndef Zoltan_CBaseFunction_ExecuteNative_Addr
-#define Zoltan_CBaseFunction_ExecuteNative_Addr 0x2152D0
-#endif
-#ifndef Zoltan_CBaseFunction_ExecuteScripted_Addr
-#define Zoltan_CBaseFunction_ExecuteScripted_Addr 0x215940
-#endif
-#ifndef Zoltan_CBaseFunction_InternalExecute_Addr
-#define Zoltan_CBaseFunction_InternalExecute_Addr 0x215350
-#endif
-#ifndef Zoltan_CBaseFunction_Register_Addr
-#define Zoltan_CBaseFunction_Register_Addr 0x214C90
-#endif
-#ifndef Zoltan_CBaseRTTIType_sub_80_Addr
-#define Zoltan_CBaseRTTIType_sub_80_Addr 0x202020
-#endif
-#ifndef Zoltan_CBaseRTTIType_sub_88_Addr
-#define Zoltan_CBaseRTTIType_sub_88_Addr 0x207F60
-#endif
-#ifndef Zoltan_CBaseRTTIType_sub_90_Addr
-#define Zoltan_CBaseRTTIType_sub_90_Addr 0x207D50
-#endif
-#ifndef Zoltan_CBaseRTTIType_sub_98_Addr
-#define Zoltan_CBaseRTTIType_sub_98_Addr 0x1E2F400
-#endif
-#ifndef Zoltan_CBaseRTTIType_sub_A0_Addr
-#define Zoltan_CBaseRTTIType_sub_A0_Addr 0x207D20
-#endif
-#ifndef Zoltan_CBitfield_FromString_Addr
+#define Zoltan_CBaseFunction_ExecuteNative_Addr 0x2154F0
+#define Zoltan_CBaseFunction_ExecuteScripted_Addr 0x215B60
+#define Zoltan_CBaseFunction_InternalExecute_Addr 0x215570
+#define Zoltan_CBaseFunction_Register_Addr 0x214EB0
+#define Zoltan_CBaseRTTIType_sub_80_Addr 0x202240
+#define Zoltan_CBaseRTTIType_sub_88_Addr 0x208180
+#define Zoltan_CBaseRTTIType_sub_90_Addr 0x207F70
+#define Zoltan_CBaseRTTIType_sub_98_Addr 0x1E32410
+#define Zoltan_CBaseRTTIType_sub_A0_Addr 0x207F40
 #define Zoltan_CBitfield_FromString_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_CBitfield_FromString_Addr"                    \
               "is 0 - Zoltan found count mismatch for Zoltan::CBitfield_FromString (77)\")")
-#endif
-#ifndef Zoltan_CBitfield_ToString_Addr
-#define Zoltan_CBitfield_ToString_Addr 0x2536B0
-#endif
-#ifndef Zoltan_CBitfield_Unserialize_Addr
-#define Zoltan_CBitfield_Unserialize_Addr 0x253540
-#endif
-#ifndef Zoltan_CClassFunction_ctor_Addr
-#define Zoltan_CClassFunction_ctor_Addr 0x214C90
-#endif
-#ifndef Zoltan_CClassStaticFunction_ctor_Addr
-#define Zoltan_CClassStaticFunction_ctor_Addr 0x214C30
-#endif
-#ifndef Zoltan_CClass_ClearScriptedData_Addr
-#define Zoltan_CClass_ClearScriptedData_Addr 0x1FED60
-#endif
-#ifndef Zoltan_CClass_CreateInstance_Addr
-#define Zoltan_CClass_CreateInstance_Addr 0x201CF0
-#endif
-#ifndef Zoltan_CClass_GetMaxAlignment_Addr
-#define Zoltan_CClass_GetMaxAlignment_Addr 0x1FE9A0
-#endif
-#ifndef Zoltan_CClass_GetProperties_Addr
-#define Zoltan_CClass_GetProperties_Addr 0x202C90
-#endif
-#ifndef Zoltan_CClass_GetProperty_Addr
-#define Zoltan_CClass_GetProperty_Addr 0x202810
-#endif
-#ifndef Zoltan_CClass_ToString_Addr
+#define Zoltan_CBitfield_ToString_Addr 0x2538D0
+#define Zoltan_CBitfield_Unserialize_Addr 0x253760
+#define Zoltan_CClassFunction_ctor_Addr 0x214EB0
+#define Zoltan_CClassStaticFunction_ctor_Addr 0x214E50
+#define Zoltan_CClass_ClearScriptedData_Addr 0x1FEF80
+#define Zoltan_CClass_CreateInstance_Addr 0x201F10
+#define Zoltan_CClass_GetMaxAlignment_Addr 0x1FEBC0
+#define Zoltan_CClass_GetProperties_Addr 0x202EB0
+#define Zoltan_CClass_GetProperty_Addr 0x202A30
 #define Zoltan_CClass_ToString_Addr                                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_CClass_ToString_Addr"                         \
               "is 0 - Zoltan found count mismatch for Zoltan::CClass_ToString (69)\")")
-#endif
-#ifndef Zoltan_CClass_Unserialize_Addr
-#define Zoltan_CClass_Unserialize_Addr 0x206C40
-#endif
-#ifndef Zoltan_CClass_sub_80_Addr
-#define Zoltan_CClass_sub_80_Addr 0x202020
-#endif
-#ifndef Zoltan_CClass_sub_88_Addr
-#define Zoltan_CClass_sub_88_Addr 0x206D70
-#endif
-#ifndef Zoltan_CClass_sub_90_Addr
-#define Zoltan_CClass_sub_90_Addr 0x205700
-#endif
-#ifndef Zoltan_CClass_sub_98_Addr
-#define Zoltan_CClass_sub_98_Addr 0x2077C0
-#endif
-#ifndef Zoltan_CClass_sub_A0_Addr
-#define Zoltan_CClass_sub_A0_Addr 0x203920
-#endif
-#ifndef Zoltan_CClass_sub_B0_Addr
-#define Zoltan_CClass_sub_B0_Addr 0x205860
-#endif
-#ifndef Zoltan_CClass_sub_C0_Addr
-#define Zoltan_CClass_sub_C0_Addr 0x2062B0
-#endif
-#ifndef Zoltan_CClass_sub_D0_Addr
-#define Zoltan_CClass_sub_D0_Addr 0x207140
-#endif
-#ifndef Zoltan_CEnum_FromString_Addr
-#define Zoltan_CEnum_FromString_Addr 0x223A60
-#endif
-#ifndef Zoltan_CEnum_ToString_Addr
-#define Zoltan_CEnum_ToString_Addr 0x223EF0
-#endif
-#ifndef Zoltan_CEnum_Unserialize_Addr
-#define Zoltan_CEnum_Unserialize_Addr 0x223CC0
-#endif
-#ifndef Zoltan_CGameEngine_Addr
-#define Zoltan_CGameEngine_Addr 0xA81D6D
-#endif
-#ifndef Zoltan_CGlobalFunction_ctor_Addr
-#define Zoltan_CGlobalFunction_ctor_Addr 0x214BE0
-#endif
-#ifndef Zoltan_CNamePool_AddCString_Addr
-#define Zoltan_CNamePool_AddCString_Addr 0xA01380
-#endif
-#ifndef Zoltan_CNamePool_AddCstr_Addr
-#define Zoltan_CNamePool_AddCstr_Addr 0x1B3C60
-#endif
-#ifndef Zoltan_CNamePool_AddPair_Addr
-#define Zoltan_CNamePool_AddPair_Addr 0x1B40B0
-#endif
-#ifndef Zoltan_CNamePool_Get_Addr
-#define Zoltan_CNamePool_Get_Addr 0x1B3C20
-#endif
-#ifndef Zoltan_CRTTIRegistrator_Add_Addr
-#define Zoltan_CRTTIRegistrator_Add_Addr 0x1BA4C0
-#endif
-#ifndef Zoltan_CRTTIRegistrator_RTTIAsyncId_Addr
-#define Zoltan_CRTTIRegistrator_RTTIAsyncId_Addr 0x208D37
-#endif
-#ifndef Zoltan_CRTTIScriptReferenceType_Set_Addr
-#define Zoltan_CRTTIScriptReferenceType_Set_Addr 0x222920
-#endif
-#ifndef Zoltan_CRTTIScriptReferenceType_ctor_Addr
-#define Zoltan_CRTTIScriptReferenceType_ctor_Addr 0x221360
-#endif
-#ifndef Zoltan_CRTTISystem_Get_Addr
-#define Zoltan_CRTTISystem_Get_Addr 0x25B770
-#endif
-#ifndef Zoltan_CStack_ctor_Addr
-#define Zoltan_CStack_ctor_Addr 0x253880
-#endif
-#ifndef Zoltan_CString_copy_Addr
-#define Zoltan_CString_copy_Addr 0x1AEC80
-#endif
-#ifndef Zoltan_CString_ctor_Addr
-#define Zoltan_CString_ctor_Addr 0x1AE850
-#endif
-#ifndef Zoltan_CString_dtor_Addr
-#define Zoltan_CString_dtor_Addr 0x1AEB30
-#endif
-#ifndef Zoltan_DynArray_Realloc_Addr
-#define Zoltan_DynArray_Realloc_Addr 0x1B3A20
-#endif
-#ifndef Zoltan_Handle_DecWeakRef_Addr
-#define Zoltan_Handle_DecWeakRef_Addr 0x1B5C60
-#endif
-#ifndef Zoltan_Handle_ctor_Addr
-#define Zoltan_Handle_ctor_Addr 0x1B59F0
-#endif
-#ifndef Zoltan_IScriptable_DestructValueHolder_Addr
-#define Zoltan_IScriptable_DestructValueHolder_Addr 0x1EF5C0
-#endif
-#ifndef Zoltan_IScriptable_GetValueHolder_Addr
-#define Zoltan_IScriptable_GetValueHolder_Addr 0x1EED20
-#endif
-#ifndef Zoltan_IScriptable_sub_D8_Addr
-#define Zoltan_IScriptable_sub_D8_Addr 0x1EEC90
-#endif
-#ifndef Zoltan_ISerializable_sub_30_Addr
-#define Zoltan_ISerializable_sub_30_Addr 0x1BA170
-#endif
-#ifndef Zoltan_ISerializable_sub_40_Addr
-#define Zoltan_ISerializable_sub_40_Addr 0x1BA1A0
-#endif
-#ifndef Zoltan_ISerializable_sub_78_Addr
-#define Zoltan_ISerializable_sub_78_Addr 0x1B9BD0
-#endif
-#ifndef Zoltan_ISerializable_sub_A0_Addr
-#define Zoltan_ISerializable_sub_A0_Addr 0x1C4230
-#endif
-#ifndef Zoltan_ISerializable_sub_C0_Addr
-#define Zoltan_ISerializable_sub_C0_Addr 0x1BA010
-#endif
-#ifndef Zoltan_JobHandle_Join_Addr
-#define Zoltan_JobHandle_Join_Addr 0x2C48790
-#endif
-#ifndef Zoltan_JobHandle_ctor_Addr
-#define Zoltan_JobHandle_ctor_Addr 0x2C48720
-#endif
-#ifndef Zoltan_JobHandle_dtor_Addr
-#define Zoltan_JobHandle_dtor_Addr 0x2C48760
-#endif
-#ifndef Zoltan_JobInternals_DispatchJob_Addr
-#define Zoltan_JobInternals_DispatchJob_Addr 0x2C4A090
-#endif
-#ifndef Zoltan_JobInternals_SetLocalThreadParam_Addr
-#define Zoltan_JobInternals_SetLocalThreadParam_Addr 0x2C4A240
-#endif
-#ifndef Zoltan_JobQueue_Capture_Addr
-#define Zoltan_JobQueue_Capture_Addr 0x2C4A4B0
-#endif
-#ifndef Zoltan_JobQueue_SyncWait_Addr
-#define Zoltan_JobQueue_SyncWait_Addr 0x2C4A430
-#endif
-#ifndef Zoltan_JobQueue_ctor_FromGroup_Addr
-#define Zoltan_JobQueue_ctor_FromGroup_Addr 0x2C4A260
-#endif
-#ifndef Zoltan_JobQueue_ctor_FromParams_Addr
-#define Zoltan_JobQueue_ctor_FromParams_Addr 0x2C4A340
-#endif
-#ifndef Zoltan_JobQueue_dtor_Addr
-#define Zoltan_JobQueue_dtor_Addr 0x2C4A400
-#endif
-#ifndef Zoltan_Memory_PoolStorage_OOM_Addr
+#define Zoltan_CClass_Unserialize_Addr 0x206E60
+#define Zoltan_CClass_sub_80_Addr 0x202240
+#define Zoltan_CClass_sub_88_Addr 0x206F90
+#define Zoltan_CClass_sub_90_Addr 0x205920
+#define Zoltan_CClass_sub_98_Addr 0x2079E0
+#define Zoltan_CClass_sub_A0_Addr 0x203B40
+#define Zoltan_CClass_sub_B0_Addr 0x205A80
+#define Zoltan_CClass_sub_C0_Addr 0x2064D0
+#define Zoltan_CClass_sub_D0_Addr 0x207360
+#define Zoltan_CEnum_FromString_Addr 0x223C80
+#define Zoltan_CEnum_ToString_Addr 0x224110
+#define Zoltan_CEnum_Unserialize_Addr 0x223EE0
+#define Zoltan_CGameEngine_Addr 0xA833BD
+#define Zoltan_CGlobalFunction_ctor_Addr 0x214E00
+#define Zoltan_CNamePool_AddCString_Addr 0xA02940
+#define Zoltan_CNamePool_AddCstr_Addr 0x1B3E80
+#define Zoltan_CNamePool_AddPair_Addr 0x1B42D0
+#define Zoltan_CNamePool_Get_Addr 0x1B3E40
+#define Zoltan_CRTTIRegistrator_Add_Addr 0x1BA6E0
+#define Zoltan_CRTTIRegistrator_RTTIAsyncId_Addr 0x208F57
+#define Zoltan_CRTTIScriptReferenceType_Set_Addr 0x222B40
+#define Zoltan_CRTTIScriptReferenceType_ctor_Addr 0x221580
+#define Zoltan_CRTTISystem_Get_Addr 0x25B990
+#define Zoltan_CStack_ctor_Addr 0x253AA0
+#define Zoltan_CString_copy_Addr 0x1AEEA0
+#define Zoltan_CString_ctor_Addr 0x1AEA70
+#define Zoltan_CString_dtor_Addr 0x1AED50
+#define Zoltan_DynArray_Realloc_Addr 0x1B3C40
+#define Zoltan_Handle_DecWeakRef_Addr 0x1B5E80
+#define Zoltan_Handle_ctor_Addr 0x1B5C10
+#define Zoltan_IScriptable_DestructValueHolder_Addr 0x1EF7E0
+#define Zoltan_IScriptable_GetValueHolder_Addr 0x1EEF40
+#define Zoltan_IScriptable_sub_D8_Addr 0x1EEEB0
+#define Zoltan_ISerializable_sub_30_Addr 0x1BA390
+#define Zoltan_ISerializable_sub_40_Addr 0x1BA3C0
+#define Zoltan_ISerializable_sub_78_Addr 0x1B9DF0
+#define Zoltan_ISerializable_sub_A0_Addr 0x1C4450
+#define Zoltan_ISerializable_sub_C0_Addr 0x1BA230
+#define Zoltan_JobHandle_Join_Addr 0x2C50220
+#define Zoltan_JobHandle_ctor_Addr 0x2C501B0
+#define Zoltan_JobHandle_dtor_Addr 0x2C501F0
+#define Zoltan_JobInternals_DispatchJob_Addr 0x2C51B20
+#define Zoltan_JobInternals_SetLocalThreadParam_Addr 0x2C51CD0
+#define Zoltan_JobQueue_Capture_Addr 0x2C51F40
+#define Zoltan_JobQueue_SyncWait_Addr 0x2C51EC0
+#define Zoltan_JobQueue_ctor_FromGroup_Addr 0x2C51CF0
+#define Zoltan_JobQueue_ctor_FromParams_Addr 0x2C51DD0
+#define Zoltan_JobQueue_dtor_Addr 0x2C51E90
 #define Zoltan_Memory_PoolStorage_OOM_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_Memory_PoolStorage_OOM_Addr"                  \
-              "is 0 - Zoltan found count mismatch for Zoltan::Memory_PoolStorage_OOM (1340)\")")
-#endif
-#ifndef Zoltan_Memory_Vault_Alloc_Addr
+              "is 0 - Zoltan found count mismatch for Zoltan::Memory_PoolStorage_OOM (1339)\")")
 #define Zoltan_Memory_Vault_Alloc_Addr                                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_Memory_Vault_Alloc_Addr"                      \
               "is 0 - Zoltan found count mismatch for Zoltan::Memory_Vault_Alloc (1986)\")")
-#endif
-#ifndef Zoltan_Memory_Vault_AllocAligned_Addr
 #define Zoltan_Memory_Vault_AllocAligned_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_Memory_Vault_AllocAligned_Addr"               \
               "is 0 - Zoltan found count mismatch for Zoltan::Memory_Vault_AllocAligned (454)\")")
-#endif
-#ifndef Zoltan_Memory_Vault_Free_Addr
-#define Zoltan_Memory_Vault_Free_Addr 0x1A23A0
-#endif
-#ifndef Zoltan_Memory_Vault_Get_Addr
-#define Zoltan_Memory_Vault_Get_Addr 0x1A40B0
-#endif
-#ifndef Zoltan_Memory_Vault_Realloc_Addr
-#define Zoltan_Memory_Vault_Realloc_Addr 0x1A2660
-#endif
-#ifndef Zoltan_Memory_Vault_ReallocAligned_Addr
-#define Zoltan_Memory_Vault_ReallocAligned_Addr 0x1A2910
-#endif
-#ifndef Zoltan_Memory_Vault_Unk1_Addr
-#define Zoltan_Memory_Vault_Unk1_Addr 0x1A2430
-#endif
-#ifndef Zoltan_OpcodeHandlers_Get_Addr
-#define Zoltan_OpcodeHandlers_Get_Addr 0x1CF41D
-#endif
-#ifndef Zoltan_ResourceDepot_Addr
-#define Zoltan_ResourceDepot_Addr 0x27490D
-#endif
-#ifndef Zoltan_ResourceLoader_Addr
-#define Zoltan_ResourceLoader_Addr 0x2D4F70F
-#endif
-#ifndef Zoltan_ResourceLoader_FindToken_Addr
-#define Zoltan_ResourceLoader_FindToken_Addr 0x20BC60
-#endif
-#ifndef Zoltan_ResourceLoader_LoadAsync_Addr
-#define Zoltan_ResourceLoader_LoadAsync_Addr 0x20C530
-#endif
-#ifndef Zoltan_ResourceReference_Fetch_Addr
-#define Zoltan_ResourceReference_Fetch_Addr 0x256070
-#endif
-#ifndef Zoltan_ResourceReference_Load_Addr
-#define Zoltan_ResourceReference_Load_Addr 0x255FC0
-#endif
-#ifndef Zoltan_ResourceReference_Reset_Addr
-#define Zoltan_ResourceReference_Reset_Addr 0x255F50
-#endif
-#ifndef Zoltan_ResourceToken_CancelUnk38_Addr
-#define Zoltan_ResourceToken_CancelUnk38_Addr 0x2BFB330
-#endif
-#ifndef Zoltan_ResourceToken_DestructUnk38_Addr
-#define Zoltan_ResourceToken_DestructUnk38_Addr 0x1BF5F0
-#endif
-#ifndef Zoltan_ResourceToken_Fetch_Addr
-#define Zoltan_ResourceToken_Fetch_Addr 0x255980
-#endif
-#ifndef Zoltan_ResourceToken_OnLoaded_Addr
-#define Zoltan_ResourceToken_OnLoaded_Addr 0x255070
-#endif
-#ifndef Zoltan_ResourceToken_dtor_Addr
-#define Zoltan_ResourceToken_dtor_Addr 0x254560
-#endif
-#ifndef Zoltan_Streams_MemoryStream_ctor_Addr
-#define Zoltan_Streams_MemoryStream_ctor_Addr 0x2C27640
-#endif
-#ifndef Zoltan_TTypedClass_IsEqual_Addr
+#define Zoltan_Memory_Vault_Free_Addr 0x1A25C0
+#define Zoltan_Memory_Vault_Get_Addr 0x1A42D0
+#define Zoltan_Memory_Vault_Realloc_Addr 0x1A2880
+#define Zoltan_Memory_Vault_ReallocAligned_Addr 0x1A2B30
+#define Zoltan_Memory_Vault_Unk1_Addr 0x1A2650
+#define Zoltan_OpcodeHandlers_Get_Addr 0x1CF63D
+#define Zoltan_ResourceDepot_Addr 0x274B2D
+#define Zoltan_ResourceLoader_Addr 0x2D04F7F
+#define Zoltan_ResourceLoader_FindToken_Addr 0x20BE80
+#define Zoltan_ResourceLoader_LoadAsync_Addr 0x20C750
+#define Zoltan_ResourceReference_Fetch_Addr 0x256290
+#define Zoltan_ResourceReference_Load_Addr 0x2561E0
+#define Zoltan_ResourceReference_Reset_Addr 0x256170
+#define Zoltan_ResourceToken_CancelUnk38_Addr 0x2C02DC0
+#define Zoltan_ResourceToken_DestructUnk38_Addr 0x1BF810
+#define Zoltan_ResourceToken_Fetch_Addr 0x255BA0
+#define Zoltan_ResourceToken_OnLoaded_Addr 0x255290
+#define Zoltan_ResourceToken_dtor_Addr 0x254780
+#define Zoltan_Streams_MemoryStream_ctor_Addr 0x2C2F0D0
 #define Zoltan_TTypedClass_IsEqual_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_TTypedClass_IsEqual_Addr"                     \
               "is 0 - Zoltan found count mismatch for Zoltan::TTypedClass_IsEqual (425)\")")
-#endif
-#ifndef Zoltan_TweakDB_CreateRecord_Addr
-#define Zoltan_TweakDB_CreateRecord_Addr 0xFD3220
-#endif
-#ifndef Zoltan_TweakDB_FlatArrayInt32ValueVftable_Addr
-#define Zoltan_TweakDB_FlatArrayInt32ValueVftable_Addr 0xF52A67
-#endif
-#ifndef Zoltan_TweakDB_FlatInt32ValueVftable_Addr
-#define Zoltan_TweakDB_FlatInt32ValueVftable_Addr 0xF529E1
-#endif
-#ifndef Zoltan_TweakDB_Get_Addr
-#define Zoltan_TweakDB_Get_Addr 0xBE4FA0
-#endif
-#ifndef Zoltan_TweakDB_InitFlatValue_ExceptInt32_Addr
-#define Zoltan_TweakDB_InitFlatValue_ExceptInt32_Addr 0xF4F120
-#endif
-#ifndef Zoltan_TweakDB_StaticFlatDataBuffer_Addr
-#define Zoltan_TweakDB_StaticFlatDataBuffer_Addr 0xF5280F
-#endif
+#define Zoltan_TweakDB_CreateRecord_Addr 0xFD4930
+#define Zoltan_TweakDB_FlatArrayInt32ValueVftable_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_TweakDB_FlatArrayInt32ValueVftable_Addr"      \
+              "is 0 - Zoltan found count mismatch for Zoltan::TweakDB_FlatArrayInt32ValueVftable (50)\")")
+#define Zoltan_TweakDB_FlatInt32ValueVftable_Addr 0xF540F1
+#define Zoltan_TweakDB_Get_Addr 0xBE66B0
+#define Zoltan_TweakDB_InitFlatValue_ExceptInt32_Addr 0xF50830
+#define Zoltan_TweakDB_StaticFlatDataBuffer_Addr 0xF53F1F
+#define actionActionBase_Lock_Addr 0x3D3080
+#define actionActionBase_StartWithReplicatedState_Addr 0x1B44860
+#define actionActionInterface_EndActions_Addr 0x1B62800
+#define actionActionInterface_IsAnimationiActive_Addr 0x1B629D0
+#define actionActionInterface_ProcessActions_Addr 0x1B62AD0
+#define appearanceAppearanceDefinition_AppearanceDefinition_Addr                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: appearanceAppearanceDefinition_AppearanceDefinition_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::appearance::AppearanceDefinition::AppearanceDefinition\")")
+#define audioBankManager_LoadBank_Addr 0x2CF1550
+#define audioBankManager_LoadBanksMaybe_Addr 0x2CF1330
+#define audioBankManager_UnloadBank_Addr 0x2CF2C80
+#define audioEmitters_GetEmitterForEntityID_Addr 0x2CEA310
+#define audioEmitters_GetOrCreateEmitter_Addr 0x2CE9F50
+#define audioGameParameterStorage_GetValue_Addr 0x2CE97C0
+#define audioGameParameterStorage_SetValue_Addr 0x2CE9930
+#define audioMetadataManager_GetValueInMapForName_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioMetadataManager_GetValueInMapForName_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::audio::MetadataManager::GetValueInMapForName\")")
+#define audioMetadataManager_MetadataManager_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioMetadataManager_MetadataManager_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::audio::MetadataManager::MetadataManager\")")
+#define audioMetadataManager__MetadataManager_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioMetadataManager__MetadataManager_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::audio::MetadataManager::~MetadataManager\")")
+#define audioThing_AKAudioLoad_Addr                                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioThing_AKAudioLoad_Addr"                         \
+              "is 0 - Zoltan found no matches for RED4ext::audio::Thing::AKAudioLoad\")")
+#define audioThing_GetEmitterPosition_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioThing_GetEmitterPosition_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::audio::Thing::GetEmitterPosition\")")
+#define audioThing_UpdateEmitterPosition_Addr 0x73E770
+#define audioVehicleMetadata_GetEventData_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioVehicleMetadata_GetEventData_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::audio::VehicleMetadata::GetEventData\")")
+#define audio_UpdateGlobalParameter_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audio_UpdateGlobalParameter_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::audio::UpdateGlobalParameter\")")
+#define audio_UpdateParameterForEntityID_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audio_UpdateParameterForEntityID_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::audio::UpdateParameterForEntityID\")")
+#define entAnimatedComponent_GetReferencePoseMSForName_Addr 0xFEF870
+#define entComponentsStorage_AddComponent_Addr 0x1068B40
+#define entComponentsStorage_AddComponents_Addr 0x1068C20
+#define entComponentsStorage_FreeMemory_Addr 0x1068D60
+#define entComponentsStorage_GetComponentByCRUID_Addr 0x1068E30
+#define entComponentsStorage_GetSize_Addr 0x8C1680
+#define entComponentsStorage_IsEmpty_Addr 0x1074310
+#define entEntity_ReassembleAppearance_Addr 0x1059D80
+#define entEntity_SetRuntime_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SetRuntime_Addr"                           \
+              "is 0 - Zoltan found too many matches for RED4ext::ent::Entity::SetRuntime (2)\")")
+#define entEntity_SetupEntityAndComponents_Addr 0x1059C60
+#define entEntity_SomethingListeners_Addr 0x1060B10
+#define entIAttachment_IAttachment_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIAttachment_IAttachment_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::ent::IAttachment::IAttachment\")")
+#define entIComponent_SetEntity_Addr 0x1067020
+#define entIComponent_VFT_Addr 0x334F8A0
+#define entITransformAttachable_VFT_Addr 0x32549E0
+#define entMeshComponent_Load_Addr 0x10BB8C0
+#define entPhysicalMeshComponent_ProcessSystemResource_Addr 0x10DB9F0
+#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x1170BE0
+#define entSlotComponent_GetSlotGlobalTransform_Addr 0x1170280
+#define entSlotComponent_GetSlotIndex_Addr 0x1170130
+#define entSlotComponent_GetSlotLocalTransform_Addr 0x1170880
+#define entVisualControllerComponent_GetAppearanceDependency_Addr                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_GetAppearanceDependency_Addr"\
+              "is 0 - Zoltan found too many matches for RED4ext::ent::VisualControllerComponent::GetAppearanceDependency (2)\")")
+#define entVisualControllerComponent_LoadUnkD8_Addr 0x11A3850
+#define entVisualControllerComponent_Set0xF4_Addr 0x11A1DE0
+#define entVisualControllerComponent_Unknown_Addr 0x11A1CA0
+#define gameCActionsFactory_AddActionTypeManual_Addr 0x29DA6E0
+#define gameFxEventInterface_Add_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxEventInterface_Add_Addr"                       \
+              "is 0 - Zoltan found too many matches for RED4ext::game::FxEventInterface::Add (2)\")")
+#define gameFxInstance_IsValid_Addr                                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_IsValid_Addr"                         \
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::IsValid\")")
+#define gameFxInstance_QueueAttachToComponent_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueAttachToComponent_Addr"          \
+              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueAttachToComponent (2)\")")
+#define gameFxInstance_QueueAttachToSlot_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueAttachToSlot_Addr"               \
+              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueAttachToSlot (2)\")")
+#define gameFxInstance_QueueBreakLoop_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueBreakLoop_Addr"                  \
+              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueBreakLoop (3)\")")
+#define gameFxInstance_QueueKill_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueKill_Addr"                       \
+              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueKill (3)\")")
+#define gameFxInstance_QueueSetBlackboardValue_Addr 0x1744E70
+#define gameFxInstance_QueueUpdateTargetPosition_Addr 0x1745060
+#define gameFxInstance_QueueUpdateTransform_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueUpdateTransform_Addr"            \
+              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueUpdateTransform (3)\")")
+#define gameGameAudioSystem_SetGlobalParameter_Addr 0x73D670
+#define gameGameAudioSystem_UpdateParameter_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameGameAudioSystem_UpdateParameter_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::game::GameAudioSystem::UpdateParameter\")")
+#define gameIGameSystem_SetGameInstance_Addr 0xB096C0
+#define gameIGameSystem_Unset_Addr 0xB09750
+#define gameIGameSystem_VFT_Addr 0x325F7E0
+#define gameMutexable_Update_Addr 0x1742AA0
+#define gameObject_CallScriptFunction_Addr 0x1417760
+#define gameVehicleSystem_BeginUpdate_Addr 0x1CF86A0
+#define gameVehicleSystem_FixedUpdate_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_FixedUpdate_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate\")")
+#define gameVehicleSystem_FixedUpdate_PreSolve_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_FixedUpdate_PreSolve_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate_PreSolve\")")
+#define gameVehicleSystem_Interpolation_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_Interpolation_Addr"                \
+              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::Interpolation (2)\")")
+#define gameVehicleSystem_PostMove_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_PostMove_Addr"                     \
+              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::PostMove (2)\")")
+#define gameVehicleSystem_PreUpdateAndPreMove_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_PreUpdateAndPreMove_Addr"          \
+              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::PreUpdateAndPreMove (7)\")")
+#define gameVehicleSystem_SingleFixedStep_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_SingleFixedStep_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::SingleFixedStep\")")
+#define gameVehicleSystem_UpdateVehicleArrays_Addr 0x1CFBED0
+#define physicsColliderSphere_createHandleWithRadius_Addr 0x43CBA0
+#define physicsFilterData_LoadPreset_Addr 0x44C440
+#define physicsFilterData_VFT_Addr 0x3182E20
+#define physicsGeometryCache_FreeAlwaysLoaded_Addr 0x451E40
+#define physicsGeometryCache_FreeGeometryKey_Addr 0x452130
+#define physicsGeometryCache_FreeKey_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeKey_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeKey\")")
+#define physicsGeometryCache_FreeSector_Addr 0x4522E0
+#define physicsGeometryCache_HasGeometryKey_Addr 0x4524C0
+#define physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr 0x44FE40
+#define physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr 0x452800
+#define physicsGeometryCache_LoadSectorGeometries_Addr 0x44F840
+#define physicsGeometryCache_LoadSectorGeometriesSetup_Addr 0x452B60
+#define physicsGeometryCache_Unknown_Addr 0x452790
+#define physicsGeometryCache_sub_7FF75B921520_Addr 0x450FD0
+#define physicsGeometryCache_sub_7FF75B922410_Addr 0x451EC0
+#define physicsProxyCacheID_DisableCollision_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCacheID_DisableCollision_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCacheID::DisableCollision\")")
+#define physicsProxyCacheID_EnableCollision_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCacheID_EnableCollision_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCacheID::EnableCollision\")")
+#define physicsProxyCacheManagerUnk948_Kick_Addr 0x4A7A00
+#define physicsProxyCache_AddToCache_Addr 0x47AC70
+#define physicsProxyCache_GetDataFromCache_Addr 0x4C7D40
+#define physicsProxyCache_GetFromCacheOrGet_Addr 0x47AA50
+#define physicsProxyHelper_Create_Addr 0x4567C0
+#define physicsProxyHelper_GetThingWithLock_Addr 0x456730
+#define physicsProxyHelper_SetAngularDamping_Addr 0x45B280
+#define physicsProxyHelper_SetCCD_Addr 0x45D5F0
+#define physicsProxyHelper_SetCMassLocalPose_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetCMassLocalPose_Addr"           \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::SetCMassLocalPose (10)\")")
+#define physicsProxyHelper_SetGravity_Addr 0x45BBB0
+#define physicsProxyHelper_SetIsQueryable_Addr 0x45BDB0
+#define physicsProxyHelper_SetLinearDamping_Addr 0x45C0D0
+#define physicsProxyHelper_SetMassAndUpdateInertia_Addr 0x45C4D0
+#define physicsProxyHelper_SetQueryFilterData_Addr 0x45CB30
+#define physicsProxyHelper_SetSimulationFilterData_Addr 0x45CF30
+#define physicsProxyHelper_SetSimulationShape_Addr 0x45BEC0
+#define physicsProxyHelper_Unlock_Addr 0x456840
+#define physicsProxyHelper_UpdateGlobalPose_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateGlobalPose_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::UpdateGlobalPose\")")
+#define physicsProxyHelper_UpdateProxyCache_Addr 0x4575A0
+#define physicsProxyID_GetKeyUnk37_0x40_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetKeyUnk37_0x40_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetKeyUnk37_0x40\")")
+#define physicsProxyID_GetNbShapes_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetNbShapes_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetNbShapes\")")
+#define physicsProxyID_GetProxy_Addr 0x47ABF0
+#define physicsProxyID_ProcessProxyDesc_Addr 0x4588A0
+#define physicsProxyID_Something2_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_Something2_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::Something2\")")
+#define physicsProxyID_Unk_Addr 0x458680
+#define physicsProxyID_UpdateProxyCacheEntry_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_UpdateProxyCacheEntry_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::UpdateProxyCacheEntry\")")
+#define physicsProxyManager_GetProxyCache_Addr 0x47A010
+#define physicsProxyManager_GetProxyHandle_Addr 0x479EC0
+#define physicsProxyManager_HasProxy_Addr 0x47A290
+#define physicsProxyManager_SetProxyCacheID_Addr 0x47A600
+#define physicsProxyManager_TestUnk2E2068_Addr 0x47A290
+#define physicsSystemResource_GetFromCMesh_Addr 0xA451B0
+#define physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::physics::VehiclePhysicsInsert1::ReferencePoseSetup\")")
+#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x1D700D0
+#define physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr 0x1D666B0
+#define physics_GetShapeLocalPos_Addr 0x45A2B0
+#define physics_ProxyID_GetGlobalPose_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_ProxyID_GetGlobalPose_Addr"                  \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyID_GetGlobalPose (2)\")")
+#define physics_pxRigidBody_Get_Addr 0x4C8200
+#define physics_pxRigidBody_Update_Addr 0x4C9020
+#define userRuntimeSettingsVarBool_VFT_Addr 0x36A1648
+#define userRuntimeSettingsVarFloatList_VFT_Addr 0x36A2370
+#define userRuntimeSettingsVarFloat_VFT_Addr 0x36A2318
+#define userRuntimeSettingsVarInt_VFT_Addr 0x36A22C0
+#define userRuntimeSettingsVarNameList_VFT_Addr 0x36A1750
+#define userRuntimeSettingsVarName_VFT_Addr 0x36A16A0
+#define userRuntimeSettingsVarStringList_VFT_Addr 0x336A978
+#define userRuntimeSettingsVar_RuntimeSettingsVar_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVar_RuntimeSettingsVar_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::user::RuntimeSettingsVar::RuntimeSettingsVar\")")
+#define userRuntimeSettingsVar_VFT_Addr 0x336A920
+#define user_GetSettings_Addr                                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: user_GetSettings_Addr"                               \
+              "is 0 - Zoltan found no matches for RED4ext::user::GetSettings\")")
+#define vehicleAirControl_ApplyTorque_Addr 0x1D24780
+#define vehicleAirControl_GetAngularVelocity_Addr 0x1D255C0
+#define vehicleAirControl_Process_Addr 0x1D26260
+#define vehicleBaseObject_CheckPhysicsStateActionInterface_Addr 0x1CA1B40
+#define vehicleBaseObject_CreateAction_Addr 0x1C9FC00
+#define vehicleBaseObject_GetCurveSetData_Addr 0x1C8F900
+#define vehicleBaseObject_GetDeceleration_Addr 0x746800
+#define vehicleBaseObject_GetDisplayName_Addr 0x1C8F6C0
+#define vehicleBaseObject_GetGravitationalForce_Addr 0x1C8F690
+#define vehicleBaseObject_GetInverseMass_Addr 0x1C8F680
+#define vehicleBaseObject_GetPhysicsData_Addr 0x7467F0
+#define vehicleBaseObject_GetTotalMass_Addr 0x1C8F670
+#define vehicleBaseObject_GetUnk60C_Addr 0x1C8F6B0
+#define vehicleBaseObject_GetUnk8E0_Addr 0x1C8B570
+#define vehicleBaseObject_GetVehicleSystem_Addr 0x1C8FA80
+#define vehicleBaseObject_GetWeaponOrientation_Addr 0x1C8FAB0
+#define vehicleBaseObject_HornForDuration_Addr 0x1C90460
+#define vehicleBaseObject_HornForDurationDelayed_Addr 0x1C906C0
+#define vehicleBaseObject_PostMovePhysicsStateNotZero_Addr 0x1C972E0
+#define vehicleBaseObject_PostMovePhysicsStateZero_Addr 0x1C970F0
+#define vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr 0x1C98040
+#define vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr 0x1C97D40
+#define vehicleBaseObject_Reset8B4_Addr 0x1C8B490
+#define vehicleBaseObject_SetPhysicsState_Addr 0x1CA2AB0
+#define vehicleBaseObject_UnsetPhysicsStates_Addr 0x1C8E7C0
+#define vehicleBaseObject_UpdatePhysicsSleepState_Addr 0x1C981C0
+#define vehicleBikeBaseObject_EnableTiltControl_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikeBaseObject_EnableTiltControl_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BikeBaseObject::EnableTiltControl\")")
+#define vehicleBikePhysics_AnimationUpdate_Addr 0x1D48C30
+#define vehicleBikePhysics_VFT_Addr 0x34E3506
+#define vehicleCameraManager_ChangeCamera_Addr 0x1CAA260
+#define vehicleCameraManager_IsTPP_Addr 0x1CAC5E0
+#define vehicleCameraManager_ShouldUseSomeListener_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_ShouldUseSomeListener_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::ShouldUseSomeListener\")")
+#define vehicleCameraManager_Update_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_Update_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::Update\")")
+#define vehicleCarPhysics_AnimationUpdate_Addr 0x1D4E3B0
+#define vehicleCarPhysics_VFT_Addr 0x34E36F0
+#define vehicleChassisComponent_BigUpdate_Addr 0x1CB3E60
+#define vehicleChassisComponent_GetCollisionShapes_Addr 0x1CB2420
+#define vehicleChassisComponent_GetProxyHelperAndLock_Addr 0x1CB2090
+#define vehicleChassisComponent_SetDampingToPoint4_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SetDampingToPoint4_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SetDampingToPoint4\")")
+#define vehicleChassisComponent_SetFilterData_Addr 0x1CB1B50
+#define vehicleChassisComponent_SomethingIfEnabled_Addr 0x1CB3AE0
+#define vehicleChassisComponent_TransformWorldTransform_Addr 0x1CB1720
+#define vehicleChassisComponent_Unknown1_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_Unknown1_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::Unknown1\")")
+#define vehicleChassisComponent_Update_Addr 0x1CB5690
+#define vehicleChassisComponent_UpdatePhysicsState_Addr 0x1CB3790
+#define vehiclePID_GetCorrection_Addr 0x1D4B040
+#define vehiclePID_Initialize_Addr 0x1D4B050
+#define vehiclePID_Process_Addr 0x1D4B070
+#define vehiclePID_Reset_Addr 0x1D4B030
+#define vehiclePID_UpdatePID_Addr 0x1D4B020
+#define vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PersistentDataPS::ResetQuestEnforceTransform\")")
+#define vehiclePersistentDataPS_UpdateWheelRuntime_Addr 0x1CE7EB0
+#define vehiclePhysicsData_AddTorque_Addr 0x1D22E80
+#define vehiclePhysicsData_ApplyForceAtPosition_Addr 0x1D22CA0
+#define vehiclePhysicsData_ApplyTorqueAtPosition_Addr 0x1D226A0
+#define vehiclePhysicsData_SetUsesNormalChassisMass_Addr 0x1D23100
+#define vehiclePhysicsData_UpdateChassis_Addr 0x1D22DC0
+#define vehiclePhysicsData_UsesAlternativeChassisMass_Addr 0x1D23730
+#define vehiclePhysics_ComputeSleep_Addr 0x1D2F4A0
+#define vehiclePhysics_GetSomethingWaterParams_Addr 0x1D2DB20
+#define vehiclePhysics_GetVehicle_Addr 0x377820
+#define vehiclePhysics_IsInAirFromVehicle_func_Addr 0x1D55610
+#define vehiclePhysics_LoadHasBeenFlippedOver_Addr 0x1D2E5F0
+#define vehiclePhysics_ReadWorldTransform_Addr 0x1D2D7B0
+#define vehiclePhysics_SetUnkA0ToOne_Addr 0x1D2E720
+#define vehiclePhysics_UpdateDataWorldTransform_Addr 0x1D2D570
+#define vehiclePhysics_VFT_Addr 0x34E31A8
+#define vehicleTPPCameraComponent_GetLocationFromOffset_Addr 0x1D06670
+#define vehicleTPPCameraComponent_GetYaw_Addr 0x1D0B170
+#define vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr 0x1D09C10
+#define vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr 0x1D07DD0
+#define vehicleTPPCameraComponent_UpdateData_Addr 0x1D095D0
+#define vehicleTPPCameraComponent_UpdatePitch_Addr 0x1D0B770
+#define vehicleTPPCameraComponent_UpdatePosition_Addr 0x1D0A330
+#define vehicleTPPCameraComponent_UpdateTPP_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_UpdateTPP_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::UpdateTPP\")")
+#define vehicleTankPhysics_VFT_Addr 0x34E4130
+#define vehicleUnk568_CopyOverCollisionForce_Addr 0x1AF65A0
+#define vehicleUnk568_SetAcceleration_Addr 0x1AF65E0
+#define vehicleUnk568_SetLinearVelocityEtc_Addr 0x1AF6830
+#define vehicleUnk568_SetUnkD0_Addr 0x1AF65C0
+#define vehicleUnk570_GetCollisionFxForMaterial_Addr 0x1D39B60
+#define vehicleUnk570_GetFxForMaterial_Addr 0x1D39CE0
+#define vehicleUnk570_GetSmearFxForMaterial_Addr 0x1D39C50
+#define vehicleUnk570_ProcessEffects_Addr 0x1D3FD00
+#define vehicleUnk570_ProcessImpactScratch_Addr 0x1D3B410
+#define vehicleUnk570_Setup_Addr 0x1D3D550
+#define vehicleUnk570_SkidMarkEffectStart_Addr 0x1D408D0
+#define vehicleUnk570_TireTrackEffectStart_Addr 0x1D41230
+#define vehicleUnk570_UpdateEffectsBlackboard_Addr 0x1D3CB80
+#define vehicleUnk570_WheelEffectUpdate_Addr 0x1D3FD00
+#define vehicleUnk580_GetAudioResourceMetadata_Addr 0x1C79390
+#define vehicleUnk580_IsRadioReceiverActive_Addr 0x1C7A140
+#define vehicleUnk580_NextRadioReceiverStation_Addr 0x1C7CA50
+#define vehicleUnk580_SetRadioTier_Addr 0x1C7CB90
+#define vehicleUnk580_ShouldUseSomeAVListener_Addr 0x1C78DD0
+#define vehicleUnk580_ToggleHorn_Addr 0x1C7A9C0
+#define vehicleUnk580_Update_Addr 0x1C7E360
+#define vehicleUnk580_Update3CA_Addr 0x1C7C370
+#define vehicleUnk580_UpdateEvents_Addr 0x1C80060
+#define vehicleUnk580_UpdateTPPinAudioSystem_Addr 0x1C7F9C0
+#define vehicleUnk580_UpdateTireParameters_Addr 0x1C78330
+#define vehicleUnk580_UpdateWheelEmitters_Addr 0x1C7DFD0
+#define vehicleUnk588_Unknown_Addr 0x1C81DE0
+#define vehicleUnk588_UpdateTransform_Addr 0x1C82BD0
+#define vehicleUnkD10_Reset_Addr 0x1D542A0
+#define vehicleWheeledPhysics_ApplyWaterResistance_Addr 0x1D6CD60
+#define vehicleWheeledPhysics_FixedUpdate_Addr 0x1D54160
+#define vehicleWheeledPhysics_FourWheelTorque_Addr 0x1D509F0
+#define vehicleWheeledPhysics_FourWheelTorqueStuff_Addr 0x1D51DA0
+#define vehicleWheeledPhysics_GetEnergy_Addr 0x1D54F20
+#define vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr 0x1D55090
+#define vehicleWheeledPhysics_ProcessAirControl_Addr 0x1D2C890
+#define vehicleWheeledPhysics_SetIsMovingOthers_Addr 0x1D2EE70
+#define vehicleWheeledPhysics_SetupInsert_Addr 0x1D59C30
+#define vehicleWheeledPhysics_SomethingWheelRayTrace_Addr 0x1D56270
+#define vehicleWheeledPhysics_SomethingWheels_Addr 0x1D5AE50
+#define vehicleWheeledPhysics_TurningRollFactorStuff_Addr 0x1D5A030
+#define vehicleWheeledPhysics_Unk15CStuff_Addr 0x1D54CA0
+#define vehicleWheeledPhysics_Update_Addr 0x1D5AA90
+#define vehicleWheeledPhysics_UpdatePassengerAnim_Addr 0x1D53B70
+#define vehicleWheeledPhysics_VFT_Addr 0x34E39B8
+#define worldEffectBlackboard_SetValue_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldEffectBlackboard_SetValue_Addr"                 \
+              "is 0 - Zoltan found too many matches for RED4ext::world::EffectBlackboard::SetValue (2)\")")
+#define worldRuntimeScene_SetupWithLogging_Addr 0xB98F50
+#define worldRuntimeSystemPhysics_FreeGeos_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldRuntimeSystemPhysics_FreeGeos_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::world::RuntimeSystemPhysics::FreeGeos\")")
 
 #include <RED4ext/RED4ext.hpp>
 #include <RED4ext/Relocation.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/CActionsFactory.hpp>
-#include <RED4ext/Scripting/Natives/Callbacks.hpp>
-#include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
+#include <RED4ext/IO/BaseStream.hpp>
 #include <RED4ext/RTTITypes.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
+#include <RED4ext/GameEngine.hpp>
+#include <RED4ext/Scripting/Natives/Generated/CMesh.hpp>
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/RTTITypes.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/gameVehicleSystem.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/gameObject.hpp>
-#include <RED4ext/Scripting/Natives/vehicleCameraManager.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
-#include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
-#include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePID.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/audioEmitter.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/SystemResource.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
+#include <RED4ext/Scripting/Natives/GameInstance.hpp>
 #include <RED4ext/GameOptions.hpp>
 #include <RED4ext/Scripting/Natives/GameInstance.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/SlotComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/TPPCameraComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/audioEmitter.hpp>
-#include <RED4ext/Scripting/Natives/Generated/CMesh.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyId.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/AnimatedComponent.hpp>
-#include <RED4ext/Scripting/Natives/physicsBaseProxy.hpp>
-#include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/SlotComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/audioEmitter.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
+#include <RED4ext/Scripting/Natives/IGameInstance.hpp>
+#include <RED4ext/ISerializable.hpp>
+#include <RED4ext/Scripting/Natives/IUpdatableSystem.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Quaternion.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePID.hpp>
-#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
-#include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehicleCameraManager.hpp>
+#include <RED4ext/CommonFunctions.hpp>
+#include <RED4ext/Scripting/Natives/GameInstance.hpp>
 #include <RED4ext/Scripting/Natives/UpdateManager.hpp>
 #include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/MeshComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
+#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
+#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
 #include <RED4ext/Scripting/Natives/audioBankManager.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+#include <RED4ext/Scripting/Natives/audioEmitter.hpp>
+#include <RED4ext/Scripting/Natives/audioThing.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/AnimatedComponent.hpp>
+#include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
+#include <RED4ext/Scripting/Natives/entEntity.hpp>
+#include <RED4ext/Scripting/Natives/entIComponent.hpp>
+#include <RED4ext/Scripting/Natives/entITransformAttachable.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/MeshComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/PhysicalMeshComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/SlotComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/VisualControllerComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/CActionsFactory.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/FxInstance.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/GameAudioSystem.hpp>
+#include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/FxSystem.hpp>
+#include <RED4ext/Scripting/Natives/gameObject.hpp>
+#include <RED4ext/Scripting/Natives/gameVehicleSystem.hpp>
+#include <RED4ext/Scripting/Natives/Generated/physics/ColliderSphere.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/FilterData.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/VisualControllerComponent.hpp>
-#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePID.hpp>
-#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
 #include <RED4ext/Scripting/Natives/physicsProxyId.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/PhysicalMeshComponent.hpp>
-#include <RED4ext/CommonFunctions.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/IO/BaseStream.hpp>
-#include <RED4ext/Scripting/Natives/entEntity.hpp>
-#include <RED4ext/Scripting/Natives/IGameInstance.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePID.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/VisualControllerComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/entIComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
-#include <RED4ext/GameOptions.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/GameAudioSystem.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/ISerializable.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
 #include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/GameInstance.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/Scripting/Natives/audioEmitter.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsInsert2.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/entEntity.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/RTTITypes.hpp>
-#include <RED4ext/Scripting/Natives/worldRuntimeScene.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
+#include <RED4ext/Scripting/Natives/Generated/physics/SystemResource.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsInsert1.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysicsInsert2.hpp>
+#include <RED4ext/Scripting/Natives/physicsBaseProxy.hpp>
+#include <RED4ext/Scripting/Natives/userRuntimeSettingsVar.hpp>
+#include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
 #include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+#include <RED4ext/Scripting/Natives/vehicleCameraManager.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
 #include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/entEntity.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/IGameInstance.hpp>
-#include <RED4ext/GameEngine.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/TPPCameraComponent.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/Generated/Quaternion.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyId.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
-#include <RED4ext/Scripting/Natives/Callbacks.hpp>
-#include <RED4ext/Scripting/Natives/audioBankManager.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/TPPCameraComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/audioThing.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePID.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/TPPCameraComponent.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/gameVehicleSystem.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
 #include <RED4ext/Scripting/Natives/Generated/vehicle/PersistentDataPS.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/RTTITypes.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+#include <RED4ext/Scripting/Natives/Generated/vehicle/TPPCameraComponent.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
 #include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/IGameInstance.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/ColliderSphere.hpp>
-#include <RED4ext/Scripting/Natives/physicsBaseProxy.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+#include <RED4ext/Scripting/Natives/worldRuntimeScene.hpp>
 
-inline void RED4ext::game::CActionsFactory::AddActionTypeManual(RED4ext::action::Type a1, RED4ext::action::ActionBase*(* a2)(int64_t, uint32_t*, uint32_t)) {
-    RED4ext::RelocFunc<decltype(&RED4ext::game::CActionsFactory::AddActionTypeManual)> call(gameCActionsFactory_AddActionTypeManual_Addr);
-    return call(this, a1, a2);
-}
-
-inline uint16_t RED4ext::CallbackManager::AddCallback(RED4ext::CallbackInstance* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::CallbackManager::AddCallback)> call(CallbackManager_AddCallback_Addr);
+RED4EXT_INLINE void RED4ext::BaseStream::ReadWriteHandleID(void* a1) {
+    using BaseStream_ReadWriteHandleID_t = void (*)(RED4ext::BaseStream*, void*);
+    RED4ext::RelocFunc<BaseStream_ReadWriteHandleID_t> call(BaseStream_ReadWriteHandleID_Addr);
     return call(this, a1);
 }
 
-inline RED4ext::RefCnt* RED4ext::ent::ComponentsStorage::AddComponent(RED4ext::Handle<RED4ext::ent::IComponent> a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::ComponentsStorage::AddComponent)> call(entComponentsStorage_AddComponent_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::ent::ComponentsStorage::AddComponents(RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::ComponentsStorage::AddComponents)> call(entComponentsStorage_AddComponents_Addr);
-    return call(this, a1);
-}
-
-inline uint32_t RED4ext::CClass::AddEventCallbackType(RED4ext::CName a1, RED4ext::CClass* a2, RED4ext::CallbackDefinition* a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::CClass::AddEventCallbackType)> call(CClass_AddEventCallbackType_Addr);
+RED4EXT_INLINE uint32_t RED4ext::CClass::AddEventCallbackType(RED4ext::CName a1, RED4ext::CClass* a2, RED4ext::CallbackDefinition* a3) {
+    using CClass_AddEventCallbackType_t = uint32_t (*)(RED4ext::CClass*, RED4ext::CName, RED4ext::CClass*, RED4ext::CallbackDefinition*);
+    RED4ext::RelocFunc<CClass_AddEventCallbackType_t> call(CClass_AddEventCallbackType_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline void RED4ext::physics::ProxyCache::AddToCache(RED4ext::physics::ProxyCacheEntry* a1, int32_t a2, int32_t a3, RED4ext::physics::StateValue a4, void* a5, uint64_t a6, bool a7) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyCache::AddToCache)> call(physicsProxyCache_AddToCache_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
-}
-
-inline void RED4ext::CallbackManager::AddToUnk00(RED4ext::Handle<RED4ext::IScriptable>* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::CallbackManager::AddToUnk00)> call(CallbackManager_AddToUnk00_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::PhysicsData::AddTorque(RED4ext::Vector3* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PhysicsData::AddTorque)> call(vehiclePhysicsData_AddTorque_Addr);
-    return call(this, a1);
-}
-
-inline int64_t RED4ext::vehicle::CarPhysics::AnimationUpdate(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::CarPhysics::AnimationUpdate)> call(vehicleCarPhysics_AnimationUpdate_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::CClass::ApplyFlags(RED4ext::CClass::Flags a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::CClass::ApplyFlags)> call(CClass_ApplyFlags_Addr);
+RED4EXT_INLINE void RED4ext::CClass::ApplyFlags(RED4ext::CClass::Flags a1, bool a2) {
+    using CClass_ApplyFlags_t = void (*)(RED4ext::CClass*, RED4ext::CClass::Flags, bool);
+    RED4ext::RelocFunc<CClass_ApplyFlags_t> call(CClass_ApplyFlags_Addr);
     return call(this, a1, a2);
 }
 
-inline void RED4ext::vehicle::PhysicsData::ApplyForceAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PhysicsData::ApplyForceAtPosition)> call(vehiclePhysicsData_ApplyForceAtPosition_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::AirControl::ApplyTorque(uint32_t a1, float a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::AirControl::ApplyTorque)> call(vehicleAirControl_ApplyTorque_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::PhysicsData::ApplyTorqueAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PhysicsData::ApplyTorqueAtPosition)> call(vehiclePhysicsData_ApplyTorqueAtPosition_Addr);
-    return call(this, a1, a2);
-}
-
-inline double RED4ext::vehicle::WheeledPhysics::ApplyWaterResistance(void* a1, float a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::ApplyWaterResistance)> call(vehicleWheeledPhysics_ApplyWaterResistance_Addr);
-    return call(a1, a2);
-}
-
-inline void RED4ext::game::VehicleSystem::BeginUpdate(RED4ext::game::VehicleSystem** a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::game::VehicleSystem::BeginUpdate)> call(gameVehicleSystem_BeginUpdate_Addr);
-    return call(a1);
-}
-
-inline bool RED4ext::vehicle::ChassisComponent::BigUpdate() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::BigUpdate)> call(vehicleChassisComponent_BigUpdate_Addr);
+RED4EXT_INLINE uint32_t RED4ext::CClass::SetupScriptCallbacks() {
+    using CClass_SetupScriptCallbacks_t = uint32_t (*)(RED4ext::CClass*);
+    RED4ext::RelocFunc<CClass_SetupScriptCallbacks_t> call(CClass_SetupScriptCallbacks_Addr);
     return call(this);
 }
 
-inline bool RED4ext::game::Object::CallScriptFunction(void* a1, uint64_t a2, uint8_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::game::Object::CallScriptFunction)> call(gameObject_CallScriptFunction_Addr);
+RED4EXT_INLINE uint64_t RED4ext::CGameFramework::Systems_120_128_130() {
+    using CGameFramework_Systems_120_128_130_t = uint64_t (*)(RED4ext::CGameFramework*);
+    RED4ext::RelocFunc<CGameFramework_Systems_120_128_130_t> call(CGameFramework_Systems_120_128_130_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::Handle<RED4ext::mesh::MeshParameter>* RED4ext::CMesh::GetParameterOfType(RED4ext::Handle<RED4ext::mesh::MeshParameter>* a1, RED4ext::CClass* a2) {
+    using CMesh_GetParameterOfType_t = RED4ext::Handle<RED4ext::mesh::MeshParameter>* (*)(RED4ext::CMesh*, RED4ext::Handle<RED4ext::mesh::MeshParameter>*, RED4ext::CClass*);
+    RED4ext::RelocFunc<CMesh_GetParameterOfType_t> call(CMesh_GetParameterOfType_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE uint16_t RED4ext::CallbackManager::AddCallback(RED4ext::CallbackInstance* a1) {
+    using CallbackManager_AddCallback_t = uint16_t (*)(RED4ext::CallbackManager*, RED4ext::CallbackInstance*);
+    RED4ext::RelocFunc<CallbackManager_AddCallback_t> call(CallbackManager_AddCallback_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::CallbackManager::AddToUnk00(RED4ext::Handle<RED4ext::IScriptable>* a1) {
+    using CallbackManager_AddToUnk00_t = void (*)(RED4ext::CallbackManager*, RED4ext::Handle<RED4ext::IScriptable>*);
+    RED4ext::RelocFunc<CallbackManager_AddToUnk00_t> call(CallbackManager_AddToUnk00_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::CallbackManager::Unknown1(uint16_t a1) {
+    using CallbackManager_Unknown1_t = int64_t (*)(RED4ext::CallbackManager*, uint16_t);
+    RED4ext::RelocFunc<CallbackManager_Unknown1_t> call(CallbackManager_Unknown1_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::CallbackManager::Unknown6(RED4ext::CClass* a1) {
+    using CallbackManager_Unknown6_t = void (*)(RED4ext::CallbackManager*, RED4ext::CClass*);
+    RED4ext::RelocFunc<CallbackManager_Unknown6_t> call(CallbackManager_Unknown6_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::GameInstance::SetRuntimeScene(RED4ext::world::RuntimeScene* a1) {
+    using GameInstance_SetRuntimeScene_t = int64_t (*)(RED4ext::GameInstance*, RED4ext::world::RuntimeScene*);
+    RED4ext::RelocFunc<GameInstance_SetRuntimeScene_t> call(GameInstance_SetRuntimeScene_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::GameOptionManager::GetGameOption(const uint8_t* a1, const uint8_t* a2, RED4ext::CString& a3) {
+    using GameOptionManager_GetGameOption_t = bool (*)(RED4ext::GameOptionManager*, const uint8_t*, const uint8_t*, RED4ext::CString&);
+    RED4ext::RelocFunc<GameOptionManager_GetGameOption_t> call(GameOptionManager_GetGameOption_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline void RED4ext::vehicle::CameraManager::ChangeCamera(uint32_t a1, float a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::CameraManager::ChangeCamera)> call(vehicleCameraManager_ChangeCamera_Addr);
-    return call(this, a1, a2);
-}
-
-inline bool RED4ext::vehicle::BaseObject::CheckPhysicsStateActionInterface() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::CheckPhysicsStateActionInterface)> call(vehicleBaseObject_CheckPhysicsStateActionInterface_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::Physics::ComputeSleep(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::ComputeSleep)> call(vehiclePhysics_ComputeSleep_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::UpdateStorage::Copy(RED4ext::UpdateManager::UpdateStorage* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManager::UpdateStorage::Copy)> call(UpdateManagerUpdateStorage_Copy_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::Unk568::CopyOverCollisionForce() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk568::CopyOverCollisionForce)> call(vehicleUnk568_CopyOverCollisionForce_Addr);
-    return call(this);
-}
-
-inline RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::UpdateStorage::Copy_0(RED4ext::UpdateManager::UpdateStorage* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManager::UpdateStorage::Copy_0)> call(UpdateManagerUpdateStorage_Copy_0_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::Create(RED4ext::physics::ProxyID* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::Create)> call(physicsProxyHelper_Create_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::action::ActionBase** RED4ext::vehicle::BaseObject::CreateAction(RED4ext::action::ActionBase** a1, RED4ext::action::Type a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::CreateAction)> call(vehicleBaseObject_CreateAction_Addr);
-    return call(this, a1, a2);
-}
-
-inline int64_t RED4ext::action::ActionInterface::EndActions() {
-    RED4ext::RelocFunc<decltype(&RED4ext::action::ActionInterface::EndActions)> call(actionActionInterface_EndActions_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::FixedUpdate(int64_t a1, int64_t a2, int64_t a3, int64_t a4) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::FixedUpdate)> call(vehicleWheeledPhysics_FixedUpdate_Addr);
-    return call(a1, a2, a3, a4);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::FourWheelTorque(uint8_t a1, uint8_t a2, float a3, RED4ext::Transform* a4) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::FourWheelTorque)> call(vehicleWheeledPhysics_FourWheelTorque_Addr);
-    return call(this, a1, a2, a3, a4);
-}
-
-inline float* RED4ext::vehicle::WheeledPhysics::FourWheelTorqueStuff(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::FourWheelTorqueStuff)> call(vehicleWheeledPhysics_FourWheelTorqueStuff_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::physics::GeometryCache::FreeAlwaysLoaded() {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::FreeAlwaysLoaded)> call(physicsGeometryCache_FreeAlwaysLoaded_Addr);
-    return call(this);
-}
-
-inline void RED4ext::physics::GeometryCache::FreeGeometryKey(RED4ext::physics::GeometryKey* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::FreeGeometryKey)> call(physicsGeometryCache_FreeGeometryKey_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::ent::ComponentsStorage::FreeMemory() {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::ComponentsStorage::FreeMemory)> call(entComponentsStorage_FreeMemory_Addr);
-    return call(this);
-}
-
-inline void RED4ext::physics::GeometryCache::FreeSector(uint32_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::FreeSector)> call(physicsGeometryCache_FreeSector_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::Vector3* RED4ext::vehicle::AirControl::GetAngularVelocity(RED4ext::Vector3* a1, int32_t a2, void* a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::AirControl::GetAngularVelocity)> call(vehicleAirControl_GetAngularVelocity_Addr);
+RED4EXT_INLINE bool RED4ext::GameOptionManager::SetGameOption(const uint8_t* a1, const uint8_t* a2, RED4ext::CString* a3) {
+    using GameOptionManager_SetGameOption_t = bool (*)(RED4ext::GameOptionManager*, const uint8_t*, const uint8_t*, RED4ext::CString*);
+    RED4ext::RelocFunc<GameOptionManager_SetGameOption_t> call(GameOptionManager_SetGameOption_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline void* RED4ext::vehicle::Unk580::GetAudioResourceMetadata(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::GetAudioResourceMetadata)> call(vehicleUnk580_GetAudioResourceMetadata_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::vehicle::Unk570::CollisionFxLookup* RED4ext::vehicle::Unk570::GetCollisionFxForMaterial(RED4ext::CName a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::GetCollisionFxForMaterial)> call(vehicleUnk570_GetCollisionFxForMaterial_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::Handle<RED4ext::physics::ICollider>** RED4ext::vehicle::ChassisComponent::GetCollisionShapes(RED4ext::Handle<RED4ext::physics::ICollider>** a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::GetCollisionShapes)> call(vehicleChassisComponent_GetCollisionShapes_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::Handle<RED4ext::ent::IComponent>* RED4ext::ent::ComponentsStorage::GetComponentByCRUID(RED4ext::Handle<RED4ext::ent::IComponent>* a1, RED4ext::CRUID a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::ComponentsStorage::GetComponentByCRUID)> call(entComponentsStorage_GetComponentByCRUID_Addr);
-    return call(this, a1, a2);
-}
-
-inline float RED4ext::vehicle::PID::GetCorrection() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PID::GetCorrection)> call(vehiclePID_GetCorrection_Addr);
-    return call(this);
-}
-
-inline RED4ext::Handle<void>* RED4ext::vehicle::BaseObject::GetCurveSetData(RED4ext::Handle<void>* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetCurveSetData)> call(vehicleBaseObject_GetCurveSetData_Addr);
-    return call(this, a1);
-}
-
-inline void* RED4ext::physics::ProxyCache::GetDataFromCache(uint32_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyCache::GetDataFromCache)> call(physicsProxyCache_GetDataFromCache_Addr);
-    return call(this, a1);
-}
-
-inline double RED4ext::vehicle::BaseObject::GetDeceleration() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetDeceleration)> call(vehicleBaseObject_GetDeceleration_Addr);
-    return call(this);
-}
-
-inline RED4ext::CString* RED4ext::vehicle::BaseObject::GetDisplayName(RED4ext::CString* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetDisplayName)> call(vehicleBaseObject_GetDisplayName_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::audio::Emitter* RED4ext::audio::Emitters::GetEmitterForEntityID(RED4ext::ent::EntityID a1, RED4ext::CName a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::Emitters::GetEmitterForEntityID)> call(audioEmitters_GetEmitterForEntityID_Addr);
-    return call(this, a1, a2);
-}
-
-inline float RED4ext::vehicle::WheeledPhysics::GetEnergy() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::GetEnergy)> call(vehicleWheeledPhysics_GetEnergy_Addr);
-    return call(this);
-}
-
-inline RED4ext::Handle<RED4ext::physics::SystemResource>* RED4ext::physics::SystemResource::GetFromCMesh(RED4ext::Handle<RED4ext::physics::SystemResource>* a1, RED4ext::CMesh* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::SystemResource::GetFromCMesh)> call(physicsSystemResource_GetFromCMesh_Addr);
-    return call(a1, a2);
-}
-
-inline bool RED4ext::physics::ProxyCache::GetFromCacheOrGet(RED4ext::physics::ProxyID* a1, uint32_t a2, uint32_t a3, RED4ext::physics::StateValue a4, void* a5, uint32_t a6) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyCache::GetFromCacheOrGet)> call(physicsProxyCache_GetFromCacheOrGet_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6);
-}
-
-inline RED4ext::vehicle::MaterialFx* RED4ext::vehicle::Unk570::GetFxForMaterial(RED4ext::CName a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::GetFxForMaterial)> call(vehicleUnk570_GetFxForMaterial_Addr);
-    return call(this, a1, a2);
-}
-
-inline bool RED4ext::GameOptionManager::GetGameOption(const uint8_t* a1, const uint8_t* a2, RED4ext::CString& a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::GameOptionManager::GetGameOption)> call(GameOptionManager_GetGameOption_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline RED4ext::DynArray<RED4ext::GameSystemData>* RED4ext::GetGameSystemsData(RED4ext::DynArray<RED4ext::GameSystemData>* a0) {
-    RED4ext::RelocFunc<decltype(&RED4ext::GetGameSystemsData)> call(GetGameSystemsData_Addr);
+RED4EXT_INLINE RED4ext::DynArray<RED4ext::GameSystemData>* RED4ext::GetGameSystemsData(RED4ext::DynArray<RED4ext::GameSystemData>* a0) {
+    using GetGameSystemsData_t = RED4ext::DynArray<RED4ext::GameSystemData>* (*)(RED4ext::DynArray<RED4ext::GameSystemData>*);
+    RED4ext::RelocFunc<GetGameSystemsData_t> call(GetGameSystemsData_Addr);
     return call(a0);
 }
 
-inline float RED4ext::vehicle::BaseObject::GetGravitationalForce() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetGravitationalForce)> call(vehicleBaseObject_GetGravitationalForce_Addr);
-    return call(this);
-}
-
-inline float RED4ext::vehicle::BaseObject::GetInverseMass() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetInverseMass)> call(vehicleBaseObject_GetInverseMass_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::ent::SlotComponent::GetLocalSlotTransformFromIndex(int32_t a1, RED4ext::Transform* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::SlotComponent::GetLocalSlotTransformFromIndex)> call(entSlotComponent_GetLocalSlotTransformFromIndex_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::Vector4* RED4ext::vehicle::TPPCameraComponent::GetLocationFromOffset(RED4ext::Vector4* a1, RED4ext::Vector3* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::TPPCameraComponent::GetLocationFromOffset)> call(vehicleTPPCameraComponent_GetLocationFromOffset_Addr);
-    return call(this, a1, a2);
-}
-
-inline int64_t RED4ext::vehicle::WheeledPhysics::GetNumberOfWheelsTouchingGround() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::GetNumberOfWheelsTouchingGround)> call(vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr);
-    return call(this);
-}
-
-inline RED4ext::audio::Emitter* RED4ext::audio::Emitters::GetOrCreateEmitter(RED4ext::ent::EntityID a1, RED4ext::CName a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::Emitters::GetOrCreateEmitter)> call(audioEmitters_GetOrCreateEmitter_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::Handle<RED4ext::mesh::MeshParameter>* RED4ext::CMesh::GetParameterOfType(RED4ext::Handle<RED4ext::mesh::MeshParameter>* a1, RED4ext::CClass* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::CMesh::GetParameterOfType)> call(CMesh_GetParameterOfType_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::vehicle::PhysicsData* RED4ext::vehicle::BaseObject::GetPhysicsData() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetPhysicsData)> call(vehicleBaseObject_GetPhysicsData_Addr);
-    return call(this);
-}
-
-inline RED4ext::physics::BaseProxy* RED4ext::physics::ProxyID::GetProxy() {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyID::GetProxy)> call(physicsProxyID_GetProxy_Addr);
-    return call(this);
-}
-
-inline RED4ext::physics::ProxyCache* RED4ext::physics::ProxyManager::GetProxyCache(RED4ext::physics::ProxyID* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyManager::GetProxyCache)> call(physicsProxyManager_GetProxyCache_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::Handle<RED4ext::physics::BaseProxy>* RED4ext::physics::ProxyManager::GetProxyHandle(RED4ext::Handle<RED4ext::physics::BaseProxy>* a1, RED4ext::physics::ProxyID* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyManager::GetProxyHandle)> call(physicsProxyManager_GetProxyHandle_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::vehicle::ChassisComponent::GetProxyHelperAndLock(RED4ext::physics::ProxyHelper* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::GetProxyHelperAndLock)> call(vehicleChassisComponent_GetProxyHelperAndLock_Addr);
-    return call(this, a1);
-}
-
-inline bool RED4ext::ent::AnimatedComponent::GetReferencePoseMSForName(RED4ext::CName a1, RED4ext::Transform* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::AnimatedComponent::GetReferencePoseMSForName)> call(entAnimatedComponent_GetReferencePoseMSForName_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::Transform* RED4ext::physics::GetShapeLocalPos(RED4ext::Transform* a0, RED4ext::physics::ProxyID* a1, uint32_t a2, uint32_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GetShapeLocalPos)> call(physics_GetShapeLocalPos_Addr);
-    return call(a0, a1, a2, a3);
-}
-
-inline int64_t RED4ext::ent::ComponentsStorage::GetSize() {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::ComponentsStorage::GetSize)> call(entComponentsStorage_GetSize_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::ent::SlotComponent::GetSlotGlobalTransform(RED4ext::CName a1, RED4ext::WorldTransform* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::SlotComponent::GetSlotGlobalTransform)> call(entSlotComponent_GetSlotGlobalTransform_Addr);
-    return call(this, a1, a2);
-}
-
-inline int64_t RED4ext::ent::SlotComponent::GetSlotIndex(RED4ext::CName a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::SlotComponent::GetSlotIndex)> call(entSlotComponent_GetSlotIndex_Addr);
-    return call(this, a1);
-}
-
-inline bool RED4ext::ent::SlotComponent::GetSlotLocalTransform(int32_t a1, RED4ext::WorldTransform* a2, RED4ext::WorldTransform* a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::SlotComponent::GetSlotLocalTransform)> call(entSlotComponent_GetSlotLocalTransform_Addr);
+RED4EXT_INLINE int64_t RED4ext::IGameInstance::RegisterGameLoadCallbacks(int64_t a1, uint8_t* a2, int64_t a3) {
+    using IGameInstance_RegisterGameLoadCallbacks_t = int64_t (*)(RED4ext::IGameInstance*, int64_t, uint8_t*, int64_t);
+    RED4ext::RelocFunc<IGameInstance_RegisterGameLoadCallbacks_t> call(IGameInstance_RegisterGameLoadCallbacks_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline RED4ext::vehicle::Unk570::SmearFxLookup* RED4ext::vehicle::Unk570::GetSmearFxForMaterial(RED4ext::CName a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::GetSmearFxForMaterial)> call(vehicleUnk570_GetSmearFxForMaterial_Addr);
+RED4EXT_INLINE void RED4ext::IGameInstance::RegisterStreamingWorldLoadedCallback(int64_t a1, int64_t a2) {
+    using IGameInstance_RegisterStreamingWorldLoadedCallback_t = void (*)(RED4ext::IGameInstance*, int64_t, int64_t);
+    RED4ext::RelocFunc<IGameInstance_RegisterStreamingWorldLoadedCallback_t> call(IGameInstance_RegisterStreamingWorldLoadedCallback_Addr);
     return call(this, a1, a2);
 }
 
-inline bool RED4ext::vehicle::Physics::GetSomethingWaterParams() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::GetSomethingWaterParams)> call(vehiclePhysics_GetSomethingWaterParams_Addr);
+RED4EXT_INLINE bool RED4ext::IGameInstance::Systems158() {
+    using IGameInstance_Systems158_t = bool (*)(RED4ext::IGameInstance*);
+    RED4ext::RelocFunc<IGameInstance_Systems158_t> call(IGameInstance_Systems158_Addr);
     return call(this);
 }
 
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::GetThingWithLock(RED4ext::physics::ProxyID* a1, RED4ext::SharedMutex* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::GetThingWithLock)> call(physicsProxyHelper_GetThingWithLock_Addr);
-    return call(this, a1, a2);
-}
-
-inline float RED4ext::vehicle::BaseObject::GetTotalMass() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetTotalMass)> call(vehicleBaseObject_GetTotalMass_Addr);
+RED4EXT_INLINE void RED4ext::IGameInstance::Systems160() {
+    using IGameInstance_Systems160_t = void (*)(RED4ext::IGameInstance*);
+    RED4ext::RelocFunc<IGameInstance_Systems160_t> call(IGameInstance_Systems160_Addr);
     return call(this);
 }
 
-inline float RED4ext::vehicle::BaseObject::GetUnk60C() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetUnk60C)> call(vehicleBaseObject_GetUnk60C_Addr);
-    return call(this);
-}
-
-inline void* RED4ext::vehicle::BaseObject::GetUnk8E0() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetUnk8E0)> call(vehicleBaseObject_GetUnk8E0_Addr);
-    return call(this);
-}
-
-inline float RED4ext::audio::GameParameterStorage::GetValue(RED4ext::CName a1, float a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::GameParameterStorage::GetValue)> call(audioGameParameterStorage_GetValue_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::vehicle::BaseObject* RED4ext::vehicle::Physics::GetVehicle() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::GetVehicle)> call(vehiclePhysics_GetVehicle_Addr);
-    return call(this);
-}
-
-inline RED4ext::world::RuntimeSystemPhysics* RED4ext::vehicle::BaseObject::GetVehicleSystem() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetVehicleSystem)> call(vehicleBaseObject_GetVehicleSystem_Addr);
-    return call(this);
-}
-
-inline RED4ext::Quaternion* RED4ext::vehicle::BaseObject::GetWeaponOrientation(RED4ext::Quaternion* a1, uint32_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::GetWeaponOrientation)> call(vehicleBaseObject_GetWeaponOrientation_Addr);
-    return call(this, a1, a2);
-}
-
-inline float RED4ext::Quaternion::GetYaw() {
-    RED4ext::RelocFunc<decltype(&RED4ext::Quaternion::GetYaw)> call(Quaternion_GetYaw_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::physics::GeometryCache::HasGeometryKey(RED4ext::physics::GeometryKey* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::HasGeometryKey)> call(physicsGeometryCache_HasGeometryKey_Addr);
+RED4EXT_INLINE void RED4ext::IGameInstance::Systems168o170(bool a1) {
+    using IGameInstance_Systems168o170_t = void (*)(RED4ext::IGameInstance*, bool);
+    RED4ext::RelocFunc<IGameInstance_Systems168o170_t> call(IGameInstance_Systems168o170_Addr);
     return call(this, a1);
 }
 
-inline bool RED4ext::physics::ProxyManager::HasProxy(RED4ext::physics::ProxyID* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyManager::HasProxy)> call(physicsProxyManager_HasProxy_Addr);
+RED4EXT_INLINE void RED4ext::IGameInstance::Systems178(RED4ext::DynArray<void *>* a1, bool a2) {
+    using IGameInstance_Systems178_t = void (*)(RED4ext::IGameInstance*, RED4ext::DynArray<void *>*, bool);
+    RED4ext::RelocFunc<IGameInstance_Systems178_t> call(IGameInstance_Systems178_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::IGameInstance::WorldDetached(void* a1) {
+    using IGameInstance_WorldDetached_t = void (*)(RED4ext::IGameInstance*, void*);
+    RED4ext::RelocFunc<IGameInstance_WorldDetached_t> call(IGameInstance_WorldDetached_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::vehicle::BaseObject::HornForDuration() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::HornForDuration)> call(vehicleBaseObject_HornForDuration_Addr);
+RED4EXT_INLINE void RED4ext::IGameInstance::WorldPendingDetach(void* a1) {
+    using IGameInstance_WorldPendingDetach_t = void (*)(RED4ext::IGameInstance*, void*);
+    RED4ext::RelocFunc<IGameInstance_WorldPendingDetach_t> call(IGameInstance_WorldPendingDetach_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::ISerializable::SetOwner(RED4ext::ISerializable* a1) {
+    using ISerializable_SetOwner_t = void (*)(RED4ext::ISerializable*, RED4ext::ISerializable*);
+    RED4ext::RelocFunc<ISerializable_SetOwner_t> call(ISerializable_SetOwner_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE float RED4ext::Quaternion::GetYaw() {
+    using Quaternion_GetYaw_t = float (*)(RED4ext::Quaternion*);
+    RED4ext::RelocFunc<Quaternion_GetYaw_t> call(Quaternion_GetYaw_Addr);
     return call(this);
 }
 
-inline void RED4ext::vehicle::BaseObject::HornForDurationDelayed(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::HornForDurationDelayed)> call(vehicleBaseObject_HornForDurationDelayed_Addr);
+RED4EXT_INLINE RED4ext::EulerAngles* RED4ext::Quaternion::ToEulerAngles(RED4ext::EulerAngles* a1) {
+    using Quaternion_ToEulerAngles_t = RED4ext::EulerAngles* (*)(RED4ext::Quaternion*, RED4ext::EulerAngles*);
+    RED4ext::RelocFunc<Quaternion_ToEulerAngles_t> call(Quaternion_ToEulerAngles_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::vehicle::PID::Initialize(float a1, float a2, float a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PID::Initialize)> call(vehiclePID_Initialize_Addr);
+RED4EXT_INLINE RED4ext::Matrix* RED4ext::Quaternion::ToMatrix(RED4ext::Matrix* a1) {
+    using Quaternion_ToMatrix_t = RED4ext::Matrix* (*)(RED4ext::Quaternion*, RED4ext::Matrix*);
+    RED4ext::RelocFunc<Quaternion_ToMatrix_t> call(Quaternion_ToMatrix_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::UpdatableSystems::SetRuntimeScene(RED4ext::world::RuntimeScene* a1) {
+    using UpdatableSystems_SetRuntimeScene_t = int64_t (*)(RED4ext::UpdatableSystems*, RED4ext::world::RuntimeScene*);
+    RED4ext::RelocFunc<UpdatableSystems_SetRuntimeScene_t> call(UpdatableSystems_SetRuntimeScene_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::UpdateManagerHolder::Something() {
+    using UpdateManagerHolder_Something_t = int64_t (*)(RED4ext::UpdateManagerHolder*);
+    RED4ext::RelocFunc<UpdateManagerHolder_Something_t> call(UpdateManagerHolder_Something_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void* RED4ext::UpdateManagerHolder::UpdateSystems(void* a1, float a2, int64_t a3) {
+    using UpdateManagerHolder_UpdateSystems_t = void* (*)(RED4ext::UpdateManagerHolder*, void*, float, int64_t);
+    RED4ext::RelocFunc<UpdateManagerHolder_UpdateSystems_t> call(UpdateManagerHolder_UpdateSystems_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline bool RED4ext::action::ActionInterface::IsAnimationiActive(RED4ext::action::Type a1, uint8_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::action::ActionInterface::IsAnimationiActive)> call(actionActionInterface_IsAnimationiActive_Addr);
+RED4EXT_INLINE RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::UpdateStorage::Copy(RED4ext::UpdateManager::UpdateStorage* a1) {
+    using UpdateManagerUpdateStorage_Copy_t = RED4ext::UpdateManager::UpdateStorage* (*)(RED4ext::UpdateManager::UpdateStorage*, RED4ext::UpdateManager::UpdateStorage*);
+    RED4ext::RelocFunc<UpdateManagerUpdateStorage_Copy_t> call(UpdateManagerUpdateStorage_Copy_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::UpdateStorage::Copy_0(RED4ext::UpdateManager::UpdateStorage* a1) {
+    using UpdateManagerUpdateStorage_Copy_0_t = RED4ext::UpdateManager::UpdateStorage* (*)(RED4ext::UpdateManager::UpdateStorage*, RED4ext::UpdateManager::UpdateStorage*);
+    RED4ext::RelocFunc<UpdateManagerUpdateStorage_Copy_0_t> call(UpdateManagerUpdateStorage_Copy_0_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::UpdateManager::IterateUnknown(RED4ext::CClass*** a1, RED4ext::CClass*** a2) {
+    using UpdateManager_IterateUnknown_t = int64_t (*)(RED4ext::UpdateManager*, RED4ext::CClass***, RED4ext::CClass***);
+    RED4ext::RelocFunc<UpdateManager_IterateUnknown_t> call(UpdateManager_IterateUnknown_Addr);
     return call(this, a1, a2);
 }
 
-inline bool RED4ext::ent::ComponentsStorage::IsEmpty() {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::ComponentsStorage::IsEmpty)> call(entComponentsStorage_IsEmpty_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::vehicle::Physics::IsInAirFromVehicle_func() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::IsInAirFromVehicle_func)> call(vehiclePhysics_IsInAirFromVehicle_func_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::vehicle::Unk580::IsRadioReceiverActive() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::IsRadioReceiverActive)> call(vehicleUnk580_IsRadioReceiverActive_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::vehicle::CameraManager::IsTPP() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::CameraManager::IsTPP)> call(vehicleCameraManager_IsTPP_Addr);
-    return call(this);
-}
-
-inline int64_t RED4ext::UpdateManager::IterateUnknown(RED4ext::CClass*** a1, RED4ext::CClass*** a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManager::IterateUnknown)> call(UpdateManager_IterateUnknown_Addr);
-    return call(this, a1, a2);
-}
-
-inline int64_t RED4ext::physics::ProxyCacheManager::Unk948::Kick(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyCacheManager::Unk948::Kick)> call(physicsProxyCacheManagerUnk948_Kick_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::ent::MeshComponent::Load(bool a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::MeshComponent::Load)> call(entMeshComponent_Load_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometries(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometries)> call(physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr);
-    return call(a1);
-}
-
-inline int64_t RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometriesSetup(int64_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometriesSetup)> call(physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr);
-    return call(this, a1);
-}
-
-inline int64_t RED4ext::audio::BankManager::LoadBank(int64_t a1, uint64_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::BankManager::LoadBank)> call(audioBankManager_LoadBank_Addr);
-    return call(this, a1, a2);
-}
-
-inline bool RED4ext::audio::BankManager::LoadBanksMaybe(int64_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::BankManager::LoadBanksMaybe)> call(audioBankManager_LoadBanksMaybe_Addr);
-    return call(this, a1);
-}
-
-inline double RED4ext::vehicle::Physics::LoadHasBeenFlippedOver(RED4ext::Handle<RED4ext::game::data::VehicleDriveModelData_Record>* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::LoadHasBeenFlippedOver)> call(vehiclePhysics_LoadHasBeenFlippedOver_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::physics::FilterData::LoadPreset(RED4ext::CName a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::FilterData::LoadPreset)> call(physicsFilterData_LoadPreset_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::physics::GeometryCache::LoadSectorGeometries(RED4ext::physics::GeometryCache::LoadSectorGeometriesStruct* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::LoadSectorGeometries)> call(physicsGeometryCache_LoadSectorGeometries_Addr);
-    return call(a1);
-}
-
-inline int64_t RED4ext::physics::GeometryCache::LoadSectorGeometriesSetup(uint32_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::LoadSectorGeometriesSetup)> call(physicsGeometryCache_LoadSectorGeometriesSetup_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::ent::VisualControllerComponent::LoadUnkD8(uint8_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::VisualControllerComponent::LoadUnkD8)> call(entVisualControllerComponent_LoadUnkD8_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::action::ActionBase::Lock() {
-    RED4ext::RelocFunc<decltype(&RED4ext::action::ActionBase::Lock)> call(actionActionBase_Lock_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::Unk580::NextRadioReceiverStation(uint32_t a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::NextRadioReceiverStation)> call(vehicleUnk580_NextRadioReceiverStation_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::WorldTransform* RED4ext::vehicle::BaseObject::PostMovePhysicsStateNotZero(float a1, float* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::PostMovePhysicsStateNotZero)> call(vehicleBaseObject_PostMovePhysicsStateNotZero_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::WorldTransform* RED4ext::vehicle::BaseObject::PostMovePhysicsStateZero(float a1, float* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::PostMovePhysicsStateZero)> call(vehicleBaseObject_PostMovePhysicsStateZero_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateNotZero(int64_t a1, float* a2, int64_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateNotZero)> call(vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline int64_t RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateZero(int64_t a1, int64_t a2, int64_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateZero)> call(vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void* RED4ext::UpdateManager::PrepareFiring(int64_t a1, int32_t* a2, uint32_t a3, uint32_t a4) {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManager::PrepareFiring)> call(UpdateManager_PrepareFiring_Addr);
+RED4EXT_INLINE void* RED4ext::UpdateManager::PrepareFiring(int64_t a1, int32_t* a2, uint32_t a3, uint32_t a4) {
+    using UpdateManager_PrepareFiring_t = void* (*)(RED4ext::UpdateManager*, int64_t, int32_t*, uint32_t, uint32_t);
+    RED4ext::RelocFunc<UpdateManager_PrepareFiring_t> call(UpdateManager_PrepareFiring_Addr);
     return call(this, a1, a2, a3, a4);
 }
 
-inline RED4ext::vehicle::PID::IntegralState RED4ext::vehicle::PID::Process(float a1, float a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PID::Process)> call(vehiclePID_Process_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::action::ActionInterface::ProcessActions(void* a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::action::ActionInterface::ProcessActions)> call(actionActionInterface_ProcessActions_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::ProcessAirControl(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::ProcessAirControl)> call(vehicleWheeledPhysics_ProcessAirControl_Addr);
+RED4EXT_INLINE uint64_t RED4ext::UpdateManager::RegisterUpdate(RED4ext::UpdateManager::UpdateStorage* a1) {
+    using UpdateManager_RegisterUpdate_t = uint64_t (*)(RED4ext::UpdateManager*, RED4ext::UpdateManager::UpdateStorage*);
+    RED4ext::RelocFunc<UpdateManager_RegisterUpdate_t> call(UpdateManager_RegisterUpdate_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::vehicle::Unk570::ProcessEffects(uint32_t a1, RED4ext::vehicle::Unk570::Unk40* a2, float a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::ProcessEffects)> call(vehicleUnk570_ProcessEffects_Addr);
+RED4EXT_INLINE void RED4ext::UpdateManager::ReleaseUnknown() {
+    using UpdateManager_ReleaseUnknown_t = void (*)(RED4ext::UpdateManager*);
+    RED4ext::RelocFunc<UpdateManager_ReleaseUnknown_t> call(UpdateManager_ReleaseUnknown_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::action::ActionBase::Lock() {
+    using actionActionBase_Lock_t = void (*)(RED4ext::action::ActionBase*);
+    RED4ext::RelocFunc<actionActionBase_Lock_t> call(actionActionBase_Lock_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::action::ActionBase::StartWithReplicatedState() {
+    using actionActionBase_StartWithReplicatedState_t = void (*)(RED4ext::action::ActionBase*);
+    RED4ext::RelocFunc<actionActionBase_StartWithReplicatedState_t> call(actionActionBase_StartWithReplicatedState_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE int64_t RED4ext::action::ActionInterface::EndActions() {
+    using actionActionInterface_EndActions_t = int64_t (*)(RED4ext::action::ActionInterface*);
+    RED4ext::RelocFunc<actionActionInterface_EndActions_t> call(actionActionInterface_EndActions_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE bool RED4ext::action::ActionInterface::IsAnimationiActive(RED4ext::action::Type a1, uint8_t a2) {
+    using actionActionInterface_IsAnimationiActive_t = bool (*)(RED4ext::action::ActionInterface*, RED4ext::action::Type, uint8_t);
+    RED4ext::RelocFunc<actionActionInterface_IsAnimationiActive_t> call(actionActionInterface_IsAnimationiActive_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::action::ActionInterface::ProcessActions(void* a1, bool a2) {
+    using actionActionInterface_ProcessActions_t = void (*)(RED4ext::action::ActionInterface*, void*, bool);
+    RED4ext::RelocFunc<actionActionInterface_ProcessActions_t> call(actionActionInterface_ProcessActions_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE int64_t RED4ext::audio::BankManager::LoadBank(int64_t a1, uint64_t a2) {
+    using audioBankManager_LoadBank_t = int64_t (*)(RED4ext::audio::BankManager*, int64_t, uint64_t);
+    RED4ext::RelocFunc<audioBankManager_LoadBank_t> call(audioBankManager_LoadBank_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE bool RED4ext::audio::BankManager::LoadBanksMaybe(int64_t a1) {
+    using audioBankManager_LoadBanksMaybe_t = bool (*)(RED4ext::audio::BankManager*, int64_t);
+    RED4ext::RelocFunc<audioBankManager_LoadBanksMaybe_t> call(audioBankManager_LoadBanksMaybe_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::audio::BankManager::UnloadBank(int64_t a1) {
+    using audioBankManager_UnloadBank_t = int64_t (*)(RED4ext::audio::BankManager*, int64_t);
+    RED4ext::RelocFunc<audioBankManager_UnloadBank_t> call(audioBankManager_UnloadBank_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::audio::Emitter* RED4ext::audio::Emitters::GetEmitterForEntityID(RED4ext::ent::EntityID a1, RED4ext::CName a2) {
+    using audioEmitters_GetEmitterForEntityID_t = RED4ext::audio::Emitter* (*)(RED4ext::audio::Emitters*, RED4ext::ent::EntityID, RED4ext::CName);
+    RED4ext::RelocFunc<audioEmitters_GetEmitterForEntityID_t> call(audioEmitters_GetEmitterForEntityID_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::audio::Emitter* RED4ext::audio::Emitters::GetOrCreateEmitter(RED4ext::ent::EntityID a1, RED4ext::CName a2) {
+    using audioEmitters_GetOrCreateEmitter_t = RED4ext::audio::Emitter* (*)(RED4ext::audio::Emitters*, RED4ext::ent::EntityID, RED4ext::CName);
+    RED4ext::RelocFunc<audioEmitters_GetOrCreateEmitter_t> call(audioEmitters_GetOrCreateEmitter_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE float RED4ext::audio::GameParameterStorage::GetValue(RED4ext::CName a1, float a2) {
+    using audioGameParameterStorage_GetValue_t = float (*)(RED4ext::audio::GameParameterStorage*, RED4ext::CName, float);
+    RED4ext::RelocFunc<audioGameParameterStorage_GetValue_t> call(audioGameParameterStorage_GetValue_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE float* RED4ext::audio::GameParameterStorage::SetValue(RED4ext::CName a1, float a2, float a3) {
+    using audioGameParameterStorage_SetValue_t = float* (*)(RED4ext::audio::GameParameterStorage*, RED4ext::CName, float, float);
+    RED4ext::RelocFunc<audioGameParameterStorage_SetValue_t> call(audioGameParameterStorage_SetValue_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline void RED4ext::vehicle::Unk570::ProcessImpactScratch(RED4ext::Vector3* a1, RED4ext::Vector3* a2, RED4ext::Vector3* a3, RED4ext::Vector3* a4, float a5, float a6, RED4ext::CName a7) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::ProcessImpactScratch)> call(vehicleUnk570_ProcessImpactScratch_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
+RED4EXT_INLINE RED4ext::audio::EmitterPosition* RED4ext::audio::Thing::UpdateEmitterPosition(RED4ext::ent::EntityID a1, RED4ext::CName a2, RED4ext::Vector4* a3) {
+    using audioThing_UpdateEmitterPosition_t = RED4ext::audio::EmitterPosition* (*)(RED4ext::audio::Thing*, RED4ext::ent::EntityID, RED4ext::CName, RED4ext::Vector4*);
+    RED4ext::RelocFunc<audioThing_UpdateEmitterPosition_t> call(audioThing_UpdateEmitterPosition_Addr);
+    return call(this, a1, a2, a3);
 }
 
-inline uint32_t* RED4ext::physics::ProxyID::ProcessProxyDesc(RED4ext::physics::BaseProxyDesc* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyID::ProcessProxyDesc)> call(physicsProxyID_ProcessProxyDesc_Addr);
+RED4EXT_INLINE bool RED4ext::ent::AnimatedComponent::GetReferencePoseMSForName(RED4ext::CName a1, RED4ext::Transform* a2) {
+    using entAnimatedComponent_GetReferencePoseMSForName_t = bool (*)(RED4ext::ent::AnimatedComponent*, RED4ext::CName, RED4ext::Transform*);
+    RED4ext::RelocFunc<entAnimatedComponent_GetReferencePoseMSForName_t> call(entAnimatedComponent_GetReferencePoseMSForName_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::RefCnt* RED4ext::ent::ComponentsStorage::AddComponent(RED4ext::Handle<RED4ext::ent::IComponent> a1) {
+    using entComponentsStorage_AddComponent_t = RED4ext::RefCnt* (*)(RED4ext::ent::ComponentsStorage*, RED4ext::Handle<RED4ext::ent::IComponent>);
+    RED4ext::RelocFunc<entComponentsStorage_AddComponent_t> call(entComponentsStorage_AddComponent_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::ent::PhysicalMeshComponent::ProcessSystemResource(RED4ext::Handle<RED4ext::CMesh>* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::PhysicalMeshComponent::ProcessSystemResource)> call(entPhysicalMeshComponent_ProcessSystemResource_Addr);
+RED4EXT_INLINE void RED4ext::ent::ComponentsStorage::AddComponents(RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>* a1) {
+    using entComponentsStorage_AddComponents_t = void (*)(RED4ext::ent::ComponentsStorage*, RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>*);
+    RED4ext::RelocFunc<entComponentsStorage_AddComponents_t> call(entComponentsStorage_AddComponents_Addr);
     return call(this, a1);
 }
 
-inline bool RED4ext::vehicle::Physics::ReadWorldTransform(RED4ext::WorldTransform* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::ReadWorldTransform)> call(vehiclePhysics_ReadWorldTransform_Addr);
-    return call(this, a1);
+RED4EXT_INLINE void RED4ext::ent::ComponentsStorage::FreeMemory() {
+    using entComponentsStorage_FreeMemory_t = void (*)(RED4ext::ent::ComponentsStorage*);
+    RED4ext::RelocFunc<entComponentsStorage_FreeMemory_t> call(entComponentsStorage_FreeMemory_Addr);
+    return call(this);
 }
 
-inline void RED4ext::BaseStream::ReadWriteHandleID(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::BaseStream::ReadWriteHandleID)> call(BaseStream_ReadWriteHandleID_Addr);
-    return call(this, a1);
+RED4EXT_INLINE RED4ext::Handle<RED4ext::ent::IComponent>* RED4ext::ent::ComponentsStorage::GetComponentByCRUID(RED4ext::Handle<RED4ext::ent::IComponent>* a1, RED4ext::CRUID a2) {
+    using entComponentsStorage_GetComponentByCRUID_t = RED4ext::Handle<RED4ext::ent::IComponent>* (*)(RED4ext::ent::ComponentsStorage*, RED4ext::Handle<RED4ext::ent::IComponent>*, RED4ext::CRUID);
+    RED4ext::RelocFunc<entComponentsStorage_GetComponentByCRUID_t> call(entComponentsStorage_GetComponentByCRUID_Addr);
+    return call(this, a1, a2);
 }
 
-inline void RED4ext::ent::Entity::ReassembleAppearance(int64_t a1, uint64_t a2, uint64_t a3, RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>* a4, RED4ext::Handle<RED4ext::ent::IComponent>* a5) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::Entity::ReassembleAppearance)> call(entEntity_ReassembleAppearance_Addr);
+RED4EXT_INLINE int64_t RED4ext::ent::ComponentsStorage::GetSize() {
+    using entComponentsStorage_GetSize_t = int64_t (*)(RED4ext::ent::ComponentsStorage*);
+    RED4ext::RelocFunc<entComponentsStorage_GetSize_t> call(entComponentsStorage_GetSize_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE bool RED4ext::ent::ComponentsStorage::IsEmpty() {
+    using entComponentsStorage_IsEmpty_t = bool (*)(RED4ext::ent::ComponentsStorage*);
+    RED4ext::RelocFunc<entComponentsStorage_IsEmpty_t> call(entComponentsStorage_IsEmpty_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::ent::Entity::ReassembleAppearance(int64_t a1, uint64_t a2, uint64_t a3, RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>* a4, RED4ext::Handle<RED4ext::ent::IComponent>* a5) {
+    using entEntity_ReassembleAppearance_t = void (*)(RED4ext::ent::Entity*, int64_t, uint64_t, uint64_t, RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>*, RED4ext::Handle<RED4ext::ent::IComponent>*);
+    RED4ext::RelocFunc<entEntity_ReassembleAppearance_t> call(entEntity_ReassembleAppearance_Addr);
     return call(this, a1, a2, a3, a4, a5);
 }
 
-inline int64_t RED4ext::IGameInstance::RegisterGameLoadCallbacks(int64_t a1, uint8_t* a2, int64_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::RegisterGameLoadCallbacks)> call(IGameInstance_RegisterGameLoadCallbacks_Addr);
+RED4EXT_INLINE uint64_t RED4ext::ent::Entity::SetupEntityAndComponents(RED4ext::ent::EntityDefinition* a1) {
+    using entEntity_SetupEntityAndComponents_t = uint64_t (*)(RED4ext::ent::Entity*, RED4ext::ent::EntityDefinition*);
+    RED4ext::RelocFunc<entEntity_SetupEntityAndComponents_t> call(entEntity_SetupEntityAndComponents_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::ent::Entity::SomethingListeners(RED4ext::Handle<RED4ext::IScriptable>* a1) {
+    using entEntity_SomethingListeners_t = int64_t (*)(RED4ext::ent::Entity*, RED4ext::Handle<RED4ext::IScriptable>*);
+    RED4ext::RelocFunc<entEntity_SomethingListeners_t> call(entEntity_SomethingListeners_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::ent::IComponent::SetEntity(RED4ext::ent::Entity* a1) {
+    using entIComponent_SetEntity_t = void (*)(RED4ext::ent::IComponent*, RED4ext::ent::Entity*);
+    RED4ext::RelocFunc<entIComponent_SetEntity_t> call(entIComponent_SetEntity_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::ent::MeshComponent::Load(bool a1) {
+    using entMeshComponent_Load_t = void (*)(RED4ext::ent::MeshComponent*, bool);
+    RED4ext::RelocFunc<entMeshComponent_Load_t> call(entMeshComponent_Load_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::ent::PhysicalMeshComponent::ProcessSystemResource(RED4ext::Handle<RED4ext::CMesh>* a1) {
+    using entPhysicalMeshComponent_ProcessSystemResource_t = void (*)(RED4ext::ent::PhysicalMeshComponent*, RED4ext::Handle<RED4ext::CMesh>*);
+    RED4ext::RelocFunc<entPhysicalMeshComponent_ProcessSystemResource_t> call(entPhysicalMeshComponent_ProcessSystemResource_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetLocalSlotTransformFromIndex(int32_t a1, RED4ext::Transform* a2) {
+    using entSlotComponent_GetLocalSlotTransformFromIndex_t = bool (*)(RED4ext::ent::SlotComponent*, int32_t, RED4ext::Transform*);
+    RED4ext::RelocFunc<entSlotComponent_GetLocalSlotTransformFromIndex_t> call(entSlotComponent_GetLocalSlotTransformFromIndex_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetSlotGlobalTransform(RED4ext::CName a1, RED4ext::WorldTransform* a2) {
+    using entSlotComponent_GetSlotGlobalTransform_t = bool (*)(RED4ext::ent::SlotComponent*, RED4ext::CName, RED4ext::WorldTransform*);
+    RED4ext::RelocFunc<entSlotComponent_GetSlotGlobalTransform_t> call(entSlotComponent_GetSlotGlobalTransform_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE int64_t RED4ext::ent::SlotComponent::GetSlotIndex(RED4ext::CName a1) {
+    using entSlotComponent_GetSlotIndex_t = int64_t (*)(RED4ext::ent::SlotComponent*, RED4ext::CName);
+    RED4ext::RelocFunc<entSlotComponent_GetSlotIndex_t> call(entSlotComponent_GetSlotIndex_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetSlotLocalTransform(int32_t a1, RED4ext::WorldTransform* a2, RED4ext::WorldTransform* a3) {
+    using entSlotComponent_GetSlotLocalTransform_t = bool (*)(RED4ext::ent::SlotComponent*, int32_t, RED4ext::WorldTransform*, RED4ext::WorldTransform*);
+    RED4ext::RelocFunc<entSlotComponent_GetSlotLocalTransform_t> call(entSlotComponent_GetSlotLocalTransform_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline void RED4ext::IGameInstance::RegisterStreamingWorldLoadedCallback(int64_t a1, int64_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::RegisterStreamingWorldLoadedCallback)> call(IGameInstance_RegisterStreamingWorldLoadedCallback_Addr);
-    return call(this, a1, a2);
-}
-
-inline uint64_t RED4ext::UpdateManager::RegisterUpdate(RED4ext::UpdateManager::UpdateStorage* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManager::RegisterUpdate)> call(UpdateManager_RegisterUpdate_Addr);
+RED4EXT_INLINE void RED4ext::ent::VisualControllerComponent::LoadUnkD8(uint8_t a1) {
+    using entVisualControllerComponent_LoadUnkD8_t = void (*)(RED4ext::ent::VisualControllerComponent*, uint8_t);
+    RED4ext::RelocFunc<entVisualControllerComponent_LoadUnkD8_t> call(entVisualControllerComponent_LoadUnkD8_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::UpdateManager::ReleaseUnknown() {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManager::ReleaseUnknown)> call(UpdateManager_ReleaseUnknown_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::PID::Reset(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PID::Reset)> call(vehiclePID_Reset_Addr);
+RED4EXT_INLINE void RED4ext::ent::VisualControllerComponent::Set0xF4(uint8_t a1) {
+    using entVisualControllerComponent_Set0xF4_t = void (*)(RED4ext::ent::VisualControllerComponent*, uint8_t);
+    RED4ext::RelocFunc<entVisualControllerComponent_Set0xF4_t> call(entVisualControllerComponent_Set0xF4_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::vehicle::BaseObject::Reset8B4() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::Reset8B4)> call(vehicleBaseObject_Reset8B4_Addr);
-    return call(this);
-}
-
-inline void RED4ext::ent::VisualControllerComponent::Set0xF4(uint8_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::VisualControllerComponent::Set0xF4)> call(entVisualControllerComponent_Set0xF4_Addr);
-    return call(this, a1);
-}
-
-inline int64_t RED4ext::vehicle::Unk568::SetAcceleration(RED4ext::Vector4* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk568::SetAcceleration)> call(vehicleUnk568_SetAcceleration_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetAngularDamping(float* a1, uint32_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetAngularDamping)> call(physicsProxyHelper_SetAngularDamping_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetCCD(bool a1, int32_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetCCD)> call(physicsProxyHelper_SetCCD_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::ent::IComponent::SetEntity(RED4ext::ent::Entity* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::IComponent::SetEntity)> call(entIComponent_SetEntity_Addr);
-    return call(this, a1);
-}
-
-inline int64_t RED4ext::vehicle::ChassisComponent::SetFilterData(RED4ext::physics::FilterData* a1, RED4ext::physics::FilterData* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::SetFilterData)> call(vehicleChassisComponent_SetFilterData_Addr);
-    return call(this, a1, a2);
-}
-
-inline void** RED4ext::game::IGameSystem::SetGameInstance(void** a1, RED4ext::GameInstance* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::game::IGameSystem::SetGameInstance)> call(gameIGameSystem_SetGameInstance_Addr);
-    return call(this, a1, a2);
-}
-
-inline bool RED4ext::GameOptionManager::SetGameOption(const uint8_t* a1, const uint8_t* a2, RED4ext::CString* a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::GameOptionManager::SetGameOption)> call(GameOptionManager_SetGameOption_Addr);
+RED4EXT_INLINE void RED4ext::ent::VisualControllerComponent::Unknown(int64_t a1, uint8_t a2, uint8_t a3) {
+    using entVisualControllerComponent_Unknown_t = void (*)(RED4ext::ent::VisualControllerComponent*, int64_t, uint8_t, uint8_t);
+    RED4ext::RelocFunc<entVisualControllerComponent_Unknown_t> call(entVisualControllerComponent_Unknown_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline void RED4ext::game::GameAudioSystem::SetGlobalParameter(RED4ext::CName a1, float a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::game::GameAudioSystem::SetGlobalParameter)> call(gameGameAudioSystem_SetGlobalParameter_Addr);
+RED4EXT_INLINE void RED4ext::game::CActionsFactory::AddActionTypeManual(RED4ext::action::Type a1, RED4ext::action::ActionBase*(* a2)(int64_t, uint32_t*, uint32_t)) {
+    using gameCActionsFactory_AddActionTypeManual_t = void (*)(RED4ext::game::CActionsFactory*, RED4ext::action::Type, RED4ext::action::ActionBase*(*)(int64_t, uint32_t*, uint32_t));
+    RED4ext::RelocFunc<gameCActionsFactory_AddActionTypeManual_t> call(gameCActionsFactory_AddActionTypeManual_Addr);
     return call(this, a1, a2);
 }
 
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetGravity(bool a1, uint32_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetGravity)> call(physicsProxyHelper_SetGravity_Addr);
+RED4EXT_INLINE void RED4ext::game::FxInstance::QueueSetBlackboardValue(RED4ext::CName a1, float a2) {
+    using gameFxInstance_QueueSetBlackboardValue_t = void (*)(RED4ext::game::FxInstance*, RED4ext::CName, float);
+    RED4ext::RelocFunc<gameFxInstance_QueueSetBlackboardValue_t> call(gameFxInstance_QueueSetBlackboardValue_Addr);
     return call(this, a1, a2);
 }
 
-inline int64_t RED4ext::vehicle::WheeledPhysics::SetIsMovingOthers(bool a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::SetIsMovingOthers)> call(vehicleWheeledPhysics_SetIsMovingOthers_Addr);
+RED4EXT_INLINE void RED4ext::game::FxInstance::QueueUpdateTargetPosition(RED4ext::WorldPosition* a1) {
+    using gameFxInstance_QueueUpdateTargetPosition_t = void (*)(RED4ext::game::FxInstance*, RED4ext::WorldPosition*);
+    RED4ext::RelocFunc<gameFxInstance_QueueUpdateTargetPosition_t> call(gameFxInstance_QueueUpdateTargetPosition_Addr);
     return call(this, a1);
 }
 
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetIsQueryable(bool a1, uint32_t a2, uint32_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetIsQueryable)> call(physicsProxyHelper_SetIsQueryable_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetLinearDamping(float* a1, uint32_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetLinearDamping)> call(physicsProxyHelper_SetLinearDamping_Addr);
+RED4EXT_INLINE void RED4ext::game::GameAudioSystem::SetGlobalParameter(RED4ext::CName a1, float a2) {
+    using gameGameAudioSystem_SetGlobalParameter_t = void (*)(RED4ext::game::GameAudioSystem*, RED4ext::CName, float);
+    RED4ext::RelocFunc<gameGameAudioSystem_SetGlobalParameter_t> call(gameGameAudioSystem_SetGlobalParameter_Addr);
     return call(this, a1, a2);
 }
 
-inline void RED4ext::vehicle::Unk568::SetLinearVelocityEtc(RED4ext::Vector4* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk568::SetLinearVelocityEtc)> call(vehicleUnk568_SetLinearVelocityEtc_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetMassAndUpdateInertia(float a1, uint32_t a2, bool a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetMassAndUpdateInertia)> call(physicsProxyHelper_SetMassAndUpdateInertia_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::ISerializable::SetOwner(RED4ext::ISerializable* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ISerializable::SetOwner)> call(ISerializable_SetOwner_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::BaseObject::SetPhysicsState(RED4ext::vehicle::PhysicsState a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::SetPhysicsState)> call(vehicleBaseObject_SetPhysicsState_Addr);
+RED4EXT_INLINE void** RED4ext::game::IGameSystem::SetGameInstance(void** a1, RED4ext::GameInstance* a2) {
+    using gameIGameSystem_SetGameInstance_t = void** (*)(RED4ext::game::IGameSystem*, void**, RED4ext::GameInstance*);
+    RED4ext::RelocFunc<gameIGameSystem_SetGameInstance_t> call(gameIGameSystem_SetGameInstance_Addr);
     return call(this, a1, a2);
 }
 
-inline void RED4ext::physics::ProxyManager::SetProxyCacheID(RED4ext::physics::ProxyID* a1, RED4ext::physics::ProxyCacheID* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyManager::SetProxyCacheID)> call(physicsProxyManager_SetProxyCacheID_Addr);
-    return call(this, a1, a2);
+RED4EXT_INLINE int64_t RED4ext::game::IGameSystem::Unset() {
+    using gameIGameSystem_Unset_t = int64_t (*)(RED4ext::game::IGameSystem*);
+    RED4ext::RelocFunc<gameIGameSystem_Unset_t> call(gameIGameSystem_Unset_Addr);
+    return call(this);
 }
 
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetQueryFilterData(void* a1, uint32_t a2, uint32_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetQueryFilterData)> call(physicsProxyHelper_SetQueryFilterData_Addr);
+RED4EXT_INLINE void RED4ext::game::Mutexable::Update(int64_t a1) {
+    using gameMutexable_Update_t = void (*)(RED4ext::game::Mutexable*, int64_t);
+    RED4ext::RelocFunc<gameMutexable_Update_t> call(gameMutexable_Update_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::game::Object::CallScriptFunction(void* a1, uint64_t a2, uint8_t a3) {
+    using gameObject_CallScriptFunction_t = bool (*)(RED4ext::game::Object*, void*, uint64_t, uint8_t);
+    RED4ext::RelocFunc<gameObject_CallScriptFunction_t> call(gameObject_CallScriptFunction_Addr);
     return call(this, a1, a2, a3);
 }
 
-inline int64_t RED4ext::vehicle::Unk580::SetRadioTier(int32_t a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::SetRadioTier)> call(vehicleUnk580_SetRadioTier_Addr);
-    return call(this, a1, a2);
+RED4EXT_INLINE void RED4ext::game::VehicleSystem::BeginUpdate(RED4ext::game::VehicleSystem** a1) {
+    using gameVehicleSystem_BeginUpdate_t = void (*)(RED4ext::game::VehicleSystem**);
+    RED4ext::RelocFunc<gameVehicleSystem_BeginUpdate_t> call(gameVehicleSystem_BeginUpdate_Addr);
+    return call(a1);
 }
 
-inline int64_t RED4ext::UpdatableSystems::SetRuntimeScene(RED4ext::world::RuntimeScene* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdatableSystems::SetRuntimeScene)> call(UpdatableSystems_SetRuntimeScene_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetSimulationFilterData(void* a1, int32_t a2, int32_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetSimulationFilterData)> call(physicsProxyHelper_SetSimulationFilterData_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetSimulationShape(bool a1, uint32_t a2, uint32_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::SetSimulationShape)> call(physicsProxyHelper_SetSimulationShape_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::vehicle::Physics::SetUnkA0ToOne() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::SetUnkA0ToOne)> call(vehiclePhysics_SetUnkA0ToOne_Addr);
+RED4EXT_INLINE void RED4ext::game::VehicleSystem::UpdateVehicleArrays() {
+    using gameVehicleSystem_UpdateVehicleArrays_t = void (*)(RED4ext::game::VehicleSystem*);
+    RED4ext::RelocFunc<gameVehicleSystem_UpdateVehicleArrays_t> call(gameVehicleSystem_UpdateVehicleArrays_Addr);
     return call(this);
 }
 
-inline void RED4ext::vehicle::Unk568::SetUnkD0(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk568::SetUnkD0)> call(vehicleUnk568_SetUnkD0_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::PhysicsData::SetUsesNormalChassisMass() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PhysicsData::SetUsesNormalChassisMass)> call(vehiclePhysicsData_SetUsesNormalChassisMass_Addr);
-    return call(this);
-}
-
-inline float* RED4ext::audio::GameParameterStorage::SetValue(RED4ext::CName a1, float a2, float a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::GameParameterStorage::SetValue)> call(audioGameParameterStorage_SetValue_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::physics::VehiclePhysicsInsert2::SetsUnk160Unk15C(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::VehiclePhysicsInsert2::SetsUnk160Unk15C)> call(physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::Unk570::Setup(int64_t a1, int64_t a2, int64_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::Setup)> call(vehicleUnk570_Setup_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline uint64_t RED4ext::ent::Entity::SetupEntityAndComponents(RED4ext::ent::EntityDefinition* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::Entity::SetupEntityAndComponents)> call(entEntity_SetupEntityAndComponents_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::SetupInsert() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::SetupInsert)> call(vehicleWheeledPhysics_SetupInsert_Addr);
-    return call(this);
-}
-
-inline uint32_t RED4ext::CClass::SetupScriptCallbacks() {
-    RED4ext::RelocFunc<decltype(&RED4ext::CClass::SetupScriptCallbacks)> call(CClass_SetupScriptCallbacks_Addr);
-    return call(this);
-}
-
-inline uint32_t RED4ext::world::RuntimeScene::SetupWithLogging(uint8_t* a1, int64_t a2, uint32_t* a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::world::RuntimeScene::SetupWithLogging)> call(worldRuntimeScene_SetupWithLogging_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline bool RED4ext::vehicle::Unk580::ShouldUseSomeAVListener() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::ShouldUseSomeAVListener)> call(vehicleUnk580_ShouldUseSomeAVListener_Addr);
-    return call(this);
-}
-
-inline float RED4ext::physics::VehiclePhysicsInsert1::SinMath(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::VehiclePhysicsInsert1::SinMath)> call(physicsVehiclePhysicsInsert1_SinMath_Addr);
-    return call(this, a1);
-}
-
-inline bool RED4ext::vehicle::Unk570::SkidMarkEffectStart(RED4ext::vehicle::Unk570::Unk30* a1, RED4ext::vehicle::MaterialFx* a2, RED4ext::Transform* a3, RED4ext::Transform* a4, bool a5, bool a6, bool a7) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::SkidMarkEffectStart)> call(vehicleUnk570_SkidMarkEffectStart_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
-}
-
-inline int64_t RED4ext::UpdateManagerHolder::Something() {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManagerHolder::Something)> call(UpdateManagerHolder_Something_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::ChassisComponent::SomethingIfEnabled() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::SomethingIfEnabled)> call(vehicleChassisComponent_SomethingIfEnabled_Addr);
-    return call(this);
-}
-
-inline int64_t RED4ext::ent::Entity::SomethingListeners(RED4ext::Handle<RED4ext::IScriptable>* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::ent::Entity::SomethingListeners)> call(entEntity_SomethingListeners_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::SomethingWheelRayTrace(uint32_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::SomethingWheelRayTrace)> call(vehicleWheeledPhysics_SomethingWheelRayTrace_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::SomethingWheels(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::SomethingWheels)> call(vehicleWheeledPhysics_SomethingWheels_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::action::ActionBase::StartWithReplicatedState() {
-    RED4ext::RelocFunc<decltype(&RED4ext::action::ActionBase::StartWithReplicatedState)> call(actionActionBase_StartWithReplicatedState_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::IGameInstance::Systems158() {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::Systems158)> call(IGameInstance_Systems158_Addr);
-    return call(this);
-}
-
-inline void RED4ext::IGameInstance::Systems160() {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::Systems160)> call(IGameInstance_Systems160_Addr);
-    return call(this);
-}
-
-inline void RED4ext::IGameInstance::Systems168o170(bool a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::Systems168o170)> call(IGameInstance_Systems168o170_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::IGameInstance::Systems178(RED4ext::DynArray<void *>* a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::Systems178)> call(IGameInstance_Systems178_Addr);
-    return call(this, a1, a2);
-}
-
-inline uint64_t RED4ext::CGameFramework::Systems_120_128_130() {
-    RED4ext::RelocFunc<decltype(&RED4ext::CGameFramework::Systems_120_128_130)> call(CGameFramework_Systems_120_128_130_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_Update(float* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_Update)> call(vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_sub_58() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_sub_58)> call(vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::physics::ProxyManager::TestUnk2E2068(RED4ext::physics::ProxyID* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyManager::TestUnk2E2068)> call(physicsProxyManager_TestUnk2E2068_Addr);
-    return call(this, a1);
-}
-
-inline bool RED4ext::vehicle::Unk570::TireTrackEffectStart(RED4ext::vehicle::Unk570::Unk30* a1, RED4ext::vehicle::MaterialFx* a2, RED4ext::Transform* a3, RED4ext::Transform* a4, bool a5, bool a6, bool a7) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::TireTrackEffectStart)> call(vehicleUnk570_TireTrackEffectStart_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
-}
-
-inline RED4ext::EulerAngles* RED4ext::Quaternion::ToEulerAngles(RED4ext::EulerAngles* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::Quaternion::ToEulerAngles)> call(Quaternion_ToEulerAngles_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::Matrix* RED4ext::Quaternion::ToMatrix(RED4ext::Matrix* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::Quaternion::ToMatrix)> call(Quaternion_ToMatrix_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::Unk580::ToggleHorn(bool a1, uint8_t* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::ToggleHorn)> call(vehicleUnk580_ToggleHorn_Addr);
-    return call(this, a1, a2);
-}
-
-inline RED4ext::WorldTransform* RED4ext::vehicle::ChassisComponent::TransformWorldTransform(RED4ext::WorldTransform* a1, RED4ext::WorldTransform* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::TransformWorldTransform)> call(vehicleChassisComponent_TransformWorldTransform_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::TurningRollFactorStuff(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::TurningRollFactorStuff)> call(vehicleWheeledPhysics_TurningRollFactorStuff_Addr);
-    return call(this, a1);
-}
-
-inline bool RED4ext::physics::ProxyID::Unk(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyID::Unk)> call(physicsProxyID_Unk_Addr);
-    return call(this, a1);
-}
-
-inline float RED4ext::vehicle::WheeledPhysics::Unk15CStuff() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::Unk15CStuff)> call(vehicleWheeledPhysics_Unk15CStuff_Addr);
-    return call(this);
-}
-
-inline bool RED4ext::physics::GeometryCache::Unknown(uint32_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::Unknown)> call(physicsGeometryCache_Unknown_Addr);
-    return call(this, a1);
-}
-
-inline int64_t RED4ext::CallbackManager::Unknown1(uint16_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::CallbackManager::Unknown1)> call(CallbackManager_Unknown1_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::CallbackManager::Unknown6(RED4ext::CClass* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::CallbackManager::Unknown6)> call(CallbackManager_Unknown6_Addr);
-    return call(this, a1);
-}
-
-inline int64_t RED4ext::audio::BankManager::UnloadBank(int64_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::BankManager::UnloadBank)> call(audioBankManager_UnloadBank_Addr);
-    return call(this, a1);
-}
-
-inline int64_t RED4ext::physics::ProxyHelper::Unlock() {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::Unlock)> call(physicsProxyHelper_Unlock_Addr);
-    return call(this);
-}
-
-inline int64_t RED4ext::game::IGameSystem::Unset() {
-    RED4ext::RelocFunc<decltype(&RED4ext::game::IGameSystem::Unset)> call(gameIGameSystem_Unset_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::BaseObject::UnsetPhysicsStates() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::UnsetPhysicsStates)> call(vehicleBaseObject_UnsetPhysicsStates_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::ChassisComponent::Update() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::Update)> call(vehicleChassisComponent_Update_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::Unk580::Update3CA(bool a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::Update3CA)> call(vehicleUnk580_Update3CA_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::PhysicsData::UpdateChassis() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PhysicsData::UpdateChassis)> call(vehiclePhysicsData_UpdateChassis_Addr);
-    return call(this);
-}
-
-inline int64_t RED4ext::vehicle::TPPCameraComponent::UpdateData(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::TPPCameraComponent::UpdateData)> call(vehicleTPPCameraComponent_UpdateData_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::Physics::UpdateDataWorldTransform(RED4ext::WorldTransform* a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Physics::UpdateDataWorldTransform)> call(vehiclePhysics_UpdateDataWorldTransform_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::Unk570::UpdateEffectsBlackboard(uint32_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::UpdateEffectsBlackboard)> call(vehicleUnk570_UpdateEffectsBlackboard_Addr);
-    return call(this, a1);
-}
-
-inline RED4ext::audio::EmitterPosition* RED4ext::audio::Thing::UpdateEmitterPosition(RED4ext::ent::EntityID a1, RED4ext::CName a2, RED4ext::Vector4* a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::audio::Thing::UpdateEmitterPosition)> call(audioThing_UpdateEmitterPosition_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::vehicle::Unk580::UpdateEvents(RED4ext::vehicle::WheelUpdate* a1, int64_t a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::UpdateEvents)> call(vehicleUnk580_UpdateEvents_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::PID::UpdatePID(float a1, float a2, float a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PID::UpdatePID)> call(vehiclePID_UpdatePID_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim(RED4ext::anim::AnimFeature_VehiclePassenger* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim)> call(vehicleWheeledPhysics_UpdatePassengerAnim_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::BaseObject::UpdatePhysicsSleepState(float a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::BaseObject::UpdatePhysicsSleepState)> call(vehicleBaseObject_UpdatePhysicsSleepState_Addr);
-    return call(this, a1);
-}
-
-inline void RED4ext::vehicle::ChassisComponent::UpdatePhysicsState(uint32_t a1, bool a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::ChassisComponent::UpdatePhysicsState)> call(vehicleChassisComponent_UpdatePhysicsState_Addr);
-    return call(this, a1, a2);
-}
-
-inline void RED4ext::vehicle::TPPCameraComponent::UpdatePitch(RED4ext::Vector4* a1, RED4ext::Vector3* a2, RED4ext::vehicle::TPPCameraUpdate* a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::TPPCameraComponent::UpdatePitch)> call(vehicleTPPCameraComponent_UpdatePitch_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::vehicle::TPPCameraComponent::UpdatePosition(RED4ext::vehicle::TPPCameraUpdate* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::TPPCameraComponent::UpdatePosition)> call(vehicleTPPCameraComponent_UpdatePosition_Addr);
-    return call(this, a1);
-}
-
-inline bool RED4ext::physics::ProxyHelper::UpdateProxyCache() {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ProxyHelper::UpdateProxyCache)> call(physicsProxyHelper_UpdateProxyCache_Addr);
-    return call(this);
-}
-
-inline void* RED4ext::UpdateManagerHolder::UpdateSystems(void* a1, float a2, int64_t a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::UpdateManagerHolder::UpdateSystems)> call(UpdateManagerHolder_UpdateSystems_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::vehicle::Unk580::UpdateTireParameters(RED4ext::vehicle::TireParameterUpdate* a1, RED4ext::vehicle::TireUpdate* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::UpdateTireParameters)> call(vehicleUnk580_UpdateTireParameters_Addr);
+RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::ColliderSphere>* RED4ext::physics::ColliderSphere::createHandleWithRadius(RED4ext::Handle<RED4ext::physics::ICollider>* a1, float a2) {
+    using physicsColliderSphere_createHandleWithRadius_t = RED4ext::Handle<RED4ext::physics::ColliderSphere>* (*)(RED4ext::Handle<RED4ext::physics::ICollider>*, float);
+    RED4ext::RelocFunc<physicsColliderSphere_createHandleWithRadius_t> call(physicsColliderSphere_createHandleWithRadius_Addr);
     return call(a1, a2);
 }
 
-inline void RED4ext::vehicle::Unk588::UpdateTransform(RED4ext::Transform* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk588::UpdateTransform)> call(vehicleUnk588_UpdateTransform_Addr);
+RED4EXT_INLINE void RED4ext::physics::FilterData::LoadPreset(RED4ext::CName a1) {
+    using physicsFilterData_LoadPreset_t = void (*)(RED4ext::physics::FilterData*, RED4ext::CName);
+    RED4ext::RelocFunc<physicsFilterData_LoadPreset_t> call(physicsFilterData_LoadPreset_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::game::VehicleSystem::UpdateVehicleArrays() {
-    RED4ext::RelocFunc<decltype(&RED4ext::game::VehicleSystem::UpdateVehicleArrays)> call(gameVehicleSystem_UpdateVehicleArrays_Addr);
+RED4EXT_INLINE void RED4ext::physics::GeometryCache::FreeAlwaysLoaded() {
+    using physicsGeometryCache_FreeAlwaysLoaded_t = void (*)(RED4ext::physics::GeometryCache*);
+    RED4ext::RelocFunc<physicsGeometryCache_FreeAlwaysLoaded_t> call(physicsGeometryCache_FreeAlwaysLoaded_Addr);
     return call(this);
 }
 
-inline int64_t RED4ext::vehicle::Unk580::UpdateWheelEmitters(int64_t a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk580::UpdateWheelEmitters)> call(vehicleUnk580_UpdateWheelEmitters_Addr);
+RED4EXT_INLINE void RED4ext::physics::GeometryCache::FreeGeometryKey(RED4ext::physics::GeometryKey* a1) {
+    using physicsGeometryCache_FreeGeometryKey_t = void (*)(RED4ext::physics::GeometryCache*, RED4ext::physics::GeometryKey*);
+    RED4ext::RelocFunc<physicsGeometryCache_FreeGeometryKey_t> call(physicsGeometryCache_FreeGeometryKey_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::vehicle::PersistentDataPS::UpdateWheelRuntime(uint32_t a1, RED4ext::vehicle::WheelRuntimePSData* a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PersistentDataPS::UpdateWheelRuntime)> call(vehiclePersistentDataPS_UpdateWheelRuntime_Addr);
-    return call(this, a1, a2);
-}
-
-inline bool RED4ext::vehicle::PhysicsData::UsesAlternativeChassisMass() {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::PhysicsData::UsesAlternativeChassisMass)> call(vehiclePhysicsData_UsesAlternativeChassisMass_Addr);
-    return call(this);
-}
-
-inline void RED4ext::vehicle::Unk570::WheelEffectUpdate(uint32_t a1, RED4ext::vehicle::Unk570::Unk40* a2, float a3) {
-    RED4ext::RelocFunc<decltype(&RED4ext::vehicle::Unk570::WheelEffectUpdate)> call(vehicleUnk570_WheelEffectUpdate_Addr);
-    return call(this, a1, a2, a3);
-}
-
-inline void RED4ext::IGameInstance::WorldDetached(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::WorldDetached)> call(IGameInstance_WorldDetached_Addr);
+RED4EXT_INLINE void RED4ext::physics::GeometryCache::FreeSector(uint32_t a1) {
+    using physicsGeometryCache_FreeSector_t = void (*)(RED4ext::physics::GeometryCache*, uint32_t);
+    RED4ext::RelocFunc<physicsGeometryCache_FreeSector_t> call(physicsGeometryCache_FreeSector_Addr);
     return call(this, a1);
 }
 
-inline void RED4ext::IGameInstance::WorldPendingDetach(void* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::IGameInstance::WorldPendingDetach)> call(IGameInstance_WorldPendingDetach_Addr);
+RED4EXT_INLINE bool RED4ext::physics::GeometryCache::HasGeometryKey(RED4ext::physics::GeometryKey* a1) {
+    using physicsGeometryCache_HasGeometryKey_t = bool (*)(RED4ext::physics::GeometryCache*, RED4ext::physics::GeometryKey*);
+    RED4ext::RelocFunc<physicsGeometryCache_HasGeometryKey_t> call(physicsGeometryCache_HasGeometryKey_Addr);
     return call(this, a1);
 }
 
-inline RED4ext::Handle<RED4ext::physics::ColliderSphere>* RED4ext::physics::ColliderSphere::createHandleWithRadius(RED4ext::Handle<RED4ext::physics::ICollider>* a1, float a2) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::ColliderSphere::createHandleWithRadius)> call(physicsColliderSphere_createHandleWithRadius_Addr);
-    return call(a1, a2);
+RED4EXT_INLINE void RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometries(void* a1) {
+    using physicsGeometryCache_LoadAlwaysloadedSectorGeometries_t = void (*)(void*);
+    RED4ext::RelocFunc<physicsGeometryCache_LoadAlwaysloadedSectorGeometries_t> call(physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr);
+    return call(a1);
 }
 
-inline bool RED4ext::physics::pxRigidBody_Get(void* a0, int64_t a1, RED4ext::physics::StateValue a2, void* a3, uint32_t a4) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::pxRigidBody_Get)> call(physics_pxRigidBody_Get_Addr);
-    return call(a0, a1, a2, a3, a4);
+RED4EXT_INLINE int64_t RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometriesSetup(int64_t a1) {
+    using physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_t = int64_t (*)(RED4ext::physics::GeometryCache*, int64_t);
+    RED4ext::RelocFunc<physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_t> call(physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr);
+    return call(this, a1);
 }
 
-inline bool RED4ext::physics::pxRigidBody_Update(void* a0, RED4ext::physics::StateValue a1, void* a2, int64_t a3, uint32_t a4, bool a5) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::pxRigidBody_Update)> call(physics_pxRigidBody_Update_Addr);
-    return call(a0, a1, a2, a3, a4, a5);
+RED4EXT_INLINE void RED4ext::physics::GeometryCache::LoadSectorGeometries(RED4ext::physics::GeometryCache::LoadSectorGeometriesStruct* a1) {
+    using physicsGeometryCache_LoadSectorGeometries_t = void (*)(RED4ext::physics::GeometryCache::LoadSectorGeometriesStruct*);
+    RED4ext::RelocFunc<physicsGeometryCache_LoadSectorGeometries_t> call(physicsGeometryCache_LoadSectorGeometries_Addr);
+    return call(a1);
 }
 
-inline int64_t RED4ext::physics::GeometryCache::sub_7FF75B921520(int64_t a1, int64_t* a2, RED4ext::DynArray<void *>** a3, uint8_t a4) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::sub_7FF75B921520)> call(physicsGeometryCache_sub_7FF75B921520_Addr);
+RED4EXT_INLINE int64_t RED4ext::physics::GeometryCache::LoadSectorGeometriesSetup(uint32_t a1) {
+    using physicsGeometryCache_LoadSectorGeometriesSetup_t = int64_t (*)(RED4ext::physics::GeometryCache*, uint32_t);
+    RED4ext::RelocFunc<physicsGeometryCache_LoadSectorGeometriesSetup_t> call(physicsGeometryCache_LoadSectorGeometriesSetup_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::GeometryCache::Unknown(uint32_t a1) {
+    using physicsGeometryCache_Unknown_t = bool (*)(RED4ext::physics::GeometryCache*, uint32_t);
+    RED4ext::RelocFunc<physicsGeometryCache_Unknown_t> call(physicsGeometryCache_Unknown_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::physics::GeometryCache::sub_7FF75B921520(int64_t a1, int64_t* a2, RED4ext::DynArray<void *>** a3, uint8_t a4) {
+    using physicsGeometryCache_sub_7FF75B921520_t = int64_t (*)(RED4ext::physics::GeometryCache*, int64_t, int64_t*, RED4ext::DynArray<void *>**, uint8_t);
+    RED4ext::RelocFunc<physicsGeometryCache_sub_7FF75B921520_t> call(physicsGeometryCache_sub_7FF75B921520_Addr);
     return call(this, a1, a2, a3, a4);
 }
 
-inline bool RED4ext::physics::GeometryCache::sub_7FF75B922410(RED4ext::physics::GeometryKey* a1) {
-    RED4ext::RelocFunc<decltype(&RED4ext::physics::GeometryCache::sub_7FF75B922410)> call(physicsGeometryCache_sub_7FF75B922410_Addr);
+RED4EXT_INLINE bool RED4ext::physics::GeometryCache::sub_7FF75B922410(RED4ext::physics::GeometryKey* a1) {
+    using physicsGeometryCache_sub_7FF75B922410_t = bool (*)(RED4ext::physics::GeometryCache*, RED4ext::physics::GeometryKey*);
+    RED4ext::RelocFunc<physicsGeometryCache_sub_7FF75B922410_t> call(physicsGeometryCache_sub_7FF75B922410_Addr);
     return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::physics::ProxyCacheManager::Unk948::Kick(float a1) {
+    using physicsProxyCacheManagerUnk948_Kick_t = int64_t (*)(RED4ext::physics::ProxyCacheManager::Unk948*, float);
+    RED4ext::RelocFunc<physicsProxyCacheManagerUnk948_Kick_t> call(physicsProxyCacheManagerUnk948_Kick_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::physics::ProxyCache::AddToCache(RED4ext::physics::ProxyCacheEntry* a1, int32_t a2, int32_t a3, RED4ext::physics::StateValue a4, void* a5, uint64_t a6, bool a7) {
+    using physicsProxyCache_AddToCache_t = void (*)(RED4ext::physics::ProxyCache*, RED4ext::physics::ProxyCacheEntry*, int32_t, int32_t, RED4ext::physics::StateValue, void*, uint64_t, bool);
+    RED4ext::RelocFunc<physicsProxyCache_AddToCache_t> call(physicsProxyCache_AddToCache_Addr);
+    return call(this, a1, a2, a3, a4, a5, a6, a7);
+}
+
+RED4EXT_INLINE void* RED4ext::physics::ProxyCache::GetDataFromCache(uint32_t a1) {
+    using physicsProxyCache_GetDataFromCache_t = void* (*)(RED4ext::physics::ProxyCache*, uint32_t);
+    RED4ext::RelocFunc<physicsProxyCache_GetDataFromCache_t> call(physicsProxyCache_GetDataFromCache_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::ProxyCache::GetFromCacheOrGet(RED4ext::physics::ProxyID* a1, uint32_t a2, uint32_t a3, RED4ext::physics::StateValue a4, void* a5, uint32_t a6) {
+    using physicsProxyCache_GetFromCacheOrGet_t = bool (*)(RED4ext::physics::ProxyCache*, RED4ext::physics::ProxyID*, uint32_t, uint32_t, RED4ext::physics::StateValue, void*, uint32_t);
+    RED4ext::RelocFunc<physicsProxyCache_GetFromCacheOrGet_t> call(physicsProxyCache_GetFromCacheOrGet_Addr);
+    return call(this, a1, a2, a3, a4, a5, a6);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::Create(RED4ext::physics::ProxyID* a1) {
+    using physicsProxyHelper_Create_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyHelper_Create_t> call(physicsProxyHelper_Create_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::GetThingWithLock(RED4ext::physics::ProxyID* a1, RED4ext::SharedMutex* a2) {
+    using physicsProxyHelper_GetThingWithLock_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, RED4ext::physics::ProxyID*, RED4ext::SharedMutex*);
+    RED4ext::RelocFunc<physicsProxyHelper_GetThingWithLock_t> call(physicsProxyHelper_GetThingWithLock_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetAngularDamping(float* a1, uint32_t a2) {
+    using physicsProxyHelper_SetAngularDamping_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, float*, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetAngularDamping_t> call(physicsProxyHelper_SetAngularDamping_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetCCD(bool a1, int32_t a2) {
+    using physicsProxyHelper_SetCCD_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, int32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetCCD_t> call(physicsProxyHelper_SetCCD_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetGravity(bool a1, uint32_t a2) {
+    using physicsProxyHelper_SetGravity_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetGravity_t> call(physicsProxyHelper_SetGravity_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetIsQueryable(bool a1, uint32_t a2, uint32_t a3) {
+    using physicsProxyHelper_SetIsQueryable_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetIsQueryable_t> call(physicsProxyHelper_SetIsQueryable_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetLinearDamping(float* a1, uint32_t a2) {
+    using physicsProxyHelper_SetLinearDamping_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, float*, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetLinearDamping_t> call(physicsProxyHelper_SetLinearDamping_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetMassAndUpdateInertia(float a1, uint32_t a2, bool a3) {
+    using physicsProxyHelper_SetMassAndUpdateInertia_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, float, uint32_t, bool);
+    RED4ext::RelocFunc<physicsProxyHelper_SetMassAndUpdateInertia_t> call(physicsProxyHelper_SetMassAndUpdateInertia_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetQueryFilterData(void* a1, uint32_t a2, uint32_t a3) {
+    using physicsProxyHelper_SetQueryFilterData_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, void*, uint32_t, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetQueryFilterData_t> call(physicsProxyHelper_SetQueryFilterData_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetSimulationFilterData(void* a1, int32_t a2, int32_t a3) {
+    using physicsProxyHelper_SetSimulationFilterData_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, void*, int32_t, int32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetSimulationFilterData_t> call(physicsProxyHelper_SetSimulationFilterData_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetSimulationShape(bool a1, uint32_t a2, uint32_t a3) {
+    using physicsProxyHelper_SetSimulationShape_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetSimulationShape_t> call(physicsProxyHelper_SetSimulationShape_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE int64_t RED4ext::physics::ProxyHelper::Unlock() {
+    using physicsProxyHelper_Unlock_t = int64_t (*)(RED4ext::physics::ProxyHelper*);
+    RED4ext::RelocFunc<physicsProxyHelper_Unlock_t> call(physicsProxyHelper_Unlock_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::ProxyHelper::UpdateProxyCache() {
+    using physicsProxyHelper_UpdateProxyCache_t = bool (*)(RED4ext::physics::ProxyHelper*);
+    RED4ext::RelocFunc<physicsProxyHelper_UpdateProxyCache_t> call(physicsProxyHelper_UpdateProxyCache_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::physics::BaseProxy* RED4ext::physics::ProxyID::GetProxy() {
+    using physicsProxyID_GetProxy_t = RED4ext::physics::BaseProxy* (*)(RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyID_GetProxy_t> call(physicsProxyID_GetProxy_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE uint32_t* RED4ext::physics::ProxyID::ProcessProxyDesc(RED4ext::physics::BaseProxyDesc* a1) {
+    using physicsProxyID_ProcessProxyDesc_t = uint32_t* (*)(RED4ext::physics::ProxyID*, RED4ext::physics::BaseProxyDesc*);
+    RED4ext::RelocFunc<physicsProxyID_ProcessProxyDesc_t> call(physicsProxyID_ProcessProxyDesc_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::ProxyID::Unk(void* a1) {
+    using physicsProxyID_Unk_t = bool (*)(RED4ext::physics::ProxyID*, void*);
+    RED4ext::RelocFunc<physicsProxyID_Unk_t> call(physicsProxyID_Unk_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyCache* RED4ext::physics::ProxyManager::GetProxyCache(RED4ext::physics::ProxyID* a1) {
+    using physicsProxyManager_GetProxyCache_t = RED4ext::physics::ProxyCache* (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyManager_GetProxyCache_t> call(physicsProxyManager_GetProxyCache_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::BaseProxy>* RED4ext::physics::ProxyManager::GetProxyHandle(RED4ext::Handle<RED4ext::physics::BaseProxy>* a1, RED4ext::physics::ProxyID* a2) {
+    using physicsProxyManager_GetProxyHandle_t = RED4ext::Handle<RED4ext::physics::BaseProxy>* (*)(RED4ext::physics::ProxyManager*, RED4ext::Handle<RED4ext::physics::BaseProxy>*, RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyManager_GetProxyHandle_t> call(physicsProxyManager_GetProxyHandle_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::ProxyManager::HasProxy(RED4ext::physics::ProxyID* a1) {
+    using physicsProxyManager_HasProxy_t = bool (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyManager_HasProxy_t> call(physicsProxyManager_HasProxy_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::physics::ProxyManager::SetProxyCacheID(RED4ext::physics::ProxyID* a1, RED4ext::physics::ProxyCacheID* a2) {
+    using physicsProxyManager_SetProxyCacheID_t = void (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*, RED4ext::physics::ProxyCacheID*);
+    RED4ext::RelocFunc<physicsProxyManager_SetProxyCacheID_t> call(physicsProxyManager_SetProxyCacheID_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::ProxyManager::TestUnk2E2068(RED4ext::physics::ProxyID* a1) {
+    using physicsProxyManager_TestUnk2E2068_t = bool (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyManager_TestUnk2E2068_t> call(physicsProxyManager_TestUnk2E2068_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::SystemResource>* RED4ext::physics::SystemResource::GetFromCMesh(RED4ext::Handle<RED4ext::physics::SystemResource>* a1, RED4ext::CMesh* a2) {
+    using physicsSystemResource_GetFromCMesh_t = RED4ext::Handle<RED4ext::physics::SystemResource>* (*)(RED4ext::Handle<RED4ext::physics::SystemResource>*, RED4ext::CMesh*);
+    RED4ext::RelocFunc<physicsSystemResource_GetFromCMesh_t> call(physicsSystemResource_GetFromCMesh_Addr);
+    return call(a1, a2);
+}
+
+RED4EXT_INLINE float RED4ext::physics::VehiclePhysicsInsert1::SinMath(float a1) {
+    using physicsVehiclePhysicsInsert1_SinMath_t = float (*)(RED4ext::physics::VehiclePhysicsInsert1*, float);
+    RED4ext::RelocFunc<physicsVehiclePhysicsInsert1_SinMath_t> call(physicsVehiclePhysicsInsert1_SinMath_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::physics::VehiclePhysicsInsert2::SetsUnk160Unk15C(float a1) {
+    using physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_t = void (*)(RED4ext::physics::VehiclePhysicsInsert2*, float);
+    RED4ext::RelocFunc<physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_t> call(physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::Transform* RED4ext::physics::GetShapeLocalPos(RED4ext::Transform* a0, RED4ext::physics::ProxyID* a1, uint32_t a2, uint32_t a3) {
+    using physics_GetShapeLocalPos_t = RED4ext::Transform* (*)(RED4ext::Transform*, RED4ext::physics::ProxyID*, uint32_t, uint32_t);
+    RED4ext::RelocFunc<physics_GetShapeLocalPos_t> call(physics_GetShapeLocalPos_Addr);
+    return call(a0, a1, a2, a3);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::pxRigidBody_Get(void* a0, int64_t a1, RED4ext::physics::StateValue a2, void* a3, uint32_t a4) {
+    using physics_pxRigidBody_Get_t = bool (*)(void*, int64_t, RED4ext::physics::StateValue, void*, uint32_t);
+    RED4ext::RelocFunc<physics_pxRigidBody_Get_t> call(physics_pxRigidBody_Get_Addr);
+    return call(a0, a1, a2, a3, a4);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::pxRigidBody_Update(void* a0, RED4ext::physics::StateValue a1, void* a2, int64_t a3, uint32_t a4, bool a5) {
+    using physics_pxRigidBody_Update_t = bool (*)(void*, RED4ext::physics::StateValue, void*, int64_t, uint32_t, bool);
+    RED4ext::RelocFunc<physics_pxRigidBody_Update_t> call(physics_pxRigidBody_Update_Addr);
+    return call(a0, a1, a2, a3, a4, a5);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::AirControl::ApplyTorque(uint32_t a1, float a2) {
+    using vehicleAirControl_ApplyTorque_t = void (*)(RED4ext::vehicle::AirControl*, uint32_t, float);
+    RED4ext::RelocFunc<vehicleAirControl_ApplyTorque_t> call(vehicleAirControl_ApplyTorque_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::Vector3* RED4ext::vehicle::AirControl::GetAngularVelocity(RED4ext::Vector3* a1, int32_t a2, void* a3) {
+    using vehicleAirControl_GetAngularVelocity_t = RED4ext::Vector3* (*)(RED4ext::vehicle::AirControl*, RED4ext::Vector3*, int32_t, void*);
+    RED4ext::RelocFunc<vehicleAirControl_GetAngularVelocity_t> call(vehicleAirControl_GetAngularVelocity_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::AirControl::Process(float a1) {
+    using vehicleAirControl_Process_t = void (*)(RED4ext::vehicle::AirControl*, float);
+    RED4ext::RelocFunc<vehicleAirControl_Process_t> call(vehicleAirControl_Process_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::BaseObject::CheckPhysicsStateActionInterface() {
+    using vehicleBaseObject_CheckPhysicsStateActionInterface_t = bool (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_CheckPhysicsStateActionInterface_t> call(vehicleBaseObject_CheckPhysicsStateActionInterface_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::action::ActionBase** RED4ext::vehicle::BaseObject::CreateAction(RED4ext::action::ActionBase** a1, RED4ext::action::Type a2) {
+    using vehicleBaseObject_CreateAction_t = RED4ext::action::ActionBase** (*)(RED4ext::vehicle::BaseObject*, RED4ext::action::ActionBase**, RED4ext::action::Type);
+    RED4ext::RelocFunc<vehicleBaseObject_CreateAction_t> call(vehicleBaseObject_CreateAction_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::Handle<void>* RED4ext::vehicle::BaseObject::GetCurveSetData(RED4ext::Handle<void>* a1) {
+    using vehicleBaseObject_GetCurveSetData_t = RED4ext::Handle<void>* (*)(RED4ext::vehicle::BaseObject*, RED4ext::Handle<void>*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetCurveSetData_t> call(vehicleBaseObject_GetCurveSetData_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE double RED4ext::vehicle::BaseObject::GetDeceleration() {
+    using vehicleBaseObject_GetDeceleration_t = double (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetDeceleration_t> call(vehicleBaseObject_GetDeceleration_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::CString* RED4ext::vehicle::BaseObject::GetDisplayName(RED4ext::CString* a1) {
+    using vehicleBaseObject_GetDisplayName_t = RED4ext::CString* (*)(RED4ext::vehicle::BaseObject*, RED4ext::CString*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetDisplayName_t> call(vehicleBaseObject_GetDisplayName_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetGravitationalForce() {
+    using vehicleBaseObject_GetGravitationalForce_t = float (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetGravitationalForce_t> call(vehicleBaseObject_GetGravitationalForce_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetInverseMass() {
+    using vehicleBaseObject_GetInverseMass_t = float (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetInverseMass_t> call(vehicleBaseObject_GetInverseMass_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::vehicle::PhysicsData* RED4ext::vehicle::BaseObject::GetPhysicsData() {
+    using vehicleBaseObject_GetPhysicsData_t = RED4ext::vehicle::PhysicsData* (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetPhysicsData_t> call(vehicleBaseObject_GetPhysicsData_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetTotalMass() {
+    using vehicleBaseObject_GetTotalMass_t = float (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetTotalMass_t> call(vehicleBaseObject_GetTotalMass_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetUnk60C() {
+    using vehicleBaseObject_GetUnk60C_t = float (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetUnk60C_t> call(vehicleBaseObject_GetUnk60C_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void* RED4ext::vehicle::BaseObject::GetUnk8E0() {
+    using vehicleBaseObject_GetUnk8E0_t = void* (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetUnk8E0_t> call(vehicleBaseObject_GetUnk8E0_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::world::RuntimeSystemPhysics* RED4ext::vehicle::BaseObject::GetVehicleSystem() {
+    using vehicleBaseObject_GetVehicleSystem_t = RED4ext::world::RuntimeSystemPhysics* (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_GetVehicleSystem_t> call(vehicleBaseObject_GetVehicleSystem_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::Quaternion* RED4ext::vehicle::BaseObject::GetWeaponOrientation(RED4ext::Quaternion* a1, uint32_t a2) {
+    using vehicleBaseObject_GetWeaponOrientation_t = RED4ext::Quaternion* (*)(RED4ext::vehicle::BaseObject*, RED4ext::Quaternion*, uint32_t);
+    RED4ext::RelocFunc<vehicleBaseObject_GetWeaponOrientation_t> call(vehicleBaseObject_GetWeaponOrientation_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::BaseObject::HornForDuration() {
+    using vehicleBaseObject_HornForDuration_t = void (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_HornForDuration_t> call(vehicleBaseObject_HornForDuration_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::BaseObject::HornForDurationDelayed(float a1) {
+    using vehicleBaseObject_HornForDurationDelayed_t = void (*)(RED4ext::vehicle::BaseObject*, float);
+    RED4ext::RelocFunc<vehicleBaseObject_HornForDurationDelayed_t> call(vehicleBaseObject_HornForDurationDelayed_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::WorldTransform* RED4ext::vehicle::BaseObject::PostMovePhysicsStateNotZero(float a1, float* a2) {
+    using vehicleBaseObject_PostMovePhysicsStateNotZero_t = RED4ext::WorldTransform* (*)(RED4ext::vehicle::BaseObject*, float, float*);
+    RED4ext::RelocFunc<vehicleBaseObject_PostMovePhysicsStateNotZero_t> call(vehicleBaseObject_PostMovePhysicsStateNotZero_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::WorldTransform* RED4ext::vehicle::BaseObject::PostMovePhysicsStateZero(float a1, float* a2) {
+    using vehicleBaseObject_PostMovePhysicsStateZero_t = RED4ext::WorldTransform* (*)(RED4ext::vehicle::BaseObject*, float, float*);
+    RED4ext::RelocFunc<vehicleBaseObject_PostMovePhysicsStateZero_t> call(vehicleBaseObject_PostMovePhysicsStateZero_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateNotZero(int64_t a1, float* a2, int64_t a3) {
+    using vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_t = void (*)(RED4ext::vehicle::BaseObject*, int64_t, float*, int64_t);
+    RED4ext::RelocFunc<vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_t> call(vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateZero(int64_t a1, int64_t a2, int64_t a3) {
+    using vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_t = int64_t (*)(RED4ext::vehicle::BaseObject*, int64_t, int64_t, int64_t);
+    RED4ext::RelocFunc<vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_t> call(vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::BaseObject::Reset8B4() {
+    using vehicleBaseObject_Reset8B4_t = void (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_Reset8B4_t> call(vehicleBaseObject_Reset8B4_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::BaseObject::SetPhysicsState(RED4ext::vehicle::PhysicsState a1, bool a2) {
+    using vehicleBaseObject_SetPhysicsState_t = void (*)(RED4ext::vehicle::BaseObject*, RED4ext::vehicle::PhysicsState, bool);
+    RED4ext::RelocFunc<vehicleBaseObject_SetPhysicsState_t> call(vehicleBaseObject_SetPhysicsState_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::BaseObject::UnsetPhysicsStates() {
+    using vehicleBaseObject_UnsetPhysicsStates_t = void (*)(RED4ext::vehicle::BaseObject*);
+    RED4ext::RelocFunc<vehicleBaseObject_UnsetPhysicsStates_t> call(vehicleBaseObject_UnsetPhysicsStates_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::BaseObject::UpdatePhysicsSleepState(float a1) {
+    using vehicleBaseObject_UpdatePhysicsSleepState_t = void (*)(RED4ext::vehicle::BaseObject*, float);
+    RED4ext::RelocFunc<vehicleBaseObject_UpdatePhysicsSleepState_t> call(vehicleBaseObject_UpdatePhysicsSleepState_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::BikePhysics::AnimationUpdate() {
+    using vehicleBikePhysics_AnimationUpdate_t = int64_t (*)(RED4ext::vehicle::BikePhysics*);
+    RED4ext::RelocFunc<vehicleBikePhysics_AnimationUpdate_t> call(vehicleBikePhysics_AnimationUpdate_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::CameraManager::ChangeCamera(uint32_t a1, float a2) {
+    using vehicleCameraManager_ChangeCamera_t = void (*)(RED4ext::vehicle::CameraManager*, uint32_t, float);
+    RED4ext::RelocFunc<vehicleCameraManager_ChangeCamera_t> call(vehicleCameraManager_ChangeCamera_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::CameraManager::IsTPP() {
+    using vehicleCameraManager_IsTPP_t = bool (*)(RED4ext::vehicle::CameraManager*);
+    RED4ext::RelocFunc<vehicleCameraManager_IsTPP_t> call(vehicleCameraManager_IsTPP_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::CarPhysics::AnimationUpdate(float a1) {
+    using vehicleCarPhysics_AnimationUpdate_t = int64_t (*)(RED4ext::vehicle::CarPhysics*, float);
+    RED4ext::RelocFunc<vehicleCarPhysics_AnimationUpdate_t> call(vehicleCarPhysics_AnimationUpdate_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::ChassisComponent::BigUpdate() {
+    using vehicleChassisComponent_BigUpdate_t = bool (*)(RED4ext::vehicle::ChassisComponent*);
+    RED4ext::RelocFunc<vehicleChassisComponent_BigUpdate_t> call(vehicleChassisComponent_BigUpdate_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::ICollider>** RED4ext::vehicle::ChassisComponent::GetCollisionShapes(RED4ext::Handle<RED4ext::physics::ICollider>** a1, bool a2) {
+    using vehicleChassisComponent_GetCollisionShapes_t = RED4ext::Handle<RED4ext::physics::ICollider>** (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::Handle<RED4ext::physics::ICollider>**, bool);
+    RED4ext::RelocFunc<vehicleChassisComponent_GetCollisionShapes_t> call(vehicleChassisComponent_GetCollisionShapes_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::vehicle::ChassisComponent::GetProxyHelperAndLock(RED4ext::physics::ProxyHelper* a1) {
+    using vehicleChassisComponent_GetProxyHelperAndLock_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::physics::ProxyHelper*);
+    RED4ext::RelocFunc<vehicleChassisComponent_GetProxyHelperAndLock_t> call(vehicleChassisComponent_GetProxyHelperAndLock_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::ChassisComponent::SetFilterData(RED4ext::physics::FilterData* a1, RED4ext::physics::FilterData* a2) {
+    using vehicleChassisComponent_SetFilterData_t = int64_t (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::physics::FilterData*, RED4ext::physics::FilterData*);
+    RED4ext::RelocFunc<vehicleChassisComponent_SetFilterData_t> call(vehicleChassisComponent_SetFilterData_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::ChassisComponent::SomethingIfEnabled() {
+    using vehicleChassisComponent_SomethingIfEnabled_t = void (*)(RED4ext::vehicle::ChassisComponent*);
+    RED4ext::RelocFunc<vehicleChassisComponent_SomethingIfEnabled_t> call(vehicleChassisComponent_SomethingIfEnabled_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::WorldTransform* RED4ext::vehicle::ChassisComponent::TransformWorldTransform(RED4ext::WorldTransform* a1, RED4ext::WorldTransform* a2) {
+    using vehicleChassisComponent_TransformWorldTransform_t = RED4ext::WorldTransform* (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::WorldTransform*, RED4ext::WorldTransform*);
+    RED4ext::RelocFunc<vehicleChassisComponent_TransformWorldTransform_t> call(vehicleChassisComponent_TransformWorldTransform_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::ChassisComponent::Update() {
+    using vehicleChassisComponent_Update_t = void (*)(RED4ext::vehicle::ChassisComponent*);
+    RED4ext::RelocFunc<vehicleChassisComponent_Update_t> call(vehicleChassisComponent_Update_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::ChassisComponent::UpdatePhysicsState(uint32_t a1, bool a2) {
+    using vehicleChassisComponent_UpdatePhysicsState_t = void (*)(RED4ext::vehicle::ChassisComponent*, uint32_t, bool);
+    RED4ext::RelocFunc<vehicleChassisComponent_UpdatePhysicsState_t> call(vehicleChassisComponent_UpdatePhysicsState_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE float RED4ext::vehicle::PID::GetCorrection() {
+    using vehiclePID_GetCorrection_t = float (*)(RED4ext::vehicle::PID*);
+    RED4ext::RelocFunc<vehiclePID_GetCorrection_t> call(vehiclePID_GetCorrection_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PID::Initialize(float a1, float a2, float a3) {
+    using vehiclePID_Initialize_t = void (*)(RED4ext::vehicle::PID*, float, float, float);
+    RED4ext::RelocFunc<vehiclePID_Initialize_t> call(vehiclePID_Initialize_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE RED4ext::vehicle::PID::IntegralState RED4ext::vehicle::PID::Process(float a1, float a2) {
+    using vehiclePID_Process_t = RED4ext::vehicle::PID::IntegralState (*)(RED4ext::vehicle::PID*, float, float);
+    RED4ext::RelocFunc<vehiclePID_Process_t> call(vehiclePID_Process_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PID::Reset(float a1) {
+    using vehiclePID_Reset_t = void (*)(RED4ext::vehicle::PID*, float);
+    RED4ext::RelocFunc<vehiclePID_Reset_t> call(vehiclePID_Reset_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PID::UpdatePID(float a1, float a2, float a3) {
+    using vehiclePID_UpdatePID_t = void (*)(RED4ext::vehicle::PID*, float, float, float);
+    RED4ext::RelocFunc<vehiclePID_UpdatePID_t> call(vehiclePID_UpdatePID_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PersistentDataPS::UpdateWheelRuntime(uint32_t a1, RED4ext::vehicle::WheelRuntimePSData* a2) {
+    using vehiclePersistentDataPS_UpdateWheelRuntime_t = void (*)(RED4ext::vehicle::PersistentDataPS*, uint32_t, RED4ext::vehicle::WheelRuntimePSData*);
+    RED4ext::RelocFunc<vehiclePersistentDataPS_UpdateWheelRuntime_t> call(vehiclePersistentDataPS_UpdateWheelRuntime_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::AddTorque(RED4ext::Vector3* a1) {
+    using vehiclePhysicsData_AddTorque_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*);
+    RED4ext::RelocFunc<vehiclePhysicsData_AddTorque_t> call(vehiclePhysicsData_AddTorque_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::ApplyForceAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
+    using vehiclePhysicsData_ApplyForceAtPosition_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*, RED4ext::Vector3*);
+    RED4ext::RelocFunc<vehiclePhysicsData_ApplyForceAtPosition_t> call(vehiclePhysicsData_ApplyForceAtPosition_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::ApplyTorqueAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
+    using vehiclePhysicsData_ApplyTorqueAtPosition_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*, RED4ext::Vector3*);
+    RED4ext::RelocFunc<vehiclePhysicsData_ApplyTorqueAtPosition_t> call(vehiclePhysicsData_ApplyTorqueAtPosition_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::SetUsesNormalChassisMass() {
+    using vehiclePhysicsData_SetUsesNormalChassisMass_t = void (*)(RED4ext::vehicle::PhysicsData*);
+    RED4ext::RelocFunc<vehiclePhysicsData_SetUsesNormalChassisMass_t> call(vehiclePhysicsData_SetUsesNormalChassisMass_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::UpdateChassis() {
+    using vehiclePhysicsData_UpdateChassis_t = void (*)(RED4ext::vehicle::PhysicsData*);
+    RED4ext::RelocFunc<vehiclePhysicsData_UpdateChassis_t> call(vehiclePhysicsData_UpdateChassis_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::PhysicsData::UsesAlternativeChassisMass() {
+    using vehiclePhysicsData_UsesAlternativeChassisMass_t = bool (*)(RED4ext::vehicle::PhysicsData*);
+    RED4ext::RelocFunc<vehiclePhysicsData_UsesAlternativeChassisMass_t> call(vehiclePhysicsData_UsesAlternativeChassisMass_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Physics::ComputeSleep(float a1) {
+    using vehiclePhysics_ComputeSleep_t = void (*)(RED4ext::vehicle::Physics*, float);
+    RED4ext::RelocFunc<vehiclePhysics_ComputeSleep_t> call(vehiclePhysics_ComputeSleep_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::Physics::GetSomethingWaterParams() {
+    using vehiclePhysics_GetSomethingWaterParams_t = bool (*)(RED4ext::vehicle::Physics*);
+    RED4ext::RelocFunc<vehiclePhysics_GetSomethingWaterParams_t> call(vehiclePhysics_GetSomethingWaterParams_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::vehicle::BaseObject* RED4ext::vehicle::Physics::GetVehicle() {
+    using vehiclePhysics_GetVehicle_t = RED4ext::vehicle::BaseObject* (*)(RED4ext::vehicle::Physics*);
+    RED4ext::RelocFunc<vehiclePhysics_GetVehicle_t> call(vehiclePhysics_GetVehicle_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::Physics::IsInAirFromVehicle_func() {
+    using vehiclePhysics_IsInAirFromVehicle_func_t = bool (*)(RED4ext::vehicle::Physics*);
+    RED4ext::RelocFunc<vehiclePhysics_IsInAirFromVehicle_func_t> call(vehiclePhysics_IsInAirFromVehicle_func_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE double RED4ext::vehicle::Physics::LoadHasBeenFlippedOver(RED4ext::Handle<RED4ext::game::data::VehicleDriveModelData_Record>* a1) {
+    using vehiclePhysics_LoadHasBeenFlippedOver_t = double (*)(RED4ext::vehicle::Physics*, RED4ext::Handle<RED4ext::game::data::VehicleDriveModelData_Record>*);
+    RED4ext::RelocFunc<vehiclePhysics_LoadHasBeenFlippedOver_t> call(vehiclePhysics_LoadHasBeenFlippedOver_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::Physics::ReadWorldTransform(RED4ext::WorldTransform* a1) {
+    using vehiclePhysics_ReadWorldTransform_t = bool (*)(RED4ext::vehicle::Physics*, RED4ext::WorldTransform*);
+    RED4ext::RelocFunc<vehiclePhysics_ReadWorldTransform_t> call(vehiclePhysics_ReadWorldTransform_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Physics::SetUnkA0ToOne() {
+    using vehiclePhysics_SetUnkA0ToOne_t = void (*)(RED4ext::vehicle::Physics*);
+    RED4ext::RelocFunc<vehiclePhysics_SetUnkA0ToOne_t> call(vehiclePhysics_SetUnkA0ToOne_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Physics::UpdateDataWorldTransform(RED4ext::WorldTransform* a1, bool a2) {
+    using vehiclePhysics_UpdateDataWorldTransform_t = void (*)(RED4ext::vehicle::Physics*, RED4ext::WorldTransform*, bool);
+    RED4ext::RelocFunc<vehiclePhysics_UpdateDataWorldTransform_t> call(vehiclePhysics_UpdateDataWorldTransform_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::Vector4* RED4ext::vehicle::TPPCameraComponent::GetLocationFromOffset(RED4ext::Vector4* a1, RED4ext::Vector3* a2) {
+    using vehicleTPPCameraComponent_GetLocationFromOffset_t = RED4ext::Vector4* (*)(RED4ext::vehicle::TPPCameraComponent*, RED4ext::Vector4*, RED4ext::Vector3*);
+    RED4ext::RelocFunc<vehicleTPPCameraComponent_GetLocationFromOffset_t> call(vehicleTPPCameraComponent_GetLocationFromOffset_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::GetYaw(float* a1, RED4ext::Vector4* a2, float a3) {
+    using vehicleTPPCameraComponent_GetYaw_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, float*, RED4ext::Vector4*, float);
+    RED4ext::RelocFunc<vehicleTPPCameraComponent_GetYaw_t> call(vehicleTPPCameraComponent_GetYaw_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_Update(float* a1) {
+    using vehicleTPPCameraComponent_TargetedCameraInterface_Update_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, float*);
+    RED4ext::RelocFunc<vehicleTPPCameraComponent_TargetedCameraInterface_Update_t> call(vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_sub_58() {
+    using vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_t = void (*)(RED4ext::vehicle::TPPCameraComponent*);
+    RED4ext::RelocFunc<vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_t> call(vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::TPPCameraComponent::UpdateData(void* a1) {
+    using vehicleTPPCameraComponent_UpdateData_t = int64_t (*)(RED4ext::vehicle::TPPCameraComponent*, void*);
+    RED4ext::RelocFunc<vehicleTPPCameraComponent_UpdateData_t> call(vehicleTPPCameraComponent_UpdateData_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::UpdatePitch(RED4ext::Vector4* a1, RED4ext::Vector3* a2, RED4ext::vehicle::TPPCameraUpdate* a3) {
+    using vehicleTPPCameraComponent_UpdatePitch_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, RED4ext::Vector4*, RED4ext::Vector3*, RED4ext::vehicle::TPPCameraUpdate*);
+    RED4ext::RelocFunc<vehicleTPPCameraComponent_UpdatePitch_t> call(vehicleTPPCameraComponent_UpdatePitch_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::UpdatePosition(RED4ext::vehicle::TPPCameraUpdate* a1) {
+    using vehicleTPPCameraComponent_UpdatePosition_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, RED4ext::vehicle::TPPCameraUpdate*);
+    RED4ext::RelocFunc<vehicleTPPCameraComponent_UpdatePosition_t> call(vehicleTPPCameraComponent_UpdatePosition_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk568::CopyOverCollisionForce() {
+    using vehicleUnk568_CopyOverCollisionForce_t = void (*)(RED4ext::vehicle::Unk568*);
+    RED4ext::RelocFunc<vehicleUnk568_CopyOverCollisionForce_t> call(vehicleUnk568_CopyOverCollisionForce_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::Unk568::SetAcceleration(RED4ext::Vector4* a1) {
+    using vehicleUnk568_SetAcceleration_t = int64_t (*)(RED4ext::vehicle::Unk568*, RED4ext::Vector4*);
+    RED4ext::RelocFunc<vehicleUnk568_SetAcceleration_t> call(vehicleUnk568_SetAcceleration_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk568::SetLinearVelocityEtc(RED4ext::Vector4* a1) {
+    using vehicleUnk568_SetLinearVelocityEtc_t = void (*)(RED4ext::vehicle::Unk568*, RED4ext::Vector4*);
+    RED4ext::RelocFunc<vehicleUnk568_SetLinearVelocityEtc_t> call(vehicleUnk568_SetLinearVelocityEtc_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk568::SetUnkD0(void* a1) {
+    using vehicleUnk568_SetUnkD0_t = void (*)(RED4ext::vehicle::Unk568*, void*);
+    RED4ext::RelocFunc<vehicleUnk568_SetUnkD0_t> call(vehicleUnk568_SetUnkD0_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::vehicle::Unk570::CollisionFxLookup* RED4ext::vehicle::Unk570::GetCollisionFxForMaterial(RED4ext::CName a1) {
+    using vehicleUnk570_GetCollisionFxForMaterial_t = RED4ext::vehicle::Unk570::CollisionFxLookup* (*)(RED4ext::vehicle::Unk570*, RED4ext::CName);
+    RED4ext::RelocFunc<vehicleUnk570_GetCollisionFxForMaterial_t> call(vehicleUnk570_GetCollisionFxForMaterial_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::vehicle::MaterialFx* RED4ext::vehicle::Unk570::GetFxForMaterial(RED4ext::CName a1, bool a2) {
+    using vehicleUnk570_GetFxForMaterial_t = RED4ext::vehicle::MaterialFx* (*)(RED4ext::vehicle::Unk570*, RED4ext::CName, bool);
+    RED4ext::RelocFunc<vehicleUnk570_GetFxForMaterial_t> call(vehicleUnk570_GetFxForMaterial_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::vehicle::Unk570::SmearFxLookup* RED4ext::vehicle::Unk570::GetSmearFxForMaterial(RED4ext::CName a1, bool a2) {
+    using vehicleUnk570_GetSmearFxForMaterial_t = RED4ext::vehicle::Unk570::SmearFxLookup* (*)(RED4ext::vehicle::Unk570*, RED4ext::CName, bool);
+    RED4ext::RelocFunc<vehicleUnk570_GetSmearFxForMaterial_t> call(vehicleUnk570_GetSmearFxForMaterial_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk570::ProcessEffects(uint32_t a1, RED4ext::vehicle::Unk570::Unk40* a2, float a3) {
+    using vehicleUnk570_ProcessEffects_t = void (*)(RED4ext::vehicle::Unk570*, uint32_t, RED4ext::vehicle::Unk570::Unk40*, float);
+    RED4ext::RelocFunc<vehicleUnk570_ProcessEffects_t> call(vehicleUnk570_ProcessEffects_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk570::ProcessImpactScratch(RED4ext::Vector3* a1, RED4ext::Vector3* a2, RED4ext::Vector3* a3, RED4ext::Vector3* a4, float a5, float a6, RED4ext::CName a7) {
+    using vehicleUnk570_ProcessImpactScratch_t = void (*)(RED4ext::vehicle::Unk570*, RED4ext::Vector3*, RED4ext::Vector3*, RED4ext::Vector3*, RED4ext::Vector3*, float, float, RED4ext::CName);
+    RED4ext::RelocFunc<vehicleUnk570_ProcessImpactScratch_t> call(vehicleUnk570_ProcessImpactScratch_Addr);
+    return call(this, a1, a2, a3, a4, a5, a6, a7);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk570::Setup(int64_t a1, int64_t a2, int64_t a3) {
+    using vehicleUnk570_Setup_t = void (*)(RED4ext::vehicle::Unk570*, int64_t, int64_t, int64_t);
+    RED4ext::RelocFunc<vehicleUnk570_Setup_t> call(vehicleUnk570_Setup_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::Unk570::SkidMarkEffectStart(RED4ext::vehicle::Unk570::Unk30* a1, RED4ext::vehicle::MaterialFx* a2, RED4ext::Transform* a3, RED4ext::Transform* a4, bool a5, bool a6, bool a7) {
+    using vehicleUnk570_SkidMarkEffectStart_t = bool (*)(RED4ext::vehicle::Unk570*, RED4ext::vehicle::Unk570::Unk30*, RED4ext::vehicle::MaterialFx*, RED4ext::Transform*, RED4ext::Transform*, bool, bool, bool);
+    RED4ext::RelocFunc<vehicleUnk570_SkidMarkEffectStart_t> call(vehicleUnk570_SkidMarkEffectStart_Addr);
+    return call(this, a1, a2, a3, a4, a5, a6, a7);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::Unk570::TireTrackEffectStart(RED4ext::vehicle::Unk570::Unk30* a1, RED4ext::vehicle::MaterialFx* a2, RED4ext::Transform* a3, RED4ext::Transform* a4, bool a5, bool a6, bool a7) {
+    using vehicleUnk570_TireTrackEffectStart_t = bool (*)(RED4ext::vehicle::Unk570*, RED4ext::vehicle::Unk570::Unk30*, RED4ext::vehicle::MaterialFx*, RED4ext::Transform*, RED4ext::Transform*, bool, bool, bool);
+    RED4ext::RelocFunc<vehicleUnk570_TireTrackEffectStart_t> call(vehicleUnk570_TireTrackEffectStart_Addr);
+    return call(this, a1, a2, a3, a4, a5, a6, a7);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk570::UpdateEffectsBlackboard(uint32_t a1) {
+    using vehicleUnk570_UpdateEffectsBlackboard_t = void (*)(RED4ext::vehicle::Unk570*, uint32_t);
+    RED4ext::RelocFunc<vehicleUnk570_UpdateEffectsBlackboard_t> call(vehicleUnk570_UpdateEffectsBlackboard_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk570::WheelEffectUpdate(uint32_t a1, RED4ext::vehicle::Unk570::Unk40* a2, float a3) {
+    using vehicleUnk570_WheelEffectUpdate_t = void (*)(RED4ext::vehicle::Unk570*, uint32_t, RED4ext::vehicle::Unk570::Unk40*, float);
+    RED4ext::RelocFunc<vehicleUnk570_WheelEffectUpdate_t> call(vehicleUnk570_WheelEffectUpdate_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void* RED4ext::vehicle::Unk580::GetAudioResourceMetadata(void* a1) {
+    using vehicleUnk580_GetAudioResourceMetadata_t = void* (*)(RED4ext::vehicle::Unk580*, void*);
+    RED4ext::RelocFunc<vehicleUnk580_GetAudioResourceMetadata_t> call(vehicleUnk580_GetAudioResourceMetadata_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::Unk580::IsRadioReceiverActive() {
+    using vehicleUnk580_IsRadioReceiverActive_t = bool (*)(RED4ext::vehicle::Unk580*);
+    RED4ext::RelocFunc<vehicleUnk580_IsRadioReceiverActive_t> call(vehicleUnk580_IsRadioReceiverActive_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk580::NextRadioReceiverStation(uint32_t a1, bool a2) {
+    using vehicleUnk580_NextRadioReceiverStation_t = void (*)(RED4ext::vehicle::Unk580*, uint32_t, bool);
+    RED4ext::RelocFunc<vehicleUnk580_NextRadioReceiverStation_t> call(vehicleUnk580_NextRadioReceiverStation_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::Unk580::SetRadioTier(int32_t a1, bool a2) {
+    using vehicleUnk580_SetRadioTier_t = int64_t (*)(RED4ext::vehicle::Unk580*, int32_t, bool);
+    RED4ext::RelocFunc<vehicleUnk580_SetRadioTier_t> call(vehicleUnk580_SetRadioTier_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE bool RED4ext::vehicle::Unk580::ShouldUseSomeAVListener() {
+    using vehicleUnk580_ShouldUseSomeAVListener_t = bool (*)(RED4ext::vehicle::Unk580*);
+    RED4ext::RelocFunc<vehicleUnk580_ShouldUseSomeAVListener_t> call(vehicleUnk580_ShouldUseSomeAVListener_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk580::ToggleHorn(bool a1, uint8_t* a2) {
+    using vehicleUnk580_ToggleHorn_t = void (*)(RED4ext::vehicle::Unk580*, bool, uint8_t*);
+    RED4ext::RelocFunc<vehicleUnk580_ToggleHorn_t> call(vehicleUnk580_ToggleHorn_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk580::Update(int64_t a1, float a2, uint64_t* a3) {
+    using vehicleUnk580_Update_t = void (*)(RED4ext::vehicle::Unk580*, int64_t, float, uint64_t*);
+    RED4ext::RelocFunc<vehicleUnk580_Update_t> call(vehicleUnk580_Update_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk580::Update3CA(bool a1) {
+    using vehicleUnk580_Update3CA_t = void (*)(RED4ext::vehicle::Unk580*, bool);
+    RED4ext::RelocFunc<vehicleUnk580_Update3CA_t> call(vehicleUnk580_Update3CA_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk580::UpdateEvents(RED4ext::vehicle::WheelUpdate* a1, int64_t a2) {
+    using vehicleUnk580_UpdateEvents_t = void (*)(RED4ext::vehicle::Unk580*, RED4ext::vehicle::WheelUpdate*, int64_t);
+    RED4ext::RelocFunc<vehicleUnk580_UpdateEvents_t> call(vehicleUnk580_UpdateEvents_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk580::UpdateTPPinAudioSystem() {
+    using vehicleUnk580_UpdateTPPinAudioSystem_t = void (*)(RED4ext::vehicle::Unk580*);
+    RED4ext::RelocFunc<vehicleUnk580_UpdateTPPinAudioSystem_t> call(vehicleUnk580_UpdateTPPinAudioSystem_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk580::UpdateTireParameters(RED4ext::vehicle::TireParameterUpdate* a1, RED4ext::vehicle::TireUpdate* a2) {
+    using vehicleUnk580_UpdateTireParameters_t = void (*)(RED4ext::vehicle::TireParameterUpdate*, RED4ext::vehicle::TireUpdate*);
+    RED4ext::RelocFunc<vehicleUnk580_UpdateTireParameters_t> call(vehicleUnk580_UpdateTireParameters_Addr);
+    return call(a1, a2);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::Unk580::UpdateWheelEmitters(int64_t a1) {
+    using vehicleUnk580_UpdateWheelEmitters_t = int64_t (*)(RED4ext::vehicle::Unk580*, int64_t);
+    RED4ext::RelocFunc<vehicleUnk580_UpdateWheelEmitters_t> call(vehicleUnk580_UpdateWheelEmitters_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::Unk588::Unknown(RED4ext::vehicle::BaseObject* a1, int64_t a2) {
+    using vehicleUnk588_Unknown_t = int64_t (*)(RED4ext::vehicle::Unk588*, RED4ext::vehicle::BaseObject*, int64_t);
+    RED4ext::RelocFunc<vehicleUnk588_Unknown_t> call(vehicleUnk588_Unknown_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::Unk588::UpdateTransform(RED4ext::Transform* a1) {
+    using vehicleUnk588_UpdateTransform_t = void (*)(RED4ext::vehicle::Unk588*, RED4ext::Transform*);
+    RED4ext::RelocFunc<vehicleUnk588_UpdateTransform_t> call(vehicleUnk588_UpdateTransform_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::UnkD10::Reset(int32_t a1) {
+    using vehicleUnkD10_Reset_t = void (*)(RED4ext::vehicle::UnkD10*, int32_t);
+    RED4ext::RelocFunc<vehicleUnkD10_Reset_t> call(vehicleUnkD10_Reset_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE double RED4ext::vehicle::WheeledPhysics::ApplyWaterResistance(void* a1, float a2) {
+    using vehicleWheeledPhysics_ApplyWaterResistance_t = double (*)(void*, float);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_ApplyWaterResistance_t> call(vehicleWheeledPhysics_ApplyWaterResistance_Addr);
+    return call(a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::FixedUpdate(int64_t a1, int64_t a2, int64_t a3, int64_t a4) {
+    using vehicleWheeledPhysics_FixedUpdate_t = void (*)(int64_t, int64_t, int64_t, int64_t);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_FixedUpdate_t> call(vehicleWheeledPhysics_FixedUpdate_Addr);
+    return call(a1, a2, a3, a4);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::FourWheelTorque(uint8_t a1, uint8_t a2, float a3, RED4ext::Transform* a4) {
+    using vehicleWheeledPhysics_FourWheelTorque_t = void (*)(RED4ext::vehicle::WheeledPhysics*, uint8_t, uint8_t, float, RED4ext::Transform*);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_FourWheelTorque_t> call(vehicleWheeledPhysics_FourWheelTorque_Addr);
+    return call(this, a1, a2, a3, a4);
+}
+
+RED4EXT_INLINE float* RED4ext::vehicle::WheeledPhysics::FourWheelTorqueStuff(float a1) {
+    using vehicleWheeledPhysics_FourWheelTorqueStuff_t = float* (*)(RED4ext::vehicle::WheeledPhysics*, float);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_FourWheelTorqueStuff_t> call(vehicleWheeledPhysics_FourWheelTorqueStuff_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE float RED4ext::vehicle::WheeledPhysics::GetEnergy() {
+    using vehicleWheeledPhysics_GetEnergy_t = float (*)(RED4ext::vehicle::WheeledPhysics*);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_GetEnergy_t> call(vehicleWheeledPhysics_GetEnergy_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::WheeledPhysics::GetNumberOfWheelsTouchingGround() {
+    using vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_t = int64_t (*)(RED4ext::vehicle::WheeledPhysics*);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_t> call(vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::ProcessAirControl(float a1) {
+    using vehicleWheeledPhysics_ProcessAirControl_t = void (*)(RED4ext::vehicle::WheeledPhysics*, float);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_ProcessAirControl_t> call(vehicleWheeledPhysics_ProcessAirControl_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::WheeledPhysics::SetIsMovingOthers(bool a1) {
+    using vehicleWheeledPhysics_SetIsMovingOthers_t = int64_t (*)(RED4ext::vehicle::WheeledPhysics*, bool);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_SetIsMovingOthers_t> call(vehicleWheeledPhysics_SetIsMovingOthers_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::SetupInsert() {
+    using vehicleWheeledPhysics_SetupInsert_t = void (*)(RED4ext::vehicle::WheeledPhysics*);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_SetupInsert_t> call(vehicleWheeledPhysics_SetupInsert_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::SomethingWheelRayTrace(uint32_t a1) {
+    using vehicleWheeledPhysics_SomethingWheelRayTrace_t = void (*)(RED4ext::vehicle::WheeledPhysics*, uint32_t);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_SomethingWheelRayTrace_t> call(vehicleWheeledPhysics_SomethingWheelRayTrace_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::SomethingWheels(float a1) {
+    using vehicleWheeledPhysics_SomethingWheels_t = void (*)(RED4ext::vehicle::WheeledPhysics*, float);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_SomethingWheels_t> call(vehicleWheeledPhysics_SomethingWheels_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::TurningRollFactorStuff(float a1) {
+    using vehicleWheeledPhysics_TurningRollFactorStuff_t = void (*)(RED4ext::vehicle::WheeledPhysics*, float);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_TurningRollFactorStuff_t> call(vehicleWheeledPhysics_TurningRollFactorStuff_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE float RED4ext::vehicle::WheeledPhysics::Unk15CStuff() {
+    using vehicleWheeledPhysics_Unk15CStuff_t = float (*)(RED4ext::vehicle::WheeledPhysics*);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_Unk15CStuff_t> call(vehicleWheeledPhysics_Unk15CStuff_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::Update() {
+    using vehicleWheeledPhysics_Update_t = void (*)(RED4ext::vehicle::WheeledPhysics*);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_Update_t> call(vehicleWheeledPhysics_Update_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim(RED4ext::anim::AnimFeature_VehiclePassenger* a1) {
+    using vehicleWheeledPhysics_UpdatePassengerAnim_t = void (*)(RED4ext::vehicle::WheeledPhysics*, RED4ext::anim::AnimFeature_VehiclePassenger*);
+    RED4ext::RelocFunc<vehicleWheeledPhysics_UpdatePassengerAnim_t> call(vehicleWheeledPhysics_UpdatePassengerAnim_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE uint32_t RED4ext::world::RuntimeScene::SetupWithLogging(uint8_t* a1, int64_t a2, uint32_t* a3) {
+    using worldRuntimeScene_SetupWithLogging_t = uint32_t (*)(RED4ext::world::RuntimeScene*, uint8_t*, int64_t, uint32_t*);
+    RED4ext::RelocFunc<worldRuntimeScene_SetupWithLogging_t> call(worldRuntimeScene_SetupWithLogging_Addr);
+    return call(this, a1, a2, a3);
 }
 

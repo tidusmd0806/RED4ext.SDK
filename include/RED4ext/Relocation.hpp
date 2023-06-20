@@ -94,6 +94,40 @@ class RelocFunc<R (C::*)(Args...)> : public RelocFuncBase<R (*)(C*, Args...)>
 
 
 /**
+ * @brief Represent a native struct, use this to relocate its address at runtime.
+ * @tparam T The type.
+ */
+template<typename T>
+class RelocFundamental : private RelocBase
+{
+public:
+    RelocFundamental(uintptr_t aOffset)
+        : m_address(aOffset + GetImageBase())
+    {
+        m_pointer = reinterpret_cast<T*>(malloc(sizeof(T)));
+        memset(m_pointer, 0, sizeof(T));
+    }
+
+    ~RelocFundamental() {
+        free(m_pointer);
+    }
+
+    inline operator T*() const
+    {
+        return m_pointer;
+    }
+
+    inline T* operator->() const
+    {
+        return m_pointer;
+    }
+
+private:
+    uintptr_t m_address;
+    T * m_pointer;
+};
+
+/**
  * @brief Represent a native pointer, use this to relocate its address at runtime.
  * @tparam T The type.
  */

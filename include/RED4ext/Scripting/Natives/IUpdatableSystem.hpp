@@ -18,7 +18,7 @@ struct IUpdatableSystem : IScriptable
     // 1.61hf1 RVA: 0x320D998
     /// @pattern 49 55 70 64 61 74 61 62 6C 65 53 79 73 74 65 6D 00
     /// @offset -264
-    static constexpr const uintptr_t VFT = IUpdatableSystem_VFT_Addr;
+    // static constexpr const uintptr_t VFT = IUpdatableSystem_VFT_Addr;
 
 
     // 1.52 RVA: 0xA779C0 / 10975680

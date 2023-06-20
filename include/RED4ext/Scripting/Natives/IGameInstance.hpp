@@ -1,6 +1,8 @@
 #pragma once
 
 #include <RED4ext/Common.hpp>
+#include <RED4ext/RTTITypes.hpp>
+#include <RED4ext/DynArray.hpp>
 
 namespace RED4ext 
 {

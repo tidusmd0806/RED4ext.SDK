@@ -4,7 +4,7 @@
 #include <RED4ext/Scripting/OpcodeHandlers.hpp>
 #endif
 
-#include <RED4ext/Addresses.hpp>
+#include <RED4ext/Addresses-Zoltan.hpp>
 
 RED4EXT_INLINE RED4ext::OpcodeHandlers::Handler_t RED4ext::OpcodeHandlers::Get(uint8_t aOpcode)
 {

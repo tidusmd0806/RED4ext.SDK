@@ -4,7 +4,7 @@
 #include <RED4ext/ResourceLoader.hpp>
 #endif
 
-#include <RED4ext/Addresses.hpp>
+#include <RED4ext/Addresses-Zoltan.hpp>
 #include <RED4ext/Relocation.hpp>
 
 RED4EXT_INLINE RED4ext::ResourceLoader* RED4ext::ResourceLoader::Get()

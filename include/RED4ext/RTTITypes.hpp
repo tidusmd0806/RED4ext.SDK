@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RED4ext/ISerializable.hpp"
 #include <type_traits>
 
 #include <RED4ext/CName.hpp>
@@ -10,6 +11,10 @@
 #include <RED4ext/InstanceType.hpp>
 #include <RED4ext/Map.hpp>
 #include <RED4ext/Utils.hpp>
+#include <RED4ext/Relocation.hpp>
+
+#define RTTICLASS(name) RED4ext::RelocPtr<RED4ext::CClass>(name##_Class_Addr)
+#define RTTITYPE(name) RED4ext::RelocFundamental<RED4ext::CBaseRTTIType>(name##_Type_VFT_Addr)
 
 namespace RED4ext
 {
@@ -186,7 +191,10 @@ struct CClass : CBaseRTTIType
     virtual void DestructCls(ScriptInstance aMemory) const = 0;  // E0
     virtual void* AllocMemory() const = 0;                       // E8
 
-    ScriptInstance CreateInstance(bool aZeroMemory = false) const;
+    // ScriptInstance CreateInstance(bool aZeroMemory = false) const;
+
+    template<typename T = ScriptInstance>
+    T CreateInstance(bool aZeroMemory = false) const;
 
     bool IsA(const CBaseRTTIType* aType) const;
 

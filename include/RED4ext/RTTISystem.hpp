@@ -60,7 +60,7 @@ struct IRTTISystem
     virtual CEnum* GetEnumByScriptName(CName aName) = 0;          // 100
     virtual CName ConvertNativeToScriptName(CName aName) = 0;     // 108
     virtual CName ConvertScriptToNativeName(CName aName) = 0;     // 110
-    virtual CString* GetStringConst(uint32_t aIndex) = 0;         // 118 - Used by StringConst opcode (0x10)
+    virtual CString* GetStringConst(uint32_t aIndex) = 0;         // 118 - Used by StringConst opcode (0x10) and StartProfiling opcode (0x33)
     virtual void SetStringTable(DynArray<CString>& aStrings) = 0; // 120 - Called by script loader
 
     virtual ~IRTTISystem() = 0; // 128
