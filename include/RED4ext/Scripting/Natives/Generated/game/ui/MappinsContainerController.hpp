@@ -14,6 +14,7 @@
 #include <RED4ext/Scripting/Natives/Generated/game/ui/ProjectedHUDGameController.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ink/LinePatternWidgetReference.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ink/WidgetPath.hpp>
+#include <RED4ext/Handle.hpp>
 #include <cstdint>
 
 namespace RED4ext
@@ -23,6 +24,7 @@ namespace game::mappins
 struct RuntimeMappin;
 struct QuestMappin;
 struct PointOfInterestMappin;
+struct IMappin;
 
 } // namespace game::mappins
 namespace game::ui
