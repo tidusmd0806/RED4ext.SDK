@@ -4,7 +4,7 @@
 #include <RED4ext/IO/MemoryStream.hpp>
 #endif
 
-#include <RED4ext/Addresses.hpp>
+#include <RED4ext/Addresses-Zoltan.hpp>
 #include <RED4ext/Relocation.hpp>
 
 RED4EXT_INLINE void RED4ext::MemoryStream::Construct(MemoryStream* aThis, void* aBuffer, size_t aLength, size_t aPointer)
