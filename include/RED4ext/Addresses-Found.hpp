@@ -36,14 +36,14 @@
 #define Addresses_CEnum_FromString_Addr 0x223C80
 #define Addresses_CEnum_ToString_Addr 0x224110
 #define Addresses_CEnum_Unserialize_Addr 0x223EE0
-#define Addresses_CGameEngine_Addr 0xA833BD
+#define Addresses_CGameEngine_Addr 0x4344210
 #define Addresses_CGlobalFunction_ctor_Addr 0x214E00
 #define Addresses_CNamePool_AddCString_Addr 0xA02940
 #define Addresses_CNamePool_AddCstr_Addr 0x1B3E80
 #define Addresses_CNamePool_AddPair_Addr 0x1B42D0
 #define Addresses_CNamePool_Get_Addr 0x1B3E40
 #define Addresses_CRTTIRegistrator_Add_Addr 0x1BA6E0
-#define Addresses_CRTTIRegistrator_RTTIAsyncId_Addr 0x208F57
+#define Addresses_CRTTIRegistrator_RTTIAsyncId_Addr 0x3ED8824
 #define Addresses_CRTTIScriptReferenceType_Set_Addr 0x222B40
 #define Addresses_CRTTIScriptReferenceType_ctor_Addr 0x221580
 #define Addresses_CRTTISystem_Get_Addr 0x25B990
@@ -82,8 +82,8 @@
 #define Addresses_Memory_Vault_ReallocAligned_Addr 0x1A2B30
 #define Addresses_Memory_Vault_Unk1_Addr 0x1A2650
 #define Addresses_OpcodeHandlers_Get_Addr 0x1CF63D
-#define Addresses_ResourceDepot_Addr 0x274B2D
-#define Addresses_ResourceLoader_Addr 0x2D04F7F
+#define Addresses_ResourceDepot_Addr 0x3F68CE8
+#define Addresses_ResourceLoader_Addr 0x3ED8850
 #define Addresses_ResourceLoader_FindToken_Addr 0x20BE80
 #define Addresses_ResourceLoader_LoadAsync_Addr 0x20C750
 #define Addresses_ResourceReference_Fetch_Addr 0x256290

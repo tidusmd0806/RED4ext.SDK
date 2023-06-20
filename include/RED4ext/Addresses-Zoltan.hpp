@@ -125,9 +125,9 @@ constexpr uintptr_t CEnum_FromString = Addresses_CEnum_FromString_Addr;
 #pragma endregion
 
 #pragma region CGameEngine
-/// @pattern 48 89 05 ? ? ? ? ? 8D ? 30 01 00 00
+/// @pattern 48 89 05 (fn:rel) ? 8D ? 30 01 00 00
 /// @nth 0/1
-/// @offset 3
+/// @eval fn
 constexpr uintptr_t CGameEngine = Addresses_CGameEngine_Addr;
 #pragma endregion
 
@@ -153,9 +153,9 @@ constexpr uintptr_t CNamePool_Get = Addresses_CNamePool_Get_Addr;
 #pragma endregion
 
 #pragma region CRTTIRegistrator
-/// @pattern B8 01 00 00 00 F0 0F C1 05 ? ? ? ? FF C0 C3
+/// @pattern B8 01 00 00 00 F0 0F C1 05 (fn:rel) FF C0 C3
 /// @nth 0/1
-/// @offset 9
+/// @eval fn
 constexpr uintptr_t CRTTIRegistrator_RTTIAsyncId = Addresses_CRTTIRegistrator_RTTIAsyncId_Addr;
 /// @pattern 48 89 5C 24 08 48 89 74 24 20 4C 89 44 24 18 48 89 54 24 10 57 48 83 EC 50 48 8B F1
 /// @nth 0/1
@@ -319,16 +319,16 @@ constexpr uintptr_t OpcodeHandlers_Get = Addresses_OpcodeHandlers_Get_Addr;
 #pragma endregion
 
 #pragma region ResourceDepot
-/// @pattern 48 89 0D ? ? ? ? C3
+/// @pattern 48 89 0D (fn:rel) C3
 /// @nth 2/26
-/// @offset 3
+/// @eval fn
 constexpr uintptr_t ResourceDepot = Addresses_ResourceDepot_Addr;
 #pragma endregion
 
 #pragma region ResourceLoader
-/// @pattern 48 8B 87 ? ? ? ? 48 8B 5C 24 ? 48 89 05 ? ? ? ? 48 83 C4 20 5F C3
+/// @pattern 48 8B 87 ? ? ? ? 48 8B 5C 24 ? 48 89 05 (fn:rel) 48 83 C4 20 5F C3
 /// @nth 0/1
-/// @offset 15
+/// @eval fn
 constexpr uintptr_t ResourceLoader = Addresses_ResourceLoader_Addr;
 /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B F1 49 8B D8 48 83 C1 40 48 8B EA E8
 /// @nth 0/1
