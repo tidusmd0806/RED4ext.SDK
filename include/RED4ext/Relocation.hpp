@@ -106,6 +106,8 @@ public:
     {
         m_pointer = reinterpret_cast<T*>(malloc(sizeof(T)));
         memset(m_pointer, 0, sizeof(T));
+        // assign m_address to vft
+        *(uintptr_t*)m_pointer = m_address;
     }
 
     ~RelocFundamental() {
