@@ -28,6 +28,8 @@ struct CName
         }
     }
 
+    constexpr CName(const std::string aStr) noexcept;
+
     constexpr operator uint64_t() const noexcept
     {
         return hash;
