@@ -162,6 +162,10 @@ public:
         return *this;
     }
 
+    bool operator==(const WeakHandle<T>& aRhs) noexcept {
+        return this && aRhs && (this->instance == aRhs.instance) && (this->refCount == aRhs.refCount);
+    }
+
     void Reset() noexcept
     {
         WeakHandle().Swap(*this);
