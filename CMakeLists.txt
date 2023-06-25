@@ -90,6 +90,13 @@ if(NOT PROJECT_IS_TOP_LEVEL)
   endif()
 endif()
 
+
+if(PROJECT_IS_TOP_LEVEL)
+  include(GetGameVersion)
+  string(TIMESTAMP CURRENT_TIMESTAMP "%Y-%m-%d %H:%M:%S UTC" UTC)
+  configure_file("${PROJECT_SOURCE_DIR}/cmake/index.html.in" "${PROJECT_SOURCE_DIR}/docs/index.html")
+endif()
+
 # -----------------------------------------------------------------------------
 # Main library
 # -----------------------------------------------------------------------------
