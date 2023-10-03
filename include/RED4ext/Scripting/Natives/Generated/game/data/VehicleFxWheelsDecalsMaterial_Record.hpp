@@ -21,7 +21,7 @@ struct VehicleFxWheelsDecalsMaterial_Record : game::data::TweakDBRecord
     uint8_t skid_marks_decal[3]; 
     uint8_t tire_tracks_decal[3];
 };
-RED4EXT_ASSERT_SIZE(VehicleFxWheelsDecalsMaterial_Record, 0x58);
+RED4EXT_ASSERT_SIZE(VehicleFxWheelsDecalsMaterial_Record, 0x70);
 } // namespace game::data
 using gamedataVehicleFxWheelsDecalsMaterial_Record = game::data::VehicleFxWheelsDecalsMaterial_Record;
 using VehicleFxWheelsDecalsMaterial_Record = game::data::VehicleFxWheelsDecalsMaterial_Record;

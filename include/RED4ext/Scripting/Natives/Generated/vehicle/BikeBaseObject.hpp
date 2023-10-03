@@ -11,13 +11,15 @@
 
 namespace RED4ext
 {
-namespace vehicle { 
+namespace vehicle
+{
 // struct BikeBaseObject : vehicle::WheeledBaseObject
 // {
 //     static constexpr const char* NAME = "vehicleBikeBaseObject";
 //     static constexpr const char* ALIAS = "BikeObject";
+
 // };
-RED4EXT_ASSERT_SIZE(BikeBaseObject, 0x9A0);
+RED4EXT_ASSERT_SIZE(BikeBaseObject, 0xBE0);
 } // namespace vehicle
 using vehicleBikeBaseObject = vehicle::BikeBaseObject;
 using BikeObject = vehicle::BikeBaseObject;

@@ -6,7 +6,7 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/Scripting/Natives/Generated/BaseGameEngine.hpp>
+#include <RED4ext/GameEngine.hpp>
 
 namespace RED4ext
 {
@@ -15,7 +15,7 @@ struct HeadlessGameEngine : BaseGameEngine
     static constexpr const char* NAME = "HeadlessGameEngine";
     static constexpr const char* ALIAS = NAME;
 
-    uint8_t unk2D0[0x2D8 - 0x2D0]; // 2D0
+    uint8_t unk2E0[0x2E8 - 0x2E0]; // 2E0
 };
 RED4EXT_ASSERT_SIZE(HeadlessGameEngine, 0x2E8);
 } // namespace RED4ext

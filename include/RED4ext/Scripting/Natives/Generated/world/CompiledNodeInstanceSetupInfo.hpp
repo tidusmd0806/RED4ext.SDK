@@ -34,7 +34,7 @@ struct CompiledNodeInstanceSetupInfo
     uint8_t unk7D; // 7D
     uint16_t handleIndex; // 7E
 };
-RED4EXT_ASSERT_SIZE(CompiledNodeInstanceSetupInfo, 0x80);
+RED4EXT_ASSERT_SIZE(CompiledNodeInstanceSetupInfo, 0x90);
 } // namespace world
 using worldCompiledNodeInstanceSetupInfo = world::CompiledNodeInstanceSetupInfo;
 } // namespace RED4ext

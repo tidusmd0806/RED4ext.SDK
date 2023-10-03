@@ -78,9 +78,10 @@ struct MappinsContainerController : game::ui::ProjectedHUDGameController
     DynArray<Handle<game::mappins::RuntimeMappin>> mappins;
     Handle<void> insert;
 };
-RED4EXT_ASSERT_SIZE(MappinsContainerController, 0x2D0);
-RED4EXT_ASSERT_OFFSET(MappinsContainerController, questMappinPoints, 0x1E0);
-RED4EXT_ASSERT_OFFSET(MappinsContainerController, poiMappinPoints, 0x208);
+RED4EXT_ASSERT_SIZE(MappinsContainerController, 0x2E8);
+RED4EXT_ASSERT_OFFSET(MappinsContainerController, questMappinPoints, 0x1E0 + 0x18);
+RED4EXT_ASSERT_OFFSET(MappinsContainerController, poiMappinPoints, 0x208 + 0x18);
+
 } // namespace game::ui
 using gameuiMappinsContainerController = game::ui::MappinsContainerController;
 using MappinsContainerController = game::ui::MappinsContainerController;

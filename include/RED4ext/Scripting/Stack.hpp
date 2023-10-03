@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vector>
+
 #include <RED4ext/InstanceType.hpp>
 #include <RED4ext/Scripting/Functions.hpp>
-#include <vector>
 
 namespace RED4ext
 {
@@ -15,8 +16,9 @@ namespace RED4ext
  * Maybe this should have the name 'CStack', but I am not entirely sure how to call '*Stack', so until a better name is
  * found, the names will be kept as they are now.
  */
-struct CBaseRTTIType;
+struct CBaseRTTIType;-
 struct CBaseFunction;
+struct CClass;
 struct IScriptable;
 
 struct CStackType
@@ -68,7 +70,10 @@ struct CBaseStack : IStack
     void* unk10;            // 10
     IScriptable* context18; // 18
     IScriptable* context20; // 20
-    int64_t unk28;          // 28
+    CClass* unk28;          // 28
+
+protected:
+    CBaseStack(IScriptable* aContext) noexcept;
 };
 
 RED4EXT_ASSERT_SIZE(CBaseStack, 0x30);
@@ -76,7 +81,7 @@ RED4EXT_ASSERT_SIZE(CBaseStack, 0x30);
 struct CStack : CBaseStack
 {
     CStack(ScriptInstance aContext = nullptr, CStackType* aArgs = nullptr, uint32_t aArgsCount = 0,
-           CStackType* aResult = nullptr, int64_t a6 = 0);
+           CStackType* aResult = nullptr);
     ~CStack() = default;
 
     CStackType* args;   // 30

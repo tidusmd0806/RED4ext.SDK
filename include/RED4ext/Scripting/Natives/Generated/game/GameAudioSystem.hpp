@@ -55,9 +55,9 @@ struct GameAudioSystem : game::IGameAudioSystem
     /// @pattern 48 89 5C 24 08 57 48 83 EC 30 48 8B F9 0F 29 74 24 20 48 8B 89 60 01 00 00 0F 28 F2 48 8B DA 48
     void __fastcall SetGlobalParameter(CName parameterName, float parameterValue);
 
-    uint8_t unk48[0x3E0 - 0x48]; // 48
+    uint8_t unk48[0x420 - 0x48]; // 48
 };
-RED4EXT_ASSERT_SIZE(GameAudioSystem, 0x3E0);
+RED4EXT_ASSERT_SIZE(GameAudioSystem, 0x420);
 } // namespace game
 using gameGameAudioSystem = game::GameAudioSystem;
 using AudioSystem = game::GameAudioSystem;

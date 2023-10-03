@@ -18,14 +18,9 @@ namespace vehicle {
 // {
 //     static constexpr const char* NAME = "vehicleCarBaseObject";
 //     static constexpr const char* ALIAS = "CarObject";
-
-//     PID pitchPID;
-//     PID rollPID;
-//     float pitchCorrection;
-//     float rollCorrection;
-//     uint64_t unk9E8;
+    // uint8_t unkBE0[0xC30 - 0xBE0]; // BE0
 // };
-RED4EXT_ASSERT_SIZE(CarBaseObject, 0x9F0);
+RED4EXT_ASSERT_SIZE(CarBaseObject, 0xC30);
 } // namespace vehicle
 using vehicleCarBaseObject = vehicle::CarBaseObject;
 using CarObject = vehicle::CarBaseObject;

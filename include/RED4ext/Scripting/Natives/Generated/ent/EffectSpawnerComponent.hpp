@@ -21,12 +21,10 @@ namespace ent {
 //     static constexpr const char* NAME = "entEffectSpawnerComponent";
 //     static constexpr const char* ALIAS = NAME;
 
-//     DynArray<Handle<ent::EffectDesc>> effectDescs; // 140
-//     DynArray<void *> activeEffects; // 150
-//     DynArray<RaRef<world::Effect>> resources; // 160
-//     uint8_t unk150[0x220 - 0x170]; // 170
-// };
-RED4EXT_ASSERT_SIZE(EffectSpawnerComponent, 0x220);
+    // DynArray<Handle<ent::EffectDesc>> effectDescs; // 140
+    // uint8_t unk150[0x230 - 0x150]; // 150
+};
+RED4EXT_ASSERT_SIZE(EffectSpawnerComponent, 0x230);
 } // namespace ent
 using entEffectSpawnerComponent = ent::EffectSpawnerComponent;
 } // namespace RED4ext

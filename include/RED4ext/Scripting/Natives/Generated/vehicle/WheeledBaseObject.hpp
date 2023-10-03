@@ -17,21 +17,10 @@ namespace vehicle
 // {
 //     static constexpr const char* NAME = "vehicleWheeledBaseObject";
 //     static constexpr const char* ALIAS = "WheeledObject";
-
-//     struct Unk980
-//     {
-//         WheeledBaseObject * vehicle;
-//         float unk08;
-//         float timer;
-//         bool unk10;
-//         uint8_t unk11[233];
-//     } * unk980;
-
-//     void * transmissionData;
-//     void * engineData;
-//     void * burnoutData;
+    
+//     uint8_t unkBA0[0xBE0 - 0xBA0]; // BA0
 // };
-RED4EXT_ASSERT_SIZE(WheeledBaseObject, 0x9A0);
+RED4EXT_ASSERT_SIZE(WheeledBaseObject, 0xBE0);
 } // namespace vehicle
 using vehicleWheeledBaseObject = vehicle::WheeledBaseObject;
 using WheeledObject = vehicle::WheeledBaseObject;

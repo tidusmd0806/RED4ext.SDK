@@ -22,7 +22,7 @@ struct VehicleFxWheelsDecals_Record : game::data::TweakDBRecord
     uint8_t rain_material_overrides[3];
     uint8_t smear_materials[3];
 };
-RED4EXT_ASSERT_SIZE(VehicleFxWheelsDecals_Record, 0x58);
+RED4EXT_ASSERT_SIZE(VehicleFxWheelsDecals_Record, 0x78);
 } // namespace game::data
 using gamedataVehicleFxWheelsDecals_Record = game::data::VehicleFxWheelsDecals_Record;
 using VehicleFxWheelsDecals_Record = game::data::VehicleFxWheelsDecals_Record;

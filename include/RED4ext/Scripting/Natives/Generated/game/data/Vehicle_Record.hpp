@@ -104,7 +104,7 @@ struct Vehicle_Record : game::data::SpawnableObject_Record
     uint8_t leftBackCamber[3];
     uint8_t enableDestruction[3];
 };
-RED4EXT_ASSERT_SIZE(Vehicle_Record, 0x158);
+RED4EXT_ASSERT_SIZE(Vehicle_Record, 0x4E8);
 } // namespace game::data
 using gamedataVehicle_Record = game::data::Vehicle_Record;
 using Vehicle_Record = game::data::Vehicle_Record;

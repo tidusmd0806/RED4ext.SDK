@@ -261,6 +261,7 @@ struct TPPCameraComponent : public game::CameraComponent
     float unk5B4;
     float airFlowDistortionX;
     float airFlowDistortionY;
+    // uint8_t unk320[0x680 - 0x5C0]; // 5C0
 };
 RED4EXT_ASSERT_SIZE(TPPCameraComponent, 0x5C0);
 RED4EXT_ASSERT_OFFSET(TPPCameraComponent, data.isInAir, 0x2E0);

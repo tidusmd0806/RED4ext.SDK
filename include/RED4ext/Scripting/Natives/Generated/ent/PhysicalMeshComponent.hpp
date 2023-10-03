@@ -63,15 +63,15 @@ struct PhysicalMeshComponent : ent::MeshComponent, ent::ITransformAttachable
     uint64_t unk1E8;
     Transform bodyTransform;
     Handle<physics::FilterData> filterData; // 210
-    NativeArray<physics::InitialState, 16> * initialStats; // 220
-    CName visibilityAnimationParam; // 228
-    physics::ProxyID proxyID;
-    physics::ProxyCacheID proxyCacheID;
-    physics::FilterDataSource filterDataSource; // 238
-    physics::SimulationType simulationType; // 239
-    bool startInactive; // 23A
-    bool useResourceSimulationType; // 23B
-    uint8_t unk23C[0x240 - 0x23C]; // 23C
+    // NativeArray<physics::InitialState, 16> * initialStats; // 220
+    CName visibilityAnimationParam; // 220
+    physics::ProxyID proxyID; // 228
+    physics::ProxyCacheID proxyCacheID; // 22C
+    physics::FilterDataSource filterDataSource; // 230
+    physics::SimulationType simulationType; // 231
+    bool startInactive; // 232
+    bool useResourceSimulationType; // 233
+    uint8_t unk234[0x240 - 0x234]; // 234
 };
 RED4EXT_ASSERT_SIZE(PhysicalMeshComponent, 0x240);
 } // namespace ent

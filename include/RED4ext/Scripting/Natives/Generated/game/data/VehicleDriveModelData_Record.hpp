@@ -88,7 +88,7 @@ struct VehicleDriveModelData_Record : game::data::TweakDBRecord
     uint8_t tankCTOD[3];
     uint8_t useAlternaiveTurnUpdate[3];
 };
-RED4EXT_ASSERT_SIZE(VehicleDriveModelData_Record, 0x120);
+RED4EXT_ASSERT_SIZE(VehicleDriveModelData_Record, 0x3B8);
 } // namespace game::data
 using gamedataVehicleDriveModelData_Record = game::data::VehicleDriveModelData_Record;
 using VehicleDriveModelData_Record = game::data::VehicleDriveModelData_Record;

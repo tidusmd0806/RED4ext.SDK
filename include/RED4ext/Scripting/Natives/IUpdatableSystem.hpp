@@ -32,8 +32,8 @@ struct IUpdatableSystem : IScriptable
     /// @pattern 0F B6 C1 83 F8 0C 77 7B 48 8D 15 91 9F 57 FF 8B 8C 82 EC 60 A8 00 48 03 CA FF E1 48 8D 05 46 18
     // static const char *__fastcall GetStringForUnk0(Unk0);
 
-    // sub_110 - adds callbacks to the lookup - there are at least 10 dynarrays
-    virtual void OnRegisterUpdates(UpdateRegistrar* aRegistrar); 
+    // sub_108 - adds callbacks to the lookup - there are at least 10 dynarrays
+    virtual void OnRegisterUpdates(UpdateRegistrar* aRegistrar);
 };
 RED4EXT_ASSERT_SIZE(IUpdatableSystem, 0x40);
 
