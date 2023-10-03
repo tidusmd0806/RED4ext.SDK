@@ -5,204 +5,272 @@
 #define ZOLTAN_EXPAND_THEN_STRINGISE(N) ZOLTAN_STRINGISE(N)
 #define __LINE_STR__ ZOLTAN_EXPAND_THEN_STRINGISE(__LINE__)
 
-#define BaseStream_ReadWriteHandleID_Addr 0x720940
-#define CBaseRTTIType_VFT_Addr 0x3127510
-#define CClass_AddEventCallbackType_Addr 0x203700
-#define CClass_ApplyFlags_Addr 0x207110
-#define CClass_SetupScriptCallbacks_Addr 0x2037E0
-#define CClass_VFT_Addr 0x3127300
-#define CGameFramework_Systems_120_128_130_Addr 0x13B4F70
-#define CMesh_GetParameterOfType_Addr 0xA20870
-#define CallbackManager_AddCallback_Addr 0x2C5B940
-#define CallbackManager_AddToUnk00_Addr 0x2C5B820
-#define CallbackManager_Unknown1_Addr 0x2C5B2E0
-#define CallbackManager_Unknown6_Addr 0x2C5C100
-#define GameInstance_GameInstance_Addr                                                                                 \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameInstance_GameInstance_Addr"                      \
-              "is 0 - Zoltan found no matches for RED4ext::GameInstance::GameInstance\")")
-#define GameInstance_SetRuntimeScene_Addr 0x2DA2820
-#define GameInstance_Setup_Addr                                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameInstance_Setup_Addr"                             \
-              "is 0 - Zoltan found too many matches for RED4ext::GameInstance::Setup (16)\")")
+#define Addresses_CBaseFunction_ExecuteNative_Addr 0x1FAF4EC
+#define Addresses_CBaseFunction_ExecuteScripted_Addr 0x27EB94
+#define Addresses_CBaseFunction_Handlers_Addr 0x32ACCB0
+#define Addresses_CBaseFunction_InternalExecute_Addr 0x218D40
+#define Addresses_CBaseFunction_Register_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_CBaseFunction_Register_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::Addresses::CBaseFunction_Register\")")
+#define Addresses_CBaseRTTIType_sub_80_Addr 0x1FAF17C
+#define Addresses_CBaseRTTIType_sub_88_Addr 0x1FAF0DC
+#define Addresses_CBaseRTTIType_sub_90_Addr 0x1FAEFB8
+#define Addresses_CBaseRTTIType_sub_98_Addr 0x1FAF208
+#define Addresses_CBaseRTTIType_sub_A0_Addr 0x1FAEFA0
+#define Addresses_CBitfield_FromString_Addr 0x1FBFA14
+#define Addresses_CBitfield_ToString_Addr 0x1FBFB2C
+#define Addresses_CBitfield_Unserialize_Addr 0x182ABC
+#define Addresses_CClassFunction_ctor_Addr 0xADCBD8
+#define Addresses_CClassStaticFunction_ctor_Addr 0xADCB6C
+#define Addresses_CClass_AssignDefaultValuesToProperties_Addr 0x14C6E8
+#define Addresses_CClass_ClearScriptedData_Addr 0x60089C
+#define Addresses_CClass_CreateInstance_Addr 0x14C550
+#define Addresses_CClass_GetMaxAlignment_Addr 0x5FFC44
+#define Addresses_CClass_GetProperties_Addr 0x5FFDD0
+#define Addresses_CClass_GetProperty_Addr 0x14D4D8
+#define Addresses_CClass_InitializeProperties_Addr 0x14CE14
+#define Addresses_CClass_ToString_Addr 0x9A0070
+#define Addresses_CClass_Unserialize_Addr 0x14CBD4
+#define Addresses_CClass_sub_80_Addr 0x1FADA78
+#define Addresses_CClass_sub_88_Addr 0x1FAD9CC
+#define Addresses_CClass_sub_90_Addr 0x931F84
+#define Addresses_CClass_sub_98_Addr 0x1FAEC54
+#define Addresses_CClass_sub_A0_Addr 0x1FAE288
+#define Addresses_CClass_sub_B0_Addr 0x4EFE08
+#define Addresses_CClass_sub_C0_Addr 0x5FFCC0
+#define Addresses_CClass_sub_D0_Addr 0x1FAE924
+#define Addresses_CEnum_FromString_Addr 0x6BFD84
+#define Addresses_CEnum_ToString_Addr 0x5C612C
+#define Addresses_CEnum_Unserialize_Addr 0x14D8C4
+#define Addresses_CGameEngine_Addr 0x32F09F0
+#define Addresses_CGlobalFunction_ctor_Addr 0xADCB20
+#define Addresses_CNamePool_AddCString_Addr 0x2169A18
+#define Addresses_CNamePool_AddCstr_Addr 0x29F480
+#define Addresses_CNamePool_AddPair_Addr 0xA01824
+#define Addresses_CNamePool_Get_Addr 0x415718
+#define Addresses_CRTTIRegistrator_Add_Addr 0xB95DFC
+#define Addresses_CRTTIRegistrator_RTTIAsyncId_Addr 0x3DA970C
+#define Addresses_CRTTIScriptReferenceType_Set_Addr 0x219C64
+#define Addresses_CRTTIScriptReferenceType_ctor_Addr 0x277EDC
+#define Addresses_CRTTISystem_Get_Addr 0x2A3F08
+#define Addresses_CStack_vtbl_Addr 0x211B301
+#define Addresses_CString_copy_Addr 0x11D99C
+#define Addresses_CString_ctor_span_Addr 0x99FFDC
+#define Addresses_CString_ctor_str_Addr 0x297550
+#define Addresses_CString_dtor_Addr 0x14A5F4
+#define Addresses_DynArray_Realloc_Addr 0x154DA0
+#define Addresses_Handle_DecWeakRef_Addr 0x150DA8
+#define Addresses_Handle_ctor_Addr 0x14AEA0
+#define Addresses_IScriptable_DestructValueHolder_Addr 0x14E440
+#define Addresses_IScriptable_sub_D8_Addr 0x1FA8A68
+#define Addresses_ISerializable_sub_30_Addr 0x1F9B730
+#define Addresses_ISerializable_sub_40_Addr 0x14DB34
+#define Addresses_ISerializable_sub_78_Addr 0x756358
+#define Addresses_ISerializable_sub_A0_Addr 0x9F3728
+#define Addresses_ISerializable_sub_C0_Addr 0x390FBC
+#define Addresses_JobDispatcher_Addr 0x32FE3F0
+#define Addresses_JobDispatcher_DispatchJob_Addr 0x157368
+#define Addresses_JobHandle_Join_Addr 0x156B4C
+#define Addresses_JobHandle_ctor_Addr 0x158DEC
+#define Addresses_JobHandle_dtor_Addr 0x1587D4
+#define Addresses_JobQueue_Capture_Addr 0x17F294
+#define Addresses_JobQueue_SyncWait_Addr 0x1574EC
+#define Addresses_JobQueue_ctor_FromGroup_Addr 0x158CEC
+#define Addresses_JobQueue_ctor_FromParams_Addr 0x158D2C
+#define Addresses_JobQueue_dtor_Addr 0x156A74
+#define Addresses_Memory_PoolStorage_OOM_Addr 0x1F96D90
+#define Addresses_Memory_Vault_Addr 0x32FE540
+#define Addresses_Memory_Vault_Alloc_Addr 0x14AFA8
+#define Addresses_Memory_Vault_AllocAligned_Addr 0x1504FC
+#define Addresses_Memory_Vault_Free_Addr 0x150E1C
+#define Addresses_Memory_Vault_Realloc_Addr 0x68E988
+#define Addresses_Memory_Vault_ReallocAligned_Addr 0x156D1C
+#define Addresses_Memory_Vault_Unk1_Addr 0x1F96F8C
+#define Addresses_OpcodeHandlers_Get_Addr 0x326CCB0
+#define Addresses_ResourceDepot_Addr 0x46DE478
+#define Addresses_ResourceLoader_Addr 0x32ECCB8
+#define Addresses_ResourceLoader_FindToken_Addr 0x151B4C
+#define Addresses_ResourceLoader_LoadAsync_Addr 0x66F464
+#define Addresses_ResourceReference_Fetch_Addr 0x13AE98
+#define Addresses_ResourceReference_Load_Addr 0x13AEC4
+#define Addresses_ResourceReference_Reset_Addr 0x2C30E4
+#define Addresses_ResourceToken_CancelUnk38_Addr 0xC10B7C
+#define Addresses_ResourceToken_DestructUnk38_Addr 0x290E6C
+#define Addresses_ResourceToken_Fetch_Addr 0x84A3D4
+#define Addresses_ResourceToken_OnLoaded_Addr 0x61AA34
+#define Addresses_ResourceToken_dtor_Addr 0x290C30
+#define Addresses_TTypedClass_IsEqual_Addr 0x218000
+#define Addresses_TweakDB_CreateRecord_Addr 0x28C938
+#define Addresses_TweakDB_Get_Addr 0x124624
+#define Addresses_UpdateRegistrar_RegisterBucketUpdate_Addr 0x7B21F8
+#define Addresses_UpdateRegistrar_RegisterGroupUpdate_Addr 0x7B2E50
+#define BaseStream_ReadWriteHandleID_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: BaseStream_ReadWriteHandleID_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::BaseStream::ReadWriteHandleID\")")
+#define CBaseRTTIType_VFT_Addr 0x2F595E0
+#define CClass_AddEventCallbackType_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_AddEventCallbackType_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::CClass::AddEventCallbackType\")")
+#define CClass_ApplyFlags_Addr                                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_ApplyFlags_Addr"                              \
+              "is 0 - Zoltan found no matches for RED4ext::CClass::ApplyFlags\")")
+#define CClass_SetupScriptCallbacks_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_SetupScriptCallbacks_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::CClass::SetupScriptCallbacks\")")
+#define CClass_VFT_Addr 0x2F59560
+#define CGameFramework_Systems_120_128_130_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CGameFramework_Systems_120_128_130_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::CGameFramework::Systems_120_128_130\")")
+#define CMesh_GetParameterOfType_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CMesh_GetParameterOfType_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::CMesh::GetParameterOfType\")")
+#define CallbackManager_AddCallback_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CallbackManager_AddCallback_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::CallbackManager::AddCallback\")")
+#define CallbackManager_AddToUnk00_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CallbackManager_AddToUnk00_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::CallbackManager::AddToUnk00\")")
+#define CallbackManager_Unknown1_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CallbackManager_Unknown1_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::CallbackManager::Unknown1\")")
+#define CallbackManager_Unknown6_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CallbackManager_Unknown6_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::CallbackManager::Unknown6\")")
 #define GameOptionManager_Get_Addr                                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameOptionManager_Get_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::GameOptionManager::Get\")")
-#define GameOptionManager_GetGameOption_Addr 0x2C37B20
-#define GameOptionManager_SetGameOption_Addr 0x2C38200
-#define GetGameSystemsData_Addr 0x2DA5B30
+#define GameOptionManager_GetGameOption_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameOptionManager_GetGameOption_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::GameOptionManager::GetGameOption\")")
+#define GameOptionManager_SetGameOption_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameOptionManager_SetGameOption_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::GameOptionManager::SetGameOption\")")
+#define GetGameSystemsData_Addr                                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GetGameSystemsData_Addr"                             \
+              "is 0 - Zoltan found no matches for RED4ext::GetGameSystemsData\")")
 #define IDynamicStorage_IDynamicStorage_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IDynamicStorage_IDynamicStorage_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::IDynamicStorage::IDynamicStorage\")")
-#define IGameInstance_RegisterGameLoadCallbacks_Addr 0x2DA2ED0
-#define IGameInstance_RegisterStreamingWorldLoadedCallback_Addr 0x2DA33F0
-#define IGameInstance_Systems158_Addr 0x2DA3360
-#define IGameInstance_Systems160_Addr 0x2DA3320
-#define IGameInstance_Systems168o170_Addr 0x2DA39F0
-#define IGameInstance_Systems178_Addr 0x2DA2D20
-#define IGameInstance_WorldDetached_Addr 0x2DA2C90
-#define IGameInstance_WorldPendingDetach_Addr 0x2DA3690
-#define ISerializable_SetOwner_Addr 0x1BA4C0
-#define ISerializable_VFT_Addr 0x311F9E8
-#define IUpdatableSystem_VFT_Addr 0x3250228
+#define IGameInstance_RegisterGameLoadCallbacks_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_RegisterGameLoadCallbacks_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::RegisterGameLoadCallbacks\")")
+#define IGameInstance_RegisterStreamingWorldLoadedCallback_Addr                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_RegisterStreamingWorldLoadedCallback_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::RegisterStreamingWorldLoadedCallback\")")
+#define IGameInstance_Systems158_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_Systems158_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::Systems158\")")
+#define IGameInstance_Systems160_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_Systems160_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::Systems160\")")
+#define IGameInstance_Systems168o170_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_Systems168o170_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::Systems168o170\")")
+#define IGameInstance_Systems178_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_Systems178_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::Systems178\")")
+#define IGameInstance_WorldDetached_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_WorldDetached_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::WorldDetached\")")
+#define IGameInstance_WorldPendingDetach_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_WorldPendingDetach_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::WorldPendingDetach\")")
+#define ISerializable_SetOwner_Addr                                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_SetOwner_Addr"                         \
+              "is 0 - Zoltan found no matches for RED4ext::ISerializable::SetOwner\")")
+#define ISerializable_VFT_Addr 0x2AEED90
 #define LoadGameSystemsData_Addr                                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: LoadGameSystemsData_Addr"                            \
               "is 0 - Zoltan found no matches for RED4ext::LoadGameSystemsData\")")
-#define Quaternion_GetYaw_Addr 0x66BF00
-#define Quaternion_ToEulerAngles_Addr 0x567DA0
-#define Quaternion_ToMatrix_Addr 0x1D4180
-#define REUSED_Break_Addr 0x2AA4E68
-#define REUSED_ReturnOne_Addr 0x1BA380
-#define REUSED_ReturnOne64_Addr 0x20ABB0
-#define REUSED_ReturnZero_Addr 0x1A3170
-#define REUSED_ReturnZero64_Addr 0x1A3900
-#define REUSED_ReturnZero8_Addr 0x1AD2A0
-#define UpdatableSystems_SetRuntimeScene_Addr 0xBAEAF0
-#define UpdateManagerHolder_Something_Addr 0xAA0D40
-#define UpdateManagerHolder_UpdateSystems_Addr 0xAA0770
-#define UpdateManagerUpdateStorage_Copy_Addr 0xAA0670
-#define UpdateManagerUpdateStorage_Copy_0_Addr 0xA9FED0
+#define Quaternion_GetYaw_Addr                                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Quaternion_GetYaw_Addr"                              \
+              "is 0 - Zoltan found no matches for RED4ext::Quaternion::GetYaw\")")
+#define Quaternion_ToEulerAngles_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Quaternion_ToEulerAngles_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::Quaternion::ToEulerAngles\")")
+#define Quaternion_ToMatrix_Addr                                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Quaternion_ToMatrix_Addr"                            \
+              "is 0 - Zoltan found no matches for RED4ext::Quaternion::ToMatrix\")")
+#define REUSED_Break_Addr 0x17D3B48
+#define REUSED_ReturnOne_Addr 0x185A479
+#define REUSED_ReturnOne64_Addr 0x17B0B40
+#define REUSED_ReturnZero_Addr 0x1838310
+#define REUSED_ReturnZero64_Addr 0x4763AE
+#define REUSED_ReturnZero8_Addr 0x186B790
+#define UpdatableSystems_SetRuntimeScene_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdatableSystems_SetRuntimeScene_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::UpdatableSystems::SetRuntimeScene\")")
+#define UpdateManagerHolder_Something_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerHolder_Something_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManagerHolder::Something\")")
+#define UpdateManagerHolder_UpdateSystems_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerHolder_UpdateSystems_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManagerHolder::UpdateSystems\")")
+#define UpdateManagerUpdateStorage_Copy_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_Copy_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManager::UpdateStorage::Copy\")")
+#define UpdateManagerUpdateStorage_Copy_0_Addr 0x7B4428
 #define UpdateManagerUpdateStorage_FireCallback_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_FireCallback_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::UpdateManager::UpdateStorage::FireCallback\")")
-#define UpdateManager_IterateUnknown_Addr 0xAA1840
-#define UpdateManager_PrepareFiring_Addr 0xAA0B80
-#define UpdateManager_RegisterUpdate_Addr 0xAA1280
-#define UpdateManager_ReleaseUnknown_Addr 0xAA03F0
+#define UpdateManager_IterateUnknown_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManager_IterateUnknown_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManager::IterateUnknown\")")
+#define UpdateManager_PrepareFiring_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManager_PrepareFiring_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManager::PrepareFiring\")")
+#define UpdateManager_RegisterUpdate_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManager_RegisterUpdate_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManager::RegisterUpdate\")")
+#define UpdateManager_ReleaseUnknown_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManager_ReleaseUnknown_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManager::ReleaseUnknown\")")
 #define UpdateManager_Setup_Addr                                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManager_Setup_Addr"                            \
-              "is 0 - Zoltan found too many matches for RED4ext::UpdateManager::Setup (2)\")")
+              "is 0 - Zoltan found no matches for RED4ext::UpdateManager::Setup\")")
 #define WidgetHudComponentInterface_WidgetHudComponentInterface_Addr                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: WidgetHudComponentInterface_WidgetHudComponentInterface_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::WidgetHudComponentInterface::WidgetHudComponentInterface\")")
 #define WidgetHudComponentInterface__WidgetHudComponentInterface_Addr                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: WidgetHudComponentInterface__WidgetHudComponentInterface_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::WidgetHudComponentInterface::~WidgetHudComponentInterface\")")
-#define Zoltan_CBaseFunction_ExecuteNative_Addr 0x2154F0
-#define Zoltan_CBaseFunction_ExecuteScripted_Addr 0x215B60
-#define Zoltan_CBaseFunction_InternalExecute_Addr 0x215570
-#define Zoltan_CBaseFunction_Register_Addr 0x214EB0
-#define Zoltan_CBaseRTTIType_sub_80_Addr 0x202240
-#define Zoltan_CBaseRTTIType_sub_88_Addr 0x208180
-#define Zoltan_CBaseRTTIType_sub_90_Addr 0x207F70
-#define Zoltan_CBaseRTTIType_sub_98_Addr 0x1E32410
-#define Zoltan_CBaseRTTIType_sub_A0_Addr 0x207F40
-#define Zoltan_CBitfield_FromString_Addr                                                                               \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_CBitfield_FromString_Addr"                    \
-              "is 0 - Zoltan found count mismatch for Zoltan::CBitfield_FromString (77)\")")
-#define Zoltan_CBitfield_ToString_Addr 0x2538D0
-#define Zoltan_CBitfield_Unserialize_Addr 0x253760
-#define Zoltan_CClassFunction_ctor_Addr 0x214EB0
-#define Zoltan_CClassStaticFunction_ctor_Addr 0x214E50
-#define Zoltan_CClass_ClearScriptedData_Addr 0x1FEF80
-#define Zoltan_CClass_CreateInstance_Addr 0x201F10
-#define Zoltan_CClass_GetMaxAlignment_Addr 0x1FEBC0
-#define Zoltan_CClass_GetProperties_Addr 0x202EB0
-#define Zoltan_CClass_GetProperty_Addr 0x202A30
-#define Zoltan_CClass_ToString_Addr                                                                                    \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_CClass_ToString_Addr"                         \
-              "is 0 - Zoltan found count mismatch for Zoltan::CClass_ToString (69)\")")
-#define Zoltan_CClass_Unserialize_Addr 0x206E60
-#define Zoltan_CClass_sub_80_Addr 0x202240
-#define Zoltan_CClass_sub_88_Addr 0x206F90
-#define Zoltan_CClass_sub_90_Addr 0x205920
-#define Zoltan_CClass_sub_98_Addr 0x2079E0
-#define Zoltan_CClass_sub_A0_Addr 0x203B40
-#define Zoltan_CClass_sub_B0_Addr 0x205A80
-#define Zoltan_CClass_sub_C0_Addr 0x2064D0
-#define Zoltan_CClass_sub_D0_Addr 0x207360
-#define Zoltan_CEnum_FromString_Addr 0x223C80
-#define Zoltan_CEnum_ToString_Addr 0x224110
-#define Zoltan_CEnum_Unserialize_Addr 0x223EE0
-#define Zoltan_CGameEngine_Addr 0xA833BD
-#define Zoltan_CGlobalFunction_ctor_Addr 0x214E00
-#define Zoltan_CNamePool_AddCString_Addr 0xA02940
-#define Zoltan_CNamePool_AddCstr_Addr 0x1B3E80
-#define Zoltan_CNamePool_AddPair_Addr 0x1B42D0
-#define Zoltan_CNamePool_Get_Addr 0x1B3E40
-#define Zoltan_CRTTIRegistrator_Add_Addr 0x1BA6E0
-#define Zoltan_CRTTIRegistrator_RTTIAsyncId_Addr 0x208F57
-#define Zoltan_CRTTIScriptReferenceType_Set_Addr 0x222B40
-#define Zoltan_CRTTIScriptReferenceType_ctor_Addr 0x221580
-#define Zoltan_CRTTISystem_Get_Addr 0x25B990
-#define Zoltan_CStack_ctor_Addr 0x253AA0
-#define Zoltan_CString_copy_Addr 0x1AEEA0
-#define Zoltan_CString_ctor_Addr 0x1AEA70
-#define Zoltan_CString_dtor_Addr 0x1AED50
-#define Zoltan_DynArray_Realloc_Addr 0x1B3C40
-#define Zoltan_Handle_DecWeakRef_Addr 0x1B5E80
-#define Zoltan_Handle_ctor_Addr 0x1B5C10
-#define Zoltan_IScriptable_DestructValueHolder_Addr 0x1EF7E0
-#define Zoltan_IScriptable_GetValueHolder_Addr 0x1EEF40
-#define Zoltan_IScriptable_sub_D8_Addr 0x1EEEB0
-#define Zoltan_ISerializable_sub_30_Addr 0x1BA390
-#define Zoltan_ISerializable_sub_40_Addr 0x1BA3C0
-#define Zoltan_ISerializable_sub_78_Addr 0x1B9DF0
-#define Zoltan_ISerializable_sub_A0_Addr 0x1C4450
-#define Zoltan_ISerializable_sub_C0_Addr 0x1BA230
-#define Zoltan_JobHandle_Join_Addr 0x2C50220
-#define Zoltan_JobHandle_ctor_Addr 0x2C501B0
-#define Zoltan_JobHandle_dtor_Addr 0x2C501F0
-#define Zoltan_JobInternals_DispatchJob_Addr 0x2C51B20
-#define Zoltan_JobInternals_SetLocalThreadParam_Addr 0x2C51CD0
-#define Zoltan_JobQueue_Capture_Addr 0x2C51F40
-#define Zoltan_JobQueue_SyncWait_Addr 0x2C51EC0
-#define Zoltan_JobQueue_ctor_FromGroup_Addr 0x2C51CF0
-#define Zoltan_JobQueue_ctor_FromParams_Addr 0x2C51DD0
-#define Zoltan_JobQueue_dtor_Addr 0x2C51E90
-#define Zoltan_Memory_PoolStorage_OOM_Addr                                                                             \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_Memory_PoolStorage_OOM_Addr"                  \
-              "is 0 - Zoltan found count mismatch for Zoltan::Memory_PoolStorage_OOM (1339)\")")
-#define Zoltan_Memory_Vault_Alloc_Addr                                                                                 \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_Memory_Vault_Alloc_Addr"                      \
-              "is 0 - Zoltan found count mismatch for Zoltan::Memory_Vault_Alloc (1986)\")")
-#define Zoltan_Memory_Vault_AllocAligned_Addr                                                                          \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_Memory_Vault_AllocAligned_Addr"               \
-              "is 0 - Zoltan found count mismatch for Zoltan::Memory_Vault_AllocAligned (454)\")")
-#define Zoltan_Memory_Vault_Free_Addr 0x1A25C0
-#define Zoltan_Memory_Vault_Get_Addr 0x1A42D0
-#define Zoltan_Memory_Vault_Realloc_Addr 0x1A2880
-#define Zoltan_Memory_Vault_ReallocAligned_Addr 0x1A2B30
-#define Zoltan_Memory_Vault_Unk1_Addr 0x1A2650
-#define Zoltan_OpcodeHandlers_Get_Addr 0x1CF63D
-#define Zoltan_ResourceDepot_Addr 0x274B2D
-#define Zoltan_ResourceLoader_Addr 0x2D04F7F
-#define Zoltan_ResourceLoader_FindToken_Addr 0x20BE80
-#define Zoltan_ResourceLoader_LoadAsync_Addr 0x20C750
-#define Zoltan_ResourceReference_Fetch_Addr 0x256290
-#define Zoltan_ResourceReference_Load_Addr 0x2561E0
-#define Zoltan_ResourceReference_Reset_Addr 0x256170
-#define Zoltan_ResourceToken_CancelUnk38_Addr 0x2C02DC0
-#define Zoltan_ResourceToken_DestructUnk38_Addr 0x1BF810
-#define Zoltan_ResourceToken_Fetch_Addr 0x255BA0
-#define Zoltan_ResourceToken_OnLoaded_Addr 0x255290
-#define Zoltan_ResourceToken_dtor_Addr 0x254780
-#define Zoltan_Streams_MemoryStream_ctor_Addr 0x2C2F0D0
-#define Zoltan_TTypedClass_IsEqual_Addr                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_TTypedClass_IsEqual_Addr"                     \
-              "is 0 - Zoltan found count mismatch for Zoltan::TTypedClass_IsEqual (425)\")")
-#define Zoltan_TweakDB_CreateRecord_Addr 0xFD4930
-#define Zoltan_TweakDB_FlatArrayInt32ValueVftable_Addr                                                                 \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Zoltan_TweakDB_FlatArrayInt32ValueVftable_Addr"      \
-              "is 0 - Zoltan found count mismatch for Zoltan::TweakDB_FlatArrayInt32ValueVftable (50)\")")
-#define Zoltan_TweakDB_FlatInt32ValueVftable_Addr 0xF540F1
-#define Zoltan_TweakDB_Get_Addr 0xBE66B0
-#define Zoltan_TweakDB_InitFlatValue_ExceptInt32_Addr 0xF50830
-#define Zoltan_TweakDB_StaticFlatDataBuffer_Addr 0xF53F1F
-#define actionActionBase_Lock_Addr 0x3D3080
-#define actionActionBase_StartWithReplicatedState_Addr 0x1B44860
-#define actionActionInterface_EndActions_Addr 0x1B62800
-#define actionActionInterface_IsAnimationiActive_Addr 0x1B629D0
-#define actionActionInterface_ProcessActions_Addr 0x1B62AD0
+#define actionActionBase_Lock_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionBase_Lock_Addr"                          \
+              "is 0 - Zoltan found too many matches for RED4ext::action::ActionBase::Lock (2)\")")
+#define actionActionBase_StartWithReplicatedState_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionBase_StartWithReplicatedState_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::action::ActionBase::StartWithReplicatedState\")")
+#define actionActionInterface_EndActions_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionInterface_EndActions_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::action::ActionInterface::EndActions\")")
+#define actionActionInterface_IsAnimationiActive_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionInterface_IsAnimationiActive_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::action::ActionInterface::IsAnimationiActive\")")
+#define actionActionInterface_ProcessActions_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionInterface_ProcessActions_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::action::ActionInterface::ProcessActions\")")
 #define appearanceAppearanceDefinition_AppearanceDefinition_Addr                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: appearanceAppearanceDefinition_AppearanceDefinition_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::appearance::AppearanceDefinition::AppearanceDefinition\")")
-#define audioBankManager_LoadBank_Addr 0x2CF1550
-#define audioBankManager_LoadBanksMaybe_Addr 0x2CF1330
-#define audioBankManager_UnloadBank_Addr 0x2CF2C80
-#define audioEmitters_GetEmitterForEntityID_Addr 0x2CEA310
-#define audioEmitters_GetOrCreateEmitter_Addr 0x2CE9F50
-#define audioGameParameterStorage_GetValue_Addr 0x2CE97C0
-#define audioGameParameterStorage_SetValue_Addr 0x2CE9930
+#define audioBankManager_LoadBank_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioBankManager_LoadBank_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::audio::BankManager::LoadBank\")")
+#define audioBankManager_LoadBanksMaybe_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioBankManager_LoadBanksMaybe_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::audio::BankManager::LoadBanksMaybe\")")
+#define audioBankManager_UnloadBank_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioBankManager_UnloadBank_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::audio::BankManager::UnloadBank\")")
+#define audioEmitters_GetEmitterForEntityID_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioEmitters_GetEmitterForEntityID_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::audio::Emitters::GetEmitterForEntityID\")")
+#define audioEmitters_GetOrCreateEmitter_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioEmitters_GetOrCreateEmitter_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::audio::Emitters::GetOrCreateEmitter\")")
+#define audioGameParameterStorage_GetValue_Addr 0x1829B8
+#define audioGameParameterStorage_SetValue_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioGameParameterStorage_SetValue_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::audio::GameParameterStorage::SetValue\")")
 #define audioMetadataManager_GetValueInMapForName_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioMetadataManager_GetValueInMapForName_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::audio::MetadataManager::GetValueInMapForName\")")
@@ -218,7 +286,9 @@
 #define audioThing_GetEmitterPosition_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioThing_GetEmitterPosition_Addr"                  \
               "is 0 - Zoltan found no matches for RED4ext::audio::Thing::GetEmitterPosition\")")
-#define audioThing_UpdateEmitterPosition_Addr 0x73E770
+#define audioThing_UpdateEmitterPosition_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioThing_UpdateEmitterPosition_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::audio::Thing::UpdateEmitterPosition\")")
 #define audioVehicleMetadata_GetEventData_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioVehicleMetadata_GetEventData_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::audio::VehicleMetadata::GetEventData\")")
@@ -228,71 +298,129 @@
 #define audio_UpdateParameterForEntityID_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audio_UpdateParameterForEntityID_Addr"               \
               "is 0 - Zoltan found no matches for RED4ext::audio::UpdateParameterForEntityID\")")
-#define entAnimatedComponent_GetReferencePoseMSForName_Addr 0xFEF870
-#define entComponentsStorage_AddComponent_Addr 0x1068B40
-#define entComponentsStorage_AddComponents_Addr 0x1068C20
-#define entComponentsStorage_FreeMemory_Addr 0x1068D60
-#define entComponentsStorage_GetComponentByCRUID_Addr 0x1068E30
-#define entComponentsStorage_GetSize_Addr 0x8C1680
-#define entComponentsStorage_IsEmpty_Addr 0x1074310
-#define entEntity_ReassembleAppearance_Addr 0x1059D80
+#define entAnimatedComponent_GetReferencePoseMSForName_Addr                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entAnimatedComponent_GetReferencePoseMSForName_Addr" \
+              "is 0 - Zoltan found no matches for RED4ext::ent::AnimatedComponent::GetReferencePoseMSForName\")")
+#define entComponentsStorage_AddComponent_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_AddComponent_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::AddComponent\")")
+#define entComponentsStorage_AddComponents_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_AddComponents_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::AddComponents\")")
+#define entComponentsStorage_FreeMemory_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_FreeMemory_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::FreeMemory\")")
+#define entComponentsStorage_GetComponentByCRUID_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_GetComponentByCRUID_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::GetComponentByCRUID\")")
+#define entComponentsStorage_GetSize_Addr 0x17B6340
+#define entComponentsStorage_IsEmpty_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_IsEmpty_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::IsEmpty\")")
+#define entEntity_ReassembleAppearance_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_ReassembleAppearance_Addr"                 \
+              "is 0 - Zoltan found no matches for RED4ext::ent::Entity::ReassembleAppearance\")")
 #define entEntity_SetRuntime_Addr                                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SetRuntime_Addr"                           \
-              "is 0 - Zoltan found too many matches for RED4ext::ent::Entity::SetRuntime (2)\")")
-#define entEntity_SetupEntityAndComponents_Addr 0x1059C60
-#define entEntity_SomethingListeners_Addr 0x1060B10
+              "is 0 - Zoltan found no matches for RED4ext::ent::Entity::SetRuntime\")")
+#define entEntity_SetupEntityAndComponents_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SetupEntityAndComponents_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::ent::Entity::SetupEntityAndComponents\")")
+#define entEntity_SomethingListeners_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SomethingListeners_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::ent::Entity::SomethingListeners\")")
 #define entIAttachment_IAttachment_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIAttachment_IAttachment_Addr"                     \
               "is 0 - Zoltan found no matches for RED4ext::ent::IAttachment::IAttachment\")")
-#define entIComponent_SetEntity_Addr 0x1067020
-#define entIComponent_VFT_Addr 0x334F8A0
-#define entITransformAttachable_VFT_Addr 0x32549E0
-#define entMeshComponent_Load_Addr 0x10BB8C0
-#define entPhysicalMeshComponent_ProcessSystemResource_Addr 0x10DB9F0
-#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x1170BE0
-#define entSlotComponent_GetSlotGlobalTransform_Addr 0x1170280
-#define entSlotComponent_GetSlotIndex_Addr 0x1170130
-#define entSlotComponent_GetSlotLocalTransform_Addr 0x1170880
+#define entIComponent_SetEntity_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIComponent_SetEntity_Addr"                        \
+              "is 0 - Zoltan found too many matches for RED4ext::ent::IComponent::SetEntity (6)\")")
+#define entIComponent_VFT_Addr 0x29F9910
+#define entITransformAttachable_VFT_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entITransformAttachable_VFT_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::ent::ITransformAttachable::VFT\")")
+#define entMeshComponent_Load_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entMeshComponent_Load_Addr"                          \
+              "is 0 - Zoltan found no matches for RED4ext::ent::MeshComponent::Load\")")
+#define entPhysicalMeshComponent_ProcessSystemResource_Addr                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entPhysicalMeshComponent_ProcessSystemResource_Addr" \
+              "is 0 - Zoltan found no matches for RED4ext::ent::PhysicalMeshComponent::ProcessSystemResource\")")
+#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetLocalSlotTransformFromIndex_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::ent::SlotComponent::GetLocalSlotTransformFromIndex\")")
+#define entSlotComponent_GetSlotGlobalTransform_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetSlotGlobalTransform_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::ent::SlotComponent::GetSlotGlobalTransform\")")
+#define entSlotComponent_GetSlotIndex_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetSlotIndex_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::ent::SlotComponent::GetSlotIndex\")")
+#define entSlotComponent_GetSlotLocalTransform_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetSlotLocalTransform_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::ent::SlotComponent::GetSlotLocalTransform\")")
 #define entVisualControllerComponent_GetAppearanceDependency_Addr                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_GetAppearanceDependency_Addr"\
-              "is 0 - Zoltan found too many matches for RED4ext::ent::VisualControllerComponent::GetAppearanceDependency (2)\")")
-#define entVisualControllerComponent_LoadUnkD8_Addr 0x11A3850
-#define entVisualControllerComponent_Set0xF4_Addr 0x11A1DE0
-#define entVisualControllerComponent_Unknown_Addr 0x11A1CA0
-#define gameCActionsFactory_AddActionTypeManual_Addr 0x29DA6E0
+              "is 0 - Zoltan found too many matches for RED4ext::ent::VisualControllerComponent::GetAppearanceDependency (3)\")")
+#define entVisualControllerComponent_LoadUnkD8_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_LoadUnkD8_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::ent::VisualControllerComponent::LoadUnkD8\")")
+#define entVisualControllerComponent_Set0xF4_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_Set0xF4_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::ent::VisualControllerComponent::Set0xF4\")")
+#define entVisualControllerComponent_Unknown_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_Unknown_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::ent::VisualControllerComponent::Unknown\")")
+#define gameCActionsFactory_AddActionTypeManual_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameCActionsFactory_AddActionTypeManual_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::game::CActionsFactory::AddActionTypeManual\")")
 #define gameFxEventInterface_Add_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxEventInterface_Add_Addr"                       \
-              "is 0 - Zoltan found too many matches for RED4ext::game::FxEventInterface::Add (2)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::FxEventInterface::Add\")")
 #define gameFxInstance_IsValid_Addr                                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_IsValid_Addr"                         \
               "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::IsValid\")")
 #define gameFxInstance_QueueAttachToComponent_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueAttachToComponent_Addr"          \
-              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueAttachToComponent (2)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueAttachToComponent\")")
 #define gameFxInstance_QueueAttachToSlot_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueAttachToSlot_Addr"               \
-              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueAttachToSlot (2)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueAttachToSlot\")")
 #define gameFxInstance_QueueBreakLoop_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueBreakLoop_Addr"                  \
-              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueBreakLoop (3)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueBreakLoop\")")
 #define gameFxInstance_QueueKill_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueKill_Addr"                       \
-              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueKill (3)\")")
-#define gameFxInstance_QueueSetBlackboardValue_Addr 0x1744E70
-#define gameFxInstance_QueueUpdateTargetPosition_Addr 0x1745060
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueKill\")")
+#define gameFxInstance_QueueSetBlackboardValue_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueSetBlackboardValue_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueSetBlackboardValue\")")
+#define gameFxInstance_QueueUpdateTargetPosition_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueUpdateTargetPosition_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueUpdateTargetPosition\")")
 #define gameFxInstance_QueueUpdateTransform_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueUpdateTransform_Addr"            \
-              "is 0 - Zoltan found too many matches for RED4ext::game::FxInstance::QueueUpdateTransform (3)\")")
-#define gameGameAudioSystem_SetGlobalParameter_Addr 0x73D670
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueUpdateTransform\")")
+#define gameGameAudioSystem_SetGlobalParameter_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameGameAudioSystem_SetGlobalParameter_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::game::GameAudioSystem::SetGlobalParameter\")")
 #define gameGameAudioSystem_UpdateParameter_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameGameAudioSystem_UpdateParameter_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::game::GameAudioSystem::UpdateParameter\")")
-#define gameIGameSystem_SetGameInstance_Addr 0xB096C0
-#define gameIGameSystem_Unset_Addr 0xB09750
-#define gameIGameSystem_VFT_Addr 0x325F7E0
-#define gameMutexable_Update_Addr 0x1742AA0
-#define gameObject_CallScriptFunction_Addr 0x1417760
-#define gameVehicleSystem_BeginUpdate_Addr 0x1CF86A0
+#define gameIGameSystem_SetGameInstance_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameIGameSystem_SetGameInstance_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::game::IGameSystem::SetGameInstance\")")
+#define gameIGameSystem_Unset_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameIGameSystem_Unset_Addr"                          \
+              "is 0 - Zoltan found no matches for RED4ext::game::IGameSystem::Unset\")")
+#define gameIGameSystem_VFT_Addr 0x2C2C870
+#define gameMutexable_Update_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameMutexable_Update_Addr"                           \
+              "is 0 - Zoltan found no matches for RED4ext::game::Mutexable::Update\")")
+#define gameObject_CallScriptFunction_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameObject_CallScriptFunction_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::game::Object::CallScriptFunction\")")
+#define gameVehicleSystem_BeginUpdate_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_BeginUpdate_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::BeginUpdate\")")
 #define gameVehicleSystem_FixedUpdate_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_FixedUpdate_Addr"                  \
               "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate\")")
@@ -301,498 +429,572 @@
               "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate_PreSolve\")")
 #define gameVehicleSystem_Interpolation_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_Interpolation_Addr"                \
-              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::Interpolation (2)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::Interpolation\")")
 #define gameVehicleSystem_PostMove_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_PostMove_Addr"                     \
-              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::PostMove (2)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::PostMove\")")
 #define gameVehicleSystem_PreUpdateAndPreMove_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_PreUpdateAndPreMove_Addr"          \
-              "is 0 - Zoltan found too many matches for RED4ext::game::VehicleSystem::PreUpdateAndPreMove (7)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::PreUpdateAndPreMove\")")
 #define gameVehicleSystem_SingleFixedStep_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_SingleFixedStep_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::SingleFixedStep\")")
-#define gameVehicleSystem_UpdateVehicleArrays_Addr 0x1CFBED0
-#define physicsColliderSphere_createHandleWithRadius_Addr 0x43CBA0
-#define physicsFilterData_LoadPreset_Addr 0x44C440
-#define physicsFilterData_VFT_Addr 0x3182E20
-#define physicsGeometryCache_FreeAlwaysLoaded_Addr 0x451E40
-#define physicsGeometryCache_FreeGeometryKey_Addr 0x452130
+#define gameVehicleSystem_UpdateVehicleArrays_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_UpdateVehicleArrays_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::UpdateVehicleArrays\")")
+#define physicsColliderSphere_createHandleWithRadius_Addr                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsColliderSphere_createHandleWithRadius_Addr"   \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ColliderSphere::createHandleWithRadius\")")
+#define physicsFilterData_LoadPreset_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsFilterData_LoadPreset_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::physics::FilterData::LoadPreset\")")
+#define physicsGeometryCache_FreeAlwaysLoaded_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeAlwaysLoaded_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeAlwaysLoaded\")")
+#define physicsGeometryCache_FreeGeometryKey_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeGeometryKey_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeGeometryKey\")")
 #define physicsGeometryCache_FreeKey_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeKey_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeKey\")")
-#define physicsGeometryCache_FreeSector_Addr 0x4522E0
-#define physicsGeometryCache_HasGeometryKey_Addr 0x4524C0
-#define physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr 0x44FE40
-#define physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr 0x452800
-#define physicsGeometryCache_LoadSectorGeometries_Addr 0x44F840
-#define physicsGeometryCache_LoadSectorGeometriesSetup_Addr 0x452B60
-#define physicsGeometryCache_Unknown_Addr 0x452790
-#define physicsGeometryCache_sub_7FF75B921520_Addr 0x450FD0
-#define physicsGeometryCache_sub_7FF75B922410_Addr 0x451EC0
+#define physicsGeometryCache_FreeSector_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeSector_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeSector\")")
+#define physicsGeometryCache_HasGeometryKey_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_HasGeometryKey_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::HasGeometryKey\")")
+#define physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometries\")")
+#define physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometriesSetup\")")
+#define physicsGeometryCache_LoadSectorGeometries_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadSectorGeometries_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadSectorGeometries\")")
+#define physicsGeometryCache_LoadSectorGeometriesSetup_Addr                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadSectorGeometriesSetup_Addr" \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadSectorGeometriesSetup\")")
+#define physicsGeometryCache_Unknown_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_Unknown_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::Unknown\")")
+#define physicsGeometryCache_sub_7FF75B921520_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_sub_7FF75B921520_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::sub_7FF75B921520\")")
+#define physicsGeometryCache_sub_7FF75B922410_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_sub_7FF75B922410_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::sub_7FF75B922410\")")
 #define physicsProxyCacheID_DisableCollision_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCacheID_DisableCollision_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCacheID::DisableCollision\")")
 #define physicsProxyCacheID_EnableCollision_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCacheID_EnableCollision_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCacheID::EnableCollision\")")
-#define physicsProxyCacheManagerUnk948_Kick_Addr 0x4A7A00
-#define physicsProxyCache_AddToCache_Addr 0x47AC70
-#define physicsProxyCache_GetDataFromCache_Addr 0x4C7D40
-#define physicsProxyCache_GetFromCacheOrGet_Addr 0x47AA50
-#define physicsProxyHelper_Create_Addr 0x4567C0
-#define physicsProxyHelper_GetThingWithLock_Addr 0x456730
-#define physicsProxyHelper_SetAngularDamping_Addr 0x45B280
-#define physicsProxyHelper_SetCCD_Addr 0x45D5F0
+#define physicsProxyCacheManagerUnk948_Kick_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCacheManagerUnk948_Kick_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCacheManager::Unk948::Kick\")")
+#define physicsProxyCache_AddToCache_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_AddToCache_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCache::AddToCache\")")
+#define physicsProxyCache_GetDataFromCache_Addr 0x3A53B4
+#define physicsProxyCache_GetFromCacheOrGet_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_GetFromCacheOrGet_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCache::GetFromCacheOrGet\")")
+#define physicsProxyHelper_Create_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_Create_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::Create\")")
+#define physicsProxyHelper_GetThingWithLock_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_GetThingWithLock_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::GetThingWithLock\")")
+#define physicsProxyHelper_SetAngularDamping_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetAngularDamping_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetAngularDamping\")")
+#define physicsProxyHelper_SetCCD_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetCCD_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetCCD\")")
 #define physicsProxyHelper_SetCMassLocalPose_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetCMassLocalPose_Addr"           \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::SetCMassLocalPose (10)\")")
-#define physicsProxyHelper_SetGravity_Addr 0x45BBB0
-#define physicsProxyHelper_SetIsQueryable_Addr 0x45BDB0
-#define physicsProxyHelper_SetLinearDamping_Addr 0x45C0D0
-#define physicsProxyHelper_SetMassAndUpdateInertia_Addr 0x45C4D0
-#define physicsProxyHelper_SetQueryFilterData_Addr 0x45CB30
-#define physicsProxyHelper_SetSimulationFilterData_Addr 0x45CF30
-#define physicsProxyHelper_SetSimulationShape_Addr 0x45BEC0
-#define physicsProxyHelper_Unlock_Addr 0x456840
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetCMassLocalPose\")")
+#define physicsProxyHelper_SetGravity_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetGravity_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetGravity\")")
+#define physicsProxyHelper_SetIsQueryable_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetIsQueryable_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetIsQueryable\")")
+#define physicsProxyHelper_SetLinearDamping_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetLinearDamping_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetLinearDamping\")")
+#define physicsProxyHelper_SetMassAndUpdateInertia_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetMassAndUpdateInertia_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetMassAndUpdateInertia\")")
+#define physicsProxyHelper_SetQueryFilterData_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetQueryFilterData_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetQueryFilterData\")")
+#define physicsProxyHelper_SetSimulationFilterData_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetSimulationFilterData_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetSimulationFilterData\")")
+#define physicsProxyHelper_SetSimulationShape_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetSimulationShape_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetSimulationShape\")")
+#define physicsProxyHelper_Unlock_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_Unlock_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::Unlock\")")
 #define physicsProxyHelper_UpdateGlobalPose_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateGlobalPose_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::UpdateGlobalPose\")")
-#define physicsProxyHelper_UpdateProxyCache_Addr 0x4575A0
+#define physicsProxyHelper_UpdateProxyCache_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateProxyCache_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::UpdateProxyCache\")")
 #define physicsProxyID_GetKeyUnk37_0x40_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetKeyUnk37_0x40_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetKeyUnk37_0x40\")")
 #define physicsProxyID_GetNbShapes_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetNbShapes_Addr"                     \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetNbShapes\")")
-#define physicsProxyID_GetProxy_Addr 0x47ABF0
-#define physicsProxyID_ProcessProxyDesc_Addr 0x4588A0
+#define physicsProxyID_GetProxy_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetProxy_Addr"                        \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetProxy\")")
+#define physicsProxyID_ProcessProxyDesc_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_ProcessProxyDesc_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::ProcessProxyDesc\")")
 #define physicsProxyID_Something2_Addr                                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_Something2_Addr"                      \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::Something2\")")
-#define physicsProxyID_Unk_Addr 0x458680
+#define physicsProxyID_Unk_Addr                                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_Unk_Addr"                             \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::Unk\")")
 #define physicsProxyID_UpdateProxyCacheEntry_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_UpdateProxyCacheEntry_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::UpdateProxyCacheEntry\")")
-#define physicsProxyManager_GetProxyCache_Addr 0x47A010
-#define physicsProxyManager_GetProxyHandle_Addr 0x479EC0
-#define physicsProxyManager_HasProxy_Addr 0x47A290
-#define physicsProxyManager_SetProxyCacheID_Addr 0x47A600
-#define physicsProxyManager_TestUnk2E2068_Addr 0x47A290
-#define physicsSystemResource_GetFromCMesh_Addr 0xA451B0
+#define physicsProxyManager_GetProxyCache_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_GetProxyCache_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::GetProxyCache\")")
+#define physicsProxyManager_GetProxyHandle_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_GetProxyHandle_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::GetProxyHandle\")")
+#define physicsProxyManager_HasProxy_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_HasProxy_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::HasProxy\")")
+#define physicsProxyManager_SetProxyCacheID_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_SetProxyCacheID_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::SetProxyCacheID\")")
+#define physicsProxyManager_TestUnk2E2068_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_TestUnk2E2068_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::TestUnk2E2068\")")
+#define physicsSystemResource_GetFromCMesh_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsSystemResource_GetFromCMesh_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::physics::SystemResource::GetFromCMesh\")")
 #define physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::physics::VehiclePhysicsInsert1::ReferencePoseSetup\")")
-#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x1D700D0
-#define physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr 0x1D666B0
-#define physics_GetShapeLocalPos_Addr 0x45A2B0
+#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x3AD8EC
+#define physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr"  \
+              "is 0 - Zoltan found no matches for RED4ext::physics::VehiclePhysicsInsert2::SetsUnk160Unk15C\")")
+#define physics_GetShapeLocalPos_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_GetShapeLocalPos_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GetShapeLocalPos\")")
 #define physics_ProxyID_GetGlobalPose_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_ProxyID_GetGlobalPose_Addr"                  \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyID_GetGlobalPose (2)\")")
-#define physics_pxRigidBody_Get_Addr 0x4C8200
-#define physics_pxRigidBody_Update_Addr 0x4C9020
-#define userRuntimeSettingsVarBool_VFT_Addr 0x36A1648
-#define userRuntimeSettingsVarFloatList_VFT_Addr 0x36A2370
-#define userRuntimeSettingsVarFloat_VFT_Addr 0x36A2318
-#define userRuntimeSettingsVarInt_VFT_Addr 0x36A22C0
-#define userRuntimeSettingsVarNameList_VFT_Addr 0x36A1750
-#define userRuntimeSettingsVarName_VFT_Addr 0x36A16A0
-#define userRuntimeSettingsVarStringList_VFT_Addr 0x336A978
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID_GetGlobalPose\")")
+#define physics_pxRigidBody_Get_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_pxRigidBody_Get_Addr"                        \
+              "is 0 - Zoltan found no matches for RED4ext::physics::pxRigidBody_Get\")")
+#define physics_pxRigidBody_Update_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_pxRigidBody_Update_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::physics::pxRigidBody_Update\")")
+#define userRuntimeSettingsVarBool_VFT_Addr 0x30DF9E8
+#define userRuntimeSettingsVarFloatList_VFT_Addr 0x30E0798
+#define userRuntimeSettingsVarFloat_VFT_Addr 0x30E0740
+#define userRuntimeSettingsVarInt_VFT_Addr 0x30E06E8
+#define userRuntimeSettingsVarNameList_VFT_Addr 0x30DFAF0
+#define userRuntimeSettingsVarName_VFT_Addr 0x30DFA40
+#define userRuntimeSettingsVarStringList_VFT_Addr 0x2FBDE88
 #define userRuntimeSettingsVar_RuntimeSettingsVar_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVar_RuntimeSettingsVar_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::user::RuntimeSettingsVar::RuntimeSettingsVar\")")
-#define userRuntimeSettingsVar_VFT_Addr 0x336A920
+#define userRuntimeSettingsVar_VFT_Addr 0x2FBDE30
 #define user_GetSettings_Addr                                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: user_GetSettings_Addr"                               \
               "is 0 - Zoltan found no matches for RED4ext::user::GetSettings\")")
-#define vehicleAirControl_ApplyTorque_Addr 0x1D24780
-#define vehicleAirControl_GetAngularVelocity_Addr 0x1D255C0
-#define vehicleAirControl_Process_Addr 0x1D26260
-#define vehicleBaseObject_CheckPhysicsStateActionInterface_Addr 0x1CA1B40
-#define vehicleBaseObject_CreateAction_Addr 0x1C9FC00
-#define vehicleBaseObject_GetCurveSetData_Addr 0x1C8F900
-#define vehicleBaseObject_GetDeceleration_Addr 0x746800
-#define vehicleBaseObject_GetDisplayName_Addr 0x1C8F6C0
-#define vehicleBaseObject_GetGravitationalForce_Addr 0x1C8F690
-#define vehicleBaseObject_GetInverseMass_Addr 0x1C8F680
-#define vehicleBaseObject_GetPhysicsData_Addr 0x7467F0
-#define vehicleBaseObject_GetTotalMass_Addr 0x1C8F670
-#define vehicleBaseObject_GetUnk60C_Addr 0x1C8F6B0
-#define vehicleBaseObject_GetUnk8E0_Addr 0x1C8B570
-#define vehicleBaseObject_GetVehicleSystem_Addr 0x1C8FA80
-#define vehicleBaseObject_GetWeaponOrientation_Addr 0x1C8FAB0
-#define vehicleBaseObject_HornForDuration_Addr 0x1C90460
-#define vehicleBaseObject_HornForDurationDelayed_Addr 0x1C906C0
-#define vehicleBaseObject_PostMovePhysicsStateNotZero_Addr 0x1C972E0
-#define vehicleBaseObject_PostMovePhysicsStateZero_Addr 0x1C970F0
-#define vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr 0x1C98040
-#define vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr 0x1C97D40
-#define vehicleBaseObject_Reset8B4_Addr 0x1C8B490
-#define vehicleBaseObject_SetPhysicsState_Addr 0x1CA2AB0
-#define vehicleBaseObject_UnsetPhysicsStates_Addr 0x1C8E7C0
-#define vehicleBaseObject_UpdatePhysicsSleepState_Addr 0x1C981C0
+#define vehicleAirControl_ApplyTorque_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAirControl_ApplyTorque_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::AirControl::ApplyTorque\")")
+#define vehicleAirControl_GetAngularVelocity_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAirControl_GetAngularVelocity_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::AirControl::GetAngularVelocity\")")
+#define vehicleAirControl_Process_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAirControl_Process_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::AirControl::Process\")")
+#define vehicleBaseObject_CheckPhysicsStateActionInterface_Addr                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_CheckPhysicsStateActionInterface_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::CheckPhysicsStateActionInterface\")")
+#define vehicleBaseObject_CreateAction_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_CreateAction_Addr"                 \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::CreateAction\")")
+#define vehicleBaseObject_GetCurveSetData_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetCurveSetData_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetCurveSetData\")")
+#define vehicleBaseObject_GetDeceleration_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetDeceleration_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetDeceleration\")")
+#define vehicleBaseObject_GetDisplayName_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetDisplayName_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetDisplayName\")")
+#define vehicleBaseObject_GetGravitationalForce_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetGravitationalForce_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetGravitationalForce\")")
+#define vehicleBaseObject_GetInverseMass_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetInverseMass_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetInverseMass\")")
+#define vehicleBaseObject_GetPhysicsData_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetPhysicsData_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetPhysicsData\")")
+#define vehicleBaseObject_GetTotalMass_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetTotalMass_Addr"                 \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetTotalMass\")")
+#define vehicleBaseObject_GetUnk60C_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetUnk60C_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetUnk60C\")")
+#define vehicleBaseObject_GetUnk8E0_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetUnk8E0_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetUnk8E0\")")
+#define vehicleBaseObject_GetVehicleSystem_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetVehicleSystem_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetVehicleSystem\")")
+#define vehicleBaseObject_GetWeaponOrientation_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetWeaponOrientation_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetWeaponOrientation\")")
+#define vehicleBaseObject_HornForDuration_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_HornForDuration_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::HornForDuration\")")
+#define vehicleBaseObject_HornForDurationDelayed_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_HornForDurationDelayed_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::HornForDurationDelayed\")")
+#define vehicleBaseObject_PostMovePhysicsStateNotZero_Addr                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_PostMovePhysicsStateNotZero_Addr"  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::PostMovePhysicsStateNotZero\")")
+#define vehicleBaseObject_PostMovePhysicsStateZero_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_PostMovePhysicsStateZero_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::PostMovePhysicsStateZero\")")
+#define vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateNotZero\")")
+#define vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateZero\")")
+#define vehicleBaseObject_Reset8B4_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_Reset8B4_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::Reset8B4\")")
+#define vehicleBaseObject_SetPhysicsState_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_SetPhysicsState_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::SetPhysicsState\")")
+#define vehicleBaseObject_UnsetPhysicsStates_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_UnsetPhysicsStates_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::UnsetPhysicsStates\")")
+#define vehicleBaseObject_UpdatePhysicsSleepState_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_UpdatePhysicsSleepState_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::UpdatePhysicsSleepState\")")
 #define vehicleBikeBaseObject_EnableTiltControl_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikeBaseObject_EnableTiltControl_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BikeBaseObject::EnableTiltControl\")")
-#define vehicleBikePhysics_AnimationUpdate_Addr 0x1D48C30
-#define vehicleBikePhysics_VFT_Addr 0x34E3506
-#define vehicleCameraManager_ChangeCamera_Addr 0x1CAA260
-#define vehicleCameraManager_IsTPP_Addr 0x1CAC5E0
+#define vehicleBikePhysics_AnimationUpdate_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikePhysics_AnimationUpdate_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BikePhysics::AnimationUpdate\")")
+#define vehicleBikePhysics_VFT_Addr 0x2FFD356
+#define vehicleCameraManager_ChangeCamera_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_ChangeCamera_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::ChangeCamera\")")
+#define vehicleCameraManager_IsTPP_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_IsTPP_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::IsTPP\")")
 #define vehicleCameraManager_ShouldUseSomeListener_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_ShouldUseSomeListener_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::ShouldUseSomeListener\")")
 #define vehicleCameraManager_Update_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_Update_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::Update\")")
-#define vehicleCarPhysics_AnimationUpdate_Addr 0x1D4E3B0
-#define vehicleCarPhysics_VFT_Addr 0x34E36F0
-#define vehicleChassisComponent_BigUpdate_Addr 0x1CB3E60
-#define vehicleChassisComponent_GetCollisionShapes_Addr 0x1CB2420
-#define vehicleChassisComponent_GetProxyHelperAndLock_Addr 0x1CB2090
+#define vehicleCarPhysics_AnimationUpdate_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCarPhysics_AnimationUpdate_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::CarPhysics::AnimationUpdate\")")
+#define vehicleCarPhysics_VFT_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCarPhysics_VFT_Addr"                          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::CarPhysics::VFT\")")
+#define vehicleChassisComponent_BigUpdate_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_BigUpdate_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::BigUpdate\")")
+#define vehicleChassisComponent_GetCollisionShapes_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_GetCollisionShapes_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::GetCollisionShapes\")")
+#define vehicleChassisComponent_GetProxyHelperAndLock_Addr                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_GetProxyHelperAndLock_Addr"  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::GetProxyHelperAndLock\")")
 #define vehicleChassisComponent_SetDampingToPoint4_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SetDampingToPoint4_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SetDampingToPoint4\")")
-#define vehicleChassisComponent_SetFilterData_Addr 0x1CB1B50
-#define vehicleChassisComponent_SomethingIfEnabled_Addr 0x1CB3AE0
-#define vehicleChassisComponent_TransformWorldTransform_Addr 0x1CB1720
+#define vehicleChassisComponent_SetFilterData_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SetFilterData_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SetFilterData\")")
+#define vehicleChassisComponent_SomethingIfEnabled_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SomethingIfEnabled_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SomethingIfEnabled\")")
+#define vehicleChassisComponent_TransformWorldTransform_Addr                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_TransformWorldTransform_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::TransformWorldTransform\")")
 #define vehicleChassisComponent_Unknown1_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_Unknown1_Addr"               \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::Unknown1\")")
-#define vehicleChassisComponent_Update_Addr 0x1CB5690
-#define vehicleChassisComponent_UpdatePhysicsState_Addr 0x1CB3790
-#define vehiclePID_GetCorrection_Addr 0x1D4B040
-#define vehiclePID_Initialize_Addr 0x1D4B050
-#define vehiclePID_Process_Addr 0x1D4B070
-#define vehiclePID_Reset_Addr 0x1D4B030
-#define vehiclePID_UpdatePID_Addr 0x1D4B020
+#define vehicleChassisComponent_Update_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_Update_Addr"                 \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::Update\")")
+#define vehicleChassisComponent_UpdatePhysicsState_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_UpdatePhysicsState_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::UpdatePhysicsState\")")
+#define vehiclePID_GetCorrection_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePID_GetCorrection_Addr"                       \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::PID::GetCorrection (4)\")")
+#define vehiclePID_Initialize_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePID_Initialize_Addr"                          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PID::Initialize\")")
+#define vehiclePID_Process_Addr                                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePID_Process_Addr"                             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PID::Process\")")
+#define vehiclePID_Reset_Addr                                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePID_Reset_Addr"                               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PID::Reset\")")
+#define vehiclePID_UpdatePID_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePID_UpdatePID_Addr"                           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PID::UpdatePID\")")
 #define vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::vehicle::PersistentDataPS::ResetQuestEnforceTransform\")")
-#define vehiclePersistentDataPS_UpdateWheelRuntime_Addr 0x1CE7EB0
-#define vehiclePhysicsData_AddTorque_Addr 0x1D22E80
-#define vehiclePhysicsData_ApplyForceAtPosition_Addr 0x1D22CA0
-#define vehiclePhysicsData_ApplyTorqueAtPosition_Addr 0x1D226A0
-#define vehiclePhysicsData_SetUsesNormalChassisMass_Addr 0x1D23100
-#define vehiclePhysicsData_UpdateChassis_Addr 0x1D22DC0
-#define vehiclePhysicsData_UsesAlternativeChassisMass_Addr 0x1D23730
-#define vehiclePhysics_ComputeSleep_Addr 0x1D2F4A0
-#define vehiclePhysics_GetSomethingWaterParams_Addr 0x1D2DB20
-#define vehiclePhysics_GetVehicle_Addr 0x377820
-#define vehiclePhysics_IsInAirFromVehicle_func_Addr 0x1D55610
-#define vehiclePhysics_LoadHasBeenFlippedOver_Addr 0x1D2E5F0
-#define vehiclePhysics_ReadWorldTransform_Addr 0x1D2D7B0
-#define vehiclePhysics_SetUnkA0ToOne_Addr 0x1D2E720
-#define vehiclePhysics_UpdateDataWorldTransform_Addr 0x1D2D570
-#define vehiclePhysics_VFT_Addr 0x34E31A8
-#define vehicleTPPCameraComponent_GetLocationFromOffset_Addr 0x1D06670
-#define vehicleTPPCameraComponent_GetYaw_Addr 0x1D0B170
-#define vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr 0x1D09C10
-#define vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr 0x1D07DD0
-#define vehicleTPPCameraComponent_UpdateData_Addr 0x1D095D0
-#define vehicleTPPCameraComponent_UpdatePitch_Addr 0x1D0B770
-#define vehicleTPPCameraComponent_UpdatePosition_Addr 0x1D0A330
+#define vehiclePersistentDataPS_UpdateWheelRuntime_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePersistentDataPS_UpdateWheelRuntime_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PersistentDataPS::UpdateWheelRuntime\")")
+#define vehiclePhysicsData_AddTorque_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_AddTorque_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::AddTorque\")")
+#define vehiclePhysicsData_ApplyForceAtPosition_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_ApplyForceAtPosition_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::ApplyForceAtPosition\")")
+#define vehiclePhysicsData_ApplyTorqueAtPosition_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_ApplyTorqueAtPosition_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::ApplyTorqueAtPosition\")")
+#define vehiclePhysicsData_SetUsesNormalChassisMass_Addr                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_SetUsesNormalChassisMass_Addr"    \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::SetUsesNormalChassisMass\")")
+#define vehiclePhysicsData_UpdateChassis_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_UpdateChassis_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::UpdateChassis\")")
+#define vehiclePhysicsData_UsesAlternativeChassisMass_Addr                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_UsesAlternativeChassisMass_Addr"  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::UsesAlternativeChassisMass\")")
+#define vehiclePhysics_ComputeSleep_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_ComputeSleep_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::ComputeSleep\")")
+#define vehiclePhysics_GetSomethingWaterParams_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_GetSomethingWaterParams_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::GetSomethingWaterParams\")")
+#define vehiclePhysics_GetVehicle_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_GetVehicle_Addr"                      \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::Physics::GetVehicle (2)\")")
+#define vehiclePhysics_IsInAirFromVehicle_func_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_IsInAirFromVehicle_func_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::IsInAirFromVehicle_func\")")
+#define vehiclePhysics_LoadHasBeenFlippedOver_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_LoadHasBeenFlippedOver_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::LoadHasBeenFlippedOver\")")
+#define vehiclePhysics_ReadWorldTransform_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_ReadWorldTransform_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::ReadWorldTransform\")")
+#define vehiclePhysics_SetUnkA0ToOne_Addr 0xF7A2BA
+#define vehiclePhysics_UpdateDataWorldTransform_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_UpdateDataWorldTransform_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::UpdateDataWorldTransform\")")
+#define vehiclePhysics_VFT_Addr 0x2FFD0C0
+#define vehicleTPPCameraComponent_GetLocationFromOffset_Addr                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_GetLocationFromOffset_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::GetLocationFromOffset\")")
+#define vehicleTPPCameraComponent_GetYaw_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_GetYaw_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::GetYaw\")")
+#define vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_Update\")")
+#define vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_sub_58\")")
+#define vehicleTPPCameraComponent_UpdateData_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_UpdateData_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::UpdateData\")")
+#define vehicleTPPCameraComponent_UpdatePitch_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_UpdatePitch_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::UpdatePitch\")")
+#define vehicleTPPCameraComponent_UpdatePosition_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_UpdatePosition_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::UpdatePosition\")")
 #define vehicleTPPCameraComponent_UpdateTPP_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_UpdateTPP_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::UpdateTPP\")")
-#define vehicleTankPhysics_VFT_Addr 0x34E4130
-#define vehicleUnk568_CopyOverCollisionForce_Addr 0x1AF65A0
-#define vehicleUnk568_SetAcceleration_Addr 0x1AF65E0
-#define vehicleUnk568_SetLinearVelocityEtc_Addr 0x1AF6830
-#define vehicleUnk568_SetUnkD0_Addr 0x1AF65C0
-#define vehicleUnk570_GetCollisionFxForMaterial_Addr 0x1D39B60
-#define vehicleUnk570_GetFxForMaterial_Addr 0x1D39CE0
-#define vehicleUnk570_GetSmearFxForMaterial_Addr 0x1D39C50
-#define vehicleUnk570_ProcessEffects_Addr 0x1D3FD00
-#define vehicleUnk570_ProcessImpactScratch_Addr 0x1D3B410
-#define vehicleUnk570_Setup_Addr 0x1D3D550
-#define vehicleUnk570_SkidMarkEffectStart_Addr 0x1D408D0
-#define vehicleUnk570_TireTrackEffectStart_Addr 0x1D41230
-#define vehicleUnk570_UpdateEffectsBlackboard_Addr 0x1D3CB80
-#define vehicleUnk570_WheelEffectUpdate_Addr 0x1D3FD00
-#define vehicleUnk580_GetAudioResourceMetadata_Addr 0x1C79390
-#define vehicleUnk580_IsRadioReceiverActive_Addr 0x1C7A140
-#define vehicleUnk580_NextRadioReceiverStation_Addr 0x1C7CA50
-#define vehicleUnk580_SetRadioTier_Addr 0x1C7CB90
-#define vehicleUnk580_ShouldUseSomeAVListener_Addr 0x1C78DD0
-#define vehicleUnk580_ToggleHorn_Addr 0x1C7A9C0
-#define vehicleUnk580_Update_Addr 0x1C7E360
-#define vehicleUnk580_Update3CA_Addr 0x1C7C370
-#define vehicleUnk580_UpdateEvents_Addr 0x1C80060
-#define vehicleUnk580_UpdateTPPinAudioSystem_Addr 0x1C7F9C0
-#define vehicleUnk580_UpdateTireParameters_Addr 0x1C78330
-#define vehicleUnk580_UpdateWheelEmitters_Addr 0x1C7DFD0
-#define vehicleUnk588_Unknown_Addr 0x1C81DE0
-#define vehicleUnk588_UpdateTransform_Addr 0x1C82BD0
-#define vehicleUnkD10_Reset_Addr 0x1D542A0
-#define vehicleWheeledPhysics_ApplyWaterResistance_Addr 0x1D6CD60
-#define vehicleWheeledPhysics_FixedUpdate_Addr 0x1D54160
-#define vehicleWheeledPhysics_FourWheelTorque_Addr 0x1D509F0
-#define vehicleWheeledPhysics_FourWheelTorqueStuff_Addr 0x1D51DA0
-#define vehicleWheeledPhysics_GetEnergy_Addr 0x1D54F20
-#define vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr 0x1D55090
-#define vehicleWheeledPhysics_ProcessAirControl_Addr 0x1D2C890
-#define vehicleWheeledPhysics_SetIsMovingOthers_Addr 0x1D2EE70
-#define vehicleWheeledPhysics_SetupInsert_Addr 0x1D59C30
-#define vehicleWheeledPhysics_SomethingWheelRayTrace_Addr 0x1D56270
-#define vehicleWheeledPhysics_SomethingWheels_Addr 0x1D5AE50
-#define vehicleWheeledPhysics_TurningRollFactorStuff_Addr 0x1D5A030
-#define vehicleWheeledPhysics_Unk15CStuff_Addr 0x1D54CA0
-#define vehicleWheeledPhysics_Update_Addr 0x1D5AA90
-#define vehicleWheeledPhysics_UpdatePassengerAnim_Addr 0x1D53B70
-#define vehicleWheeledPhysics_VFT_Addr 0x34E39B8
+#define vehicleTankPhysics_VFT_Addr 0x2FFD058
+#define vehicleUnk568_CopyOverCollisionForce_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_CopyOverCollisionForce_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::CopyOverCollisionForce\")")
+#define vehicleUnk568_SetAcceleration_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetAcceleration_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetAcceleration\")")
+#define vehicleUnk568_SetLinearVelocityEtc_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetLinearVelocityEtc_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetLinearVelocityEtc\")")
+#define vehicleUnk568_SetUnkD0_Addr                                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetUnkD0_Addr"                         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetUnkD0\")")
+#define vehicleUnk570_GetCollisionFxForMaterial_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_GetCollisionFxForMaterial_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::GetCollisionFxForMaterial\")")
+#define vehicleUnk570_GetFxForMaterial_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_GetFxForMaterial_Addr"                 \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::GetFxForMaterial\")")
+#define vehicleUnk570_GetSmearFxForMaterial_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_GetSmearFxForMaterial_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::GetSmearFxForMaterial\")")
+#define vehicleUnk570_ProcessEffects_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_ProcessEffects_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::ProcessEffects\")")
+#define vehicleUnk570_ProcessImpactScratch_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_ProcessImpactScratch_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::ProcessImpactScratch\")")
+#define vehicleUnk570_Setup_Addr                                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_Setup_Addr"                            \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::Setup\")")
+#define vehicleUnk570_SkidMarkEffectStart_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_SkidMarkEffectStart_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::SkidMarkEffectStart\")")
+#define vehicleUnk570_TireTrackEffectStart_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_TireTrackEffectStart_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::TireTrackEffectStart\")")
+#define vehicleUnk570_UpdateEffectsBlackboard_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_UpdateEffectsBlackboard_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::UpdateEffectsBlackboard\")")
+#define vehicleUnk570_WheelEffectUpdate_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_WheelEffectUpdate_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::WheelEffectUpdate\")")
+#define vehicleUnk580_GetAudioResourceMetadata_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_GetAudioResourceMetadata_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::GetAudioResourceMetadata\")")
+#define vehicleUnk580_IsRadioReceiverActive_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_IsRadioReceiverActive_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::IsRadioReceiverActive\")")
+#define vehicleUnk580_NextRadioReceiverStation_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_NextRadioReceiverStation_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::NextRadioReceiverStation\")")
+#define vehicleUnk580_SetRadioTier_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_SetRadioTier_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::SetRadioTier\")")
+#define vehicleUnk580_ShouldUseSomeAVListener_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_ShouldUseSomeAVListener_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::ShouldUseSomeAVListener\")")
+#define vehicleUnk580_ToggleHorn_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_ToggleHorn_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::ToggleHorn\")")
+#define vehicleUnk580_Update_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_Update_Addr"                           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::Update\")")
+#define vehicleUnk580_Update3CA_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_Update3CA_Addr"                        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::Update3CA\")")
+#define vehicleUnk580_UpdateEvents_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateEvents_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateEvents\")")
+#define vehicleUnk580_UpdateTPPinAudioSystem_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateTPPinAudioSystem_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateTPPinAudioSystem\")")
+#define vehicleUnk580_UpdateTireParameters_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateTireParameters_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateTireParameters\")")
+#define vehicleUnk580_UpdateWheelEmitters_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateWheelEmitters_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateWheelEmitters\")")
+#define vehicleUnk588_Unknown_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk588_Unknown_Addr"                          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk588::Unknown\")")
+#define vehicleUnk588_UpdateTransform_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk588_UpdateTransform_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk588::UpdateTransform\")")
+#define vehicleUnkD10_Reset_Addr                                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnkD10_Reset_Addr"                            \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::UnkD10::Reset\")")
+#define vehicleWheeledPhysics_ApplyWaterResistance_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_ApplyWaterResistance_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::ApplyWaterResistance\")")
+#define vehicleWheeledPhysics_FixedUpdate_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_FixedUpdate_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::FixedUpdate\")")
+#define vehicleWheeledPhysics_FourWheelTorque_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_FourWheelTorque_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::FourWheelTorque\")")
+#define vehicleWheeledPhysics_FourWheelTorqueStuff_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_FourWheelTorqueStuff_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::FourWheelTorqueStuff\")")
+#define vehicleWheeledPhysics_GetEnergy_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_GetEnergy_Addr"                \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::GetEnergy\")")
+#define vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::GetNumberOfWheelsTouchingGround\")")
+#define vehicleWheeledPhysics_ProcessAirControl_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_ProcessAirControl_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::ProcessAirControl\")")
+#define vehicleWheeledPhysics_SetIsMovingOthers_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_SetIsMovingOthers_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::SetIsMovingOthers\")")
+#define vehicleWheeledPhysics_SetupInsert_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_SetupInsert_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::SetupInsert\")")
+#define vehicleWheeledPhysics_SomethingWheelRayTrace_Addr                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_SomethingWheelRayTrace_Addr"   \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::SomethingWheelRayTrace\")")
+#define vehicleWheeledPhysics_SomethingWheels_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_SomethingWheels_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::SomethingWheels\")")
+#define vehicleWheeledPhysics_TurningRollFactorStuff_Addr                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_TurningRollFactorStuff_Addr"   \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::TurningRollFactorStuff\")")
+#define vehicleWheeledPhysics_Unk15CStuff_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_Unk15CStuff_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::Unk15CStuff\")")
+#define vehicleWheeledPhysics_Update_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_Update_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::Update\")")
+#define vehicleWheeledPhysics_UpdatePassengerAnim_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_UpdatePassengerAnim_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim\")")
+#define vehicleWheeledPhysics_VFT_Addr 0x2FFCCE8
 #define worldEffectBlackboard_SetValue_Addr                                                                            \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldEffectBlackboard_SetValue_Addr"                 \
-              "is 0 - Zoltan found too many matches for RED4ext::world::EffectBlackboard::SetValue (2)\")")
-#define worldRuntimeScene_SetupWithLogging_Addr 0xB98F50
+              "is 0 - Zoltan found no matches for RED4ext::world::EffectBlackboard::SetValue\")")
+#define worldRuntimeScene_SetupWithLogging_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldRuntimeScene_SetupWithLogging_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::world::RuntimeScene::SetupWithLogging\")")
 #define worldRuntimeSystemPhysics_FreeGeos_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldRuntimeSystemPhysics_FreeGeos_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::world::RuntimeSystemPhysics::FreeGeos\")")
 
 #include <RED4ext/RED4ext.hpp>
 #include <RED4ext/Relocation.hpp>
-#include <RED4ext/IO/BaseStream.hpp>
-#include <RED4ext/RTTITypes.hpp>
-#include <RED4ext/GameEngine.hpp>
-#include <RED4ext/Scripting/Natives/Generated/CMesh.hpp>
-#include <RED4ext/Scripting/Natives/Callbacks.hpp>
-#include <RED4ext/Scripting/Natives/GameInstance.hpp>
-#include <RED4ext/GameOptions.hpp>
-#include <RED4ext/Scripting/Natives/GameInstance.hpp>
-#include <RED4ext/Scripting/Natives/IGameInstance.hpp>
-#include <RED4ext/ISerializable.hpp>
-#include <RED4ext/Scripting/Natives/IUpdatableSystem.hpp>
-#include <RED4ext/Scripting/Natives/Generated/Quaternion.hpp>
-#include <RED4ext/CommonFunctions.hpp>
-#include <RED4ext/Scripting/Natives/GameInstance.hpp>
-#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
 #include <RED4ext/Addresses-Zoltan.hpp>
-#include <RED4ext/Scripting/Natives/actionActionBase.hpp>
-#include <RED4ext/Scripting/Natives/actionActionInterface.hpp>
-#include <RED4ext/Scripting/Natives/audioBankManager.hpp>
+#include <RED4ext/RTTITypes.hpp>
+#include <RED4ext/ISerializable.hpp>
+#include <RED4ext/CommonFunctions.hpp>
+#include <RED4ext/Scripting/Natives/UpdateManager.hpp>
 #include <RED4ext/Scripting/Natives/audioEmitter.hpp>
-#include <RED4ext/Scripting/Natives/audioThing.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/AnimatedComponent.hpp>
 #include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
-#include <RED4ext/Scripting/Natives/entEntity.hpp>
 #include <RED4ext/Scripting/Natives/entIComponent.hpp>
-#include <RED4ext/Scripting/Natives/entITransformAttachable.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/MeshComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/PhysicalMeshComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/SlotComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/ent/VisualControllerComponent.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/CActionsFactory.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/FxInstance.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/GameAudioSystem.hpp>
 #include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
-#include <RED4ext/Scripting/Natives/Generated/game/FxSystem.hpp>
-#include <RED4ext/Scripting/Natives/gameObject.hpp>
-#include <RED4ext/Scripting/Natives/gameVehicleSystem.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/ColliderSphere.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/FilterData.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/GeometryCache.hpp>
 #include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyId.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
-#include <RED4ext/Scripting/Natives/Generated/physics/SystemResource.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsInsert1.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsInsert2.hpp>
-#include <RED4ext/Scripting/Natives/physicsBaseProxy.hpp>
 #include <RED4ext/Scripting/Natives/userRuntimeSettingsVar.hpp>
-#include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleCameraManager.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleChassisComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePID.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/PersistentDataPS.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/Generated/vehicle/TPPCameraComponent.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
-#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
-#include <RED4ext/Scripting/Natives/worldRuntimeScene.hpp>
-
-RED4EXT_INLINE void RED4ext::BaseStream::ReadWriteHandleID(void* a1) {
-    using BaseStream_ReadWriteHandleID_t = void (*)(RED4ext::BaseStream*, void*);
-    RED4ext::RelocFunc<BaseStream_ReadWriteHandleID_t> call(BaseStream_ReadWriteHandleID_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE uint32_t RED4ext::CClass::AddEventCallbackType(RED4ext::CName a1, RED4ext::CClass* a2, RED4ext::CallbackDefinition* a3) {
-    using CClass_AddEventCallbackType_t = uint32_t (*)(RED4ext::CClass*, RED4ext::CName, RED4ext::CClass*, RED4ext::CallbackDefinition*);
-    RED4ext::RelocFunc<CClass_AddEventCallbackType_t> call(CClass_AddEventCallbackType_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::CClass::ApplyFlags(RED4ext::CClass::Flags a1, bool a2) {
-    using CClass_ApplyFlags_t = void (*)(RED4ext::CClass*, RED4ext::CClass::Flags, bool);
-    RED4ext::RelocFunc<CClass_ApplyFlags_t> call(CClass_ApplyFlags_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE uint32_t RED4ext::CClass::SetupScriptCallbacks() {
-    using CClass_SetupScriptCallbacks_t = uint32_t (*)(RED4ext::CClass*);
-    RED4ext::RelocFunc<CClass_SetupScriptCallbacks_t> call(CClass_SetupScriptCallbacks_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE uint64_t RED4ext::CGameFramework::Systems_120_128_130() {
-    using CGameFramework_Systems_120_128_130_t = uint64_t (*)(RED4ext::CGameFramework*);
-    RED4ext::RelocFunc<CGameFramework_Systems_120_128_130_t> call(CGameFramework_Systems_120_128_130_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::Handle<RED4ext::mesh::MeshParameter>* RED4ext::CMesh::GetParameterOfType(RED4ext::Handle<RED4ext::mesh::MeshParameter>* a1, RED4ext::CClass* a2) {
-    using CMesh_GetParameterOfType_t = RED4ext::Handle<RED4ext::mesh::MeshParameter>* (*)(RED4ext::CMesh*, RED4ext::Handle<RED4ext::mesh::MeshParameter>*, RED4ext::CClass*);
-    RED4ext::RelocFunc<CMesh_GetParameterOfType_t> call(CMesh_GetParameterOfType_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE uint16_t RED4ext::CallbackManager::AddCallback(RED4ext::CallbackInstance* a1) {
-    using CallbackManager_AddCallback_t = uint16_t (*)(RED4ext::CallbackManager*, RED4ext::CallbackInstance*);
-    RED4ext::RelocFunc<CallbackManager_AddCallback_t> call(CallbackManager_AddCallback_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::CallbackManager::AddToUnk00(RED4ext::Handle<RED4ext::IScriptable>* a1) {
-    using CallbackManager_AddToUnk00_t = void (*)(RED4ext::CallbackManager*, RED4ext::Handle<RED4ext::IScriptable>*);
-    RED4ext::RelocFunc<CallbackManager_AddToUnk00_t> call(CallbackManager_AddToUnk00_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::CallbackManager::Unknown1(uint16_t a1) {
-    using CallbackManager_Unknown1_t = int64_t (*)(RED4ext::CallbackManager*, uint16_t);
-    RED4ext::RelocFunc<CallbackManager_Unknown1_t> call(CallbackManager_Unknown1_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::CallbackManager::Unknown6(RED4ext::CClass* a1) {
-    using CallbackManager_Unknown6_t = void (*)(RED4ext::CallbackManager*, RED4ext::CClass*);
-    RED4ext::RelocFunc<CallbackManager_Unknown6_t> call(CallbackManager_Unknown6_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::GameInstance::SetRuntimeScene(RED4ext::world::RuntimeScene* a1) {
-    using GameInstance_SetRuntimeScene_t = int64_t (*)(RED4ext::GameInstance*, RED4ext::world::RuntimeScene*);
-    RED4ext::RelocFunc<GameInstance_SetRuntimeScene_t> call(GameInstance_SetRuntimeScene_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::GameOptionManager::GetGameOption(const uint8_t* a1, const uint8_t* a2, RED4ext::CString& a3) {
-    using GameOptionManager_GetGameOption_t = bool (*)(RED4ext::GameOptionManager*, const uint8_t*, const uint8_t*, RED4ext::CString&);
-    RED4ext::RelocFunc<GameOptionManager_GetGameOption_t> call(GameOptionManager_GetGameOption_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE bool RED4ext::GameOptionManager::SetGameOption(const uint8_t* a1, const uint8_t* a2, RED4ext::CString* a3) {
-    using GameOptionManager_SetGameOption_t = bool (*)(RED4ext::GameOptionManager*, const uint8_t*, const uint8_t*, RED4ext::CString*);
-    RED4ext::RelocFunc<GameOptionManager_SetGameOption_t> call(GameOptionManager_SetGameOption_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::DynArray<RED4ext::GameSystemData>* RED4ext::GetGameSystemsData(RED4ext::DynArray<RED4ext::GameSystemData>* a0) {
-    using GetGameSystemsData_t = RED4ext::DynArray<RED4ext::GameSystemData>* (*)(RED4ext::DynArray<RED4ext::GameSystemData>*);
-    RED4ext::RelocFunc<GetGameSystemsData_t> call(GetGameSystemsData_Addr);
-    return call(a0);
-}
-
-RED4EXT_INLINE int64_t RED4ext::IGameInstance::RegisterGameLoadCallbacks(int64_t a1, uint8_t* a2, int64_t a3) {
-    using IGameInstance_RegisterGameLoadCallbacks_t = int64_t (*)(RED4ext::IGameInstance*, int64_t, uint8_t*, int64_t);
-    RED4ext::RelocFunc<IGameInstance_RegisterGameLoadCallbacks_t> call(IGameInstance_RegisterGameLoadCallbacks_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::IGameInstance::RegisterStreamingWorldLoadedCallback(int64_t a1, int64_t a2) {
-    using IGameInstance_RegisterStreamingWorldLoadedCallback_t = void (*)(RED4ext::IGameInstance*, int64_t, int64_t);
-    RED4ext::RelocFunc<IGameInstance_RegisterStreamingWorldLoadedCallback_t> call(IGameInstance_RegisterStreamingWorldLoadedCallback_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE bool RED4ext::IGameInstance::Systems158() {
-    using IGameInstance_Systems158_t = bool (*)(RED4ext::IGameInstance*);
-    RED4ext::RelocFunc<IGameInstance_Systems158_t> call(IGameInstance_Systems158_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::IGameInstance::Systems160() {
-    using IGameInstance_Systems160_t = void (*)(RED4ext::IGameInstance*);
-    RED4ext::RelocFunc<IGameInstance_Systems160_t> call(IGameInstance_Systems160_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::IGameInstance::Systems168o170(bool a1) {
-    using IGameInstance_Systems168o170_t = void (*)(RED4ext::IGameInstance*, bool);
-    RED4ext::RelocFunc<IGameInstance_Systems168o170_t> call(IGameInstance_Systems168o170_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::IGameInstance::Systems178(RED4ext::DynArray<void *>* a1, bool a2) {
-    using IGameInstance_Systems178_t = void (*)(RED4ext::IGameInstance*, RED4ext::DynArray<void *>*, bool);
-    RED4ext::RelocFunc<IGameInstance_Systems178_t> call(IGameInstance_Systems178_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::IGameInstance::WorldDetached(void* a1) {
-    using IGameInstance_WorldDetached_t = void (*)(RED4ext::IGameInstance*, void*);
-    RED4ext::RelocFunc<IGameInstance_WorldDetached_t> call(IGameInstance_WorldDetached_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::IGameInstance::WorldPendingDetach(void* a1) {
-    using IGameInstance_WorldPendingDetach_t = void (*)(RED4ext::IGameInstance*, void*);
-    RED4ext::RelocFunc<IGameInstance_WorldPendingDetach_t> call(IGameInstance_WorldPendingDetach_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ISerializable::SetOwner(RED4ext::ISerializable* a1) {
-    using ISerializable_SetOwner_t = void (*)(RED4ext::ISerializable*, RED4ext::ISerializable*);
-    RED4ext::RelocFunc<ISerializable_SetOwner_t> call(ISerializable_SetOwner_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE float RED4ext::Quaternion::GetYaw() {
-    using Quaternion_GetYaw_t = float (*)(RED4ext::Quaternion*);
-    RED4ext::RelocFunc<Quaternion_GetYaw_t> call(Quaternion_GetYaw_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::EulerAngles* RED4ext::Quaternion::ToEulerAngles(RED4ext::EulerAngles* a1) {
-    using Quaternion_ToEulerAngles_t = RED4ext::EulerAngles* (*)(RED4ext::Quaternion*, RED4ext::EulerAngles*);
-    RED4ext::RelocFunc<Quaternion_ToEulerAngles_t> call(Quaternion_ToEulerAngles_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::Matrix* RED4ext::Quaternion::ToMatrix(RED4ext::Matrix* a1) {
-    using Quaternion_ToMatrix_t = RED4ext::Matrix* (*)(RED4ext::Quaternion*, RED4ext::Matrix*);
-    RED4ext::RelocFunc<Quaternion_ToMatrix_t> call(Quaternion_ToMatrix_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::UpdatableSystems::SetRuntimeScene(RED4ext::world::RuntimeScene* a1) {
-    using UpdatableSystems_SetRuntimeScene_t = int64_t (*)(RED4ext::UpdatableSystems*, RED4ext::world::RuntimeScene*);
-    RED4ext::RelocFunc<UpdatableSystems_SetRuntimeScene_t> call(UpdatableSystems_SetRuntimeScene_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::UpdateManagerHolder::Something() {
-    using UpdateManagerHolder_Something_t = int64_t (*)(RED4ext::UpdateManagerHolder*);
-    RED4ext::RelocFunc<UpdateManagerHolder_Something_t> call(UpdateManagerHolder_Something_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void* RED4ext::UpdateManagerHolder::UpdateSystems(void* a1, float a2, int64_t a3) {
-    using UpdateManagerHolder_UpdateSystems_t = void* (*)(RED4ext::UpdateManagerHolder*, void*, float, int64_t);
-    RED4ext::RelocFunc<UpdateManagerHolder_UpdateSystems_t> call(UpdateManagerHolder_UpdateSystems_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::UpdateStorage::Copy(RED4ext::UpdateManager::UpdateStorage* a1) {
-    using UpdateManagerUpdateStorage_Copy_t = RED4ext::UpdateManager::UpdateStorage* (*)(RED4ext::UpdateManager::UpdateStorage*, RED4ext::UpdateManager::UpdateStorage*);
-    RED4ext::RelocFunc<UpdateManagerUpdateStorage_Copy_t> call(UpdateManagerUpdateStorage_Copy_Addr);
-    return call(this, a1);
-}
 
 RED4EXT_INLINE RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::UpdateStorage::Copy_0(RED4ext::UpdateManager::UpdateStorage* a1) {
     using UpdateManagerUpdateStorage_Copy_0_t = RED4ext::UpdateManager::UpdateStorage* (*)(RED4ext::UpdateManager::UpdateStorage*, RED4ext::UpdateManager::UpdateStorage*);
@@ -800,135 +1002,9 @@ RED4EXT_INLINE RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::Up
     return call(this, a1);
 }
 
-RED4EXT_INLINE int64_t RED4ext::UpdateManager::IterateUnknown(RED4ext::CClass*** a1, RED4ext::CClass*** a2) {
-    using UpdateManager_IterateUnknown_t = int64_t (*)(RED4ext::UpdateManager*, RED4ext::CClass***, RED4ext::CClass***);
-    RED4ext::RelocFunc<UpdateManager_IterateUnknown_t> call(UpdateManager_IterateUnknown_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void* RED4ext::UpdateManager::PrepareFiring(int64_t a1, int32_t* a2, uint32_t a3, uint32_t a4) {
-    using UpdateManager_PrepareFiring_t = void* (*)(RED4ext::UpdateManager*, int64_t, int32_t*, uint32_t, uint32_t);
-    RED4ext::RelocFunc<UpdateManager_PrepareFiring_t> call(UpdateManager_PrepareFiring_Addr);
-    return call(this, a1, a2, a3, a4);
-}
-
-RED4EXT_INLINE uint64_t RED4ext::UpdateManager::RegisterUpdate(RED4ext::UpdateManager::UpdateStorage* a1) {
-    using UpdateManager_RegisterUpdate_t = uint64_t (*)(RED4ext::UpdateManager*, RED4ext::UpdateManager::UpdateStorage*);
-    RED4ext::RelocFunc<UpdateManager_RegisterUpdate_t> call(UpdateManager_RegisterUpdate_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::UpdateManager::ReleaseUnknown() {
-    using UpdateManager_ReleaseUnknown_t = void (*)(RED4ext::UpdateManager*);
-    RED4ext::RelocFunc<UpdateManager_ReleaseUnknown_t> call(UpdateManager_ReleaseUnknown_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::action::ActionBase::Lock() {
-    using actionActionBase_Lock_t = void (*)(RED4ext::action::ActionBase*);
-    RED4ext::RelocFunc<actionActionBase_Lock_t> call(actionActionBase_Lock_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::action::ActionBase::StartWithReplicatedState() {
-    using actionActionBase_StartWithReplicatedState_t = void (*)(RED4ext::action::ActionBase*);
-    RED4ext::RelocFunc<actionActionBase_StartWithReplicatedState_t> call(actionActionBase_StartWithReplicatedState_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE int64_t RED4ext::action::ActionInterface::EndActions() {
-    using actionActionInterface_EndActions_t = int64_t (*)(RED4ext::action::ActionInterface*);
-    RED4ext::RelocFunc<actionActionInterface_EndActions_t> call(actionActionInterface_EndActions_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE bool RED4ext::action::ActionInterface::IsAnimationiActive(RED4ext::action::Type a1, uint8_t a2) {
-    using actionActionInterface_IsAnimationiActive_t = bool (*)(RED4ext::action::ActionInterface*, RED4ext::action::Type, uint8_t);
-    RED4ext::RelocFunc<actionActionInterface_IsAnimationiActive_t> call(actionActionInterface_IsAnimationiActive_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::action::ActionInterface::ProcessActions(void* a1, bool a2) {
-    using actionActionInterface_ProcessActions_t = void (*)(RED4ext::action::ActionInterface*, void*, bool);
-    RED4ext::RelocFunc<actionActionInterface_ProcessActions_t> call(actionActionInterface_ProcessActions_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE int64_t RED4ext::audio::BankManager::LoadBank(int64_t a1, uint64_t a2) {
-    using audioBankManager_LoadBank_t = int64_t (*)(RED4ext::audio::BankManager*, int64_t, uint64_t);
-    RED4ext::RelocFunc<audioBankManager_LoadBank_t> call(audioBankManager_LoadBank_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE bool RED4ext::audio::BankManager::LoadBanksMaybe(int64_t a1) {
-    using audioBankManager_LoadBanksMaybe_t = bool (*)(RED4ext::audio::BankManager*, int64_t);
-    RED4ext::RelocFunc<audioBankManager_LoadBanksMaybe_t> call(audioBankManager_LoadBanksMaybe_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::audio::BankManager::UnloadBank(int64_t a1) {
-    using audioBankManager_UnloadBank_t = int64_t (*)(RED4ext::audio::BankManager*, int64_t);
-    RED4ext::RelocFunc<audioBankManager_UnloadBank_t> call(audioBankManager_UnloadBank_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::audio::Emitter* RED4ext::audio::Emitters::GetEmitterForEntityID(RED4ext::ent::EntityID a1, RED4ext::CName a2) {
-    using audioEmitters_GetEmitterForEntityID_t = RED4ext::audio::Emitter* (*)(RED4ext::audio::Emitters*, RED4ext::ent::EntityID, RED4ext::CName);
-    RED4ext::RelocFunc<audioEmitters_GetEmitterForEntityID_t> call(audioEmitters_GetEmitterForEntityID_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::audio::Emitter* RED4ext::audio::Emitters::GetOrCreateEmitter(RED4ext::ent::EntityID a1, RED4ext::CName a2) {
-    using audioEmitters_GetOrCreateEmitter_t = RED4ext::audio::Emitter* (*)(RED4ext::audio::Emitters*, RED4ext::ent::EntityID, RED4ext::CName);
-    RED4ext::RelocFunc<audioEmitters_GetOrCreateEmitter_t> call(audioEmitters_GetOrCreateEmitter_Addr);
-    return call(this, a1, a2);
-}
-
 RED4EXT_INLINE float RED4ext::audio::GameParameterStorage::GetValue(RED4ext::CName a1, float a2) {
     using audioGameParameterStorage_GetValue_t = float (*)(RED4ext::audio::GameParameterStorage*, RED4ext::CName, float);
     RED4ext::RelocFunc<audioGameParameterStorage_GetValue_t> call(audioGameParameterStorage_GetValue_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE float* RED4ext::audio::GameParameterStorage::SetValue(RED4ext::CName a1, float a2, float a3) {
-    using audioGameParameterStorage_SetValue_t = float* (*)(RED4ext::audio::GameParameterStorage*, RED4ext::CName, float, float);
-    RED4ext::RelocFunc<audioGameParameterStorage_SetValue_t> call(audioGameParameterStorage_SetValue_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::audio::EmitterPosition* RED4ext::audio::Thing::UpdateEmitterPosition(RED4ext::ent::EntityID a1, RED4ext::CName a2, RED4ext::Vector4* a3) {
-    using audioThing_UpdateEmitterPosition_t = RED4ext::audio::EmitterPosition* (*)(RED4ext::audio::Thing*, RED4ext::ent::EntityID, RED4ext::CName, RED4ext::Vector4*);
-    RED4ext::RelocFunc<audioThing_UpdateEmitterPosition_t> call(audioThing_UpdateEmitterPosition_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE bool RED4ext::ent::AnimatedComponent::GetReferencePoseMSForName(RED4ext::CName a1, RED4ext::Transform* a2) {
-    using entAnimatedComponent_GetReferencePoseMSForName_t = bool (*)(RED4ext::ent::AnimatedComponent*, RED4ext::CName, RED4ext::Transform*);
-    RED4ext::RelocFunc<entAnimatedComponent_GetReferencePoseMSForName_t> call(entAnimatedComponent_GetReferencePoseMSForName_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::RefCnt* RED4ext::ent::ComponentsStorage::AddComponent(RED4ext::Handle<RED4ext::ent::IComponent> a1) {
-    using entComponentsStorage_AddComponent_t = RED4ext::RefCnt* (*)(RED4ext::ent::ComponentsStorage*, RED4ext::Handle<RED4ext::ent::IComponent>);
-    RED4ext::RelocFunc<entComponentsStorage_AddComponent_t> call(entComponentsStorage_AddComponent_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ent::ComponentsStorage::AddComponents(RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>* a1) {
-    using entComponentsStorage_AddComponents_t = void (*)(RED4ext::ent::ComponentsStorage*, RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>*);
-    RED4ext::RelocFunc<entComponentsStorage_AddComponents_t> call(entComponentsStorage_AddComponents_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ent::ComponentsStorage::FreeMemory() {
-    using entComponentsStorage_FreeMemory_t = void (*)(RED4ext::ent::ComponentsStorage*);
-    RED4ext::RelocFunc<entComponentsStorage_FreeMemory_t> call(entComponentsStorage_FreeMemory_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::Handle<RED4ext::ent::IComponent>* RED4ext::ent::ComponentsStorage::GetComponentByCRUID(RED4ext::Handle<RED4ext::ent::IComponent>* a1, RED4ext::CRUID a2) {
-    using entComponentsStorage_GetComponentByCRUID_t = RED4ext::Handle<RED4ext::ent::IComponent>* (*)(RED4ext::ent::ComponentsStorage*, RED4ext::Handle<RED4ext::ent::IComponent>*, RED4ext::CRUID);
-    RED4ext::RelocFunc<entComponentsStorage_GetComponentByCRUID_t> call(entComponentsStorage_GetComponentByCRUID_Addr);
     return call(this, a1, a2);
 }
 
@@ -938,382 +1014,10 @@ RED4EXT_INLINE int64_t RED4ext::ent::ComponentsStorage::GetSize() {
     return call(this);
 }
 
-RED4EXT_INLINE bool RED4ext::ent::ComponentsStorage::IsEmpty() {
-    using entComponentsStorage_IsEmpty_t = bool (*)(RED4ext::ent::ComponentsStorage*);
-    RED4ext::RelocFunc<entComponentsStorage_IsEmpty_t> call(entComponentsStorage_IsEmpty_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::ent::Entity::ReassembleAppearance(int64_t a1, uint64_t a2, uint64_t a3, RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>* a4, RED4ext::Handle<RED4ext::ent::IComponent>* a5) {
-    using entEntity_ReassembleAppearance_t = void (*)(RED4ext::ent::Entity*, int64_t, uint64_t, uint64_t, RED4ext::DynArray<RED4ext::Handle<RED4ext::ent::IComponent>>*, RED4ext::Handle<RED4ext::ent::IComponent>*);
-    RED4ext::RelocFunc<entEntity_ReassembleAppearance_t> call(entEntity_ReassembleAppearance_Addr);
-    return call(this, a1, a2, a3, a4, a5);
-}
-
-RED4EXT_INLINE uint64_t RED4ext::ent::Entity::SetupEntityAndComponents(RED4ext::ent::EntityDefinition* a1) {
-    using entEntity_SetupEntityAndComponents_t = uint64_t (*)(RED4ext::ent::Entity*, RED4ext::ent::EntityDefinition*);
-    RED4ext::RelocFunc<entEntity_SetupEntityAndComponents_t> call(entEntity_SetupEntityAndComponents_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::ent::Entity::SomethingListeners(RED4ext::Handle<RED4ext::IScriptable>* a1) {
-    using entEntity_SomethingListeners_t = int64_t (*)(RED4ext::ent::Entity*, RED4ext::Handle<RED4ext::IScriptable>*);
-    RED4ext::RelocFunc<entEntity_SomethingListeners_t> call(entEntity_SomethingListeners_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ent::IComponent::SetEntity(RED4ext::ent::Entity* a1) {
-    using entIComponent_SetEntity_t = void (*)(RED4ext::ent::IComponent*, RED4ext::ent::Entity*);
-    RED4ext::RelocFunc<entIComponent_SetEntity_t> call(entIComponent_SetEntity_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ent::MeshComponent::Load(bool a1) {
-    using entMeshComponent_Load_t = void (*)(RED4ext::ent::MeshComponent*, bool);
-    RED4ext::RelocFunc<entMeshComponent_Load_t> call(entMeshComponent_Load_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ent::PhysicalMeshComponent::ProcessSystemResource(RED4ext::Handle<RED4ext::CMesh>* a1) {
-    using entPhysicalMeshComponent_ProcessSystemResource_t = void (*)(RED4ext::ent::PhysicalMeshComponent*, RED4ext::Handle<RED4ext::CMesh>*);
-    RED4ext::RelocFunc<entPhysicalMeshComponent_ProcessSystemResource_t> call(entPhysicalMeshComponent_ProcessSystemResource_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetLocalSlotTransformFromIndex(int32_t a1, RED4ext::Transform* a2) {
-    using entSlotComponent_GetLocalSlotTransformFromIndex_t = bool (*)(RED4ext::ent::SlotComponent*, int32_t, RED4ext::Transform*);
-    RED4ext::RelocFunc<entSlotComponent_GetLocalSlotTransformFromIndex_t> call(entSlotComponent_GetLocalSlotTransformFromIndex_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetSlotGlobalTransform(RED4ext::CName a1, RED4ext::WorldTransform* a2) {
-    using entSlotComponent_GetSlotGlobalTransform_t = bool (*)(RED4ext::ent::SlotComponent*, RED4ext::CName, RED4ext::WorldTransform*);
-    RED4ext::RelocFunc<entSlotComponent_GetSlotGlobalTransform_t> call(entSlotComponent_GetSlotGlobalTransform_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE int64_t RED4ext::ent::SlotComponent::GetSlotIndex(RED4ext::CName a1) {
-    using entSlotComponent_GetSlotIndex_t = int64_t (*)(RED4ext::ent::SlotComponent*, RED4ext::CName);
-    RED4ext::RelocFunc<entSlotComponent_GetSlotIndex_t> call(entSlotComponent_GetSlotIndex_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetSlotLocalTransform(int32_t a1, RED4ext::WorldTransform* a2, RED4ext::WorldTransform* a3) {
-    using entSlotComponent_GetSlotLocalTransform_t = bool (*)(RED4ext::ent::SlotComponent*, int32_t, RED4ext::WorldTransform*, RED4ext::WorldTransform*);
-    RED4ext::RelocFunc<entSlotComponent_GetSlotLocalTransform_t> call(entSlotComponent_GetSlotLocalTransform_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::ent::VisualControllerComponent::LoadUnkD8(uint8_t a1) {
-    using entVisualControllerComponent_LoadUnkD8_t = void (*)(RED4ext::ent::VisualControllerComponent*, uint8_t);
-    RED4ext::RelocFunc<entVisualControllerComponent_LoadUnkD8_t> call(entVisualControllerComponent_LoadUnkD8_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ent::VisualControllerComponent::Set0xF4(uint8_t a1) {
-    using entVisualControllerComponent_Set0xF4_t = void (*)(RED4ext::ent::VisualControllerComponent*, uint8_t);
-    RED4ext::RelocFunc<entVisualControllerComponent_Set0xF4_t> call(entVisualControllerComponent_Set0xF4_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::ent::VisualControllerComponent::Unknown(int64_t a1, uint8_t a2, uint8_t a3) {
-    using entVisualControllerComponent_Unknown_t = void (*)(RED4ext::ent::VisualControllerComponent*, int64_t, uint8_t, uint8_t);
-    RED4ext::RelocFunc<entVisualControllerComponent_Unknown_t> call(entVisualControllerComponent_Unknown_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::game::CActionsFactory::AddActionTypeManual(RED4ext::action::Type a1, RED4ext::action::ActionBase*(* a2)(int64_t, uint32_t*, uint32_t)) {
-    using gameCActionsFactory_AddActionTypeManual_t = void (*)(RED4ext::game::CActionsFactory*, RED4ext::action::Type, RED4ext::action::ActionBase*(*)(int64_t, uint32_t*, uint32_t));
-    RED4ext::RelocFunc<gameCActionsFactory_AddActionTypeManual_t> call(gameCActionsFactory_AddActionTypeManual_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::game::FxInstance::QueueSetBlackboardValue(RED4ext::CName a1, float a2) {
-    using gameFxInstance_QueueSetBlackboardValue_t = void (*)(RED4ext::game::FxInstance*, RED4ext::CName, float);
-    RED4ext::RelocFunc<gameFxInstance_QueueSetBlackboardValue_t> call(gameFxInstance_QueueSetBlackboardValue_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::game::FxInstance::QueueUpdateTargetPosition(RED4ext::WorldPosition* a1) {
-    using gameFxInstance_QueueUpdateTargetPosition_t = void (*)(RED4ext::game::FxInstance*, RED4ext::WorldPosition*);
-    RED4ext::RelocFunc<gameFxInstance_QueueUpdateTargetPosition_t> call(gameFxInstance_QueueUpdateTargetPosition_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::game::GameAudioSystem::SetGlobalParameter(RED4ext::CName a1, float a2) {
-    using gameGameAudioSystem_SetGlobalParameter_t = void (*)(RED4ext::game::GameAudioSystem*, RED4ext::CName, float);
-    RED4ext::RelocFunc<gameGameAudioSystem_SetGlobalParameter_t> call(gameGameAudioSystem_SetGlobalParameter_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void** RED4ext::game::IGameSystem::SetGameInstance(void** a1, RED4ext::GameInstance* a2) {
-    using gameIGameSystem_SetGameInstance_t = void** (*)(RED4ext::game::IGameSystem*, void**, RED4ext::GameInstance*);
-    RED4ext::RelocFunc<gameIGameSystem_SetGameInstance_t> call(gameIGameSystem_SetGameInstance_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE int64_t RED4ext::game::IGameSystem::Unset() {
-    using gameIGameSystem_Unset_t = int64_t (*)(RED4ext::game::IGameSystem*);
-    RED4ext::RelocFunc<gameIGameSystem_Unset_t> call(gameIGameSystem_Unset_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::game::Mutexable::Update(int64_t a1) {
-    using gameMutexable_Update_t = void (*)(RED4ext::game::Mutexable*, int64_t);
-    RED4ext::RelocFunc<gameMutexable_Update_t> call(gameMutexable_Update_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::game::Object::CallScriptFunction(void* a1, uint64_t a2, uint8_t a3) {
-    using gameObject_CallScriptFunction_t = bool (*)(RED4ext::game::Object*, void*, uint64_t, uint8_t);
-    RED4ext::RelocFunc<gameObject_CallScriptFunction_t> call(gameObject_CallScriptFunction_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::game::VehicleSystem::BeginUpdate(RED4ext::game::VehicleSystem** a1) {
-    using gameVehicleSystem_BeginUpdate_t = void (*)(RED4ext::game::VehicleSystem**);
-    RED4ext::RelocFunc<gameVehicleSystem_BeginUpdate_t> call(gameVehicleSystem_BeginUpdate_Addr);
-    return call(a1);
-}
-
-RED4EXT_INLINE void RED4ext::game::VehicleSystem::UpdateVehicleArrays() {
-    using gameVehicleSystem_UpdateVehicleArrays_t = void (*)(RED4ext::game::VehicleSystem*);
-    RED4ext::RelocFunc<gameVehicleSystem_UpdateVehicleArrays_t> call(gameVehicleSystem_UpdateVehicleArrays_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::ColliderSphere>* RED4ext::physics::ColliderSphere::createHandleWithRadius(RED4ext::Handle<RED4ext::physics::ICollider>* a1, float a2) {
-    using physicsColliderSphere_createHandleWithRadius_t = RED4ext::Handle<RED4ext::physics::ColliderSphere>* (*)(RED4ext::Handle<RED4ext::physics::ICollider>*, float);
-    RED4ext::RelocFunc<physicsColliderSphere_createHandleWithRadius_t> call(physicsColliderSphere_createHandleWithRadius_Addr);
-    return call(a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::physics::FilterData::LoadPreset(RED4ext::CName a1) {
-    using physicsFilterData_LoadPreset_t = void (*)(RED4ext::physics::FilterData*, RED4ext::CName);
-    RED4ext::RelocFunc<physicsFilterData_LoadPreset_t> call(physicsFilterData_LoadPreset_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::physics::GeometryCache::FreeAlwaysLoaded() {
-    using physicsGeometryCache_FreeAlwaysLoaded_t = void (*)(RED4ext::physics::GeometryCache*);
-    RED4ext::RelocFunc<physicsGeometryCache_FreeAlwaysLoaded_t> call(physicsGeometryCache_FreeAlwaysLoaded_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::physics::GeometryCache::FreeGeometryKey(RED4ext::physics::GeometryKey* a1) {
-    using physicsGeometryCache_FreeGeometryKey_t = void (*)(RED4ext::physics::GeometryCache*, RED4ext::physics::GeometryKey*);
-    RED4ext::RelocFunc<physicsGeometryCache_FreeGeometryKey_t> call(physicsGeometryCache_FreeGeometryKey_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::physics::GeometryCache::FreeSector(uint32_t a1) {
-    using physicsGeometryCache_FreeSector_t = void (*)(RED4ext::physics::GeometryCache*, uint32_t);
-    RED4ext::RelocFunc<physicsGeometryCache_FreeSector_t> call(physicsGeometryCache_FreeSector_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::GeometryCache::HasGeometryKey(RED4ext::physics::GeometryKey* a1) {
-    using physicsGeometryCache_HasGeometryKey_t = bool (*)(RED4ext::physics::GeometryCache*, RED4ext::physics::GeometryKey*);
-    RED4ext::RelocFunc<physicsGeometryCache_HasGeometryKey_t> call(physicsGeometryCache_HasGeometryKey_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometries(void* a1) {
-    using physicsGeometryCache_LoadAlwaysloadedSectorGeometries_t = void (*)(void*);
-    RED4ext::RelocFunc<physicsGeometryCache_LoadAlwaysloadedSectorGeometries_t> call(physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr);
-    return call(a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometriesSetup(int64_t a1) {
-    using physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_t = int64_t (*)(RED4ext::physics::GeometryCache*, int64_t);
-    RED4ext::RelocFunc<physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_t> call(physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::physics::GeometryCache::LoadSectorGeometries(RED4ext::physics::GeometryCache::LoadSectorGeometriesStruct* a1) {
-    using physicsGeometryCache_LoadSectorGeometries_t = void (*)(RED4ext::physics::GeometryCache::LoadSectorGeometriesStruct*);
-    RED4ext::RelocFunc<physicsGeometryCache_LoadSectorGeometries_t> call(physicsGeometryCache_LoadSectorGeometries_Addr);
-    return call(a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::physics::GeometryCache::LoadSectorGeometriesSetup(uint32_t a1) {
-    using physicsGeometryCache_LoadSectorGeometriesSetup_t = int64_t (*)(RED4ext::physics::GeometryCache*, uint32_t);
-    RED4ext::RelocFunc<physicsGeometryCache_LoadSectorGeometriesSetup_t> call(physicsGeometryCache_LoadSectorGeometriesSetup_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::GeometryCache::Unknown(uint32_t a1) {
-    using physicsGeometryCache_Unknown_t = bool (*)(RED4ext::physics::GeometryCache*, uint32_t);
-    RED4ext::RelocFunc<physicsGeometryCache_Unknown_t> call(physicsGeometryCache_Unknown_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::physics::GeometryCache::sub_7FF75B921520(int64_t a1, int64_t* a2, RED4ext::DynArray<void *>** a3, uint8_t a4) {
-    using physicsGeometryCache_sub_7FF75B921520_t = int64_t (*)(RED4ext::physics::GeometryCache*, int64_t, int64_t*, RED4ext::DynArray<void *>**, uint8_t);
-    RED4ext::RelocFunc<physicsGeometryCache_sub_7FF75B921520_t> call(physicsGeometryCache_sub_7FF75B921520_Addr);
-    return call(this, a1, a2, a3, a4);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::GeometryCache::sub_7FF75B922410(RED4ext::physics::GeometryKey* a1) {
-    using physicsGeometryCache_sub_7FF75B922410_t = bool (*)(RED4ext::physics::GeometryCache*, RED4ext::physics::GeometryKey*);
-    RED4ext::RelocFunc<physicsGeometryCache_sub_7FF75B922410_t> call(physicsGeometryCache_sub_7FF75B922410_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::physics::ProxyCacheManager::Unk948::Kick(float a1) {
-    using physicsProxyCacheManagerUnk948_Kick_t = int64_t (*)(RED4ext::physics::ProxyCacheManager::Unk948*, float);
-    RED4ext::RelocFunc<physicsProxyCacheManagerUnk948_Kick_t> call(physicsProxyCacheManagerUnk948_Kick_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::physics::ProxyCache::AddToCache(RED4ext::physics::ProxyCacheEntry* a1, int32_t a2, int32_t a3, RED4ext::physics::StateValue a4, void* a5, uint64_t a6, bool a7) {
-    using physicsProxyCache_AddToCache_t = void (*)(RED4ext::physics::ProxyCache*, RED4ext::physics::ProxyCacheEntry*, int32_t, int32_t, RED4ext::physics::StateValue, void*, uint64_t, bool);
-    RED4ext::RelocFunc<physicsProxyCache_AddToCache_t> call(physicsProxyCache_AddToCache_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
-}
-
 RED4EXT_INLINE void* RED4ext::physics::ProxyCache::GetDataFromCache(uint32_t a1) {
     using physicsProxyCache_GetDataFromCache_t = void* (*)(RED4ext::physics::ProxyCache*, uint32_t);
     RED4ext::RelocFunc<physicsProxyCache_GetDataFromCache_t> call(physicsProxyCache_GetDataFromCache_Addr);
     return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::ProxyCache::GetFromCacheOrGet(RED4ext::physics::ProxyID* a1, uint32_t a2, uint32_t a3, RED4ext::physics::StateValue a4, void* a5, uint32_t a6) {
-    using physicsProxyCache_GetFromCacheOrGet_t = bool (*)(RED4ext::physics::ProxyCache*, RED4ext::physics::ProxyID*, uint32_t, uint32_t, RED4ext::physics::StateValue, void*, uint32_t);
-    RED4ext::RelocFunc<physicsProxyCache_GetFromCacheOrGet_t> call(physicsProxyCache_GetFromCacheOrGet_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::Create(RED4ext::physics::ProxyID* a1) {
-    using physicsProxyHelper_Create_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, RED4ext::physics::ProxyID*);
-    RED4ext::RelocFunc<physicsProxyHelper_Create_t> call(physicsProxyHelper_Create_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::GetThingWithLock(RED4ext::physics::ProxyID* a1, RED4ext::SharedMutex* a2) {
-    using physicsProxyHelper_GetThingWithLock_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, RED4ext::physics::ProxyID*, RED4ext::SharedMutex*);
-    RED4ext::RelocFunc<physicsProxyHelper_GetThingWithLock_t> call(physicsProxyHelper_GetThingWithLock_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetAngularDamping(float* a1, uint32_t a2) {
-    using physicsProxyHelper_SetAngularDamping_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, float*, uint32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetAngularDamping_t> call(physicsProxyHelper_SetAngularDamping_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetCCD(bool a1, int32_t a2) {
-    using physicsProxyHelper_SetCCD_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, int32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetCCD_t> call(physicsProxyHelper_SetCCD_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetGravity(bool a1, uint32_t a2) {
-    using physicsProxyHelper_SetGravity_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetGravity_t> call(physicsProxyHelper_SetGravity_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetIsQueryable(bool a1, uint32_t a2, uint32_t a3) {
-    using physicsProxyHelper_SetIsQueryable_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t, uint32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetIsQueryable_t> call(physicsProxyHelper_SetIsQueryable_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetLinearDamping(float* a1, uint32_t a2) {
-    using physicsProxyHelper_SetLinearDamping_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, float*, uint32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetLinearDamping_t> call(physicsProxyHelper_SetLinearDamping_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetMassAndUpdateInertia(float a1, uint32_t a2, bool a3) {
-    using physicsProxyHelper_SetMassAndUpdateInertia_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, float, uint32_t, bool);
-    RED4ext::RelocFunc<physicsProxyHelper_SetMassAndUpdateInertia_t> call(physicsProxyHelper_SetMassAndUpdateInertia_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetQueryFilterData(void* a1, uint32_t a2, uint32_t a3) {
-    using physicsProxyHelper_SetQueryFilterData_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, void*, uint32_t, uint32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetQueryFilterData_t> call(physicsProxyHelper_SetQueryFilterData_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetSimulationFilterData(void* a1, int32_t a2, int32_t a3) {
-    using physicsProxyHelper_SetSimulationFilterData_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, void*, int32_t, int32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetSimulationFilterData_t> call(physicsProxyHelper_SetSimulationFilterData_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetSimulationShape(bool a1, uint32_t a2, uint32_t a3) {
-    using physicsProxyHelper_SetSimulationShape_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t, uint32_t);
-    RED4ext::RelocFunc<physicsProxyHelper_SetSimulationShape_t> call(physicsProxyHelper_SetSimulationShape_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE int64_t RED4ext::physics::ProxyHelper::Unlock() {
-    using physicsProxyHelper_Unlock_t = int64_t (*)(RED4ext::physics::ProxyHelper*);
-    RED4ext::RelocFunc<physicsProxyHelper_Unlock_t> call(physicsProxyHelper_Unlock_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::ProxyHelper::UpdateProxyCache() {
-    using physicsProxyHelper_UpdateProxyCache_t = bool (*)(RED4ext::physics::ProxyHelper*);
-    RED4ext::RelocFunc<physicsProxyHelper_UpdateProxyCache_t> call(physicsProxyHelper_UpdateProxyCache_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::physics::BaseProxy* RED4ext::physics::ProxyID::GetProxy() {
-    using physicsProxyID_GetProxy_t = RED4ext::physics::BaseProxy* (*)(RED4ext::physics::ProxyID*);
-    RED4ext::RelocFunc<physicsProxyID_GetProxy_t> call(physicsProxyID_GetProxy_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE uint32_t* RED4ext::physics::ProxyID::ProcessProxyDesc(RED4ext::physics::BaseProxyDesc* a1) {
-    using physicsProxyID_ProcessProxyDesc_t = uint32_t* (*)(RED4ext::physics::ProxyID*, RED4ext::physics::BaseProxyDesc*);
-    RED4ext::RelocFunc<physicsProxyID_ProcessProxyDesc_t> call(physicsProxyID_ProcessProxyDesc_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::ProxyID::Unk(void* a1) {
-    using physicsProxyID_Unk_t = bool (*)(RED4ext::physics::ProxyID*, void*);
-    RED4ext::RelocFunc<physicsProxyID_Unk_t> call(physicsProxyID_Unk_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyCache* RED4ext::physics::ProxyManager::GetProxyCache(RED4ext::physics::ProxyID* a1) {
-    using physicsProxyManager_GetProxyCache_t = RED4ext::physics::ProxyCache* (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*);
-    RED4ext::RelocFunc<physicsProxyManager_GetProxyCache_t> call(physicsProxyManager_GetProxyCache_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::BaseProxy>* RED4ext::physics::ProxyManager::GetProxyHandle(RED4ext::Handle<RED4ext::physics::BaseProxy>* a1, RED4ext::physics::ProxyID* a2) {
-    using physicsProxyManager_GetProxyHandle_t = RED4ext::Handle<RED4ext::physics::BaseProxy>* (*)(RED4ext::physics::ProxyManager*, RED4ext::Handle<RED4ext::physics::BaseProxy>*, RED4ext::physics::ProxyID*);
-    RED4ext::RelocFunc<physicsProxyManager_GetProxyHandle_t> call(physicsProxyManager_GetProxyHandle_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::ProxyManager::HasProxy(RED4ext::physics::ProxyID* a1) {
-    using physicsProxyManager_HasProxy_t = bool (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*);
-    RED4ext::RelocFunc<physicsProxyManager_HasProxy_t> call(physicsProxyManager_HasProxy_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::physics::ProxyManager::SetProxyCacheID(RED4ext::physics::ProxyID* a1, RED4ext::physics::ProxyCacheID* a2) {
-    using physicsProxyManager_SetProxyCacheID_t = void (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*, RED4ext::physics::ProxyCacheID*);
-    RED4ext::RelocFunc<physicsProxyManager_SetProxyCacheID_t> call(physicsProxyManager_SetProxyCacheID_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::ProxyManager::TestUnk2E2068(RED4ext::physics::ProxyID* a1) {
-    using physicsProxyManager_TestUnk2E2068_t = bool (*)(RED4ext::physics::ProxyManager*, RED4ext::physics::ProxyID*);
-    RED4ext::RelocFunc<physicsProxyManager_TestUnk2E2068_t> call(physicsProxyManager_TestUnk2E2068_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::SystemResource>* RED4ext::physics::SystemResource::GetFromCMesh(RED4ext::Handle<RED4ext::physics::SystemResource>* a1, RED4ext::CMesh* a2) {
-    using physicsSystemResource_GetFromCMesh_t = RED4ext::Handle<RED4ext::physics::SystemResource>* (*)(RED4ext::Handle<RED4ext::physics::SystemResource>*, RED4ext::CMesh*);
-    RED4ext::RelocFunc<physicsSystemResource_GetFromCMesh_t> call(physicsSystemResource_GetFromCMesh_Addr);
-    return call(a1, a2);
 }
 
 RED4EXT_INLINE float RED4ext::physics::VehiclePhysicsInsert1::SinMath(float a1) {
@@ -1322,687 +1026,9 @@ RED4EXT_INLINE float RED4ext::physics::VehiclePhysicsInsert1::SinMath(float a1) 
     return call(this, a1);
 }
 
-RED4EXT_INLINE void RED4ext::physics::VehiclePhysicsInsert2::SetsUnk160Unk15C(float a1) {
-    using physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_t = void (*)(RED4ext::physics::VehiclePhysicsInsert2*, float);
-    RED4ext::RelocFunc<physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_t> call(physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::Transform* RED4ext::physics::GetShapeLocalPos(RED4ext::Transform* a0, RED4ext::physics::ProxyID* a1, uint32_t a2, uint32_t a3) {
-    using physics_GetShapeLocalPos_t = RED4ext::Transform* (*)(RED4ext::Transform*, RED4ext::physics::ProxyID*, uint32_t, uint32_t);
-    RED4ext::RelocFunc<physics_GetShapeLocalPos_t> call(physics_GetShapeLocalPos_Addr);
-    return call(a0, a1, a2, a3);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::pxRigidBody_Get(void* a0, int64_t a1, RED4ext::physics::StateValue a2, void* a3, uint32_t a4) {
-    using physics_pxRigidBody_Get_t = bool (*)(void*, int64_t, RED4ext::physics::StateValue, void*, uint32_t);
-    RED4ext::RelocFunc<physics_pxRigidBody_Get_t> call(physics_pxRigidBody_Get_Addr);
-    return call(a0, a1, a2, a3, a4);
-}
-
-RED4EXT_INLINE bool RED4ext::physics::pxRigidBody_Update(void* a0, RED4ext::physics::StateValue a1, void* a2, int64_t a3, uint32_t a4, bool a5) {
-    using physics_pxRigidBody_Update_t = bool (*)(void*, RED4ext::physics::StateValue, void*, int64_t, uint32_t, bool);
-    RED4ext::RelocFunc<physics_pxRigidBody_Update_t> call(physics_pxRigidBody_Update_Addr);
-    return call(a0, a1, a2, a3, a4, a5);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::AirControl::ApplyTorque(uint32_t a1, float a2) {
-    using vehicleAirControl_ApplyTorque_t = void (*)(RED4ext::vehicle::AirControl*, uint32_t, float);
-    RED4ext::RelocFunc<vehicleAirControl_ApplyTorque_t> call(vehicleAirControl_ApplyTorque_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::Vector3* RED4ext::vehicle::AirControl::GetAngularVelocity(RED4ext::Vector3* a1, int32_t a2, void* a3) {
-    using vehicleAirControl_GetAngularVelocity_t = RED4ext::Vector3* (*)(RED4ext::vehicle::AirControl*, RED4ext::Vector3*, int32_t, void*);
-    RED4ext::RelocFunc<vehicleAirControl_GetAngularVelocity_t> call(vehicleAirControl_GetAngularVelocity_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::AirControl::Process(float a1) {
-    using vehicleAirControl_Process_t = void (*)(RED4ext::vehicle::AirControl*, float);
-    RED4ext::RelocFunc<vehicleAirControl_Process_t> call(vehicleAirControl_Process_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::BaseObject::CheckPhysicsStateActionInterface() {
-    using vehicleBaseObject_CheckPhysicsStateActionInterface_t = bool (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_CheckPhysicsStateActionInterface_t> call(vehicleBaseObject_CheckPhysicsStateActionInterface_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::action::ActionBase** RED4ext::vehicle::BaseObject::CreateAction(RED4ext::action::ActionBase** a1, RED4ext::action::Type a2) {
-    using vehicleBaseObject_CreateAction_t = RED4ext::action::ActionBase** (*)(RED4ext::vehicle::BaseObject*, RED4ext::action::ActionBase**, RED4ext::action::Type);
-    RED4ext::RelocFunc<vehicleBaseObject_CreateAction_t> call(vehicleBaseObject_CreateAction_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::Handle<void>* RED4ext::vehicle::BaseObject::GetCurveSetData(RED4ext::Handle<void>* a1) {
-    using vehicleBaseObject_GetCurveSetData_t = RED4ext::Handle<void>* (*)(RED4ext::vehicle::BaseObject*, RED4ext::Handle<void>*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetCurveSetData_t> call(vehicleBaseObject_GetCurveSetData_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE double RED4ext::vehicle::BaseObject::GetDeceleration() {
-    using vehicleBaseObject_GetDeceleration_t = double (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetDeceleration_t> call(vehicleBaseObject_GetDeceleration_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::CString* RED4ext::vehicle::BaseObject::GetDisplayName(RED4ext::CString* a1) {
-    using vehicleBaseObject_GetDisplayName_t = RED4ext::CString* (*)(RED4ext::vehicle::BaseObject*, RED4ext::CString*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetDisplayName_t> call(vehicleBaseObject_GetDisplayName_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetGravitationalForce() {
-    using vehicleBaseObject_GetGravitationalForce_t = float (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetGravitationalForce_t> call(vehicleBaseObject_GetGravitationalForce_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetInverseMass() {
-    using vehicleBaseObject_GetInverseMass_t = float (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetInverseMass_t> call(vehicleBaseObject_GetInverseMass_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::vehicle::PhysicsData* RED4ext::vehicle::BaseObject::GetPhysicsData() {
-    using vehicleBaseObject_GetPhysicsData_t = RED4ext::vehicle::PhysicsData* (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetPhysicsData_t> call(vehicleBaseObject_GetPhysicsData_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetTotalMass() {
-    using vehicleBaseObject_GetTotalMass_t = float (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetTotalMass_t> call(vehicleBaseObject_GetTotalMass_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE float RED4ext::vehicle::BaseObject::GetUnk60C() {
-    using vehicleBaseObject_GetUnk60C_t = float (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetUnk60C_t> call(vehicleBaseObject_GetUnk60C_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void* RED4ext::vehicle::BaseObject::GetUnk8E0() {
-    using vehicleBaseObject_GetUnk8E0_t = void* (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetUnk8E0_t> call(vehicleBaseObject_GetUnk8E0_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::world::RuntimeSystemPhysics* RED4ext::vehicle::BaseObject::GetVehicleSystem() {
-    using vehicleBaseObject_GetVehicleSystem_t = RED4ext::world::RuntimeSystemPhysics* (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_GetVehicleSystem_t> call(vehicleBaseObject_GetVehicleSystem_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::Quaternion* RED4ext::vehicle::BaseObject::GetWeaponOrientation(RED4ext::Quaternion* a1, uint32_t a2) {
-    using vehicleBaseObject_GetWeaponOrientation_t = RED4ext::Quaternion* (*)(RED4ext::vehicle::BaseObject*, RED4ext::Quaternion*, uint32_t);
-    RED4ext::RelocFunc<vehicleBaseObject_GetWeaponOrientation_t> call(vehicleBaseObject_GetWeaponOrientation_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::BaseObject::HornForDuration() {
-    using vehicleBaseObject_HornForDuration_t = void (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_HornForDuration_t> call(vehicleBaseObject_HornForDuration_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::BaseObject::HornForDurationDelayed(float a1) {
-    using vehicleBaseObject_HornForDurationDelayed_t = void (*)(RED4ext::vehicle::BaseObject*, float);
-    RED4ext::RelocFunc<vehicleBaseObject_HornForDurationDelayed_t> call(vehicleBaseObject_HornForDurationDelayed_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::WorldTransform* RED4ext::vehicle::BaseObject::PostMovePhysicsStateNotZero(float a1, float* a2) {
-    using vehicleBaseObject_PostMovePhysicsStateNotZero_t = RED4ext::WorldTransform* (*)(RED4ext::vehicle::BaseObject*, float, float*);
-    RED4ext::RelocFunc<vehicleBaseObject_PostMovePhysicsStateNotZero_t> call(vehicleBaseObject_PostMovePhysicsStateNotZero_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::WorldTransform* RED4ext::vehicle::BaseObject::PostMovePhysicsStateZero(float a1, float* a2) {
-    using vehicleBaseObject_PostMovePhysicsStateZero_t = RED4ext::WorldTransform* (*)(RED4ext::vehicle::BaseObject*, float, float*);
-    RED4ext::RelocFunc<vehicleBaseObject_PostMovePhysicsStateZero_t> call(vehicleBaseObject_PostMovePhysicsStateZero_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateNotZero(int64_t a1, float* a2, int64_t a3) {
-    using vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_t = void (*)(RED4ext::vehicle::BaseObject*, int64_t, float*, int64_t);
-    RED4ext::RelocFunc<vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_t> call(vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::BaseObject::PreUpdatePreMovePhysicsStateZero(int64_t a1, int64_t a2, int64_t a3) {
-    using vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_t = int64_t (*)(RED4ext::vehicle::BaseObject*, int64_t, int64_t, int64_t);
-    RED4ext::RelocFunc<vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_t> call(vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::BaseObject::Reset8B4() {
-    using vehicleBaseObject_Reset8B4_t = void (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_Reset8B4_t> call(vehicleBaseObject_Reset8B4_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::BaseObject::SetPhysicsState(RED4ext::vehicle::PhysicsState a1, bool a2) {
-    using vehicleBaseObject_SetPhysicsState_t = void (*)(RED4ext::vehicle::BaseObject*, RED4ext::vehicle::PhysicsState, bool);
-    RED4ext::RelocFunc<vehicleBaseObject_SetPhysicsState_t> call(vehicleBaseObject_SetPhysicsState_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::BaseObject::UnsetPhysicsStates() {
-    using vehicleBaseObject_UnsetPhysicsStates_t = void (*)(RED4ext::vehicle::BaseObject*);
-    RED4ext::RelocFunc<vehicleBaseObject_UnsetPhysicsStates_t> call(vehicleBaseObject_UnsetPhysicsStates_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::BaseObject::UpdatePhysicsSleepState(float a1) {
-    using vehicleBaseObject_UpdatePhysicsSleepState_t = void (*)(RED4ext::vehicle::BaseObject*, float);
-    RED4ext::RelocFunc<vehicleBaseObject_UpdatePhysicsSleepState_t> call(vehicleBaseObject_UpdatePhysicsSleepState_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::BikePhysics::AnimationUpdate() {
-    using vehicleBikePhysics_AnimationUpdate_t = int64_t (*)(RED4ext::vehicle::BikePhysics*);
-    RED4ext::RelocFunc<vehicleBikePhysics_AnimationUpdate_t> call(vehicleBikePhysics_AnimationUpdate_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::CameraManager::ChangeCamera(uint32_t a1, float a2) {
-    using vehicleCameraManager_ChangeCamera_t = void (*)(RED4ext::vehicle::CameraManager*, uint32_t, float);
-    RED4ext::RelocFunc<vehicleCameraManager_ChangeCamera_t> call(vehicleCameraManager_ChangeCamera_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::CameraManager::IsTPP() {
-    using vehicleCameraManager_IsTPP_t = bool (*)(RED4ext::vehicle::CameraManager*);
-    RED4ext::RelocFunc<vehicleCameraManager_IsTPP_t> call(vehicleCameraManager_IsTPP_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::CarPhysics::AnimationUpdate(float a1) {
-    using vehicleCarPhysics_AnimationUpdate_t = int64_t (*)(RED4ext::vehicle::CarPhysics*, float);
-    RED4ext::RelocFunc<vehicleCarPhysics_AnimationUpdate_t> call(vehicleCarPhysics_AnimationUpdate_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::ChassisComponent::BigUpdate() {
-    using vehicleChassisComponent_BigUpdate_t = bool (*)(RED4ext::vehicle::ChassisComponent*);
-    RED4ext::RelocFunc<vehicleChassisComponent_BigUpdate_t> call(vehicleChassisComponent_BigUpdate_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::ICollider>** RED4ext::vehicle::ChassisComponent::GetCollisionShapes(RED4ext::Handle<RED4ext::physics::ICollider>** a1, bool a2) {
-    using vehicleChassisComponent_GetCollisionShapes_t = RED4ext::Handle<RED4ext::physics::ICollider>** (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::Handle<RED4ext::physics::ICollider>**, bool);
-    RED4ext::RelocFunc<vehicleChassisComponent_GetCollisionShapes_t> call(vehicleChassisComponent_GetCollisionShapes_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::vehicle::ChassisComponent::GetProxyHelperAndLock(RED4ext::physics::ProxyHelper* a1) {
-    using vehicleChassisComponent_GetProxyHelperAndLock_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::physics::ProxyHelper*);
-    RED4ext::RelocFunc<vehicleChassisComponent_GetProxyHelperAndLock_t> call(vehicleChassisComponent_GetProxyHelperAndLock_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::ChassisComponent::SetFilterData(RED4ext::physics::FilterData* a1, RED4ext::physics::FilterData* a2) {
-    using vehicleChassisComponent_SetFilterData_t = int64_t (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::physics::FilterData*, RED4ext::physics::FilterData*);
-    RED4ext::RelocFunc<vehicleChassisComponent_SetFilterData_t> call(vehicleChassisComponent_SetFilterData_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::ChassisComponent::SomethingIfEnabled() {
-    using vehicleChassisComponent_SomethingIfEnabled_t = void (*)(RED4ext::vehicle::ChassisComponent*);
-    RED4ext::RelocFunc<vehicleChassisComponent_SomethingIfEnabled_t> call(vehicleChassisComponent_SomethingIfEnabled_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::WorldTransform* RED4ext::vehicle::ChassisComponent::TransformWorldTransform(RED4ext::WorldTransform* a1, RED4ext::WorldTransform* a2) {
-    using vehicleChassisComponent_TransformWorldTransform_t = RED4ext::WorldTransform* (*)(RED4ext::vehicle::ChassisComponent*, RED4ext::WorldTransform*, RED4ext::WorldTransform*);
-    RED4ext::RelocFunc<vehicleChassisComponent_TransformWorldTransform_t> call(vehicleChassisComponent_TransformWorldTransform_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::ChassisComponent::Update() {
-    using vehicleChassisComponent_Update_t = void (*)(RED4ext::vehicle::ChassisComponent*);
-    RED4ext::RelocFunc<vehicleChassisComponent_Update_t> call(vehicleChassisComponent_Update_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::ChassisComponent::UpdatePhysicsState(uint32_t a1, bool a2) {
-    using vehicleChassisComponent_UpdatePhysicsState_t = void (*)(RED4ext::vehicle::ChassisComponent*, uint32_t, bool);
-    RED4ext::RelocFunc<vehicleChassisComponent_UpdatePhysicsState_t> call(vehicleChassisComponent_UpdatePhysicsState_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE float RED4ext::vehicle::PID::GetCorrection() {
-    using vehiclePID_GetCorrection_t = float (*)(RED4ext::vehicle::PID*);
-    RED4ext::RelocFunc<vehiclePID_GetCorrection_t> call(vehiclePID_GetCorrection_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PID::Initialize(float a1, float a2, float a3) {
-    using vehiclePID_Initialize_t = void (*)(RED4ext::vehicle::PID*, float, float, float);
-    RED4ext::RelocFunc<vehiclePID_Initialize_t> call(vehiclePID_Initialize_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE RED4ext::vehicle::PID::IntegralState RED4ext::vehicle::PID::Process(float a1, float a2) {
-    using vehiclePID_Process_t = RED4ext::vehicle::PID::IntegralState (*)(RED4ext::vehicle::PID*, float, float);
-    RED4ext::RelocFunc<vehiclePID_Process_t> call(vehiclePID_Process_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PID::Reset(float a1) {
-    using vehiclePID_Reset_t = void (*)(RED4ext::vehicle::PID*, float);
-    RED4ext::RelocFunc<vehiclePID_Reset_t> call(vehiclePID_Reset_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PID::UpdatePID(float a1, float a2, float a3) {
-    using vehiclePID_UpdatePID_t = void (*)(RED4ext::vehicle::PID*, float, float, float);
-    RED4ext::RelocFunc<vehiclePID_UpdatePID_t> call(vehiclePID_UpdatePID_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PersistentDataPS::UpdateWheelRuntime(uint32_t a1, RED4ext::vehicle::WheelRuntimePSData* a2) {
-    using vehiclePersistentDataPS_UpdateWheelRuntime_t = void (*)(RED4ext::vehicle::PersistentDataPS*, uint32_t, RED4ext::vehicle::WheelRuntimePSData*);
-    RED4ext::RelocFunc<vehiclePersistentDataPS_UpdateWheelRuntime_t> call(vehiclePersistentDataPS_UpdateWheelRuntime_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::AddTorque(RED4ext::Vector3* a1) {
-    using vehiclePhysicsData_AddTorque_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*);
-    RED4ext::RelocFunc<vehiclePhysicsData_AddTorque_t> call(vehiclePhysicsData_AddTorque_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::ApplyForceAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
-    using vehiclePhysicsData_ApplyForceAtPosition_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*, RED4ext::Vector3*);
-    RED4ext::RelocFunc<vehiclePhysicsData_ApplyForceAtPosition_t> call(vehiclePhysicsData_ApplyForceAtPosition_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::ApplyTorqueAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
-    using vehiclePhysicsData_ApplyTorqueAtPosition_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*, RED4ext::Vector3*);
-    RED4ext::RelocFunc<vehiclePhysicsData_ApplyTorqueAtPosition_t> call(vehiclePhysicsData_ApplyTorqueAtPosition_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::SetUsesNormalChassisMass() {
-    using vehiclePhysicsData_SetUsesNormalChassisMass_t = void (*)(RED4ext::vehicle::PhysicsData*);
-    RED4ext::RelocFunc<vehiclePhysicsData_SetUsesNormalChassisMass_t> call(vehiclePhysicsData_SetUsesNormalChassisMass_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::UpdateChassis() {
-    using vehiclePhysicsData_UpdateChassis_t = void (*)(RED4ext::vehicle::PhysicsData*);
-    RED4ext::RelocFunc<vehiclePhysicsData_UpdateChassis_t> call(vehiclePhysicsData_UpdateChassis_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::PhysicsData::UsesAlternativeChassisMass() {
-    using vehiclePhysicsData_UsesAlternativeChassisMass_t = bool (*)(RED4ext::vehicle::PhysicsData*);
-    RED4ext::RelocFunc<vehiclePhysicsData_UsesAlternativeChassisMass_t> call(vehiclePhysicsData_UsesAlternativeChassisMass_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Physics::ComputeSleep(float a1) {
-    using vehiclePhysics_ComputeSleep_t = void (*)(RED4ext::vehicle::Physics*, float);
-    RED4ext::RelocFunc<vehiclePhysics_ComputeSleep_t> call(vehiclePhysics_ComputeSleep_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::Physics::GetSomethingWaterParams() {
-    using vehiclePhysics_GetSomethingWaterParams_t = bool (*)(RED4ext::vehicle::Physics*);
-    RED4ext::RelocFunc<vehiclePhysics_GetSomethingWaterParams_t> call(vehiclePhysics_GetSomethingWaterParams_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE RED4ext::vehicle::BaseObject* RED4ext::vehicle::Physics::GetVehicle() {
-    using vehiclePhysics_GetVehicle_t = RED4ext::vehicle::BaseObject* (*)(RED4ext::vehicle::Physics*);
-    RED4ext::RelocFunc<vehiclePhysics_GetVehicle_t> call(vehiclePhysics_GetVehicle_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::Physics::IsInAirFromVehicle_func() {
-    using vehiclePhysics_IsInAirFromVehicle_func_t = bool (*)(RED4ext::vehicle::Physics*);
-    RED4ext::RelocFunc<vehiclePhysics_IsInAirFromVehicle_func_t> call(vehiclePhysics_IsInAirFromVehicle_func_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE double RED4ext::vehicle::Physics::LoadHasBeenFlippedOver(RED4ext::Handle<RED4ext::game::data::VehicleDriveModelData_Record>* a1) {
-    using vehiclePhysics_LoadHasBeenFlippedOver_t = double (*)(RED4ext::vehicle::Physics*, RED4ext::Handle<RED4ext::game::data::VehicleDriveModelData_Record>*);
-    RED4ext::RelocFunc<vehiclePhysics_LoadHasBeenFlippedOver_t> call(vehiclePhysics_LoadHasBeenFlippedOver_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::Physics::ReadWorldTransform(RED4ext::WorldTransform* a1) {
-    using vehiclePhysics_ReadWorldTransform_t = bool (*)(RED4ext::vehicle::Physics*, RED4ext::WorldTransform*);
-    RED4ext::RelocFunc<vehiclePhysics_ReadWorldTransform_t> call(vehiclePhysics_ReadWorldTransform_Addr);
-    return call(this, a1);
-}
-
 RED4EXT_INLINE void RED4ext::vehicle::Physics::SetUnkA0ToOne() {
     using vehiclePhysics_SetUnkA0ToOne_t = void (*)(RED4ext::vehicle::Physics*);
     RED4ext::RelocFunc<vehiclePhysics_SetUnkA0ToOne_t> call(vehiclePhysics_SetUnkA0ToOne_Addr);
     return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Physics::UpdateDataWorldTransform(RED4ext::WorldTransform* a1, bool a2) {
-    using vehiclePhysics_UpdateDataWorldTransform_t = void (*)(RED4ext::vehicle::Physics*, RED4ext::WorldTransform*, bool);
-    RED4ext::RelocFunc<vehiclePhysics_UpdateDataWorldTransform_t> call(vehiclePhysics_UpdateDataWorldTransform_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::Vector4* RED4ext::vehicle::TPPCameraComponent::GetLocationFromOffset(RED4ext::Vector4* a1, RED4ext::Vector3* a2) {
-    using vehicleTPPCameraComponent_GetLocationFromOffset_t = RED4ext::Vector4* (*)(RED4ext::vehicle::TPPCameraComponent*, RED4ext::Vector4*, RED4ext::Vector3*);
-    RED4ext::RelocFunc<vehicleTPPCameraComponent_GetLocationFromOffset_t> call(vehicleTPPCameraComponent_GetLocationFromOffset_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::GetYaw(float* a1, RED4ext::Vector4* a2, float a3) {
-    using vehicleTPPCameraComponent_GetYaw_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, float*, RED4ext::Vector4*, float);
-    RED4ext::RelocFunc<vehicleTPPCameraComponent_GetYaw_t> call(vehicleTPPCameraComponent_GetYaw_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_Update(float* a1) {
-    using vehicleTPPCameraComponent_TargetedCameraInterface_Update_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, float*);
-    RED4ext::RelocFunc<vehicleTPPCameraComponent_TargetedCameraInterface_Update_t> call(vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::TargetedCameraInterface_sub_58() {
-    using vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_t = void (*)(RED4ext::vehicle::TPPCameraComponent*);
-    RED4ext::RelocFunc<vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_t> call(vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::TPPCameraComponent::UpdateData(void* a1) {
-    using vehicleTPPCameraComponent_UpdateData_t = int64_t (*)(RED4ext::vehicle::TPPCameraComponent*, void*);
-    RED4ext::RelocFunc<vehicleTPPCameraComponent_UpdateData_t> call(vehicleTPPCameraComponent_UpdateData_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::UpdatePitch(RED4ext::Vector4* a1, RED4ext::Vector3* a2, RED4ext::vehicle::TPPCameraUpdate* a3) {
-    using vehicleTPPCameraComponent_UpdatePitch_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, RED4ext::Vector4*, RED4ext::Vector3*, RED4ext::vehicle::TPPCameraUpdate*);
-    RED4ext::RelocFunc<vehicleTPPCameraComponent_UpdatePitch_t> call(vehicleTPPCameraComponent_UpdatePitch_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::TPPCameraComponent::UpdatePosition(RED4ext::vehicle::TPPCameraUpdate* a1) {
-    using vehicleTPPCameraComponent_UpdatePosition_t = void (*)(RED4ext::vehicle::TPPCameraComponent*, RED4ext::vehicle::TPPCameraUpdate*);
-    RED4ext::RelocFunc<vehicleTPPCameraComponent_UpdatePosition_t> call(vehicleTPPCameraComponent_UpdatePosition_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk568::CopyOverCollisionForce() {
-    using vehicleUnk568_CopyOverCollisionForce_t = void (*)(RED4ext::vehicle::Unk568*);
-    RED4ext::RelocFunc<vehicleUnk568_CopyOverCollisionForce_t> call(vehicleUnk568_CopyOverCollisionForce_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::Unk568::SetAcceleration(RED4ext::Vector4* a1) {
-    using vehicleUnk568_SetAcceleration_t = int64_t (*)(RED4ext::vehicle::Unk568*, RED4ext::Vector4*);
-    RED4ext::RelocFunc<vehicleUnk568_SetAcceleration_t> call(vehicleUnk568_SetAcceleration_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk568::SetLinearVelocityEtc(RED4ext::Vector4* a1) {
-    using vehicleUnk568_SetLinearVelocityEtc_t = void (*)(RED4ext::vehicle::Unk568*, RED4ext::Vector4*);
-    RED4ext::RelocFunc<vehicleUnk568_SetLinearVelocityEtc_t> call(vehicleUnk568_SetLinearVelocityEtc_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk568::SetUnkD0(void* a1) {
-    using vehicleUnk568_SetUnkD0_t = void (*)(RED4ext::vehicle::Unk568*, void*);
-    RED4ext::RelocFunc<vehicleUnk568_SetUnkD0_t> call(vehicleUnk568_SetUnkD0_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::vehicle::Unk570::CollisionFxLookup* RED4ext::vehicle::Unk570::GetCollisionFxForMaterial(RED4ext::CName a1) {
-    using vehicleUnk570_GetCollisionFxForMaterial_t = RED4ext::vehicle::Unk570::CollisionFxLookup* (*)(RED4ext::vehicle::Unk570*, RED4ext::CName);
-    RED4ext::RelocFunc<vehicleUnk570_GetCollisionFxForMaterial_t> call(vehicleUnk570_GetCollisionFxForMaterial_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE RED4ext::vehicle::MaterialFx* RED4ext::vehicle::Unk570::GetFxForMaterial(RED4ext::CName a1, bool a2) {
-    using vehicleUnk570_GetFxForMaterial_t = RED4ext::vehicle::MaterialFx* (*)(RED4ext::vehicle::Unk570*, RED4ext::CName, bool);
-    RED4ext::RelocFunc<vehicleUnk570_GetFxForMaterial_t> call(vehicleUnk570_GetFxForMaterial_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE RED4ext::vehicle::Unk570::SmearFxLookup* RED4ext::vehicle::Unk570::GetSmearFxForMaterial(RED4ext::CName a1, bool a2) {
-    using vehicleUnk570_GetSmearFxForMaterial_t = RED4ext::vehicle::Unk570::SmearFxLookup* (*)(RED4ext::vehicle::Unk570*, RED4ext::CName, bool);
-    RED4ext::RelocFunc<vehicleUnk570_GetSmearFxForMaterial_t> call(vehicleUnk570_GetSmearFxForMaterial_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk570::ProcessEffects(uint32_t a1, RED4ext::vehicle::Unk570::Unk40* a2, float a3) {
-    using vehicleUnk570_ProcessEffects_t = void (*)(RED4ext::vehicle::Unk570*, uint32_t, RED4ext::vehicle::Unk570::Unk40*, float);
-    RED4ext::RelocFunc<vehicleUnk570_ProcessEffects_t> call(vehicleUnk570_ProcessEffects_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk570::ProcessImpactScratch(RED4ext::Vector3* a1, RED4ext::Vector3* a2, RED4ext::Vector3* a3, RED4ext::Vector3* a4, float a5, float a6, RED4ext::CName a7) {
-    using vehicleUnk570_ProcessImpactScratch_t = void (*)(RED4ext::vehicle::Unk570*, RED4ext::Vector3*, RED4ext::Vector3*, RED4ext::Vector3*, RED4ext::Vector3*, float, float, RED4ext::CName);
-    RED4ext::RelocFunc<vehicleUnk570_ProcessImpactScratch_t> call(vehicleUnk570_ProcessImpactScratch_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk570::Setup(int64_t a1, int64_t a2, int64_t a3) {
-    using vehicleUnk570_Setup_t = void (*)(RED4ext::vehicle::Unk570*, int64_t, int64_t, int64_t);
-    RED4ext::RelocFunc<vehicleUnk570_Setup_t> call(vehicleUnk570_Setup_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::Unk570::SkidMarkEffectStart(RED4ext::vehicle::Unk570::Unk30* a1, RED4ext::vehicle::MaterialFx* a2, RED4ext::Transform* a3, RED4ext::Transform* a4, bool a5, bool a6, bool a7) {
-    using vehicleUnk570_SkidMarkEffectStart_t = bool (*)(RED4ext::vehicle::Unk570*, RED4ext::vehicle::Unk570::Unk30*, RED4ext::vehicle::MaterialFx*, RED4ext::Transform*, RED4ext::Transform*, bool, bool, bool);
-    RED4ext::RelocFunc<vehicleUnk570_SkidMarkEffectStart_t> call(vehicleUnk570_SkidMarkEffectStart_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::Unk570::TireTrackEffectStart(RED4ext::vehicle::Unk570::Unk30* a1, RED4ext::vehicle::MaterialFx* a2, RED4ext::Transform* a3, RED4ext::Transform* a4, bool a5, bool a6, bool a7) {
-    using vehicleUnk570_TireTrackEffectStart_t = bool (*)(RED4ext::vehicle::Unk570*, RED4ext::vehicle::Unk570::Unk30*, RED4ext::vehicle::MaterialFx*, RED4ext::Transform*, RED4ext::Transform*, bool, bool, bool);
-    RED4ext::RelocFunc<vehicleUnk570_TireTrackEffectStart_t> call(vehicleUnk570_TireTrackEffectStart_Addr);
-    return call(this, a1, a2, a3, a4, a5, a6, a7);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk570::UpdateEffectsBlackboard(uint32_t a1) {
-    using vehicleUnk570_UpdateEffectsBlackboard_t = void (*)(RED4ext::vehicle::Unk570*, uint32_t);
-    RED4ext::RelocFunc<vehicleUnk570_UpdateEffectsBlackboard_t> call(vehicleUnk570_UpdateEffectsBlackboard_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk570::WheelEffectUpdate(uint32_t a1, RED4ext::vehicle::Unk570::Unk40* a2, float a3) {
-    using vehicleUnk570_WheelEffectUpdate_t = void (*)(RED4ext::vehicle::Unk570*, uint32_t, RED4ext::vehicle::Unk570::Unk40*, float);
-    RED4ext::RelocFunc<vehicleUnk570_WheelEffectUpdate_t> call(vehicleUnk570_WheelEffectUpdate_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void* RED4ext::vehicle::Unk580::GetAudioResourceMetadata(void* a1) {
-    using vehicleUnk580_GetAudioResourceMetadata_t = void* (*)(RED4ext::vehicle::Unk580*, void*);
-    RED4ext::RelocFunc<vehicleUnk580_GetAudioResourceMetadata_t> call(vehicleUnk580_GetAudioResourceMetadata_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::Unk580::IsRadioReceiverActive() {
-    using vehicleUnk580_IsRadioReceiverActive_t = bool (*)(RED4ext::vehicle::Unk580*);
-    RED4ext::RelocFunc<vehicleUnk580_IsRadioReceiverActive_t> call(vehicleUnk580_IsRadioReceiverActive_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk580::NextRadioReceiverStation(uint32_t a1, bool a2) {
-    using vehicleUnk580_NextRadioReceiverStation_t = void (*)(RED4ext::vehicle::Unk580*, uint32_t, bool);
-    RED4ext::RelocFunc<vehicleUnk580_NextRadioReceiverStation_t> call(vehicleUnk580_NextRadioReceiverStation_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::Unk580::SetRadioTier(int32_t a1, bool a2) {
-    using vehicleUnk580_SetRadioTier_t = int64_t (*)(RED4ext::vehicle::Unk580*, int32_t, bool);
-    RED4ext::RelocFunc<vehicleUnk580_SetRadioTier_t> call(vehicleUnk580_SetRadioTier_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE bool RED4ext::vehicle::Unk580::ShouldUseSomeAVListener() {
-    using vehicleUnk580_ShouldUseSomeAVListener_t = bool (*)(RED4ext::vehicle::Unk580*);
-    RED4ext::RelocFunc<vehicleUnk580_ShouldUseSomeAVListener_t> call(vehicleUnk580_ShouldUseSomeAVListener_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk580::ToggleHorn(bool a1, uint8_t* a2) {
-    using vehicleUnk580_ToggleHorn_t = void (*)(RED4ext::vehicle::Unk580*, bool, uint8_t*);
-    RED4ext::RelocFunc<vehicleUnk580_ToggleHorn_t> call(vehicleUnk580_ToggleHorn_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk580::Update(int64_t a1, float a2, uint64_t* a3) {
-    using vehicleUnk580_Update_t = void (*)(RED4ext::vehicle::Unk580*, int64_t, float, uint64_t*);
-    RED4ext::RelocFunc<vehicleUnk580_Update_t> call(vehicleUnk580_Update_Addr);
-    return call(this, a1, a2, a3);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk580::Update3CA(bool a1) {
-    using vehicleUnk580_Update3CA_t = void (*)(RED4ext::vehicle::Unk580*, bool);
-    RED4ext::RelocFunc<vehicleUnk580_Update3CA_t> call(vehicleUnk580_Update3CA_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk580::UpdateEvents(RED4ext::vehicle::WheelUpdate* a1, int64_t a2) {
-    using vehicleUnk580_UpdateEvents_t = void (*)(RED4ext::vehicle::Unk580*, RED4ext::vehicle::WheelUpdate*, int64_t);
-    RED4ext::RelocFunc<vehicleUnk580_UpdateEvents_t> call(vehicleUnk580_UpdateEvents_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk580::UpdateTPPinAudioSystem() {
-    using vehicleUnk580_UpdateTPPinAudioSystem_t = void (*)(RED4ext::vehicle::Unk580*);
-    RED4ext::RelocFunc<vehicleUnk580_UpdateTPPinAudioSystem_t> call(vehicleUnk580_UpdateTPPinAudioSystem_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk580::UpdateTireParameters(RED4ext::vehicle::TireParameterUpdate* a1, RED4ext::vehicle::TireUpdate* a2) {
-    using vehicleUnk580_UpdateTireParameters_t = void (*)(RED4ext::vehicle::TireParameterUpdate*, RED4ext::vehicle::TireUpdate*);
-    RED4ext::RelocFunc<vehicleUnk580_UpdateTireParameters_t> call(vehicleUnk580_UpdateTireParameters_Addr);
-    return call(a1, a2);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::Unk580::UpdateWheelEmitters(int64_t a1) {
-    using vehicleUnk580_UpdateWheelEmitters_t = int64_t (*)(RED4ext::vehicle::Unk580*, int64_t);
-    RED4ext::RelocFunc<vehicleUnk580_UpdateWheelEmitters_t> call(vehicleUnk580_UpdateWheelEmitters_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::Unk588::Unknown(RED4ext::vehicle::BaseObject* a1, int64_t a2) {
-    using vehicleUnk588_Unknown_t = int64_t (*)(RED4ext::vehicle::Unk588*, RED4ext::vehicle::BaseObject*, int64_t);
-    RED4ext::RelocFunc<vehicleUnk588_Unknown_t> call(vehicleUnk588_Unknown_Addr);
-    return call(this, a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::Unk588::UpdateTransform(RED4ext::Transform* a1) {
-    using vehicleUnk588_UpdateTransform_t = void (*)(RED4ext::vehicle::Unk588*, RED4ext::Transform*);
-    RED4ext::RelocFunc<vehicleUnk588_UpdateTransform_t> call(vehicleUnk588_UpdateTransform_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::UnkD10::Reset(int32_t a1) {
-    using vehicleUnkD10_Reset_t = void (*)(RED4ext::vehicle::UnkD10*, int32_t);
-    RED4ext::RelocFunc<vehicleUnkD10_Reset_t> call(vehicleUnkD10_Reset_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE double RED4ext::vehicle::WheeledPhysics::ApplyWaterResistance(void* a1, float a2) {
-    using vehicleWheeledPhysics_ApplyWaterResistance_t = double (*)(void*, float);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_ApplyWaterResistance_t> call(vehicleWheeledPhysics_ApplyWaterResistance_Addr);
-    return call(a1, a2);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::FixedUpdate(int64_t a1, int64_t a2, int64_t a3, int64_t a4) {
-    using vehicleWheeledPhysics_FixedUpdate_t = void (*)(int64_t, int64_t, int64_t, int64_t);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_FixedUpdate_t> call(vehicleWheeledPhysics_FixedUpdate_Addr);
-    return call(a1, a2, a3, a4);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::FourWheelTorque(uint8_t a1, uint8_t a2, float a3, RED4ext::Transform* a4) {
-    using vehicleWheeledPhysics_FourWheelTorque_t = void (*)(RED4ext::vehicle::WheeledPhysics*, uint8_t, uint8_t, float, RED4ext::Transform*);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_FourWheelTorque_t> call(vehicleWheeledPhysics_FourWheelTorque_Addr);
-    return call(this, a1, a2, a3, a4);
-}
-
-RED4EXT_INLINE float* RED4ext::vehicle::WheeledPhysics::FourWheelTorqueStuff(float a1) {
-    using vehicleWheeledPhysics_FourWheelTorqueStuff_t = float* (*)(RED4ext::vehicle::WheeledPhysics*, float);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_FourWheelTorqueStuff_t> call(vehicleWheeledPhysics_FourWheelTorqueStuff_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE float RED4ext::vehicle::WheeledPhysics::GetEnergy() {
-    using vehicleWheeledPhysics_GetEnergy_t = float (*)(RED4ext::vehicle::WheeledPhysics*);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_GetEnergy_t> call(vehicleWheeledPhysics_GetEnergy_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::WheeledPhysics::GetNumberOfWheelsTouchingGround() {
-    using vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_t = int64_t (*)(RED4ext::vehicle::WheeledPhysics*);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_t> call(vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::ProcessAirControl(float a1) {
-    using vehicleWheeledPhysics_ProcessAirControl_t = void (*)(RED4ext::vehicle::WheeledPhysics*, float);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_ProcessAirControl_t> call(vehicleWheeledPhysics_ProcessAirControl_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE int64_t RED4ext::vehicle::WheeledPhysics::SetIsMovingOthers(bool a1) {
-    using vehicleWheeledPhysics_SetIsMovingOthers_t = int64_t (*)(RED4ext::vehicle::WheeledPhysics*, bool);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_SetIsMovingOthers_t> call(vehicleWheeledPhysics_SetIsMovingOthers_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::SetupInsert() {
-    using vehicleWheeledPhysics_SetupInsert_t = void (*)(RED4ext::vehicle::WheeledPhysics*);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_SetupInsert_t> call(vehicleWheeledPhysics_SetupInsert_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::SomethingWheelRayTrace(uint32_t a1) {
-    using vehicleWheeledPhysics_SomethingWheelRayTrace_t = void (*)(RED4ext::vehicle::WheeledPhysics*, uint32_t);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_SomethingWheelRayTrace_t> call(vehicleWheeledPhysics_SomethingWheelRayTrace_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::SomethingWheels(float a1) {
-    using vehicleWheeledPhysics_SomethingWheels_t = void (*)(RED4ext::vehicle::WheeledPhysics*, float);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_SomethingWheels_t> call(vehicleWheeledPhysics_SomethingWheels_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::TurningRollFactorStuff(float a1) {
-    using vehicleWheeledPhysics_TurningRollFactorStuff_t = void (*)(RED4ext::vehicle::WheeledPhysics*, float);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_TurningRollFactorStuff_t> call(vehicleWheeledPhysics_TurningRollFactorStuff_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE float RED4ext::vehicle::WheeledPhysics::Unk15CStuff() {
-    using vehicleWheeledPhysics_Unk15CStuff_t = float (*)(RED4ext::vehicle::WheeledPhysics*);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_Unk15CStuff_t> call(vehicleWheeledPhysics_Unk15CStuff_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::Update() {
-    using vehicleWheeledPhysics_Update_t = void (*)(RED4ext::vehicle::WheeledPhysics*);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_Update_t> call(vehicleWheeledPhysics_Update_Addr);
-    return call(this);
-}
-
-RED4EXT_INLINE void RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim(RED4ext::anim::AnimFeature_VehiclePassenger* a1) {
-    using vehicleWheeledPhysics_UpdatePassengerAnim_t = void (*)(RED4ext::vehicle::WheeledPhysics*, RED4ext::anim::AnimFeature_VehiclePassenger*);
-    RED4ext::RelocFunc<vehicleWheeledPhysics_UpdatePassengerAnim_t> call(vehicleWheeledPhysics_UpdatePassengerAnim_Addr);
-    return call(this, a1);
-}
-
-RED4EXT_INLINE uint32_t RED4ext::world::RuntimeScene::SetupWithLogging(uint8_t* a1, int64_t a2, uint32_t* a3) {
-    using worldRuntimeScene_SetupWithLogging_t = uint32_t (*)(RED4ext::world::RuntimeScene*, uint8_t*, int64_t, uint32_t*);
-    RED4ext::RelocFunc<worldRuntimeScene_SetupWithLogging_t> call(worldRuntimeScene_SetupWithLogging_Addr);
-    return call(this, a1, a2, a3);
 }
 
