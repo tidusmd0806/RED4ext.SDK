@@ -17,7 +17,7 @@ constexpr uintptr_t CBaseFunction_ExecuteNative = Addresses_CBaseFunction_Execut
 constexpr uintptr_t CBaseFunction_InternalExecute = Addresses_CBaseFunction_InternalExecute_Addr;
 /// @pattern 48 89 5C 24 08 57 48 83 EC 20 49 8B C1 4D 8B D0 44 8B 4C 24 58 48 8B DA 41 83 C9 01
 /// @nth 0/1
-constexpr uintptr_t CBaseFunction_Register = Addresses_CBaseFunction_Register_Addr;
+// constexpr uintptr_t CBaseFunction_Register = Addresses_CBaseFunction_Register_Addr;
 /// @pattern 4C 8D 05 (fn:rel) 48 8D 0D ? ? ? ? 4C 89 9B ? ? ? ?
 /// @nth 1/2
 /// @eval fn
