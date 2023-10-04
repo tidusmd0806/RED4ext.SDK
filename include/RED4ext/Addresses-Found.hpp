@@ -88,7 +88,7 @@
 #define Addresses_OpcodeHandlers_Get_Addr 0x326CCB0
 #define Addresses_ResourceDepot_Addr 0x46DE478
 #define Addresses_ResourceLoader_Addr 0x32ECCB8
-#define Addresses_ResourceLoader_FindToken_Addr 0x151B4C
+#define Addresses_ResourceLoader_FindTokenFast_Addr 0x151B4C
 #define Addresses_ResourceLoader_LoadAsync_Addr 0x66F464
 #define Addresses_ResourceReference_Fetch_Addr 0x13AE98
 #define Addresses_ResourceReference_Load_Addr 0x13AEC4

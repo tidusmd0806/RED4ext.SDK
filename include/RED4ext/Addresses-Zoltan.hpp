@@ -339,7 +339,7 @@ constexpr uintptr_t ResourceDepot = Addresses_ResourceDepot_Addr;
 constexpr uintptr_t ResourceLoader = Addresses_ResourceLoader_Addr;
 /// @pattern 48 8B C4 4C 89 40 ? 53 48 83 EC ? 48 8B DA 4C 8D 40 ?
 /// @nth 0/2
-constexpr uintptr_t ResourceLoader_FindToken = Addresses_ResourceLoader_FindToken_Addr;
+constexpr uintptr_t ResourceLoader_FindTokenFast = Addresses_ResourceLoader_FindTokenFast_Addr;
 /// @pattern 48 89 5C 24 ? 55 48 8B EC 48 83 EC ? 83 4D E8 ? 33 C0
 /// @nth 0/1
 constexpr uintptr_t ResourceLoader_LoadAsync = Addresses_ResourceLoader_LoadAsync_Addr;
