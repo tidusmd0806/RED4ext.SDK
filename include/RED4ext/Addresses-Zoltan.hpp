@@ -322,7 +322,7 @@ constexpr uintptr_t Memory_PoolStorage_OOM = Addresses_Memory_PoolStorage_OOM_Ad
 /// @pattern 4C 8D 05 (fn:rel) 48 8D 0D ? ? ? ? 4C 89 9B ? ? ? ?
 /// @nth 0/2
 /// @eval fn
-constexpr uintptr_t OpcodeHandlers_Get = Addresses_OpcodeHandlers_Get_Addr;
+constexpr uintptr_t OpcodeHandlers = Addresses_OpcodeHandlers_Addr;
 #pragma endregion
 
 #pragma region ResourceDepot
