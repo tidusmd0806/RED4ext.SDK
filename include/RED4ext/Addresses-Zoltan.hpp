@@ -10,7 +10,7 @@ namespace RED4ext::Addresses
 /// @nth 0/1
 constexpr uintptr_t CBaseFunction_ExecuteScripted = Addresses_CBaseFunction_ExecuteScripted_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 7C 24 ? 55 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ?
-/// @nth 44/66
+/// @nth 45/66
 constexpr uintptr_t CBaseFunction_ExecuteNative = Addresses_CBaseFunction_ExecuteNative_Addr;
 /// @pattern 40 55 41 54 41 55 41 56 41 57 48 81 EC C0 01 00 00 48 8D 6C 24 40 F6
 /// @nth 0/1
