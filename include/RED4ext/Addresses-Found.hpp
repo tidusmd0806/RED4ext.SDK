@@ -8,9 +8,6 @@
 #define Addresses_CBaseFunction_ExecuteScripted_Addr 0x27EB94
 #define Addresses_CBaseFunction_Handlers_Addr 0x32ACCB0
 #define Addresses_CBaseFunction_InternalExecute_Addr 0x218D40
-#define Addresses_CBaseFunction_Register_Addr                                                                          \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_CBaseFunction_Register_Addr"               \
-              "is 0 - Zoltan found no matches for RED4ext::Addresses::CBaseFunction_Register\")")
 #define Addresses_CBaseRTTIType_sub_80_Addr 0x1FAF17C
 #define Addresses_CBaseRTTIType_sub_88_Addr 0x1FAF0DC
 #define Addresses_CBaseRTTIType_sub_90_Addr 0x1FAEFB8
@@ -85,7 +82,7 @@
 #define Addresses_Memory_Vault_Realloc_Addr 0x68E988
 #define Addresses_Memory_Vault_ReallocAligned_Addr 0x156D1C
 #define Addresses_Memory_Vault_Unk1_Addr 0x1F96F8C
-#define Addresses_OpcodeHandlers_Get_Addr 0x326CCB0
+#define Addresses_OpcodeHandlers_Addr 0x326CCB0
 #define Addresses_ResourceDepot_Addr 0x46DE478
 #define Addresses_ResourceLoader_Addr 0x32ECCB8
 #define Addresses_ResourceLoader_FindTokenFast_Addr 0x151B4C
