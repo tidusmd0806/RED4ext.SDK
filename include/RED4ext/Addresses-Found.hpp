@@ -4,7 +4,7 @@
 #define ZOLTAN_EXPAND_THEN_STRINGISE(N) ZOLTAN_STRINGISE(N)
 #define __LINE_STR__ ZOLTAN_EXPAND_THEN_STRINGISE(__LINE__)
 
-#define Addresses_CBaseFunction_ExecuteNative_Addr 0x1FFA5AC
+#define Addresses_CBaseFunction_ExecuteNative_Addr 0x1FAF4EC
 #define Addresses_CBaseFunction_ExecuteScripted_Addr 0x27EB94
 #define Addresses_CBaseFunction_Handlers_Addr 0x32ACCB0
 #define Addresses_CBaseFunction_InternalExecute_Addr 0x218D40
