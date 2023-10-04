@@ -231,6 +231,7 @@ sub_128 System Name                                    1  2  3  4  5  6  7
     uint64_t unk420;
     RuntimeInfo runtimeInfo;
     uint64_t unk4A8;
+    uint64_t unk4B0;
 };
 } // namespace world
 } // namespace RED4ext
