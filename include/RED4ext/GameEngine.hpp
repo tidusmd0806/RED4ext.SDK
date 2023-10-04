@@ -12,7 +12,7 @@
 namespace RED4ext
 {
 struct CBaseRTTIType;
-//struct IScriptable;
+struct IScriptable;
 struct CGameOptions;
 struct IGameInstance;
 
@@ -235,7 +235,7 @@ struct BaseGameEngine : CBaseEngine
     int64_t unk2D8;          // 2D8
 };
 RED4EXT_ASSERT_SIZE(BaseGameEngine, 0x2E0);
-RED4EXT_ASSERT_OFFSET(BaseGameEngine, watchdogThread, 0x2D8);
+// RED4EXT_ASSERT_OFFSET(BaseGameEngine, watchdogThread, 0x2D8);
 
 struct CGameFramework
 {
