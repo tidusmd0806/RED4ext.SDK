@@ -10,7 +10,7 @@ namespace RED4ext::Addresses
 /// @nth 0/1
 constexpr uintptr_t CBaseFunction_ExecuteScripted = Addresses_CBaseFunction_ExecuteScripted_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 7C 24 ? 55 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ?
-/// @nth 44/66
+/// @nth 45/67
 constexpr uintptr_t CBaseFunction_ExecuteNative = Addresses_CBaseFunction_ExecuteNative_Addr;
 /// @pattern 40 55 41 54 41 55 41 56 41 57 48 81 EC C0 01 00 00 48 8D 6C 24 40 F6
 /// @nth 0/1
@@ -62,7 +62,7 @@ constexpr uintptr_t CClass_Unserialize = Addresses_CClass_Unserialize_Addr;
 /// @nth 104/341
 constexpr uintptr_t CClass_ToString = Addresses_CClass_ToString_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 54 41 55 41 56 41 57 48 83 EC ?
-/// @nth 513/985
+/// @nth 514/987
 constexpr uintptr_t CClass_sub_80 = Addresses_CClass_sub_80_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 02
 /// @nth 34/65
@@ -74,7 +74,7 @@ constexpr uintptr_t CClass_sub_90 = Addresses_CClass_sub_90_Addr;
 /// @nth 2/3
 constexpr uintptr_t CClass_sub_98 = Addresses_CClass_sub_98_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 55 41 56 41 57 48 8B EC
-/// @nth 354/537
+/// @nth 354/538
 constexpr uintptr_t CClass_sub_A0 = Addresses_CClass_sub_A0_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 48 89 78 ? 41 56 48 83 EC ? 48 8B 05 ? ? ? ?
 /// @nth 0/1
@@ -83,19 +83,19 @@ constexpr uintptr_t CClass_sub_B0 = Addresses_CClass_sub_B0_Addr;
 /// @nth 11/58
 constexpr uintptr_t CClass_sub_C0 = Addresses_CClass_sub_C0_Addr;
 /// @pattern 48 89 5C 24 ? 57 48 83 EC ? 8B 59 ?
-/// @nth 18/125
+/// @nth 18/126
 constexpr uintptr_t CClass_GetMaxAlignment = Addresses_CClass_GetMaxAlignment_Addr;
 /// @pattern 4C 8B DC 49 89 5B ? 49 89 6B ? 49 89 73 ? 57 41 54 41 55 41 56
-/// @nth 26/34
+/// @nth 26/33
 constexpr uintptr_t CClass_sub_D0 = Addresses_CClass_sub_D0_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 65 48 8B 04 25 ? ? ? ?
-/// @nth 7/422
+/// @nth 7/421
 constexpr uintptr_t CClass_CreateInstance = Addresses_CClass_CreateInstance_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 33 FF 48 8B DA
 /// @nth 0/4
 constexpr uintptr_t CClass_GetProperty = Addresses_CClass_GetProperty_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 48 89 78 ? 41 56 48 83 EC ? 48 8B D9
-/// @nth 6/30
+/// @nth 5/31
 constexpr uintptr_t CClass_GetProperties = Addresses_CClass_GetProperties_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 70 ? 48 89 78 ? 4C 89 60 ? 55 41 56 41 57 48 8B EC 48 83 EC ?
 /// @nth 35/115
@@ -168,7 +168,7 @@ constexpr uintptr_t CNamePool_Get = Addresses_CNamePool_Get_Addr;
 /// @eval fn
 constexpr uintptr_t CRTTIRegistrator_RTTIAsyncId = Addresses_CRTTIRegistrator_RTTIAsyncId_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 70 ? 4C 89 40 ? 48 89 50 ? 57
-/// @nth 7/40
+/// @nth 8/41
 constexpr uintptr_t CRTTIRegistrator_Add = Addresses_CRTTIRegistrator_Add_Addr;
 #pragma endregion
 
@@ -296,16 +296,16 @@ constexpr uintptr_t JobQueue_SyncWait = Addresses_JobQueue_SyncWait_Addr;
 /// @eval fn
 constexpr uintptr_t Memory_Vault = Addresses_Memory_Vault_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 48 89 78 ? 41 54 41 56 41 57
-/// @nth 5/892
+/// @nth 5/878
 constexpr uintptr_t Memory_Vault_Alloc = Addresses_Memory_Vault_Alloc_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 54 41 55 41 56 41 57
-/// @nth 8/1038
+/// @nth 8/1040
 constexpr uintptr_t Memory_Vault_AllocAligned = Addresses_Memory_Vault_AllocAligned_Addr;
 /// @pattern 40 53 48 83 EC ? 4D 8B D8 48 8B DA 4C 8B D1
 /// @nth 0/1
 constexpr uintptr_t Memory_Vault_Realloc = Addresses_Memory_Vault_Realloc_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 54 41 55 41 56 41 57
-/// @nth 10/1038
+/// @nth 10/1040
 constexpr uintptr_t Memory_Vault_ReallocAligned = Addresses_Memory_Vault_ReallocAligned_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 4C 8B 81 ? ? ? ?
 /// @nth 0/4
@@ -367,7 +367,7 @@ constexpr uintptr_t ResourceToken_Fetch = Addresses_ResourceToken_Fetch_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 70 ? 48 89 78 ? 55 48 8D 68 ? 48 81 EC ? ? ? ? 48 8B F2 48 8B D9 48 8B D1
 /// @nth 0/2
 constexpr uintptr_t ResourceToken_OnLoaded = Addresses_ResourceToken_OnLoaded_Addr;
-/// @pattern F6 05 5D ? ? ? ? 75 07 48 83 79 68 FF 75 01 C3
+/// @pattern F6 05 ? ? ? ? ? 75 0 48 83 79 68 FF 75 ? C3
 /// @nth 0/1
 constexpr uintptr_t ResourceToken_CancelUnk38 = Addresses_ResourceToken_CancelUnk38_Addr;
 /// @pattern 40 53 48 83 EC 30 48 8B D9 E8 ? ? ? ? 84 C0 75 ? 48 83 C4 30 5B C3
@@ -377,7 +377,7 @@ constexpr uintptr_t ResourceToken_DestructUnk38 = Addresses_ResourceToken_Destru
 
 #pragma region TTypedClass
 /// @pattern 48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 48 89 78 ? 41 54 41 56
-/// @nth 27/892
+/// @nth 28/878
 constexpr uintptr_t TTypedClass_IsEqual = Addresses_TTypedClass_IsEqual_Addr;
 #pragma endregion
 
