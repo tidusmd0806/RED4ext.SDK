@@ -367,7 +367,7 @@ constexpr uintptr_t ResourceToken_Fetch = Addresses_ResourceToken_Fetch_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 70 ? 48 89 78 ? 55 48 8D 68 ? 48 81 EC ? ? ? ? 48 8B F2 48 8B D9 48 8B D1
 /// @nth 0/2
 constexpr uintptr_t ResourceToken_OnLoaded = Addresses_ResourceToken_OnLoaded_Addr;
-/// @pattern F6 05 ? ? ? ? ? 75 0 48 83 79 68 FF 75 ? C3
+/// @pattern F6 05 ? ? ? ? ? 75 ? 48 83 79 68 FF 75 ? C3
 /// @nth 0/1
 constexpr uintptr_t ResourceToken_CancelUnk38 = Addresses_ResourceToken_CancelUnk38_Addr;
 /// @pattern 40 53 48 83 EC 30 48 8B D9 E8 ? ? ? ? 84 C0 75 ? 48 83 C4 30 5B C3

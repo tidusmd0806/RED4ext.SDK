@@ -91,6 +91,7 @@
 #define Addresses_ResourceReference_Fetch_Addr 0x13AFA8
 #define Addresses_ResourceReference_Load_Addr 0x13AFD4
 #define Addresses_ResourceReference_Reset_Addr 0x29660C
+#define Addresses_ResourceToken_CancelUnk38_Addr 0xBE6BAC
 #define Addresses_ResourceToken_DestructUnk38_Addr 0x261CD0
 #define Addresses_ResourceToken_Fetch_Addr 0x80DA5C
 #define Addresses_ResourceToken_OnLoaded_Addr 0x573874
