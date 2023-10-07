@@ -18,7 +18,7 @@ namespace RED4ext
 {
 struct EulerAngles;
 struct Matrix;
-struct __declspec(align(16)) Quaternion
+struct __declspec(align(0x10)) Quaternion
 {
     static constexpr const char* NAME = "Quaternion";
     static constexpr const char* ALIAS = NAME;
