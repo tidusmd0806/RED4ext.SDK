@@ -49,7 +49,7 @@
 #define Addresses_CRTTIScriptReferenceType_Set_Addr 0x209014
 #define Addresses_CRTTIScriptReferenceType_ctor_Addr 0x231A88
 #define Addresses_CRTTISystem_Get_Addr 0x25DCF4
-#define Addresses_CStack_vtbl_Addr 0x211BF51
+#define Addresses_CStack_vtbl_Addr 0x2A08238
 #define Addresses_CString_copy_Addr 0x11DA8C
 #define Addresses_CString_ctor_span_Addr 0x678644
 #define Addresses_CString_ctor_str_Addr 0x251288
