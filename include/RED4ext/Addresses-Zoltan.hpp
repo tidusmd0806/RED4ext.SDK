@@ -188,8 +188,9 @@ constexpr uintptr_t CRTTISystem_Get = Addresses_CRTTISystem_Get_Addr;
 #pragma endregion
 
 #pragma region CStack
-/// @pattern 48 8D 05 ? ? ? ? 48 89 45 ? 48 8D 45 ? 48 89 45 ? 66 0F 7F 45 ?
+/// @pattern 48 8D 05 (fn:rel) 48 89 45 ? 48 8D 45 ? 48 89 45 ? 66 0F 7F 45 ?
 /// @nth 0/1
+/// @eval fn
 constexpr uintptr_t CStack_vtbl = Addresses_CStack_vtbl_Addr;
 #pragma endregion
 
