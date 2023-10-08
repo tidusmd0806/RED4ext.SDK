@@ -50,8 +50,8 @@ enum class ERTTIType : uint8_t
 
 struct CBaseRTTIType
 {
-    /// @pattern 45 78 70 65 63 74 65 64 20 70 72 6F 70 65 72 74 79 20 6E 61 6D 65 20 69 6E 20 70 61 74 68 00
-    /// @offset -48
+    /// @pattern 55 6E 61 62 6C 65 20 74 6F 20 63 6F 6E 76 65 72 74 20 76 61 6C 75 65 20 74 6F 20 74 65 78 74 00
+    /// @offset -32
     static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;
     
     CBaseRTTIType();
@@ -126,8 +126,8 @@ RED4EXT_ASSERT_SIZE(CBaseRTTIType, 0x10);
 
 struct CClass : CBaseRTTIType
 {
-    /// @pattern 45 64 69 74 41 6C 6C 43 6C 61 73 73 50 72 6F 70
-    /// @offset -32
+    /// @pattern 5F 5F 72 65 74 75 72 6E 00
+    /// @offset -112
     static constexpr const uintptr_t VFT = CClass_VFT_Addr;
 
     struct Flags
