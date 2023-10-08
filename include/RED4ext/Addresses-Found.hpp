@@ -29,12 +29,12 @@
 #define Addresses_CClass_Unserialize_Addr 0x14CCE4
 #define Addresses_CClass_sub_80_Addr 0x1FAE574
 #define Addresses_CClass_sub_88_Addr 0x1FAE4C8
-#define Addresses_CClass_sub_90_Addr 0x9581C0
+#define Addresses_CClass_sub_90_Addr 0x760AD0
 #define Addresses_CClass_sub_98_Addr 0x1FAF750
 #define Addresses_CClass_sub_A0_Addr 0x1FAED84
 #define Addresses_CClass_sub_B0_Addr 0x87C070
-#define Addresses_CClass_sub_C0_Addr 0x547E70
-#define Addresses_CClass_sub_D0_Addr 0x208CE88
+#define Addresses_CClass_sub_C0_Addr 0x558740
+#define Addresses_CClass_sub_D0_Addr 0x1FAF420
 #define Addresses_CEnum_FromString_Addr 0x6FE214
 #define Addresses_CEnum_ToString_Addr 0x6FBC5C
 #define Addresses_CEnum_Unserialize_Addr 0x14D9D4

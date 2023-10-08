@@ -68,7 +68,7 @@ constexpr uintptr_t CClass_sub_80 = Addresses_CClass_sub_80_Addr;
 /// @nth 34/65
 constexpr uintptr_t CClass_sub_88 = Addresses_CClass_sub_88_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 81 EC ? ? ? ?
-/// @nth 1/3
+/// @nth 0/3
 constexpr uintptr_t CClass_sub_90 = Addresses_CClass_sub_90_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 81 EC ? ? ? ?
 /// @nth 2/3
@@ -80,13 +80,13 @@ constexpr uintptr_t CClass_sub_A0 = Addresses_CClass_sub_A0_Addr;
 /// @nth 0/1
 constexpr uintptr_t CClass_sub_B0 = Addresses_CClass_sub_B0_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 83 64 24 ? ?
-/// @nth 11/58
+/// @nth 12/58
 constexpr uintptr_t CClass_sub_C0 = Addresses_CClass_sub_C0_Addr;
 /// @pattern 48 89 5C 24 ? 57 48 83 EC ? 8B 59 ?
 /// @nth 18/126
 constexpr uintptr_t CClass_GetMaxAlignment = Addresses_CClass_GetMaxAlignment_Addr;
 /// @pattern 4C 8B DC 49 89 5B ? 49 89 6B ? 49 89 73 ? 57 41 54 41 55 41 56
-/// @nth 26/33
+/// @nth 25/33
 constexpr uintptr_t CClass_sub_D0 = Addresses_CClass_sub_D0_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 65 48 8B 04 25 ? ? ? ?
 /// @nth 7/421
