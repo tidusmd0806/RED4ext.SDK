@@ -8,11 +8,11 @@
 #include <RED4ext/RTTITypes.hpp>
 #include <RED4ext/Relocation.hpp>
 
-RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetNativeType()
-{
-    RelocFunc<decltype(&RED4ext::IScriptable::GetNativeType)> call(VFT, 0x00);
-    return call(this);
-}
+// RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetNativeType()
+// {
+//     RelocFunc<decltype(&RED4ext::IScriptable::GetNativeType)> call(VFT, 0x00);
+//     return call(this);
+// }
 
 RED4EXT_INLINE RED4ext::IScriptable::IScriptable()
     : valueHolder(nullptr)
@@ -37,8 +37,11 @@ RED4EXT_INLINE RED4ext::CClass* RED4ext::IScriptable::GetType()
 
 RED4EXT_INLINE void RED4ext::IScriptable::sub_D8(int64_t a1, int64_t a2)
 {
-    RelocFunc<decltype(&RED4ext::IScriptable::sub_D8)> call(VFT, 0xD8);
-    call(this, a1, a2);
+    // RelocFunc<decltype(&RED4ext::IScriptable::sub_D8)> call(VFT, 0xD8);
+    // call(this, a1, a2);
+    using func_t = void (*)(ISerializable*, int64_t, int64_t);
+    RelocFunc<func_t> func(Addresses::IScriptable_sub_D8);
+    func(this, a1, a2);
 }
 
 RED4EXT_INLINE void RED4ext::IScriptable::sub_E0()

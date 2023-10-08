@@ -14,7 +14,7 @@ struct IScriptable : ISerializable
 {
     static constexpr const uintptr_t VFT = IScriptable_VFT_Addr;
 
-    virtual CClass* GetNativeType() override;
+    // virtual CClass* GetNativeType() override;
     IScriptable();
 
     ~IScriptable() override;

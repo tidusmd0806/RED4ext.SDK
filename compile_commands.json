@@ -55,12 +55,6 @@
 },
 {
   "directory": "C:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/build",
-  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1435~1.322\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DRED4EXT_STATIC_LIB -IC:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd /FoCMakeFiles\\RED4ext.SDK.dir\\src\\IO\\MemoryStream.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\IO\\MemoryStream.cpp",
-  "file": "C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\IO\\MemoryStream.cpp",
-  "output": "CMakeFiles\\RED4ext.SDK.dir\\src\\IO\\MemoryStream.cpp.obj"
-},
-{
-  "directory": "C:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/build",
   "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1435~1.322\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DRED4EXT_STATIC_LIB -IC:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd /FoCMakeFiles\\RED4ext.SDK.dir\\src\\ISerializable.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\ISerializable.cpp",
   "file": "C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\ISerializable.cpp",
   "output": "CMakeFiles\\RED4ext.SDK.dir\\src\\ISerializable.cpp.obj"
@@ -151,6 +145,12 @@
 },
 {
   "directory": "C:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1435~1.322\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DRED4EXT_STATIC_LIB -IC:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd /FoCMakeFiles\\RED4ext.SDK.dir\\src\\Scripting\\Natives\\gameIAttachmentSlotsListener.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\Scripting\\Natives\\gameIAttachmentSlotsListener.cpp",
+  "file": "C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\Scripting\\Natives\\gameIAttachmentSlotsListener.cpp",
+  "output": "CMakeFiles\\RED4ext.SDK.dir\\src\\Scripting\\Natives\\gameIAttachmentSlotsListener.cpp.obj"
+},
+{
+  "directory": "C:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/build",
   "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1435~1.322\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DRED4EXT_STATIC_LIB -IC:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd /FoCMakeFiles\\RED4ext.SDK.dir\\src\\Scripting\\Natives\\gameIGameSystem.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\Scripting\\Natives\\gameIGameSystem.cpp",
   "file": "C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\Scripting\\Natives\\gameIGameSystem.cpp",
   "output": "CMakeFiles\\RED4ext.SDK.dir\\src\\Scripting\\Natives\\gameIGameSystem.cpp.obj"
@@ -202,6 +202,12 @@
   "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1435~1.322\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DRED4EXT_STATIC_LIB -IC:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd /FoCMakeFiles\\RED4ext.SDK.dir\\src\\SystemUpdate.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\SystemUpdate.cpp",
   "file": "C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\SystemUpdate.cpp",
   "output": "CMakeFiles\\RED4ext.SDK.dir\\src\\SystemUpdate.cpp.obj"
+},
+{
+  "directory": "C:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/build",
+  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1435~1.322\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DRED4EXT_STATIC_LIB -IC:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd /FoCMakeFiles\\RED4ext.SDK.dir\\src\\TLS.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\TLS.cpp",
+  "file": "C:\\Users\\Jack\\Documents\\cyberpunk\\flight_control\\deps\\red4ext.sdk\\src\\TLS.cpp",
+  "output": "CMakeFiles\\RED4ext.SDK.dir\\src\\TLS.cpp.obj"
 },
 {
   "directory": "C:/Users/Jack/Documents/cyberpunk/flight_control/deps/red4ext.sdk/build",
