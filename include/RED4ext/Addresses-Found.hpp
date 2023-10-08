@@ -103,7 +103,7 @@
 #define BaseStream_ReadWriteHandleID_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: BaseStream_ReadWriteHandleID_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::BaseStream::ReadWriteHandleID\")")
-#define CBaseRTTIType_VFT_Addr 0x2F59EC0
+#define CBaseRTTIType_VFT_Addr 0x2F5A050
 #define CClass_AddEventCallbackType_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_AddEventCallbackType_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::CClass::AddEventCallbackType\")")
@@ -113,7 +113,7 @@
 #define CClass_SetupScriptCallbacks_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_SetupScriptCallbacks_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::CClass::SetupScriptCallbacks\")")
-#define CClass_VFT_Addr 0x2F59E40
+#define CClass_VFT_Addr 0x2A08CF0
 #define CGameFramework_Systems_120_128_130_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CGameFramework_Systems_120_128_130_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::CGameFramework::Systems_120_128_130\")")
