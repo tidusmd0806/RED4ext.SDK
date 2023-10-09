@@ -47,30 +47,30 @@ struct MappinsContainerController : game::ui::ProjectedHUDGameController
     // uint8_t unk280[0x2D0 - 0x280]; // 280
 
     uint64_t unk148[3];
-    ink::WidgetPath spawnContainerPath;
+    ink::WidgetPath spawnContainerPath; // 178
     void* binkSystem;
     void* questSystem;
-    uint64_t gpsQuestPathWidget[3];
-    uint64_t gpsPlayerTrackedPathWidget[3];
-    Handle<void> controllerSubtype;
-    DynArray<void*> unk1C0;
+    uint64_t gpsQuestPathWidget[3]; // 198
+    uint64_t gpsPlayerTrackedPathWidget[3]; // 1B0
+    Handle<void> controllerSubtype; // 1C8
+    DynArray<void*> unk1C0; // 1D8
 
-    WeakHandle<game::mappins::QuestMappin> questMappin;
-    DynArray<Vector4> questMappinPoints;
-    uint64_t hasQuestMappin;
-    WeakHandle<game::mappins::IMappin> poiMappin;
-    DynArray<Vector4> poiMappinPoints;
-    uint64_t hasPoiMappin;
-    uint64_t unk220;
-    volatile signed __int8 needsUpdateMaybe;
-    Handle<void> callback;
-    Handle<void> callback2;
-    Handle<void> callback3;
-    Handle<void> callback4;
-    uint32_t psmVision;
-    uint32_t psmCombat;
-    uint32_t psmZone;
-    GameplayTier tier;
+    WeakHandle<game::mappins::QuestMappin> questMappin; // 1E8
+    DynArray<Vector4> questMappinPoints; // 1F8
+    uint64_t hasQuestMappin; // 208
+    WeakHandle<game::mappins::IMappin> poiMappin; // 210
+    DynArray<Vector4> poiMappinPoints; // 220
+    uint64_t hasPoiMappin; // 230
+    uint64_t unk220; // 240
+    volatile signed __int8 needsUpdateMaybe; // 248
+    Handle<void> callback; // 250
+    Handle<void> callback2; // 260
+    Handle<void> callback3; // 270
+    Handle<void> callback4; // 280
+    uint32_t psmVision; // 288
+    uint32_t psmCombat; // 28C
+    uint32_t psmZone; // 290
+    GameplayTier tier; // 294
     uint32_t braindance;
     uint32_t unk284;
     void* unk288[4];
