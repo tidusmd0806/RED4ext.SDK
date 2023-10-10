@@ -26,6 +26,7 @@ struct CClassStaticFunction;
 struct CallbackDefinition;
 struct CallbackStorage;
 struct Variant;
+struct RawBuffer;
 
 enum class ERTTIType : uint8_t
 {
@@ -72,7 +73,7 @@ struct CBaseRTTIType
     virtual void Move(ScriptInstance aLhs, ScriptInstance aRhs) const;                             // 58
     virtual bool Unserialize(BaseStream* aStream, ScriptInstance aInstance, int64_t a3) const = 0; // 60
     virtual bool ToString(const ScriptInstance aInstance, CString& aOut) const;                    // 68
-    virtual bool FromString(ScriptInstance aInstance, const CString& aString) const;               // 70
+    virtual bool FromString(ScriptInstance aInstance, const RawBuffer& aString) const;               // 70
     virtual bool sub_78();                                                                         // 78
     virtual bool sub_80(int64_t a1, ScriptInstance aInstance);                                     // 80
     virtual bool sub_88(int64_t a1, ScriptInstance aInstance);                                     // 88
@@ -357,7 +358,7 @@ struct CEnum : CBaseRTTIType
     void Assign(ScriptInstance aLhs, const ScriptInstance aRhs) const final;                         // 50
     bool Unserialize(BaseStream* aStream, ScriptInstance aInstance, int64_t a3) const final;         // 60
     bool ToString(const ScriptInstance aInstance, CString& aOut) const final;                        // 68
-    bool FromString(ScriptInstance aInstance, const CString& aString) const final;                   // 70
+    bool FromString(ScriptInstance aInstance, const RawBuffer& aString) const final;                   // 70
 
     CName name;                       // 10
     CName computedName;               // 18
@@ -400,7 +401,7 @@ struct CBitfield : CBaseRTTIType
     void Assign(ScriptInstance aLhs, const ScriptInstance aRhs) const final;                         // 50
     bool Unserialize(BaseStream* aStream, ScriptInstance aInstance, int64_t a3) const final;         // 60
     bool ToString(const ScriptInstance aInstance, CString& aOut) const final;                        // 68
-    bool FromString(ScriptInstance aInstance, const CString& aString) const final;                   // 70
+    bool FromString(ScriptInstance aInstance, const RawBuffer& aString) const final;                   // 70
 
     CName name;         // 10
     CName computedName; // 18

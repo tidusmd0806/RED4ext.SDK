@@ -116,7 +116,7 @@ RED4EXT_INLINE bool RED4ext::CBaseRTTIType::ToString(const ScriptInstance aInsta
     return false;
 }
 
-RED4EXT_INLINE bool RED4ext::CBaseRTTIType::FromString(ScriptInstance aInstance, const CString& aString) const
+RED4EXT_INLINE bool RED4ext::CBaseRTTIType::FromString(ScriptInstance aInstance, const RawBuffer& aString) const
 {
     RED4EXT_UNUSED_PARAMETER(aInstance);
     RED4EXT_UNUSED_PARAMETER(aString);
@@ -536,9 +536,9 @@ RED4EXT_INLINE bool RED4ext::CEnum::ToString(const ScriptInstance aInstance, CSt
     return func(this, aInstance, aOut);
 }
 
-RED4EXT_INLINE bool RED4ext::CEnum::FromString(ScriptInstance aInstance, const CString& aString) const
+RED4EXT_INLINE bool RED4ext::CEnum::FromString(ScriptInstance aInstance, const RawBuffer& aString) const
 {
-    using func_t = bool (*)(const CEnum*, ScriptInstance, const CString&);
+    using func_t = bool (*)(const CEnum*, ScriptInstance, const RawBuffer&);
     RelocFunc<func_t> func(Addresses::CEnum_FromString);
     return func(this, aInstance, aString);
 }
@@ -656,9 +656,9 @@ RED4EXT_INLINE bool RED4ext::CBitfield::ToString(const ScriptInstance aInstance,
     return func(this, aInstance, aOut);
 }
 
-RED4EXT_INLINE bool RED4ext::CBitfield::FromString(ScriptInstance aInstance, const CString& aString) const
+RED4EXT_INLINE bool RED4ext::CBitfield::FromString(ScriptInstance aInstance, const RawBuffer& aString) const
 {
-    using func_t = bool (*)(const CBitfield*, ScriptInstance, const CString&);
+    using func_t = bool (*)(const CBitfield*, ScriptInstance, const RawBuffer&);
     RelocFunc<func_t> func(Addresses::CBitfield_FromString);
     return func(this, aInstance, aString);
 }
