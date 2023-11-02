@@ -12809,15 +12809,15 @@
 // MuteArm_Class rva 18446605160464873056 not within expected values
 #define MuteArm_Class_VFT_Addr 0x2F6A8D0
 #define MuteArm_VFT_Addr 0x2FFB7D8
-// MutedMarkersConfig.LootConfig_Class rva 18446605160472504256 not within expected values
-#define MutedMarkersConfig.LootConfig_Class_VFT_Addr 0x2F6A8D0
-#define MutedMarkersConfig.LootConfig_VFT_Addr 0x29E4CA0
-// MutedMarkersConfig.MiniMapConfig_Class rva 18446605160472504992 not within expected values
-#define MutedMarkersConfig.MiniMapConfig_Class_VFT_Addr 0x2F6A8D0
-#define MutedMarkersConfig.MiniMapConfig_VFT_Addr 0x29E4CA0
-// MutedMarkersConfig.WorldConfig_Class rva 18446605160472505728 not within expected values
-#define MutedMarkersConfig.WorldConfig_Class_VFT_Addr 0x2F6A8D0
-#define MutedMarkersConfig.WorldConfig_VFT_Addr 0x29E4CA0
+// MutedMarkersConfig_LootConfig_Class rva 18446605160472504256 not within expected values
+#define MutedMarkersConfig_LootConfig_Class_VFT_Addr 0x2F6A8D0
+#define MutedMarkersConfig_LootConfig_VFT_Addr 0x29E4CA0
+// MutedMarkersConfig_MiniMapConfig_Class rva 18446605160472504992 not within expected values
+#define MutedMarkersConfig_MiniMapConfig_Class_VFT_Addr 0x2F6A8D0
+#define MutedMarkersConfig_MiniMapConfig_VFT_Addr 0x29E4CA0
+// MutedMarkersConfig_WorldConfig_Class rva 18446605160472505728 not within expected values
+#define MutedMarkersConfig_WorldConfig_Class_VFT_Addr 0x2F6A8D0
+#define MutedMarkersConfig_WorldConfig_VFT_Addr 0x29E4CA0
 // NCPDJobDoneEvent_Class rva 18446605160455677232 not within expected values
 #define NCPDJobDoneEvent_Class_VFT_Addr 0x2F6A8D0
 #define NCPDJobDoneEvent_VFT_Addr 0x2A27AC8
