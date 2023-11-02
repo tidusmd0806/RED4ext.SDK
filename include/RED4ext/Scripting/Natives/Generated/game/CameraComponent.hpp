@@ -18,7 +18,7 @@ struct WorldPositionInterface {
     virtual void sub_08();
 };
 
-struct CameraComponent : public ent::BaseCameraComponent, WorldPositionInterface
+struct __declspec(align(0x10)) CameraComponent : public ent::BaseCameraComponent, WorldPositionInterface
 {
     static constexpr const char* NAME = "gameCameraComponent";
     static constexpr const char* ALIAS = "CameraComponent";

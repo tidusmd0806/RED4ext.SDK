@@ -32,7 +32,7 @@ struct WidgetBaseComponent_Helper
     Handle<ent::Entity> unk188; // 18
 };
 
-struct WidgetBaseComponent : ent::IPlacedComponent
+struct __declspec(align(0x10)) WidgetBaseComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "WidgetBaseComponent";
     static constexpr const char* ALIAS = NAME;

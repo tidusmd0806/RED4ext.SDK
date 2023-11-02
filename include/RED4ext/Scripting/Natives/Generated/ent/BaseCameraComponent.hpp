@@ -14,7 +14,7 @@
 namespace RED4ext
 {
 namespace ent { 
-// struct BaseCameraComponent : ent::IPlacedComponent
+// struct __declspec(align(0x10)) BaseCameraComponent : ent::IPlacedComponent
 // {
 //     static constexpr const char* NAME = "entBaseCameraComponent";
 //     static constexpr const char* ALIAS = "entCameraComponent";

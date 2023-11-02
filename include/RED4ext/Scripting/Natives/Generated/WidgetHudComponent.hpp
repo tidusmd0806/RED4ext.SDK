@@ -32,7 +32,7 @@ struct WidgetHudComponent_Interface
     uint32_t unk20C;
 };
 
-struct WidgetHudComponent : WidgetHudComponentInterface, WidgetHudComponent_Interface
+struct __declspec(align(0x10)) WidgetHudComponent : WidgetHudComponentInterface, WidgetHudComponent_Interface
 {
     static constexpr const char* NAME = "WidgetHudComponent";
     static constexpr const char* ALIAS = NAME;

@@ -18,7 +18,7 @@ namespace RED4ext
 
 namespace ent {
 struct ITransformBinding;
-struct IPlacedComponent : IComponent
+struct __declspec(align(0x10)) IPlacedComponent : IComponent
 {
     static constexpr const char* NAME = "entIPlacedComponent";
     static constexpr const char* ALIAS = "IPlacedComponent";

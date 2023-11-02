@@ -103,6 +103,7 @@ struct RTTIRegistrator
 {
     typedef void (*CallbackFunc)(void);
 
+    [[deprecated("Use 'AddRegisterCallback()' and `AddPostRegisterCallback()` instead.")]]
     static void Add(CallbackFunc aRegFunc, CallbackFunc aPostRegFunc, bool aUnused = true);
 
     /**

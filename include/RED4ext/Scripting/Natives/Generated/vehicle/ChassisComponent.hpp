@@ -15,11 +15,10 @@ namespace RED4ext
 namespace physics { struct SystemResource; }
 
 namespace vehicle { 
-// struct ChassisComponent : ent::IPlacedComponent
+// struct __declspec(align(0x10)) ChassisComponent : ent::IPlacedComponent
 // {
 //     static constexpr const char* NAME = "vehicleChassisComponent";
 //     static constexpr const char* ALIAS = NAME;
-
 //     uint8_t unk120[0x128 - 0x120]; // 120
 //     Ref<physics::SystemResource> collisionResource; // 128
 //     Ref<physics::SystemResource> optionalPlayerOnlyCollisionResource; // 140

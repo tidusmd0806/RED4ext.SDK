@@ -19,7 +19,7 @@ namespace RED4ext
 namespace physics { struct FilterData; }
 
 namespace ent { 
-struct PhysicalMeshComponent : ent::MeshComponent, ent::ITransformAttachable
+struct __declspec(align(0x10)) PhysicalMeshComponent : ent::MeshComponent, ent::ITransformAttachable
 {
     static constexpr const char* NAME = "entPhysicalMeshComponent";
     static constexpr const char* ALIAS = "PhysicalMeshComponent";

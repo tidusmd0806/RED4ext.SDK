@@ -94,7 +94,7 @@ struct TPPCameraUpdate
 };
 
 
-struct TPPCameraComponent : public game::CameraComponent
+struct __declspec(align(0x10)) TPPCameraComponent : public game::CameraComponent
 {
     static constexpr const char* NAME = "vehicleTPPCameraComponent";
     static constexpr const char* ALIAS = NAME;

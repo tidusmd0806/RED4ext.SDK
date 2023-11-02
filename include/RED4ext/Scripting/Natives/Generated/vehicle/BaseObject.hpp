@@ -24,8 +24,7 @@ namespace RED4ext
 {
 namespace vehicle
 {
-
-// struct BaseObject : game::Object
+// struct __declspec(align(0x10)) BaseObject : game::Object
 // {
 //     static constexpr const char* NAME = "vehicleBaseObject";
 //     static constexpr const char* ALIAS = "VehicleObject";
