@@ -30,7 +30,9 @@
 #define Addresses_CClass_Unserialize_Addr 0x15A654
 #define Addresses_CClass_sub_80_Addr 0x1FBFEA8
 #define Addresses_CClass_sub_88_Addr 0x1FBFDFC
-#define Addresses_CClass_sub_90_Addr 0x94F400
+#define Addresses_CClass_sub_90_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_CClass_sub_90_Addr"                        \
+              "is 0 - Zoltan found too many matches for RED4ext::Addresses::CClass_sub_90 (3)\")")
 #define Addresses_CClass_sub_98_Addr 0x1FC1084
 #define Addresses_CClass_sub_A0_Addr 0x1FC06B8
 #define Addresses_CClass_sub_B0_Addr 0x8F5524
@@ -65,7 +67,7 @@
 #define Addresses_ISerializable_sub_78_Addr 0x93D174
 #define Addresses_ISerializable_sub_A0_Addr 0x442A28
 #define Addresses_ISerializable_sub_C0_Addr 0x49137C
-#define Addresses_JobDispatcher_Addr 0x367B6B0
+#define Addresses_JobDispatcher_Addr 0x3310640
 #define Addresses_JobDispatcher_DispatchJob_Addr 0x164DB0
 #define Addresses_JobHandle_Join_Addr 0x164594
 #define Addresses_JobHandle_ctor_Addr 0x166838
@@ -85,7 +87,7 @@
 #define Addresses_Memory_Vault_Unk1_Addr 0x1FA9390
 #define Addresses_OpcodeHandlers_Addr 0x327EEB0
 #define Addresses_ResourceDepot_Addr 0x4773B18
-#define Addresses_ResourceLoader_Addr 0x368C6B8
+#define Addresses_ResourceLoader_Addr 0x32FEEB8
 #define Addresses_ResourceLoader_FindTokenFast_Addr 0x15F598
 #define Addresses_ResourceLoader_LoadAsync_Addr 0x694794
 #define Addresses_ResourceReference_Fetch_Addr 0x148914
