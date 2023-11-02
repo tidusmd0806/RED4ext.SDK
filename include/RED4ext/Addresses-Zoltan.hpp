@@ -68,7 +68,7 @@ constexpr uintptr_t CClass_sub_80 = Addresses_CClass_sub_80_Addr;
 /// @nth 34/65
 constexpr uintptr_t CClass_sub_88 = Addresses_CClass_sub_88_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 81 EC ? ? ? ?
-/// @nth 0/3
+/// @nth10/3
 constexpr uintptr_t CClass_sub_90 = Addresses_CClass_sub_90_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 81 EC ? ? ? ?
 /// @nth 2/3
@@ -252,7 +252,7 @@ constexpr uintptr_t ISerializable_sub_C0 = Addresses_ISerializable_sub_C0_Addr;
 
 #pragma region JobDispatcher
 /// @pattern 48 89 05 (fn:rel) 48 83 C4 ? 5F C3
-/// @nth 3/6
+/// @nth 1/6
 /// @eval fn
 constexpr uintptr_t JobDispatcher = Addresses_JobDispatcher_Addr;
 /// @pattern 48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 44 88 40 ? 57 41 54 41 55
@@ -334,7 +334,7 @@ constexpr uintptr_t ResourceDepot = Addresses_ResourceDepot_Addr;
 
 #pragma region ResourceLoader
 /// @pattern 48 89 05 (fn:rel) 48 83 C4 ? 5F C3
-/// @nth 0/6
+/// @nth 2/6
 /// @eval fn
 constexpr uintptr_t ResourceLoader = Addresses_ResourceLoader_Addr;
 /// @pattern 48 8B C4 4C 89 40 ? 53 48 83 EC ? 48 8B DA 4C 8D 40 ?
