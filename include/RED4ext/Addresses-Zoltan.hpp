@@ -68,7 +68,7 @@ constexpr uintptr_t CClass_sub_80 = Addresses_CClass_sub_80_Addr;
 /// @nth 34/65
 constexpr uintptr_t CClass_sub_88 = Addresses_CClass_sub_88_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 81 EC ? ? ? ?
-/// @nth10/3
+/// @nth 1/3
 constexpr uintptr_t CClass_sub_90 = Addresses_CClass_sub_90_Addr;
 /// @pattern 48 89 5C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 81 EC ? ? ? ?
 /// @nth 2/3
