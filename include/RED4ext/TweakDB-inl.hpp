@@ -6,7 +6,7 @@
 
 #include <cstdlib>
 
-#include <RED4ext/Addresses-Zoltan.hpp>
+#include <RED4ext/Addresses.hpp>
 #include <RED4ext/RTTISystem.hpp>
 #include <RED4ext/Relocation.hpp>
 

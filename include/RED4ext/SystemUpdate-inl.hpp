@@ -4,7 +4,7 @@
 #include <RED4ext/SystemUpdate.hpp>
 #endif
 
-#include <RED4ext/Addresses-Zoltan.hpp>
+#include <RED4ext/Addresses.hpp>
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Relocation.hpp>
 #include <RED4ext/Scripting/Natives/Generated/IUpdatableSystem.hpp>

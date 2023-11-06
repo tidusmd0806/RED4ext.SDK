@@ -6,7 +6,7 @@
 
 #include <cstring>
 
-#include <RED4ext/Addresses-Zoltan.hpp>
+#include <RED4ext/Addresses.hpp>
 #include <RED4ext/Relocation.hpp>
 
 RED4EXT_INLINE RED4ext::CString::CString(Memory::IAllocator* aAllocator)

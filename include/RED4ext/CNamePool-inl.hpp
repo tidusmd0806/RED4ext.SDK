@@ -4,7 +4,7 @@
 #include <RED4ext/CNamePool.hpp>
 #endif
 
-#include <RED4ext/Addresses-Zoltan.hpp>
+#include <RED4ext/Addresses.hpp>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Relocation.hpp>
 

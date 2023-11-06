@@ -4,7 +4,7 @@
 #include <RED4ext/Memory/Vault.hpp>
 #endif
 
-#include <RED4ext/Addresses-Zoltan.hpp>
+#include <RED4ext/Addresses.hpp>
 #include <RED4ext/Relocation.hpp>
 
 RED4EXT_INLINE RED4ext::Memory::Vault* RED4ext::Memory::Vault::Get()
