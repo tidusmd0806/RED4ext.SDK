@@ -26,11 +26,13 @@ struct RuntimeSystemPhysics : world::IRuntimeSystem
     __int64 __fastcall FreeGeos();
 
 
-    uint8_t unk48[0x1B0 - 0x48]; // 48
-    Handle<physics::GeometryCache> geoCache; // 1B0
-    uint8_t unk1C0[0x1F8 - 0x1C0]; // 1C0
+    // uint8_t unk48[0x1B0 - 0x48]; // 48
+    // Handle<physics::GeometryCache> geoCache; // 1B0
+    // uint8_t unk1C0[0x1F8 - 0x1C0]; // 1C0
+    
+    uint8_t unk48[0x200 - 0x48]; // 48
 };
-RED4EXT_ASSERT_SIZE(RuntimeSystemPhysics, 0x1F8);
+RED4EXT_ASSERT_SIZE(RuntimeSystemPhysics, 0x200);
 } // namespace world
 using worldRuntimeSystemPhysics = world::RuntimeSystemPhysics;
 } // namespace RED4ext

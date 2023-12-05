@@ -65,18 +65,18 @@ struct CBaseEngine
     {
         uint8_t pad0[0x140];
         uint32_t unk140;
-        uint8_t pad144[0x154 - 0x144];
-        uint32_t unk154;
-        uint8_t pad158[0x164 - 0x158];
+        uint8_t pad144[0x164 - 0x144];
         uint32_t unk164;
+        uint8_t pad158[0x164 - 0x158];
+        uint32_t unk174;
         void* hWnd;
-        uint8_t pad170[0x9];
+        uint8_t pad180[0x9];
         uint8_t isClipped;
     };
-    RED4EXT_ASSERT_OFFSET(UnkD0, unk154, 0x154);
     RED4EXT_ASSERT_OFFSET(UnkD0, unk164, 0x164);
-    RED4EXT_ASSERT_OFFSET(UnkD0, hWnd, 0x168);
-    RED4EXT_ASSERT_OFFSET(UnkD0, isClipped, 0x179);
+    RED4EXT_ASSERT_OFFSET(UnkD0, unk174, 0x174);
+    RED4EXT_ASSERT_OFFSET(UnkD0, hWnd, 0x178);
+    RED4EXT_ASSERT_OFFSET(UnkD0, isClipped, 0x189);
 
     struct Unk108
     {
