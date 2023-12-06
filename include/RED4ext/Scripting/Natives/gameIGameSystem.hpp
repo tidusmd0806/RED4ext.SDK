@@ -63,14 +63,16 @@ struct IGameSystem : IUpdatableSystem
     virtual void* IsSavingLocked(SaveLock* aLock, bool a2);                                                   // 170
     virtual void OnStreamingWorldLoaded(world::RuntimeScene* aScene, uint64_t a2, const JobGroup& aJobGroup); // 178
     virtual void sub_180();                                                                                   // 180
-    virtual void sub_188();                                                                                   // 188
+    virtual void sub_188();       
     // called from GameInstance->sub_20, recieves some struct based on game performance setting & crowd density
     virtual void sub_190(HighLow* a1);                                                                        // 190
+    virtual void sub_198();                                                                                   // 198
     // called after created & gameInstance is set
     // OnInitialize called
     // Tweaks loaded
-    virtual void OnInitialize(const JobHandle& aJob);                                                         // 198
-    virtual void OnUninitialize();                                                                            // 1A0
+    virtual void OnInitialize(const JobHandle& aJob);                                                         // 1A0
+    virtual void OnUninitialize();                                                                            // 1A8
+
 
     // 1.52 RVA: 0xAEC8E0 / 11454688
     // Sets gameInstance, creates unkThing, calls sub_198
