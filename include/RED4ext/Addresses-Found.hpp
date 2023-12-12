@@ -4,106 +4,122 @@
 #define ZOLTAN_EXPAND_THEN_STRINGISE(N) ZOLTAN_STRINGISE(N)
 #define __LINE_STR__ ZOLTAN_EXPAND_THEN_STRINGISE(__LINE__)
 
-#define Addresses_CBaseFunction_ExecuteNative_Addr 0x1FC191C
-#define Addresses_CBaseFunction_ExecuteScripted_Addr 0x1874F0
-#define Addresses_CBaseFunction_Handlers_Addr 0x32BEEB0
-#define Addresses_CBaseFunction_InternalExecute_Addr 0x2E9C70
-#define Addresses_CBaseRTTIType_sub_80_Addr 0x1FC15AC
-#define Addresses_CBaseRTTIType_sub_88_Addr 0x1FC150C
-#define Addresses_CBaseRTTIType_sub_90_Addr 0x1FC13E8
-#define Addresses_CBaseRTTIType_sub_98_Addr 0x1FC1638
-#define Addresses_CBaseRTTIType_sub_A0_Addr 0x1FC13D0
-#define Addresses_CBitfield_FromString_Addr 0x1FD1E44
-#define Addresses_CBitfield_ToString_Addr 0x1FD1F5C
-#define Addresses_CBitfield_Unserialize_Addr 0x1BD1C4
-#define Addresses_CClassFunction_ctor_Addr 0xA4E4A8
-#define Addresses_CClassStaticFunction_ctor_Addr 0xA4E43C
-#define Addresses_CClass_AssignDefaultValuesToProperties_Addr 0x15A168
-#define Addresses_CClass_ClearScriptedData_Addr 0x5844B8
-#define Addresses_CClass_CreateInstance_Addr 0x159FD0
-#define Addresses_CClass_GetMaxAlignment_Addr 0x583664
-#define Addresses_CClass_GetProperties_Addr 0x47DB70
-#define Addresses_CClass_GetProperty_Addr 0x15AF58
-#define Addresses_CClass_InitializeProperties_Addr 0x15A894
-#define Addresses_CClass_ToString_Addr 0x845CA8
-#define Addresses_CClass_Unserialize_Addr 0x15A654
-#define Addresses_CClass_sub_80_Addr 0x1FBFEA8
-#define Addresses_CClass_sub_88_Addr 0x1FBFDFC
-#define Addresses_CClass_sub_90_Addr 0xB27B88
-#define Addresses_CClass_sub_98_Addr 0x1FC1084
-#define Addresses_CClass_sub_A0_Addr 0x1FC06B8
-#define Addresses_CClass_sub_B0_Addr 0x8F5524
-#define Addresses_CClass_sub_C0_Addr 0x4DD0B4
-#define Addresses_CClass_sub_D0_Addr 0x1FC0D54
-#define Addresses_CEnum_FromString_Addr 0x6D960C
-#define Addresses_CEnum_ToString_Addr 0x6D7054
-#define Addresses_CEnum_Unserialize_Addr 0x15B344
-#define Addresses_CGameEngine_Addr 0x3302BF0
-#define Addresses_CGlobalFunction_ctor_Addr 0xA4E3F0
-#define Addresses_CNamePool_AddCString_Addr 0x217BF14
-#define Addresses_CNamePool_AddCstr_Addr 0x21FD98
-#define Addresses_CNamePool_AddPair_Addr 0x2F471C
-#define Addresses_CNamePool_Get_Addr 0x1A11CC
-#define Addresses_CRTTIRegistrator_Add_Addr 0x873030
-#define Addresses_CRTTIRegistrator_RTTIAsyncId_Addr 0x3E3CB8C
-#define Addresses_CRTTIScriptReferenceType_Set_Addr 0x2EAB7C
-#define Addresses_CRTTIScriptReferenceType_ctor_Addr 0x180724
-#define Addresses_CRTTISystem_Get_Addr 0x224838
-#define Addresses_CStack_vtbl_Addr 0x2A860F0
-#define Addresses_CString_copy_Addr 0x20348C
-#define Addresses_CString_ctor_span_Addr 0x3034D8
-#define Addresses_CString_ctor_str_Addr 0x217E88
-#define Addresses_CString_dtor_Addr 0x158014
-#define Addresses_DynArray_Realloc_Addr 0x1627E8
-#define Addresses_Handle_DecWeakRef_Addr 0x15E808
-#define Addresses_Handle_ctor_Addr 0x1588C0
-#define Addresses_IScriptable_DestructValueHolder_Addr 0x15BEC0
-#define Addresses_IScriptable_sub_D8_Addr 0x1FBAE98
-#define Addresses_ISerializable_sub_30_Addr 0x1FADB34
-#define Addresses_ISerializable_sub_40_Addr 0x15B5B4
-#define Addresses_ISerializable_sub_78_Addr 0x93D174
-#define Addresses_ISerializable_sub_A0_Addr 0x442A28
-#define Addresses_ISerializable_sub_C0_Addr 0x49137C
-#define Addresses_JobDispatcher_Addr 0x3310640
-#define Addresses_JobDispatcher_DispatchJob_Addr 0x164DB0
-#define Addresses_JobHandle_Join_Addr 0x164594
-#define Addresses_JobHandle_ctor_Addr 0x166838
-#define Addresses_JobHandle_dtor_Addr 0x166220
-#define Addresses_JobQueue_Capture_Addr 0x1B99C8
-#define Addresses_JobQueue_SyncWait_Addr 0x164F34
-#define Addresses_JobQueue_ctor_FromGroup_Addr 0x166738
-#define Addresses_JobQueue_ctor_FromParams_Addr 0x166778
-#define Addresses_JobQueue_dtor_Addr 0x1644BC
-#define Addresses_Memory_PoolStorage_OOM_Addr 0x1FA9194
-#define Addresses_Memory_Vault_Addr 0x33107C0
-#define Addresses_Memory_Vault_Alloc_Addr 0x1589C8
-#define Addresses_Memory_Vault_AllocAligned_Addr 0x15DF5C
-#define Addresses_Memory_Vault_Free_Addr 0x15E87C
-#define Addresses_Memory_Vault_Realloc_Addr 0x6ADFF8
-#define Addresses_Memory_Vault_ReallocAligned_Addr 0x164764
-#define Addresses_Memory_Vault_Unk1_Addr 0x1FA9390
-#define Addresses_OpcodeHandlers_Addr 0x327EEB0
-#define Addresses_ResourceDepot_Addr 0x4773B18
-#define Addresses_ResourceLoader_Addr 0x32FEEB8
-#define Addresses_ResourceLoader_FindTokenFast_Addr 0x15F598
-#define Addresses_ResourceLoader_LoadAsync_Addr 0x694794
-#define Addresses_ResourceReference_Fetch_Addr 0x148914
-#define Addresses_ResourceReference_Load_Addr 0x148940
-#define Addresses_ResourceReference_Reset_Addr 0x33D624
-#define Addresses_ResourceToken_CancelUnk38_Addr 0x2BF29C
-#define Addresses_ResourceToken_DestructUnk38_Addr 0x21F278
-#define Addresses_ResourceToken_Fetch_Addr 0x8B4064
-#define Addresses_ResourceToken_OnLoaded_Addr 0x473E64
-#define Addresses_ResourceToken_dtor_Addr 0x211504
-#define Addresses_TTypedClass_IsEqual_Addr 0x22E11C
-#define Addresses_TweakDB_CreateRecord_Addr 0x20B8C0
-#define Addresses_TweakDB_Get_Addr 0x209DD4
-#define Addresses_UpdateRegistrar_RegisterBucketUpdate_Addr 0x85A7E8
-#define Addresses_UpdateRegistrar_RegisterGroupUpdate_Addr 0x85A938
+#define Addresses_CBaseFunction_ExecuteNative_Addr 0x1FF21D8
+#define Addresses_CBaseFunction_ExecuteScripted_Addr 0x50949C
+#define Addresses_CBaseFunction_Handlers_Addr 0x32B4D30
+#define Addresses_CBaseFunction_InternalExecute_Addr 0x183F80
+#define Addresses_CBaseRTTIType_sub_80_Addr 0x1FF1E68
+#define Addresses_CBaseRTTIType_sub_88_Addr 0x1FF1DC8
+#define Addresses_CBaseRTTIType_sub_90_Addr 0x1FF1CA4
+#define Addresses_CBaseRTTIType_sub_98_Addr 0x1FF1EF4
+#define Addresses_CBaseRTTIType_sub_A0_Addr 0x1FF1C8C
+#define Addresses_CBitfield_FromString_Addr 0x2002700
+#define Addresses_CBitfield_ToString_Addr 0x2002818
+#define Addresses_CBitfield_Unserialize_Addr 0x2C8D6C
+#define Addresses_CClassFunction_ctor_Addr 0x9B00E0
+#define Addresses_CClassStaticFunction_ctor_Addr 0x60F5AC
+#define Addresses_CClass_AssignDefaultValuesToProperties_Addr 0x158DE8
+#define Addresses_CClass_ClearScriptedData_Addr 0x612800
+#define Addresses_CClass_CreateInstance_Addr 0x158C50
+#define Addresses_CClass_GetMaxAlignment_Addr 0x611604
+#define Addresses_CClass_GetProperties_Addr 0x32923C
+#define Addresses_CClass_GetProperty_Addr 0x159BD8
+#define Addresses_CClass_InitializeProperties_Addr 0x159514
+#define Addresses_CClass_ToString_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_CClass_ToString_Addr"                      \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::CClass_ToString (345)\")")
+#define Addresses_CClass_Unserialize_Addr 0x1592D4
+#define Addresses_CClass_sub_80_Addr 0x1FF0764
+#define Addresses_CClass_sub_88_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_CClass_sub_88_Addr"                        \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::CClass_sub_88 (71)\")")
+#define Addresses_CClass_sub_90_Addr 0x139543C
+#define Addresses_CClass_sub_98_Addr 0x1FF1940
+#define Addresses_CClass_sub_A0_Addr 0x1FF0F74
+#define Addresses_CClass_sub_B0_Addr 0x8F5280
+#define Addresses_CClass_sub_C0_Addr 0x5CABF0
+#define Addresses_CClass_sub_D0_Addr 0x1FF1610
+#define Addresses_CEnum_FromString_Addr 0x6E4730
+#define Addresses_CEnum_ToString_Addr 0x70A5D4
+#define Addresses_CEnum_Unserialize_Addr 0x159FC4
+#define Addresses_CGameEngine_Addr 0x3338A90
+#define Addresses_CGlobalFunction_ctor_Addr 0x9B0094
+#define Addresses_CNamePool_AddCString_Addr 0x21AC084
+#define Addresses_CNamePool_AddCstr_Addr 0x1E70DC
+#define Addresses_CNamePool_AddPair_Addr 0x7E9240
+#define Addresses_CNamePool_Get_Addr 0x4C0178
+#define Addresses_CRTTIRegistrator_Add_Addr 0xBB9060
+#define Addresses_CRTTIRegistrator_RTTIAsyncId_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_CRTTIRegistrator_RTTIAsyncId_Addr"         \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::CRTTIRegistrator_RTTIAsyncId (11821)\")")
+#define Addresses_CRTTIScriptReferenceType_Set_Addr 0x184EA4
+#define Addresses_CRTTIScriptReferenceType_ctor_Addr 0x5034AC
+#define Addresses_CRTTISystem_Get_Addr 0x1EBB78
+#define Addresses_CStack_vtbl_Addr 0x2A9EC10
+#define Addresses_CString_copy_Addr 0x1CCB9C
+#define Addresses_CString_ctor_span_Addr 0x50F300
+#define Addresses_CString_ctor_str_Addr 0x29786C
+#define Addresses_CString_dtor_Addr 0x156BD4
+#define Addresses_DynArray_Realloc_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_DynArray_Realloc_Addr"                     \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::DynArray_Realloc (17)\")")
+#define Addresses_Handle_DecWeakRef_Addr 0x1856BC
+#define Addresses_Handle_ctor_Addr 0x157480
+#define Addresses_IScriptable_DestructValueHolder_Addr 0x15AB40
+#define Addresses_IScriptable_sub_D8_Addr 0x1FEB754
+#define Addresses_ISerializable_sub_30_Addr 0x1FDE42C
+#define Addresses_ISerializable_sub_40_Addr 0x15A234
+#define Addresses_ISerializable_sub_78_Addr 0x64557C
+#define Addresses_ISerializable_sub_A0_Addr 0xB3B2E0
+#define Addresses_ISerializable_sub_C0_Addr 0x298E58
+#define Addresses_JobDispatcher_Addr 0x36F2FE0
+#define Addresses_JobDispatcher_DispatchJob_Addr 0x163A58
+#define Addresses_JobHandle_Join_Addr 0x16323C
+#define Addresses_JobHandle_ctor_Addr 0x1654E4
+#define Addresses_JobHandle_dtor_Addr 0x164DCC
+#define Addresses_JobQueue_Capture_Addr 0x2C55D0
+#define Addresses_JobQueue_SyncWait_Addr 0x163C90
+#define Addresses_JobQueue_ctor_FromGroup_Addr 0x1653E4
+#define Addresses_JobQueue_ctor_FromParams_Addr 0x165424
+#define Addresses_JobQueue_dtor_Addr 0x163164
+#define Addresses_Memory_PoolStorage_OOM_Addr 0x1FD9AEC
+#define Addresses_Memory_Vault_Addr 0x3346700
+#define Addresses_Memory_Vault_Alloc_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_Memory_Vault_Alloc_Addr"                   \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::Memory_Vault_Alloc (873)\")")
+#define Addresses_Memory_Vault_AllocAligned_Addr 0x15CBFC
+#define Addresses_Memory_Vault_Free_Addr 0x15D51C
+#define Addresses_Memory_Vault_Realloc_Addr 0x4DB18C
+#define Addresses_Memory_Vault_ReallocAligned_Addr 0x16340C
+#define Addresses_Memory_Vault_Unk1_Addr 0x1FD9CE8
+#define Addresses_OpcodeHandlers_Addr 0x32F4D30
+#define Addresses_ResourceDepot_Addr 0x47F4408
+#define Addresses_ResourceLoader_Addr 0x3346580
+#define Addresses_ResourceLoader_FindTokenFast_Addr 0x15E238
+#define Addresses_ResourceLoader_LoadAsync_Addr 0x7BF6D4
+#define Addresses_ResourceReference_Fetch_Addr 0x147444
+#define Addresses_ResourceReference_Load_Addr 0x147470
+#define Addresses_ResourceReference_Reset_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_ResourceReference_Reset_Addr"              \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::ResourceReference_Reset (29)\")")
+#define Addresses_ResourceToken_CancelUnk38_Addr 0xBEAFB0
+#define Addresses_ResourceToken_DestructUnk38_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_ResourceToken_DestructUnk38_Addr"          \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::ResourceToken_DestructUnk38 (195)\")")
+#define Addresses_ResourceToken_Fetch_Addr 0x826814
+#define Addresses_ResourceToken_OnLoaded_Addr 0x622B98
+#define Addresses_ResourceToken_dtor_Addr 0x1DA70C
+#define Addresses_TTypedClass_IsEqual_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Addresses_TTypedClass_IsEqual_Addr"                  \
+              "is 0 - Zoltan found count mismatch for RED4ext::Addresses::TTypedClass_IsEqual (873)\")")
+#define Addresses_TweakDB_CreateRecord_Addr 0x1D50D0
+#define Addresses_TweakDB_Get_Addr 0x1D35C4
+#define Addresses_UpdateRegistrar_RegisterBucketUpdate_Addr 0x7FBF0C
+#define Addresses_UpdateRegistrar_RegisterGroupUpdate_Addr 0x7FC05C
 #define BaseStream_ReadWriteHandleID_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: BaseStream_ReadWriteHandleID_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::BaseStream::ReadWriteHandleID\")")
-#define CBaseRTTIType_VFT_Addr 0x2F68A08
+#define CBaseRTTIType_VFT_Addr 0x2F8F8D8
 #define CClass_AddEventCallbackType_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_AddEventCallbackType_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::CClass::AddEventCallbackType\")")
@@ -113,7 +129,7 @@
 #define CClass_SetupScriptCallbacks_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_SetupScriptCallbacks_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::CClass::SetupScriptCallbacks\")")
-#define CClass_VFT_Addr 0x2A1C9A8
+#define CClass_VFT_Addr 0x2A4C290
 #define CGameFramework_Systems_120_128_130_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CGameFramework_Systems_120_128_130_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::CGameFramework::Systems_120_128_130\")")
@@ -138,7 +154,7 @@
 #define GameInstance_SetRuntimeScene_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameInstance_SetRuntimeScene_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::GameInstance::SetRuntimeScene\")")
-#define GameInstance_Setup_Addr 0x19161E0
+#define GameInstance_Setup_Addr 0x1AA66F0
 #define GameOptionManager_Get_Addr                                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameOptionManager_Get_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::GameOptionManager::Get\")")
@@ -181,7 +197,7 @@
 #define ISerializable_SetOwner_Addr                                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_SetOwner_Addr"                         \
               "is 0 - Zoltan found no matches for RED4ext::ISerializable::SetOwner\")")
-#define ISerializable_VFT_Addr 0x2B08630
+#define ISerializable_VFT_Addr 0x2B196B0
 #define LoadGameSystemsData_Addr                                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: LoadGameSystemsData_Addr"                            \
               "is 0 - Zoltan found no matches for RED4ext::LoadGameSystemsData\")")
@@ -191,12 +207,12 @@
 #define Quaternion_ToEulerAngles_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Quaternion_ToEulerAngles_Addr"                       \
               "is 0 - Zoltan found no matches for RED4ext::Quaternion::ToEulerAngles\")")
-#define REUSED_Break_Addr 0x17CF7C8
-#define REUSED_ReturnOne_Addr 0x187B259
-#define REUSED_ReturnOne64_Addr 0x17ACA50
-#define REUSED_ReturnZero_Addr 0x1814DB0
-#define REUSED_ReturnZero64_Addr 0x17A47A0
-#define REUSED_ReturnZero8_Addr 0x1807240
+#define REUSED_Break_Addr 0x17DA0C8
+#define REUSED_ReturnOne_Addr 0xA11A3E
+#define REUSED_ReturnOne64_Addr 0x17B73D0
+#define REUSED_ReturnZero_Addr 0x18488A0
+#define REUSED_ReturnZero64_Addr 0x5095F0
+#define REUSED_ReturnZero8_Addr 0x18DED10
 #define UpdatableSystems_SetRuntimeScene_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdatableSystems_SetRuntimeScene_Addr"               \
               "is 0 - Zoltan found no matches for RED4ext::UpdatableSystems::SetRuntimeScene\")")
@@ -209,7 +225,7 @@
 #define UpdateManagerUpdateStorage_Copy_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_Copy_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::UpdateManager::UpdateStorage::Copy\")")
-#define UpdateManagerUpdateStorage_Copy_0_Addr 0x85A648
+#define UpdateManagerUpdateStorage_Copy_0_Addr 0x7FBD6C
 #define UpdateManagerUpdateStorage_FireCallback_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_FireCallback_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::UpdateManager::UpdateStorage::FireCallback\")")
@@ -267,7 +283,7 @@
 #define audioEmitters_GetOrCreateEmitter_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioEmitters_GetOrCreateEmitter_Addr"               \
               "is 0 - Zoltan found no matches for RED4ext::audio::Emitters::GetOrCreateEmitter\")")
-#define audioGameParameterStorage_GetValue_Addr 0x1BD0C0
+#define audioGameParameterStorage_GetValue_Addr 0x2C8C68
 #define audioGameParameterStorage_SetValue_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioGameParameterStorage_SetValue_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::audio::GameParameterStorage::SetValue\")")
@@ -313,16 +329,14 @@
 #define entComponentsStorage_GetComponentByCRUID_Addr                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_GetComponentByCRUID_Addr"       \
               "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::GetComponentByCRUID\")")
-#define entComponentsStorage_GetSize_Addr 0x17B2250
+#define entComponentsStorage_GetSize_Addr 0x17BCBC0
 #define entComponentsStorage_IsEmpty_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_IsEmpty_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::IsEmpty\")")
 #define entEntity_ReassembleAppearance_Addr                                                                            \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_ReassembleAppearance_Addr"                 \
               "is 0 - Zoltan found no matches for RED4ext::ent::Entity::ReassembleAppearance\")")
-#define entEntity_SetRuntime_Addr                                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SetRuntime_Addr"                           \
-              "is 0 - Zoltan found no matches for RED4ext::ent::Entity::SetRuntime\")")
+#define entEntity_SetRuntime_Addr 0x1BFFB00
 #define entEntity_SetupEntityAndComponents_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SetupEntityAndComponents_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::ent::Entity::SetupEntityAndComponents\")")
@@ -335,7 +349,7 @@
 #define entIComponent_SetEntity_Addr                                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIComponent_SetEntity_Addr"                        \
               "is 0 - Zoltan found too many matches for RED4ext::ent::IComponent::SetEntity (6)\")")
-#define entIComponent_VFT_Addr 0x2AE1530
+#define entIComponent_VFT_Addr 0x2ABE480
 #define entITransformAttachable_VFT_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entITransformAttachable_VFT_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::ent::ITransformAttachable::VFT\")")
@@ -411,7 +425,7 @@
 #define gameIGameSystem_Unset_Addr                                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameIGameSystem_Unset_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::game::IGameSystem::Unset\")")
-#define gameIGameSystem_VFT_Addr 0x2C3B6A8
+#define gameIGameSystem_VFT_Addr 0x2C62068
 #define gameMutexable_Update_Addr                                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameMutexable_Update_Addr"                           \
               "is 0 - Zoltan found no matches for RED4ext::game::Mutexable::Update\")")
@@ -496,7 +510,7 @@
 #define physicsProxyCache_AddToCache_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_AddToCache_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCache::AddToCache\")")
-#define physicsProxyCache_GetDataFromCache_Addr 0x1F97E4
+#define physicsProxyCache_GetDataFromCache_Addr 0x1C2164
 #define physicsProxyCache_GetFromCacheOrGet_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_GetFromCacheOrGet_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCache::GetFromCacheOrGet\")")
@@ -587,7 +601,7 @@
 #define physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::physics::VehiclePhysicsInsert1::ReferencePoseSetup\")")
-#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x24917C
+#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x209D5C
 #define physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert2_SetsUnk160Unk15C_Addr"  \
               "is 0 - Zoltan found no matches for RED4ext::physics::VehiclePhysicsInsert2::SetsUnk160Unk15C\")")
@@ -603,17 +617,17 @@
 #define physics_pxRigidBody_Update_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_pxRigidBody_Update_Addr"                     \
               "is 0 - Zoltan found no matches for RED4ext::physics::pxRigidBody_Update\")")
-#define userRuntimeSettingsVarBool_VFT_Addr 0x30F0F18
-#define userRuntimeSettingsVarFloatList_VFT_Addr 0x30F1B40
-#define userRuntimeSettingsVarFloat_VFT_Addr 0x30F1AE8
-#define userRuntimeSettingsVarInt_VFT_Addr 0x30F1A90
-#define userRuntimeSettingsVarNameList_VFT_Addr 0x30F1020
-#define userRuntimeSettingsVarName_VFT_Addr 0x30F0F70
-#define userRuntimeSettingsVarStringList_VFT_Addr 0x2FCD188
+#define userRuntimeSettingsVarBool_VFT_Addr 0x3125E08
+#define userRuntimeSettingsVarFloatList_VFT_Addr 0x3126978
+#define userRuntimeSettingsVarFloat_VFT_Addr 0x3126920
+#define userRuntimeSettingsVarInt_VFT_Addr 0x31268C8
+#define userRuntimeSettingsVarNameList_VFT_Addr 0x3125F10
+#define userRuntimeSettingsVarName_VFT_Addr 0x3125E60
+#define userRuntimeSettingsVarStringList_VFT_Addr 0x2FFA580
 #define userRuntimeSettingsVar_RuntimeSettingsVar_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVar_RuntimeSettingsVar_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::user::RuntimeSettingsVar::RuntimeSettingsVar\")")
-#define userRuntimeSettingsVar_VFT_Addr 0x2FCD130
+#define userRuntimeSettingsVar_VFT_Addr 0x2FFA528
 #define user_GetSettings_Addr                                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: user_GetSettings_Addr"                               \
               "is 0 - Zoltan found no matches for RED4ext::user::GetSettings\")")
@@ -701,7 +715,7 @@
 #define vehicleBikePhysics_AnimationUpdate_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikePhysics_AnimationUpdate_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BikePhysics::AnimationUpdate\")")
-#define vehicleBikePhysics_VFT_Addr 0x300D3FE
+#define vehicleBikePhysics_VFT_Addr 0x2AA3378
 #define vehicleCameraManager_ChangeCamera_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_ChangeCamera_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::ChangeCamera\")")
@@ -717,9 +731,7 @@
 #define vehicleCarPhysics_AnimationUpdate_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCarPhysics_AnimationUpdate_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::CarPhysics::AnimationUpdate\")")
-#define vehicleCarPhysics_VFT_Addr                                                                                     \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCarPhysics_VFT_Addr"                          \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::CarPhysics::VFT\")")
+#define vehicleCarPhysics_VFT_Addr 0x303C028
 #define vehicleChassisComponent_BigUpdate_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_BigUpdate_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::BigUpdate\")")
@@ -807,11 +819,11 @@
 #define vehiclePhysics_ReadWorldTransform_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_ReadWorldTransform_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::ReadWorldTransform\")")
-#define vehiclePhysics_SetUnkA0ToOne_Addr 0x374D72
+#define vehiclePhysics_SetUnkA0ToOne_Addr 0x1B6006
 #define vehiclePhysics_UpdateDataWorldTransform_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_UpdateDataWorldTransform_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::UpdateDataWorldTransform\")")
-#define vehiclePhysics_VFT_Addr 0x300D128
+#define vehiclePhysics_VFT_Addr 0x2AA4290
 #define vehicleTPPCameraComponent_GetLocationFromOffset_Addr                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_GetLocationFromOffset_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::GetLocationFromOffset\")")
@@ -836,7 +848,7 @@
 #define vehicleTPPCameraComponent_UpdateTPP_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTPPCameraComponent_UpdateTPP_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::TPPCameraComponent::UpdateTPP\")")
-#define vehicleTankPhysics_VFT_Addr 0x300D100
+#define vehicleTankPhysics_VFT_Addr 0x2C222D0
 #define vehicleUnk568_CopyOverCollisionForce_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_CopyOverCollisionForce_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::CopyOverCollisionForce\")")
@@ -969,7 +981,7 @@
 #define vehicleWheeledPhysics_UpdatePassengerAnim_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_UpdatePassengerAnim_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim\")")
-#define vehicleWheeledPhysics_VFT_Addr 0x300CE38
+#define vehicleWheeledPhysics_VFT_Addr 0x2AA40E0
 #define worldEffectBlackboard_SetValue_Addr                                                                            \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: worldEffectBlackboard_SetValue_Addr"                 \
               "is 0 - Zoltan found no matches for RED4ext::world::EffectBlackboard::SetValue\")")

@@ -30,6 +30,7 @@ struct WheeledBaseObject;
 struct CarBaseObject;
 struct BikeBaseObject;
 
+// now at 0xD0
 struct UnkC8 {
   uint32_t unk00;
   Vector3 unk04;
@@ -49,6 +50,7 @@ struct UnkC8 {
   float unk68;
   float unk6C;
 };
+RED4EXT_ASSERT_SIZE(UnkC8, 0x70);
 
 #pragma pack(push, 1)
 struct Physics
@@ -59,6 +61,10 @@ struct Physics
     // 1.61hf1 RVA: 0x349FF08
     /// @pattern 56 65 68 69 63 6C 65 54 65 6C 65 70 6F 72 74 61 74 69 6F 6E 49 66 46 61 6C 6C 73 55 6E 64 65 72
     /// @offset -40
+
+    // 2.1 RVA: 0x2AA4290
+    /// @pattern 40 53 48 83 EC 20 48 8B D9 48 8D 05 (fn:rel) 48 89 01 33 C9 B8 00 00 80 3F 88 4B 50 48 89 4B
+    /// @eval fn
     static constexpr const uintptr_t VFT = vehiclePhysics_VFT_Addr;
 
     virtual ~Physics();
@@ -193,6 +199,7 @@ struct Physics
     WorldTransform worldTransform2; // 80
     // Set to 1.0 when awake, counts down when sleep conditions are met - when 0.0, vehicle enters sleep state, and is set to -1.0
     float sleepTimer;
+    uint32_t unk_2_0_new_0;
     // counts from 0.5 down to 0.0
     float unkA4;
     float setTo0point5;
@@ -212,6 +219,7 @@ struct Physics
     float unkB0;
     // computed from chassis component
     bool isMoving;
+    uint8_t unk_2_0_new_1;
     uint8_t unkB5;
     // is player controllered maybe
     bool unkB6;
@@ -224,10 +232,10 @@ struct Physics
     uint8_t unkBA;
     uint8_t unkBB;
     uint16_t unkBC;
-    uint16_t unkBE;
+    uint8_t unkBE;
     float has_been_flipped_over_for_some_time_delay;
     float unkC4;
-    UnkC8* physicsBaseStruct2;
+    UnkC8* physicsBaseStruct2;  // D0
 };
 //char (*__kaboom)[sizeof(Physics)] = 1;
 //char (*__kaboom2)[offsetof(Physics, unk08)] = 1;
@@ -296,6 +304,10 @@ struct WheeledPhysics : Physics
     // 1.61hf1 RVA: 0x34A0718
     /// @pattern 45 6E 61 62 6C 65 53 6D 6F 6F 74 68 57 68 65 65 6C 43 6F 6E 74 61 63 74 73 00 00 00 00 00 00 00
     /// @offset -32
+
+    // 2.0 RVA: 0x2AA40E0
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 8B FA 48 8B D9 E8 ? ? ? ? 33 F6 48 8D 05 (fn:rel)
+    /// @eval fn
     static constexpr const uintptr_t VFT = vehicleWheeledPhysics_VFT_Addr;
 
     // 1.52 RVA: 0x1D0DB70 / 30464880
@@ -541,12 +553,17 @@ RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
 
 struct CarPhysics : WheeledPhysics
 {
+    // pre 2.0
     // a little after "VehiclePassenger" string
     // 1.6  RVA: 0x34980C0
     // 1.61 RVA: 0x349D310
     // 1.61hf1 RVA: 0x34A0450
     /// @pattern 56 65 68 69 63 6C 65 50 61 73 73 65 6E 67 65 72 00 00 00 00 3B DF 7F 3F 00 00 C8 C1 00 00 00 00
     /// @offset -48
+
+    // post 2.0
+    /// @pattern 40 53 48 83 EC 20 BA 04 00 00 00 48 8B D9 E8 ? ? ? ? 33 D2 48 8D 05 (fn:rel) 48 89 03 48
+    /// @eval fn
     static constexpr const uintptr_t VFT = vehicleCarPhysics_VFT_Addr;
 
 // overrides
@@ -660,6 +677,7 @@ struct CarPhysics : WheeledPhysics
     uint64_t unkE78;
 };
 RED4EXT_ASSERT_OFFSET(CarPhysics, unkE78, 0xE78);
+RED4EXT_ASSERT_SIZE(CarPhysics, 0xF10);
 
 struct BikePhysics : WheeledPhysics
 {
@@ -669,6 +687,10 @@ struct BikePhysics : WheeledPhysics
     // 1.61hf1 RVA: 0x34A0270
     /// @pattern 42 69 6B 65 48 61 63 6B 54 69 6C 74 43 61 6C 63 56 61 6C 75 65 00 00 00
     /// @offset -30
+
+    // post 2.0
+    /// @pattern 40 53 48 83 EC 20 BA 02 00 00 00 48 8B D9 E8 ? ? ? ? 33 C9 C6 83 E0 0D 00 00 01 48 8D 05 (fn:rel)
+    /// @eval fn
     static constexpr const uintptr_t VFT = vehicleBikePhysics_VFT_Addr;
 
     virtual ~BikePhysics() override;
@@ -712,19 +734,24 @@ struct BikePhysics : WheeledPhysics
     float bikeMaxTilt;
 };
 // RED4EXT_ASSERT_OFFSET(BikePhysics, callbackRelated, 0xD28);
-
+RED4EXT_ASSERT_SIZE(BikePhysics, 0xE40);
 
 struct TankPhysics : Physics
 {
+    // pre 2.0
     // after VehicleSystem_NPCCollision
     /// @pattern 56 65 68 69 63 6C 65 53 79 73 74 65 6D 5F 4E 50 43 43 6F 6C 6C 69 73 69 6F 6E 00 00 00 00 00 00
     /// @offset -64
+
+    // post 2.0
+    /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 ? ? ? ? 33 C9 48 8D 05 (fn:rel) 48 89 03 B8 CD CC 4C 3F 48
+    /// @eval fn
     static constexpr const uintptr_t VFT = vehicleTankPhysics_VFT_Addr;
     
     virtual ~TankPhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
 
-    //TankBaseObject *wheeledBaseObject;
+    // TankBaseObject *wheeledBaseObject;
     //Vector3 unkD8;
     //Vector3 turnRate;
     //Vector3 wheelTurningThing;
@@ -732,7 +759,10 @@ struct TankPhysics : Physics
     //uint8_t unkFD;
     //uint8_t unkFE;
     //uint8_t unkFF;
+
+    uint8_t unkD0[0x3E0 - 0xD0];
 };
+RED4EXT_ASSERT_SIZE(TankPhysics, 0x3E0);
 
 } // namespace physics
 } // namespace RED4ext
