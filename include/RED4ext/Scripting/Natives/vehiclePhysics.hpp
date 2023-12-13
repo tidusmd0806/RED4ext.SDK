@@ -295,6 +295,7 @@ struct UnkD10 {
     } wheel[4];
     uint32_t numWheels;
 };
+RED4EXT_ASSERT_SIZE(UnkD10, 0x3410);
 
 struct WheeledPhysics : Physics 
 {
@@ -543,12 +544,14 @@ struct WheeledPhysics : Physics
     DynArray<uintptr_t> driveHelpers;
     Handle<void> curveSet;
     uint64_t stuckTimeout;
-    UnkD10* unkD10;
-    uint64_t unkD18;
+    uint64_t unk_2_0_new_0[4];
+    UnkD10* unkD10; // D90
+    uint64_t unkD18; // D98
 };
 #pragma pack(pop)
 RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
-RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
+RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xDA0);
+// RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
 //char (*__kaboom)[offsetof(WheeledPhysics, unkC40)] = 1;
 
 struct CarPhysics : WheeledPhysics
@@ -639,8 +642,8 @@ struct CarPhysics : WheeledPhysics
     /// @pattern 48 89 5C 24 18 56 48 81 EC D0 00 00 00 48 8B F1 0F 29 B4 24 C0 00 00 00 48 8B 89 20 0D 00 00 BA
     int64_t __fastcall AnimationUpdate(float);
 
-    CarBaseObject* carObject;
-    PID bankBodyFBPID;
+    CarBaseObject* carObject; // DA0
+    PID bankBodyFBPID; // DA8
     PID bankBodyLRPID;
     float bankBodyFBTanMultiplier;
     float bankBodyLRTanMultiplier;
@@ -674,9 +677,10 @@ struct CarPhysics : WheeledPhysics
     uint8_t unkE73;
     uint8_t positionNeedsUpdate;
     uint8_t unkE75[3];
-    uint64_t unkE78;
+    uint64_t unkF00;
+    uint64_t unkF08;
 };
-RED4EXT_ASSERT_OFFSET(CarPhysics, unkE78, 0xE78);
+// RED4EXT_ASSERT_OFFSET(CarPhysics, unkE78, 0xE78);
 RED4EXT_ASSERT_SIZE(CarPhysics, 0xF10);
 
 struct BikePhysics : WheeledPhysics
@@ -732,6 +736,7 @@ struct BikePhysics : WheeledPhysics
     float bikeTiltReturnSpeed;
     float bikeTiltCustomSpeed;
     float bikeMaxTilt;
+    uint64_t unkE00[8];
 };
 // RED4EXT_ASSERT_OFFSET(BikePhysics, callbackRelated, 0xD28);
 RED4EXT_ASSERT_SIZE(BikePhysics, 0xE40);

@@ -1062,9 +1062,11 @@ struct BaseObject : game::Object
 //    static Handle<RED4ext::ent::AnimatedComponent> *__fastcall GetAnimatedComponentWithName(Handle<RED4ext::ent::AnimatedComponent> *handle, RED4ext::vehicle::BaseObject *vehicle, RED4ext::CName name);
 
     world::RuntimeSystemPhysics* physicsSystem;
-    // resets when isOnGround, counts up otherwise
+    float unk_2_0_new[4];
     float airTimer;
     bool isOnGround;
+    // resets when isOnGround, counts up otherwise
+    uint32_t unk_2_0_new_1[2];
     uint8_t unk24D[3];
     PhysicsState physicsState;
     float acceleration;
@@ -1096,12 +1098,8 @@ struct BaseObject : game::Object
     float unk2A4;
     float unk2A8;
     float unk2AC;
-
-    uint64_t unk2B0[3];
     Physics* physics;   // 2C8
-
-
-    PhysicsData* physicsData; // 2B8
+    PhysicsData* physicsData; // 2D0
     Handle<void> curveSetData;
     Handle<ChassisComponent> chassis;
     float unk2E0[16];
@@ -1152,6 +1150,7 @@ struct BaseObject : game::Object
     float unk5EC;
     float unk5F0;
     float unk5F4;
+    // 0x620 steering sensitivity
     float unk5F8;
     uint8_t permanantStun2;
     // gravity related
@@ -1392,7 +1391,7 @@ struct BaseObject : game::Object
     */
 };
 #pragma pack(pop)
-RED4EXT_ASSERT_SIZE(BaseObject, 0x980);
+RED4EXT_ASSERT_SIZE(BaseObject, 0xB90);
 RED4EXT_ASSERT_OFFSET(BaseObject, weapons, 0x940);
 //char (*__kaboom)[sizeof(BaseObject)] = 1;
 //char (*__kaboom2)[offsetof(BaseObject, unk7E0)] = 1;

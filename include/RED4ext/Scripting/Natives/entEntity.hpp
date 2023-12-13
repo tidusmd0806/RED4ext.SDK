@@ -58,28 +58,32 @@ struct Entity : IScriptable
     // * entity->sub_150()
     // * components->sub_180(scriptGameInstance)
 
-    virtual void __fastcall sub_110() { }
-    inline virtual float __fastcall sub_118() {
+    virtual void __fastcall sub_108() { }
+    inline virtual float __fastcall sub_110() {
         return 1.0;
     }
     //tick??
-    virtual Vector2* __fastcall sub_120(Vector2* a1, Vector2* a2);
-    inline virtual bool __fastcall sub_128() {
+    virtual Vector2* __fastcall sub_118(Vector2* a1, Vector2* a2);
+    inline virtual bool __fastcall sub_120() {
+        return false;
+    }
+    inline virtual char __fastcall sub_128() {
         return 1;
     }
-    virtual bool __fastcall sub_130();
-    virtual void sub_138();
+    // maybe something with component flags
+    virtual void sub_130();
 
     // called when components are loaded
-    virtual void __fastcall sub_140(Handle<void>*, int16_t*) { };
-    virtual void __fastcall sub_148(uintptr_t) { };
+    virtual void __fastcall sub_138(Handle<void>*, int16_t*) { };
+    virtual void __fastcall sub_140(uintptr_t) { };
     // PreUninitialize
-    virtual void __fastcall sub_150() { };
+    virtual void __fastcall sub_148() { };
     virtual void __fastcall Attach(void *) { };
     virtual uintptr_t __fastcall Detach() { };
     // called after calling components->sub_1A0()
-    virtual void __fastcall sub_168(uint16_t unk158) { };
-    virtual void __fastcall sub_170() { };
+    virtual void __fastcall sub_160(uint16_t unk158) { };
+    virtual void __fastcall sub_168() { };
+    virtual uintptr_t __fastcall sub_170();
     virtual uintptr_t __fastcall sub_178();
 
     // GatherEventListeners
