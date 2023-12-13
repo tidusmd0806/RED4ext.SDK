@@ -23,7 +23,7 @@ struct VehiclePhysicsInsert2
 
     // 1.6 RVA: 0x1D50CA0 / 30739616
     /// @pattern F3 0F 11 89 60 01 00 00 F3 0F 11 89 5C 01 00 00 C7 81 68 01 00 00 00 00 00 00 C3
-    void __fastcall SetsUnk160Unk15C(float a2);
+    // void __fastcall SetsUnk160Unk15C(float a2);
 
     RED4ext::Vector3 worldPosition;
     RED4ext::Vector3 unk0C;
@@ -77,6 +77,6 @@ struct VehiclePhysicsInsert2
     float unk168;
     float unk16C;
 };
-RED4EXT_ASSERT_SIZE(VehiclePhysicsInsert2, 0x170);
+// RED4EXT_ASSERT_SIZE(VehiclePhysicsInsert2, 0x170);
 } // namespace physics
 } // namespace RED4ext

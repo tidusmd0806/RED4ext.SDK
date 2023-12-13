@@ -181,6 +181,7 @@ struct CameraManager : IScriptable
     uint8_t unk387; // 387,  0x000400,   -1, 1);
     uint64_t unk388; // actually 360
 };
+RED4EXT_ASSERT_SIZE(CameraManager, 0x390);
  //char (*__kaboom)[sizeof(CameraManager)] = 1;
 } // namespace vehicle
 using VehicleCameraManager = vehicle::CameraManager;

@@ -28,6 +28,15 @@ struct CallbackStorage;
 struct Variant;
 struct RawBuffer;
 
+
+// C8 A0 7D 41 01 00 00 00
+// 01417DA0C8
+/// @pattern 48 83 EC 28 E8 EF FF FF FF 48 85 C0 74 06 FF 15 ? ? ? ? E8 ? ? 02 00
+constexpr const uintptr_t purecall = purecall_Addr;
+
+/// @pattern 40 53 48 83 EC 20 48 8D 05 6F 36 FA 00 48 8B D9 48 89 01 F6 C2 01 74 0A BA 10 00 00 00 E8 42 A2
+uintptr_t *__fastcall CBaseRTTIType_dstr(uintptr_t *, char);
+
 enum class ERTTIType : uint8_t
 {
     Name = 0,
@@ -51,8 +60,18 @@ enum class ERTTIType : uint8_t
 
 struct CBaseRTTIType
 {
+    // pre 2.0
     /// @pattern 55 6E 61 62 6C 65 20 74 6F 20 63 6F 6E 76 65 72 74 20 76 61 6C 75 65 20 74 6F 20 74 65 78 74 00
     /// @offset -32
+
+    // 6F 36 FA 00
+    // 00FA366F
+    // at 0x1FEC269
+    // 2.1 RVA: 0x2F8F8D8
+    // @pattern 5C C2 FE 41 01 00 00 00 (GetName:purecall) (GetSize:purecall) (GetAlignment:purecall) (GetType:purecall) (GetComputedName:purecall) (GetTypeName:call) (GetComputedName:call) (Construct:purecall) (Destruct:purecall) (IsEqual:purecall) (Assign:purecall) (Move:call) (Unserialize:purecall)
+    // / @pattern (CBaseRTTIType_dstr:ref) (purecall:ref) (:pure) (:pure) (:pure) (:pure) (:call) (:call) (:pure) (:pure) (:pure) (:pure) (:call) (:pure)
+
+    /// @pattern (CBaseRTTIType_dstr:ref) (purecall:ref) (purecall:ref) (purecall:ref) (purecall:ref)
     static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;
     
     CBaseRTTIType();
@@ -127,8 +146,11 @@ RED4EXT_ASSERT_SIZE(CBaseRTTIType, 0x10);
 
 struct CClass : CBaseRTTIType
 {
+    // pre 2.0
     /// @pattern 5F 5F 72 65 74 75 72 6E 00
     /// @offset -112
+
+    /// @pattern (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:pure) (:pure) (:call) (Addresses_CClass_Unserialize:ref)
     static constexpr const uintptr_t VFT = CClass_VFT_Addr;
 
     struct Flags

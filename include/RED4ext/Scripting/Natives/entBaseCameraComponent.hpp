@@ -47,9 +47,9 @@ struct BaseCameraComponent
     virtual void sub_310();
     virtual void sub_318();
 
-    WorldTransform placeholderTransform;
+    // WorldTransform placeholderTransform; // 1D0
 };
-RED4EXT_ASSERT_SIZE(BaseCameraComponent, 0x1D0);
+RED4EXT_ASSERT_SIZE(BaseCameraComponent, 0x1E0);
 } // namespace ent
 using entCameraComponent = ent::BaseCameraComponent;
 } // namespace RED4ext

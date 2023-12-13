@@ -133,7 +133,7 @@ struct EntityEmitter {
 };
 
 struct EntityEmitters {
-    ent::Entity entityID;
+    ent::EntityID entityID;
     struct Emitter {
         CName *** emitterName1;
         CName *** emitterName2;

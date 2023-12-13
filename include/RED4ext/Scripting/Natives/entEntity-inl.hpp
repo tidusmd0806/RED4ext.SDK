@@ -15,21 +15,21 @@ RED4EXT_INLINE uintptr_t Entity::CopyComponentsToStorage(EntityDefinition* defin
     return call(this, definition, a2);
 }
 
-RED4EXT_INLINE Vector2 * __fastcall Entity::sub_120(Vector2 * a1, Vector2 * a2) {
+RED4EXT_INLINE Vector2 * __fastcall Entity::sub_118(Vector2 * a1, Vector2 * a2) {
     a1->X = a2->Y;
     a1->Y = a2->X * a2->Y;
     return a1;
 }
 
-RED4EXT_INLINE bool __fastcall Entity::sub_130() {
-    RelocFunc<decltype(&Entity::sub_130)> call(VFT, 0x130);
-    return call(this);
-}
+// RED4EXT_INLINE bool __fastcall Entity::sub_130() {
+//     RelocFunc<decltype(&Entity::sub_130)> call(VFT, 0x128);
+//     return call(this);
+// }
 
-RED4EXT_INLINE void Entity::sub_138()
+RED4EXT_INLINE void Entity::sub_130()
 {
-    RelocFunc<decltype(&Entity::sub_138)> call(VFT, 0x138);
-    return call(this);
+    RelocFunc<decltype(&Entity::sub_130)> call(VFT, 0x130);
+    call(this);
 }
 
 

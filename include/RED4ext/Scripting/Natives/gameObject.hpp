@@ -68,9 +68,9 @@ struct Object : ent::GameEntity, PSInterface
     
 // overridden virtuals
 
-    virtual void __fastcall sub_110() override;
-    virtual void __fastcall sub_148(uintptr_t a1) override;
-    virtual void __fastcall sub_150() override;
+    virtual void __fastcall sub_108() override;
+    virtual void __fastcall sub_140(uintptr_t a1) override;
+    virtual void __fastcall sub_148() override;
     virtual void __fastcall Attach(void *) override;
     virtual uintptr_t __fastcall Detach() override;
 

@@ -14,9 +14,12 @@ namespace RED4ext
 namespace game { 
 
 struct WorldPositionInterface {
+    // 2.1 RVA: 0x2F8F998
+    // static constexpr const uintptr_t VFT = WorldPositionInterface_VFT_Addr;
     virtual void sub_00();
-    virtual void sub_08();
+    virtual void sub_08() = 0;
 };
+RED4EXT_ASSERT_SIZE(WorldPositionInterface, 0x8);
 
 struct __declspec(align(0x10)) CameraComponent : public ent::BaseCameraComponent, WorldPositionInterface
 {

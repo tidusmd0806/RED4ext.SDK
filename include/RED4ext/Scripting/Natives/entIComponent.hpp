@@ -28,6 +28,10 @@ struct IComponent : IScriptable
     // 1.61hf1 RVA: 0x330C8E0
     /// @pattern 65 6E 74 49 43 6F 6D 70  6F 6E 65 6E 74 00 00 00
     /// @offset -32
+
+    // post 2.0
+    /// @pattern 48 83 EC 28 E8 FB 6F E9 FF 33 D2 4C 8D 05 (vft:rel) 4C 89 01 48 8B 05 ? ? ? ? 48 89 41 40
+    /// @eval vft
     static constexpr const uintptr_t VFT = entIComponent_VFT_Addr;
 
     //virtual CClass* GetNativeType() override
