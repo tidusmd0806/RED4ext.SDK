@@ -30,6 +30,7 @@ struct IGameSystem : IUpdatableSystem
     /// @offset -16
     static constexpr const uintptr_t VFT = gameIGameSystem_VFT_Addr;
 
+    // arg to sub_190
     struct HighLow
     {
         void* unk00;
@@ -65,7 +66,7 @@ struct IGameSystem : IUpdatableSystem
     virtual void sub_180();                                                                                   // 180
     virtual void sub_188();       
     // called from GameInstance->sub_20, recieves some struct based on game performance setting & crowd density
-    virtual void sub_190(HighLow* a1);                                                                        // 190
+    virtual void sub_190(void* a1);                                                                        // 190
     virtual void sub_198();                                                                                   // 198
     // called after created & gameInstance is set
     // OnInitialize called

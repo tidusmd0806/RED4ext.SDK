@@ -542,10 +542,16 @@ struct Unk570 {
 
     // 1.6  RVA: 0x1D24320 / 30556960
     /// @pattern 48 89 5C 24 08 4C 8B CA 48 8B D9 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84
-    MaterialFx * __fastcall GetFxForMaterial(CName material, bool isBackWheel);
+
+    // post 2.0
+    /// @pattern 48 89 5C 24 08 48 89 54 24 10 57 48 83 EC 50 48 8B F9 45 84 C0 75 09 44 38 81 60 01 00 00 75 6A
+    // MaterialFx * __fastcall GetFxForMaterial(CName material, bool isBackWheel);
 
     // 1.6  RVA: 0x1D24290 / 30556816
     /// @pattern 4C 8B CA 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84 C0 BA 30 01 00 00 41 B8
+
+    // post 2.0
+    /// @pattern 48 89 54 24 10 48 83 EC 28 48 8B D1 45 84 C0 75 09 44 38 81 60 01 00 00 75 39 32 C0 F6 D8 4C 8D
     SmearFxLookup *__fastcall GetSmearFxForMaterial(CName material, bool isBackWheel);
     
     // 1.6  RVA: 0x1D25A50 / 30562896
@@ -555,12 +561,20 @@ struct Unk570 {
     // 1.6  RVA: 0x1D2B870 / 30586992
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 4C 24 20 55 41 54 41 55 41 56 41 57 48 8D AC
     /// @nth 1/4
-    bool __fastcall TireTrackEffectStart(Unk30 *a2, MaterialFx *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
 
-    // 1.6  RVA: 0x1D2AF10 / 30584592
-    /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 4C 24 20 55 41 54 41 55 41 56 41 57 48 8D AC
-    /// @nth 0/4
-    bool __fastcall SkidMarkEffectStart(Unk30 *unk30, MaterialFx *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
+    // // post 2.0
+    // /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 48 89 78 18 4C 89 48 20 55 41 54 41 55 41 56 41 57 48 8D 68 A8
+    // /// @nth 0/2
+    // bool __fastcall TireTrackEffectStart(Unk30 *a2, MaterialFx *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
+
+    // // 1.6  RVA: 0x1D2AF10 / 30584592
+    // /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 4C 24 20 55 41 54 41 55 41 56 41 57 48 8D AC
+    // /// @nth 0/4
+
+    // // post 2.0
+    // /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 48 89 78 18 4C 89 48 20 55 41 54 41 55 41 56 41 57 48 8D 68 A8
+    // /// @nth 1/2
+    // bool __fastcall SkidMarkEffectStart(Unk30 *unk30, MaterialFx *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
 
 
     BaseObject *vehicle;
@@ -729,7 +743,7 @@ struct Unk588 {
     RED4ext::SharedMutex unk380;
 };
 
-RED4EXT_ASSERT_SIZE(Unk588, 0x388);
+// RED4EXT_ASSERT_SIZE(Unk588, 0x388);
 
 struct Unk368
 {
@@ -818,7 +832,7 @@ struct BaseObject : game::Object
 
     virtual uintptr_t Detach() override;
 
-    virtual void sub_168(uint16_t) override;
+    virtual void sub_160(uint16_t) override;
 
     virtual CClass* __fastcall GetNativeType() override;
 
@@ -1225,6 +1239,7 @@ struct BaseObject : game::Object
     uint64_t unk960;
     DynArray<void*> puppets;
     uint64_t unk978;
+    uint8_t unk980[0x180];
 
     /* pre-2.0
     world::RuntimeSystemPhysics* physicsSystem;
@@ -1392,7 +1407,7 @@ struct BaseObject : game::Object
 };
 #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(BaseObject, 0xB90);
-RED4EXT_ASSERT_OFFSET(BaseObject, weapons, 0x940);
+// RED4EXT_ASSERT_OFFSET(BaseObject, weapons, 0x940);
 //char (*__kaboom)[sizeof(BaseObject)] = 1;
 //char (*__kaboom2)[offsetof(BaseObject, unk7E0)] = 1;
 } // namespace vehicle

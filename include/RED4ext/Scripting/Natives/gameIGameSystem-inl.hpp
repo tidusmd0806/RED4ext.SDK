@@ -98,7 +98,7 @@ RED4EXT_INLINE void RED4ext::game::IGameSystem::sub_188()
 {
 }
 
-RED4EXT_INLINE void RED4ext::game::IGameSystem::sub_190(HighLow* a1)
+RED4EXT_INLINE void RED4ext::game::IGameSystem::sub_190(void* a1)
 {
     RED4EXT_UNUSED_PARAMETER(a1);
 }

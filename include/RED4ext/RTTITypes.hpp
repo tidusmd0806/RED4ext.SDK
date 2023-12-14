@@ -71,7 +71,7 @@ struct CBaseRTTIType
     // @pattern 5C C2 FE 41 01 00 00 00 (GetName:purecall) (GetSize:purecall) (GetAlignment:purecall) (GetType:purecall) (GetComputedName:purecall) (GetTypeName:call) (GetComputedName:call) (Construct:purecall) (Destruct:purecall) (IsEqual:purecall) (Assign:purecall) (Move:call) (Unserialize:purecall)
     // / @pattern (CBaseRTTIType_dstr:ref) (purecall:ref) (:pure) (:pure) (:pure) (:pure) (:call) (:call) (:pure) (:pure) (:pure) (:pure) (:call) (:pure)
 
-    /// @pattern (CBaseRTTIType_dstr:ref) (purecall:ref) (purecall:ref) (purecall:ref) (purecall:ref)
+    /// @pattern (:call) (purecall:ref) (purecall:ref) (purecall:ref) (purecall:ref) (rttiIType_GetERTTITypeString:ref)
     static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;
     
     CBaseRTTIType();
@@ -146,12 +146,11 @@ RED4EXT_ASSERT_SIZE(CBaseRTTIType, 0x10);
 
 struct CClass : CBaseRTTIType
 {
-    // pre 2.0
-    /// @pattern 5F 5F 72 65 74 75 72 6E 00
-    /// @offset -112
-
-    /// @pattern (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:pure) (:pure) (:call) (Addresses_CClass_Unserialize:ref)
+    /// @pattern (dstr:call) (GetName:call) (GetSize:call) (rttiClassType_GetAlignment:ref) 
+    /// (GetType:call) (rttiIType_GetERTTITypeString:ref) (GetComputedName:call) (Construct:call) 
+    /// (Destruct:call) (:pure) (:pure) (Move:call) (rttiClassType_Serialize:ref)
     static constexpr const uintptr_t VFT = CClass_VFT_Addr;
+    static constexpr const uintptr_t dstr = CClass_VFT_dstr_Addr;
 
     struct Flags
     {

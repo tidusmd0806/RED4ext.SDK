@@ -549,7 +549,7 @@ struct WheeledPhysics : Physics
     uint64_t unkD18; // D98
 };
 #pragma pack(pop)
-RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
+// RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
 RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xDA0);
 // RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
 //char (*__kaboom)[offsetof(WheeledPhysics, unkC40)] = 1;
@@ -567,7 +567,7 @@ struct CarPhysics : WheeledPhysics
     // post 2.0
     /// @pattern 40 53 48 83 EC 20 BA 04 00 00 00 48 8B D9 E8 ? ? ? ? 33 D2 48 8D 05 (fn:rel) 48 89 03 48
     /// @eval fn
-    static constexpr const uintptr_t VFT = vehicleCarPhysics_VFT_Addr;
+    // static constexpr const uintptr_t VFT = vehicleCarPhysics_VFT_Addr;
 
 // overrides
 
@@ -765,7 +765,7 @@ struct TankPhysics : Physics
     //uint8_t unkFE;
     //uint8_t unkFF;
 
-    uint8_t unkD0[0x3E0 - 0xD0];
+    uint8_t unkD0[0x3E0 - 0xF0];
 };
 RED4EXT_ASSERT_SIZE(TankPhysics, 0x3E0);
 

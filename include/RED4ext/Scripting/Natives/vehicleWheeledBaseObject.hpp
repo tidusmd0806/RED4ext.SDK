@@ -61,8 +61,9 @@ struct WheeledBaseObject : vehicle::BaseObject
     void * transmissionData;
     void * engineData;
     void * burnoutData;
+    uint8_t unkBB0[0x30];
 };
-RED4EXT_ASSERT_SIZE(WheeledBaseObject, 0x9A0);
+RED4EXT_ASSERT_SIZE(WheeledBaseObject, 0xBE0);
 } // namespace vehicle
 using WheeledObject = vehicle::WheeledBaseObject;
 } // namespace RED4ext

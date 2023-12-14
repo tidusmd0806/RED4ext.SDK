@@ -27,6 +27,8 @@ struct ISerializable
     // 1.61hf1 RVA: 0x30DF0B8
     /// @pattern 00 49 53 65 72 69 61 6C 69 7A 61 62 6C 65 00 00 00
     /// @offset -257
+
+    /// @pattern (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:call) (ISerializable_OnSerialize:ref) (ISerializable_OnSerializeToText:ref) (ISerializable_OnSerializeFromText:ref)
     static constexpr const uintptr_t VFT = ISerializable_VFT_Addr;
 
     // 1.52 RVA: 0x1AB240 / 1749568

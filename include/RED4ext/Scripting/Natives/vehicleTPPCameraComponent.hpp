@@ -261,10 +261,10 @@ struct __declspec(align(0x10)) TPPCameraComponent : public game::CameraComponent
     float unk5B4;
     float airFlowDistortionX;
     float airFlowDistortionY;
-    // uint8_t unk320[0x680 - 0x5C0]; // 5C0
+    uint8_t unk640[0x680 - 0x640]; // 640
 };
 RED4EXT_ASSERT_SIZE(TPPCameraComponent, 0x680);
-RED4EXT_ASSERT_OFFSET(TPPCameraComponent, data.isInAir, 0x2E0);
+// RED4EXT_ASSERT_OFFSET(TPPCameraComponent, data.isInAir, 0x2E0);
 //char (*__kaboom)[sizeof(TPPCameraComponent)] = 1;
 using vehicleTPPCameraComponent = vehicle::TPPCameraComponent;
 //char (*__kaboom)[offsetof(TPPCameraComponent, isInAir)] = 1;

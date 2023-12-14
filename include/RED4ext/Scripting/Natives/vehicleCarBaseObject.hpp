@@ -22,7 +22,7 @@ struct CarBaseObject : vehicle::WheeledBaseObject
     float rollCorrection;
     uint64_t unk9E8;
 };
-RED4EXT_ASSERT_SIZE(CarBaseObject, 0x9F0);
+RED4EXT_ASSERT_SIZE(CarBaseObject, 0xC30);
 } // namespace vehicle
 using CarObject = vehicle::CarBaseObject;
 } // namespace RED4ext
