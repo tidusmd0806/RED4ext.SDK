@@ -13,7 +13,7 @@
 
 namespace RED4ext
 {
-struct GameInstance;
+struct IGameInstance;
 namespace game { 
 struct Component : ent::IComponent, PSInterface
 {
@@ -63,7 +63,7 @@ struct Component : ent::IComponent, PSInterface
     }
 
     // called from on game attach
-    inline virtual void sub_248(GameInstance* a1) {
+    inline virtual void sub_248(IGameInstance* a1) {
         RelocFunc<decltype(&Component::sub_248)> call(VFT, 0x248);
         return call(this, a1);
     }

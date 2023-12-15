@@ -30,6 +30,7 @@ RED4EXT_INLINE void RED4ext::RTTIRegistrator::Add(CallbackFunc aRegFunc, Callbac
     if (aPostRegFunc)
     {
         CRTTISystem::Get()->AddPostRegisterCallback(aPostRegFunc);
+        
     }
 }
 
@@ -38,3 +39,5 @@ RED4EXT_INLINE const uint32_t RED4ext::RTTIRegistrator::GetNextId()
     RelocPtr<volatile uint32_t> ptr(Addresses::CRTTIRegistrator_RTTIAsyncId);
     return InterlockedIncrement(ptr.GetAddr());
 }
+
+const RED4ext::CRTTISystem * RED4ext::rtti = reinterpret_cast<RED4ext::CRTTISystem *>(reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr)) + rtti_Addr);

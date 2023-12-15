@@ -43,6 +43,11 @@ uint32_t Return1u32(void *a1...);
 /// @noimpl 1
 uint32_t Return4u32(void *a1...);
 
+/// @pattern B8 08 00 00 00 C3 CC CC CC CC CC CC CC CC CC CC
+/// @nth 0/0
+/// @noimpl 1
+uint32_t Return8u32(void *a1...);
+
 /// @pattern B8 10 00 00 00 C3 CC CC CC CC CC CC CC CC CC CC
 /// @nth 0/0
 /// @noimpl 1

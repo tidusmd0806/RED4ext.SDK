@@ -28,7 +28,27 @@ struct ISerializable
     /// @pattern 00 49 53 65 72 69 61 6C 69 7A 61 62 6C 65 00 00 00
     /// @offset -257
 
-    /// @pattern (:call) (:call) (:call) (:call) (:call) (:call) (:call) (:call) (ISerializable_OnSerialize:ref) (ISerializable_OnSerializeToText:ref) (ISerializable_OnSerializeFromText:ref)
+    /// @pattern 48 8B 05 79 DB AF 01 C3 CC CC CC CC CC CC CC CC
+    void getNativeType();
+
+    /// @pattern 48 89 5C 24 08 57 48 83 EC 20 8B DA 48 8B F9 E8 38 4C 18 FE F6 C3 01 74 0D BA 30 00 00 00 48 8B
+    void dstr(char a2);
+
+    /// @pattern                                  // ISerializable VFT
+    /// (ISerializable_getNativeType:ref)         // sub_00
+    /// (GetType:call)                            // sub_08
+    /// (GetAllocator:call)                       // sub_10
+    /// (ISerializable_dstr:ref)                  // sub_18
+    /// 60 AF 13 40 01 00 00 00                   // sub_20
+    /// 60 AF 13 40 01 00 00 00                   // sub_28
+    /// (sub_30:call)                             // sub_30
+    /// 60 AF 13 40 01 00 00 00                   // sub_38
+    /// (ISerializable_OnSerialize:ref)           // sub_40
+    /// (ISerializable_OnSerializeToText:ref)     // sub_48
+    /// (ISerializable_OnSerializeFromText:ref)   // sub_50
+    /// 70 1D 38 40 01 00 00 00                   // sub_58
+    /// 70 1D 38 40 01 00 00 00                   // sub_60
+    /// 70 1D 38 40 01 00 00 00                   // sub_68
     static constexpr const uintptr_t VFT = ISerializable_VFT_Addr;
 
     // 1.52 RVA: 0x1AB240 / 1749568

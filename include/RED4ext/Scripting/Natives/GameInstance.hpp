@@ -47,6 +47,9 @@ struct GameSystemData
 // inits array, calls LoadGameSystemsData
 /// @pattern 40 53 48 83 EC 20 48 8B D9 48 8D 4C 24 30 E8 ?  ?  ?  FD 48 8B D0 48 8B CB E8 ?  ?  ?  FD 48 8D
 /// @nth 6/7
+
+// post 2.0
+/// @pattern 48 89 5C 24 08 48 89 7C 24 18 55 48 8D 6C 24 A9 48 81 EC F0 00 00 00 48 8B 05 56 F3 63 02 48 8B
 DynArray<GameSystemData> *__fastcall GetGameSystemsData(DynArray<GameSystemData> *gameSystemsData);
 
 // 1.52 RVA: 0x2D028E0 / 47196384

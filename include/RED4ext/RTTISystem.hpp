@@ -25,7 +25,7 @@ struct IRTTISystem
     // related to constexpr const functions?
     virtual void* sub_28(CName name) = 0;                                                        // 28
     virtual CGlobalFunction* GetFunction(CName aName) = 0;                                       // 30
-    virtual void sub_38() = 0;                                                                   // 38
+    virtual bool sub_38(CBaseRTTIType* aType) = 0;                                               // 38 - called before RegisterType
     virtual void GetNativeTypes(DynArray<CBaseRTTIType*>& aTypes) = 0;                           // 40
     virtual void GetGlobalFunctions(DynArray<CBaseFunction*>& aFunctions) = 0;                   // 48
     virtual void sub_50() = 0;                                                                   // 50
@@ -37,7 +37,7 @@ struct IRTTISystem
     virtual void GetDerivedClasses(CClass* aBaseClass, DynArray<CClass*>& aClasses) = 0;      // 78
     virtual void RegisterType(CBaseRTTIType* aType, uint32_t aAsyncId) = 0;                   // 80
     virtual void sub_88() = 0;                                                                // 88
-    virtual void sub_90() = 0;                                                                // 90 - added in 2.0
+    virtual void sub_90(uint64_t a2, uint64_t a3) = 0;                                        // 90 - added in 2.0, assigns types[a2] to types[a3] 
     virtual void UnregisterType(CBaseRTTIType* aType) = 0;                                    // 98
     virtual void RegisterFunction(CGlobalFunction* aFunc) = 0;                                // A0
     virtual void UnregisterFunction(CGlobalFunction* aFunc) = 0;                              // A8
@@ -98,6 +98,11 @@ RED4EXT_ASSERT_OFFSET(CRTTISystem, types, 0x10);
 RED4EXT_ASSERT_OFFSET(CRTTISystem, funcs, 0xA0);
 RED4EXT_ASSERT_OFFSET(CRTTISystem, scriptToNative, 0x150);
 RED4EXT_ASSERT_OFFSET(CRTTISystem, nativeToScript, 0x180);
+
+/// @pattern 48 8D 0D (ptr:rel) C6 05 D5 (init:rel) E8 (:rel)
+/// @nth 0/0
+/// @eval ptr
+extern const CRTTISystem * rtti;
 
 struct RTTIRegistrator
 {

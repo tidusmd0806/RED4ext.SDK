@@ -244,6 +244,9 @@ struct UnkD10 {
 
     // 1.6 RVA: 0x1D3E8E0 / 30664928
     /// @pattern 85 D2 0F 84 C2 01 00 00 48 8B C4 48 89 70 18 57 48 83 EC 70 48 89 58 08 8B FA 48 89 68 10 48 8B
+
+    // post 2.0
+    /// @pattern 85 D2 0F 84 88 00 00 00 48 83 EC 38 0F 29 74 24 20 44 8B CA 0F 57 F6 4C 8B D1 45 33 DB 4D 8B C2
     void __fastcall Reset(int numWheels);
 
     struct Wheel {
