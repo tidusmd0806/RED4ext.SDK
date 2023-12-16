@@ -706,9 +706,7 @@
 #define vehicleBikeBaseObject_EnableTiltControl_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikeBaseObject_EnableTiltControl_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BikeBaseObject::EnableTiltControl\")")
-#define vehicleBikePhysics_AnimationUpdate_Addr                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikePhysics_AnimationUpdate_Addr"             \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::BikePhysics::AnimationUpdate\")")
+#define vehicleBikePhysics_AnimationUpdate_Addr 0x20FA04
 #define vehicleBikePhysics_VFT_Addr 0x2AA3378
 #define vehicleCameraManager_ChangeCamera_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_ChangeCamera_Addr"              \
@@ -722,9 +720,7 @@
 #define vehicleCameraManager_Update_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCameraManager_Update_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::CameraManager::Update\")")
-#define vehicleCarPhysics_AnimationUpdate_Addr                                                                         \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCarPhysics_AnimationUpdate_Addr"              \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::CarPhysics::AnimationUpdate\")")
+#define vehicleCarPhysics_AnimationUpdate_Addr 0x17D294
 #define vehicleChassisComponent_BigUpdate_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_BigUpdate_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::BigUpdate\")")

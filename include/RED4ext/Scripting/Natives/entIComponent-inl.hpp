@@ -189,8 +189,8 @@ RED4EXT_INLINE const char * IComponent::sub_228() {
     return call(this);
 }
 
-RED4EXT_INLINE CClass* IComponent::sub_230() {
-    RelocFunc<decltype(&IComponent::sub_230)> call(VFT, 0x230);
+RED4EXT_INLINE CClass* IComponent::GetReplicatedStateClass() {
+    RelocFunc<decltype(&IComponent::GetReplicatedStateClass)> call(VFT, 0x230);
     return call(this);
 }
 

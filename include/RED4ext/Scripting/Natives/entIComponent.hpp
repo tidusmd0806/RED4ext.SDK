@@ -122,7 +122,7 @@ struct IComponent : IScriptable
      virtual const char * sub_228();
      // called on initialize components
      // Get Replicated State Class
-     virtual CClass* sub_230();
+     virtual CClass* GetReplicatedStateClass();
 
     // 1.52 RVA: 0x103E040 / 17031232
     /// @pattern 48 89 51 50 C3

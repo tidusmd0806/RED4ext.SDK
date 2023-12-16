@@ -12,7 +12,7 @@
 namespace RED4ext
 {
 namespace ent { 
-struct IComponent;
+// struct IComponent;
 struct ComponentsStorage : RED4ext::ISerializable
 {
     static constexpr const char* NAME = "entComponentsStorage";

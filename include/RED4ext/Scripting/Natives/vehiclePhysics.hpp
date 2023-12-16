@@ -643,6 +643,9 @@ struct CarPhysics : WheeledPhysics
 
     // 1.52 RVA: 0x1D0C290 / 30458512
     /// @pattern 48 89 5C 24 18 56 48 81 EC D0 00 00 00 48 8B F1 0F 29 B4 24 C0 00 00 00 48 8B 89 20 0D 00 00 BA
+
+    // post 2.0
+    /// @pattern 48 8B C4 48 89 58 10 57 48 81 EC B0 00 00 00 0F 29 70 E8 48 8B F9 48 8B 89 A0 0D 00 00 0F 29 78
     int64_t __fastcall AnimationUpdate(float);
 
     CarBaseObject* carObject; // DA0
@@ -721,6 +724,9 @@ struct BikePhysics : WheeledPhysics
     // 1.61 RVA: 0x1D33630
     // static constexpr const uintptr_t AnimationUpdateAddr = 0x1D33630;
     /// @pattern 48 89 5C 24 10 57 48 83 EC 40 48 8B 81 20 0D 00 00 48 8B D9 F3 0F 10 81 E4 00 00 00 0F 57 05
+
+    // 2.0
+    /// @pattern 48 89 5C 24 10 57 48 83 EC 40 48 8B 81 A0 0D 00 00 48 8B D9 F3 0F 10 81 F4 00 00 00 0F 57 05 99
     __int64 __fastcall AnimationUpdate();
 
     BikeBaseObject* bikeObject;
