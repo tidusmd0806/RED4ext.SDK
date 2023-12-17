@@ -74,11 +74,13 @@ struct ProxyHelper
 
     // assigns proxyCacheEntry to the proxyID in manager
     // 1.6  RVA: 0x447AF0 / 4487920
-    /// @pattern 40 53 48 83 EC 20 48 8B 51 08 48 8B D9 48 85 D2 74 18 8B 02 48 8D 4C 24 30 89 44 24 30 E8 7E 31
+    // 2.0
+    /// @pattern 40 53 48 83 EC 20 48 8B ? 08 48 8B D9 48 85 ? 74 ? 8B ? 48 8B
     bool __fastcall UpdateProxyCache();
 
     // 1.6  RVA: 0x446D90 / 4484496
-    /// @pattern 48 8B 51 18 48 85 D2 74 04 33 C0 86 02 C3
+    // 2.0 switches the order of some instructions in the ?
+    /// @pattern 48 8B 51 18 ? ? ? ? ? ? ? 86 02 C3
     __int64 __fastcall Unlock();
 
     ProxyCache * proxyCache;

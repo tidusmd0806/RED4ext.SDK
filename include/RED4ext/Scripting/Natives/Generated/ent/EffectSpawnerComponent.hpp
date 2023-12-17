@@ -23,7 +23,7 @@ namespace ent {
 
     // DynArray<Handle<ent::EffectDesc>> effectDescs; // 140
     // uint8_t unk150[0x230 - 0x150]; // 150
-};
+// };
 RED4EXT_ASSERT_SIZE(EffectSpawnerComponent, 0x230);
 } // namespace ent
 using entEffectSpawnerComponent = ent::EffectSpawnerComponent;

@@ -5,147 +5,180 @@
 #define ZOLTAN_EXPAND_THEN_STRINGISE(N) ZOLTAN_STRINGISE(N)
 #define __LINE_STR__ ZOLTAN_EXPAND_THEN_STRINGISE(__LINE__)
 
-#define Addresses_CBaseFunction_ExecuteNative_Addr 0x1FC191C
-#define Addresses_CBaseFunction_ExecuteScripted_Addr 0x1874F0
-#define Addresses_CBaseFunction_Handlers_Addr 0x32BEEB0
-#define Addresses_CBaseFunction_InternalExecute_Addr 0x2E9C70
-#define Addresses_CBaseRTTIType_sub_80_Addr 0x1FC15AC
-#define Addresses_CBaseRTTIType_sub_88_Addr 0x1FC150C
-#define Addresses_CBaseRTTIType_sub_90_Addr 0x1FC13E8
-#define Addresses_CBaseRTTIType_sub_98_Addr 0x1FC1638
-#define Addresses_CBaseRTTIType_sub_A0_Addr 0x1FC13D0
-#define Addresses_CBitfield_FromString_Addr 0x1FD1E44
-#define Addresses_CBitfield_ToString_Addr 0x1FD1F5C
-#define Addresses_CBitfield_Unserialize_Addr 0x1BD1C4
-#define Addresses_CClassFunction_ctor_Addr 0xA4E4A8
-#define Addresses_CClassStaticFunction_ctor_Addr 0xA4E43C
-#define Addresses_CClass_AssignDefaultValuesToProperties_Addr 0x15A168
-#define Addresses_CClass_ClearScriptedData_Addr 0x5844B8
-#define Addresses_CClass_CreateInstance_Addr 0x159FD0
-#define Addresses_CClass_GetMaxAlignment_Addr 0x583664
-#define Addresses_CClass_GetProperties_Addr 0x47DB70
-#define Addresses_CClass_GetProperty_Addr 0x15AF58
-#define Addresses_CClass_InitializeProperties_Addr 0x15A894
-#define Addresses_CClass_ToString_Addr 0x845CA8
-#define Addresses_CClass_Unserialize_Addr 0x15A654
-#define Addresses_CClass_sub_80_Addr 0x1FBFEA8
-#define Addresses_CClass_sub_88_Addr 0x1FBFDFC
-#define Addresses_CClass_sub_90_Addr 0xB27B88
-#define Addresses_CClass_sub_98_Addr 0x1FC1084
-#define Addresses_CClass_sub_A0_Addr 0x1FC06B8
-#define Addresses_CClass_sub_B0_Addr 0x8F5524
-#define Addresses_CClass_sub_C0_Addr 0x4DD0B4
-#define Addresses_CClass_sub_D0_Addr 0x1FC0D54
-#define Addresses_CEnum_FromString_Addr 0x6D960C
-#define Addresses_CEnum_ToString_Addr 0x6D7054
-#define Addresses_CEnum_Unserialize_Addr 0x15B344
-#define Addresses_CGameEngine_Addr 0x3302BF0
-#define Addresses_CGlobalFunction_ctor_Addr 0xA4E3F0
-#define Addresses_CNamePool_AddCString_Addr 0x217BF14
-#define Addresses_CNamePool_AddCstr_Addr 0x21FD98
-#define Addresses_CNamePool_AddPair_Addr 0x2F471C
-#define Addresses_CNamePool_Get_Addr 0x1A11CC
-#define Addresses_CRTTIRegistrator_Add_Addr 0x873030
-#define Addresses_CRTTIRegistrator_RTTIAsyncId_Addr 0x3E3CB8C
-#define Addresses_CRTTIScriptReferenceType_Set_Addr 0x2EAB7C
-#define Addresses_CRTTIScriptReferenceType_ctor_Addr 0x180724
-#define Addresses_CRTTISystem_Get_Addr 0x224838
-#define Addresses_CStack_vtbl_Addr 0x2A860F0
-#define Addresses_CString_copy_Addr 0x20348C
-#define Addresses_CString_ctor_span_Addr 0x3034D8
-#define Addresses_CString_ctor_str_Addr 0x217E88
-#define Addresses_CString_dtor_Addr 0x158014
-#define Addresses_DynArray_Realloc_Addr 0x1627E8
-#define Addresses_Handle_DecWeakRef_Addr 0x15E808
-#define Addresses_Handle_ctor_Addr 0x1588C0
-#define Addresses_IScriptable_DestructValueHolder_Addr 0x15BEC0
-#define Addresses_IScriptable_sub_D8_Addr 0x1FBAE98
-#define Addresses_ISerializable_sub_30_Addr 0x1FADB34
-#define Addresses_ISerializable_sub_40_Addr 0x15B5B4
-#define Addresses_ISerializable_sub_78_Addr 0x93D174
-#define Addresses_ISerializable_sub_A0_Addr 0x442A28
-#define Addresses_ISerializable_sub_C0_Addr 0x49137C
-#define Addresses_JobDispatcher_Addr 0x3310640
-#define Addresses_JobDispatcher_DispatchJob_Addr 0x164DB0
-#define Addresses_JobHandle_Join_Addr 0x164594
-#define Addresses_JobHandle_ctor_Addr 0x166838
-#define Addresses_JobHandle_dtor_Addr 0x166220
-#define Addresses_JobQueue_Capture_Addr 0x1B99C8
-#define Addresses_JobQueue_SyncWait_Addr 0x164F34
-#define Addresses_JobQueue_ctor_FromGroup_Addr 0x166738
-#define Addresses_JobQueue_ctor_FromParams_Addr 0x166778
-#define Addresses_JobQueue_dtor_Addr 0x1644BC
-#define Addresses_Memory_PoolStorage_OOM_Addr 0x1FA9194
-#define Addresses_Memory_Vault_Addr 0x33107C0
-#define Addresses_Memory_Vault_Alloc_Addr 0x1589C8
-#define Addresses_Memory_Vault_AllocAligned_Addr 0x15DF5C
-#define Addresses_Memory_Vault_Free_Addr 0x15E87C
-#define Addresses_Memory_Vault_Realloc_Addr 0x6ADFF8
-#define Addresses_Memory_Vault_ReallocAligned_Addr 0x164764
-#define Addresses_Memory_Vault_Unk1_Addr 0x1FA9390
-#define Addresses_OpcodeHandlers_Addr 0x327EEB0
-#define Addresses_ResourceDepot_Addr 0x4773B18
-#define Addresses_ResourceLoader_Addr 0x32FEEB8
-#define Addresses_ResourceLoader_FindTokenFast_Addr 0x15F598
-#define Addresses_ResourceLoader_LoadAsync_Addr 0x694794
-#define Addresses_ResourceReference_Fetch_Addr 0x148914
-#define Addresses_ResourceReference_Load_Addr 0x148940
-#define Addresses_ResourceReference_Reset_Addr 0x33D624
-#define Addresses_ResourceToken_CancelUnk38_Addr 0x2BF29C
-#define Addresses_ResourceToken_DestructUnk38_Addr 0x21F278
-#define Addresses_ResourceToken_Fetch_Addr 0x8B4064
-#define Addresses_ResourceToken_OnLoaded_Addr 0x473E64
-#define Addresses_ResourceToken_dtor_Addr 0x211504
-#define Addresses_TTypedClass_IsEqual_Addr 0x22E11C
-#define Addresses_TweakDB_CreateRecord_Addr 0x20B8C0
-#define Addresses_TweakDB_Get_Addr 0x209DD4
-#define Addresses_UpdateRegistrar_RegisterBucketUpdate_Addr 0x85A7E8
-#define Addresses_UpdateRegistrar_RegisterGroupUpdate_Addr 0x85A938
-#define CBaseRTTIType_VFT_Addr 0x2F68A08
-#define CClass_VFT_Addr 0x2A1C9A8
-#define ISerializable_VFT_Addr 0x2B08630
-#define REUSED_Break_Addr 0x17CF7C8
-#define REUSED_ReturnOne_Addr 0x187B259
-#define REUSED_ReturnOne64_Addr 0x17ACA50
-#define REUSED_ReturnZero_Addr 0x1814DB0
-#define REUSED_ReturnZero64_Addr 0x17A47A0
-#define REUSED_ReturnZero8_Addr 0x1807240
-#define UpdateManagerUpdateStorage_Copy_0_Addr 0x85A648
-#define audioGameParameterStorage_GetValue_Addr 0x1BD0C0
-#define entComponentsStorage_GetSize_Addr 0x17B2250
-#define entIComponent_VFT_Addr 0x2AE1530
-#define gameIGameSystem_VFT_Addr 0x2C3B6A8
-#define physicsProxyCache_GetDataFromCache_Addr 0x1F97E4
-#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x24917C
-#define userRuntimeSettingsVarBool_VFT_Addr 0x30F0F18
-#define userRuntimeSettingsVarFloatList_VFT_Addr 0x30F1B40
-#define userRuntimeSettingsVarFloat_VFT_Addr 0x30F1AE8
-#define userRuntimeSettingsVarInt_VFT_Addr 0x30F1A90
-#define userRuntimeSettingsVarNameList_VFT_Addr 0x30F1020
-#define userRuntimeSettingsVarName_VFT_Addr 0x30F0F70
-#define userRuntimeSettingsVarStringList_VFT_Addr 0x2FCD188
-#define userRuntimeSettingsVar_VFT_Addr 0x2FCD130
-#define vehicleBikePhysics_VFT_Addr 0x300D3FE
-#define vehiclePhysics_SetUnkA0ToOne_Addr 0x374D72
-#define vehiclePhysics_VFT_Addr 0x300D128
-#define vehicleTankPhysics_VFT_Addr 0x300D100
-#define vehicleWheeledPhysics_VFT_Addr 0x300CE38
+#define CBaseEngine_LoadScripts_Addr 0x95355C
+#define CBaseRTTIType_VFT_Addr 0x2F8F8D8
+#define CBaseRTTIType_dstr_Addr 0x1FEC25C
+#define CClass_ApplyFlags_Addr 0x9B40B0
+#define CClass_VFT_Addr 0x2A4C078
+#define CClass_VFT_Construct_Addr 0x159E44
+#define CClass_VFT_Destruct_Addr 0x15668C
+#define CClass_VFT_GetComputedName_Addr 0x17B7350
+#define CClass_VFT_GetName_Addr 0x17B7340
+#define CClass_VFT_GetSize_Addr 0x17B7360
+#define CClass_VFT_GetType_Addr 0x17B7370
+#define CClass_VFT_Move_Addr 0x5092E8
+#define CClass_VFT_dstr_Addr 0x1B3F970
+#define CProcessRunner_Run_Addr 0x82E260
+#define CRTTIArrayType_VFT_Addr 0x2A4BD30
+#define CRTTIHandleType_VFT_Addr 0x2A4BF40
+#define CRTTINativeArrayType_VFT_Addr 0x2A3DF08
+#define CRTTIPointerType_VFT_Addr 0x2A66CE8
+#define CRTTIResourceAsyncReferenceType_VFT_Addr 0x2AB0B00
+#define CRTTIResourceReferenceType_VFT_Addr 0x2AD3590
+#define CRTTIStaticArrayType_VFT_Addr 0x2A3E258
+#define CRTTIWeakHandleType_VFT_Addr 0x2A4BE50
+#define GetGameSystemsData_Addr 0xD630A4
+#define GpuApi_Present_Addr 0x47C06C
+#define HandleSharedStorage_AddRefWeak_Addr 0x133C64
+#define HandleSharedStorage_HandleSharedStorage_Addr 0x157480
+#define ISerializable_OnSerialize_Addr 0x15A234
+#define ISerializable_OnSerializeFromText_Addr 0x1FDE454
+#define ISerializable_OnSerializeToText_Addr 0x1FDE48C
+#define ISerializable_VFT_Addr 0x2A11750
+#define ISerializable_VFT_GetAllocator_Addr 0x2C4CFC
+#define ISerializable_VFT_GetType_Addr 0x17B6F80
+#define ISerializable_VFT_sub_30_Addr 0x1FDE42C
+#define ISerializable_dstr_Addr 0x1FDE3F8
+#define ISerializable_getNativeType_Addr 0x17B6F80
+#define PureCall_Addr 0x17DA0C8
+#define Return0u16_Addr 0x18488A0
+#define Return1_Addr 0xA11A3E
+#define Return10_Addr 0x17B7440
+#define Return11_Addr 0x17B7420
+#define Return12_Addr 0x17B7410
+#define Return13_Addr 0x17B74D0
+#define Return14_Addr 0x17B7040
+#define Return15_Addr 0x17B7430
+#define Return16u32_Addr 0x17B72F0
+#define Return1u32_Addr 0x17B73D0
+#define Return2_Addr 0x17B7370
+#define Return24u32_Addr 0x17B72D0
+#define Return3_Addr 0x17B7490
+#define Return32u32_Addr 0x17B7300
+#define Return4_Addr 0x17B7030
+#define Return40u32_Addr 0x17B7320
+#define Return4u32_Addr 0x17B72E0
+#define Return5_Addr 0x17B7460
+#define Return6_Addr 0x17B74C0
+#define Return7_Addr 0x17B74B0
+#define Return8_Addr 0x17B7400
+#define Return88u32_Addr 0x17B7310
+#define Return8u32_Addr 0x17B7000
+#define Return9_Addr 0x17B73F0
+#define ReturnN1i32_Addr 0x17B73B0
+#define ReturnZero64_Addr 0x5095F0
+#define ReturnZero8_Addr 0x18DED10
+#define UpdateManagerUpdateStorage_Copy_0_Addr 0x7FBD6C
+#define audioGameParameterStorage_GetValue_Addr 0x2C8C68
+#define entComponentsStorage_GetSize_Addr 0x17BCBC0
+#define entEntity_SetRuntime_Addr 0x1BFFB00
+#define entIComponent_VFT_Addr 0x2A20D90
+#define entIPlacedComponent_VFT_Addr 0x2A20B40
+#define gameIGameSystem_VFT_Addr 0x2C62068
+#define physicsProxyCache_GetDataFromCache_Addr 0x1C2164
+#define physicsProxyHelper_Unlock_Addr 0x2056F0
+#define physicsProxyHelper_UpdateProxyCache_Addr 0x1C1B58
+#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x209D5C
+#define purecall_Addr 0x17DA0C8
+#define redGameAppBaseInitializationState_OnTick_Addr 0x826B2C
+#define redGameAppInitializationState_OnTick_Addr 0x826BE8
+#define redGameAppInstance_RegisterState_Addr 0x8271FC
+#define redGameAppRunningState_OnTick_Addr 0x826B84
+#define redGameAppShutdownState_OnTick_Addr 0x952B9C
+#define rtti_Addr 0x3EC41A8
+#define rttiBitFieldType_FromString_Addr 0x2002700
+#define rttiBitFieldType_Serialize_Addr 0x2C8D6C
+#define rttiBitFieldType_ToString_Addr 0x2002818
+#define rttiClassType_ClearScriptData_Addr 0x612800
+#define rttiClassType_CreateObject_Addr 0x158C50
+#define rttiClassType_FindFunctionByHash_Addr 0x50743C
+#define rttiClassType_FindProperty_Addr 0x159BD8
+#define rttiClassType_GetAlignment_Addr 0x17B7330
+#define rttiClassType_GetProperties_Addr 0x611790
+#define rttiClassType_InitializeScriptDefaultValues_Addr 0x158DE8
+#define rttiClassType_InitializeScriptedProperties_Addr 0x159514
+#define rttiClassType_Serialize_Addr 0x1592D4
+#define rttiClassType_ToString_Addr 0x6656CC
+#define rttiEnumType_FromString_Addr 0x70AC74
+#define rttiEnumType_Serialize_Addr 0x159FC4
+#define rttiEnumType_ToString_Addr 0x70A5D4
+#define rttiFunction_CallFunction_Addr 0x1FD3C9C
+#define rttiFunction_CallNative_Addr 0x1FF21D8
+#define rttiFunction_InternalCall_Addr 0x50949C
+#define rttiFunction_InternalCallNative_Addr 0x157F40
+#define rttiIScriptable_FindFunction_Addr 0x183DD0
+#define rttiIType_GetERTTITypeString_Addr 0x1FF1B4C
+#define rttiIType_GetRefName_Addr 0x1856D8
+#define rttiIType_ReadValue_Addr 0x1FF1CA4
+#define rttiIType_SerializeFromText_Addr 0x1FF1DC8
+#define rttiIType_SerializeToText_Addr 0x1FF1E68
+#define rttiIType_WriteValue_Addr 0x1FF1EF4
+#define rttiNativeGlobalFunction_NativeGlobalFunction_Addr 0x9B0094
+#define rttiNativeMemberFunction_NativeMemberFunction_Addr 0x60F5AC
+#define rttiNativeMemberFunction_NativeMemberFunction_0_Addr 0x9B00E0
+#define userRuntimeSettingsVarBool_VFT_Addr 0x3125E08
+#define userRuntimeSettingsVarFloatList_VFT_Addr 0x3126978
+#define userRuntimeSettingsVarFloat_VFT_Addr 0x3126920
+#define userRuntimeSettingsVarInt_VFT_Addr 0x31268C8
+#define userRuntimeSettingsVarNameList_VFT_Addr 0x3125F10
+#define userRuntimeSettingsVarName_VFT_Addr 0x3125E60
+#define userRuntimeSettingsVarStringList_VFT_Addr 0x2FFA580
+#define userRuntimeSettingsVar_VFT_Addr 0x2FFA528
+#define vehicleBikePhysics_AnimationUpdate_Addr 0x20FA04
+#define vehicleBikePhysics_VFT_Addr 0x2AA3378
+#define vehicleCarPhysics_AnimationUpdate_Addr 0x17D294
+#define vehiclePhysicsData_ApplyForceAtPosition_Addr 0x207F24
+#define vehiclePhysicsData_ApplyTorqueAtPosition_Addr 0x172F4C
+#define vehiclePhysics_SetUnkA0ToOne_Addr 0x1B6006
+#define vehiclePhysics_VFT_Addr 0x2AA4290
+#define vehicleTankPhysics_VFT_Addr 0x2C222D0
+#define vehicleUnk570_GetSmearFxForMaterial_Addr 0xBCDFB0
+#define vehicleUnkD10_Reset_Addr 0xA14C68
+#define vehicleWheeledPhysics_VFT_Addr 0x2AA40E0
+#define wWinMain_Addr 0x988610
 
 #include <RED4ext/RED4ext.hpp>
 #include <RED4ext/Relocation.hpp>
-#include <RED4ext/Addresses.hpp>
 #include <RED4ext/RTTITypes.hpp>
+#include <RED4ext/Scripting/Natives/GameInstance.hpp>
 #include <RED4ext/ISerializable.hpp>
 #include <RED4ext/CommonFunctions.hpp>
 #include <RED4ext/Scripting/Natives/UpdateManager.hpp>
 #include <RED4ext/Scripting/Natives/audioEmitter.hpp>
 #include <RED4ext/Scripting/Natives/entComponentsStorage.hpp>
+#include <RED4ext/Scripting/Natives/entEntity.hpp>
 #include <RED4ext/Scripting/Natives/entIComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
 #include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
 #include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsInsert1.hpp>
+#include <RED4ext/RTTITypes.hpp>
+#include <RED4ext/RTTISystem.hpp>
 #include <RED4ext/Scripting/Natives/userRuntimeSettingsVar.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+#include <RED4ext/Scripting/Natives/vehicleBaseObject.hpp>
+#include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
+
+RED4EXT_INLINE void RED4ext::CClass::ApplyFlags(RED4ext::CClass::Flags a1, bool a2) {
+    using CClass_ApplyFlags_t = void (*)(RED4ext::CClass*, RED4ext::CClass::Flags, bool);
+    RED4ext::RelocFunc<CClass_ApplyFlags_t> call(CClass_ApplyFlags_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::DynArray<RED4ext::GameSystemData>* RED4ext::GetGameSystemsData(RED4ext::DynArray<RED4ext::GameSystemData>* a0) {
+    using GetGameSystemsData_t = RED4ext::DynArray<RED4ext::GameSystemData>* (*)(RED4ext::DynArray<RED4ext::GameSystemData>*);
+    RED4ext::RelocFunc<GetGameSystemsData_t> call(GetGameSystemsData_Addr);
+    return call(a0);
+}
+
+RED4EXT_INLINE void RED4ext::ISerializable::getNativeType() {
+    using ISerializable_getNativeType_t = void (*)(RED4ext::ISerializable*);
+    RED4ext::RelocFunc<ISerializable_getNativeType_t> call(ISerializable_getNativeType_Addr);
+    return call(this);
+}
 
 RED4EXT_INLINE RED4ext::UpdateManager::UpdateStorage* RED4ext::UpdateManager::UpdateStorage::Copy_0(RED4ext::UpdateManager::UpdateStorage* a1) {
     using UpdateManagerUpdateStorage_Copy_0_t = RED4ext::UpdateManager::UpdateStorage* (*)(RED4ext::UpdateManager::UpdateStorage*, RED4ext::UpdateManager::UpdateStorage*);
@@ -165,10 +198,28 @@ RED4EXT_INLINE int64_t RED4ext::ent::ComponentsStorage::GetSize() {
     return call(this);
 }
 
+RED4EXT_INLINE void RED4ext::ent::Entity::SetRuntime(int64_t a1) {
+    using entEntity_SetRuntime_t = void (*)(RED4ext::ent::Entity*, int64_t);
+    RED4ext::RelocFunc<entEntity_SetRuntime_t> call(entEntity_SetRuntime_Addr);
+    return call(this, a1);
+}
+
 RED4EXT_INLINE void* RED4ext::physics::ProxyCache::GetDataFromCache(uint32_t a1) {
     using physicsProxyCache_GetDataFromCache_t = void* (*)(RED4ext::physics::ProxyCache*, uint32_t);
     RED4ext::RelocFunc<physicsProxyCache_GetDataFromCache_t> call(physicsProxyCache_GetDataFromCache_Addr);
     return call(this, a1);
+}
+
+RED4EXT_INLINE int64_t RED4ext::physics::ProxyHelper::Unlock() {
+    using physicsProxyHelper_Unlock_t = int64_t (*)(RED4ext::physics::ProxyHelper*);
+    RED4ext::RelocFunc<physicsProxyHelper_Unlock_t> call(physicsProxyHelper_Unlock_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE bool RED4ext::physics::ProxyHelper::UpdateProxyCache() {
+    using physicsProxyHelper_UpdateProxyCache_t = bool (*)(RED4ext::physics::ProxyHelper*);
+    RED4ext::RelocFunc<physicsProxyHelper_UpdateProxyCache_t> call(physicsProxyHelper_UpdateProxyCache_Addr);
+    return call(this);
 }
 
 RED4EXT_INLINE float RED4ext::physics::VehiclePhysicsInsert1::SinMath(float a1) {
@@ -177,9 +228,45 @@ RED4EXT_INLINE float RED4ext::physics::VehiclePhysicsInsert1::SinMath(float a1) 
     return call(this, a1);
 }
 
+RED4EXT_INLINE int64_t RED4ext::vehicle::BikePhysics::AnimationUpdate() {
+    using vehicleBikePhysics_AnimationUpdate_t = int64_t (*)(RED4ext::vehicle::BikePhysics*);
+    RED4ext::RelocFunc<vehicleBikePhysics_AnimationUpdate_t> call(vehicleBikePhysics_AnimationUpdate_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE int64_t RED4ext::vehicle::CarPhysics::AnimationUpdate(float a1) {
+    using vehicleCarPhysics_AnimationUpdate_t = int64_t (*)(RED4ext::vehicle::CarPhysics*, float);
+    RED4ext::RelocFunc<vehicleCarPhysics_AnimationUpdate_t> call(vehicleCarPhysics_AnimationUpdate_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::ApplyForceAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
+    using vehiclePhysicsData_ApplyForceAtPosition_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*, RED4ext::Vector3*);
+    RED4ext::RelocFunc<vehiclePhysicsData_ApplyForceAtPosition_t> call(vehiclePhysicsData_ApplyForceAtPosition_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::PhysicsData::ApplyTorqueAtPosition(RED4ext::Vector3* a1, RED4ext::Vector3* a2) {
+    using vehiclePhysicsData_ApplyTorqueAtPosition_t = void (*)(RED4ext::vehicle::PhysicsData*, RED4ext::Vector3*, RED4ext::Vector3*);
+    RED4ext::RelocFunc<vehiclePhysicsData_ApplyTorqueAtPosition_t> call(vehiclePhysicsData_ApplyTorqueAtPosition_Addr);
+    return call(this, a1, a2);
+}
+
 RED4EXT_INLINE void RED4ext::vehicle::Physics::SetUnkA0ToOne() {
     using vehiclePhysics_SetUnkA0ToOne_t = void (*)(RED4ext::vehicle::Physics*);
     RED4ext::RelocFunc<vehiclePhysics_SetUnkA0ToOne_t> call(vehiclePhysics_SetUnkA0ToOne_Addr);
     return call(this);
+}
+
+RED4EXT_INLINE RED4ext::vehicle::Unk570::SmearFxLookup* RED4ext::vehicle::Unk570::GetSmearFxForMaterial(RED4ext::CName a1, bool a2) {
+    using vehicleUnk570_GetSmearFxForMaterial_t = RED4ext::vehicle::Unk570::SmearFxLookup* (*)(RED4ext::vehicle::Unk570*, RED4ext::CName, bool);
+    RED4ext::RelocFunc<vehicleUnk570_GetSmearFxForMaterial_t> call(vehicleUnk570_GetSmearFxForMaterial_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::vehicle::UnkD10::Reset(int32_t a1) {
+    using vehicleUnkD10_Reset_t = void (*)(RED4ext::vehicle::UnkD10*, int32_t);
+    RED4ext::RelocFunc<vehicleUnkD10_Reset_t> call(vehicleUnkD10_Reset_Addr);
+    return call(this, a1);
 }
 

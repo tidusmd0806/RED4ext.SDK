@@ -392,12 +392,12 @@
 #define gameVehicleSystem_UpdateVehicleArrays_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_UpdateVehicleArrays_Addr"          \
               "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::UpdateVehicleArrays\")")
+#define physicsBaseProxy_Process_Addr 0x17B9B30
+#define physicsBaseProxy_VFT_Addr 0x2A1A208
 #define physicsColliderSphere_createHandleWithRadius_Addr                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsColliderSphere_createHandleWithRadius_Addr"   \
               "is 0 - Zoltan found no matches for RED4ext::physics::ColliderSphere::createHandleWithRadius\")")
-#define physicsFilterData_LoadPreset_Addr                                                                              \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsFilterData_LoadPreset_Addr"                   \
-              "is 0 - Zoltan found no matches for RED4ext::physics::FilterData::LoadPreset\")")
+#define physicsFilterData_LoadPreset_Addr 0x1B7EB4
 #define physicsGeometryCache_FreeAlwaysLoaded_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeAlwaysLoaded_Addr"          \
               "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeAlwaysLoaded\")")
@@ -486,15 +486,11 @@
 #define physicsProxyHelper_SetSimulationShape_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetSimulationShape_Addr"          \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetSimulationShape\")")
-#define physicsProxyHelper_Unlock_Addr                                                                                 \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_Unlock_Addr"                      \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::Unlock\")")
+#define physicsProxyHelper_Unlock_Addr 0x2056F0
 #define physicsProxyHelper_UpdateGlobalPose_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateGlobalPose_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::UpdateGlobalPose\")")
-#define physicsProxyHelper_UpdateProxyCache_Addr                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateProxyCache_Addr"            \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::UpdateProxyCache\")")
+#define physicsProxyHelper_UpdateProxyCache_Addr 0x1C1B58
 #define physicsProxyID_GetKeyUnk37_0x40_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetKeyUnk37_0x40_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetKeyUnk37_0x40\")")
@@ -504,6 +500,7 @@
 #define physicsProxyID_GetProxy_Addr                                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetProxy_Addr"                        \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetProxy\")")
+#define physicsProxyID_GetProxyStatic_Addr 0x2BACA4
 #define physicsProxyID_ProcessProxyDesc_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_ProcessProxyDesc_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::ProcessProxyDesc\")")
@@ -519,18 +516,13 @@
 #define physicsProxyManager_GetProxyCache_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_GetProxyCache_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::GetProxyCache\")")
-#define physicsProxyManager_GetProxyHandle_Addr                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_GetProxyHandle_Addr"             \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::GetProxyHandle\")")
+#define physicsProxyManager_GetProxyHandle_Addr 0x124908
 #define physicsProxyManager_HasProxy_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_HasProxy_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::HasProxy\")")
 #define physicsProxyManager_SetProxyCacheID_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_SetProxyCacheID_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::SetProxyCacheID\")")
-#define physicsProxyManager_TestUnk2E2068_Addr                                                                         \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_TestUnk2E2068_Addr"              \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::TestUnk2E2068\")")
 #define physicsSystemResource_GetFromCMesh_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsSystemResource_GetFromCMesh_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::physics::SystemResource::GetFromCMesh\")")

@@ -32,6 +32,7 @@ struct ISerializable
     void getNativeType();
 
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 8B DA 48 8B F9 E8 38 4C 18 FE F6 C3 01 74 0D BA 30 00 00 00 48 8B
+    /// @noimpl 1
     void dstr(char a2);
 
     /// @pattern                                  // ISerializable VFT

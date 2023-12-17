@@ -18,7 +18,7 @@ struct BaseProxyDesc
 {
     // after "physicsGeometryKey" vft
     // 1.6  RVA: 0x313B3D0
-    static constexpr const uintptr_t VFT = 0x313B3D0;
+    // static constexpr const uintptr_t VFT = 0x313B3D0;
 
     // checks multiple things
     virtual bool CanAdd();

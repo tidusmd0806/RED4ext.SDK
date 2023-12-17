@@ -17,7 +17,8 @@ struct ProxyManager
 {
     // 1.6 RVA: 0x46A7E0 / 4630496
     /// @pattern 48 89 74 24 10 57 48 83 EC 20 44 8B 02 48 8B F2 48 8B F9 41 83 F8 FF 74 67 B8 FF FF 00 00 66 44
-    bool __fastcall TestUnk2E2068(ProxyID *proxyID);
+    // inlined in 2.0
+    // bool __fastcall TestUnk2E2068(ProxyID *proxyID);
 
     // 1.6  RVA: 0x46A560 / 4629856
     /// @pattern 48 89 5C 24 08 57 48 83 EC 30 8B 02 4C 8D 44 24 48 48 8B DA 89 44 24 48 48 8D 54 24 20 48 8B F9
@@ -29,12 +30,19 @@ struct ProxyManager
 
     // 1.6  RVA: 0x46A410 / 4629520
     /// @pattern 48 89 5C 24 08 48 89 74 24 18 57 48 83 EC 40 41 8B 00 48 8B DA 48 8D 54 24 58 89 44 24 58 49 8B
-    Handle<BaseProxy> *__fastcall GetProxyHandle(Handle<BaseProxy> *handle, ProxyID *proxyID);
+    // Handle<BaseProxy> *__fastcall GetProxyHandle(Handle<BaseProxy> *handle, ProxyID *proxyID);
+
+    // 2.0 removed pointer
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 55 57 41 56 48 8B EC 48 83 EC 50 41 8B D8 4C 8B F2 48 8B F9 41 83
+    Handle<BaseProxy> *__fastcall GetProxyHandle(Handle<BaseProxy> *handle, ProxyID proxyID);
 
     // passed -1 when collision is disabled
     // 1.6  RVA: 0x46AB50 / 4631376
     /// @pattern 0F B7 12 41 8B 00 89 84 91 54 20 2A 00 C3
-    void __fastcall SetProxyCacheID(ProxyID *proxyID, ProxyCacheID *proxyCacheID);
+    /// @noimpl 1
+    inline void __fastcall SetProxyCacheID(ProxyID *proxyID, ProxyCacheID *proxyCacheID) {
+        this->proxyCacheIDs[proxyID->index] = *proxyCacheID;
+    }
 
     struct Unk102010 {
         uint8_t unk0;
@@ -51,6 +59,7 @@ struct ProxyManager
     // 0x2018
     // index'd by ProxyID.index - Handle to physics::PhysicalSystemKey
     StaticArray<Handle<BaseProxy>, 0xFFFF> systemKeys;
+    // 0x102010
     // index'd by ProxyID.index
     StaticArray<Unk102010, 0xFFFF> unk102010;
     // 0x122018
@@ -61,6 +70,7 @@ struct ProxyManager
     // 0x222018
     // index'd by ProxyID.index
     StaticArray<ent::ITransformAttachable, 0xFFFF> interfaces;
+    // 0x2A2018
     // physicsSystemDesc types
     uint32_t refCounts_2A2018[15];
     // 0x2A2054

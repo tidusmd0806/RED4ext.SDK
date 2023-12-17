@@ -35,6 +35,7 @@ struct RawBuffer;
 constexpr const uintptr_t purecall = purecall_Addr;
 
 /// @pattern 40 53 48 83 EC 20 48 8D 05 6F 36 FA 00 48 8B D9 48 89 01 F6 C2 01 74 0A BA 10 00 00 00 E8 42 A2
+/// @noimpl 1
 uintptr_t *__fastcall CBaseRTTIType_dstr(uintptr_t *, char);
 
 enum class ERTTIType : uint8_t

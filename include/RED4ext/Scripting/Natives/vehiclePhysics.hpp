@@ -204,6 +204,8 @@ struct Physics
     float unkA4;
     float setTo0point5;
     /*
+    B0 in 2.0
+    HIWORD(this) compared to physicsProxyManager->unk102010[this]
     0x00011a70 on ground, 
     0x00011a84 in air, 
     0xffffffff in water, 

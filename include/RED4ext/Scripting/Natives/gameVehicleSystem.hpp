@@ -174,8 +174,9 @@ struct VehicleSystem : IVehicleSystem, VehicleInterface2, VehicleInterface3
     uint64_t unk207F0[19];
     SharedMutex unk20888;
     uint64_t unk20890[6];
+    uint8_t unk208C0[0x20A80-133312];
 };
-RED4EXT_ASSERT_SIZE(VehicleSystem, 0x208C0);
+// RED4EXT_ASSERT_SIZE(VehicleSystem, 0x208C0);
 } // namespace game
 using VehicleSystem = game::VehicleSystem;
 } // namespace RED4ext

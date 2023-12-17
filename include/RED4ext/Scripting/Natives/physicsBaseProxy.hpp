@@ -19,11 +19,24 @@ struct BaseProxy {
     // just after "TimeDeltaOverride"
     // 1.6  RVA: 0x313A550
     // 1.61hf1 RVA: 0x3142700
-    static constexpr const uintptr_t VFT = 0x3142700;
+
+    /// @pattern
+    /// (:call)
+    /// (physicsBaseProxy_Process:ref)
+    /// (:call)
+    /// (:call)
+    /// (:call)                         // sub_20
+    /// (:call)                         // sub_28
+    /// (:call)                         // sub_30
+    /// (:call)                         // sub_38
+    /// (:call)                         // sub_40
+    /// (:pure)                         // sub_48
+    static constexpr const uintptr_t VFT = physicsBaseProxy_VFT;
 
     virtual void sub_00();
     // iterates through physicsSystemResource->bodies
     // creates rigid bodies through physx, sets them up
+    /// @pattern 0F B6 82 B8 00 00 00 88 41 35 C3
     virtual void Process(BaseProxyDesc*);
     virtual void sub_10(ProxyCacheID*);
     // does something with aggregate/bodies
