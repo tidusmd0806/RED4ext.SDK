@@ -98,4 +98,13 @@ RED4EXT_ASSERT_OFFSET(ProxyManager, unk2E2054, 0x2E2054);
 RED4EXT_ASSERT_OFFSET(ProxyManager, unk2E2058, 0x2E2058);
 RED4EXT_ASSERT_OFFSET(ProxyManager, unk2E2068, 0x2E2068);
 //char (*__kaboom)[sizeof(ProxyManager)] = 1;
+
+/// @pattern 8B 50 30 48 8B 0D (ptr:rel) E8 (test:rel) 84 C0 0F ? ? ? ? ? 48 8B 03
+/// @eval ptr
+extern const ProxyManager * proxyManager;
+
 }
+
+#ifdef RED4EXT_HEADER_ONLY
+#include <RED4ext/Scripting/Natives/physicsProxyManager-inl.hpp>
+#endif

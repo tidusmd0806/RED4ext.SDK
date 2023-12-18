@@ -21,17 +21,17 @@ struct BaseProxy {
     // 1.61hf1 RVA: 0x3142700
 
     /// @pattern
-    /// (:call)
-    /// (physicsBaseProxy_Process:ref)
-    /// (:call)
-    /// (:call)
-    /// (:call)                         // sub_20
-    /// (:call)                         // sub_28
-    /// (:call)                         // sub_30
-    /// (:call)                         // sub_38
-    /// (:call)                         // sub_40
-    /// (:pure)                         // sub_48
-    static constexpr const uintptr_t VFT = physicsBaseProxy_VFT;
+    ///     /vft
+    ///     /vft(physicsBaseProxy_Process)
+    ///     /vft
+    ///     /vft
+    ///     /vft(null)                         // sub_20
+    ///     /vft(null)                         // sub_28
+    ///     /vft(null)                         // sub_30
+    ///     /vft(null)                         // sub_38
+    ///     /vft(null)                         // sub_40
+    ///     /vft(pure)                         // sub_48
+    static constexpr const uintptr_t VFT = physicsBaseProxy_VFT_Addr;
 
     virtual void sub_00();
     // iterates through physicsSystemResource->bodies

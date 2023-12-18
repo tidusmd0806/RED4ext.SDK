@@ -21,13 +21,6 @@ struct ISerializable
     //static constexpr const char* NAME = "ISerializable";
     //static constexpr const char* ALIAS = NAME;
 
-    // after "ISerializable" string
-    // 1.6  RVA: 0x30D70A8
-    // 1.61 RVA: 0x30DC038
-    // 1.61hf1 RVA: 0x30DF0B8
-    /// @pattern 00 49 53 65 72 69 61 6C 69 7A 61 62 6C 65 00 00 00
-    /// @offset -257
-
     /// @pattern 48 8B 05 79 DB AF 01 C3 CC CC CC CC CC CC CC CC
     void getNativeType();
 
@@ -35,21 +28,21 @@ struct ISerializable
     /// @noimpl 1
     void dstr(char a2);
 
-    /// @pattern                                  // ISerializable VFT
-    /// (ISerializable_getNativeType:ref)         // sub_00
-    /// (GetType:call)                            // sub_08
-    /// (GetAllocator:call)                       // sub_10
-    /// (ISerializable_dstr:ref)                  // sub_18
-    /// 60 AF 13 40 01 00 00 00                   // sub_20
-    /// 60 AF 13 40 01 00 00 00                   // sub_28
-    /// (sub_30:call)                             // sub_30
-    /// 60 AF 13 40 01 00 00 00                   // sub_38
-    /// (ISerializable_OnSerialize:ref)           // sub_40
-    /// (ISerializable_OnSerializeToText:ref)     // sub_48
-    /// (ISerializable_OnSerializeFromText:ref)   // sub_50
-    /// 70 1D 38 40 01 00 00 00                   // sub_58
-    /// 70 1D 38 40 01 00 00 00                   // sub_60
-    /// 70 1D 38 40 01 00 00 00                   // sub_68
+    /// @pattern
+    ///     /vft(ISerializable_getNativeType)           // sub_00
+    ///     /vft                                        // sub_08
+    ///     /vft                                        // sub_10
+    ///     /vft(ISerializable_dstr)                    // sub_18
+    ///     /vft(null)                                  // sub_20
+    ///     /vft(null)                                  // sub_28
+    ///     /vft                                        // sub_30
+    ///     /vft(null)                                  // sub_38
+    ///     /vft(ISerializable_OnSerialize)             // sub_40
+    ///     /vft(ISerializable_OnSerializeToText)       // sub_48
+    ///     /vft(ISerializable_OnSerializeFromText)     // sub_50
+    ///     /vft(ret(0))                                // sub_58
+    ///     /vft(ret(0))                                // sub_60
+    ///     /vft(ret(0))                                // sub_68
     static constexpr const uintptr_t VFT = ISerializable_VFT_Addr;
 
     // 1.52 RVA: 0x1AB240 / 1749568

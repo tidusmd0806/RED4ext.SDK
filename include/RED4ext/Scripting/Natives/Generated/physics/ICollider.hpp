@@ -25,6 +25,54 @@ struct __declspec(align(0x10)) ICollider : ISerializable
     static constexpr const char* NAME = "physicsICollider";
     static constexpr const char* ALIAS = NAME;
 
+    /// @pattern
+    /// /vft
+    /// /vft
+    /// /vft
+    /// /vft
+    /// /vft(null)
+    /// /vft(null)
+    /// /vft
+    /// /vft(null)
+    /// /vft(ISerializable_OnSerialize)
+    /// /vft(ISerializable_OnSerializeToText)
+    /// /vft(ISerializable_OnSerializeFromText)
+    /// /vft(ret(0))
+    /// /vft
+    /// /vft(ret(0))
+    /// /vft
+    /// /vft
+    /// /vft(ret(0))
+    /// /vft(null)
+    /// /vft(ret(0))
+    /// /vft(ret(0))
+    /// /vft
+    /// /vft
+    /// /vft
+    /// /vft
+    /// /vft
+    /// /vft
+    /// /vft
+    /// /vft(pure)
+    /// /vft(pure)
+    /// /vft(pure)
+    /// /vft(pure)
+    /// /vft(pure)
+    /// /vft(pure)
+    /// /vft(physicsICollider_sub_108)
+    /// /vft
+    /// /vft
+    /// /vft(ret(0))
+    /// /vft(null)
+    /// /vft(pure)
+    /// /vft(null)
+    /// /vft(pure)
+    static constexpr const uintptr_t VFT = physicsICollider_VFT_Addr;
+
+    // 2.1  RVA: 0x1B7958
+    /// @pattern 45 33 C0 48 8D 05 EE 9D 85 02 48 89 01 4C 89 41 08 4C 89 41 10 41 8D 40 01 4C 89 41 18 4C 89 41
+    RED4ext::physics::ICollider *__fastcall cstr();
+
     virtual void sub_D8() = 0;
     virtual void sub_E0() = 0;
     virtual void * CreatePxShape(Vector3 * descUnk140, void * descUnkB0, bool one, void * descUnkC0) = 0;
@@ -33,7 +81,8 @@ struct __declspec(align(0x10)) ICollider : ISerializable
     virtual Box * sub_F0(Box * bounds) = 0;
     virtual void sub_F8() = 0;
     virtual void sub_100() = 0;
-    virtual void sub_108();
+    /// @pattern C7 02 00 00 80 3F 48 8B C2 C7 42 04 00 00 80 3F C7 42 08 00 00 80 3F C3
+    virtual Vector3 * sub_108(Vector3 * a1);
     virtual void sub_110();
     virtual void sub_118();
     virtual bool sub_120();

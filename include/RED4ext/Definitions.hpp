@@ -5,137 +5,980 @@
 #define ZOLTAN_EXPAND_THEN_STRINGISE(N) ZOLTAN_STRINGISE(N)
 #define __LINE_STR__ ZOLTAN_EXPAND_THEN_STRINGISE(__LINE__)
 
+#ifndef BaseStream_ReadWriteHandleID_Addr
+#endif
+#ifndef CBaseEngine_LoadScripts_Addr
 #define CBaseEngine_LoadScripts_Addr 0x95355C
+#endif
+#ifndef CBaseRTTIType_VFT_Addr
 #define CBaseRTTIType_VFT_Addr 0x2F8F8D8
+#endif
+#ifndef CBaseRTTIType_dstr_Addr
 #define CBaseRTTIType_dstr_Addr 0x1FEC25C
+#endif
+#ifndef CClass_AddEventCallbackType_Addr
+#endif
+#ifndef CClass_ApplyFlags_Addr
 #define CClass_ApplyFlags_Addr 0x9B40B0
+#endif
+#ifndef CClass_SetupScriptCallbacks_Addr
+#endif
+#ifndef CClass_VFT_Addr
 #define CClass_VFT_Addr 0x2A4C078
+#endif
+#ifndef CClass_VFT_Construct_Addr
 #define CClass_VFT_Construct_Addr 0x159E44
+#endif
+#ifndef CClass_VFT_Destruct_Addr
 #define CClass_VFT_Destruct_Addr 0x15668C
+#endif
+#ifndef CClass_VFT_GetComputedName_Addr
 #define CClass_VFT_GetComputedName_Addr 0x17B7350
+#endif
+#ifndef CClass_VFT_GetName_Addr
 #define CClass_VFT_GetName_Addr 0x17B7340
+#endif
+#ifndef CClass_VFT_GetSize_Addr
 #define CClass_VFT_GetSize_Addr 0x17B7360
+#endif
+#ifndef CClass_VFT_GetType_Addr
 #define CClass_VFT_GetType_Addr 0x17B7370
+#endif
+#ifndef CClass_VFT_Move_Addr
 #define CClass_VFT_Move_Addr 0x5092E8
+#endif
+#ifndef CClass_VFT_dstr_Addr
 #define CClass_VFT_dstr_Addr 0x1B3F970
+#endif
+#ifndef CGameFramework_Systems_120_128_130_Addr
+#endif
+#ifndef CMesh_GetParameterOfType_Addr
+#endif
+#ifndef CProcessRunner_Run_Addr
 #define CProcessRunner_Run_Addr 0x82E260
+#endif
+#ifndef CRTTIArrayType_VFT_Addr
 #define CRTTIArrayType_VFT_Addr 0x2A4BD30
+#endif
+#ifndef CRTTIHandleType_VFT_Addr
 #define CRTTIHandleType_VFT_Addr 0x2A4BF40
+#endif
+#ifndef CRTTINativeArrayType_VFT_Addr
 #define CRTTINativeArrayType_VFT_Addr 0x2A3DF08
+#endif
+#ifndef CRTTIPointerType_VFT_Addr
 #define CRTTIPointerType_VFT_Addr 0x2A66CE8
+#endif
+#ifndef CRTTIResourceAsyncReferenceType_VFT_Addr
 #define CRTTIResourceAsyncReferenceType_VFT_Addr 0x2AB0B00
+#endif
+#ifndef CRTTIResourceReferenceType_VFT_Addr
 #define CRTTIResourceReferenceType_VFT_Addr 0x2AD3590
+#endif
+#ifndef CRTTIStaticArrayType_VFT_Addr
 #define CRTTIStaticArrayType_VFT_Addr 0x2A3E258
+#endif
+#ifndef CRTTIWeakHandleType_VFT_Addr
 #define CRTTIWeakHandleType_VFT_Addr 0x2A4BE50
+#endif
+#ifndef CallbackManager_AddCallback_Addr
+#endif
+#ifndef CallbackManager_AddToUnk00_Addr
+#endif
+#ifndef CallbackManager_Unknown1_Addr
+#endif
+#ifndef CallbackManager_Unknown6_Addr
+#endif
+#ifndef GameInstance_GameInstance_Addr
+#endif
+#ifndef GameInstance_SetRuntimeScene_Addr
+#endif
+#ifndef GameOptionManager_Get_Addr
+#endif
+#ifndef GameOptionManager_GetGameOption_Addr
+#endif
+#ifndef GameOptionManager_SetGameOption_Addr
+#endif
+#ifndef GetGameSystemsData_Addr
 #define GetGameSystemsData_Addr 0xD630A4
+#endif
+#ifndef GpuApi_Present_Addr
 #define GpuApi_Present_Addr 0x47C06C
+#endif
+#ifndef HandleSharedStorage_AddRefWeak_Addr
 #define HandleSharedStorage_AddRefWeak_Addr 0x133C64
+#endif
+#ifndef HandleSharedStorage_HandleSharedStorage_Addr
 #define HandleSharedStorage_HandleSharedStorage_Addr 0x157480
+#endif
+#ifndef IDynamicStorage_IDynamicStorage_Addr
+#endif
+#ifndef IGameInstance_RegisterGameLoadCallbacks_Addr
+#endif
+#ifndef IGameInstance_RegisterStreamingWorldLoadedCallback_Addr
+#endif
+#ifndef IGameInstance_Systems158_Addr
+#endif
+#ifndef IGameInstance_Systems160_Addr
+#endif
+#ifndef IGameInstance_Systems168o170_Addr
+#endif
+#ifndef IGameInstance_Systems178_Addr
+#endif
+#ifndef IGameInstance_WorldDetached_Addr
+#endif
+#ifndef IGameInstance_WorldPendingDetach_Addr
+#endif
+#ifndef ISerializable_OnSerialize_Addr
 #define ISerializable_OnSerialize_Addr 0x15A234
+#endif
+#ifndef ISerializable_OnSerializeFromText_Addr
 #define ISerializable_OnSerializeFromText_Addr 0x1FDE454
+#endif
+#ifndef ISerializable_OnSerializeToText_Addr
 #define ISerializable_OnSerializeToText_Addr 0x1FDE48C
+#endif
+#ifndef ISerializable_SetOwner_Addr
+#endif
+#ifndef ISerializable_VFT_Addr
 #define ISerializable_VFT_Addr 0x2A11750
+#endif
+#ifndef ISerializable_VFT_GetAllocator_Addr
 #define ISerializable_VFT_GetAllocator_Addr 0x2C4CFC
+#endif
+#ifndef ISerializable_VFT_GetType_Addr
 #define ISerializable_VFT_GetType_Addr 0x17B6F80
+#endif
+#ifndef ISerializable_VFT_sub_30_Addr
 #define ISerializable_VFT_sub_30_Addr 0x1FDE42C
+#endif
+#ifndef ISerializable_dstr_Addr
 #define ISerializable_dstr_Addr 0x1FDE3F8
+#endif
+#ifndef ISerializable_getNativeType_Addr
 #define ISerializable_getNativeType_Addr 0x17B6F80
+#endif
+#ifndef LoadGameSystemsData_Addr
+#endif
+#ifndef PureCall_Addr
 #define PureCall_Addr 0x17DA0C8
+#endif
+#ifndef Quaternion_GetYaw_Addr
+#endif
+#ifndef Quaternion_ToEulerAngles_Addr
+#endif
+#ifndef Quaternion_ToMatrix_Addr
+#endif
+#ifndef Return0u16_Addr
 #define Return0u16_Addr 0x18488A0
+#endif
+#ifndef Return1_Addr
 #define Return1_Addr 0xA11A3E
+#endif
+#ifndef Return10_Addr
 #define Return10_Addr 0x17B7440
+#endif
+#ifndef Return11_Addr
 #define Return11_Addr 0x17B7420
+#endif
+#ifndef Return12_Addr
 #define Return12_Addr 0x17B7410
+#endif
+#ifndef Return13_Addr
 #define Return13_Addr 0x17B74D0
+#endif
+#ifndef Return14_Addr
 #define Return14_Addr 0x17B7040
+#endif
+#ifndef Return15_Addr
 #define Return15_Addr 0x17B7430
+#endif
+#ifndef Return16u32_Addr
 #define Return16u32_Addr 0x17B72F0
+#endif
+#ifndef Return1u32_Addr
 #define Return1u32_Addr 0x17B73D0
+#endif
+#ifndef Return2_Addr
 #define Return2_Addr 0x17B7370
+#endif
+#ifndef Return24u32_Addr
 #define Return24u32_Addr 0x17B72D0
+#endif
+#ifndef Return3_Addr
 #define Return3_Addr 0x17B7490
+#endif
+#ifndef Return32u32_Addr
 #define Return32u32_Addr 0x17B7300
+#endif
+#ifndef Return4_Addr
 #define Return4_Addr 0x17B7030
+#endif
+#ifndef Return40u32_Addr
 #define Return40u32_Addr 0x17B7320
+#endif
+#ifndef Return4u32_Addr
 #define Return4u32_Addr 0x17B72E0
+#endif
+#ifndef Return5_Addr
 #define Return5_Addr 0x17B7460
+#endif
+#ifndef Return6_Addr
 #define Return6_Addr 0x17B74C0
+#endif
+#ifndef Return7_Addr
 #define Return7_Addr 0x17B74B0
+#endif
+#ifndef Return8_Addr
 #define Return8_Addr 0x17B7400
+#endif
+#ifndef Return88u32_Addr
 #define Return88u32_Addr 0x17B7310
+#endif
+#ifndef Return8u32_Addr
 #define Return8u32_Addr 0x17B7000
+#endif
+#ifndef Return9_Addr
 #define Return9_Addr 0x17B73F0
+#endif
+#ifndef ReturnN1i32_Addr
 #define ReturnN1i32_Addr 0x17B73B0
+#endif
+#ifndef ReturnZero64_Addr
 #define ReturnZero64_Addr 0x5095F0
+#endif
+#ifndef ReturnZero8_Addr
 #define ReturnZero8_Addr 0x18DED10
+#endif
+#ifndef UpdatableSystems_SetRuntimeScene_Addr
+#endif
+#ifndef UpdateManagerHolder_Something_Addr
+#endif
+#ifndef UpdateManagerHolder_UpdateSystems_Addr
+#endif
+#ifndef UpdateManagerUpdateStorage_Copy_Addr
+#endif
+#ifndef UpdateManagerUpdateStorage_Copy_0_Addr
 #define UpdateManagerUpdateStorage_Copy_0_Addr 0x7FBD6C
+#endif
+#ifndef UpdateManagerUpdateStorage_FireCallback_Addr
+#endif
+#ifndef UpdateManager_IterateUnknown_Addr
+#endif
+#ifndef UpdateManager_PrepareFiring_Addr
+#endif
+#ifndef UpdateManager_RegisterUpdate_Addr
+#endif
+#ifndef UpdateManager_ReleaseUnknown_Addr
+#endif
+#ifndef UpdateManager_Setup_Addr
+#endif
+#ifndef WidgetHudComponentInterface_WidgetHudComponentInterface_Addr
+#endif
+#ifndef WidgetHudComponentInterface__WidgetHudComponentInterface_Addr
+#endif
+#ifndef actionActionBase_Lock_Addr
+#endif
+#ifndef actionActionBase_StartWithReplicatedState_Addr
+#endif
+#ifndef actionActionInterface_EndActions_Addr
+#endif
+#ifndef actionActionInterface_IsAnimationiActive_Addr
+#endif
+#ifndef actionActionInterface_ProcessActions_Addr
+#endif
+#ifndef appearanceAppearanceDefinition_AppearanceDefinition_Addr
+#endif
+#ifndef audioBankManager_LoadBank_Addr
+#endif
+#ifndef audioBankManager_LoadBanksMaybe_Addr
+#endif
+#ifndef audioBankManager_UnloadBank_Addr
+#endif
+#ifndef audioEmitters_GetEmitterForEntityID_Addr
+#endif
+#ifndef audioEmitters_GetOrCreateEmitter_Addr
+#endif
+#ifndef audioGameParameterStorage_GetValue_Addr
 #define audioGameParameterStorage_GetValue_Addr 0x2C8C68
+#endif
+#ifndef audioGameParameterStorage_SetValue_Addr
+#endif
+#ifndef audioMetadataManager_GetValueInMapForName_Addr
+#endif
+#ifndef audioMetadataManager_MetadataManager_Addr
+#endif
+#ifndef audioMetadataManager__MetadataManager_Addr
+#endif
+#ifndef audioThing_AKAudioLoad_Addr
+#endif
+#ifndef audioThing_GetEmitterPosition_Addr
+#endif
+#ifndef audioThing_UpdateEmitterPosition_Addr
+#endif
+#ifndef audioVehicleMetadata_GetEventData_Addr
+#endif
+#ifndef audio_UpdateGlobalParameter_Addr
+#endif
+#ifndef audio_UpdateParameterForEntityID_Addr
+#endif
+#ifndef entAnimatedComponent_GetReferencePoseMSForName_Addr
+#endif
+#ifndef entComponentsStorage_AddComponent_Addr
+#endif
+#ifndef entComponentsStorage_AddComponents_Addr
+#endif
+#ifndef entComponentsStorage_FreeMemory_Addr
+#endif
+#ifndef entComponentsStorage_GetComponentByCRUID_Addr
+#endif
+#ifndef entComponentsStorage_GetSize_Addr
 #define entComponentsStorage_GetSize_Addr 0x17BCBC0
+#endif
+#ifndef entComponentsStorage_IsEmpty_Addr
+#endif
+#ifndef entEntity_ReassembleAppearance_Addr
+#endif
+#ifndef entEntity_SetRuntime_Addr
 #define entEntity_SetRuntime_Addr 0x1BFFB00
+#endif
+#ifndef entEntity_SetupEntityAndComponents_Addr
+#endif
+#ifndef entEntity_SomethingListeners_Addr
+#endif
+#ifndef entIAttachment_IAttachment_Addr
+#endif
+#ifndef entIComponent_SetEntity_Addr
+#endif
+#ifndef entIComponent_VFT_Addr
 #define entIComponent_VFT_Addr 0x2A20D90
+#endif
+#ifndef entIPlacedComponent_VFT_Addr
 #define entIPlacedComponent_VFT_Addr 0x2A20B40
+#endif
+#ifndef entMeshComponent_Load_Addr
+#endif
+#ifndef entPhysicalMeshComponent_ProcessSystemResource_Addr
+#endif
+#ifndef entSlotComponent_GetLocalSlotTransformFromIndex_Addr
+#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x4D76EC
+#endif
+#ifndef entSlotComponent_GetSlotGlobalTransform_Addr
+#endif
+#ifndef entSlotComponent_GetSlotIndex_Addr
+#define entSlotComponent_GetSlotIndex_Addr 0x266A04
+#endif
+#ifndef entSlotComponent_GetSlotLocalTransform_Addr
+#endif
+#ifndef entSlotComponent_GetSlotTransform_Addr
+#define entSlotComponent_GetSlotTransform_Addr 0xBC1744
+#endif
+#ifndef entVisualControllerComponent_GetAppearanceDependency_Addr
+#endif
+#ifndef entVisualControllerComponent_LoadUnkD8_Addr
+#endif
+#ifndef entVisualControllerComponent_Set0xF4_Addr
+#endif
+#ifndef entVisualControllerComponent_Unknown_Addr
+#endif
+#ifndef gameCActionsFactory_AddActionTypeManual_Addr
+#endif
+#ifndef gameFxEventInterface_Add_Addr
+#endif
+#ifndef gameFxInstance_IsValid_Addr
+#endif
+#ifndef gameFxInstance_QueueAttachToComponent_Addr
+#endif
+#ifndef gameFxInstance_QueueAttachToSlot_Addr
+#endif
+#ifndef gameFxInstance_QueueBreakLoop_Addr
+#endif
+#ifndef gameFxInstance_QueueKill_Addr
+#endif
+#ifndef gameFxInstance_QueueSetBlackboardValue_Addr
+#endif
+#ifndef gameFxInstance_QueueUpdateTargetPosition_Addr
+#endif
+#ifndef gameFxInstance_QueueUpdateTransform_Addr
+#endif
+#ifndef gameGameAudioSystem_SetGlobalParameter_Addr
+#endif
+#ifndef gameGameAudioSystem_UpdateParameter_Addr
+#endif
+#ifndef gameIGameSystem_SetGameInstance_Addr
+#endif
+#ifndef gameIGameSystem_Unset_Addr
+#endif
+#ifndef gameIGameSystem_VFT_Addr
 #define gameIGameSystem_VFT_Addr 0x2C62068
+#endif
+#ifndef gameIGameSystem_VFT_0_Addr
+#endif
+#ifndef gameMutexable_Update_Addr
+#endif
+#ifndef gameObject_CallScriptFunction_Addr
+#endif
+#ifndef gameVehicleSystem_BeginUpdate_Addr
+#endif
+#ifndef gameVehicleSystem_FixedUpdate_Addr
+#endif
+#ifndef gameVehicleSystem_FixedUpdate_PreSolve_Addr
+#endif
+#ifndef gameVehicleSystem_Interpolation_Addr
+#endif
+#ifndef gameVehicleSystem_PostMove_Addr
+#endif
+#ifndef gameVehicleSystem_PreUpdateAndPreMove_Addr
+#endif
+#ifndef gameVehicleSystem_SingleFixedStep_Addr
+#endif
+#ifndef gameVehicleSystem_UpdateVehicleArrays_Addr
+#endif
+#ifndef physicsBaseProxy_Process_Addr
+#define physicsBaseProxy_Process_Addr 0x17B9B30
+#endif
+#ifndef physicsBaseProxy_VFT_Addr
+#define physicsBaseProxy_VFT_Addr 0x2A1A208
+#endif
+#ifndef physicsColliderSphere_createHandleWithRadius_Addr
+#define physicsColliderSphere_createHandleWithRadius_Addr 0x2092CDC
+#endif
+#ifndef physicsFilterData_LoadPreset_Addr
+#define physicsFilterData_LoadPreset_Addr 0x1B7EB4
+#endif
+#ifndef physicsGeometryCache_FreeAlwaysLoaded_Addr
+#endif
+#ifndef physicsGeometryCache_FreeGeometryKey_Addr
+#endif
+#ifndef physicsGeometryCache_FreeKey_Addr
+#endif
+#ifndef physicsGeometryCache_FreeSector_Addr
+#endif
+#ifndef physicsGeometryCache_HasGeometryKey_Addr
+#endif
+#ifndef physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr
+#endif
+#ifndef physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr
+#endif
+#ifndef physicsGeometryCache_LoadSectorGeometries_Addr
+#endif
+#ifndef physicsGeometryCache_LoadSectorGeometriesSetup_Addr
+#endif
+#ifndef physicsGeometryCache_Unknown_Addr
+#endif
+#ifndef physicsGeometryCache_sub_7FF75B921520_Addr
+#endif
+#ifndef physicsGeometryCache_sub_7FF75B922410_Addr
+#endif
+#ifndef physicsICollider_VFT_Addr
+#endif
+#ifndef physicsICollider_cstr_Addr
+#define physicsICollider_cstr_Addr 0x1B7958
+#endif
+#ifndef physicsProxyCacheID_DisableCollision_Addr
+#endif
+#ifndef physicsProxyCacheID_EnableCollision_Addr
+#endif
+#ifndef physicsProxyCacheManagerUnk948_Kick_Addr
+#endif
+#ifndef physicsProxyCache_AddToCache_Addr
+#endif
+#ifndef physicsProxyCache_GetDataFromCache_Addr
 #define physicsProxyCache_GetDataFromCache_Addr 0x1C2164
+#endif
+#ifndef physicsProxyCache_GetFromCacheOrGet_Addr
+#endif
+#ifndef physicsProxyHelper_Create_Addr
+#endif
+#ifndef physicsProxyHelper_GetThingWithLock_Addr
+#endif
+#ifndef physicsProxyHelper_Lock_Addr
+#define physicsProxyHelper_Lock_Addr 0x1C1B80
+#endif
+#ifndef physicsProxyHelper_SetAngularDamping_Addr
+#endif
+#ifndef physicsProxyHelper_SetCCD_Addr
+#endif
+#ifndef physicsProxyHelper_SetCMassLocalPose_Addr
+#endif
+#ifndef physicsProxyHelper_SetGravity_Addr
+#endif
+#ifndef physicsProxyHelper_SetIsQueryable_Addr
+#define physicsProxyHelper_SetIsQueryable_Addr 0x20984F4
+#endif
+#ifndef physicsProxyHelper_SetLinearDamping_Addr
+#endif
+#ifndef physicsProxyHelper_SetMassAndUpdateInertia_Addr
+#endif
+#ifndef physicsProxyHelper_SetQueryFilterData_Addr
+#endif
+#ifndef physicsProxyHelper_SetSimulationFilterData_Addr
+#endif
+#ifndef physicsProxyHelper_SetSimulationShape_Addr
+#define physicsProxyHelper_SetSimulationShape_Addr 0x2098540
+#endif
+#ifndef physicsProxyHelper_Unlock_Addr
 #define physicsProxyHelper_Unlock_Addr 0x2056F0
+#endif
+#ifndef physicsProxyHelper_UpdateGlobalPose_Addr
+#endif
+#ifndef physicsProxyHelper_UpdateProxyCache_Addr
 #define physicsProxyHelper_UpdateProxyCache_Addr 0x1C1B58
+#endif
+#ifndef physicsProxyID_GetEntity_Addr
+#define physicsProxyID_GetEntity_Addr 0x93CBF4
+#endif
+#ifndef physicsProxyID_GetKeyUnk37_0x40_Addr
+#endif
+#ifndef physicsProxyID_GetNbShapes_Addr
+#endif
+#ifndef physicsProxyID_GetProxy_Addr
+#define physicsProxyID_GetProxy_Addr 0x2BACA4
+#endif
+#ifndef physicsProxyID_ProcessProxyDesc_Addr
+#endif
+#ifndef physicsProxyID_Something2_Addr
+#endif
+#ifndef physicsProxyID_Unk_Addr
+#endif
+#ifndef physicsProxyID_UpdateProxyCacheEntry_Addr
+#endif
+#ifndef physicsProxyManager_GetProxyCache_Addr
+#endif
+#ifndef physicsProxyManager_GetProxyHandle_Addr
+#define physicsProxyManager_GetProxyHandle_Addr 0x124908
+#endif
+#ifndef physicsProxyManager_HasProxy_Addr
+#endif
+#ifndef physicsProxyManager_SetProxyCacheID_Addr
+#endif
+#ifndef physicsSystemResource_GetFromCMesh_Addr
+#endif
+#ifndef physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr
+#endif
+#ifndef physicsVehiclePhysicsInsert1_SinMath_Addr
 #define physicsVehiclePhysicsInsert1_SinMath_Addr 0x209D5C
+#endif
+#ifndef physics_GetShapeLocalPos_Addr
+#endif
+#ifndef physics_ProxyID_GetGlobalPose_Addr
+#endif
+#ifndef physics_proxyManager_Addr
+#define physics_proxyManager_Addr 0x3375650
+#endif
+#ifndef physics_pxRigidBody_Get_Addr
+#endif
+#ifndef physics_pxRigidBody_Update_Addr
+#endif
+#ifndef purecall_Addr
 #define purecall_Addr 0x17DA0C8
+#endif
+#ifndef redGameAppBaseInitializationState_OnTick_Addr
 #define redGameAppBaseInitializationState_OnTick_Addr 0x826B2C
+#endif
+#ifndef redGameAppInitializationState_OnTick_Addr
 #define redGameAppInitializationState_OnTick_Addr 0x826BE8
+#endif
+#ifndef redGameAppInstance_RegisterState_Addr
 #define redGameAppInstance_RegisterState_Addr 0x8271FC
+#endif
+#ifndef redGameAppRunningState_OnTick_Addr
 #define redGameAppRunningState_OnTick_Addr 0x826B84
+#endif
+#ifndef redGameAppShutdownState_OnTick_Addr
 #define redGameAppShutdownState_OnTick_Addr 0x952B9C
+#endif
+#ifndef rtti_Addr
 #define rtti_Addr 0x3EC41A8
+#endif
+#ifndef rttiBitFieldType_FromString_Addr
 #define rttiBitFieldType_FromString_Addr 0x2002700
+#endif
+#ifndef rttiBitFieldType_Serialize_Addr
 #define rttiBitFieldType_Serialize_Addr 0x2C8D6C
+#endif
+#ifndef rttiBitFieldType_ToString_Addr
 #define rttiBitFieldType_ToString_Addr 0x2002818
+#endif
+#ifndef rttiClassType_ClearScriptData_Addr
 #define rttiClassType_ClearScriptData_Addr 0x612800
+#endif
+#ifndef rttiClassType_CreateObject_Addr
 #define rttiClassType_CreateObject_Addr 0x158C50
+#endif
+#ifndef rttiClassType_FindFunctionByHash_Addr
 #define rttiClassType_FindFunctionByHash_Addr 0x50743C
+#endif
+#ifndef rttiClassType_FindProperty_Addr
 #define rttiClassType_FindProperty_Addr 0x159BD8
+#endif
+#ifndef rttiClassType_GetAlignment_Addr
 #define rttiClassType_GetAlignment_Addr 0x17B7330
+#endif
+#ifndef rttiClassType_GetProperties_Addr
 #define rttiClassType_GetProperties_Addr 0x611790
+#endif
+#ifndef rttiClassType_InitializeScriptDefaultValues_Addr
 #define rttiClassType_InitializeScriptDefaultValues_Addr 0x158DE8
+#endif
+#ifndef rttiClassType_InitializeScriptedProperties_Addr
 #define rttiClassType_InitializeScriptedProperties_Addr 0x159514
+#endif
+#ifndef rttiClassType_Serialize_Addr
 #define rttiClassType_Serialize_Addr 0x1592D4
+#endif
+#ifndef rttiClassType_ToString_Addr
 #define rttiClassType_ToString_Addr 0x6656CC
+#endif
+#ifndef rttiEnumType_FromString_Addr
 #define rttiEnumType_FromString_Addr 0x70AC74
+#endif
+#ifndef rttiEnumType_Serialize_Addr
 #define rttiEnumType_Serialize_Addr 0x159FC4
+#endif
+#ifndef rttiEnumType_ToString_Addr
 #define rttiEnumType_ToString_Addr 0x70A5D4
+#endif
+#ifndef rttiFunction_CallFunction_Addr
 #define rttiFunction_CallFunction_Addr 0x1FD3C9C
+#endif
+#ifndef rttiFunction_CallNative_Addr
 #define rttiFunction_CallNative_Addr 0x1FF21D8
+#endif
+#ifndef rttiFunction_InternalCall_Addr
 #define rttiFunction_InternalCall_Addr 0x50949C
+#endif
+#ifndef rttiFunction_InternalCallNative_Addr
 #define rttiFunction_InternalCallNative_Addr 0x157F40
+#endif
+#ifndef rttiIScriptable_FindFunction_Addr
 #define rttiIScriptable_FindFunction_Addr 0x183DD0
+#endif
+#ifndef rttiIType_GetERTTITypeString_Addr
 #define rttiIType_GetERTTITypeString_Addr 0x1FF1B4C
+#endif
+#ifndef rttiIType_GetRefName_Addr
 #define rttiIType_GetRefName_Addr 0x1856D8
+#endif
+#ifndef rttiIType_ReadValue_Addr
 #define rttiIType_ReadValue_Addr 0x1FF1CA4
+#endif
+#ifndef rttiIType_SerializeFromText_Addr
 #define rttiIType_SerializeFromText_Addr 0x1FF1DC8
+#endif
+#ifndef rttiIType_SerializeToText_Addr
 #define rttiIType_SerializeToText_Addr 0x1FF1E68
+#endif
+#ifndef rttiIType_WriteValue_Addr
 #define rttiIType_WriteValue_Addr 0x1FF1EF4
+#endif
+#ifndef rttiNativeGlobalFunction_NativeGlobalFunction_Addr
 #define rttiNativeGlobalFunction_NativeGlobalFunction_Addr 0x9B0094
+#endif
+#ifndef rttiNativeMemberFunction_NativeMemberFunction_Addr
 #define rttiNativeMemberFunction_NativeMemberFunction_Addr 0x60F5AC
+#endif
+#ifndef rttiNativeMemberFunction_NativeMemberFunction_0_Addr
 #define rttiNativeMemberFunction_NativeMemberFunction_0_Addr 0x9B00E0
+#endif
+#ifndef userRuntimeSettingsVarBool_VFT_Addr
 #define userRuntimeSettingsVarBool_VFT_Addr 0x3125E08
+#endif
+#ifndef userRuntimeSettingsVarBool_VFT_0_Addr
+#endif
+#ifndef userRuntimeSettingsVarFloatList_VFT_Addr
 #define userRuntimeSettingsVarFloatList_VFT_Addr 0x3126978
+#endif
+#ifndef userRuntimeSettingsVarFloatList_VFT_0_Addr
+#endif
+#ifndef userRuntimeSettingsVarFloat_VFT_Addr
 #define userRuntimeSettingsVarFloat_VFT_Addr 0x3126920
+#endif
+#ifndef userRuntimeSettingsVarFloat_VFT_0_Addr
+#endif
+#ifndef userRuntimeSettingsVarInt_VFT_Addr
 #define userRuntimeSettingsVarInt_VFT_Addr 0x31268C8
+#endif
+#ifndef userRuntimeSettingsVarInt_VFT_0_Addr
+#endif
+#ifndef userRuntimeSettingsVarNameList_VFT_Addr
 #define userRuntimeSettingsVarNameList_VFT_Addr 0x3125F10
+#endif
+#ifndef userRuntimeSettingsVarNameList_VFT_0_Addr
+#endif
+#ifndef userRuntimeSettingsVarName_VFT_Addr
 #define userRuntimeSettingsVarName_VFT_Addr 0x3125E60
+#endif
+#ifndef userRuntimeSettingsVarName_VFT_0_Addr
+#endif
+#ifndef userRuntimeSettingsVarStringList_VFT_Addr
 #define userRuntimeSettingsVarStringList_VFT_Addr 0x2FFA580
+#endif
+#ifndef userRuntimeSettingsVarStringList_VFT_0_Addr
+#endif
+#ifndef userRuntimeSettingsVar_RuntimeSettingsVar_Addr
+#endif
+#ifndef userRuntimeSettingsVar_VFT_Addr
 #define userRuntimeSettingsVar_VFT_Addr 0x2FFA528
+#endif
+#ifndef userRuntimeSettingsVar_VFT_0_Addr
+#endif
+#ifndef user_GetSettings_Addr
+#endif
+#ifndef vehicleAirControl_ApplyTorque_Addr
+#endif
+#ifndef vehicleAirControl_GetAngularVelocity_Addr
+#endif
+#ifndef vehicleAirControl_Process_Addr
+#endif
+#ifndef vehicleBaseObject_CheckPhysicsStateActionInterface_Addr
+#endif
+#ifndef vehicleBaseObject_CreateAction_Addr
+#endif
+#ifndef vehicleBaseObject_GetCurveSetData_Addr
+#endif
+#ifndef vehicleBaseObject_GetDeceleration_Addr
+#endif
+#ifndef vehicleBaseObject_GetDisplayName_Addr
+#endif
+#ifndef vehicleBaseObject_GetGravitationalForce_Addr
+#endif
+#ifndef vehicleBaseObject_GetInverseMass_Addr
+#endif
+#ifndef vehicleBaseObject_GetPhysicsData_Addr
+#endif
+#ifndef vehicleBaseObject_GetTotalMass_Addr
+#endif
+#ifndef vehicleBaseObject_GetUnk60C_Addr
+#endif
+#ifndef vehicleBaseObject_GetUnk8E0_Addr
+#endif
+#ifndef vehicleBaseObject_GetVehicleSystem_Addr
+#endif
+#ifndef vehicleBaseObject_GetWeaponOrientation_Addr
+#endif
+#ifndef vehicleBaseObject_HornForDuration_Addr
+#endif
+#ifndef vehicleBaseObject_HornForDurationDelayed_Addr
+#endif
+#ifndef vehicleBaseObject_PostMovePhysicsStateNotZero_Addr
+#endif
+#ifndef vehicleBaseObject_PostMovePhysicsStateZero_Addr
+#endif
+#ifndef vehicleBaseObject_PreUpdatePreMovePhysicsStateNotZero_Addr
+#endif
+#ifndef vehicleBaseObject_PreUpdatePreMovePhysicsStateZero_Addr
+#endif
+#ifndef vehicleBaseObject_Reset8B4_Addr
+#endif
+#ifndef vehicleBaseObject_SetPhysicsState_Addr
+#endif
+#ifndef vehicleBaseObject_UnsetPhysicsStates_Addr
+#endif
+#ifndef vehicleBaseObject_UpdatePhysicsSleepState_Addr
+#endif
+#ifndef vehicleBikeBaseObject_EnableTiltControl_Addr
+#endif
+#ifndef vehicleBikePhysics_AnimationUpdate_Addr
 #define vehicleBikePhysics_AnimationUpdate_Addr 0x20FA04
+#endif
+#ifndef vehicleBikePhysics_VFT_Addr
 #define vehicleBikePhysics_VFT_Addr 0x2AA3378
+#endif
+#ifndef vehicleCameraManager_ChangeCamera_Addr
+#endif
+#ifndef vehicleCameraManager_IsTPP_Addr
+#endif
+#ifndef vehicleCameraManager_ShouldUseSomeListener_Addr
+#endif
+#ifndef vehicleCameraManager_Update_Addr
+#endif
+#ifndef vehicleCarPhysics_AnimationUpdate_Addr
 #define vehicleCarPhysics_AnimationUpdate_Addr 0x17D294
+#endif
+#ifndef vehicleChassisComponent_BigUpdate_Addr
+#endif
+#ifndef vehicleChassisComponent_GetCollisionShapes_Addr
+#endif
+#ifndef vehicleChassisComponent_GetProxyHelperAndLock_Addr
+#endif
+#ifndef vehicleChassisComponent_SetDampingToPoint4_Addr
+#endif
+#ifndef vehicleChassisComponent_SetFilterData_Addr
+#endif
+#ifndef vehicleChassisComponent_SomethingIfEnabled_Addr
+#endif
+#ifndef vehicleChassisComponent_TransformWorldTransform_Addr
+#endif
+#ifndef vehicleChassisComponent_Unknown1_Addr
+#endif
+#ifndef vehicleChassisComponent_Update_Addr
+#endif
+#ifndef vehicleChassisComponent_UpdatePhysicsState_Addr
+#endif
+#ifndef vehiclePID_GetCorrection_Addr
+#endif
+#ifndef vehiclePID_Initialize_Addr
+#endif
+#ifndef vehiclePID_Process_Addr
+#endif
+#ifndef vehiclePID_Reset_Addr
+#endif
+#ifndef vehiclePID_UpdatePID_Addr
+#endif
+#ifndef vehiclePersistentDataPS_ResetQuestEnforceTransform_Addr
+#endif
+#ifndef vehiclePersistentDataPS_UpdateWheelRuntime_Addr
+#endif
+#ifndef vehiclePhysicsData_AddTorque_Addr
+#endif
+#ifndef vehiclePhysicsData_ApplyForceAtPosition_Addr
 #define vehiclePhysicsData_ApplyForceAtPosition_Addr 0x207F24
+#endif
+#ifndef vehiclePhysicsData_ApplyTorqueAtPosition_Addr
 #define vehiclePhysicsData_ApplyTorqueAtPosition_Addr 0x172F4C
+#endif
+#ifndef vehiclePhysicsData_SetUsesNormalChassisMass_Addr
+#endif
+#ifndef vehiclePhysicsData_UpdateChassis_Addr
+#endif
+#ifndef vehiclePhysicsData_UsesAlternativeChassisMass_Addr
+#endif
+#ifndef vehiclePhysics_ComputeSleep_Addr
+#endif
+#ifndef vehiclePhysics_GetSomethingWaterParams_Addr
+#endif
+#ifndef vehiclePhysics_GetVehicle_Addr
+#endif
+#ifndef vehiclePhysics_IsInAirFromVehicle_func_Addr
+#endif
+#ifndef vehiclePhysics_LoadHasBeenFlippedOver_Addr
+#endif
+#ifndef vehiclePhysics_ReadWorldTransform_Addr
+#endif
+#ifndef vehiclePhysics_SetUnkA0ToOne_Addr
 #define vehiclePhysics_SetUnkA0ToOne_Addr 0x1B6006
+#endif
+#ifndef vehiclePhysics_UpdateDataWorldTransform_Addr
+#endif
+#ifndef vehiclePhysics_VFT_Addr
 #define vehiclePhysics_VFT_Addr 0x2AA4290
+#endif
+#ifndef vehicleTPPCameraComponent_GetLocationFromOffset_Addr
+#endif
+#ifndef vehicleTPPCameraComponent_GetYaw_Addr
+#endif
+#ifndef vehicleTPPCameraComponent_TargetedCameraInterface_Update_Addr
+#endif
+#ifndef vehicleTPPCameraComponent_TargetedCameraInterface_sub_58_Addr
+#endif
+#ifndef vehicleTPPCameraComponent_UpdateData_Addr
+#endif
+#ifndef vehicleTPPCameraComponent_UpdatePitch_Addr
+#endif
+#ifndef vehicleTPPCameraComponent_UpdatePosition_Addr
+#endif
+#ifndef vehicleTPPCameraComponent_UpdateTPP_Addr
+#endif
+#ifndef vehicleTankPhysics_VFT_Addr
 #define vehicleTankPhysics_VFT_Addr 0x2C222D0
+#endif
+#ifndef vehicleUnk568_CopyOverCollisionForce_Addr
+#endif
+#ifndef vehicleUnk568_SetAcceleration_Addr
+#endif
+#ifndef vehicleUnk568_SetLinearVelocityEtc_Addr
+#endif
+#ifndef vehicleUnk568_SetUnkD0_Addr
+#endif
+#ifndef vehicleUnk570_GetCollisionFxForMaterial_Addr
+#endif
+#ifndef vehicleUnk570_GetSmearFxForMaterial_Addr
 #define vehicleUnk570_GetSmearFxForMaterial_Addr 0xBCDFB0
+#endif
+#ifndef vehicleUnk570_ProcessEffects_Addr
+#endif
+#ifndef vehicleUnk570_ProcessImpactScratch_Addr
+#endif
+#ifndef vehicleUnk570_Setup_Addr
+#endif
+#ifndef vehicleUnk570_UpdateEffectsBlackboard_Addr
+#endif
+#ifndef vehicleUnk570_WheelEffectUpdate_Addr
+#endif
+#ifndef vehicleUnk580_GetAudioResourceMetadata_Addr
+#endif
+#ifndef vehicleUnk580_IsRadioReceiverActive_Addr
+#endif
+#ifndef vehicleUnk580_NextRadioReceiverStation_Addr
+#endif
+#ifndef vehicleUnk580_SetRadioTier_Addr
+#endif
+#ifndef vehicleUnk580_ShouldUseSomeAVListener_Addr
+#endif
+#ifndef vehicleUnk580_ToggleHorn_Addr
+#endif
+#ifndef vehicleUnk580_Update_Addr
+#endif
+#ifndef vehicleUnk580_Update3CA_Addr
+#endif
+#ifndef vehicleUnk580_UpdateEvents_Addr
+#endif
+#ifndef vehicleUnk580_UpdateTPPinAudioSystem_Addr
+#endif
+#ifndef vehicleUnk580_UpdateTireParameters_Addr
+#endif
+#ifndef vehicleUnk580_UpdateWheelEmitters_Addr
+#endif
+#ifndef vehicleUnk588_Unknown_Addr
+#endif
+#ifndef vehicleUnk588_UpdateTransform_Addr
+#endif
+#ifndef vehicleUnkD10_Reset_Addr
 #define vehicleUnkD10_Reset_Addr 0xA14C68
+#endif
+#ifndef vehicleWheeledPhysics_ApplyWaterResistance_Addr
+#endif
+#ifndef vehicleWheeledPhysics_FixedUpdate_Addr
+#endif
+#ifndef vehicleWheeledPhysics_FourWheelTorque_Addr
+#endif
+#ifndef vehicleWheeledPhysics_FourWheelTorqueStuff_Addr
+#endif
+#ifndef vehicleWheeledPhysics_GetEnergy_Addr
+#endif
+#ifndef vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr
+#endif
+#ifndef vehicleWheeledPhysics_ProcessAirControl_Addr
+#endif
+#ifndef vehicleWheeledPhysics_SetIsMovingOthers_Addr
+#endif
+#ifndef vehicleWheeledPhysics_SetupInsert_Addr
+#endif
+#ifndef vehicleWheeledPhysics_SomethingWheelRayTrace_Addr
+#endif
+#ifndef vehicleWheeledPhysics_SomethingWheels_Addr
+#endif
+#ifndef vehicleWheeledPhysics_TurningRollFactorStuff_Addr
+#endif
+#ifndef vehicleWheeledPhysics_Unk15CStuff_Addr
+#endif
+#ifndef vehicleWheeledPhysics_Update_Addr
+#endif
+#ifndef vehicleWheeledPhysics_UpdatePassengerAnim_Addr
+#endif
+#ifndef vehicleWheeledPhysics_VFT_Addr
 #define vehicleWheeledPhysics_VFT_Addr 0x2AA40E0
+#endif
+#ifndef wWinMain_Addr
 #define wWinMain_Addr 0x988610
+#endif
+#ifndef worldEffectBlackboard_SetValue_Addr
+#endif
+#ifndef worldRuntimeScene_SetupWithLogging_Addr
+#endif
+#ifndef worldRuntimeSystemPhysics_FreeGeos_Addr
+#endif
 
 #include <RED4ext/RED4ext.hpp>
 #include <RED4ext/Relocation.hpp>
@@ -149,10 +992,18 @@
 #include <RED4ext/Scripting/Natives/entEntity.hpp>
 #include <RED4ext/Scripting/Natives/entIComponent.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IPlacedComponent.hpp>
+#include <RED4ext/Scripting/Natives/Generated/ent/SlotComponent.hpp>
 #include <RED4ext/Scripting/Natives/gameIGameSystem.hpp>
+#include <RED4ext/Scripting/Natives/physicsBaseProxy.hpp>
+#include <RED4ext/Scripting/Natives/Generated/physics/ColliderSphere.hpp>
+#include <RED4ext/Scripting/Natives/Generated/physics/FilterData.hpp>
+#include <RED4ext/Scripting/Natives/Generated/physics/ICollider.hpp>
 #include <RED4ext/Scripting/Natives/physicsProxyCache.hpp>
 #include <RED4ext/Scripting/Natives/physicsProxyHelper.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyId.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
 #include <RED4ext/Scripting/Natives/vehiclePhysicsInsert1.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
 #include <RED4ext/RTTITypes.hpp>
 #include <RED4ext/RTTISystem.hpp>
 #include <RED4ext/Scripting/Natives/userRuntimeSettingsVar.hpp>
@@ -204,10 +1055,64 @@ RED4EXT_INLINE void RED4ext::ent::Entity::SetRuntime(int64_t a1) {
     return call(this, a1);
 }
 
+RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetLocalSlotTransformFromIndex(int32_t a1, RED4ext::Transform* a2) {
+    using entSlotComponent_GetLocalSlotTransformFromIndex_t = bool (*)(RED4ext::ent::SlotComponent*, int32_t, RED4ext::Transform*);
+    RED4ext::RelocFunc<entSlotComponent_GetLocalSlotTransformFromIndex_t> call(entSlotComponent_GetLocalSlotTransformFromIndex_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE int64_t RED4ext::ent::SlotComponent::GetSlotIndex(RED4ext::CName a1) {
+    using entSlotComponent_GetSlotIndex_t = int64_t (*)(RED4ext::ent::SlotComponent*, RED4ext::CName);
+    RED4ext::RelocFunc<entSlotComponent_GetSlotIndex_t> call(entSlotComponent_GetSlotIndex_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE bool RED4ext::ent::SlotComponent::GetSlotTransform(RED4ext::CName a1, RED4ext::WorldTransform* a2) {
+    using entSlotComponent_GetSlotTransform_t = bool (*)(RED4ext::ent::SlotComponent*, RED4ext::CName, RED4ext::WorldTransform*);
+    RED4ext::RelocFunc<entSlotComponent_GetSlotTransform_t> call(entSlotComponent_GetSlotTransform_Addr);
+    return call(this, a1, a2);
+}
+
+RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::ColliderSphere>* RED4ext::physics::ColliderSphere::createHandleWithRadius(RED4ext::Handle<RED4ext::physics::ICollider>* a1, float a2) {
+    using physicsColliderSphere_createHandleWithRadius_t = RED4ext::Handle<RED4ext::physics::ColliderSphere>* (*)(RED4ext::Handle<RED4ext::physics::ICollider>*, float);
+    RED4ext::RelocFunc<physicsColliderSphere_createHandleWithRadius_t> call(physicsColliderSphere_createHandleWithRadius_Addr);
+    return call(a1, a2);
+}
+
+RED4EXT_INLINE void RED4ext::physics::FilterData::LoadPreset(RED4ext::CName a1) {
+    using physicsFilterData_LoadPreset_t = void (*)(RED4ext::physics::FilterData*, RED4ext::CName);
+    RED4ext::RelocFunc<physicsFilterData_LoadPreset_t> call(physicsFilterData_LoadPreset_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::physics::ICollider* RED4ext::physics::ICollider::cstr() {
+    using physicsICollider_cstr_t = RED4ext::physics::ICollider* (*)(RED4ext::physics::ICollider*);
+    RED4ext::RelocFunc<physicsICollider_cstr_t> call(physicsICollider_cstr_Addr);
+    return call(this);
+}
+
 RED4EXT_INLINE void* RED4ext::physics::ProxyCache::GetDataFromCache(uint32_t a1) {
     using physicsProxyCache_GetDataFromCache_t = void* (*)(RED4ext::physics::ProxyCache*, uint32_t);
     RED4ext::RelocFunc<physicsProxyCache_GetDataFromCache_t> call(physicsProxyCache_GetDataFromCache_Addr);
     return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::Lock(RED4ext::physics::ProxyID a1) {
+    using physicsProxyHelper_Lock_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, RED4ext::physics::ProxyID);
+    RED4ext::RelocFunc<physicsProxyHelper_Lock_t> call(physicsProxyHelper_Lock_Addr);
+    return call(this, a1);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetIsQueryable(bool a1, uint32_t a2, uint32_t a3) {
+    using physicsProxyHelper_SetIsQueryable_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetIsQueryable_t> call(physicsProxyHelper_SetIsQueryable_Addr);
+    return call(this, a1, a2, a3);
+}
+
+RED4EXT_INLINE RED4ext::physics::ProxyHelper* RED4ext::physics::ProxyHelper::SetSimulationShape(bool a1, uint32_t a2, uint32_t a3) {
+    using physicsProxyHelper_SetSimulationShape_t = RED4ext::physics::ProxyHelper* (*)(RED4ext::physics::ProxyHelper*, bool, uint32_t, uint32_t);
+    RED4ext::RelocFunc<physicsProxyHelper_SetSimulationShape_t> call(physicsProxyHelper_SetSimulationShape_Addr);
+    return call(this, a1, a2, a3);
 }
 
 RED4EXT_INLINE int64_t RED4ext::physics::ProxyHelper::Unlock() {
@@ -220,6 +1125,24 @@ RED4EXT_INLINE bool RED4ext::physics::ProxyHelper::UpdateProxyCache() {
     using physicsProxyHelper_UpdateProxyCache_t = bool (*)(RED4ext::physics::ProxyHelper*);
     RED4ext::RelocFunc<physicsProxyHelper_UpdateProxyCache_t> call(physicsProxyHelper_UpdateProxyCache_Addr);
     return call(this);
+}
+
+RED4EXT_INLINE RED4ext::ent::Entity* RED4ext::physics::ProxyID::GetEntity() const {
+    using physicsProxyID_GetEntity_t = RED4ext::ent::Entity* (*)(const RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyID_GetEntity_t> call(physicsProxyID_GetEntity_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::physics::BaseProxy* RED4ext::physics::ProxyID::GetProxy() const {
+    using physicsProxyID_GetProxy_t = RED4ext::physics::BaseProxy* (*)(const RED4ext::physics::ProxyID*);
+    RED4ext::RelocFunc<physicsProxyID_GetProxy_t> call(physicsProxyID_GetProxy_Addr);
+    return call(this);
+}
+
+RED4EXT_INLINE RED4ext::Handle<RED4ext::physics::BaseProxy>* RED4ext::physics::ProxyManager::GetProxyHandle(RED4ext::Handle<RED4ext::physics::BaseProxy>* a1, RED4ext::physics::ProxyID a2) {
+    using physicsProxyManager_GetProxyHandle_t = RED4ext::Handle<RED4ext::physics::BaseProxy>* (*)(RED4ext::physics::ProxyManager*, RED4ext::Handle<RED4ext::physics::BaseProxy>*, RED4ext::physics::ProxyID);
+    RED4ext::RelocFunc<physicsProxyManager_GetProxyHandle_t> call(physicsProxyManager_GetProxyHandle_Addr);
+    return call(this, a1, a2);
 }
 
 RED4EXT_INLINE float RED4ext::physics::VehiclePhysicsInsert1::SinMath(float a1) {

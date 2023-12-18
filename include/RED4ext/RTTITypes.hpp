@@ -62,12 +62,12 @@ enum class ERTTIType : uint8_t
 struct CBaseRTTIType
 {
     /// @pattern 
-    ///     (:call) 
-    ///     (purecall:ref) 
-    ///     (purecall:ref) 
-    ///     (purecall:ref) 
-    ///     (purecall:ref) 
-    ///     (rttiIType_GetERTTITypeString:ref)
+    ///     /vft
+    ///     /vft(pure) 
+    ///     /vft(pure) 
+    ///     /vft(pure) 
+    ///     /vft(pure) 
+    ///     /vft(rttiIType_GetERTTITypeString)
     static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;
     
     CBaseRTTIType();
@@ -143,21 +143,20 @@ RED4EXT_ASSERT_SIZE(CBaseRTTIType, 0x10);
 struct CClass : CBaseRTTIType
 {
     /// @pattern 
-    ///     (dstr:call) 
-    ///     (GetName:call) 
-    ///     (GetSize:call) 
-    ///     (rttiClassType_GetAlignment:ref) 
-    ///     (GetType:call) 
-    ///     (rttiIType_GetERTTITypeString:ref) 
-    ///     (GetComputedName:call) 
-    ///     (Construct:call) 
-    ///     (Destruct:call) 
-    ///     (:pure) 
-    ///     (:pure) 
-    ///     (Move:call) 
-    ///     (rttiClassType_Serialize:ref)
+    ///     /vft 
+    ///     /vft 
+    ///     /vft 
+    ///     /vft(rttiClassType_GetAlignment) 
+    ///     /vft 
+    ///     /vft(rttiIType_GetERTTITypeString) 
+    ///     /vft 
+    ///     /vft 
+    ///     /vft 
+    ///     /vft(pure)
+    ///     /vft(pure)
+    ///     /vft 
+    ///     /vft(rttiClassType_Serialize)
     static constexpr const uintptr_t VFT = CClass_VFT_Addr;
-    static constexpr const uintptr_t dstr = CClass_VFT_dstr_Addr;
 
     struct Flags
     {
@@ -507,12 +506,12 @@ RED4EXT_ASSERT_OFFSET(CRTTIBaseArrayType, innerType, 0x10);
 struct CRTTIArrayType : CRTTIBaseArrayType
 {
     /// @pattern
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (:call)                                     // GetSize
-    ///     (:call)                                     // GetAlignment
-    ///     (Return3:ref)                               // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft                                     // GetSize
+    ///     /vft                                     // GetAlignment
+    ///     /vft(Return3)                               // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTIArrayType_VFT_Addr;
 
     CName name;            // 18
@@ -527,12 +526,12 @@ RED4EXT_ASSERT_OFFSET(CRTTIArrayType, parent, 0x20);
 struct CRTTIStaticArrayType : CRTTIBaseArrayType
 {
     /// @pattern                                        // CRTTIStaticArrayType VFT
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (:call)                                     // GetSize
-    ///     (:call)                                     // GetAlignment
-    ///     (Return6:ref)                               // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft                                     // GetSize
+    ///     /vft                                     // GetAlignment
+    ///     /vft(Return6)                               // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTIStaticArrayType_VFT_Addr;
 
     int32_t size;       // 18
@@ -548,12 +547,12 @@ RED4EXT_ASSERT_OFFSET(CRTTIStaticArrayType, computedName, 0x28);
 struct CRTTINativeArrayType : CRTTIBaseArrayType
 {
     /// @pattern                                        // CRTTINativeArrayType VFT
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (:call)                                     // GetSize
-    ///     (:call)                                     // GetAlignment
-    ///     (Return7:ref)                               // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft                                     // GetSize
+    ///     /vft                                     // GetAlignment
+    ///     /vft(Return7)                               // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTINativeArrayType_VFT_Addr;
 
     int32_t size;       // 18
@@ -570,12 +569,12 @@ RED4EXT_ASSERT_OFFSET(CRTTINativeArrayType, computedName, 0x28);
 struct CRTTIPointerType : CBaseRTTIType
 {
     /// @pattern
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (:call)                                     // GetSize
-    ///     (:call)                                     // GetAlignment
-    ///     (Return8:ref)                               // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft                                     // GetSize
+    ///     /vft                                     // GetAlignment
+    ///     /vft(Return8)                               // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTIPointerType_VFT_Addr;
 
     CBaseRTTIType* innerType; // 10
@@ -619,12 +618,12 @@ RED4EXT_ASSERT_OFFSET(CRTTIScriptReferenceType, name, 0x20);
 struct CRTTIHandleType : CBaseRTTIType
 {
     /// @pattern
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (:call)                                     // GetSize
-    ///     (:call)                                     // GetAlignment
-    ///     (Return9:ref)                               // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft                                     // GetSize
+    ///     /vft                                     // GetAlignment
+    ///     /vft(Return9)                               // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTIHandleType_VFT_Addr;
 
     virtual CBaseRTTIType* GetInnerType() const = 0;   // C0
@@ -644,12 +643,12 @@ RED4EXT_ASSERT_OFFSET(CRTTIHandleType, computedName, 0x20);
 struct CRTTIWeakHandleType : CBaseRTTIType
 {
     /// @pattern
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (:call)                                     // GetSize
-    ///     (:call)                                     // GetAlignment
-    ///     (Return10:ref)                               // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft                                     // GetSize
+    ///     /vft                                     // GetAlignment
+    ///     /vft(Return10)                               // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTIWeakHandleType_VFT_Addr;
 
     virtual CBaseRTTIType* GetInnerType() const = 0;   // C0
@@ -669,12 +668,12 @@ RED4EXT_ASSERT_OFFSET(CRTTIWeakHandleType, computedName, 0x20);
 struct CRTTIResourceReferenceType : CBaseRTTIType
 {
     /// @pattern
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (:call)                                     // GetSize
-    ///     (:call)                                     // GetAlignment
-    ///     (Return11:ref)                              // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft                                     // GetSize
+    ///     /vft                                     // GetAlignment
+    ///     /vft(Return11)                              // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTIResourceReferenceType_VFT_Addr;
 
     CName name;               // 10
@@ -689,12 +688,12 @@ RED4EXT_ASSERT_OFFSET(CRTTIResourceReferenceType, innerType, 0x20);
 struct CRTTIResourceAsyncReferenceType : CBaseRTTIType
 {
     /// @pattern
-    ///     (:call)                                     // ~CBaseRTTIType
-    ///     (:call)                                     // GetName
-    ///     (Return8u32:ref)                            // GetSize
-    ///     (Return8u32:ref)                            // GetAlignment
-    ///     (Return12:ref)                              // GetType
-    ///     (rttiIType_GetERTTITypeString:ref)          // GetTypeName
+    ///     /vft                                     // ~CBaseRTTIType
+    ///     /vft                                     // GetName
+    ///     /vft(Return8u32)                            // GetSize
+    ///     /vft(Return8u32)                            // GetAlignment
+    ///     /vft(Return12)                              // GetType
+    ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
     static constexpr const uintptr_t VFT = CRTTIResourceAsyncReferenceType_VFT_Addr;
 
     CName name;               // 10

@@ -230,6 +230,16 @@ RED4EXT_ASSERT_SIZE(RuntimeEntityRef, 0x8);
 template<typename T, uint32_t MAX_LEN>
 struct StaticArray
 {
+    const T& operator[](uint32_t aIndex) const
+    {
+        return entries[aIndex];
+    }
+
+    T& operator[](uint32_t aIndex)
+    {
+        return entries[aIndex];
+    }
+
     T entries[MAX_LEN]; // 00
     uint32_t size;
 };

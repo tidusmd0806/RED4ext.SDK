@@ -15,6 +15,8 @@ struct ProxyHelper
     // 1.6  RVA: 0x44C410 / 4506640
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9 41
     /// @nth 1/2
+    // 2.0
+    /// @pattern 48 8B C4 88 50 10 53 48 83 EC 50 48 8B 11 48 8B D9 C6 40 E8 00 C7 40 E0 01 00 00 00 48 8D 40 10
     ProxyHelper *__fastcall SetSimulationShape(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex);
     
     // 1.6  RVA: 0x44DB40 / 4512576
@@ -35,6 +37,8 @@ struct ProxyHelper
     // 1.6  RVA: 0x44C300 / 4506368
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9 41
     /// @nth 0/2
+    // 2.0
+    /// @pattern 48 8B C4 88 50 10 53 48 83 EC 50 4C 8B 41 08 48 8B D9 48 8B 11 8B 49 10 C6 40 E8 00 C7 40 E0 01
     ProxyHelper* __fastcall SetIsQueryable(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex);
 
     // 1.6  RVA: 0x44C620 / 4507168
@@ -77,6 +81,10 @@ struct ProxyHelper
     // 2.0
     /// @pattern 40 53 48 83 EC 20 48 8B ? 08 48 8B D9 48 85 ? 74 ? 8B ? 48 8B
     bool __fastcall UpdateProxyCache();
+
+    // 2.0
+    /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 83 21 00 48 8B F9 48 83 61 08 00 8B DA 89 51 10 48 8B 0D
+    RED4ext::physics::ProxyHelper *__fastcall Lock(RED4ext::physics::ProxyID a2);
 
     // 1.6  RVA: 0x446D90 / 4484496
     // 2.0 switches the order of some instructions in the ?
