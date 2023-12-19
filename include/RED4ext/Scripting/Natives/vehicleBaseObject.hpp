@@ -768,6 +768,8 @@ enum PhysicsState
   Chase = 0x100,
 };
 
+/// @pattern /lea("gameVehicleCurve")
+constexpr const uintptr_t gameVehicleCurve = vehicle_gameVehicleCurve_Addr;
 
 #pragma pack(push, 1)
 struct BaseObject : game::Object
@@ -827,14 +829,15 @@ struct BaseObject : game::Object
 
 // overridden member functions
 
+    /// @pattern /mov(vehicleBaseObject_Class_p) /retn
+    virtual CClass* GetNativeType() override;
+
     // calls 268, 270, 350
     virtual void Attach(void *) override;
 
     virtual uintptr_t Detach() override;
 
     virtual void sub_160(uint16_t) override;
-
-    virtual CClass* __fastcall GetNativeType() override;
 
     virtual void __fastcall OnRequestComponents(void *) override;
 

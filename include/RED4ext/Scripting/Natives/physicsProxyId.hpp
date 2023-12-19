@@ -9,6 +9,8 @@
 // #include <RED4ext/Scripting/Natives/physicsBaseProxyDesc.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/FilterData.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
+#include <RED4ext/Scripting/Natives/physicsStateValue.hpp>
+#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
 
 namespace RED4ext {
 namespace physics {
@@ -59,5 +61,20 @@ struct ProxyID
     uint8_t unk03;
 };
 RED4EXT_ASSERT_SIZE(ProxyID, 0x4);
+
+template<typename T>
+T * GetValueFromProxyCache(T* value, ProxyID proxyID, int bodyIndex, int shapeIndex, StateValue stateValue, T* initial) {
+    *value = *initial;
+    proxyManager->GetProxyCache(proxyID)->GetValue(proxyID, bodyIndex, 0, stateValue, value, sizeof(T));
+    return value;
+}
+
+template<typename T, StateValue S>
+T * GetValueFromProxyCache(T * value, ProxyID proxyID, int bodyIndex) {
+    T initial, result;
+    *value = *GetValueFromProxyCache(&result, proxyID, bodyIndex, 0, S, &initial);
+    return value;
+}
+
 } // namespace physics
 } // namespace RED4ext

@@ -63,10 +63,10 @@ struct CBaseRTTIType
 {
     /// @pattern 
     ///     /vft
-    ///     /vft(pure) 
-    ///     /vft(pure) 
-    ///     /vft(pure) 
-    ///     /vft(pure) 
+    ///     /vft(purecall) 
+    ///     /vft(purecall) 
+    ///     /vft(purecall) 
+    ///     /vft(purecall) 
     ///     /vft(rttiIType_GetERTTITypeString)
     static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;
     
@@ -156,6 +156,8 @@ struct CClass : CBaseRTTIType
     ///     /vft(pure)
     ///     /vft 
     ///     /vft(rttiClassType_Serialize)
+    ///     /vft(rttiClassType_ToString)
+    ///     /vft(ret 0)
     static constexpr const uintptr_t VFT = CClass_VFT_Addr;
 
     struct Flags

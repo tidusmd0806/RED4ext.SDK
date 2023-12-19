@@ -22,11 +22,11 @@ struct ProxyManager
 
     // 1.6  RVA: 0x46A560 / 4629856
     /// @pattern 48 89 5C 24 08 57 48 83 EC 30 8B 02 4C 8D 44 24 48 48 8B DA 89 44 24 48 48 8D 54 24 20 48 8B F9
-    ProxyCache *__fastcall GetProxyCache(ProxyID *proxyID);
+    ProxyCache *__fastcall GetProxyCache(ProxyID proxyID);
 
     // 1.6  RVA: 0x46A7E0 / 4630496
     /// @pattern 48 89 74 24 10 57 48 83 EC 20 44 8B 02 48 8B F2 48 8B F9 41 83 F8 FF 74 67 B8 FF FF 00 00 66 44
-    bool __fastcall HasProxy(ProxyID *proxyID);
+    bool __fastcall HasProxy(ProxyID proxyID);
 
     // 1.6  RVA: 0x46A410 / 4629520
     /// @pattern 48 89 5C 24 08 48 89 74 24 18 57 48 83 EC 40 41 8B 00 48 8B DA 48 8D 54 24 58 89 44 24 58 49 8B

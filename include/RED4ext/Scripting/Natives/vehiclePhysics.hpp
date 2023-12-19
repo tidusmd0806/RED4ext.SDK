@@ -304,13 +304,6 @@ RED4EXT_ASSERT_SIZE(UnkD10, 0x3410);
 
 struct WheeledPhysics : Physics 
 {
-    // after "EnableSmoothWheelContacts" string
-    // 1.6  RVA: 0x3498388
-    // 1.61 RVA: 0x349D5D8
-    // 1.61hf1 RVA: 0x34A0718
-    /// @pattern 45 6E 61 62 6C 65 53 6D 6F 6F 74 68 57 68 65 65 6C 43 6F 6E 74 61 63 74 73 00 00 00 00 00 00 00
-    /// @offset -32
-
     // 2.0 RVA: 0x2AA40E0
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 8B FA 48 8B D9 E8 ? ? ? ? 33 F6 48 8D 05 (fn:rel)
     /// @eval fn
