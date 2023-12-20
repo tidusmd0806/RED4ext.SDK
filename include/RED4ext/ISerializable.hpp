@@ -21,7 +21,7 @@ struct ISerializable
     //static constexpr const char* NAME = "ISerializable";
     //static constexpr const char* ALIAS = NAME;
 
-    /// @pattern 48 8B 05 79 DB AF 01 C3 CC CC CC CC CC CC CC CC
+    /// @pattern /mov(ISerializable_Class_p) /retn
     void getNativeType();
 
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 8B DA 48 8B F9 E8 38 4C 18 FE F6 C3 01 74 0D BA 30 00 00 00 48 8B
@@ -43,6 +43,7 @@ struct ISerializable
     ///     /vft(ret(0))                                // sub_58
     ///     /vft(ret(0))                                // sub_60
     ///     /vft(ret(0))                                // sub_68
+    /// @segment rdata
     static constexpr const uintptr_t VFT = ISerializable_VFT_Addr;
 
     // 1.52 RVA: 0x1AB240 / 1749568

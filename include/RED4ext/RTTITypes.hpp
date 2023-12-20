@@ -68,6 +68,7 @@ struct CBaseRTTIType
     ///     /vft(purecall) 
     ///     /vft(purecall) 
     ///     /vft(rttiIType_GetERTTITypeString)
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;
     
     CBaseRTTIType();
@@ -158,6 +159,7 @@ struct CClass : CBaseRTTIType
     ///     /vft(rttiClassType_Serialize)
     ///     /vft(rttiClassType_ToString)
     ///     /vft(ret 0)
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CClass_VFT_Addr;
 
     struct Flags
@@ -514,6 +516,7 @@ struct CRTTIArrayType : CRTTIBaseArrayType
     ///     /vft                                     // GetAlignment
     ///     /vft(Return3)                               // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTIArrayType_VFT_Addr;
 
     CName name;            // 18
@@ -534,6 +537,7 @@ struct CRTTIStaticArrayType : CRTTIBaseArrayType
     ///     /vft                                     // GetAlignment
     ///     /vft(Return6)                               // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTIStaticArrayType_VFT_Addr;
 
     int32_t size;       // 18
@@ -555,6 +559,7 @@ struct CRTTINativeArrayType : CRTTIBaseArrayType
     ///     /vft                                     // GetAlignment
     ///     /vft(Return7)                               // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTINativeArrayType_VFT_Addr;
 
     int32_t size;       // 18
@@ -577,6 +582,7 @@ struct CRTTIPointerType : CBaseRTTIType
     ///     /vft                                     // GetAlignment
     ///     /vft(Return8)                               // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTIPointerType_VFT_Addr;
 
     CBaseRTTIType* innerType; // 10
@@ -626,6 +632,7 @@ struct CRTTIHandleType : CBaseRTTIType
     ///     /vft                                     // GetAlignment
     ///     /vft(Return9)                               // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTIHandleType_VFT_Addr;
 
     virtual CBaseRTTIType* GetInnerType() const = 0;   // C0
@@ -651,6 +658,7 @@ struct CRTTIWeakHandleType : CBaseRTTIType
     ///     /vft                                     // GetAlignment
     ///     /vft(Return10)                               // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTIWeakHandleType_VFT_Addr;
 
     virtual CBaseRTTIType* GetInnerType() const = 0;   // C0
@@ -676,6 +684,7 @@ struct CRTTIResourceReferenceType : CBaseRTTIType
     ///     /vft                                     // GetAlignment
     ///     /vft(Return11)                              // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTIResourceReferenceType_VFT_Addr;
 
     CName name;               // 10
@@ -696,6 +705,7 @@ struct CRTTIResourceAsyncReferenceType : CBaseRTTIType
     ///     /vft(Return8u32)                            // GetAlignment
     ///     /vft(Return12)                              // GetType
     ///     /vft(rttiIType_GetERTTITypeString)          // GetTypeName
+    /// @segment rdata
     static constexpr const uintptr_t VFT = CRTTIResourceAsyncReferenceType_VFT_Addr;
 
     CName name;               // 10

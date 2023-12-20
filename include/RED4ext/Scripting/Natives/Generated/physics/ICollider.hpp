@@ -26,8 +26,8 @@ struct __declspec(align(0x10)) ICollider : ISerializable
     static constexpr const char* ALIAS = NAME;
 
     /// @pattern
-    /// /vft
-    /// /vft
+    /// /vft(physicsICollider_GetNativeType)
+    /// /vft(physicsICollider_GetNativeType)
     /// /vft
     /// /vft
     /// /vft(null)
@@ -72,6 +72,9 @@ struct __declspec(align(0x10)) ICollider : ISerializable
     // 2.1  RVA: 0x1B7958
     /// @pattern 45 33 C0 48 8D 05 EE 9D 85 02 48 89 01 4C 89 41 08 4C 89 41 10 41 8D 40 01 4C 89 41 18 4C 89 41
     RED4ext::physics::ICollider *__fastcall cstr();
+
+    /// @pattern /mov(physicsICollider_Class_p) /retn
+    virtual CClass * GetNativeType() override;
 
     virtual void sub_D8() = 0;
     virtual void sub_E0() = 0;
