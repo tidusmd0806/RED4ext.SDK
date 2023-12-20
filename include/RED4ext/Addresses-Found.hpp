@@ -3987,6 +3987,9 @@
 #define CBaseEngine_LoadScripts_Addr 0x95355C
 #define CBaseEngine_VFT_Addr 0x2B0D138
 #define CBaseRTTIType_dstr_Addr 0x1FEC25C
+#define CBaseRTTIType_dstr_0_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CBaseRTTIType_dstr_0_Addr"                           \
+              "is 0 - Zoltan found too many matches for RED4ext::CBaseRTTIType_dstr (2)\")")
 #define CBitmapTexture_Class_Addr 0x3F10E70
 #define CBitmapTexture_Class_VFT_Addr 0x2A5D058
 #define CBitmapTexture_Class_p_Addr 0x3335B58
@@ -3996,7 +3999,7 @@
 #define CClass_AddEventCallbackType_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_AddEventCallbackType_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::CClass::AddEventCallbackType\")")
-#define CClass_ApplyFlags_Addr 0x2056F0
+#define CClass_ApplyFlags_Addr 0x9B40B0
 #define CClass_ApplyFlags_0_Addr                                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_ApplyFlags_0_Addr"                            \
               "is 0 - Zoltan found too many matches for RED4ext::CClass::ApplyFlags (2)\")")
@@ -4005,7 +4008,7 @@
               "is 0 - Zoltan found no matches for RED4ext::CClass::SetupScriptCallbacks\")")
 #define CClass_VFT_Addr                                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_VFT_Addr"                                     \
-              "is 0 - Zoltan found too many matches for RED4ext::CClass::VFT (5)\")")
+              "is 0 - Zoltan found too many matches for RED4ext::CClass::VFT (2104)\")")
 #define CComStaticSkeletonDataEntry_Class_Addr 0x405AE80
 #define CComStaticSkeletonDataEntry_Class_VFT_Addr 0x2C0C970
 #define CComStaticSkeletonDataEntry_Class_p_Addr 0x3338B20
@@ -4112,7 +4115,7 @@
 #define CGameEngine_VFT_Addr 0x2B0CE68
 #define CGameFramework_Systems_120_128_130_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CGameFramework_Systems_120_128_130_Addr"             \
-              "is 0 - Zoltan found too many matches for RED4ext::CGameFramework::Systems_120_128_130 (3)\")")
+              "is 0 - Zoltan found no matches for RED4ext::CGameFramework::Systems_120_128_130\")")
 #define CGlobalIlluminationSceneData_Class_Addr 0x4758CD8
 #define CGlobalIlluminationSceneData_Class_VFT_Addr 0x2C6AF90
 #define CGlobalIlluminationSceneData_Class_p_Addr 0x3345D78
@@ -4453,22 +4456,30 @@
 #define CPhysicsDecorationResource_Class_p_Addr 0x3338B00
 #define CPhysicsDecorationResource_VFT_Addr 0x2C46C30
 #define CProcessRunner_Run_Addr 0x82E260
-#define CRTTIArrayType_VFT_Addr 0xA150A8
-#define CRTTIHandleType_VFT_Addr 0x2C4A44
+#define CRTTIArrayType_VFT_Addr                                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIArrayType_VFT_Addr"                             \
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTIArrayType::VFT (58072708)\")")
+#define CRTTIHandleType_VFT_Addr                                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIHandleType_VFT_Addr"                            \
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTIHandleType::VFT (58072708)\")")
 #define CRTTINativeArrayType_VFT_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTINativeArrayType_VFT_Addr"                       \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTINativeArrayType::VFT\")")
-#define CRTTIPointerType_VFT_Addr 0xA1401C
-#define CRTTIResourceAsyncReferenceType_VFT_Addr 0x17DA0C8
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTINativeArrayType::VFT (58072708)\")")
+#define CRTTIPointerType_VFT_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIPointerType_VFT_Addr"                           \
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTIPointerType::VFT (58072708)\")")
+#define CRTTIResourceAsyncReferenceType_VFT_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIResourceAsyncReferenceType_VFT_Addr"            \
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTIResourceAsyncReferenceType::VFT (58072708)\")")
 #define CRTTIResourceReferenceType_VFT_Addr                                                                            \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIResourceReferenceType_VFT_Addr"                 \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIResourceReferenceType::VFT\")")
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTIResourceReferenceType::VFT (58072708)\")")
 #define CRTTIStaticArrayType_VFT_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIStaticArrayType_VFT_Addr"                       \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIStaticArrayType::VFT\")")
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTIStaticArrayType::VFT (58072708)\")")
 #define CRTTIWeakHandleType_VFT_Addr                                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIWeakHandleType_VFT_Addr"                        \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIWeakHandleType::VFT\")")
+              "is 0 - Zoltan found too many matches for RED4ext::CRTTIWeakHandleType::VFT (58072708)\")")
 #define CReflectionProbeDataResource_Class_Addr 0x3F0D448
 #define CReflectionProbeDataResource_Class_VFT_Addr 0x2AB1458
 #define CReflectionProbeDataResource_Class_p_Addr 0x3335AC0
@@ -4596,7 +4607,9 @@
 #define CallbackManager_Unknown1_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CallbackManager_Unknown1_Addr"                       \
               "is 0 - Zoltan found no matches for RED4ext::CallbackManager::Unknown1\")")
-#define CallbackManager_Unknown6_Addr 0xBCDFB0
+#define CallbackManager_Unknown6_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CallbackManager_Unknown6_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::CallbackManager::Unknown6\")")
 #define CameraAreaSettings_Class_Addr 0x40840D0
 #define CameraAreaSettings_Class_VFT_Addr 0x2DE9CB0
 #define CameraAreaSettings_Class_p_Addr 0x3339360
@@ -7458,7 +7471,9 @@
 #define GameInstance_GameInstance_Addr                                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameInstance_GameInstance_Addr"                      \
               "is 0 - Zoltan found no matches for RED4ext::GameInstance::GameInstance\")")
-#define GameInstance_SetRuntimeScene_Addr 0x17B9B30
+#define GameInstance_SetRuntimeScene_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GameInstance_SetRuntimeScene_Addr"                   \
+              "is 0 - Zoltan found no matches for RED4ext::GameInstance::SetRuntimeScene\")")
 #define GameObjectListener_Class_VFT_Addr 0x2F917A0
 #define GameObjectListener_VFT_Addr 0x2A11638
 #define GameObjectScanStats_Class_VFT_Addr 0x2F917A0
@@ -7604,6 +7619,9 @@
 #define GetFollowTarget_Class_VFT_Addr 0x2F917A0
 #define GetFollowTarget_VFT_Addr 0x2AD8A30
 #define GetGameSystemsData_Addr 0xD630A4
+#define GetGameSystemsData_0_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: GetGameSystemsData_0_Addr"                           \
+              "is 0 - Zoltan found too many matches for RED4ext::GetGameSystemsData (2)\")")
 #define GetOffAVDelayedEvent_Class_VFT_Addr 0x2F917A0
 #define GetOffAVDelayedEvent_VFT_Addr 0x2A2D858
 #define GetOffThePsychoSquadAV_Class_VFT_Addr 0x2F917A0
@@ -8184,11 +8202,15 @@
 #define IEvaluator_Class_VFT_Addr 0x2B2F758
 #define IEvaluator_Class_p_Addr 0x3338870
 #define IEvaluator_VFT_Addr 0x2FC16E0
-#define IGameInstance_RegisterGameLoadCallbacks_Addr 0xA14C68
+#define IGameInstance_RegisterGameLoadCallbacks_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_RegisterGameLoadCallbacks_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::RegisterGameLoadCallbacks\")")
 #define IGameInstance_RegisterStreamingWorldLoadedCallback_Addr                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_RegisterStreamingWorldLoadedCallback_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::IGameInstance::RegisterStreamingWorldLoadedCallback\")")
-#define IGameInstance_Systems158_Addr 0x17B7430
+#define IGameInstance_Systems158_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_Systems158_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::IGameInstance::Systems158\")")
 #define IGameInstance_Systems160_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: IGameInstance_Systems160_Addr"                       \
               "is 0 - Zoltan found no matches for RED4ext::IGameInstance::Systems160\")")
@@ -8249,11 +8271,15 @@
               "is 0 - Zoltan found no matches for RED4ext::ISerializable::SetOwner\")")
 #define ISerializable_VFT_Addr                                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_VFT_Addr"                              \
-              "is 0 - Zoltan found no matches for RED4ext::ISerializable::VFT\")")
-#define ISerializable_dstr_Addr                                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_dstr_Addr"                             \
-              "is 0 - Zoltan found too many matches for RED4ext::ISerializable::dstr (3)\")")
+              "is 0 - Zoltan found too many matches for RED4ext::ISerializable::VFT (58072516)\")")
+#define ISerializable_dstr_Addr 0x1FDE3F8
+#define ISerializable_dstr_0_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_dstr_0_Addr"                           \
+              "is 0 - Zoltan found too many matches for RED4ext::ISerializable::dstr (2)\")")
 #define ISerializable_getNativeType_Addr 0x17B6F80
+#define ISerializable_getNativeType_0_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_getNativeType_0_Addr"                  \
+              "is 0 - Zoltan found too many matches for RED4ext::ISerializable::getNativeType (2)\")")
 #define ITexture_Class_Addr 0x3441B48
 #define ITexture_Class_VFT_Addr 0x2A67220
 #define ITexture_Class_p_Addr 0x3335B80
@@ -11881,6 +11907,9 @@
 #define PuppetStateDef_VFT_Addr 0x2B89CD0
 #define PuppetStateSystem_VFT_Addr 0x2A2D320
 #define PureCall_Addr 0x17DA0C8
+#define PureCall_0_Addr                                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: PureCall_0_Addr"                                     \
+              "is 0 - Zoltan found too many matches for RED4ext::PureCall (2)\")")
 #define PurgeAllTransitions_Class_VFT_Addr 0x2F917A0
 #define PurgeAllTransitions_VFT_Addr 0x2A2C3F8
 #define PushAnimEventDelayed_Class_VFT_Addr 0x2F917A0
@@ -11911,7 +11940,9 @@
 #define Quaternion_GetYaw_Addr                                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Quaternion_GetYaw_Addr"                              \
               "is 0 - Zoltan found no matches for RED4ext::Quaternion::GetYaw\")")
-#define Quaternion_ToEulerAngles_Addr 0x17D294
+#define Quaternion_ToEulerAngles_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: Quaternion_ToEulerAngles_Addr"                       \
+              "is 0 - Zoltan found no matches for RED4ext::Quaternion::ToEulerAngles\")")
 #define QuestAddTransition_Class_VFT_Addr 0x2F917A0
 #define QuestAddTransition_VFT_Addr 0x2A2C3F8
 #define QuestAnimationMappinController_Class_VFT_Addr 0x2F917A0
@@ -13019,7 +13050,7 @@
 #define RetrofixQuickhacksEvent_VFT_Addr 0x2A2C3F8
 #define RetrySaveDataRequestDelay_Class_VFT_Addr 0x2F917A0
 #define RetrySaveDataRequestDelay_VFT_Addr 0x2A2C3F8
-#define Return0u16_Addr 0x266A04
+#define Return0u16_Addr 0x18488A0
 #define Return1_Addr 0xA11A3E
 #define Return10_Addr 0x17B7440
 #define Return11_Addr 0x17B7420
@@ -13033,16 +13064,16 @@
 #define Return24u32_Addr 0x17B72D0
 #define Return3_Addr 0x17B7490
 #define Return32u32_Addr 0x17B7300
-#define Return4_Addr 0x17B73D0
+#define Return4_Addr 0x17B7030
 #define Return40u32_Addr 0x17B7320
 #define Return4u32_Addr 0x17B72E0
 #define Return5_Addr 0x17B7460
 #define Return6_Addr 0x17B74C0
 #define Return7_Addr 0x17B74B0
 #define Return8_Addr 0x17B7400
-#define Return88u32_Addr 0x93CBF4
-#define Return8u32_Addr 0x17B6F80
-#define Return9_Addr 0x17B7040
+#define Return88u32_Addr 0x17B7310
+#define Return8u32_Addr 0x17B7000
+#define Return9_Addr 0x17B73F0
 #define ReturnN1i32_Addr 0x17B73B0
 #define ReturnToDeviceScreenEvent_Class_VFT_Addr 0x2F917A0
 #define ReturnToDeviceScreenEvent_VFT_Addr 0x2A2C3F8
@@ -16220,6 +16251,9 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_Copy_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::UpdateManager::UpdateStorage::Copy\")")
 #define UpdateManagerUpdateStorage_Copy_0_Addr 0x7FBD6C
+#define UpdateManagerUpdateStorage_Copy_0_0_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_Copy_0_0_Addr"            \
+              "is 0 - Zoltan found too many matches for RED4ext::UpdateManager::UpdateStorage::Copy_0 (2)\")")
 #define UpdateManagerUpdateStorage_FireCallback_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: UpdateManagerUpdateStorage_FireCallback_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::UpdateManager::UpdateStorage::FireCallback\")")
@@ -17109,10 +17143,9 @@
 #define ZoomTransitionHelper_VFT_Addr 0x2A11638
 #define ZoomTransition_Class_VFT_Addr 0x2F917A0
 #define ZoomTransition_VFT_Addr 0x2B23A90
-#define actionActionBase_Lock_Addr 0x207F24
-#define actionActionBase_Lock_0_Addr                                                                                   \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionBase_Lock_0_Addr"                        \
-              "is 0 - Zoltan found too many matches for RED4ext::action::ActionBase::Lock (3)\")")
+#define actionActionBase_Lock_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionBase_Lock_Addr"                          \
+              "is 0 - Zoltan found too many matches for RED4ext::action::ActionBase::Lock (4)\")")
 #define actionActionBase_StartWithReplicatedState_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionBase_StartWithReplicatedState_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::action::ActionBase::StartWithReplicatedState\")")
@@ -17122,7 +17155,9 @@
 #define actionActionInterface_IsAnimationiActive_Addr                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionInterface_IsAnimationiActive_Addr"       \
               "is 0 - Zoltan found no matches for RED4ext::action::ActionInterface::IsAnimationiActive\")")
-#define actionActionInterface_ProcessActions_Addr 0x17B7460
+#define actionActionInterface_ProcessActions_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionInterface_ProcessActions_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::action::ActionInterface::ProcessActions\")")
 #define activityLogEntryLogicController_Class_VFT_Addr 0x2F917A0
 #define activityLogEntryLogicController_VFT_Addr 0x2FB4C90
 #define activityLogGameController_Class_VFT_Addr 0x2F917A0
@@ -20171,7 +20206,12 @@
 #define audioFootwearVsMaterialVfxMetadata_Class_p_Addr 0x33355F8
 #define audioFootwearVsMaterialVfxMetadata_VFT_Addr 0x2B97068
 #define audioGameParameterStorage_GetValue_Addr 0x2C8C68
-#define audioGameParameterStorage_SetValue_Addr 0x20984F4
+#define audioGameParameterStorage_GetValue_0_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioGameParameterStorage_GetValue_0_Addr"           \
+              "is 0 - Zoltan found too many matches for RED4ext::audio::GameParameterStorage::GetValue (2)\")")
+#define audioGameParameterStorage_SetValue_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: audioGameParameterStorage_SetValue_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::audio::GameParameterStorage::SetValue\")")
 #define audioGameplayTierActivatedASTCD_Class_Addr 0x3ED41A0
 #define audioGameplayTierActivatedASTCD_Class_VFT_Addr 0x2DB0338
 #define audioGameplayTierActivatedASTCD_Class_p_Addr 0x3334F98
@@ -21563,6 +21603,9 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_GetComponentByCRUID_Addr"       \
               "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::GetComponentByCRUID\")")
 #define entComponentsStorage_GetSize_Addr 0x17BCBC0
+#define entComponentsStorage_GetSize_0_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_GetSize_0_Addr"                 \
+              "is 0 - Zoltan found too many matches for RED4ext::ent::ComponentsStorage::GetSize (2)\")")
 #define entComponentsStorage_IsEmpty_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entComponentsStorage_IsEmpty_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::ent::ComponentsStorage::IsEmpty\")")
@@ -21691,8 +21734,10 @@
 #define entEntity_Class_Addr 0x3452450
 #define entEntity_Class_VFT_Addr 0x2C34230
 #define entEntity_Class_p_Addr 0x333BAB8
-#define entEntity_ReassembleAppearance_Addr 0x1FEC25C
-#define entEntity_SetRuntime_Addr 0x1C1B80
+#define entEntity_ReassembleAppearance_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_ReassembleAppearance_Addr"                 \
+              "is 0 - Zoltan found no matches for RED4ext::ent::Entity::ReassembleAppearance\")")
+#define entEntity_SetRuntime_Addr 0x1BFFB00
 #define entEntity_SetRuntime_0_Addr                                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entEntity_SetRuntime_0_Addr"                         \
               "is 0 - Zoltan found too many matches for RED4ext::ent::Entity::SetRuntime (2)\")")
@@ -21803,8 +21848,8 @@
 #define entIComponent_Class_p_Addr 0x333BCE8
 #define entIComponent_SetEntity_Addr                                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIComponent_SetEntity_Addr"                        \
-              "is 0 - Zoltan found too many matches for RED4ext::ent::IComponent::SetEntity (6)\")")
-#define entIComponent_VFT_Addr 0xFFFFFFFFE6D86A0B
+              "is 0 - Zoltan found too many matches for RED4ext::ent::IComponent::SetEntity (12)\")")
+#define entIComponent_VFT_Addr 0x2A20D90
 #define entIComponent_VFT_0_Addr                                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIComponent_VFT_0_Addr"                            \
               "is 0 - Zoltan found too many matches for RED4ext::ent::IComponent::VFT (2)\")")
@@ -21829,6 +21874,9 @@
 #define entIPlacedComponent_Class_VFT_Addr 0x2ABE470
 #define entIPlacedComponent_Class_p_Addr 0x333BCA8
 #define entIPlacedComponent_VFT_Addr 0x2A20B40
+#define entIPlacedComponent_VFT_0_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entIPlacedComponent_VFT_0_Addr"                      \
+              "is 0 - Zoltan found too many matches for RED4ext::ent::IPlacedComponent::VFT (2)\")")
 #define entIPositionProvider_Class_Addr 0x43053B8
 #define entIPositionProvider_Class_VFT_Addr 0x2B62B18
 #define entIPositionProvider_Class_p_Addr 0x333B7A8
@@ -21973,7 +22021,9 @@
 #define entPhysicalMeshComponent_Class_Addr 0x431A888
 #define entPhysicalMeshComponent_Class_VFT_Addr 0x2D2A900
 #define entPhysicalMeshComponent_Class_p_Addr 0x333BAE8
-#define entPhysicalMeshComponent_ProcessSystemResource_Addr 0x17B9980
+#define entPhysicalMeshComponent_ProcessSystemResource_Addr                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entPhysicalMeshComponent_ProcessSystemResource_Addr" \
+              "is 0 - Zoltan found no matches for RED4ext::ent::PhysicalMeshComponent::ProcessSystemResource\")")
 #define entPhysicalMeshComponent_VFT_Addr 0x2A19478
 #define entPhysicalSkinnedMeshComponent_Class_Addr 0x431A498
 #define entPhysicalSkinnedMeshComponent_Class_VFT_Addr 0x2D2AA10
@@ -22181,7 +22231,7 @@
 #define entSlotComponent_Class_Addr 0x4309530
 #define entSlotComponent_Class_VFT_Addr 0x2AE44C8
 #define entSlotComponent_Class_p_Addr 0x333B810
-#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x2C8C68
+#define entSlotComponent_GetLocalSlotTransformFromIndex_Addr 0x4D76EC
 #define entSlotComponent_GetLocalSlotTransformFromIndex_0_Addr                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetLocalSlotTransformFromIndex_0_Addr"\
               "is 0 - Zoltan found too many matches for RED4ext::ent::SlotComponent::GetLocalSlotTransformFromIndex (2)\")")
@@ -22189,10 +22239,16 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetSlotGlobalTransform_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::ent::SlotComponent::GetSlotGlobalTransform\")")
 #define entSlotComponent_GetSlotIndex_Addr 0x266A04
+#define entSlotComponent_GetSlotIndex_0_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetSlotIndex_0_Addr"                \
+              "is 0 - Zoltan found too many matches for RED4ext::ent::SlotComponent::GetSlotIndex (2)\")")
 #define entSlotComponent_GetSlotLocalTransform_Addr                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetSlotLocalTransform_Addr"         \
               "is 0 - Zoltan found no matches for RED4ext::ent::SlotComponent::GetSlotLocalTransform\")")
 #define entSlotComponent_GetSlotTransform_Addr 0xBC1744
+#define entSlotComponent_GetSlotTransform_0_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entSlotComponent_GetSlotTransform_0_Addr"            \
+              "is 0 - Zoltan found too many matches for RED4ext::ent::SlotComponent::GetSlotTransform (2)\")")
 #define entSlotComponent_VFT_Addr 0x2A16F90
 #define entSlotPositionProvider_Class_Addr 0x4306620
 #define entSlotPositionProvider_Class_VFT_Addr 0x2D2F640
@@ -22349,11 +22405,13 @@
 #define entVisualControllerComponent_Class_p_Addr 0x333B380
 #define entVisualControllerComponent_GetAppearanceDependency_Addr                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_GetAppearanceDependency_Addr"\
-              "is 0 - Zoltan found too many matches for RED4ext::ent::VisualControllerComponent::GetAppearanceDependency (3)\")")
-#define entVisualControllerComponent_LoadUnkD8_Addr 0x209D5C
+              "is 0 - Zoltan found too many matches for RED4ext::ent::VisualControllerComponent::GetAppearanceDependency (6)\")")
+#define entVisualControllerComponent_LoadUnkD8_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_LoadUnkD8_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::ent::VisualControllerComponent::LoadUnkD8\")")
 #define entVisualControllerComponent_Set0xF4_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_Set0xF4_Addr"           \
-              "is 0 - Zoltan found too many matches for RED4ext::ent::VisualControllerComponent::Set0xF4 (2)\")")
+              "is 0 - Zoltan found no matches for RED4ext::ent::VisualControllerComponent::Set0xF4\")")
 #define entVisualControllerComponent_Unknown_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: entVisualControllerComponent_Unknown_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::ent::VisualControllerComponent::Unknown\")")
@@ -24536,7 +24594,7 @@
 #define gameFuncCallEntry_VFT_Addr 0x2A85CF8
 #define gameFxEventInterface_Add_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxEventInterface_Add_Addr"                       \
-              "is 0 - Zoltan found too many matches for RED4ext::game::FxEventInterface::Add (6)\")")
+              "is 0 - Zoltan found no matches for RED4ext::game::FxEventInterface::Add\")")
 #define gameFxInstance_Class_Addr 0x4528C48
 #define gameFxInstance_Class_VFT_Addr 0x2CD87D8
 #define gameFxInstance_Class_p_Addr 0x33406E0
@@ -24555,11 +24613,15 @@
 #define gameFxInstance_QueueKill_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueKill_Addr"                       \
               "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueKill\")")
-#define gameFxInstance_QueueSetBlackboardValue_Addr 0x1FDE3F8
+#define gameFxInstance_QueueSetBlackboardValue_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueSetBlackboardValue_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueSetBlackboardValue\")")
 #define gameFxInstance_QueueUpdateTargetPosition_Addr                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueUpdateTargetPosition_Addr"       \
               "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueUpdateTargetPosition\")")
-#define gameFxInstance_QueueUpdateTransform_Addr 0x17DA0C8
+#define gameFxInstance_QueueUpdateTransform_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameFxInstance_QueueUpdateTransform_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::game::FxInstance::QueueUpdateTransform\")")
 #define gameFxInstance_VFT_Addr 0x2AD5690
 #define gameFxResource_Class_Addr 0x43CCD70
 #define gameFxResource_Class_VFT_Addr 0x2DDA4F8
@@ -24944,6 +25006,9 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameIGameSystem_Unset_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::game::IGameSystem::Unset\")")
 #define gameIGameSystem_VFT_Addr 0x2C62068
+#define gameIGameSystem_VFT_0_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameIGameSystem_VFT_0_Addr"                          \
+              "is 0 - Zoltan found too many matches for RED4ext::game::IGameSystem::VFT (2)\")")
 #define gameIGameplayLogicPackageSystem_Class_Addr 0x43CB878
 #define gameIGameplayLogicPackageSystem_Class_VFT_Addr 0x2AACD98
 #define gameIGameplayLogicPackageSystem_Class_p_Addr 0x333D510
@@ -27770,7 +27835,9 @@
 #define gameVehicleSystem_Class_Addr 0x4568D80
 #define gameVehicleSystem_Class_VFT_Addr 0x2DCCA38
 #define gameVehicleSystem_Class_p_Addr 0x3341068
-#define gameVehicleSystem_FixedUpdate_Addr 0x17B7370
+#define gameVehicleSystem_FixedUpdate_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_FixedUpdate_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate\")")
 #define gameVehicleSystem_FixedUpdate_PreSolve_Addr                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_FixedUpdate_PreSolve_Addr"         \
               "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::FixedUpdate_PreSolve\")")
@@ -27786,7 +27853,9 @@
 #define gameVehicleSystem_SingleFixedStep_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_SingleFixedStep_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::SingleFixedStep\")")
-#define gameVehicleSystem_UpdateVehicleArrays_Addr 0x17B7490
+#define gameVehicleSystem_UpdateVehicleArrays_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameVehicleSystem_UpdateVehicleArrays_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::game::VehicleSystem::UpdateVehicleArrays\")")
 #define gameVehicleSystem_VFT_Addr 0x2AA0518
 #define gameVendorData_Class_Addr 0x4466730
 #define gameVendorData_Class_VFT_Addr 0x2B2E330
@@ -38660,7 +38729,12 @@
 #define physicsApperanceMaterial_Class_VFT_Addr 0x2BE67F0
 #define physicsApperanceMaterial_Class_p_Addr 0x3335DF8
 #define physicsBaseProxy_Process_Addr 0x17B9B30
-#define physicsBaseProxy_VFT_Addr 0x3125DC0
+#define physicsBaseProxy_Process_0_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsBaseProxy_Process_0_Addr"                     \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::BaseProxy::Process (2)\")")
+#define physicsBaseProxy_VFT_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsBaseProxy_VFT_Addr"                           \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::BaseProxy::VFT (2822)\")")
 #define physicsCacheEntry_Class_Addr 0x3F1CCC8
 #define physicsCacheEntry_Class_VFT_Addr 0x2B21988
 #define physicsCacheEntry_Class_p_Addr 0x3335D30
@@ -38688,6 +38762,9 @@
 #define physicsColliderSphere_Class_p_Addr 0x3335E08
 #define physicsColliderSphere_VFT_Addr 0x2FA3080
 #define physicsColliderSphere_createHandleWithRadius_Addr 0x2092CDC
+#define physicsColliderSphere_createHandleWithRadius_0_Addr                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsColliderSphere_createHandleWithRadius_0_Addr" \
+              "is 0 - Zoltan found count mismatch for RED4ext::physics::ColliderSphere::createHandleWithRadius (6)\")")
 #define physicsCollisionFilterResource_Class_Addr 0x3F20018
 #define physicsCollisionFilterResource_Class_VFT_Addr 0x2DF49A8
 #define physicsCollisionFilterResource_Class_p_Addr 0x3335D98
@@ -38731,6 +38808,9 @@
 #define physicsFilterData_Class_VFT_Addr 0x2B18728
 #define physicsFilterData_Class_p_Addr 0x3335E50
 #define physicsFilterData_LoadPreset_Addr 0x1B7EB4
+#define physicsFilterData_LoadPreset_0_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsFilterData_LoadPreset_0_Addr"                 \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::FilterData::LoadPreset (2)\")")
 #define physicsFilterData_VFT_Addr 0x2A31F20
 #define physicsFractureFieldParams_Class_Addr 0x3F22A58
 #define physicsFractureFieldParams_Class_VFT_Addr 0x2BBDFB0
@@ -38742,24 +38822,30 @@
 #define physicsGeometryCache_Class_Addr 0x3F1C168
 #define physicsGeometryCache_Class_VFT_Addr 0x2DF4AB0
 #define physicsGeometryCache_Class_p_Addr 0x3335D48
-#define physicsGeometryCache_FreeAlwaysLoaded_Addr 0x1BFFB00
+#define physicsGeometryCache_FreeAlwaysLoaded_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeAlwaysLoaded_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeAlwaysLoaded\")")
 #define physicsGeometryCache_FreeGeometryKey_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeGeometryKey_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeGeometryKey\")")
 #define physicsGeometryCache_FreeKey_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeKey_Addr"                   \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::GeometryCache::FreeKey (18)\")")
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeKey\")")
 #define physicsGeometryCache_FreeSector_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_FreeSector_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::FreeSector\")")
 #define physicsGeometryCache_HasGeometryKey_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_HasGeometryKey_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::HasGeometryKey\")")
-#define physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr 0xBC1744
+#define physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadAlwaysloadedSectorGeometries_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometries\")")
 #define physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadAlwaysloadedSectorGeometriesSetup_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadAlwaysloadedSectorGeometriesSetup\")")
-#define physicsGeometryCache_LoadSectorGeometries_Addr 0x2098540
+#define physicsGeometryCache_LoadSectorGeometries_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadSectorGeometries_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadSectorGeometries\")")
 #define physicsGeometryCache_LoadSectorGeometriesSetup_Addr                                                            \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsGeometryCache_LoadSectorGeometriesSetup_Addr" \
               "is 0 - Zoltan found no matches for RED4ext::physics::GeometryCache::LoadSectorGeometriesSetup\")")
@@ -38781,12 +38867,15 @@
 #define physicsICollider_Class_p_Addr 0x3335E28
 #define physicsICollider_VFT_Addr                                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsICollider_VFT_Addr"                           \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ICollider::VFT\")")
-#define physicsICollider_cstr_Addr 0x172F4C
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ICollider::VFT (620)\")")
+#define physicsICollider_cstr_Addr 0x1B7958
 #define physicsICollider_cstr_0_Addr                                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsICollider_cstr_0_Addr"                        \
               "is 0 - Zoltan found too many matches for RED4ext::physics::ICollider::cstr (2)\")")
 #define physicsICollider_sub_108_Addr 0x17B9980
+#define physicsICollider_sub_108_0_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsICollider_sub_108_0_Addr"                     \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ICollider::sub_108 (2)\")")
 #define physicsISystemObject_Class_Addr 0x3F1B608
 #define physicsISystemObject_Class_VFT_Addr 0x2B19DD0
 #define physicsISystemObject_Class_p_Addr 0x3335D10
@@ -38843,14 +38932,28 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_AddToCache_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCache::AddToCache\")")
 #define physicsProxyCache_GetDataFromCache_Addr 0x1C2164
-#define physicsProxyCache_GetFromCacheOrGet_Addr 0x20FA04
-#define physicsProxyHelper_Create_Addr 0x1B7958
-#define physicsProxyHelper_GetThingWithLock_Addr 0x17B7310
+#define physicsProxyCache_GetDataFromCache_0_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_GetDataFromCache_0_Addr"           \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyCache::GetDataFromCache (2)\")")
+#define physicsProxyCache_GetFromCacheOrGet_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_GetFromCacheOrGet_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCache::GetFromCacheOrGet\")")
+#define physicsProxyHelper_Create_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_Create_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::Create\")")
+#define physicsProxyHelper_GetThingWithLock_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_GetThingWithLock_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::GetThingWithLock\")")
 #define physicsProxyHelper_Lock_Addr 0x1C1B80
+#define physicsProxyHelper_Lock_0_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_Lock_0_Addr"                      \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::Lock (2)\")")
 #define physicsProxyHelper_SetAngularDamping_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetAngularDamping_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetAngularDamping\")")
-#define physicsProxyHelper_SetCCD_Addr 0x124908
+#define physicsProxyHelper_SetCCD_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetCCD_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetCCD\")")
 #define physicsProxyHelper_SetCMassLocalPose_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetCMassLocalPose_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetCMassLocalPose\")")
@@ -38858,7 +38961,12 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetGravity_Addr"                  \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetGravity\")")
 #define physicsProxyHelper_SetIsQueryable_Addr 0x20984F4
-#define physicsProxyHelper_SetLinearDamping_Addr 0x17B74D0
+#define physicsProxyHelper_SetIsQueryable_0_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetIsQueryable_0_Addr"            \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::SetIsQueryable (2)\")")
+#define physicsProxyHelper_SetLinearDamping_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetLinearDamping_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetLinearDamping\")")
 #define physicsProxyHelper_SetMassAndUpdateInertia_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetMassAndUpdateInertia_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetMassAndUpdateInertia\")")
@@ -38869,29 +38977,40 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetSimulationFilterData_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::SetSimulationFilterData\")")
 #define physicsProxyHelper_SetSimulationShape_Addr 0x2098540
+#define physicsProxyHelper_SetSimulationShape_0_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_SetSimulationShape_0_Addr"        \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::SetSimulationShape (2)\")")
 #define physicsProxyHelper_Unlock_Addr 0x2056F0
+#define physicsProxyHelper_Unlock_0_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_Unlock_0_Addr"                    \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::Unlock (2)\")")
 #define physicsProxyHelper_UpdateGlobalPose_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateGlobalPose_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::UpdateGlobalPose\")")
-#define physicsProxyHelper_UpdateProxyCache_Addr 0x1C2164
+#define physicsProxyHelper_UpdateProxyCache_Addr 0x1C1B58
 #define physicsProxyHelper_UpdateProxyCache_0_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_UpdateProxyCache_0_Addr"          \
               "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyHelper::UpdateProxyCache (2)\")")
-#define physicsProxyID_GetEntity_Addr 0x17B72F0
+#define physicsProxyID_GetEntity_Addr 0x93CBF4
 #define physicsProxyID_GetEntity_0_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetEntity_0_Addr"                     \
               "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyID::GetEntity (2)\")")
 #define physicsProxyID_GetKeyUnk37_0x40_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetKeyUnk37_0x40_Addr"                \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyID::GetKeyUnk37_0x40 (15)\")")
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetKeyUnk37_0x40\")")
 #define physicsProxyID_GetNbShapes_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetNbShapes_Addr"                     \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::GetNbShapes\")")
 #define physicsProxyID_GetProxy_Addr 0x2BACA4
+#define physicsProxyID_GetProxy_0_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_GetProxy_0_Addr"                      \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyID::GetProxy (2)\")")
 #define physicsProxyID_ProcessProxyDesc_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_ProcessProxyDesc_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::ProcessProxyDesc\")")
-#define physicsProxyID_Something2_Addr 0x17B7420
+#define physicsProxyID_Something2_Addr                                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_Something2_Addr"                      \
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::Something2\")")
 #define physicsProxyID_Unk_Addr                                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyID_Unk_Addr"                             \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID::Unk\")")
@@ -38902,12 +39021,15 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_GetProxyCache_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::GetProxyCache\")")
 #define physicsProxyManager_GetProxyHandle_Addr 0x124908
+#define physicsProxyManager_GetProxyHandle_0_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_GetProxyHandle_0_Addr"           \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyManager::GetProxyHandle (2)\")")
 #define physicsProxyManager_HasProxy_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_HasProxy_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::HasProxy\")")
 #define physicsProxyManager_SetProxyCacheID_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyManager_SetProxyCacheID_Addr"            \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::ProxyManager::SetProxyCacheID (3)\")")
+              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyManager::SetProxyCacheID\")")
 #define physicsQueryFilter_Class_Addr 0x3F205C8
 #define physicsQueryFilter_Class_VFT_Addr 0x2AE3720
 #define physicsQueryFilter_Class_p_Addr 0x3335DD0
@@ -38971,23 +39093,26 @@
 #define physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert1_ReferencePoseSetup_Addr"\
               "is 0 - Zoltan found no matches for RED4ext::physics::VehiclePhysicsInsert1::ReferencePoseSetup\")")
-#define physicsVehiclePhysicsInsert1_SinMath_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert1_SinMath_Addr"           \
-              "is 0 - Zoltan found too many matches for RED4ext::physics::VehiclePhysicsInsert1::SinMath (5)\")")
+#define physicsVehiclePhysicsInsert1_SinMath_Addr 0x209D5C
+#define physicsVehiclePhysicsInsert1_SinMath_0_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsVehiclePhysicsInsert1_SinMath_0_Addr"         \
+              "is 0 - Zoltan found too many matches for RED4ext::physics::VehiclePhysicsInsert1::SinMath (2)\")")
 #define physics_GetShapeLocalPos_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_GetShapeLocalPos_Addr"                       \
               "is 0 - Zoltan found no matches for RED4ext::physics::GetShapeLocalPos\")")
 #define physics_ProxyID_GetGlobalPose_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_ProxyID_GetGlobalPose_Addr"                  \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyID_GetGlobalPose\")")
-#define physics_proxyManager_Addr 0x3BB94046
+#define physics_proxyManager_Addr 0x3375650
 #define physics_proxyManager_0_Addr                                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_proxyManager_0_Addr"                         \
               "is 0 - Zoltan found too many matches for RED4ext::physics::proxyManager (2)\")")
 #define physics_pxRigidBody_Get_Addr                                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_pxRigidBody_Get_Addr"                        \
               "is 0 - Zoltan found no matches for RED4ext::physics::pxRigidBody_Get\")")
-#define physics_pxRigidBody_Update_Addr 0x1B7EB4
+#define physics_pxRigidBody_Update_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physics_pxRigidBody_Update_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::physics::pxRigidBody_Update\")")
 #define physicsclothClothCapsuleExportData_Class_Addr 0x3F1E148
 #define physicsclothClothCapsuleExportData_Class_VFT_Addr 0x2FA2BA8
 #define physicsclothClothCapsuleExportData_Class_p_Addr 0x3335D58
@@ -39031,6 +39156,9 @@
 #define puppetpreviewPuppetPreview_UIObjectsLoaderSystemListener_Class_p_Addr 0x33452D0
 #define puppetpreviewPuppetPreview_UIObjectsLoaderSystemListener_VFT_Addr 0x310C780
 #define purecall_Addr 0x17DA0C8
+#define purecall_0_Addr                                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: purecall_0_Addr"                                     \
+              "is 0 - Zoltan found too many matches for RED4ext::purecall (2)\")")
 #define questAICommandNodeBase_Class_Addr 0x4664038
 #define questAICommandNodeBase_Class_VFT_Addr 0x2AB0088
 #define questAICommandNodeBase_Class_p_Addr 0x3343778
@@ -42389,7 +42517,7 @@
 #define resStreamedResource_Class_Addr 0x3EA52E8
 #define resStreamedResource_Class_VFT_Addr 0x2B12210
 #define resStreamedResource_Class_p_Addr 0x32B4C08
-#define rtti_Addr 0xFFFFFFFFEF9CAD38
+#define rtti_Addr 0x3EC41A8
 #define rttiBitFieldType_FromString_Addr 0x2002700
 #define rttiBitFieldType_Serialize_Addr 0x2C8D6C
 #define rttiBitFieldType_ToString_Addr 0x2002818
@@ -44051,11 +44179,11 @@
 #define toolsVisualTagsSchema_Class_VFT_Addr 0x2C15D00
 #define toolsVisualTagsSchema_Class_p_Addr 0x333B330
 #define toolsVisualTagsSchema_VFT_Addr 0x2B6C0A0
-#define userRuntimeSettingsVarBool_VFT_Addr 0x2C620A0
+#define userRuntimeSettingsVarBool_VFT_Addr 0x3125E08
 #define userRuntimeSettingsVarBool_VFT_0_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVarBool_VFT_0_Addr"               \
               "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVarBool::VFT (2)\")")
-#define userRuntimeSettingsVarFloatList_VFT_Addr 0x1378D30
+#define userRuntimeSettingsVarFloatList_VFT_Addr 0x3126978
 #define userRuntimeSettingsVarFloatList_VFT_0_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVarFloatList_VFT_0_Addr"          \
               "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVarFloatList::VFT (2)\")")
@@ -44063,19 +44191,19 @@
 #define userRuntimeSettingsVarFloat_VFT_0_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVarFloat_VFT_0_Addr"              \
               "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVarFloat::VFT (2)\")")
-#define userRuntimeSettingsVarInt_VFT_Addr 0x3125DD0
+#define userRuntimeSettingsVarInt_VFT_Addr 0x31268C8
 #define userRuntimeSettingsVarInt_VFT_0_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVarInt_VFT_0_Addr"                \
               "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVarInt::VFT (2)\")")
-#define userRuntimeSettingsVarNameList_VFT_Addr 0x3126A08
+#define userRuntimeSettingsVarNameList_VFT_Addr 0x3125F10
 #define userRuntimeSettingsVarNameList_VFT_0_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVarNameList_VFT_0_Addr"           \
               "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVarNameList::VFT (2)\")")
-#define userRuntimeSettingsVarName_VFT_Addr 0x17B74E0
+#define userRuntimeSettingsVarName_VFT_Addr 0x3125E60
 #define userRuntimeSettingsVarName_VFT_0_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVarName_VFT_0_Addr"               \
               "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVarName::VFT (2)\")")
-#define userRuntimeSettingsVarStringList_VFT_Addr 0x17B7628
+#define userRuntimeSettingsVarStringList_VFT_Addr 0x2FFA580
 #define userRuntimeSettingsVarStringList_VFT_0_Addr                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVarStringList_VFT_0_Addr"         \
               "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVarStringList::VFT (2)\")")
@@ -44083,6 +44211,9 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVar_RuntimeSettingsVar_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::user::RuntimeSettingsVar::RuntimeSettingsVar\")")
 #define userRuntimeSettingsVar_VFT_Addr 0x2FFA528
+#define userRuntimeSettingsVar_VFT_0_Addr                                                                              \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVar_VFT_0_Addr"                   \
+              "is 0 - Zoltan found too many matches for RED4ext::user::RuntimeSettingsVar::VFT (2)\")")
 #define userSettingsGroup_Class_Addr 0x4025E98
 #define userSettingsGroup_Class_VFT_Addr 0x2DED290
 #define userSettingsGroup_Class_p_Addr 0x3338308
@@ -44220,22 +44351,30 @@
 #define vehicleBaseObject_CreateAction_Addr                                                                            \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_CreateAction_Addr"                 \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::CreateAction\")")
-#define vehicleBaseObject_GetCurveSetData_Addr 0x1B6006
+#define vehicleBaseObject_GetCurveSetData_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetCurveSetData_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetCurveSetData\")")
 #define vehicleBaseObject_GetDeceleration_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetDeceleration_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetDeceleration\")")
 #define vehicleBaseObject_GetDisplayName_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetDisplayName_Addr"               \
-              "is 0 - Zoltan found too many matches for RED4ext::vehicle::BaseObject::GetDisplayName (5877)\")")
-#define vehicleBaseObject_GetGravitationalForce_Addr 0x17B7030
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetDisplayName\")")
+#define vehicleBaseObject_GetGravitationalForce_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetGravitationalForce_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetGravitationalForce\")")
 #define vehicleBaseObject_GetInverseMass_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetInverseMass_Addr"               \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetInverseMass\")")
-#define vehicleBaseObject_GetNativeType_Addr 0x17CC1F0
+#define vehicleBaseObject_GetNativeType_Addr                                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetNativeType_Addr"                \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::BaseObject::GetNativeType (369899)\")")
 #define vehicleBaseObject_GetPhysicsData_Addr                                                                          \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetPhysicsData_Addr"               \
-              "is 0 - Zoltan found too many matches for RED4ext::vehicle::BaseObject::GetPhysicsData (26)\")")
-#define vehicleBaseObject_GetTotalMass_Addr 0x17B73F0
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetPhysicsData\")")
+#define vehicleBaseObject_GetTotalMass_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetTotalMass_Addr"                 \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetTotalMass\")")
 #define vehicleBaseObject_GetUnk60C_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_GetUnk60C_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::GetUnk60C\")")
@@ -44269,7 +44408,9 @@
 #define vehicleBaseObject_Reset8B4_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_Reset8B4_Addr"                     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::Reset8B4\")")
-#define vehicleBaseObject_SetPhysicsState_Addr 0x17B7300
+#define vehicleBaseObject_SetPhysicsState_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_SetPhysicsState_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::SetPhysicsState\")")
 #define vehicleBaseObject_UnsetPhysicsStates_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_UnsetPhysicsStates_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::UnsetPhysicsStates\")")
@@ -44293,7 +44434,10 @@
 #define vehicleBikeCurveSet_Class_p_Addr 0x3341278
 #define vehicleBikeCurveSet_VFT_Addr 0x303B118
 #define vehicleBikePhysics_AnimationUpdate_Addr 0x20FA04
-#define vehicleBikePhysics_VFT_Addr 0x5273BB07
+#define vehicleBikePhysics_AnimationUpdate_0_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikePhysics_AnimationUpdate_0_Addr"           \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::BikePhysics::AnimationUpdate (2)\")")
+#define vehicleBikePhysics_VFT_Addr 0x2AA3378
 #define vehicleBikePhysics_VFT_0_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBikePhysics_VFT_0_Addr"                       \
               "is 0 - Zoltan found too many matches for RED4ext::vehicle::BikePhysics::VFT (2)\")")
@@ -44338,6 +44482,9 @@
 #define vehicleCarBaseObject_Class_p_Addr 0x3341248
 #define vehicleCarBaseObject_VFT_Addr 0x2AA3D08
 #define vehicleCarPhysics_AnimationUpdate_Addr 0x17D294
+#define vehicleCarPhysics_AnimationUpdate_0_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCarPhysics_AnimationUpdate_0_Addr"            \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::CarPhysics::AnimationUpdate (2)\")")
 #define vehicleChangeAlarmEvent_Class_Addr 0x456ABC8
 #define vehicleChangeAlarmEvent_Class_VFT_Addr 0x2CCAB30
 #define vehicleChangeAlarmEvent_Class_p_Addr 0x3341070
@@ -44379,7 +44526,9 @@
 #define vehicleChassisComponent_GetCollisionShapes_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_GetCollisionShapes_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::GetCollisionShapes\")")
-#define vehicleChassisComponent_GetProxyHelperAndLock_Addr 0x2BACA4
+#define vehicleChassisComponent_GetProxyHelperAndLock_Addr                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_GetProxyHelperAndLock_Addr"  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::GetProxyHelperAndLock\")")
 #define vehicleChassisComponent_SetDampingToPoint4_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SetDampingToPoint4_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SetDampingToPoint4\")")
@@ -44389,11 +44538,15 @@
 #define vehicleChassisComponent_SomethingIfEnabled_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SomethingIfEnabled_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SomethingIfEnabled\")")
-#define vehicleChassisComponent_TransformWorldTransform_Addr 0x17BCBC0
-#define vehicleChassisComponent_Unknown1_Addr 0x17B74C0
+#define vehicleChassisComponent_TransformWorldTransform_Addr                                                           \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_TransformWorldTransform_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::TransformWorldTransform\")")
+#define vehicleChassisComponent_Unknown1_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_Unknown1_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::Unknown1\")")
 #define vehicleChassisComponent_Update_Addr                                                                            \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_Update_Addr"                 \
-              "is 0 - Zoltan found too many matches for RED4ext::vehicle::ChassisComponent::Update (3)\")")
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::Update\")")
 #define vehicleChassisComponent_UpdatePhysicsState_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_UpdatePhysicsState_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::UpdatePhysicsState\")")
@@ -44568,7 +44721,7 @@
 #define vehicleOnPartDetachedEvent_VFT_Addr 0x2DFA4D0
 #define vehiclePID_GetCorrection_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePID_GetCorrection_Addr"                       \
-              "is 0 - Zoltan found too many matches for RED4ext::vehicle::PID::GetCorrection (4)\")")
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::PID::GetCorrection (8)\")")
 #define vehiclePID_Initialize_Addr                                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePID_Initialize_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::PID::Initialize\")")
@@ -44607,7 +44760,13 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_AddTorque_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::AddTorque\")")
 #define vehiclePhysicsData_ApplyForceAtPosition_Addr 0x207F24
+#define vehiclePhysicsData_ApplyForceAtPosition_0_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_ApplyForceAtPosition_0_Addr"      \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::PhysicsData::ApplyForceAtPosition (2)\")")
 #define vehiclePhysicsData_ApplyTorqueAtPosition_Addr 0x172F4C
+#define vehiclePhysicsData_ApplyTorqueAtPosition_0_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_ApplyTorqueAtPosition_0_Addr"     \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::PhysicsData::ApplyTorqueAtPosition (2)\")")
 #define vehiclePhysicsData_SetUsesNormalChassisMass_Addr                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_SetUsesNormalChassisMass_Addr"    \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::SetUsesNormalChassisMass\")")
@@ -44617,13 +44776,15 @@
 #define vehiclePhysicsData_UsesAlternativeChassisMass_Addr                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysicsData_UsesAlternativeChassisMass_Addr"  \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::PhysicsData::UsesAlternativeChassisMass\")")
-#define vehiclePhysics_ComputeSleep_Addr 0x4D76EC
+#define vehiclePhysics_ComputeSleep_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_ComputeSleep_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::ComputeSleep\")")
 #define vehiclePhysics_GetSomethingWaterParams_Addr                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_GetSomethingWaterParams_Addr"         \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::GetSomethingWaterParams\")")
 #define vehiclePhysics_GetVehicle_Addr                                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_GetVehicle_Addr"                      \
-              "is 0 - Zoltan found too many matches for RED4ext::vehicle::Physics::GetVehicle (2)\")")
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::Physics::GetVehicle (4)\")")
 #define vehiclePhysics_IsInAirFromVehicle_func_Addr                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_IsInAirFromVehicle_func_Addr"         \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::IsInAirFromVehicle_func\")")
@@ -44634,10 +44795,13 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_ReadWorldTransform_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::ReadWorldTransform\")")
 #define vehiclePhysics_SetUnkA0ToOne_Addr 0x1B6006
+#define vehiclePhysics_SetUnkA0ToOne_0_Addr                                                                            \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_SetUnkA0ToOne_0_Addr"                 \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::Physics::SetUnkA0ToOne (2)\")")
 #define vehiclePhysics_UpdateDataWorldTransform_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_UpdateDataWorldTransform_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Physics::UpdateDataWorldTransform\")")
-#define vehiclePhysics_VFT_Addr 0x66B39CF8
+#define vehiclePhysics_VFT_Addr 0x2AA4290
 #define vehiclePhysics_VFT_0_Addr                                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehiclePhysics_VFT_0_Addr"                           \
               "is 0 - Zoltan found too many matches for RED4ext::vehicle::Physics::VFT (2)\")")
@@ -44772,7 +44936,7 @@
 #define vehicleTankBaseObject_Class_VFT_Addr 0x2CC9C58
 #define vehicleTankBaseObject_Class_p_Addr 0x3341140
 #define vehicleTankBaseObject_VFT_Addr 0x2C21EF8
-#define vehicleTankPhysics_VFT_Addr 0x6CECABBF
+#define vehicleTankPhysics_VFT_Addr 0x2C222D0
 #define vehicleTankPhysics_VFT_0_Addr                                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleTankPhysics_VFT_0_Addr"                       \
               "is 0 - Zoltan found too many matches for RED4ext::vehicle::TankPhysics::VFT (2)\")")
@@ -44829,20 +44993,31 @@
 #define vehicleUnk568_CopyOverCollisionForce_Addr                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_CopyOverCollisionForce_Addr"           \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::CopyOverCollisionForce\")")
-#define vehicleUnk568_SetAcceleration_Addr 0x1C1B58
+#define vehicleUnk568_SetAcceleration_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetAcceleration_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetAcceleration\")")
 #define vehicleUnk568_SetLinearVelocityEtc_Addr                                                                        \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetLinearVelocityEtc_Addr"             \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetLinearVelocityEtc\")")
 #define vehicleUnk568_SetUnkD0_Addr                                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetUnkD0_Addr"                         \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetUnkD0\")")
-#define vehicleUnk570_GetCollisionFxForMaterial_Addr 0xD630A4
+#define vehicleUnk570_GetCollisionFxForMaterial_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_GetCollisionFxForMaterial_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::GetCollisionFxForMaterial\")")
 #define vehicleUnk570_GetSmearFxForMaterial_Addr 0xBCDFB0
+#define vehicleUnk570_GetSmearFxForMaterial_0_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_GetSmearFxForMaterial_0_Addr"          \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::Unk570::GetSmearFxForMaterial (2)\")")
 #define vehicleUnk570_ProcessEffects_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_ProcessEffects_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::ProcessEffects\")")
-#define vehicleUnk570_ProcessImpactScratch_Addr 0x17B72D0
-#define vehicleUnk570_Setup_Addr 0x17B74B0
+#define vehicleUnk570_ProcessImpactScratch_Addr                                                                        \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_ProcessImpactScratch_Addr"             \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::ProcessImpactScratch\")")
+#define vehicleUnk570_Setup_Addr                                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_Setup_Addr"                            \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::Setup\")")
 #define vehicleUnk570_UpdateEffectsBlackboard_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_UpdateEffectsBlackboard_Addr"          \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::UpdateEffectsBlackboard\")")
@@ -44870,7 +45045,9 @@
 #define vehicleUnk580_Update_Addr                                                                                      \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_Update_Addr"                           \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::Update\")")
-#define vehicleUnk580_Update3CA_Addr 0x17B7320
+#define vehicleUnk580_Update3CA_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_Update3CA_Addr"                        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::Update3CA\")")
 #define vehicleUnk580_UpdateEvents_Addr                                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateEvents_Addr"                     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateEvents\")")
@@ -44883,11 +45060,16 @@
 #define vehicleUnk580_UpdateWheelEmitters_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateWheelEmitters_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateWheelEmitters\")")
-#define vehicleUnk588_Unknown_Addr 0x17B7400
+#define vehicleUnk588_Unknown_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk588_Unknown_Addr"                          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk588::Unknown\")")
 #define vehicleUnk588_UpdateTransform_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk588_UpdateTransform_Addr"                  \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk588::UpdateTransform\")")
 #define vehicleUnkD10_Reset_Addr 0xA14C68
+#define vehicleUnkD10_Reset_0_Addr                                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnkD10_Reset_0_Addr"                          \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::UnkD10::Reset (2)\")")
 #define vehicleUnlockedVehicle_Class_Addr 0x455A7F8
 #define vehicleUnlockedVehicle_Class_VFT_Addr 0x2B3A4D8
 #define vehicleUnlockedVehicle_Class_p_Addr 0x3340DC8
@@ -44948,8 +45130,12 @@
 #define vehicleWheeledBaseObject_Class_VFT_Addr 0x2B4B238
 #define vehicleWheeledBaseObject_Class_p_Addr 0x3340DF8
 #define vehicleWheeledBaseObject_VFT_Addr 0x3034CB8
-#define vehicleWheeledPhysics_ApplyWaterResistance_Addr 0x17B72E0
-#define vehicleWheeledPhysics_FixedUpdate_Addr 0x7FBD6C
+#define vehicleWheeledPhysics_ApplyWaterResistance_Addr                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_ApplyWaterResistance_Addr"     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::ApplyWaterResistance\")")
+#define vehicleWheeledPhysics_FixedUpdate_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_FixedUpdate_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::FixedUpdate\")")
 #define vehicleWheeledPhysics_FourWheelTorque_Addr                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_FourWheelTorque_Addr"          \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::FourWheelTorque\")")
@@ -44959,7 +45145,9 @@
 #define vehicleWheeledPhysics_GetEnergy_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_GetEnergy_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::GetEnergy\")")
-#define vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr 0x17B7000
+#define vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_GetNumberOfWheelsTouchingGround_Addr"\
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::GetNumberOfWheelsTouchingGround\")")
 #define vehicleWheeledPhysics_ProcessAirControl_Addr                                                                   \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_ProcessAirControl_Addr"        \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::ProcessAirControl\")")
@@ -44978,7 +45166,9 @@
 #define vehicleWheeledPhysics_TurningRollFactorStuff_Addr                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_TurningRollFactorStuff_Addr"   \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::TurningRollFactorStuff\")")
-#define vehicleWheeledPhysics_Unk15CStuff_Addr 0x9B40B0
+#define vehicleWheeledPhysics_Unk15CStuff_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_Unk15CStuff_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::Unk15CStuff\")")
 #define vehicleWheeledPhysics_Update_Addr                                                                              \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_Update_Addr"                   \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::Update\")")
@@ -44986,10 +45176,12 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_UpdatePassengerAnim_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim\")")
 #define vehicleWheeledPhysics_VFT_Addr 0x2AA40E0
-#define vehicle_gameVehicleCurve_Addr 0xA14AD0
-#define vehicle_gameVehicleCurve_0_Addr                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicle_gameVehicleCurve_0_Addr"                     \
-              "is 0 - Zoltan found too many matches for RED4ext::vehicle::gameVehicleCurve (2)\")")
+#define vehicleWheeledPhysics_VFT_0_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_VFT_0_Addr"                    \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::WheeledPhysics::VFT (2)\")")
+#define vehicle_gameVehicleCurve_Addr                                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicle_gameVehicleCurve_Addr"                       \
+              "is 0 - Zoltan found too many matches for RED4ext::vehicle::gameVehicleCurve (58072834)\")")
 #define vgAttributeTypeValuePair_Class_Addr 0x3FA36C8
 #define vgAttributeTypeValuePair_Class_VFT_Addr 0x2BD2DC8
 #define vgAttributeTypeValuePair_Class_p_Addr 0x3337438
