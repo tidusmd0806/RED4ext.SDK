@@ -24933,13 +24933,14 @@
 #define gameIGameSystem_Class_Addr 0x40685B0
 #define gameIGameSystem_Class_VFT_Addr 0x2AACD98
 #define gameIGameSystem_Class_p_Addr 0x3338D38
+#define gameIGameSystem_GetNativeType_Addr 0x17BFCA0
 #define gameIGameSystem_SetGameInstance_Addr                                                                           \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameIGameSystem_SetGameInstance_Addr"                \
               "is 0 - Zoltan found no matches for RED4ext::game::IGameSystem::SetGameInstance\")")
 #define gameIGameSystem_Unset_Addr                                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: gameIGameSystem_Unset_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::game::IGameSystem::Unset\")")
-#define gameIGameSystem_VFT_Addr 0x2C62068
+#define gameIGameSystem_VFT_Addr 0x2A9C4C0
 #define gameIGameplayLogicPackageSystem_Class_Addr 0x43CB878
 #define gameIGameplayLogicPackageSystem_Class_VFT_Addr 0x2AACD98
 #define gameIGameplayLogicPackageSystem_Class_p_Addr 0x333D510
@@ -38848,9 +38849,7 @@
 #define physicsProxyCache_GetFromCacheOrGet_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyCache_GetFromCacheOrGet_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyCache::GetFromCacheOrGet\")")
-#define physicsProxyHelper_Create_Addr                                                                                 \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_Create_Addr"                      \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::Create\")")
+#define physicsProxyHelper_Create_Addr 0x1C1B80
 #define physicsProxyHelper_GetThingWithLock_Addr                                                                       \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsProxyHelper_GetThingWithLock_Addr"            \
               "is 0 - Zoltan found no matches for RED4ext::physics::ProxyHelper::GetThingWithLock\")")
@@ -44056,17 +44055,9 @@
 #define toolsVisualTagsSchema_Class_VFT_Addr 0x2C15D00
 #define toolsVisualTagsSchema_Class_p_Addr 0x333B330
 #define toolsVisualTagsSchema_VFT_Addr 0x2B6C0A0
-#define userRuntimeSettingsVarBool_VFT_Addr 0x3125E08
-#define userRuntimeSettingsVarFloatList_VFT_Addr 0x3126978
-#define userRuntimeSettingsVarFloat_VFT_Addr 0x3126920
-#define userRuntimeSettingsVarInt_VFT_Addr 0x31268C8
-#define userRuntimeSettingsVarNameList_VFT_Addr 0x3125F10
-#define userRuntimeSettingsVarName_VFT_Addr 0x3125E60
-#define userRuntimeSettingsVarStringList_VFT_Addr 0x2FFA580
 #define userRuntimeSettingsVar_RuntimeSettingsVar_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: userRuntimeSettingsVar_RuntimeSettingsVar_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::user::RuntimeSettingsVar::RuntimeSettingsVar\")")
-#define userRuntimeSettingsVar_VFT_Addr 0x2FFA528
 #define userSettingsGroup_Class_Addr 0x4025E98
 #define userSettingsGroup_Class_VFT_Addr 0x2DED290
 #define userSettingsGroup_Class_p_Addr 0x3338308
@@ -44262,9 +44253,7 @@
 #define vehicleBaseObject_SetPhysicsState_Addr                                                                         \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_SetPhysicsState_Addr"              \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::SetPhysicsState\")")
-#define vehicleBaseObject_UnsetPhysicsStates_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_UnsetPhysicsStates_Addr"           \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::UnsetPhysicsStates\")")
+#define vehicleBaseObject_UnsetPhysicsStates_Addr 0x256AF68
 #define vehicleBaseObject_UpdatePhysicsSleepState_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleBaseObject_UpdatePhysicsSleepState_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::BaseObject::UpdatePhysicsSleepState\")")
@@ -44368,9 +44357,6 @@
 #define vehicleChassisComponent_GetCollisionShapes_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_GetCollisionShapes_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::GetCollisionShapes\")")
-#define vehicleChassisComponent_GetProxyHelperAndLock_Addr                                                             \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_GetProxyHelperAndLock_Addr"  \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::GetProxyHelperAndLock\")")
 #define vehicleChassisComponent_SetDampingToPoint4_Addr                                                                \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_SetDampingToPoint4_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::SetDampingToPoint4\")")

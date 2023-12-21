@@ -81,7 +81,7 @@ struct ChassisComponent : ent::IPlacedComponent, ent::ITransformAttachable
 
     // 1.6  RVA: 0x1C9C840 / 30001216
     /// @pattern 40 53 48 83 EC 20 8B 81 60 01 00 00 4C 8D 81 6C 01 00 00 48 8B DA 89 44 24 30 48 8B CB 48 8D 54
-    physics::ProxyHelper* __fastcall GetProxyHelperAndLock(physics::ProxyHelper* proxyHelper);
+    // physics::ProxyHelper* __fastcall GetProxyHelperAndLock(physics::ProxyHelper* proxyHelper);
 
     // 1.6  RVA: 0x1C9C110 / 29999376
     /// @pattern 40 53 48 83 EC 40 8B 81 60 01 00 00 48 8B D9 48 8D 4C 24 50 89 44 24 50 E8 33 F1 7A FE 84 C0 74
@@ -101,9 +101,9 @@ struct ChassisComponent : ent::IPlacedComponent, ent::ITransformAttachable
     Ref<physics::SystemResource> collisionResource;                   // 128
     Ref<physics::SystemResource> optionalPlayerOnlyCollisionResource; // 140
     uint64_t unk158;
-    physics::ProxyID proxyID;
-    physics::ProxyID proxyID_PlayerOnly;
-    physics::ProxyCacheID proxyCacheID;
+    physics::ProxyID proxyID; // 160
+    physics::ProxyID proxyID_PlayerOnly; // 168
+    physics::ProxyCacheID proxyCacheID; // 16C
     SharedMutex sharedMutex;
     uint32_t unk170;
     // colliders that have chassis_bottom tag - seems to extend past 32bits

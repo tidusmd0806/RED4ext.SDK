@@ -63,10 +63,10 @@ struct CBaseRTTIType
 {
     /// @pattern 
     ///     /vft
-    ///     /vft(purecall) 
-    ///     /vft(purecall) 
-    ///     /vft(purecall) 
-    ///     /vft(purecall) 
+    ///     /vft(pure) 
+    ///     /vft(pure) 
+    ///     /vft(pure) 
+    ///     /vft(pure) 
     ///     /vft(rttiIType_GetERTTITypeString)
     /// @segment rdata
     static constexpr const uintptr_t VFT = CBaseRTTIType_VFT_Addr;

@@ -12,10 +12,14 @@ namespace RED4ext::physics {
 // previously GeoThing
 struct ProxyHelper
 {
+    inline ProxyHelper(ProxyID proxyID) {
+        Create(this, proxyID);
+    }
+
     // 1.6  RVA: 0x44C410 / 4506640
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9 41
     /// @nth 1/2
-    // 2.0
+    // 2.1
     /// @pattern 48 8B C4 88 50 10 53 48 83 EC 50 48 8B 11 48 8B D9 C6 40 E8 00 C7 40 E0 01 00 00 00 48 8D 40 10
     ProxyHelper *__fastcall SetSimulationShape(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex);
     
@@ -37,7 +41,7 @@ struct ProxyHelper
     // 1.6  RVA: 0x44C300 / 4506368
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 88 54 24 10 57 48 83 EC 50 8B 41 10 48 8B D9 48 8B 09 41 8B F9 41
     /// @nth 0/2
-    // 2.0
+    // 2.1
     /// @pattern 48 8B C4 88 50 10 53 48 83 EC 50 4C 8B 41 08 48 8B D9 48 8B 11 8B 49 10 C6 40 E8 00 C7 40 E0 01
     ProxyHelper* __fastcall SetIsQueryable(bool enabled, uint32_t bodyIndex, unsigned int shapeIndex);
 
@@ -62,7 +66,9 @@ struct ProxyHelper
 
     // 1.6  RVA: 0x446D10 / 4484368
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 33 C0 48 8B FA 48 89 01 48 8B D9 48 89 41 08 8B 02 89 41 10 8B 02
-    ProxyHelper *__fastcall Create(ProxyID *proxyID);
+    // 2.1
+    /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 83 21 00 48 8B F9 48 83 61 08 00 8B DA 89 51 10 48 8B 0D
+    static ProxyHelper *__fastcall Create(ProxyHelper * proxyHelper, ProxyID proxyID);
 
     // 1.6  RVA: 0x446C80 / 4484224
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 8B 02 49 8B D8 48 8D 54 24 30 89 44 24 30 48 8B F9 E8 70 00 00 00
@@ -78,16 +84,16 @@ struct ProxyHelper
 
     // assigns proxyCacheEntry to the proxyID in manager
     // 1.6  RVA: 0x447AF0 / 4487920
-    // 2.0
+    // 2.1
     /// @pattern 40 53 48 83 EC 20 48 8B ? 08 48 8B D9 48 85 ? 74 ? 8B ? 48 8B
     bool __fastcall UpdateProxyCache();
 
-    // 2.0
+    // 2.1
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 83 21 00 48 8B F9 48 83 61 08 00 8B DA 89 51 10 48 8B 0D
     RED4ext::physics::ProxyHelper *__fastcall Lock(RED4ext::physics::ProxyID a2);
 
     // 1.6  RVA: 0x446D90 / 4484496
-    // 2.0 switches the order of some instructions in the ?
+    // 2.1 switches the order of some instructions in the ?
     /// @pattern 48 8B 51 18 ? ? ? ? ? ? ? 86 02 C3
     __int64 __fastcall Unlock();
 

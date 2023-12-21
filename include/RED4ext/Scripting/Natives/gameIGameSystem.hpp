@@ -22,12 +22,7 @@ struct IGameSystem : IUpdatableSystem
     static constexpr const char* NAME = "gameIGameSystem";
     static constexpr const char* ALIAS = "IGameSystem";
 
-    // after "gameIGameSystem" string
-    // 1.6  RVA: 0x3214700
-    // 1.61 RVA: 0x3219820
-    // 1.61hf1 RVA: 0x321C920
-    /// @pattern 67 61 6D 65 49 47 61 6D  65 53 79 73 74 65 6D 00
-    /// @offset -16
+    /// @pattern /vft(gameIGameSystem_GetNativeType)
     static constexpr const uintptr_t VFT = gameIGameSystem_VFT_Addr;
 
     // arg to sub_190
@@ -42,6 +37,7 @@ struct IGameSystem : IUpdatableSystem
     /// @pattern 40 53 48 83 EC 20 48 8B D9 E8 22 B8 F8 FF 48 8D 05 4B 92 6C 02 48 C7 43 40 00 00 00 00 48 89 03
     //IGameSystem();
 
+    /// @pattern /mov(gameIGameSystem_Class_p) /retn
     virtual CClass* GetNativeType() override;     
     virtual ~IGameSystem() override = default;
 

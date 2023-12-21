@@ -102,7 +102,7 @@ struct RuntimeSettingsVar
     // Entity/VisualController
     /// @pattern 45 6E 74 69 74 79 2F 56 69 73 75 61 6C 43 6F 6E 74 72 6F 6C 6C 65 72
     /// @offset -448
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVar_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVar_VFT_Addr;
 
     // 1.52 RVA: 0x2B97BC0 / 45710272
     /// @pattern 40 53 48 83 EC 20 48 89 51 10 48 8D 05 F7 39 72 00 48 8B 54 24 50 48 8B D9 48 89 01 4C 89 41 08
@@ -172,7 +172,7 @@ struct RuntimeSettingsVarBool : public RuntimeSettingsVar
     // Failed to create temporary file for saving '%hs' (temp file: '%hs')
     /// @pattern 46 61 69 6C 65 64 20 74 6F 20 63 72 65 61 74 65 20 74 65 6D 70 6F 72 61 72 79 20 66 69 6C 65 20
     /// @offset -72
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVarBool_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVarBool_VFT_Addr;
 
     RuntimeSettingsVarBool()
         : RuntimeSettingsVar()
@@ -300,7 +300,7 @@ struct RuntimeSettingsVarFloat : public RuntimeSettingsVar
     // Unknown error.
     /// @pattern 55 6E 6B 6E 6F 77 6E 20 65 72 72 6F 72 2E
     /// @offset -104
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVarFloat_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVarFloat_VFT_Addr;
 
     RuntimeSettingsVarFloat()
         : RuntimeSettingsVar()
@@ -430,7 +430,7 @@ struct RuntimeSettingsVarFloatList : public RuntimeSettingsVar
     /// @offset -192
     /// @version 3.0.3933216
     /// @rva 0x35E8560
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVarFloatList_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVarFloatList_VFT_Addr;
 
     float value;                   // 48
     float valueValidated;          // 4C
@@ -450,7 +450,7 @@ struct RuntimeSettingsVarInt : public RuntimeSettingsVar
     // Unknown error.
     /// @pattern 55 6E 6B 6E 6F 77 6E 20 65 72 72 6F 72 2E
     /// @offset -16
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVarInt_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVarInt_VFT_Addr;
 
     RuntimeSettingsVarInt()
         : RuntimeSettingsVar()
@@ -723,7 +723,7 @@ struct RuntimeSettingsVarName : RuntimeSettingsVar
     // Failed to create temporary file for saving '%hs' (temp file: '%hs')
     /// @pattern 46 61 69 6C 65 64 20 74 6F 20 63 72 65 61 74 65 20 74 65 6D 70 6F 72 61 72 79 20 66 69 6C 65 20
     /// @offset -160
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVarName_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVarName_VFT_Addr;
 
     CName valueValidated;
     CName defaultValue;
@@ -739,7 +739,7 @@ struct RuntimeSettingsVarNameList : RuntimeSettingsVar
     // Failed to create temporary file for saving '%hs' (temp file: '%hs')
     /// @pattern 46 61 69 6C 65 64 20 74 6F 20 63 72 65 61 74 65 20 74 65 6D 70 6F 72 61 72 79 20 66 69 6C 65 20
     /// @offset -336
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVarNameList_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVarNameList_VFT_Addr;
 
     RuntimeSettingsVarNameList()
         : RuntimeSettingsVar()
@@ -896,7 +896,7 @@ struct RuntimeSettingsVarStringList : RuntimeSettingsVar
     /// @offset -536
     /// @version 3.0.3933216
     /// @rva 0x32BB620
-    static constexpr const uintptr_t VFT = userRuntimeSettingsVarStringList_VFT_Addr;
+    // static constexpr const uintptr_t VFT = userRuntimeSettingsVarStringList_VFT_Addr;
 
     CString value;                 // 48
     uint32_t valueValidated;       // 68
