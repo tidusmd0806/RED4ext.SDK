@@ -36,7 +36,7 @@ struct WheeledBaseObject : vehicle::BaseObject
     virtual void sub_2F0() override;                        // 2F0
     virtual void * sub_2F8() override;                      // 2F8
 
-    virtual uint64_t sub_308(bool) override;                // 308 
+    virtual uint64_t sub_308(bool) override;                // 308 calls sub_328
 
     virtual void sub_328(bool) override;                    // 328
     virtual uint8_t sub_330() override;                     // 330

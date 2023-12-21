@@ -112,11 +112,11 @@ struct WheelUpdate
   float unk294;
 };
 
-struct Unk580;
+struct Acoustics;
 
 struct TireParameterUpdate
 {
-    Unk580 *unk580;
+    Acoustics *acoustics;
     ent::EntityID entityID;
     struct Variables {
         float skidValue;
@@ -144,7 +144,7 @@ struct EntityEmitters {
 };
 
 // Audio
-struct Unk580
+struct Acoustics
 {
     // 1.52 RVA: 0x1C3A0B0 / 29597872
     /// @pattern 80 E2 01 88 91 CA 03 00 00 C3
@@ -189,7 +189,7 @@ struct Unk580
 
     // 1.52 RVA: 0x1C35A20 / 29579808
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B B9 A0 03 00 00 48 8B D9 48 85 FF 74 15 48 8B CF E8 6F 14 B0
-    // ~Unk580();
+    // ~Acoustics();
 
     // 1.6 RVA: 0x1C6A170 / 29794672
     /// @pattern 40 56 48 83 EC 50 48 8B F1 48 8B 89 38 01 00 00 E8 7B 1E 01 00 84 C0 0F 84 B5 01 00 00 4C 8B 86
@@ -226,7 +226,7 @@ struct Unk580
     BaseObject *vehicle;
     CName player_audio_resource_hash;
     CName traffic_audio_resource_hash;
-    Unk580 *self;
+    Acoustics *self;
     float unk158;
     uint32_t unk15C;
     uint8_t unk160;
@@ -317,7 +317,7 @@ struct Unk580
     float unk460;
 };
 
-RED4EXT_ASSERT_OFFSET(Unk580, unk460, 0x460);
+RED4EXT_ASSERT_OFFSET(Acoustics, unk460, 0x460);
 
 // more physics
 struct Unk568 {
@@ -845,7 +845,7 @@ struct BaseObject : game::Object
 
     virtual CString* __fastcall sub_1C0(CString*) override;
 
-    // Looks at unk580, sub_1D0
+    // Looks at Acoustics, sub_1D0
     virtual RED4ext::CName* __fastcall GetAudioResourceName(RED4ext::CName*) override;
 
     // Something with unk388 & vehicle controller, sub_1F8
@@ -874,11 +874,11 @@ struct BaseObject : game::Object
     virtual void sub_2E0() { };                                     // 2E0
     virtual void sub_2E8() { };                                     // 2E8
     virtual void sub_2F0();                                         // 2F0
-    virtual void * sub_2F8();                                       // 2F8
+    virtual void * sub_2F8();                                       // 2F8 vehicleController
     virtual uint32_t sub_300();                                     // 300 returns 1u32
-    virtual uint64_t sub_308(bool);                                 // 308 sets PhysicsState::Unk8
-    virtual Handle<ISerializable> sub_310(Handle<ISerializable>*);  // 310 gets Handle at 638
-    virtual ISerializable* sub_318();                               // 318 gets pointer at 638
+    virtual uint64_t sub_308(bool);                                 // 308 sets PhysicsState::Unk8, processes transforms
+    virtual Handle<ISerializable> GetRecordHandle(Handle<ISerializable>*);  // 310 gets Handle at 638 (vehicleRecord)
+    virtual ISerializable* GetRecord();                             // 318 gets pointer at 638
     virtual float sub_320();                                        // 320 calls sub_310
     virtual void sub_328(bool);                                     // 328
     virtual uint8_t sub_330();                                      // 330 return 0u8
@@ -892,7 +892,7 @@ struct BaseObject : game::Object
     virtual void sub_370();                                         // 370 returns 1u32
     virtual void sub_378();                                         // 378 something with physicsData->bounds
     virtual void sub_380() { };                                     // 380
-    virtual void sub_388(DynArray<void*>);                          // 388 
+    virtual void LoadWeapons(DynArray<void*>);                      // 388 
     virtual void sub_390() { };                                     // 390
     virtual void sub_398() { };                                     // 398
     virtual void sub_3A0();                                         // 3A0 rendering system, blackboard
@@ -901,10 +901,10 @@ struct BaseObject : game::Object
     virtual void * sub_3B8(weapon::Object *weaponObject,            // 3B8 calls generic shoot
         Vector4 *weaponPosition, Vector4 *offset, 
         Vector4 *tracePosition, float range, __int64 numProjectiles, 
-        __int64 a8, __int64 a9, __int64 a10);;                                         
+        __int64 a8, __int64 a9, __int64 a10);                                         
     virtual void sub_3C0() { };                                     // 3C0
-    virtual Vector3* sub_3C8(Vector3*);                             // 3C8 get aim trace position
-    virtual uint8_t sub_3D0(int);                                   // 3D0 get shoot value for index
+    virtual Vector3* GetCrosshair(Vector3*);                        // 3C8 gets vector3 at B04
+    virtual uint8_t GetWeaponIndex(int);                            // 3D0 get shoot value for index
 
 // methods
 
@@ -1032,14 +1032,11 @@ struct BaseObject : game::Object
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 40 4C 8B F9 49
 //    static Handle<RED4ext::ent::AnimatedComponent> *__fastcall GetAnimatedComponentWithName(Handle<RED4ext::ent::AnimatedComponent> *handle, RED4ext::vehicle::BaseObject *vehicle, RED4ext::CName name);
 
-    world::RuntimeSystemPhysics* physicsSystem;
-    float unk_2_0_new[4];
-    float airTimer;
+    world::RuntimeSystemPhysics *physicsSystem;
+    float unk_2_0_new[5];
     bool isOnGround;
-    // resets when isOnGround, counts up otherwise
-    uint32_t unk_2_0_new_1[2];
-    uint8_t unk24D[3];
     PhysicsState physicsState;
+    uint32_t unk_2_0_new_1;
     float acceleration;
     float deceleration;
     float handbrake;
@@ -1048,6 +1045,7 @@ struct BaseObject : game::Object
     float turnInput;
     float leanFB;
     float rockFB;
+    uint32_t padding_2[3];
     uint8_t shootPrimary;
     uint8_t shootSecondary;
     uint8_t shootTertiary;
@@ -1066,17 +1064,13 @@ struct BaseObject : game::Object
     float unk298;
     float unk29C;
     float unk2A0;
-    float unk2A4;
-    float unk2A8;
-    float unk2AC;
-    Physics* physics;   // 2C8
-    PhysicsData* physicsData; // 2D0
-    Handle<void> curveSetData;
-    Handle<ChassisComponent> chassis;
+    Physics *physics_2;
+    PhysicsData *physicsData_2;
+    Handle<ISerializable> curveSetData;
+    Handle<ChassisComponent> chassis_2;
     float unk2E0[16];
     uint64_t chassisType;
-    uint64_t unk328;
-    WorldTransform worldTransform;
+    WorldTransform worldTransform_2;
     Vector3 unk350;
     float unk35C;
     uint8_t unk360;
@@ -1086,45 +1080,41 @@ struct BaseObject : game::Object
     float unk364;
     Unk368 *unk368;
     CName unk370;
-    Handle<move::Component> moveComponent;
-    action::ActionInterface actionInterface; // 388
-    Handle<void> baseDrivingParams[4];
-    Handle<game::interactions::Component> interactionsComponent;
-    Handle<game::interactions::Component> passengerInteractions;
-    Handle<Controller> vehicleController;
-    Handle<PersistentDataPS> PersistentDataPS;
+    Handle moveComponent;
+    uint64_t unk398_2;
+    uint64_t unk3A0_2;
+    uint64_t unk3A8_2;
+    uint64_t unk3B0_2;
+    action::ActionInterface actionInterface;
+    Handle<ISerializable> unk4A8_2;
+    Handle<ISerializable> baseDrivingParams[4];
+    Handle<ISerializable> interactionsComponent;
+    Handle<ISerializable> passengerInteractions;
+    Handle<ISerializable> vehicleController;
+    Handle<ISerializable> PersistentDataPS;
     Handle<CameraManager> cameraManager;
-    game::VehicleSystem* vehicleSystem;
-    Handle<game::IBlackboard> blackboard;
-    Handle<void> blackboard2;
-    Handle<void> controllerMaybe;
-    uint64_t unk540;
-    Handle<game::Puppet> drivingPuppet;
-    Handle<game::Puppet> mountedPuppet;
-    Unk568* unk568;
-    Unk570* unk570;
-    AirControl* airControl; // 578
-    Unk580* unk580;
-    Unk588* unk588;
-    void* unk590;
-    void* destructionParams;
-    void* unk5A0;
-    void* unk5A8;
-    float turnX;
-    float turnXRelated2;
-    float turnXRelated;
-    float deltaTurnX;
-    Handle<game::OccupantSlotComponent> occupantSlotComponent;
-    uint64_t unkTweakRecord; // 1488 0x5D0
-    Handle<game::data::Vehicle_Record> vehicleRecord;
-    float unk5E8;
-    float unk5EC;
-    float unk5F0;
-    float unk5F4;
-    // 0x620 steering sensitivity
+    game::VehicleSystem *vehicleSystem;
+    uint64_t unk560;
+    Handle vehicleCNameThing;
+    Handle unk568_Handle;
+    Handle unk578_Handle;
+    uint64_t unk588_2;
+    uint64_t unk590_2;
+    uint32_t unk598_2;
+    float unk59C_2;
+    Handle<ISerializable> unk5A0_2;
+    Handle<ISerializable> unk5B0_2;
+    AirControl *airControl;
+    Acoustics *unk580;
+    Unk588 *unk588;
+    Unk570 *unk5D0_2;
+    Unk570 *unk570_5E0;
+    void *acoustics;
+    Handle occupantSlotComponent;
+    Handle vehicleRecord;
+    void *unk610_2;
     float unk5F8;
     uint8_t permanantStun2;
-    // gravity related
     uint8_t unk5FD;
     uint16_t permanantStun1;
     float unk600;
@@ -1132,71 +1122,47 @@ struct BaseObject : game::Object
     uint8_t unk605;
     uint8_t unk606;
     uint8_t unk607;
-    // timer that counts down to zero (min value)
-    float unk608;
-    // added to on collision
-    int32_t unk60C;
-    uint8_t important;
-    uint8_t ignoreImpulses;
-    uint8_t unk612;
-    uint8_t unk613;
-    uint8_t unk614;
-    // was summoned maybe?
-    uint8_t unk615;
-    uint8_t highPriorityDriving;
-    uint8_t unk617;
-    DynArray<void*> uiComponents;
-    float unk628;
-    float unk62C;
-    // updated & compared to each other - some bigger struct
-    float unk630;
-    float unk634;
-    Vector4 unk638;
+    Handle unk628_2;
+    uint64_t unk638;
+    Handle vehicleRecord_2;
+    uint64_t uiComponents;
+    Vector4 unk658_2;
     Vector4 unk648;
     Vector4 unk658;
-    Matrix unk668;
+    Vector4 unk668_2;
+    uint64_t unk698_2;
+    uint8_t unk6A0;
+    uint8_t unk6A1;
+    uint8_t unk6A2;
+    uint8_t unk6A3;
+    uint8_t unk6A4;
+    uint8_t unk6A5;
+    uint8_t unk6A6;
+    uint8_t unk6A7;
+    Vector4 unk6A8_2;
+    Vector4 unk6B8_2;
     float unk6A8[10];
-    // comes from unk588 maybe
-    RED4ext::Transform unk6D0;
+    Transform unk6D0;
     uint64_t unk6F0[2];
-    float max_tolerance_radius;
-    float acc_pid_p;
-    float acc_pid_i;
-    float acc_pid_d;
-    uint64_t unk710[10];
-    AutonomousData autonomousData;
-    uint8_t hasDestructionParams;
-    uint8_t unk8B1;
-    uint8_t unk8B2;
-    uint8_t unk8B3;
-    float unk8B4[5];
-    DynArray<void*> unk8C8;
-    uint64_t unk8D8[2];
-    Vector3 unk8E8;
-    float unk8F4;
-    DynArray<Handle<ent::Entity>> projectiles;
-    uint8_t updatingProjectiles;
-    uint8_t unk909;
-    uint8_t unk90A;
-    uint8_t unk90B;
-    float unk90C;
-    uint32_t unk910[8];
-    uint8_t meleeHonkDelay[3];
-    uint8_t meleeHonkDuration[3];
-    uint8_t collisionHonkDelay[3];
-    uint8_t collisionHonkDuration[3];
-    uint8_t collisionHonkUpperThreshold[3];
-    uint8_t unk93F;
-    DynArray<Weapon> weapons;
-    Vector3 tracePosition;
-    uint8_t unk95C;
-    uint8_t unk95D;
-    uint8_t unk95E;
-    uint8_t unk95F;
-    uint64_t unk960;
-    DynArray<void*> puppets;
-    uint64_t unk978;
-    uint8_t unk980[0x180];
+    uint64_t unk720[24];
+    game::data::TweakValue max_tolerance_radius;
+    game::data::TweakValue acc_pid_p;
+    game::data::TweakValue acc_pid_i;
+    game::data::TweakValue acc_pid_d;
+    uint64_t unk810_2[10];
+    vehicle::AutonomousData autonomousData;
+    uint64_t unkA00[17];
+    game::data::TweakValue meleeHonkDelay;
+    game::data::TweakValue meleeHonkDuration;
+    game::data::TweakValue collisionHonkDelay;
+    game::data::TweakValue collisionHonkDuration;
+    game::data::TweakValue collisionHonkUpperThreshold;
+    game::data::TweakValue unkAD4;
+    uint64_t unkAE0[2];
+    DynArray weapons;
+    int32_t unkB00_2;
+    Vector3 weapon_trace;
+    uint64_t unkB10_2[15];
 
     /* pre-2.0
     world::RuntimeSystemPhysics* physicsSystem;
@@ -1269,7 +1235,7 @@ struct BaseObject : game::Object
     Unk568* unk568;
     Unk570* unk570;
     AirControl* airControl; // 578
-    Unk580* unk580;
+    Acoustics* acoustics;
     Unk588* unk588;
     void* unk590;
     void* destructionParams;

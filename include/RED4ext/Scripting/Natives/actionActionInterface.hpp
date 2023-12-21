@@ -42,11 +42,13 @@ struct ActionInterface {
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 18 57 48 83 EC 20 48 8B F1 41 0F B6 F8 48 81 C1 E8 00
     bool __fastcall IsAnimationiActive(action::Type type, uint8_t index);
 
+#pragma pack(push, 4)
     struct Lookup {
         DynArray<ActionBase> prePhysics;
         DynArray<ActionBase> postPhysics;
         uint32_t numArrays;
     };
+#pragma pack(pop)
 
     Lookup lookup;
     uint32_t unk2C;
