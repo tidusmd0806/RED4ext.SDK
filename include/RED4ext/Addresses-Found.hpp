@@ -4000,9 +4000,7 @@
 #define CClass_SetupScriptCallbacks_Addr                                                                               \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_SetupScriptCallbacks_Addr"                    \
               "is 0 - Zoltan found no matches for RED4ext::CClass::SetupScriptCallbacks\")")
-#define CClass_VFT_Addr                                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CClass_VFT_Addr"                                     \
-              "is 0 - Zoltan found no matches for RED4ext::CClass::VFT\")")
+#define CClass_VFT_Addr 0x2A4C078
 #define CComStaticSkeletonDataEntry_Class_Addr 0x405AE80
 #define CComStaticSkeletonDataEntry_Class_VFT_Addr 0x2C0C970
 #define CComStaticSkeletonDataEntry_Class_p_Addr 0x3338B20
@@ -4450,30 +4448,14 @@
 #define CPhysicsDecorationResource_Class_p_Addr 0x3338B00
 #define CPhysicsDecorationResource_VFT_Addr 0x2C46C30
 #define CProcessRunner_Run_Addr 0x82E260
-#define CRTTIArrayType_VFT_Addr                                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIArrayType_VFT_Addr"                             \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIArrayType::VFT\")")
-#define CRTTIHandleType_VFT_Addr                                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIHandleType_VFT_Addr"                            \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIHandleType::VFT\")")
-#define CRTTINativeArrayType_VFT_Addr                                                                                  \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTINativeArrayType_VFT_Addr"                       \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTINativeArrayType::VFT\")")
-#define CRTTIPointerType_VFT_Addr                                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIPointerType_VFT_Addr"                           \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIPointerType::VFT\")")
-#define CRTTIResourceAsyncReferenceType_VFT_Addr                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIResourceAsyncReferenceType_VFT_Addr"            \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIResourceAsyncReferenceType::VFT\")")
-#define CRTTIResourceReferenceType_VFT_Addr                                                                            \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIResourceReferenceType_VFT_Addr"                 \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIResourceReferenceType::VFT\")")
-#define CRTTIStaticArrayType_VFT_Addr                                                                                  \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIStaticArrayType_VFT_Addr"                       \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIStaticArrayType::VFT\")")
-#define CRTTIWeakHandleType_VFT_Addr                                                                                   \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: CRTTIWeakHandleType_VFT_Addr"                        \
-              "is 0 - Zoltan found no matches for RED4ext::CRTTIWeakHandleType::VFT\")")
+#define CRTTIArrayType_VFT_Addr 0x2A4BD30
+#define CRTTIHandleType_VFT_Addr 0x2A4BF40
+#define CRTTINativeArrayType_VFT_Addr 0x2A3DF08
+#define CRTTIPointerType_VFT_Addr 0x2A66CE8
+#define CRTTIResourceAsyncReferenceType_VFT_Addr 0x2AB0B00
+#define CRTTIResourceReferenceType_VFT_Addr 0x2AD3590
+#define CRTTIStaticArrayType_VFT_Addr 0x2A3E258
+#define CRTTIWeakHandleType_VFT_Addr 0x2A4BE50
 #define CReflectionProbeDataResource_Class_Addr 0x3F0D448
 #define CReflectionProbeDataResource_Class_VFT_Addr 0x2AB1458
 #define CReflectionProbeDataResource_Class_p_Addr 0x3335AC0
@@ -8254,17 +8236,14 @@
 #define ISerializable_Class_Addr 0x34381F0
 #define ISerializable_Class_VFT_Addr 0x2AAC128
 #define ISerializable_Class_p_Addr 0x32B4B00
+#define ISerializable_GetNativeType_Addr 0x17B6F80
 #define ISerializable_OnSerialize_Addr 0x15A234
 #define ISerializable_OnSerializeFromText_Addr 0x1FDE454
 #define ISerializable_OnSerializeToText_Addr 0x1FDE48C
 #define ISerializable_SetOwner_Addr                                                                                    \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_SetOwner_Addr"                         \
               "is 0 - Zoltan found no matches for RED4ext::ISerializable::SetOwner\")")
-#define ISerializable_VFT_Addr                                                                                         \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: ISerializable_VFT_Addr"                              \
-              "is 0 - Zoltan found no matches for RED4ext::ISerializable::VFT\")")
-#define ISerializable_dstr_Addr 0x1FDE3F8
-#define ISerializable_getNativeType_Addr 0x17B6F80
+#define ISerializable_VFT_Addr 0x2A11750
 #define ITexture_Class_Addr 0x3441B48
 #define ITexture_Class_VFT_Addr 0x2A67220
 #define ITexture_Class_p_Addr 0x3335B80
@@ -38681,9 +38660,7 @@
 #define physicsApperanceMaterial_Class_VFT_Addr 0x2BE67F0
 #define physicsApperanceMaterial_Class_p_Addr 0x3335DF8
 #define physicsBaseProxy_Process_Addr 0x17B9B30
-#define physicsBaseProxy_VFT_Addr                                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsBaseProxy_VFT_Addr"                           \
-              "is 0 - Zoltan found no matches for RED4ext::physics::BaseProxy::VFT\")")
+#define physicsBaseProxy_VFT_Addr 0x2A1A208
 #define physicsCacheEntry_Class_Addr 0x3F1CCC8
 #define physicsCacheEntry_Class_VFT_Addr 0x2B21988
 #define physicsCacheEntry_Class_p_Addr 0x3335D30
@@ -38809,9 +38786,7 @@
 #define physicsICollider_Class_VFT_Addr 0x2AC9368
 #define physicsICollider_Class_p_Addr 0x3335E28
 #define physicsICollider_GetNativeType_Addr 0x17B9A30
-#define physicsICollider_VFT_Addr                                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: physicsICollider_VFT_Addr"                           \
-              "is 0 - Zoltan found no matches for RED4ext::physics::ICollider::VFT\")")
+#define physicsICollider_VFT_Addr 0x2A19CD8
 #define physicsICollider_cstr_Addr 0x1B7958
 #define physicsICollider_sub_108_Addr 0x17B9980
 #define physicsISystemObject_Class_Addr 0x3F1B608

@@ -21,30 +21,23 @@ struct ISerializable
     //static constexpr const char* NAME = "ISerializable";
     //static constexpr const char* ALIAS = NAME;
 
-    /// @pattern /mov(ISerializable_Class_p) /retn
-    void getNativeType();
-
-    /// @pattern 48 89 5C 24 08 57 48 83 EC 20 8B DA 48 8B F9 E8 38 4C 18 FE F6 C3 01 74 0D BA 30 00 00 00 48 8B
-    /// @noimpl 1
-    void dstr(char a2);
-
     /// @pattern
-    ///     /vft(ISerializable_getNativeType)           // sub_00
-    ///     /vft                                        // sub_08
-    ///     /vft                                        // sub_10
-    ///     /vft(ISerializable_dstr)                    // sub_18
-    ///     /vft(null)                                  // sub_20
-    ///     /vft(null)                                  // sub_28
-    ///     /vft                                        // sub_30
-    ///     /vft(null)                                  // sub_38
-    ///     /vft(ISerializable_OnSerialize)             // sub_40
-    ///     /vft(ISerializable_OnSerializeToText)       // sub_48
-    ///     /vft(ISerializable_OnSerializeFromText)     // sub_50
-    ///     /vft(ret(0))                                // sub_58
-    ///     /vft(ret(0))                                // sub_60
-    ///     /vft(ret(0))                                // sub_68
+    ///     /vft(ISerializable_GetNativeType)                                           // GetNativeType
+    ///     /vft(ISerializable_GetNativeType)                                           // GetType
+    ///     /vft                                                                        // GetAllocator
+    ///     /vft                                                                        // dstr
+    ///     /vft(null)                                                                  // sub_20
+    ///     /vft(null)                                                                  // sub_28
+    ///     /vft                                                                        // sub_30
+    ///     /vft(null)                                                                  // sub_38
+    ///     /vft(ISerializable_OnSerialize)                                             // sub_40
+    ///     /vft(ISerializable_OnSerializeToText)                                       // sub_48
+    ///     /vft(ISerializable_OnSerializeFromText)                                     // sub_50
     /// @segment rdata
+    /// @nth 0/0
     static constexpr const uintptr_t VFT = ISerializable_VFT_Addr;
+
+    static const CClass* CLASS = reinterpret_cast<CClass *>(reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr)) + ISerializable_Class_Addr);
 
     // 1.52 RVA: 0x1AB240 / 1749568
     /// @pattern 40 53 48 83 EC 20 48 8D 05 7B DA EC 02 48 8B D9 48 89 01 33 C0 48 89 41 08 48 89 41 10 48 89 41
@@ -54,7 +47,9 @@ struct ISerializable
     /// @pattern 40 53 48 83 EC 50 4C 8B C2 48 8B D9 48 85 D2 0F 84 C5 00 00 00 48 8B 42 10 0F 57 C0 66 0F 7F 44
     void __fastcall SetOwner(ISerializable *owner);
 
-    virtual CClass* GetNativeType() = 0;                                          // 00
+    /// @pattern /mov(ISerializable_Class_p) /retn
+    /// @noimpl 1
+    virtual CClass* GetNativeType() = 0;                                                // 00
     virtual CClass* GetType();                                                          // 08
     virtual Memory::IAllocator* GetAllocator();                                         // 10
     virtual ~ISerializable() = default;                                                 // 18
