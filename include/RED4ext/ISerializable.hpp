@@ -37,7 +37,7 @@ struct ISerializable
     /// @nth 0/0
     static constexpr const uintptr_t VFT = ISerializable_VFT_Addr;
 
-    static const CClass* CLASS = reinterpret_cast<CClass *>(reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr)) + ISerializable_Class_Addr);
+    // static const CClass* CLASS = reinterpret_cast<CClass *>(reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr)) + ISerializable_Class_Addr);
 
     // 1.52 RVA: 0x1AB240 / 1749568
     /// @pattern 40 53 48 83 EC 20 48 8D 05 7B DA EC 02 48 8B D9 48 89 01 33 C0 48 89 41 08 48 89 41 10 48 89 41

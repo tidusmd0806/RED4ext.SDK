@@ -14,11 +14,23 @@ RED4EXT_INLINE uintptr_t Entity::CopyComponentsToStorage(EntityDefinition* defin
     RelocFunc<decltype(&Entity::CopyComponentsToStorage)> call(VFT, 0x1A8);
     return call(this, definition, a2);
 }
+    
+RED4EXT_INLINE float __fastcall Entity::sub_110() {
+    return 1.0;
+}
 
 RED4EXT_INLINE Vector2 * __fastcall Entity::sub_118(Vector2 * a1, Vector2 * a2) {
     a1->X = a2->Y;
     a1->Y = a2->X * a2->Y;
     return a1;
+}
+
+RED4EXT_INLINE uint8_t __fastcall Entity::sub_120() {
+    return false;
+}
+
+RED4EXT_INLINE uint8_t __fastcall Entity::sub_128() {
+    return 1;
 }
 
 // RED4EXT_INLINE bool __fastcall Entity::sub_130() {

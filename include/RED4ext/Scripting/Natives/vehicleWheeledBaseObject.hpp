@@ -17,45 +17,36 @@ struct WheeledBaseObject : vehicle::BaseObject
 
 // overrides
 
-    // get gear info
-    virtual float __fastcall sub_298() override;
+    virtual void sub_268() override;                        // 268 
+    virtual void sub_270() override;                        // 270 
+    virtual double sub_278() override;                      // 278 
+    virtual int32_t sub_280(WorldTransform*) override;      // 280
+    virtual uint64_t sub_288() override;                    // 288
 
-    // engine, transmission, update blackboard stuff
-    virtual uint64_t __fastcall sub_2A8() override;
+    virtual float sub_2A0() override;                       // 2A0 
 
-    // updates some struct
-    virtual uint64_t __fastcall sub_2B0(uint64_t, uint64_t) override;
+    virtual void sub_2B0(uint64_t, uint64_t) override;      // 2B0
+    virtual void sub_2B8() override;                        // 2B8
+    virtual void sub_2C0(void *, void *) override;          // 2C0 
+    virtual void sub_2C8() override;                        // 2C8
 
-    // inserts, is touching ground
-    virtual void __fastcall sub_2B8(uint64_t, uint64_t) override;
+    virtual void * sub_2D8() override;                      // 2D8 
+    virtual void sub_2E0() override;                        // 2E0
+    virtual void sub_2E8() override;                        // 2E8
+    virtual void sub_2F0() override;                        // 2F0
+    virtual void * sub_2F8() override;                      // 2F8
 
-    // engine, transmission
-    virtual void __fastcall sub_2C0(float) override;
+    virtual uint64_t sub_308(bool) override;                // 308 
 
-    // sets isOnGround
-    virtual void __fastcall sub_2C8() override;
+    virtual void sub_328(bool) override;                    // 328
+    virtual uint8_t sub_330() override;                     // 330
 
-    // update engine data
-    virtual uint64_t __fastcall sub_310(bool) override;
+    virtual uint64_t sub_348() override;                    // 348
+    virtual void sub_350() override;                        // 350
+    virtual void sub_358() override;                        // 358
 
-    // engineData
-    virtual bool __fastcall sub_318() override;
-
-    // Get energy maybe
-    virtual float __fastcall sub_320() override;
-    
-    virtual uint64_t __fastcall sub_328(Handle<ISerializable>*) override;
-    virtual uint64_t __fastcall sub_330(Handle<ISerializable>*) override;
-
-    virtual uint64_t __fastcall sub_350() override;
-
-    // unk580 stuff, audio related
-    virtual uint64_t __fastcall sub_358() override;
-
-// new virtuals
-
-    // something with wheels & physics
-    virtual void * __fastcall sub_388();
+    virtual void sub_370() override;                        // 370
+    virtual void sub_378() override;                        // 378
 
     void * interactionsMaybe;
     void * transmissionData;

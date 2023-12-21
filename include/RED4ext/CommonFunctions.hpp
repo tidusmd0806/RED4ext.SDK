@@ -19,6 +19,10 @@ uint16_t Return0u16(void *a1...);
 
 #pragma endregion
 
+/// @pattern F3 0F 10 05 18 F2 96 01 C3
+/// @noimpl 1
+float Return1f(void *a1...);
+
 /// @pattern 32 C0 C3 CC CC CC CC CC CC CC CC CC CC CC CC CC
 /// @nth 1/0
 /// @noimpl 1

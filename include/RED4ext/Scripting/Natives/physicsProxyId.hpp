@@ -10,13 +10,14 @@
 #include <RED4ext/Scripting/Natives/Generated/physics/FilterData.hpp>
 #include <RED4ext/Scripting/Natives/Generated/physics/SimulationType.hpp>
 #include <RED4ext/Scripting/Natives/physicsStateValue.hpp>
-#include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
+// #include <RED4ext/Scripting/Natives/physicsProxyManager.hpp>
 
 namespace RED4ext {
 namespace physics {
 struct BaseProxy;
 struct BaseProxyDesc;
 struct ProxyCacheEntry;
+struct ProxyManager;
 struct ProxyID 
 {
     // 1.6 RVA: 0x448BD0 / 4492240
@@ -46,11 +47,11 @@ struct ProxyID
     /// @pattern 40 53 48 83 EC 30 8B 01 4C 8D 44 24 40 48 8B 0D ? ? ? ? 48 8D 54 24 20 89 44 24 40 E8 AE F2
     // 2.0  RVA: 0x2BACA4
     /// @pattern 40 53 48 83 EC 30 44 8B C1 48 8D 54 24 20 48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 5C 24 20 48 8D 4C 24 20 E8 6F 9D E6 FF 48 8B C3
-    BaseProxy * __fastcall GetProxy(void) const;
+    BaseProxy * __fastcall GetProxy();
 
     // 2.0  RVA: 0x93CBF4
     /// @pattern 40 53 48 83 EC 30 44 8B C1 48 8D 54 24 20 48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 5C 24 20 48 85 DB 74 04 48 83 C3 08
-    ent::Entity *__fastcall GetEntity(void) const;
+    ent::Entity *__fastcall GetEntity();
 
     // 1.6  RVA: 0x46AC90 / 4631696
     /// @pattern 48 89 5C 24 10 57 48 83 EC 20 8B 01 48 8B FA 48 8B D9 89 44 24 30 48 8B 0D FB 4D D1 03 48 8D 54
@@ -65,7 +66,7 @@ RED4EXT_ASSERT_SIZE(ProxyID, 0x4);
 template<typename T>
 T * GetValueFromProxyCache(T* value, ProxyID proxyID, int bodyIndex, int shapeIndex, StateValue stateValue, T* initial) {
     *value = *initial;
-    proxyManager->GetProxyCache(proxyID)->GetValue(proxyID, bodyIndex, 0, stateValue, value, sizeof(T));
+    ProxyManager::Get()->GetProxyCache(proxyID)->GetValue(proxyID, bodyIndex, 0, stateValue, value, sizeof(T));
     return value;
 }
 

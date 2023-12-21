@@ -58,47 +58,43 @@ struct Entity : IScriptable
     // * entity->sub_150()
     // * components->sub_180(scriptGameInstance)
 
-    virtual void __fastcall sub_108() { }
-    inline virtual float __fastcall sub_110() {
-        return 1.0;
-    }
-    //tick??
-    virtual Vector2* __fastcall sub_118(Vector2* a1, Vector2* a2);
-    inline virtual bool __fastcall sub_120() {
-        return false;
-    }
-    inline virtual char __fastcall sub_128() {
-        return 1;
-    }
-    // maybe something with component flags
-    virtual void sub_130();
+// overrides
 
-    // called when components are loaded
-    virtual void __fastcall sub_138(Handle<void>*, int16_t*) { };
-    virtual void __fastcall sub_140(uintptr_t) { };
-    // PreUninitialize
-    virtual void __fastcall sub_148() { };
-    virtual void __fastcall Attach(void *) { };
-    virtual uintptr_t __fastcall Detach() { };
-    // called after calling components->sub_1A0()
-    virtual void __fastcall sub_160(uint16_t unk158) { };
-    virtual void __fastcall sub_168() { };
-    virtual uintptr_t __fastcall sub_170();
-    virtual uintptr_t __fastcall sub_178();
+    virtual CClass* GetNativeType() override;                   // 00
+    virtual Memory::IAllocator* GetAllocator() override;        // 10
+    virtual ~Entity() = default;                                // 18
+    virtual bool sub_40(BaseStream* aStream) override;          // 40
+    virtual void* sub_C0(void* a1) override;                    // C0
 
-    // GatherEventListeners
-    virtual void __fastcall sub_180(Handle<CallbackManager>*) { };
-    virtual void __fastcall OnRequestComponents(void *) { };
-    virtual void __fastcall sub_190() { };
-    // tick2??
-    virtual void __fastcall sub_198() { };
-    // called once attache from EntityPreview
-    virtual void __fastcall sub_1A0() { };
-    virtual uintptr_t __fastcall CopyComponentsToStorage(EntityDefinition * definition, void * a2);
-    virtual RED4ext::CClass* __fastcall sub_1B0();
-    // IsReplicable
-    virtual bool __fastcall sub_1B8();
-    virtual CString* __fastcall sub_1C0(CString*); // Get "<UNKNOWN>"
+// new virtuals
+
+    virtual void sub_108() { }                                  // 108
+    virtual float sub_110();                                    // 110 return 1f
+    virtual Vector2* sub_118(Vector2* a1, Vector2* a2);         // 118 tick??
+    virtual uint8_t sub_120();                                  // 120 return 0u8
+    virtual uint8_t sub_128();                                  // 128 return 1u8
+    virtual void sub_130();                                     // 130 maybe something with component flags
+    virtual void sub_138(Handle<void>*, int16_t*) { };          // 138 called when components are loaded
+    virtual void sub_140(uintptr_t) { };                        // 140
+    virtual void sub_148(uintptr_t a1, uintptr_t a2);           // 148 PreUninitialize
+    virtual void sub_150(uintptr_t);                            // 150 
+    virtual void Attach(void *) { };                            // 150
+    virtual uintptr_t Detach() { };                             // 158
+    virtual void sub_168(uint8_t) { };                          // 168
+    virtual uintptr_t sub_170();                                // 170
+    virtual uintptr_t sub_178();                                // 178
+    virtual void sub_180(Handle<CallbackManager>*) { };         // 180 GatherEventListeners
+    virtual void OnRequestComponents(void *) { };               // 188
+    virtual void sub_190() { };                                 // 190
+    virtual void sub_198() { };                                 // 198 tick2??
+    virtual void sub_1A0() { };                                 // 1A0 called once attache from EntityPreview
+    virtual uintptr_t CopyComponentsToStorage(                  // 1A8
+        EntityDefinition * definition, void * a2); 
+    virtual RED4ext::CClass* sub_1B0();                         // 1B0
+    virtual bool sub_1B8();                                     // 1B8 IsReplicable
+    virtual CString* sub_1C0(CString*);                         // 1C0 Get "<UNKNOWN>"
+
+// methods
 
     // calls CopyCompponentsToStorage
     /// @pattern 48 89 5C 24 08 57 48 81 EC 00 01 00 00 48 8B 02 48 8B FA 48 89 41 60 48 8B D9 48 8B 42 08 48 89
@@ -106,31 +102,31 @@ struct Entity : IScriptable
 
     // 1.52 RVA: 0x1030DA0 / 16977312
     /// @pattern 40 55 53 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 88 48 81 EC 78 01 00 00 4C 8B EA 49 8B D9 48
-    void __fastcall ReassembleAppearance(__int64 rdx0, uint64_t a3, uint64_t unk58, DynArray<Handle<IComponent>> *components, Handle<IComponent> *end);
+    void ReassembleAppearance(__int64 rdx0, uint64_t a3, uint64_t unk58, DynArray<Handle<IComponent>> *components, Handle<IComponent> *end);
 
     // 1.52 RVA: 0x1031BF0 / 16980976
     /// @pattern 48 89 5C 24 18 48 89 74 24 20 57 48 83 EC 20 80 A1 5C 01 00 00 F9 48 8B F1 48 83 C1 70 E8 6E 5D
-    // char __fastcall SetAnimatedVisualComponentFlags();
+    // char SetAnimatedVisualComponentFlags();
 
     // 1.52 RVA: 0x103B3F0 / 17019888
     /// @pattern 40 55 53 57 48 8D 6C 24 B9 48 81 EC B0 00 00 00 48 83 C1 70 E8 77 C5 3F FF 48 8B 18 8B 78 0C 48
-    // void __fastcall ProcessIPlacedComponents();
+    // void ProcessIPlacedComponents();
 
     // 1.52 RVA: 0x1037B30 / 17005360
     /// @pattern 40 56 48 83 EC 50 48 89 5C 24 68 48 8B F1 48 89 7C 24 48 48 8B DA 8B BA 00 01 00 00 48 C1 E7 04
-    __int64 __fastcall SomethingListeners(Handle<IScriptable> *a2);
+    __int64 SomethingListeners(Handle<IScriptable> *a2);
 
     // 1.52 RVA: 0x1035260 / 16994912
     /// @pattern 48 89 5C 24 08 57 48 83 EC 30 48 8B 02 48 8B D9 48 89 44 24 20 48 8D 4C 24 20 48 8B 42 08 48 8B
-    // void __fastcall SomethingListeners2(Handle<IScriptable> *a2);
+    // void SomethingListeners2(Handle<IScriptable> *a2);
 
     // 1.52 RVA: 0x1035300 / 16995072
     /// @pattern 48 83 C1 70 E9 77 26 40 FF
-    // DynArray<Handle<IComponent>> *__fastcall GetComponents();
+    // DynArray<Handle<IComponent>>  GetComponents();
 
     // 1.6  RVA: 0x1046880 / 17066112
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 64 24 20 55 41 56 41 57 48 8B EC 48 81 EC 80
-    void __fastcall SetRuntime(__int64 a2);
+    void SetRuntime(__int64 a2);
 
     enum class ComponentFlags : uint8_t {
         unk1 = 0x1,

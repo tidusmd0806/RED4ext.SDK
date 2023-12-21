@@ -14,7 +14,7 @@ struct IUpdatableSystem : IScriptable
 
     static constexpr const uintptr_t VFT = IUpdatableSystem_VFT_Addr;
 
-    virtual CClass* GetNativeType() override;
+    // virtual CClass* GetNativeType() override;
     virtual ~IUpdatableSystem() override = default;
 
     // 1.52 RVA: 0xA86060 / 11034720

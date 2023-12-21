@@ -827,17 +827,19 @@ struct BaseObject : game::Object
     // static constexpr const uintptr_t On_vehicleGlassDestructionEvent_Addr = 29697968;
 
 
-// overridden member functions
+// overridden virtuals
 
     /// @pattern /mov(vehicleBaseObject_Class_p) /retn
     virtual CClass* GetNativeType() override;
+
+    virtual void sub_148(uintptr_t a1, uintptr_t a2) override;
 
     // calls 268, 270, 350
     virtual void Attach(void *) override;
 
     virtual uintptr_t Detach() override;
 
-    virtual void sub_160(uint16_t) override;
+    virtual void sub_168(uint16_t) override;
 
     virtual void __fastcall OnRequestComponents(void *) override;
 
@@ -846,115 +848,65 @@ struct BaseObject : game::Object
     // Looks at unk580, sub_1D0
     virtual RED4ext::CName* __fastcall GetAudioResourceName(RED4ext::CName*) override;
 
-    // Somethign with unk388 & vehicle controller, sub_1F8
+    // Something with unk388 & vehicle controller, sub_1F8
     virtual uint64_t __fastcall OnTakeControl(game::ComponentHelper*) override; 
 
     // Also sends out some red event - maybe teleport?
     virtual uint64_t __fastcall sub_218(WorldTransform*) override;
 
-// new member functions
+// new virtuals
 
-    // Loads some vehicle tweaks and sets things up
-    virtual void __fastcall sub_268();
+    virtual void sub_268();                                         // 268 calls 310
+    virtual void sub_270();                                         // 270 loads some tweaks
+    virtual double sub_278();                                       // 278 sets 690 to 0 
+    virtual int32_t sub_280(WorldTransform*);                       // 280 applies worldTransform to placeholder, physics, physicsData, this->worldTransform
+    virtual uint64_t sub_288() { };                                 // 288
+    virtual uint64_t sub_290();                                     // 290
+    virtual void sub_298(Transform*);                               // 298 calls physics->sub_88
+    virtual float sub_2A0();                                        // 2A0 returns 45.0
+    virtual uint64_t sub_2A8() { };                                 // 2A8
+    virtual void sub_2B0(uint64_t, uint64_t);                       // 2B0
+    virtual void sub_2B8() { };                                     // 2B8
+    virtual void sub_2C0(void *, void *);                           // 2C0 calls physics->sub_58, vehicleQuickHacks.maxRange
+    virtual void sub_2C8() { };                                     // 2C8
+    virtual void sub_2D0() { };                                     // 2D0
+    virtual void * sub_2D8();                                       // 2D8 onGround/isInAir interaction
+    virtual void sub_2E0() { };                                     // 2E0
+    virtual void sub_2E8() { };                                     // 2E8
+    virtual void sub_2F0();                                         // 2F0
+    virtual void * sub_2F8();                                       // 2F8
+    virtual uint32_t sub_300();                                     // 300 returns 1u32
+    virtual uint64_t sub_308(bool);                                 // 308 sets PhysicsState::Unk8
+    virtual Handle<ISerializable> sub_310(Handle<ISerializable>*);  // 310 gets Handle at 638
+    virtual ISerializable* sub_318();                               // 318 gets pointer at 638
+    virtual float sub_320();                                        // 320 calls sub_310
+    virtual void sub_328(bool);                                     // 328
+    virtual uint8_t sub_330();                                      // 330 return 0u8
+    virtual uint8_t sub_338();                                      // 338 return 0u8
+    virtual uint64_t sub_340(DynArray<void*> *);                    // 340 dynArray at A00
+    virtual uint64_t sub_348();                                     // 348
+    virtual void sub_350();                                         // 350 update blackboard to 1
+    virtual void sub_358();                                         // 358 update blackboard to -1
+    virtual void sub_360();                                         // 360 same as 350
+    virtual void sub_368();                                         // 368 same as 358
+    virtual void sub_370();                                         // 370 returns 1u32
+    virtual void sub_378();                                         // 378 something with physicsData->bounds
+    virtual void sub_380() { };                                     // 380
+    virtual void sub_388(DynArray<void*>);                          // 388 
+    virtual void sub_390() { };                                     // 390
+    virtual void sub_398() { };                                     // 398
+    virtual void sub_3A0();                                         // 3A0 rendering system, blackboard
+    virtual void sub_3A8() { };                                     // 3A8
+    virtual void sub_3B0();                                         // 3B0 calls sub_3C0
+    virtual void * sub_3B8(weapon::Object *weaponObject,            // 3B8 calls generic shoot
+        Vector4 *weaponPosition, Vector4 *offset, 
+        Vector4 *tracePosition, float range, __int64 numProjectiles, 
+        __int64 a8, __int64 a9, __int64 a10);;                                         
+    virtual void sub_3C0() { };                                     // 3C0
+    virtual Vector3* sub_3C8(Vector3*);                             // 3C8 get aim trace position
+    virtual uint8_t sub_3D0(int);                                   // 3D0 get shoot value for index
 
-    // Loads more tweaks and vehicle weapons
-    virtual void __fastcall sub_270();
-
-    // Returns 0.0
-    virtual double __fastcall sub_278();
-
-    // Updates physics World Transform, creates physicsData, engine data
-    virtual int32_t __fastcall sub_280();
-
-    // Calls physics sub_80
-    virtual uint64_t __fastcall sub_288();
-
-    // Calls physics sub_88
-    virtual uint64_t __fastcall sub_290();
-
-    // Returns 45.0
-    virtual float __fastcall sub_298();
-
-    // Empty function
-    virtual void __fastcall sub_2A0(RED4ext::Transform *);
-
-    // Something with blackboard and effect data
-    virtual uint64_t __fastcall sub_2A8();
-
-    // Empty function
-    virtual uint64_t __fastcall sub_2B0(uint64_t, uint64_t);
-
-    // Call physics sub_58, runs update with chassis
-    virtual void __fastcall sub_2B8(uint64_t, uint64_t);
-
-    // Empty function
-    virtual void __fastcall sub_2C0(float);
-
-    // Raytraces, decides isOnGround, physics sub_C0 - only runs if physicsState == 0
-    virtual void __fastcall sub_2C8();
-
-    // Empty function, calls physics->sub_118 with same params
-    virtual void __fastcall sub_2D0(void *, RED4ext::Transform *);
-
-    // Empty function, calls physics sub_120/UpdateWheelAnimations
-    virtual void __fastcall sub_2D8();
-
-    // Something with the entity stored separately flag, maybe mounting related, calls sub_310
-    virtual uint64_t __fastcall sub_2E0();
-
-    virtual uint64_t __fastcall sub_2E8();
-
-    // return one
-    virtual uint64_t __fastcall sub_2F0();
-
-    // updates wheel positions, calls sub_310
-    virtual uint64_t __fastcall sub_2F8();
-
-    // Get vehicle record handle
-    virtual Handle<game::data::Vehicle_Record> * __fastcall GetRecord(Handle<game::data::Vehicle_Record>*);
-
-    // Get unk tweak record/hash
-    virtual uint64_t __fastcall sub_308(uint64_t *);
-
-    // mount/engine related
-    // TurnEngineOn
-    virtual uint64_t __fastcall sub_310(bool);
-
-    // checks something in engine data - has throttle input
-    // IsEngineTurnedOn
-    virtual bool __fastcall sub_318();
-
-    // some physics & wheel stuff with unk568
-    virtual float __fastcall sub_320();
-    virtual uint64_t __fastcall sub_328(Handle<ISerializable>*);
-    virtual uint64_t __fastcall sub_330(Handle<ISerializable>*);
-    virtual uint64_t __fastcall sub_338(Handle<ISerializable>*);
-    virtual uint64_t __fastcall sub_340(Handle<ISerializable>*);
-    // return one
-    virtual uint64_t __fastcall sub_348();
-
-    // Something wheels
-    virtual uint64_t __fastcall sub_350();
-
-    // Updates vehicle audio
-    virtual uint64_t __fastcall sub_358();
-
-    // Process vehicle weapons
-    virtual void __fastcall sub_360(float, uint32_t index);
-
-    // Fire vehicle weapon, calls generic weapon shoot
-    virtual uint64_t __fastcall sub_368(weapon::Object *weaponObject, Vector4 *weaponPosition, Vector4 *offset, Vector4 *tracePosition, float range, __int64 numProjectiles, __int64 a8, __int64 a9, __int64 a10);
-
-    // Empty Function
-    virtual void __fastcall sub_370();
-
-    // Get Aim Trace Position
-    virtual Vector3* __fastcall sub_378(Vector3*);
-
-    // Get shoot value for index
-    virtual uint8_t __fastcall sub_380(int);
-
-// non-virtual methods
+// methods
 
     // 1.52 RVA: 0x1C60690 / 29755024
     // 1.6  RVA: 0x1C8D240 / 29938240

@@ -3986,6 +3986,7 @@
 #define CBaseEngine_Class_p_Addr 0x3338A98
 #define CBaseEngine_LoadScripts_Addr 0x95355C
 #define CBaseEngine_VFT_Addr 0x2B0D138
+#define CBaseRTTIType_VFT_Addr 0x2F8F8D8
 #define CBaseRTTIType_dstr_Addr 0x1FEC25C
 #define CBitmapTexture_Class_Addr 0x3F10E70
 #define CBitmapTexture_Class_VFT_Addr 0x2A5D058

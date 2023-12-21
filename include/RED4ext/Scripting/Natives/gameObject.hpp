@@ -68,57 +68,49 @@ struct Object : ent::GameEntity, PSInterface
     
 // overridden virtuals
 
-    virtual void __fastcall sub_108() override;
-    virtual void __fastcall sub_140(uintptr_t a1) override;
-    virtual void __fastcall sub_148() override;
-    virtual void __fastcall Attach(void *) override;
-    virtual uintptr_t __fastcall Detach() override;
+    virtual CClass* GetNativeType() override;                       // 00
+    virtual Memory::IAllocator* GetAllocator() override;            // 10
+    virtual ~Object() = default;                                    // 18
+    virtual void sub_108() override;                                // 108
+    virtual void sub_148(uintptr_t a1, uintptr_t a2) override;      // 148 calls OnTakeControl
+    virtual void sub_150() override;                                // 150 calls OnReleaseControl
+    virtual void Attach(void *) override;                           // 158
+    virtual uintptr_t Detach() override;                            // 160
 
 // new virtuals
 
-    virtual void __fastcall sub_1C8();
-    virtual RED4ext::CName* __fastcall GetAudioResourceName(RED4ext::CName*); // 1D0
-    virtual bool __fastcall OnControlTaken(); // 1D8
-    virtual bool __fastcall OnControlReleased(); // 1E0
-    virtual void __fastcall OnTransformUpdated(); // 1E8
-    virtual void __fastcall sub_1F0();
-    virtual uint64_t __fastcall OnTakeControl(ComponentHelper *); // 1F8
-    virtual uint64_t __fastcall OnReleaseControl(); // 200
-    virtual void __fastcall sub_208();
-    virtual void __fastcall sub_210();
-    virtual uint64_t __fastcall sub_218(WorldTransform*);
-    virtual uint64_t __fastcall sub_220(void*);
+    virtual void sub_1C8() { };                                     // 1C8
+    virtual RED4ext::CName* GetAudioResourceName(RED4ext::CName*);  // 1D0
+    virtual bool OnControlTaken();                                  // 1D8
+    virtual bool OnControlReleased();                               // 1E0
+    virtual void OnTransformUpdated();                              // 1E8
+    virtual void sub_1F0() { };                                     // 1F0
+    virtual uint64_t OnTakeControl(ComponentHelper *);              // 1F8
+    virtual uint64_t OnReleaseControl();                            // 200
+    virtual void sub_208() { };                                     // 208
+    virtual void sub_210() { };                                     // 210
+    virtual uint64_t sub_218(WorldTransform*);                      // 218
+    virtual uint64_t sub_220(void*);                                // 220
+    virtual uint64_t sub_228();                                     // 228 Updates audio emittor position with placeholder - called by other member functions
+    virtual void sub_230(Handle<IScriptable>* obj,                  // 230 Called by ReplicateAnimFeature
+        CName inputName, Handle<IScriptable> value) { }; 
+    virtual void sub_238(Handle<IScriptable> * obj,                 // 238 Called by ReplicateAnimEvent
+        CName eventName) { }; 
+    virtual void sub_240(Handle<IScriptable>* event) { };           // 240 Called by QueueReplicatedEvent
+    virtual void sub_248(Handle<IScriptable>* obj, CName inputName, // 248 Called by ReplicateInputFloat
+        float value) { }; 
+    virtual void sub_250(Handle<IScriptable>* obj, CName inputName, // 250 Called by ReplicateInputBool
+        bool value) { }; 
+    virtual void sub_258(Handle<IScriptable>* obj, CName inputName, // 258 Called by ReplicateInputInt
+        int value) { }; 
+    virtual void sub_260(Handle<IScriptable>* obj, CName inputName, // 260 Called by ReplicateInputVector
+        Vector4 value) { }; 
 
-    // Updates some position with placeholder - called by other member functions
-    // updates audio emitter position
-    virtual uint64_t __fastcall sub_228();
-
-    // Called by ReplicateAnimFeature
-    virtual void __fastcall sub_230(Handle<IScriptable>* obj, CName inputName, Handle<IScriptable> value);
-
-    // Called by ReplicateAnimEvent
-    virtual void __fastcall sub_238(Handle<IScriptable> * obj, CName eventName);
-
-    // Called by QueueReplicatedEvent
-    virtual void __fastcall sub_240(Handle<IScriptable>* event);
-
-    // Called by ReplicateInputFloat
-    virtual void __fastcall sub_248(Handle<IScriptable>* obj, CName inputName, float value);
-
-    // Called by ReplicateInputBool
-    virtual void __fastcall sub_250(Handle<IScriptable>* obj, CName inputName, bool value);
-
-    // Called by ReplicateInputInt
-    virtual void __fastcall sub_258(Handle<IScriptable>* obj, CName inputName, int value);
-
-    // Called by ReplicateInputVector
-    virtual void __fastcall sub_260(Handle<IScriptable>* obj, CName inputName, Vector4 value);
-
-// non-virtual methods
+// methods
 
     // 1.52 RVA: 0x13ECC30 / 20892720
     /// @pattern 48 89 4C 24 08 55 56 57 48 81 EC 90 00 00 00 48 8D 6C 24 30 41 83 78 08 01 48 8D 8D 80 00 00 00
-    bool __fastcall CallScriptFunction(void * a1, uintptr_t a2, uint8_t a3);
+    bool CallScriptFunction(void * a1, uintptr_t a2, uint8_t a3);
 
     struct Flags
     {
