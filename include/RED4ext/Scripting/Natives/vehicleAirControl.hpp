@@ -70,6 +70,7 @@ struct AirControl
     float unk280;
 };
 #pragma pack(pop)
-RED4EXT_ASSERT_SIZE(AirControl, 0x290);
+// RED4EXT_ASSERT_SIZE(AirControl, 0x290);
+RED4EXT_ASSERT_SIZE(AirControl, 0x2A8);
 } // namespace vehicle
 } // namespace RED4ext

@@ -29,7 +29,8 @@
 #include <RED4ext/Scripting/Natives/vehicleAirControl.hpp>
 // #include <RED4ext/Scripting/Natives/vehiclePhysics.hpp>
 // #include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
-#include <RED4ext\Scripting\Natives\Generated\red\ResourceReferenceScriptToken.hpp>
+#include <RED4ext/Scripting/Natives/Generated/red/ResourceReferenceScriptToken.hpp>
+#include <RED4ext/Scripting/Natives/gamedataTweakValue.hpp>
 
 namespace RED4ext
 {
@@ -64,553 +65,6 @@ enum class Type : __int8
   Yacht = 0x4,
   Unknown = 0x5,
 };
-
-struct TireUpdate
-{
-  void *__vftable;
-  float unk08;
-  float unk0C;
-  float veh_tire_surface;
-  float veh_tire_lat_slip_ratio;
-  float veh_tire_long_slip_ratio;
-  float skidValue;
-  float skidValue2;
-  float unk24;
-  uint8_t veh_tire_contact;
-  uint8_t unk29;
-  uint8_t veh_tire_water;
-  uint8_t unk2B;
-  uint8_t unk2C;
-  uint8_t unk2D;
-  uint8_t unk2E;
-  uint8_t unk2F;
-};
-
-struct WheelUpdate
-{
-  TireUpdate tireUpdate[4];
-  uint64_t unk100[36];
-  uint32_t numWheels;
-  uint32_t unk1E4;
-  uint64_t unk1E8;
-  WorldTransform unk1F0;
-  Handle<void*> unk210;
-  Vector4 unk220;
-  uint64_t unk230[2];
-  Vector3 unk240;
-  uint32_t unk24C;
-  Vector4 linearVelocity;
-  Vector4 position;
-  float unk270;
-  float unk274;
-  float unk278;
-  float unk27C;
-  bool throttleValue2;
-  float brakeValue;
-  float unk288[2];
-  float unk290;
-  float unk294;
-};
-
-struct Acoustics;
-
-struct TireParameterUpdate
-{
-    Acoustics *acoustics;
-    ent::EntityID entityID;
-    struct Variables {
-        float skidValue;
-        uint32_t wheelIndex;
-        RED4ext::CName emitterName;
-    } * variables;
-    float *veh_tire_surface_value;
-};
-
-struct EntityEmitter {
-    CName emitterName;
-    uint32_t id;
-    uint32_t unk;
-};
-
-struct EntityEmitters {
-    ent::EntityID entityID;
-    struct Emitter {
-        CName *** emitterName1;
-        CName *** emitterName2;
-    } * emitter;
-    void * unk10;
-    float unk18;
-    float unk20;
-};
-
-// Audio
-struct Acoustics
-{
-    // 1.52 RVA: 0x1C3A0B0 / 29597872
-    /// @pattern 80 E2 01 88 91 CA 03 00 00 C3
-    void __fastcall Update3CA(bool a2);
-
-    // 1.52 RVA: 0x1C370D0 / 29585616
-    /// @pattern 40 53 48 83 EC 20 80 B9 D6 03 00 00 00 48 8B DA 74 09 48 8B 81 B0 01 00 00 EB 07 48 8B 81 B8 01
-    void *__fastcall GetAudioResourceMetadata(void *a2);
-
-    // 1.52 RVA: 0x1C3D700 / 29611776
-    /// @pattern 40 56 48 83 EC 50 48 8B F1 48 8B 89 38 01 00 00 E8 8B 1C 01 00 84 C0 0F 84 B5 01 00 00 4C 8B 86
-    // void __fastcall UpdateAudio();
-
-    // 1.52 RVA: 0x1C3C0A0 / 29606048
-    // 1.6  RVA: 0x1C68B10 / 29788944
-    /// @pattern 48 8B C4 55 41 56 41 57 48 8D 6C 24 80 48 81 EC 80 01 00 00 0F 28 C2 0F 29 78 A8 F3 0F 58 81 C0
-    void __fastcall Update(__int64 a2, float a3, uint64_t *a4);
-
-    // 1.52 RVA: 0x1C3BD10 / 29605136a
-    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 7C 24 20 41 54 41 56 41 57 48 83 EC 60 48 8B 81 B0 01 00 00
-    __int64 __fastcall UpdateWheelEmitters(__int64 a2);
-
-    // 1.52 RVA: 0x1C36B10 / 29584144
-    /// @pattern 48 83 EC 38 0F B6 91 CF 03 00 00 85 D2 74 17 83 EA 01 0F 84 07 01 00 00 83 EA 01 74 5C 83 FA 01
-    bool __fastcall ShouldUseSomeAVListener();
-
-    // 1.52 RVA: 0x1C38700 / 29591296
-    /// @pattern 40 53 56 57 48 83 EC 40 80 B9 00 04 00 00 03 49 8B F8 48 8B D9 0F 85 E0 00 00 00 48 8B 89 38 01
-    void __fastcall ToggleHorn(bool a2, uint8_t *a3);
-
-    // 1.52 RVA: 0x1C3A8D0 / 29599952
-    /// @pattern 48 83 EC 38 0F 57 C0 45 84 C0 74 19 8B C2 0F 57 D2 89 91 84 01 00 00 C6 81 88 01 00 00 01 F3 48
-    __int64 __fastcall SetRadioTier(int a2, bool a3);
-
-    // 1.52 RVA: 0x1C3A790 / 29599632
-    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 20 48 83 B9 78 01 00 00 00 41 0F B6 E8
-    void __fastcall NextRadioReceiverStation(uint32_t direction, bool);
-
-    // 1.52 RVA: 0x1C37E80 / 29589120
-    /// @pattern 40 53 48 83 EC 20 48 83 B9 78 01 00 00 00 48 8B D9 0F 84 B9 00 00 00 48 8B 81 50 01 00 00 80 B8
-    bool __fastcall IsRadioReceiverActive();
-
-    // 1.52 RVA: 0x1C35A20 / 29579808
-    /// @pattern 48 89 5C 24 10 57 48 83 EC 20 48 8B B9 A0 03 00 00 48 8B D9 48 85 FF 74 15 48 8B CF E8 6F 14 B0
-    // ~Acoustics();
-
-    // 1.6 RVA: 0x1C6A170 / 29794672
-    /// @pattern 40 56 48 83 EC 50 48 8B F1 48 8B 89 38 01 00 00 E8 7B 1E 01 00 84 C0 0F 84 B5 01 00 00 4C 8B 86
-    void __fastcall UpdateTPPinAudioSystem();
-    
-    // Called from Update
-    // 1.6 RVA: 0x1C6A810 / 29796368
-    /// @pattern 48 8B C4 48 89 50 10 55 56 57 41 56 48 8D 68 C8 48 81 EC 18 01 00 00 80 B9 00 04 00 00 03 41 0F
-    void __fastcall UpdateEvents(WheelUpdate *update, __int64 a3);
-
-    // 1.6 RVA: 0x1C62AE0 / 29764320
-    /// @pattern 48 89 5C 24 10 48 89 6C 24 18 56 57 41 56 48 83 EC 70 48 8B 69 08 49 8B D8 4C 8B 01 48 8B F2 0F
-    static void __fastcall UpdateTireParameters(TireParameterUpdate * tpu, TireUpdate *tireUpdate);
-
-    uint64_t unk00;
-    uint64_t entityID;
-    float unk10;
-    float unk14;
-    float unk18;
-    float unk1C;
-    uint64_t unk20[29];
-    float unk108;
-    float unk10C;
-    float unk110;
-    float unk114;
-    float unk118;
-    float unk11C;
-    float unk120;
-    float unk124;
-    uint32_t unk128;
-    uint32_t unk12C;
-    uint32_t unk130;
-    uint32_t unk134;
-    BaseObject *vehicle;
-    CName player_audio_resource_hash;
-    CName traffic_audio_resource_hash;
-    Acoustics *self;
-    float unk158;
-    uint32_t unk15C;
-    uint8_t unk160;
-    uint8_t unk161;
-    uint8_t unk162;
-    uint8_t unk163;
-    uint8_t unk164;
-    uint8_t unk165;
-    uint8_t unk166;
-    uint8_t unk167;
-    // radio_car_sports_npc, etc
-    CName radioStation;
-    uint64_t unk170;
-    EntityEmitters *unk178;
-    uint8_t unk180;
-    uint8_t unk181;
-    uint8_t unk182;
-    uint8_t unk183;
-    uint8_t unk184;
-    uint8_t unk185;
-    uint8_t unk186;
-    uint8_t unk187;
-    uint64_t unk188[2];
-    EntityEmitters *unk198;
-    uint64_t unk1A0[2];
-    audio::VehicleMetadata *player_audio_resource_metadata;
-    audio::VehicleMetadata *traffic_audio_resource_metadata;
-    uint64_t unk1C0[24];
-    uint64_t unk280[1];
-    uint32_t unk288[42];
-    // num materials/wheels?
-    uint32_t unk330;
-    uint32_t unk334;
-    CName tirePhysicalMaterial[4];
-    uint64_t unk358[6];
-    uint32_t unk388;
-    uint32_t unk38C;
-    Vector3 unk390;
-    float unk39C;
-    EntityEmitter scrapingEmitter;
-    float scrapingTimer;
-    float unk3B4;
-    CName scrapingLoopStart;
-    CName scrapingLoopEnd;
-    uint8_t unk3C8;
-    uint8_t isTPP2;
-    uint8_t unk3CA;
-    uint8_t unk3CB[4];
-    Type type;
-    uint8_t unk3D0;
-    uint8_t unk3D1;
-    uint8_t unk3D2;
-    uint8_t unk3D3;
-    uint8_t unk3D4;
-    uint8_t unk3D5;
-    uint8_t usePlayer;
-    uint8_t unk3D7;
-    uint64_t unk3D8[5];
-    uint8_t unk400;
-    uint8_t isTPP;
-    uint8_t unk402;
-    uint8_t unk403;
-    float unk404;
-    uint8_t unk408;
-    uint8_t unk409;
-    uint8_t unk40A;
-    uint8_t unk40B;
-    uint8_t wheelEventsStarted;
-    uint8_t unk40D;
-    uint8_t unk40E;
-    uint8_t unk40F;
-    uint64_t unk410;
-    uint64_t unk418;
-    float unk420;
-    float unk424;
-    float unk428;
-    float unk42C;
-    uint64_t unk430;
-    uint64_t unk438;
-    float unk440;
-    float unk444;
-    float unk448;
-    float unk44C;
-    float unk450;
-    float unk454;
-    float suspensionSqueekTimeout;
-    float unk45C;
-    float unk460;
-};
-
-RED4EXT_ASSERT_OFFSET(Acoustics, unk460, 0x460);
-
-// more physics
-struct Unk568 {
-
-    // 1.52 RVA: 0x1AB9B80 / 28023680
-    /// @pattern C7 41 3C 00 00 80 3F 33 C0 48 89 41 20 0F 57 C0 89 41 28 48 89 41 30 89 41 38 48 89 01 48 89 41
-    // Unk568();
-
-    // 1.52 RVA: 0x1ABAA10 / 28027408
-    /// @pattern 0F 10 81 A0 00 00 00 0F 57 C9 0F 11 81 B0 00 00 00 0F 11 89 A0 00 00 00 C3
-    void __fastcall CopyOverCollisionForce();
-
-    // 1.52 RVA: 0x1ABAA30 / 28027440
-    /// @pattern 0F 10 02 0F 11 81 D0 00 00 00 C3
-    void __fastcall SetUnkD0(void *a2);
-
-    // 1.52 RVA: 0x1ABAA40 / 28027456
-    /// @pattern 0F 10 02 0F 11 81 C0 00 00 00 C3
-    // void __fastcall SetRotationalVelocityMaybe(Vector4 *);
-
-    // 1.52 RVA: 0x1ABAA50 / 28027472
-    /// @pattern 48 83 EC 58 0F 29 74 24 40 0F 29 7C 24 30 44 0F 29 44 24 20 44 0F 29 4C 24 10 44 0F 10 0A 44 0F
-    __int64 __fastcall SetAcceleration(Vector4 *);
-
-    // 1.52 RVA: 0x1ABACA0 / 28028064
-    /// @pattern 48 83 EC 48 0F 10 61 30 0F 28 DC 0F 29 74 24 30 0F 59 DC 0F 29 7C 24 20 44 0F 29 44 24 10 44 0F
-    void __fastcall SetLinearVelocityEtc(Vector4 *);
-
-    float unk00[3];
-    float turnRelated;
-    float unk10[4];
-	WorldTransform worldTransform; // ",	0X20,	0x60000400,	get_struc_id("RED4ext::WorldTransform"),	32);
-	Vector4 linearVelocity; // ",	0X40,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	Vector4 acceleration; // ",	0X50,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-    // actually velocity, maybe - dot product taken @ 0x1CED337
-	Transform unk60; // ",	0X60,	0x60000400,	get_struc_id("RED4ext::Transform"),	32);
-	Vector4 unk80; // ",	0X80,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	Vector4 unk90; // ",	0X90,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	float currentForce; // ",	0XA0,	0x80000400,	-1,	4);
-	Vector3 currentForceVector; // ",	0XA4,	0x60000400,	get_struc_id("RED4ext::Vector3"),	12);
-	float collisionForce; // ",	0XB0,	0x80000400,	-1,	4);
-	Vector3 collisionForceVector; // ",	0XB4,	0x60000400,	get_struc_id("RED4ext::Vector3"),	12);
-	Vector4 rotationalVelocityMaybe; // ",	0XC0,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	float unkD0[4]; // ",	0XD0,	0x80000400,	-1,	16);
-	float unkE0; // ",	0XE0,	0x80000400,	-1,	4);
-	float unkE4; // ",	0XE4,	0x80000400,	-1,	4);
-	float unkE8; // ",	0XE8,	0x80000400,	-1,	4);
-	float unkEC; // ",	0XEC,	0x80000400,	-1,	4);
-	float accelerationMaybe; // ",	0XF0,	0x80000400,	-1,	4);
-	float unkF4; // ",	0XF4,	0x80000400,	-1,	4);
-	float unkF8; // ",	0XF8,	0x80000400,	-1,	4);
-	float unkFC; // ",	0XFC,	0x80000400,	-1,	4);
-	float unk100; // ",	0X100,	0x80000400,	-1,	4);
-	float unk104; // ",	0X104,	0x80000400,	-1,	4);
-	float unk108; // ",	0X108,	0x80000400,	-1,	4);
-	float unk10C; // ",	0X10C,	0x80000400,	-1,	4);
-	float unk110; // ",	0X110,	0x80000400,	-1,	4);
-	float downforceMaybe; // ",	0X114,	0x80000400,	-1,	4);
-	float gravityScalar; // ",	0X118,	0x80000400,	-1,	4);
-	float unk11C; // ",	0X11C,	0x80000400,	-1,	100);
-};
-
-    
-struct MaterialResource {
-    ResRef skidMarks;
-    ResRef tireTracks;
-    bool loaded;
-    uint8_t extra_byte_for_fun;
-};
-
-struct MaterialCondition {
-    MaterialResource particle;
-    MaterialResource decal;
-};
-
-struct MaterialFx {
-    MaterialCondition normal;
-    MaterialCondition wet;
-    MaterialCondition rain;
-};
-
-// effects
-struct Unk570 {
-
-    struct Unk30 {
-        // some transform storage
-        Handle<void*> unk00;
-        Handle<void*> unk10;
-        Handle<void*> unk20;
-        Handle<void*> unk30;
-        // some material lookup for smear distances
-        HashMap<CName, float> unk40;
-        Handle<world::EffectBlackboard> effectBlackboard;
-    };
-
-    struct Unk40 {
-        Transform unk00;
-        Vector4 unk20;
-        // .physmat etc
-        CName physicalMaterial;
-        uint8_t unk38;
-        uint32_t unk3C;
-        Vector3 unk40;
-        float unk4C;
-        float unk50;
-        WorldPosition decalNormal;
-        Vector3 unk60;
-        float wheelAngularSpeed;
-        float visualDisplacementClamped;
-        float wheelLatSlip;
-        float wheelLongSlip;
-        bool isUnderwater;
-        bool condition;
-        uint8_t unk7E[2];
-    };
-
-    RED4EXT_ASSERT_SIZE(Unk40, 0x80);
-
-    // default values taken from TweakDB
-    struct FxSettings {
-        float decalNormalOffset = 0.05;
-        float impactNormalForceThreshold = 1.0;
-        float impactTangentialForceThreshold = 1.0;
-        float wheelAngularSpeedThreshold = 0.03;
-        float wheelLongSlipThreshold = 2.0;
-        float wheelLatSlipThreshold = 2.5;
-        float scratchPositionTolerance = 0.1;
-        float minTimeBetweenImpulses = 0.1;
-        float minDistanceBetweenImpulses = 0.2;
-        float impulseRadius_Min = 0.2;
-        float impulseRadius_Max = 0.6;
-        float impulseStrength_Min = 0.0007;
-        float impulseStrength_Max = 0.001;
-        float rainMoistureThreshold = 0.2;
-        CName paramImpactForce = "veh_impact_force";
-        CName paramScratchForce = "veh_scratch_force";
-        CName paramLongSlip = "veh_long_slip";
-        CName paramLatSlip = "veh_lat_slip";
-        CName paramTotalSlip = "veh_total_slip";
-        CName paramVehicleSpeed = "veh_speed";
-        CName paramWheelAngularSpeed = "veh_wheel_angular_speed";
-        CName paramEngineRPM = "veh_engine_rpm";
-        float paramImpactForce_Max = 20.0;
-        float paramScratchForce_Max = 20.0;
-        float paramLongSlip_Max = 15.0;
-        float paramLatSlip_Max = 6.0;
-        float paramWheelLongSlip_Min;
-        float paramWheelLongSlip_Max;
-        float paramWheelLatSlip_Min;
-        float paramWheelLatSlip_Max;
-        float paramTotalSlip_Min;
-        float paramTotalSlip_Max;
-        float paramVehicleSpeed_Min = 0.0;
-        float paramVehicleSpeed_Max = 120.0;
-        float paramWheelAngularSpeed_Min = 0.0;
-        float paramWheelAngularSpeed_Max = 90.0;
-        float paramEngineRPM_Min = 0.0;
-        float paramEngineRPM_Max = 4800.0;
-    };
-
-    // struct FxLookup {
-    //     CName skid_marks_particle;
-    //     CName tire_tracks_particle;
-    //     bool particles_loaded;
-    //     bool extra_byte_for_fun;
-    //     CName skid_marks_decal;
-    //     CName tire_tracks_decal;
-    //     bool decals_loaded;
-    //     CName wet_skid_marks_particle;
-    //     CName wet_tire_tracks_particle;
-    //     bool wet_particles_loaded;
-    //     CName wet_skid_marks_decal;
-    //     CName wet_tire_tracks_decal;
-    //     bool wet_decals_loaded;
-    //     CName rain_skid_marks_particle;
-    //     CName rain_tire_tracks_particle;
-    //     bool rain_particles_loaded;
-    //     CName rain_skid_marks_decal;
-    //     CName rain_tire_tracks_decal;
-    //     bool rain_decals_loaded;
-    // };
-
-
-    struct CollisionFxLookup {
-        CName impact_particles;
-        CName impact_decal;
-        CName scratch_particles;
-        CName scratch_decal;
-    };
-
-    struct SmearFxLookup {
-        CName skid_marks_decal;
-        CName tire_tracks_decal;
-        bool loaded;
-        uint32_t unk1C;
-        float distance;
-    };
-
-    // 1.52 RVA: 0x1CFA220 / 30384672
-    //           48 89 5C 24 10 4C 89 4C 24 20 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 E0 F9 FF FF 48 81 EC
-    // 1.6  RVA: 0x1D27B90 / 30571408
-    // 1.61hf1 RVA: 0x1D28650
-    /// @pattern 48 89 5C 24 10 4C 89 4C 24 20 48 89 4C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 30 FD
-    void __fastcall Setup(__int64 fxCollisionRecord, __int64 fxWheelsRecord, __int64 fxWheelsDecalsRecord);
-
-    // adds things to unk20 for each wheel
-    // 1.6  RVA: 0x1D2A340 / 30581568
-    /// @pattern 48 8B C4 89 50 10 55 48 8D A8 78 FE FF FF 48 81 EC 80 02 00 00 41 80 78 7C 00 48 89 58 20 48 89
-    void __fastcall ProcessEffects(unsigned int wheelIndex, Unk40 *unk40, float deltaTime);
-
-    // 1.6  RVA: 0x1D271C0 / 30568896
-    /// @pattern 48 8B C4 55 41 55 41 57 48 8D 6C 24 90 48 81 EC 70 01 00 00 44 8B 41 4C 4C 8B E9 48 89 58 E0 48
-    void __fastcall UpdateEffectsBlackboard(unsigned int wheelCount);
-
-    // 1.6  RVA: 0x1D2A340 / 30581568
-    /// @pattern 48 8B C4 89 50 10 55 48 8D A8 78 FE FF FF 48 81 EC 80 02 00 00 41 80 78 7C 00 48 89 58 20 48 89
-    void __fastcall WheelEffectUpdate(unsigned int wheelIndex, Unk40 *unk40, float deltaTime);
-
-    // 1.6  RVA: 0x1D241A0 / 30556576
-    /// @pattern 48 89 5C 24 08 48 89 7C 24 10 4C 8D 89 D0 00 00 00 4C 8B C2 41 8B 59 08 48 8B F9 85 DB 0F 84 BC
-    CollisionFxLookup *__fastcall GetCollisionFxForMaterial(CName material);
-
-    // 1.6  RVA: 0x1D24320 / 30556960
-    /// @pattern 48 89 5C 24 08 4C 8B CA 48 8B D9 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84
-
-    // post 2.0
-    /// @pattern 48 89 5C 24 08 48 89 54 24 10 57 48 83 EC 50 48 8B F9 45 84 C0 75 09 44 38 81 60 01 00 00 75 6A
-    // MaterialFx * __fastcall GetFxForMaterial(CName material, bool isBackWheel);
-
-    // 1.6  RVA: 0x1D24290 / 30556816
-    /// @pattern 4C 8B CA 45 84 C0 75 0D 44 38 81 60 01 00 00 74 04 B0 01 EB 02 32 C0 84 C0 BA 30 01 00 00 41 B8
-
-    // post 2.0
-    /// @pattern 48 89 54 24 10 48 83 EC 28 48 8B D1 45 84 C0 75 09 44 38 81 60 01 00 00 75 39 32 C0 F6 D8 4C 8D
-    SmearFxLookup *__fastcall GetSmearFxForMaterial(CName material, bool isBackWheel);
-    
-    // 1.6  RVA: 0x1D25A50 / 30562896
-    /// @pattern 48 8B C4 48 89 58 08 48 89 70 18 48 89 78 20 48 89 50 10 55 41 54 41 55 41 56 41 57 48 8D A8 98
-    void __fastcall ProcessImpactScratch(Vector3 *a2, Vector3 *offset, Vector3 *a4, Vector3 *a5, float impact, float scratch, CName material);
-
-    // 1.6  RVA: 0x1D2B870 / 30586992
-    /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 4C 24 20 55 41 54 41 55 41 56 41 57 48 8D AC
-    /// @nth 1/4
-
-    // // post 2.0
-    // /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 48 89 78 18 4C 89 48 20 55 41 54 41 55 41 56 41 57 48 8D 68 A8
-    // /// @nth 0/2
-    // bool __fastcall TireTrackEffectStart(Unk30 *a2, MaterialFx *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
-
-    // // 1.6  RVA: 0x1D2AF10 / 30584592
-    // /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 4C 89 4C 24 20 55 41 54 41 55 41 56 41 57 48 8D AC
-    // /// @nth 0/4
-
-    // // post 2.0
-    // /// @pattern 48 8B C4 48 89 58 08 48 89 70 10 48 89 78 18 4C 89 48 20 55 41 54 41 55 41 56 41 57 48 8D 68 A8
-    // /// @nth 1/2
-    // bool __fastcall SkidMarkEffectStart(Unk30 *unk30, MaterialFx *fxLookup, Transform *a4, Transform *a5, bool physicalMaterialChange, bool conditionChange, bool condition);
-
-
-    BaseObject *vehicle;
-    void *animationController;
-    // Handle<anim::AnimFeature_VehiclePassenger> vehiclePassenger;
-    Handle<void*> vehiclePassenger;
-    DynArray<Handle<world::EffectBlackboard>> unk20;
-    DynArray<Unk30> unk30;
-    DynArray<Unk40> unk40;
-    Handle<world::EffectBlackboard> unk50;
-    DynArray<void*> unk60;
-    // list of collision effects
-    DynArray<void*> unk70;
-    Handle<world::EffectBlackboard> veh_engine_throttle_input;
-    Handle<world::EffectBlackboard> veh_motion_blur_scale;
-    world::RuntimeSystemEffects* runtimeSystemEffects;
-    FxSettings* fxSettings;
-    DynArray<Vector4> unkB0;
-    DynArray<Vector3> unkC0;
-    // unkD0, collision effects
-    HashMap<CName, CollisionFxLookup> collisionFxLookup;
-    // unk100, all materials used in wheel fx, maybe by CName, paired wtih unk168, ref'd in GetEffectsForMaterial
-    HashMap<CName, MaterialFx> fxLookup;
-    // unk130, wheel fx, paired with unk198, ref'd in GetEffectsForMaterial_2
-    HashMap<CName, SmearFxLookup> smearFxLookup;
-    uint64_t physMaterial;
-    // unk168, front override of unk100
-    HashMap<CName, MaterialFx> fxLookupFront;
-    // unk198, front override of unk130
-    HashMap<CName, SmearFxLookup> smearFxLookupFront;
-    CName defaultMaterial;
-    DynArray<Handle<void*>> unk1D0;
-};
-
-RED4EXT_ASSERT_SIZE(Unk570::Unk30, 0x80);
-RED4EXT_ASSERT_SIZE(Unk570::Unk40, 0x80);
 
 struct Unk588 {
 
@@ -747,13 +201,21 @@ struct Unk588 {
 
 struct Unk368
 {
-  uint64_t unk00;
-  uint64_t unk08;
-  move::Component *moveComponent;
-  void *unk18;
+  Handle<ISerializable> unk00;
+  Handle<move::Component> moveComponent;
   vehicle::BaseObject *vehicle;
 };
 
+RED4EXT_ASSERT_SIZE(Unk368, 0x28);
+
+struct Unk610
+{
+  Handle<ISerializable> unk00;
+  Handle<move::Component> moveComponent;
+  vehicle::BaseObject *vehicle;
+};
+
+RED4EXT_ASSERT_SIZE(Unk610, 0x20);
 
 enum PhysicsState
 {
@@ -768,9 +230,6 @@ enum PhysicsState
   Chase = 0x100,
 };
 
-/// @pattern /lea("gameVehicleCurve")
-constexpr const uintptr_t gameVehicleCurve = vehicle_gameVehicleCurve_Addr;
-
 #pragma pack(push, 1)
 struct BaseObject : game::Object
 {
@@ -778,82 +237,23 @@ struct BaseObject : game::Object
     static constexpr const char* ALIAS = "VehicleObject";
     static constexpr const uintptr_t VFT = vehicleBaseObject_VFT_Addr;
 
-    // 1.6 RVAs
-    // static constexpr const uintptr_t On_vehicleChangeMovableEvent_Addr = 29694240;
-    // static constexpr const uintptr_t On_vehicleChangeStateEvent_Addr = 1656944; // empty function
-    // static constexpr const uintptr_t On_gameinteractionsChoiceEvent_Addr = 1656944; // empty function
-    // static constexpr const uintptr_t On_vehicleToggleQuestForceBrakingEvent_Addr = 29706032;
-    // static constexpr const uintptr_t On_vehicleToggleQuestCustomFPPLockOffEvent_Addr = 1656944; // empty function
-    // static constexpr const uintptr_t On_vehicleToggleQuestWeaponEnabledEvent_Addr = 29706048;
-    // static constexpr const uintptr_t On_vehicleTeleportEvent_Addr = 29705616;
-    // static constexpr const uintptr_t On_vehicleAIMountedE3Hack_Addr = 29696608;
-    // static constexpr const uintptr_t On_vehicleAudioEvent_Addr = 29694096;
-    // static constexpr const uintptr_t On_vehicleStartedMountingEvent_Addr = 29703392;
-    // static constexpr const uintptr_t On_vehicleFinishedMountingEvent_Addr = 29696720;
-    // static constexpr const uintptr_t On_vehicleDriveToPointEvent_Addr = 29698016;
-    // static constexpr const uintptr_t On_vehicleDriveToNodeRefEvent_Addr = 29698192;
-    // static constexpr const uintptr_t On_vehicleDriveToGameObjectEvent_Addr = 29698080;
-    // static constexpr const uintptr_t On_vehicleDriveFollowEvent_Addr = 29697472;
-    // static constexpr const uintptr_t On_vehicleDriveFollowSplineEvent_Addr = 29697632;
-    // static constexpr const uintptr_t On_vehicleStopDriveToPointEvent_Addr = 29704640;
-    // static constexpr const uintptr_t On_vehicleStartDynamicMovementEvent_Addr = 29702896;
-    // static constexpr const uintptr_t On_vehicleStealEvent_Addr = 29704624;
-    // static constexpr const uintptr_t On_gameeventsHitEvent_Addr = 29698608;
-    // static constexpr const uintptr_t On_gameeventsVehicleDestructionEvent_Addr = 29706128;
-    // static constexpr const uintptr_t On_enteventsPhysicalImpulseEvent_Addr = 29701792;
-    // static constexpr const uintptr_t On_vehicleJoinTrafficVehicleEvent_Addr = 29701472;
-    // static constexpr const uintptr_t On_vehicleDriveSplineReverseEvent_Addr = 29694112;
-    // static constexpr const uintptr_t On_vehicleStartConvoyEvent_Addr = 29694480;
-    // static constexpr const uintptr_t On_vehicleAssignConvoyEvent_Addr = 29694256;
-    // static constexpr const uintptr_t On_vehicleDetachPartEvent_Addr = 29696560;
-    // static constexpr const uintptr_t On_vehicleDetachAllPartsEvent_Addr = 29696544;
-    // static constexpr const uintptr_t On_vehicleHasExplodedEvent_Addr = 29698256;
-    // static constexpr const uintptr_t On_vehicleOnPartDetachedEvent_Addr = 29701504;
-    // static constexpr const uintptr_t On_vehicleGridDestructionEvent_Addr = 29694608;
-    // static constexpr const uintptr_t On_vehicleToggleRadioReceiverEvent_Addr = 29706080;
-    // static constexpr const uintptr_t On_vehicleVehicleAudioMultipliersEvent_Addr = 29706096;
-    // static constexpr const uintptr_t On_vehicleChangeRadioReceiverStationEvent_Addr = 29694176;
-    // static constexpr const uintptr_t On_vehicleChangeRadioTierEvent_Addr = 29694208;
-    // static constexpr const uintptr_t On_entAppearanceChangeFinishEvent_Addr = 29696704;
-    // static constexpr const uintptr_t On_entAppearanceStatusEvent_Addr = 29756944;
-    // static constexpr const uintptr_t On_entAppearanceMeshLoadedEvent_Addr = 29696704;
-    // static constexpr const uintptr_t On_vehicleDoneActionEvent_Addr = 29690304;
-    // static constexpr const uintptr_t On_gameCrowdEntityReuseEvent_Addr = 29694512;
-    // static constexpr const uintptr_t On_gameQuestOrSceneSetVehiclePhysicsActive_Addr = 29694240;
-    // static constexpr const uintptr_t On_gamePlayerTakeControlAsParent_Addr = 1656944; // empty function
-    // static constexpr const uintptr_t On_gamePlayerTakeControlAsChild_Addr = 29702176;
-    // static constexpr const uintptr_t On_gamePlayerReleaseControlAsParent_Addr = 1656944; // empty function
-    // static constexpr const uintptr_t On_gamePlayerReleaseControlAsChild_Addr = 29701936;
-    // static constexpr const uintptr_t On_vehicleGlassDestructionEvent_Addr = 29697968;
-
-
 // overridden virtuals
 
     /// @pattern /mov(vehicleBaseObject_Class_p) /retn
     virtual CClass* GetNativeType() override;
-
     virtual void sub_148(uintptr_t a1, uintptr_t a2) override; // sets vehicleSystem, gotModeSystem, photoModeSystem, chassis
-
-    // calls 268, 270, 350
-    virtual void Attach(void *) override;
+    virtual void Attach(void *) override;                           // calls 268, 270, 350
     virtual uintptr_t Detach() override;
-    virtual void sub_168(uint16_t) override; // isTPP interaction
+    virtual void sub_168(uint16_t) override;                        // isTPP interaction
     virtual void __fastcall OnRequestComponents(void *) override;
-
     virtual CString* __fastcall sub_1C0(CString*) override;
-
-    // Looks at Acoustics, sub_1D0
-    virtual RED4ext::CName* __fastcall GetAudioResourceName(RED4ext::CName*) override;
-
-    // Something with unk388 & vehicle controller, sub_1F8
-    virtual uint64_t __fastcall OnTakeControl(game::ComponentHelper*) override; 
-
-    // Also sends out some red event - maybe teleport?
-    virtual uint64_t __fastcall sub_218(WorldTransform*) override;
+    virtual RED4ext::CName* __fastcall GetAudioResourceName(RED4ext::CName*) override; // Looks at Acoustics, sub_1D0
+    virtual uint64_t __fastcall OnTakeControl(game::ComponentHelper*) override; // Something with unk388 & vehicle controller, sub_1F8
+    virtual uint64_t __fastcall sub_218(WorldTransform*) override   ;// Also sends out some red event - maybe teleport?
 
 // new virtuals
 
-    virtual void sub_268();                                         // 268 loads fx tweaks, makes vehicle_record 0x600 big?
+    virtual void sub_268();                                         // 268 loads fx tweaks, makes vehicle_record 0x600 big?, loads airControl
     virtual void sub_270();                                         // 270 loads vehicle weapons
     virtual float sub_278();                                        // 278 sets 694 to 0 
     virtual int32_t sub_280(WorldTransform*);                       // 280 applies worldTransform to placeholder, physics, physicsData, this->worldTransform
@@ -1032,7 +432,7 @@ struct BaseObject : game::Object
     world::RuntimeSystemPhysics *physicsSystem;
     float unk_2_0_new[5];
     bool isOnGround;
-    vehicle::PhysicsState physicsState;
+    PhysicsState physicsState;
     uint32_t unk_2_0_new_1;
     float acceleration;
     float deceleration;
@@ -1061,10 +461,10 @@ struct BaseObject : game::Object
     float unk298;
     float unk29C;
     float unk2A0;
-    vehicle::Physics *physics_2;
-    vehicle::PhysicsData *physicsData_2;
+    Physics *physics_2;
+    PhysicsData *physicsData_2;
     Handle curveSetData;
-    Handle_vehicle::ChassisComponent chassis_2;
+    Handle_ChassisComponent chassis_2;
     float unk2E0[16];
     uint64_t chassisType;
     WorldTransform worldTransform_2;
@@ -1075,7 +475,7 @@ struct BaseObject : game::Object
     uint8_t unk362;
     uint8_t unk363;
     float unk364;
-    vehicle::Unk368 *unk368;
+    Unk368 *unk368;
     CName unk370;
     Handle moveComponent;
     uint64_t unk398_2;
@@ -1089,7 +489,7 @@ struct BaseObject : game::Object
     Handle passengerInteractions;
     Handle vehicleController;
     Handle PersistentDataPS;
-    Handle_vehicle::CameraManager cameraManager;
+    Handle_CameraManager cameraManager;
     Handle photoModeSystem;
     game::VehicleSystem *vehicleSystem;
     uint64_t godModeSystem;
@@ -1102,14 +502,14 @@ struct BaseObject : game::Object
     float unk59C_2;
     Handle unk5A0_2;
     Handle unk5B0_2;
-    vehicle::AirControl *airControl;
-    vehicle::Acoustics *unk580;
-    vehicle::Unk588 *unk588;
-    vehicle::Animations *animations;
-    vehicle::Animations *unk570_5E0;
-    vehicle::Acoustics *acoustics;
+    AirControl *airControl;
+    Acoustics *unk580;
+    Unk588 *unk588;
+    Animations *animations;
+    Animations *Effects_5E0;
+    Acoustics *acoustics;
     Handle occupantSlotComponent;
-    Handle_game::data::Vehicle_Record vehicleRecord;
+    Handle<game::data::Vehicle_Record> vehicleRecord;
     void *unk610_2;
     float unk5F8;
     uint8_t permanantStun2;
@@ -1165,7 +565,7 @@ struct BaseObject : game::Object
     uint64_t unk810[7];
     uint64_t unk848;
     uint64_t unk850[2];
-    vehicle::AutonomousData autonomousData;
+    AutonomousData autonomousData;
     uint8_t unkA10;
     uint8_t unkA11;
     uint8_t unkA12;
@@ -1183,9 +583,9 @@ struct BaseObject : game::Object
     game::data::TweakValue unkAD4;
     uint64_t unkAE0[2];
     DynArray weapons;
-    int32_t unkB00_2;
+    int32_t unkB00;
     Vector3 weapon_trace;
-    uint64_t unkB10_2[15];
+    uint64_t unkB10[15];
 
     /* pre-2.0
     world::RuntimeSystemPhysics* physicsSystem;
@@ -1255,11 +655,11 @@ struct BaseObject : game::Object
     uint64_t unk540;
     Handle<game::Puppet> drivingPuppet;
     Handle<game::Puppet> mountedPuppet;
-    Unk568* unk568;
-    Unk570* unk570;
+    Collisions* collisions; // 568
+    Effects* Effects;       // 570
     AirControl* airControl; // 578
-    Acoustics* acoustics;
-    Unk588* unk588;
+    Acoustics* acoustics;   // 580
+    Unk588* unk588;         // 588
     void* unk590;
     void* destructionParams;
     void* unk5A0;
