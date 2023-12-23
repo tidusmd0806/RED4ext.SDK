@@ -34,9 +34,10 @@
 
 namespace RED4ext
 {
+struct WorldWidgetComponent;
 namespace weapon { struct Object; }
-namespace AI { struct Archetype; }
-namespace game { struct VehicleSystem; }
+namespace AI { struct Archetype; struct VehicleAgent; }
+namespace game { struct VehicleSystem; struct IPhotoModeSystem; }
 namespace world { struct RuntimeSystemPhysics; struct RuntimeSystemEffects; }
 namespace ent { struct Entity; }
 namespace audio { struct GameParameterStorage; struct BankManager; struct Metadata; struct Emitters; struct EmitterPositions; struct EmitterPosition; }
@@ -47,13 +48,18 @@ struct PhysicsData;
 struct AirControl;
 struct Weapon;
 struct BaseObject;
+struct Destruction;
+struct Acoustics;
+struct Collisions;
+struct Effects;
+struct Autopilot;
 
 //struct Interface : game::Object::Interface
 //{
-//    virtual uint64_t __fastcall Destruct(bool a1) override; // 00
+//    virtual uint64_t Destruct(bool a1) override; // 00
 //
 //    // Returns 0
-//    virtual uint64_t __fastcall sub_08() override;
+//    virtual uint64_t sub_08() override;
 //};
 
 enum class Type : __int8
@@ -70,11 +76,11 @@ struct Unk588 {
 
     // 1.52 RVA: 0x1C3FB20 / 29621024
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 30 48 89 11 48 8B C2 C7 81 50 03 00 00 00 00 00 00 48
-    __int64 __fastcall Unknown(BaseObject *vehicle, __int64 a3);
+    __int64 Unknown(BaseObject *vehicle, __int64 a3);
 
     // 1.6 RVA: 0x1C6D380 / 29807488
     /// @pattern 48 83 C1 10 E9 B7 1B 00 00
-    void __fastcall UpdateTransform(RED4ext::Transform *a2);
+    void UpdateTransform(RED4ext::Transform *a2);
 
     RED4ext::vehicle::BaseObject *vehicle;
     uint8_t affectsTPPAudio;
@@ -199,20 +205,19 @@ struct Unk588 {
 
 // RED4EXT_ASSERT_SIZE(Unk588, 0x388);
 
-struct Unk368
+struct Movement
 {
-  Handle<ISerializable> unk00;
+  Handle<AI::VehicleAgent> aiVehicleAgent;
   Handle<move::Component> moveComponent;
   vehicle::BaseObject *vehicle;
 };
 
-RED4EXT_ASSERT_SIZE(Unk368, 0x28);
+RED4EXT_ASSERT_SIZE(Movement, 0x28);
 
 struct Unk610
 {
   Handle<ISerializable> unk00;
-  Handle<move::Component> moveComponent;
-  vehicle::BaseObject *vehicle;
+  Handle<ISerializable> unk10;
 };
 
 RED4EXT_ASSERT_SIZE(Unk610, 0x20);
@@ -230,7 +235,7 @@ enum PhysicsState
   Chase = 0x100,
 };
 
-#pragma pack(push, 1)
+// #pragma pack(push, 1)
 struct BaseObject : game::Object
 {
     static constexpr const char* NAME = "vehicleBaseObject";
@@ -241,15 +246,15 @@ struct BaseObject : game::Object
 
     /// @pattern /mov(vehicleBaseObject_Class_p) /retn
     virtual CClass* GetNativeType() override;
-    virtual void sub_148(uintptr_t a1, uintptr_t a2) override; // sets vehicleSystem, gotModeSystem, photoModeSystem, chassis
-    virtual void Attach(void *) override;                           // calls 268, 270, 350
+    virtual void sub_148(uintptr_t a1, uintptr_t a2) override;          // sets vehicleSystem, gotModeSystem, photoModeSystem, chassis, vehicleRecord
+    virtual void Attach(void *) override;                               // calls 268, 270, 350
     virtual uintptr_t Detach() override;
-    virtual void sub_168(uint16_t) override;                        // isTPP interaction
-    virtual void __fastcall OnRequestComponents(void *) override;
-    virtual CString* __fastcall sub_1C0(CString*) override;
-    virtual RED4ext::CName* __fastcall GetAudioResourceName(RED4ext::CName*) override; // Looks at Acoustics, sub_1D0
-    virtual uint64_t __fastcall OnTakeControl(game::ComponentHelper*) override; // Something with unk388 & vehicle controller, sub_1F8
-    virtual uint64_t __fastcall sub_218(WorldTransform*) override   ;// Also sends out some red event - maybe teleport?
+    virtual void sub_168(uint8_t) override;                             // isTPP interaction
+    virtual void OnRequestComponents(void *) override;
+    virtual CString* sub_1C0(CString*) override;
+    virtual CName* GetAudioResourceName(CName*) override;               // Looks at Acoustics, sub_1D0
+    virtual uint64_t OnTakeControl(game::ComponentHelper*) override;    // Something with unk388 & vehicle controller, sub_1F8
+    virtual uint64_t sub_218(WorldTransform*) override;                 // Send & process vehicleTeleportEvent
 
 // new virtuals
 
@@ -258,7 +263,7 @@ struct BaseObject : game::Object
     virtual float sub_278();                                        // 278 sets 694 to 0 
     virtual int32_t sub_280(WorldTransform*);                       // 280 applies worldTransform to placeholder, physics, physicsData, this->worldTransform
     virtual uint64_t sub_288() { };                                 // 288
-    virtual uint64_t sub_290();                                     // 290 may call 288, actionInterface stuff
+    virtual uint64_t sub_290();                                     // 290 may call 288, actionInterface stuff, driveToPointComplete
     virtual void sub_298(Transform*);                               // 298 calls physics->sub_88
     virtual float sub_2A0();                                        // 2A0 returns 45.0
     virtual uint64_t sub_2A8() { };                                 // 2A8
@@ -310,7 +315,7 @@ struct BaseObject : game::Object
     // 1.61 RVA: 0x1C8D4C0
     // 1.61hf1 RVA: 0x1C8DBB0
     /// @pattern 48 89 5C 24 08 48 89 6C 24 10 48 89 74 24 20 57 48 83 EC 30 8B B1 50 02 00 00 41 0F B6 E8 8B FA
-    void __fastcall SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3);
+    void SetPhysicsState(RED4ext::vehicle::PhysicsState a2, bool a3);
 
     // 1.52 RVA: 0x1C4C4F0 / 29672688
     // 1.6  RVA: 0x1C78F70 / 29855600
@@ -319,121 +324,121 @@ struct BaseObject : game::Object
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 8B F9 48 8B 89 B0 02 00 00 48 85 C9 74 05 E8
     // 2.1
     /// @pattern 48 89 5C 24 08 57 48 83 EC 20 48 8B 81 C8 02 00 00 33 DB 48 8B F9 48 85 C0 74 0A C7 80 A0 00 00
-    void __fastcall UnsetPhysicsStates();
+    void UnsetPhysicsStates();
 
     // 1.52 RVA: 0x1C4D3A0 / 29676448
     /// @pattern 48 8B 81 B8 02 00 00 F3 0F 10 80 BC 01 00 00 C3
-    float __fastcall GetTotalMass();
+    float GetTotalMass();
 
     // 1.52 RVA: 0x1C4D3B0 / 29676464
     /// @pattern 48 8B 81 B8 02 00 00 F3 0F 10 40 40 C3
-    float __fastcall GetInverseMass();
+    float GetInverseMass();
 
     // 1.52 RVA: 0x1C4D3C0 / 29676480
     /// @pattern 48 8B 81 08 05 00 00 48 8B 89 B8 02 00 00 F3 0F 10 40 68 F3 0F 59 81 BC 01 00 00 C3
-    float __fastcall GetGravitationalForce();
+    float GetGravitationalForce();
 
     // 1.52 RVA: 0x1C4D3E0 / 29676512
     /// @pattern 8B 81 0C 06 00 00 C3
-    float __fastcall GetUnk60C();
+    float GetUnk60C();
 
     // 1.52 RVA: 0x1C4D3F0 / 29676528
     /// @pattern 48 89 5C 24 10 48 89 7C 24 20 55 48 8D 6C 24 A9 48 81 EC 90 00 00 00 83 B9 D0 05 00 00 00 48 8B
-    CString *__fastcall GetDisplayName(CString *);
+    CString  GetDisplayName(CString *);
 
     // 1.52 RVA: 0x1C4D630 / 29677104
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 48 83 EC 30 48 8B 99 C0 02 00 00 48 8B FA 48 8B
-    Handle<void> *__fastcall GetCurveSetData(Handle<void> *);
+    Handle<void>  GetCurveSetData(Handle<void> *);
 
     // 1.52 RVA: 0x1C4D7B0 / 29677488
     /// @pattern 48 8B 81 08 05 00 00 C3
-    world::RuntimeSystemPhysics *__fastcall GetVehicleSystem();
+    world::RuntimeSystemPhysics  GetVehicleSystem();
 
     // 1.52 RVA: 0x1C4D7E0 / 29677536
     /// @pattern 40 53 48 83 EC 20 48 8B DA 44 3B 81 4C 09 00 00 73 2A 41 8B C0 4C 8D 04 40 48 8B 81 40 09 00 00
-    Quaternion *__fastcall GetWeaponOrientation(Quaternion *, uint32_t index);
+    Quaternion  GetWeaponOrientation(Quaternion *, uint32_t index);
 
     // 1.52 RVA: 0x1C4E190 / 29680016
     /// @pattern 40 55 56 57 48 8D 6C 24 B9 48 81 EC F0 00 00 00 48 8D B1 28 09 00 00 0F 29 B4 24 D0 00 00 00 48
-    void __fastcall HornForDuration();
+    void HornForDuration();
 
     // 1.52 RVA: 0x1C4E3F0 / 29680624
     /// @pattern 48 8B C4 55 56 57 48 8D 68 A1 48 81 EC F0 00 00 00 0F 29 70 D8 48 8D B1 20 09 00 00 48 8B F9 0F
-    void __fastcall HornForDurationDelayed(float xmm1_4_0);
+    void HornForDurationDelayed(float xmm1_4_0);
 
     // 1.52 RVA: 0x1C49080 / 29659264
     /// @pattern 48 83 EC 48 48 89 5C 24 50 48 8B D9 48 89 74 24 60 48 8D 4A 20 4C 89 74 24 38 48 8B F2 E8 8E 52
-    // void __fastcall ClearFinishMountingDelay(void *);
+    // void ClearFinishMountingDelay(void *);
 
     // 1.52 RVA: 0x1C491C0 / 29659584
     /// @pattern C7 81 B4 08 00 00 00 00 80 3F C7 81 B8 08 00 00 00 00 80 3F C7 81 BC 08 00 00 00 00 80 3F C7 81
-    void __fastcall Reset8B4();
+    void Reset8B4();
 
     // 1.52 RVA: 0x1C492A0 / 29659808
     /// @pattern 48 8D 81 E0 08 00 00 C3
-    void *__fastcall GetUnk8E0();
+    void  GetUnk8E0();
 
     // 1.52 RVA: 0x126CE00 / 19320320
     /// @pattern 48 8D 81 88 03 00 00 C3
-    // action::ActionInterface *__fastcall GetInterface();
+    // action::ActionInterface  GetInterface();
 
     // 1.52 RVA: 0x72FE70 / 7536240
     /// @pattern 48 8B 81 B8 02 00 00 C3
-    PhysicsData *__fastcall GetPhysicsData();
+    PhysicsData  GetPhysicsData();
 
     // 1.52 RVA: 0x72FE80 / 7536256
     /// @pattern F2 0F 10 81 58 02 00 00 C3
-    double __fastcall GetDeceleration();
+    double GetDeceleration();
 
     // 1.52 RVA: 0x1C5F7B0 / 29751216
     /// @pattern 48 8B C4 55 41 56 48 8D 68 98 48 81 EC 58 01 00 00 83 B9 4C 09 00 00 00 4C 8B F1 0F 84 00 04 00
-    // void __fastcall ProcessWeapons();
+    // void ProcessWeapons();
 
     // 1.52 RVA: 0x1C5F740 / 29751104
     /// @pattern 8B 91 50 02 00 00 F7 C2 EE FF FF FF 74 03 B0 01 C3 8B C2 C1 E8 04 A8 01 75 19 F6 C2 01 74 14 BA
-    bool __fastcall CheckPhysicsStateActionInterface();
+    bool CheckPhysicsStateActionInterface();
 
     // 1.52 RVA: 0x1C55E70 / 29711984
     /// @pattern 40 53 48 83 EC 30 48 8B D9 0F 29 74 24 20 48 8B 89 B0 02 00 00 0F 28 F1 48 85 C9 74 18 48 8B 01
-    void __fastcall UpdatePhysicsSleepState(float deltaTime);
+    void UpdatePhysicsSleepState(float deltaTime);
 
     // both process actions @ 0
 
     // 1.52 RVA: 0x1C55CF0 / 29711600
     // runs if physicsState != 0.0, runs physics->sub_30
     /// @pattern 48 89 5C 24 10 57 48 83 EC 40 33 C0 0F 29 74 24 30 48 89 81 54 02 00 00 49 8B F8 48 89 81 5C 02
-    void __fastcall PreUpdatePreMovePhysicsStateNotZero( __int64 a2, float *deltaTime, __int64 a4);
+    void PreUpdatePreMovePhysicsStateNotZero( __int64 a2, float *deltaTime, __int64 a4);
 
     // 1.52 RVA: 0x1C559F0 / 29710832
     /// @pattern 48 89 74 24 18 57 48 83 EC 70 44 0F 29 4C 24 40 49 8B F0 44 0F 28 C9 48 8B F9 E8 01 FC FF FF 48
-    __int64 __fastcall PreUpdatePreMovePhysicsStateZero(__int64 a2, __int64 a3, __int64 a4);
+    __int64 PreUpdatePreMovePhysicsStateZero(__int64 a2, __int64 a3, __int64 a4);
 
     // both process actions @ 1
 
     // 1.52 RVA: 0x1C54F90 / 29708176
     /// @pattern 48 89 5C 24 08 57 48 83 EC 50 0F 29 74 24 40 49 8B F8 0F 28 F1 48 8B D9 E8 03 FA FF FF 48 8B 03
-    RED4ext::WorldTransform *__fastcall PostMovePhysicsStateNotZero(float deltaTime, float *a3);
+    RED4ext::WorldTransform  PostMovePhysicsStateNotZero(float deltaTime, float *a3);
 
     // 1.52 RVA: 0x1C54DA0 / 29707680
     // runs physics->sub_38, checks isOnGround, does something with airTime
     /// @pattern 40 57 48 83 EC 60 0F 29 74 24 50 48 8B F9 48 89 5C 24 78 0F 28 F1 49 8B D8 E8 F2 FB FF FF 48 8B
-    RED4ext::WorldTransform *__fastcall PostMovePhysicsStateZero(float deltaTime, float *a3);
+    RED4ext::WorldTransform  PostMovePhysicsStateZero(float deltaTime, float *a3);
 
     // 1.52 RVA: 0x1C5D800 / 29743104
     // 1.6  RVA: 0x1C8A390 / 29926288
     // 1.61hf1 RVA: 0x1C8AD00 (not used)
     /// @pattern 48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 48 8D B1 88 03 00 00 48 8B FA 48 8B CE 48 8D 54 24
-    action::ActionBase **__fastcall CreateAction(action::ActionBase **action_p, action::Type type);
+    action::ActionBase * CreateAction(action::ActionBase **action_p, action::Type type);
 
     // 1.6  RVA: 0x164D380 / 23384960
     /// @pattern 48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 41 54 41 55 41 56 41 57 48 83 EC 40 4C 8B F9 49
-//    static Handle<RED4ext::ent::AnimatedComponent> *__fastcall GetAnimatedComponentWithName(Handle<RED4ext::ent::AnimatedComponent> *handle, RED4ext::vehicle::BaseObject *vehicle, RED4ext::CName name);
+//    static Handle<RED4ext::ent::AnimatedComponent>  GetAnimatedComponentWithName(Handle<RED4ext::ent::AnimatedComponent> *handle, RED4ext::vehicle::BaseObject *vehicle, RED4ext::CName name);
 
-    world::RuntimeSystemPhysics *physicsSystem;
-    float unk_2_0_new[5];
+    RED4ext::world::RuntimeSystemPhysics *physicsSystem;
+    float unk248[5];
     bool isOnGround;
-    PhysicsState physicsState;
-    uint32_t unk_2_0_new_1;
+    RED4ext::vehicle::PhysicsState physicsState;
+    uint32_t unk264;
     float acceleration;
     float deceleration;
     float handbrake;
@@ -442,7 +447,7 @@ struct BaseObject : game::Object
     float turnInput;
     float leanFB;
     float rockFB;
-    uint32_t padding_2[3];
+    uint32_t unk288[3];
     uint8_t shootPrimary;
     uint8_t shootSecondary;
     uint8_t shootTertiary;
@@ -453,79 +458,79 @@ struct BaseObject : game::Object
     float cameraMouseY;
     uint8_t cycleLights;
     uint8_t horn;
-    uint8_t unk28A;
-    uint8_t unk28B;
-    float unk28C;
-    float unk290;
-    float unk294;
-    float unk298;
-    float unk29C;
-    float unk2A0;
-    Physics *physics_2;
-    PhysicsData *physicsData_2;
-    Handle curveSetData;
-    Handle_ChassisComponent chassis_2;
-    float unk2E0[16];
+    uint8_t unk2AA;
+    uint8_t unk2AB;
+    float unk2AC;
+    float unk2B0;
+    float unk2B4;
+    float unk2B8;
+    float unk2BC;
+    float unk2C0;
+    Physics *physics;
+    PhysicsData *physicsData;
+    Handle<ISerializable> curveSetData;
+    Handle<ChassisComponent> chassis;
+    float unk2F8[16];
     uint64_t chassisType;
     WorldTransform worldTransform_2;
-    Vector3 unk350;
-    float unk35C;
-    uint8_t unk360;
-    uint8_t unk361;
-    uint8_t unk362;
-    uint8_t unk363;
-    float unk364;
-    Unk368 *unk368;
-    CName unk370;
-    Handle moveComponent;
-    uint64_t unk398_2;
-    uint64_t unk3A0_2;
-    uint64_t unk3A8_2;
-    uint64_t unk3B0_2;
+    Vector3 unk360;
+    float unk36C;
+    Vector4 angularVelocity_related;
+    Vector4 worldPosition_related;
+    uint64_t unk390;
+    Movement *movement;
+    uint64_t aiVehicleAgent_related;
+    uint64_t unk3A8;
+    uint64_t unk3B0;
     action::ActionInterface actionInterface;
-    Handle unk4A8_2;
-    Handle baseDrivingParams[3];
-    Handle driverInteraction;
-    Handle passengerInteractions;
-    Handle vehicleController;
-    Handle PersistentDataPS;
-    Handle_CameraManager cameraManager;
-    Handle photoModeSystem;
+    Handle<ISerializable> unk4A8;
+    Handle<ISerializable> unk4B8;
+    Handle<ISerializable> unk4C8;
+    Handle<ISerializable> unk4D8;
+    Handle<game::interactions::Component> driverInteraction;
+    Handle<game::interactions::Component> passengerInteractions;
+    Handle<Controller> vehicleController;
+    Handle<ISerializable> PersistentDataPS;
+    Handle<CameraManager> cameraManager;
+    Handle<game::IPhotoModeSystem> photoModeSystem;
     game::VehicleSystem *vehicleSystem;
-    uint64_t godModeSystem;
-    Handle vehicleCNameThing;
-    Handle unk568_Handle;
-    Handle unk578_Handle;
-    uint64_t unk588_2;
-    uint64_t unk590_2;
-    uint32_t unk598_2;
-    float unk59C_2;
-    Handle unk5A0_2;
-    Handle unk5B0_2;
+    void *godModeSystem;
+    Handle<ISerializable> vehicleCNameThing;
+    Handle<ISerializable> blackboard;
+    Handle<ISerializable> unk578;
+    uint64_t unk588;
+    uint64_t unk590;
+    uint32_t unk598;
+    float unk59C;
+    Handle<ISerializable> unk5A0;
+    Handle<ISerializable> unk5B0;
+    void *unk5C0;
+    void *unk5C8;
+    Collisions *unk5D0;
+    Effects *effects;
     AirControl *airControl;
-    Acoustics *unk580;
-    Unk588 *unk588;
-    Animations *animations;
-    Animations *Effects_5E0;
     Acoustics *acoustics;
-    Handle occupantSlotComponent;
-    Handle<game::data::Vehicle_Record> vehicleRecord;
-    void *unk610_2;
-    float unk5F8;
+    Handle<Autopilot> autopilot;
+    Handle<Destruction> destruction;
+    vehicle::Unk610 *unk610;
+    float unk618;
     uint8_t permanantStun2;
-    uint8_t unk5FD;
+    uint8_t unk61D;
     uint16_t permanantStun1;
-    float unk600;
-    uint8_t unk604;
-    uint8_t unk605;
-    uint8_t unk606;
-    uint8_t unk607;
-    Handle occupantSlots;
-    uint64_t unk638;
-    Handle vehicleRecord_2;
-    uint64_t uiComponents;
+    float unk620;
+    uint8_t unk624;
+    uint8_t unk625;
+    uint8_t unk626;
+    uint8_t unk627;
+    Handle<SlotComponent> occupantSlotComponent;
+    TweakDBID vehicleRecord;
+    Handle<game::data::Vehicle_Record> vehicleRecordHandle;
+    uint32_t driverCombatType;
+    float hitCooldown;
     Vector4 unk658;
-    Vector4 unk668;
+    uint32_t unk668;
+    Vector2 unk66C;
+    uint32_t unk674;
     uint8_t unk678;
     uint8_t unk679;
     uint8_t unk67A;
@@ -538,7 +543,14 @@ struct BaseObject : game::Object
     uint64_t unk688;
     float unk690;
     float unk694;
-    uint64_t unk698;
+    uint8_t unk698_unknown_tag;
+    uint8_t ignoreImpulses;
+    uint8_t immortal;
+    uint8_t invulnerable;
+    uint8_t unk69C;
+    uint8_t unk69D;
+    uint8_t unk69E;
+    uint8_t unk69F;
     uint8_t unk6A0;
     uint8_t unk6A1;
     uint8_t unk6A2;
@@ -547,14 +559,16 @@ struct BaseObject : game::Object
     uint8_t unk6A5;
     uint8_t unk6A6;
     uint8_t unk6A7;
-    Vector4 unk6A8_2;
-    Vector4 unk6B8_2;
-    float unk6A8[2];
+    Vector4 unk6A8;
+    Vector4 unk6B8;
+    float unk6C8[2];
     uint8_t unk6D0;
     uint8_t unk6D1;
     uint8_t unk6D2;
     uint8_t unk6D3;
-    float unk6D4[7];
+    float unk6D4[1];
+    DynArray<WorldWidgetComponent> worldWidgetComponents;
+    float unk6E8[2];
     Transform unk6F0;
     uint64_t unk710[2];
     uint64_t unk720[24];
@@ -564,28 +578,47 @@ struct BaseObject : game::Object
     game::data::TweakValue acc_pid_d;
     uint64_t unk810[7];
     uint64_t unk848;
-    uint64_t unk850[2];
-    AutonomousData autonomousData;
-    uint8_t unkA10;
-    uint8_t unkA11;
+    Handle<ISerializable> unk850;
+    vehicle::AutonomousData autonomousData;
+    uint8_t destruction_related;
+    uint8_t isPlayerControlled;
     uint8_t unkA12;
     uint8_t unkA13;
     uint8_t unkA14;
     uint8_t unkA15;
     uint8_t unkA16;
     uint8_t unkA17;
-    uint64_t unkA18[16];
+    Vector4 unkA18;
+    uint64_t unkA28[5];
+    uint8_t unkA50;
+    uint8_t unkA51;
+    uint8_t unkA52;
+    uint8_t unkA53;
+    uint8_t sub_148_called;
+    uint8_t unkA55;
+    uint8_t unkA56;
+    uint8_t unkA57;
+    DynArray<void*> unkA58;
+    DynArray<void*> unkA68;
+    uint64_t unkA78;
+    Handle<ISerializable> unkA80;
+    Handle<ISerializable> unkA90;
+    uint32_t unkAA0[4];
     game::data::TweakValue meleeHonkDelay;
     game::data::TweakValue meleeHonkDuration;
     game::data::TweakValue collisionHonkDelay;
     game::data::TweakValue collisionHonkDuration;
     game::data::TweakValue collisionHonkUpperThreshold;
-    game::data::TweakValue unkAD4;
-    uint64_t unkAE0[2];
-    DynArray weapons;
-    int32_t unkB00;
+    uint32_t unkAEC;
+    DynArray<Weapon> weapons;
+    int32_t numWeapons;
     Vector3 weapon_trace;
-    uint64_t unkB10[15];
+    uint64_t unkB10;
+    DynArray<void*> unkB18;
+    uint64_t unkB28;
+    DynArray<void*> unkB30;
+    uint64_t unkB40[4];
+    HashMap<uint32_t, void*> unkB60;
 
     /* pre-2.0
     world::RuntimeSystemPhysics* physicsSystem;
@@ -751,7 +784,7 @@ struct BaseObject : game::Object
     uint64_t unk978;
     */
 };
-#pragma pack(pop)
+// #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(BaseObject, 0xB90);
 // RED4EXT_ASSERT_OFFSET(BaseObject, weapons, 0x940);
 //char (*__kaboom)[sizeof(BaseObject)] = 1;

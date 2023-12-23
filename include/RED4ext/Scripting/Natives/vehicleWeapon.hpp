@@ -29,32 +29,29 @@ struct Weapon
     Handle<game::weapon::Object> weaponObject;
     float cycleTime;
     float cycleTimer;
-    float minPitch;
+    float minPitch; // 20
     float maxPitch;
     float minYaw;
     float maxYaw;
-    CName weaponShootAnimEvent;
+    CName weaponShootAimEevent;
     uint8_t singleShotProjectiles;
-    uint8_t unk41;
-    uint8_t unk42;
-    uint8_t unk43;
     uint32_t wholeBurstProjectiles;
+    uint32_t unk40;
+    uint32_t unk44;
     uint32_t unk48;
-    float cooldownTimer;
     float singleProjectileCycleTime;
     float attackRange;
+    float spread;
+    uint32_t unk58;
+    uint32_t unk5C;
+    uint32_t unk60;
     uint8_t genericTick;
     uint8_t genericShoot;
     uint8_t canFriendlyFire;
-    uint8_t unk5B;
-    uint8_t unk5C;
-    uint8_t unk5D;
-    uint8_t unk5E;
-    uint8_t unk5F;
 
 };
 #pragma pack(pop)
-RED4EXT_ASSERT_SIZE(Weapon, 0x60);
+RED4EXT_ASSERT_SIZE(Weapon, 0x68);
 //char (*__kaboom)[sizeof(BaseObject)] = 1;
 } // namespace vehicle
 // using VehicleWeapon = vehicle::Weapon;

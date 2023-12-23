@@ -68,9 +68,10 @@ struct Physics
     static constexpr const uintptr_t VFT = vehiclePhysics_VFT_Addr;
 
     virtual ~Physics();
-    virtual uint64_t SetVehicle(vehicle::BaseObject *);
+    virtual uint64_t SetVehicle(BaseObject *);
     virtual uint64_t sub_10();
-    virtual uint64_t sub_18();
+    // reponds to vehicleTeleportEvent
+    virtual uint64_t sub_18(TeleportEvent*);
     // sets mass & inertia tensor
     virtual uint64_t sub_20();
     virtual uint64_t UpdateTransform();

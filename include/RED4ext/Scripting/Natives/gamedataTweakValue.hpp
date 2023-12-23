@@ -19,6 +19,6 @@ struct TweakValue
 };
 #pragma pack(pop)
 
-RED4EXT_ASSERT_SIZE(TweakDBRecord, 0xC);
+RED4EXT_ASSERT_SIZE(TweakValue, 0xC);
 } // namespace game::data
 } // namespace RED4ext

@@ -70,10 +70,10 @@ struct Object : ent::GameEntity, PSInterface
 
     virtual CClass* GetNativeType() override;                       // 00
     virtual Memory::IAllocator* GetAllocator() override;            // 10
-    virtual ~Object() = default;                                    // 18
+    virtual ~Object() override = default;                           // 18
     virtual void sub_108() override;                                // 108
     virtual void sub_148(uintptr_t a1, uintptr_t a2) override;      // 148 calls OnTakeControl
-    virtual void sub_150() override;                                // 150 calls OnReleaseControl
+    virtual void sub_150(uintptr_t) override;                       // 150 calls OnReleaseControl
     virtual void Attach(void *) override;                           // 158
     virtual uintptr_t Detach() override;                            // 160
 
