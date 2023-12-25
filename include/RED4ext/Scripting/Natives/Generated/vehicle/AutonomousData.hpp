@@ -10,6 +10,7 @@
 #include <RED4ext/ISerializable.hpp>
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Vector3.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Vector4.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/EntityReference.hpp>
 
 namespace RED4ext

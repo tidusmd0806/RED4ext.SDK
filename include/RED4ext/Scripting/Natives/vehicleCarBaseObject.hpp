@@ -16,6 +16,10 @@ struct CarBaseObject : vehicle::WheeledBaseObject
     static constexpr const char* ALIAS = "CarObject";
     static constexpr const uintptr_t VFT = vehicleCarBaseObject_VFT_Addr;
 
+    virtual void sub_148(uintptr_t a1, uintptr_t a2) override;      // checks populationSpawnParameter, sets vehicleREcord
+    virtual void sub_270() override;                                // 270 
+    virtual uint64_t sub_2A8() override;                            // 2A8
+
     PID pitchPID;
     PID rollPID;
     float pitchCorrection;

@@ -29,6 +29,7 @@ struct BaseObject;
 struct WheeledBaseObject;
 struct CarBaseObject;
 struct BikeBaseObject;
+struct TeleportEvent;
 
 // now at 0xD0
 struct UnkC8 {

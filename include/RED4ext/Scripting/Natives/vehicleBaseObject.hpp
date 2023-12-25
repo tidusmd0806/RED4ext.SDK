@@ -288,18 +288,18 @@ struct BaseObject : game::Object
     virtual uint64_t sub_340(DynArray<void*> *);                    // 340 dynArray at A00
     virtual uint64_t sub_348();                                     // 348
     virtual void sub_350();                                         // 350 update blackboard to 1
-    virtual void sub_358();                                         // 358 update blackboard to -1
+    virtual void sub_358(Handle<ISerializable>*);                   // 358 update blackboard to -1, same handle a 5B0
     virtual void sub_360();                                         // 360 same as 350
     virtual void sub_368();                                         // 368 same as 358
     virtual void sub_370();                                         // 370 returns 1u32
     virtual void sub_378();                                         // 378 something with physicsData->bounds
     virtual void sub_380() { };                                     // 380
     virtual void LoadWeapons(DynArray<void*>);                      // 388 
-    virtual void sub_390() { };                                     // 390
+    virtual void sub_390(uint32_t weaponIndex) { };                 // 390
     virtual void sub_398() { };                                     // 398
     virtual void sub_3A0();                                         // 3A0 rendering system, blackboard
     virtual void sub_3A8() { };                                     // 3A8
-    virtual void sub_3B0();                                         // 3B0 calls sub_3C0
+    virtual void sub_3B0(uint32_t weaponIndex);                     // 3B0 calls sub_3C0
     virtual void * sub_3B8(weapon::Object *weaponObject,            // 3B8 calls generic shoot
         Vector4 *weaponPosition, Vector4 *offset, 
         Vector4 *tracePosition, float range, __int64 numProjectiles, 
