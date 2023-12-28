@@ -8,6 +8,8 @@
 
 namespace RED4ext::vehicle {
 
+struct WheeledBaseObject;
+
 struct Burnout {
     WheeledBaseObject *wheeledVehicle;
     uint8_t unk08[0x80 - 0x8];

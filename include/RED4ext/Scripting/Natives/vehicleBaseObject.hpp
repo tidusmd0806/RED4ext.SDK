@@ -472,7 +472,7 @@ struct BaseObject : game::Object
     Handle<ChassisComponent> chassis;
     float unk2F8[16];
     uint64_t chassisType;
-    WorldTransform worldTransform_2;
+    WorldTransform worldTransform;
     Vector3 unk360;
     float unk36C;
     Vector4 angularVelocity_related;
@@ -506,7 +506,7 @@ struct BaseObject : game::Object
     Handle<ISerializable> unk5B0;
     void *unk5C0;
     void *unk5C8;
-    Collisions *unk5D0;
+    Collisions *collisions;
     Effects *effects;
     AirControl *airControl;
     Acoustics *acoustics;
@@ -523,12 +523,11 @@ struct BaseObject : game::Object
     uint8_t unk626;
     uint8_t unk627;
     Handle<SlotComponent> occupantSlotComponent;
-    TweakDBID vehicleRecord;
-    Handle<game::data::Vehicle_Record> vehicleRecordHandle;
+    TweakDBID vehicleRecord; //  638
+    Handle<game::data::Vehicle_Record> vehicleRecordHandle; // 640
     uint32_t driverCombatType;
     float hitCooldown;
-    Vector4 unk658;
-    uint32_t unk668;
+    uint32_t unk658[5];
     Vector2 unk66C;
     uint32_t unk674;
     uint8_t unk678;
@@ -559,8 +558,8 @@ struct BaseObject : game::Object
     uint8_t unk6A5;
     uint8_t unk6A6;
     uint8_t unk6A7;
-    Vector4 unk6A8;
-    Vector4 unk6B8;
+    uint32_t unk6A8[4];
+    uint32_t unk6B8[4];
     float unk6C8[2];
     uint8_t unk6D0;
     uint8_t unk6D1;
@@ -579,7 +578,7 @@ struct BaseObject : game::Object
     uint64_t unk810[7];
     uint64_t unk848;
     Handle<ISerializable> unk850;
-    vehicle::AutonomousData autonomousData;
+    AutonomousData autonomousData; // 860 (870)
     uint8_t destruction_related;
     uint8_t isPlayerControlled;
     uint8_t unkA12;
@@ -588,7 +587,7 @@ struct BaseObject : game::Object
     uint8_t unkA15;
     uint8_t unkA16;
     uint8_t unkA17;
-    Vector4 unkA18;
+    uint32_t unkA18[4];
     uint64_t unkA28[5];
     uint8_t unkA50;
     uint8_t unkA51;
@@ -787,8 +786,8 @@ struct BaseObject : game::Object
 // #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(BaseObject, 0xB90);
 // RED4EXT_ASSERT_OFFSET(BaseObject, weapons, 0x940);
-//char (*__kaboom)[sizeof(BaseObject)] = 1;
-//char (*__kaboom2)[offsetof(BaseObject, unk7E0)] = 1;
+// char (*__kaboom)[sizeof(BaseObject)] = 1;
+// char (*__kaboom2)[offsetof(BaseObject, physicsSystem)] = 1;
 } // namespace vehicle
 using VehicleObject = vehicle::BaseObject;
 } // namespace RED4ext

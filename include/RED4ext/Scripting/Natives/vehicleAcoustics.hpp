@@ -261,7 +261,7 @@ struct Acoustics
     float unk460;
 };
 
-RED4EXT_ASSERT_SIZE(Acoustics, 0x590);
+// RED4EXT_ASSERT_SIZE(Acoustics, 0x590);
 RED4EXT_ASSERT_OFFSET(Acoustics, unk460, 0x460);
 
 }

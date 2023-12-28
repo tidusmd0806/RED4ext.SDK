@@ -18,7 +18,7 @@ namespace game
 }
 namespace vehicle
 {
-#pragma pack(push, 1)
+// #pragma pack(push, 1)
 struct Weapon
 {
     static constexpr const char* NAME = "vehicleWeapon";
@@ -27,8 +27,6 @@ struct Weapon
     TweakDBID item;
     TweakDBID slot;
     Handle<game::weapon::Object> weaponObject;
-    float cycleTime;
-    float cycleTimer;
     float minPitch; // 20
     float maxPitch;
     float minYaw;
@@ -48,9 +46,9 @@ struct Weapon
     uint8_t genericTick;
     uint8_t genericShoot;
     uint8_t canFriendlyFire;
-
+    uint8_t unk67;
 };
-#pragma pack(pop)
+// #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(Weapon, 0x68);
 //char (*__kaboom)[sizeof(BaseObject)] = 1;
 } // namespace vehicle

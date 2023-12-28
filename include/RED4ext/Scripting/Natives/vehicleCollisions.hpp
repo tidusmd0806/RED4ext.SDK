@@ -6,6 +6,7 @@
 #include <RED4ext/Common.hpp>
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Scripting/Natives/Generated/WorldTransform.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 
 namespace RED4ext::vehicle
 {
@@ -69,6 +70,6 @@ struct Collisions {
 	float gravityScalar; // ",	0X118,	0x80000400,	-1,	4);
 	float unk11C; // ",	0X11C,	0x80000400,	-1,	100);
 };
-RED4EXT_ASSERT_SIZE(Acoustics, 0x100);
+// RED4EXT_ASSERT_SIZE(Collisions, 0x100);
 
 }

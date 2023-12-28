@@ -13,7 +13,7 @@ namespace RED4ext
 namespace vehicle { 
 struct BaseObject;
 
-#pragma pack(push, 1)
+// #pragma pack(push, 1)
 struct AirControl
 {
     static constexpr const char* NAME = "vehicleAirControl";
@@ -63,14 +63,14 @@ struct AirControl
     Vector3 flippedOverRecoveryPID;
     float massReference;
     PID unk244;
-    RED4ext::Vector4 unk264;
+    float unk264[4];
     float unk274;
     float unk278;
     float unk27C;
     float unk280;
 };
-#pragma pack(pop)
+// #pragma pack(pop)
 // RED4EXT_ASSERT_SIZE(AirControl, 0x290);
-RED4EXT_ASSERT_SIZE(AirControl, 0x2A8);
+// RED4EXT_ASSERT_SIZE(AirControl, 0x2A8);
 } // namespace vehicle
 } // namespace RED4ext

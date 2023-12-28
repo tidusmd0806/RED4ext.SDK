@@ -46,7 +46,7 @@ struct WheeledBaseObject : vehicle::BaseObject
 
     virtual uint64_t sub_348() override;                    // 348
     virtual void sub_350() override;                        // 350
-    virtual void sub_358() override;                        // 358
+    virtual void sub_358(Handle<ISerializable>*) override;  // 358
 
     virtual void sub_378() override;                        // 378
     virtual void sub_380() override;                        // 380

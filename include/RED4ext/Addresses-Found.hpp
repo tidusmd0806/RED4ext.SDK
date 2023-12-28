@@ -13021,6 +13021,7 @@
 #define Return14_Addr 0x17B7040
 #define Return15_Addr 0x17B7430
 #define Return16u32_Addr 0x17B72F0
+#define Return1f_Addr 0x17BE950
 #define Return1u32_Addr 0x17B73D0
 #define Return2_Addr 0x17B7370
 #define Return24u32_Addr 0x17B72D0
@@ -17108,9 +17109,7 @@
 #define actionActionBase_StartWithReplicatedState_Addr                                                                 \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionBase_StartWithReplicatedState_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::action::ActionBase::StartWithReplicatedState\")")
-#define actionActionInterface_EndActions_Addr                                                                          \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionInterface_EndActions_Addr"               \
-              "is 0 - Zoltan found no matches for RED4ext::action::ActionInterface::EndActions\")")
+#define actionActionInterface_EndActions_Addr 0x563138
 #define actionActionInterface_IsAnimationiActive_Addr                                                                  \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: actionActionInterface_IsAnimationiActive_Addr"       \
               "is 0 - Zoltan found no matches for RED4ext::action::ActionInterface::IsAnimationiActive\")")
@@ -44134,6 +44133,42 @@
 #define vehicleAccelerateQuickhackEvent_Class_VFT_Addr 0x2DCD0A0
 #define vehicleAccelerateQuickhackEvent_Class_p_Addr 0x3340EB0
 #define vehicleAccelerateQuickhackEvent_VFT_Addr 0x3036148
+#define vehicleAcoustics_GetAudioResourceMetadata_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_GetAudioResourceMetadata_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::GetAudioResourceMetadata\")")
+#define vehicleAcoustics_IsRadioReceiverActive_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_IsRadioReceiverActive_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::IsRadioReceiverActive\")")
+#define vehicleAcoustics_NextRadioReceiverStation_Addr                                                                 \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_NextRadioReceiverStation_Addr"      \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::NextRadioReceiverStation\")")
+#define vehicleAcoustics_SetRadioTier_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_SetRadioTier_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::SetRadioTier\")")
+#define vehicleAcoustics_ShouldUseSomeAVListener_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_ShouldUseSomeAVListener_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::ShouldUseSomeAVListener\")")
+#define vehicleAcoustics_ToggleHorn_Addr                                                                               \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_ToggleHorn_Addr"                    \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::ToggleHorn\")")
+#define vehicleAcoustics_Update_Addr                                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_Update_Addr"                        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::Update\")")
+#define vehicleAcoustics_Update3CA_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_Update3CA_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::Update3CA\")")
+#define vehicleAcoustics_UpdateEvents_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_UpdateEvents_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::UpdateEvents\")")
+#define vehicleAcoustics_UpdateTPPinAudioSystem_Addr                                                                   \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_UpdateTPPinAudioSystem_Addr"        \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::UpdateTPPinAudioSystem\")")
+#define vehicleAcoustics_UpdateTireParameters_Addr                                                                     \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_UpdateTireParameters_Addr"          \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::UpdateTireParameters\")")
+#define vehicleAcoustics_UpdateWheelEmitters_Addr                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAcoustics_UpdateWheelEmitters_Addr"           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Acoustics::UpdateWheelEmitters\")")
 #define vehicleAirControl_ApplyTorque_Addr                                                                             \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleAirControl_ApplyTorque_Addr"                  \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::AirControl::ApplyTorque\")")
@@ -44380,6 +44415,18 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleChassisComponent_UpdatePhysicsState_Addr"     \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::ChassisComponent::UpdatePhysicsState\")")
 #define vehicleChassisComponent_VFT_Addr 0x2A50878
+#define vehicleCollisions_CopyOverCollisionForce_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCollisions_CopyOverCollisionForce_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Collisions::CopyOverCollisionForce\")")
+#define vehicleCollisions_SetAcceleration_Addr                                                                         \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCollisions_SetAcceleration_Addr"              \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Collisions::SetAcceleration\")")
+#define vehicleCollisions_SetLinearVelocityEtc_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCollisions_SetLinearVelocityEtc_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Collisions::SetLinearVelocityEtc\")")
+#define vehicleCollisions_SetUnkD0_Addr                                                                                \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleCollisions_SetUnkD0_Addr"                     \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Collisions::SetUnkD0\")")
 #define vehicleControllerPS_Class_Addr 0x456AEA0
 #define vehicleControllerPS_Class_VFT_Addr 0x2DCC930
 #define vehicleControllerPS_Class_p_Addr 0x3341080
@@ -44440,6 +44487,25 @@
 #define vehicleDriver_Class_Addr 0x457AB48
 #define vehicleDriver_Class_VFT_Addr 0x2DCC4F0
 #define vehicleDriver_Class_p_Addr 0x3341230
+#define vehicleEffects_GetCollisionFxForMaterial_Addr                                                                  \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleEffects_GetCollisionFxForMaterial_Addr"       \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Effects::GetCollisionFxForMaterial\")")
+#define vehicleEffects_GetSmearFxForMaterial_Addr 0xBCDFB0
+#define vehicleEffects_ProcessEffects_Addr                                                                             \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleEffects_ProcessEffects_Addr"                  \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Effects::ProcessEffects\")")
+#define vehicleEffects_ProcessImpactScratch_Addr                                                                       \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleEffects_ProcessImpactScratch_Addr"            \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Effects::ProcessImpactScratch\")")
+#define vehicleEffects_Setup_Addr                                                                                      \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleEffects_Setup_Addr"                           \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Effects::Setup\")")
+#define vehicleEffects_UpdateEffectsBlackboard_Addr                                                                    \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleEffects_UpdateEffectsBlackboard_Addr"         \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Effects::UpdateEffectsBlackboard\")")
+#define vehicleEffects_WheelEffectUpdate_Addr                                                                          \
+    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleEffects_WheelEffectUpdate_Addr"               \
+              "is 0 - Zoltan found no matches for RED4ext::vehicle::Effects::WheelEffectUpdate\")")
 #define vehicleExplodeEvent_Class_Addr 0x4563DD8
 #define vehicleExplodeEvent_Class_VFT_Addr 0x2CCC4B0
 #define vehicleExplodeEvent_Class_p_Addr 0x3340F38
@@ -44804,73 +44870,6 @@
 #define vehicleUnableToStartPanicDriving_Class_VFT_Addr 0x2CCB088
 #define vehicleUnableToStartPanicDriving_Class_p_Addr 0x3340E78
 #define vehicleUnableToStartPanicDriving_VFT_Addr 0x3037630
-#define vehicleUnk568_CopyOverCollisionForce_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_CopyOverCollisionForce_Addr"           \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::CopyOverCollisionForce\")")
-#define vehicleUnk568_SetAcceleration_Addr                                                                             \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetAcceleration_Addr"                  \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetAcceleration\")")
-#define vehicleUnk568_SetLinearVelocityEtc_Addr                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetLinearVelocityEtc_Addr"             \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetLinearVelocityEtc\")")
-#define vehicleUnk568_SetUnkD0_Addr                                                                                    \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk568_SetUnkD0_Addr"                         \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk568::SetUnkD0\")")
-#define vehicleUnk570_GetCollisionFxForMaterial_Addr                                                                   \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_GetCollisionFxForMaterial_Addr"        \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::GetCollisionFxForMaterial\")")
-#define vehicleUnk570_GetSmearFxForMaterial_Addr 0xBCDFB0
-#define vehicleUnk570_ProcessEffects_Addr                                                                              \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_ProcessEffects_Addr"                   \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::ProcessEffects\")")
-#define vehicleUnk570_ProcessImpactScratch_Addr                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_ProcessImpactScratch_Addr"             \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::ProcessImpactScratch\")")
-#define vehicleUnk570_Setup_Addr                                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_Setup_Addr"                            \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::Setup\")")
-#define vehicleUnk570_UpdateEffectsBlackboard_Addr                                                                     \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_UpdateEffectsBlackboard_Addr"          \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::UpdateEffectsBlackboard\")")
-#define vehicleUnk570_WheelEffectUpdate_Addr                                                                           \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk570_WheelEffectUpdate_Addr"                \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk570::WheelEffectUpdate\")")
-#define vehicleUnk580_GetAudioResourceMetadata_Addr                                                                    \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_GetAudioResourceMetadata_Addr"         \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::GetAudioResourceMetadata\")")
-#define vehicleUnk580_IsRadioReceiverActive_Addr                                                                       \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_IsRadioReceiverActive_Addr"            \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::IsRadioReceiverActive\")")
-#define vehicleUnk580_NextRadioReceiverStation_Addr                                                                    \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_NextRadioReceiverStation_Addr"         \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::NextRadioReceiverStation\")")
-#define vehicleUnk580_SetRadioTier_Addr                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_SetRadioTier_Addr"                     \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::SetRadioTier\")")
-#define vehicleUnk580_ShouldUseSomeAVListener_Addr                                                                     \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_ShouldUseSomeAVListener_Addr"          \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::ShouldUseSomeAVListener\")")
-#define vehicleUnk580_ToggleHorn_Addr                                                                                  \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_ToggleHorn_Addr"                       \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::ToggleHorn\")")
-#define vehicleUnk580_Update_Addr                                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_Update_Addr"                           \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::Update\")")
-#define vehicleUnk580_Update3CA_Addr                                                                                   \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_Update3CA_Addr"                        \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::Update3CA\")")
-#define vehicleUnk580_UpdateEvents_Addr                                                                                \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateEvents_Addr"                     \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateEvents\")")
-#define vehicleUnk580_UpdateTPPinAudioSystem_Addr                                                                      \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateTPPinAudioSystem_Addr"           \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateTPPinAudioSystem\")")
-#define vehicleUnk580_UpdateTireParameters_Addr                                                                        \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateTireParameters_Addr"             \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateTireParameters\")")
-#define vehicleUnk580_UpdateWheelEmitters_Addr                                                                         \
-    0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk580_UpdateWheelEmitters_Addr"              \
-              "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk580::UpdateWheelEmitters\")")
 #define vehicleUnk588_Unknown_Addr                                                                                     \
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleUnk588_Unknown_Addr"                          \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::Unk588::Unknown\")")
@@ -44984,7 +44983,6 @@
     0 _Pragma("message(__FILE__ \"(\" __LINE_STR__ \") : Warning: vehicleWheeledPhysics_UpdatePassengerAnim_Addr"      \
               "is 0 - Zoltan found no matches for RED4ext::vehicle::WheeledPhysics::UpdatePassengerAnim\")")
 #define vehicleWheeledPhysics_VFT_Addr 0x2AA40E0
-#define vehicle_gameVehicleCurve_Addr 0x1C54699
 #define vgAttributeTypeValuePair_Class_Addr 0x3FA36C8
 #define vgAttributeTypeValuePair_Class_VFT_Addr 0x2BD2DC8
 #define vgAttributeTypeValuePair_Class_p_Addr 0x3337438

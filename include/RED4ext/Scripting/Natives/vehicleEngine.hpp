@@ -4,9 +4,10 @@
 
 #include <cstdint>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/Scripting/Natives/vehicleWheeledBaseObject.hpp>
 
 namespace RED4ext::vehicle {
+
+struct WheeledBaseObject;
 
 struct Engine {
     WheeledBaseObject *wheeledVehicle;

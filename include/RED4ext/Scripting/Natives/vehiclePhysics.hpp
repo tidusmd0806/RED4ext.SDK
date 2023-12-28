@@ -394,7 +394,7 @@ struct WheeledPhysics : Physics
     virtual ~WheeledPhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
     // virtual uint64_t sub_10() override;
-    virtual uint64_t sub_18() override;
+    virtual uint64_t sub_18(TeleportEvent*) override;
     virtual uint64_t sub_20() override;
     // virtual uint64_t UpdateTransform() override;
     // virtual void sub_30(uint32_t *, float*) override;
@@ -574,7 +574,7 @@ struct CarPhysics : WheeledPhysics
     virtual ~CarPhysics() override;
     virtual uint64_t SetVehicle(vehicle::BaseObject *) override;
     // virtual uint64_t sub_10() override;
-    // virtual uint64_t sub_18() override;
+    // virtual uint64_t sub_18(TeleportEvent*) override;
     // virtual uint64_t sub_20() override;
     // virtual uint64_t UpdateTransform() override;
     virtual void sub_30(uint32_t *, float*) override;

@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/data/TweakDBRecord.hpp>
+#include <RED4ext/Scripting/Natives/gamedataTweakValue.hpp>
 
 namespace RED4ext
 {
@@ -17,9 +18,9 @@ struct VehicleFxWheelsDecalsMaterial_Record : game::data::TweakDBRecord
     static constexpr const char* NAME = "gamedataVehicleFxWheelsDecalsMaterial_Record";
     static constexpr const char* ALIAS = "VehicleFxWheelsDecalsMaterial_Record";
 
-    uint8_t material[3]; // 48
-    uint8_t skid_marks_decal[3]; 
-    uint8_t tire_tracks_decal[3];
+    TweakValue material; // 48
+    TweakValue skid_marks_decal; 
+    TweakValue tire_tracks_decal;
 };
 RED4EXT_ASSERT_SIZE(VehicleFxWheelsDecalsMaterial_Record, 0x70);
 } // namespace game::data

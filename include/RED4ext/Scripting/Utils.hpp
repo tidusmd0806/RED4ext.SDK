@@ -24,7 +24,7 @@ bool ExecuteGlobalFunction(CName aContext, CName aFunc, void* aOut, StackArgs_t&
 bool ExecuteGlobalFunction(CName aFunc, void* aOut, StackArgs_t& aArgs);
 
 template<typename... Args>
-bool ExecuteFunction(ScriptInstance* aInstance, CBaseFunction* aFunc, void* aOut, Args&&... aArgs)
+bool ExecuteFunction(ScriptInstance aInstance, CBaseFunction* aFunc, void* aOut, Args&&... aArgs)
 {
     StackArgs_t args;
     ((args.emplace_back(nullptr, &aArgs)), ...);
