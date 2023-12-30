@@ -89,22 +89,23 @@ struct Object : ent::GameEntity, PSInterface
     virtual uint64_t OnReleaseControl();                            // 200
     virtual void sub_208() { };                                     // 208
     virtual void sub_210() { };                                     // 210
-    virtual uint64_t sub_218(WorldTransform*);                      // 218
+    virtual uint64_t sub_218(WorldTransform*);                      // 218 calls PopulationSystem->sub_308
     virtual uint64_t sub_220(void*);                                // 220
     virtual uint64_t sub_228();                                     // 228 Updates audio emittor position with placeholder - called by other member functions
-    virtual void sub_230(Handle<IScriptable>* obj,                  // 230 Called by ReplicateAnimFeature
-        CName inputName, Handle<IScriptable> value) { }; 
-    virtual void sub_238(Handle<IScriptable> * obj,                 // 238 Called by ReplicateAnimEvent
-        CName eventName) { }; 
-    virtual void sub_240(Handle<IScriptable>* event) { };           // 240 Called by QueueReplicatedEvent
-    virtual void sub_248(Handle<IScriptable>* obj, CName inputName, // 248 Called by ReplicateInputFloat
-        float value) { }; 
-    virtual void sub_250(Handle<IScriptable>* obj, CName inputName, // 250 Called by ReplicateInputBool
-        bool value) { }; 
-    virtual void sub_258(Handle<IScriptable>* obj, CName inputName, // 258 Called by ReplicateInputInt
-        int value) { }; 
-    virtual void sub_260(Handle<IScriptable>* obj, CName inputName, // 260 Called by ReplicateInputVector
-        Vector4 value) { }; 
+    virtual void ReplicateAnimFeature(Handle<IScriptable>* obj,     
+        CName inputName, Handle<IScriptable> value) { };            // 230 Called by ReplicateAnimFeature
+    virtual void ReplicateAnimEvent(Handle<IScriptable> * obj,      
+        CName eventName) { };                                       // 238 Called by ReplicateAnimEvent
+    virtual void QueueReplicatedEvent(Handle<IScriptable>* event) {
+    };                                                              // 240 Called by QueueReplicatedEvent
+    virtual void ReplicateInputFloat(Handle<IScriptable>* obj, 
+        CName inputName, float value) { };                          // 248 Called by ReplicateInputFloat
+    virtual void ReplicateInputBool(Handle<IScriptable>* obj,       
+        CName inputName, bool value) { };                           // 250 Called by ReplicateInputBool
+    virtual void ReplicateInputInt(Handle<IScriptable>* obj, 
+        CName inputName, int value) { };                            // 258 Called by ReplicateInputInt
+    virtual void ReplicateInputVector(Handle<IScriptable>* obj,     
+        CName inputName, Vector4 value) { };                        // 260 Called by ReplicateInputVector
 
 // methods
 
@@ -114,26 +115,26 @@ struct Object : ent::GameEntity, PSInterface
 
     struct Flags
     {
-        uint8_t IsAttached : 1;
-        uint8_t Unk2 : 1;
-        uint8_t IsPlayerController : 1;
-        uint8_t EnabledTransformUpdates : 1;
+        uint8_t IsAttached : 1;                 // 01
+        uint8_t Unk2 : 1;                       // 02
+        uint8_t IsPlayerController : 1;         // 04
+        uint8_t EnabledTransformUpdates : 1;    // 08
+        uint8_t PersistentRelated : 1;          // 10
     };
 
-    //Interface gameObjectInterface; // 160
-    //Handle<game::PersistentState> persistentState; // 168
-    LocalizationString displayName; // 178
-    LocalizationString displayDescription; // 1A0
-    CName audioResourceName; // 1C8
-    game::PlayerSocket playerSocket; // 1D0
-    float visibilityCheckDistance; // 1F8
-    Flags flags;
-    uint8_t unk1FD[3];
-    Handle<ISerializable> owner;
-    uint64_t unk210; // 210
-    Handle<ent::SlotComponent> uiSlotComponent; // 218
-    IGameInstance * gameInstance2; // 228
-    red::TagList gameObjectTags; // 230
+    //Interface gameObjectInterface;                    // 160
+    //Handle<game::PersistentState> persistentState;    // 168
+    LocalizationString displayName;                     // 178
+    LocalizationString displayDescription;              // 1A0
+    CName audioResourceName;                            // 1C8
+    game::PlayerSocket playerSocket;                    // 1D0
+    float visibilityCheckDistance;                      // 1F8
+    Flags flags;                                        // 1FC
+    Handle<ISerializable> owner;                        // 200
+    void * unk210;                                      // 210 audio related, "looping" cname
+    Handle<ent::SlotComponent> uiSlotComponent;         // 218
+    IGameInstance * gameInstance2;                      // 228
+    red::TagList gameObjectTags;                        // 230
 };
 RED4EXT_ASSERT_SIZE(Object, 0x240);
 //RED4EXT_ASSERT_OFFSET(Object, persistentState, 0x168);

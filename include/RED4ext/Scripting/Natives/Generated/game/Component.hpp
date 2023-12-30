@@ -33,11 +33,13 @@ struct Component : ent::IComponent, PSInterface
         return call(this, a1);
     }
 
+    // GameWillAttach
     inline virtual void sub_188(void* a1) override {
         RelocFunc<decltype(&Component::sub_188)> call(VFT, 0x188);
         return call(this, a1);
     }
 
+    // GameWillDetach
     inline virtual bool sub_198(void* a1) override {
         RelocFunc<decltype(&Component::sub_198)> call(VFT, 0x198);
         return call(this, a1);
@@ -68,6 +70,7 @@ struct Component : ent::IComponent, PSInterface
         return call(this, a1);
     }
 
+    // OnGameDetach
     inline virtual void sub_250() {
         RelocFunc<decltype(&Component::sub_250)> call(VFT, 0x250);
         return call(this);
@@ -79,6 +82,7 @@ struct Component : ent::IComponent, PSInterface
         return call(this);
     }
 
+    // OnEditorDetach
     inline virtual void sub_260() {
         RelocFunc<decltype(&Component::sub_260)> call(VFT, 0x260);
         return call(this);

@@ -483,10 +483,10 @@ struct BaseObject : game::Object
     uint64_t unk3A8;
     uint64_t unk3B0;
     action::ActionInterface actionInterface;
-    Handle<ISerializable> unk4A8;
-    Handle<ISerializable> unk4B8;
-    Handle<ISerializable> unk4C8;
-    Handle<ISerializable> unk4D8;
+    Handle<ISerializable> driving;
+    Handle<ISerializable> drivingParamsGeneric;
+    Handle<ISerializable> drivingParamsRace;
+    Handle<ISerializable> drivingParamsPanic;
     Handle<game::interactions::Component> driverInteraction;
     Handle<game::interactions::Component> passengerInteractions;
     Handle<Controller> vehicleController;

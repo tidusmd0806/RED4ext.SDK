@@ -68,68 +68,47 @@ struct Physics
     /// @eval fn
     static constexpr const uintptr_t VFT = vehiclePhysics_VFT_Addr;
 
-    virtual ~Physics();
-    virtual uint64_t SetVehicle(BaseObject *);
-    virtual uint64_t sub_10();
-    // reponds to vehicleTeleportEvent
-    virtual uint64_t sub_18(TeleportEvent*);
-    // sets mass & inertia tensor
-    virtual uint64_t sub_20();
-    virtual uint64_t UpdateTransform();
-    virtual void sub_30(uint32_t *, float*);
-    // checks for vehicle being Z < -100, teleports if so (VehicleTeleportationIfFallsUnderWorld @ RVA 0x4781A38)
-    virtual void sub_38(float deltaTime);
-    virtual void sub_40(float deltaTime);
-    virtual uint64_t FixedUpdate_PreSolve(uint64_t, float);
-    // also called w/o arg?
-    // sets this->velocity from physicsData->velocity
-    // applies water resistance
-    virtual void sub_50(float deltaTime);
-    virtual uint64_t sub_58(float deltaTime);
-    // empty
-    virtual void sub_60();
-    virtual uint64_t sub_68(float);
-    virtual uint64_t sub_70(int, char);
-    virtual uint64_t UpdatePhysicsWT2();
-    // empty
-    virtual void sub_80();
-    // empty
-    virtual void sub_88();
-    virtual void SetUnk70To1();
-    // empty
-    virtual void sub_98(bool);
-    // empty
-    virtual uint64_t sub_A0(uint64_t);
-    virtual uint64_t IntializeVectorQuaternion(uint64_t);
-    virtual uint64_t sub_B0(int, float);
-    virtual bool UpdatePhysicsStuff();
-    virtual bool IsInAirFromVehicle();
-    virtual bool SomethingOrientationIsInAir();
-    // return 0
-    virtual bool sub_D0();
-    virtual void sub_D8(char);
-    virtual double Return1D();
-    virtual float Return1F();
-    // empty
-    virtual void sub_F0();
-    // empty
-    virtual void sub_F8();
-    // empty
-    virtual void sub_100(uint32_t*, float*);
-    // empty
-    virtual void sub_108();
-    // empty
-    virtual void sub_110();
-    // empty
-    virtual void sub_118(void *, RED4ext::Transform *);
-    // updates some animation stuff, sub_120
-    virtual uint64_t UpdateWheelAnimations();
-    // update blackboard, effectdata
-    virtual uint64_t UpdateBlackboard();
-    virtual void sub_130();
-    virtual uint64_t sub_138();
-    // populates some variables along with most of insert1
-    virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record> *);
+    virtual ~Physics();                                     // 00
+    virtual uint64_t SetVehicle(BaseObject *);              // 08
+    virtual uint64_t sub_10();                              // 10
+    virtual uint64_t sub_18(TeleportEvent*);                // 18 reponds to vehicleTeleportEvent
+    virtual uint64_t sub_20();                              // 20 sets mass & inertia tensor
+    virtual uint64_t UpdateTransform();                     // 28
+    virtual void sub_30(uint32_t *, float*);                // 30
+    virtual void sub_38(float deltaTime);                   // 38 checks for vehicle being Z < -100, teleports if so (VehicleTeleportationIfFallsUnderWorld @ RVA 0x4781A38)
+    virtual void sub_40(float deltaTime);                   // 40
+    virtual uint64_t FixedUpdate_PreSolve(uint64_t, float); // 48
+    virtual void sub_50(float deltaTime);                   // 50 also called w/o arg? sets this->velocity from physicsData->velocity, applies water resistance
+    virtual uint64_t sub_58(float deltaTime);               // 58
+    virtual void sub_60() { };                              // 60
+    virtual uint64_t sub_68(float);                         // 68
+    virtual uint64_t sub_70(int, char);                     // 70
+    virtual uint64_t UpdatePhysicsWT2();                    // 78
+    virtual void sub_80() { };                              // 80
+    virtual void sub_88() { };                              // 88
+    virtual void SetUnk70To1();                             // 90
+    virtual void sub_98(bool) { };                          // 98
+    virtual uint64_t sub_A0(uint64_t) { };                  // A0
+    virtual uint64_t IntializeVectorQuaternion(uint64_t);   // A8
+    virtual uint64_t sub_B0(int, float);                    // B0
+    virtual bool UpdatePhysicsStuff();                      // B8
+    virtual bool IsInAirFromVehicle();                      // C0
+    virtual bool SomethingOrientationIsInAir();             // C8
+    virtual bool sub_D0() { return false; }                 // D0
+    virtual void sub_D8(char);                              // D8
+    virtual double Return1D();                              // E0
+    virtual float Return1F();                               // E8
+    virtual void sub_F0() { };                              // F0
+    virtual void sub_F8() { };                              // F8
+    virtual void sub_100(uint32_t*, float*) { };            // 100
+    virtual void sub_108() { };                             // 108
+    virtual void sub_110() { };                             // 110
+    virtual void sub_118(void *, RED4ext::Transform *) { }; // 118
+    virtual uint64_t UpdateWheelAnimations();               // 120 updates some animation stuff
+    virtual uint64_t UpdateBlackboard();                    // 128 update blackboard, effectdata
+    virtual void sub_130();                                 // 130
+    virtual uint64_t sub_138();                             // 138
+    virtual void LoadSomeVehiclePhysicsStuff(Handle<game::data::VehicleDriveModelData_Record> *); // 140 populates some variables along with most of insert1
 
     // 1.52 RVA: 0x1CEB5B0 / 30324144
     /// @pattern 80 79 50 00 75 03 32 C0 C3 F2 0F 10 41 30 F2 0F 11 02 8B 41 38 89 42 08 B0 01 0F 10 41 40 0F 11
@@ -184,27 +163,26 @@ struct Physics
     bool __fastcall IsInAirFromVehicle_func();
 
     uint64_t unk08;
-    Vector3 velocity; // 10
+    Vector3 velocity;               // 10
     uint32_t unk1C;
-    uint8_t unk20; // checked in fixed update
+    uint8_t unk20;                  // 20 checked in fixed update
     uint8_t unk21[7];
-    uint64_t unk28;
-    WorldTransform worldTransform; // 30
+    WorldTransform worldTransform;  // 30
     uint8_t unk50;
     uint8_t unk51[7];
     uint64_t unk58;
-    BaseObject* parent;
+    BaseObject* parent;             // 60
     WaterParams* waterParams;
     uint8_t unk70;
     uint8_t unk71[7];
     uint64_t unk78;
     WorldTransform worldTransform2; // 80
     // Set to 1.0 when awake, counts down when sleep conditions are met - when 0.0, vehicle enters sleep state, and is set to -1.0
-    float sleepTimer;
+    float sleepTimer;               // A0
     uint32_t unk_2_0_new_0;
     // counts from 0.5 down to 0.0
-    float unkA4;
-    float setTo0point5;
+    float unkA8;
+    float setTo0point5;             // AC
     /*
     B0 in 2.0
     HIWORD(this) compared to physicsProxyManager->unk102010[this]
@@ -219,28 +197,31 @@ struct Physics
     0x00014aad
     0x00014a9d
     */
-    int32_t unkAC;
-    float unkB0;
+    int32_t unkB0;                  // B0
+    float unkB4;
     // computed from chassis component
-    bool isMoving;
+    bool isMoving;                  // B8
     uint8_t unk_2_0_new_1;
-    uint8_t unkB5;
+    uint8_t unkB9;
     // is player controllered maybe
-    bool unkB6;
+    bool unkBA;
     // set from vehicle->unk361
-    uint8_t unkB7;
+    uint8_t unkBB;
     // true if any vehicle->acceleration, et al != 0
     bool hasInput;
     // true if any vehicle->unk568->unk60 value != 0 - isMoving?
-    bool unkB9;
-    uint8_t unkBA;
-    uint8_t unkBB;
-    uint16_t unkBC;
+    bool unkBC;
+    uint8_t unkBD;
     uint8_t unkBE;
+    uint16_t unkBF;
+    uint8_t unkC0;
     float has_been_flipped_over_for_some_time_delay;
-    float unkC4;
-    UnkC8* physicsBaseStruct2;  // D0
+    float unkCC;
+    UnkC8* physicsBaseStruct2;      // D0
+    void* unkD8;                    // D8
 };
+
+RED4EXT_ASSERT_SIZE(Physics, 0xE0);
 //char (*__kaboom)[sizeof(Physics)] = 1;
 //char (*__kaboom2)[offsetof(Physics, unk08)] = 1;
 
@@ -462,7 +443,7 @@ struct WheeledPhysics : Physics
     virtual void sub_1A8(uint32_t);
 
     // or maybe type?
-    uint32_t numDriveWheels;
+    uint32_t numDriveWheels;                            // D8
     float frontBackWheelDistance;
     float unkD8;
     float unkDC;
@@ -475,7 +456,7 @@ struct WheeledPhysics : Physics
     uint8_t unkF5;
     uint8_t unkF6;
     uint8_t unkF7;
-    WheeledBaseObject* wheeledObject;
+    WheeledBaseObject* wheeledObject;                   // 108
     physics::VehiclePhysicsInsert1 insert1[4];
     uint32_t insert1Count;
     uint32_t unk5C4[3];
@@ -545,13 +526,14 @@ struct WheeledPhysics : Physics
     Handle<void> curveSet;
     uint64_t stuckTimeout;
     uint64_t unk_2_0_new_0[4];
+    uint64_t unkD88;
     UnkD10* unkD10; // D90
     uint64_t unkD18; // D98
 };
 #pragma pack(pop)
-// RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
 RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xDA0);
 // RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xD20);
+// RED4EXT_ASSERT_OFFSET(WheeledPhysics, driveHelpers, 0xCE8);
 //char (*__kaboom)[offsetof(WheeledPhysics, unkC40)] = 1;
 
 struct CarPhysics : WheeledPhysics
@@ -771,7 +753,7 @@ struct TankPhysics : Physics
     //uint8_t unkFE;
     //uint8_t unkFF;
 
-    uint8_t unkD0[0x3E0 - 0xF0];
+    uint8_t unkD0[0x3E0 - 0xE0];
 };
 RED4EXT_ASSERT_SIZE(TankPhysics, 0x3E0);
 

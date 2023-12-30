@@ -66,6 +66,15 @@ struct Entity : IScriptable
     virtual bool sub_40(BaseStream* aStream) override;          // 40
     virtual void* sub_C0(void* a1) override;                    // C0
 
+    struct sub_148_arg {
+        uint64_t unk00;
+        uint64_t unk08;
+        uint64_t unk10;
+        uint64_t unk18;
+        IGameInstance *gameInstance;
+        void *componentHelper;
+    };
+
 // new virtuals
 
     virtual void sub_108() { }                                  // 108
@@ -153,26 +162,26 @@ struct Entity : IScriptable
     CName currentAppearance;
     // maybe ProxyCacheID?
     uint64_t unk58;
-    ResourcePath resource; // 60
+    ResourcePath resource;                      // 60
     uint64_t unk68;
-    ComponentsStorage componentsStorage; // 70
-    void* placeholder; // B0
-    world::RuntimeScene* runtime; // B8
-    ScriptGameInstance* scriptGameInstance; // C0
-    Handle<void> unkC8;
-    CallbackManager callbackManager; // D8
-    red::TagList entityTags; // 138
+    ComponentsStorage componentsStorage;        // 70
+    void* placeholder;                          // B0
+    world::RuntimeScene* runtime;               // B8
+    ScriptGameInstance* scriptGameInstance;     // C0
+    Handle<void> unkC8;                         // C8
+    CallbackManager callbackManager;            // D8
+    red::TagList entityTags;                    // 138
     // isReplicated = unk148 != 0
-    void * unk148; // 148
-    float updatingTransform; // 150
-    uint8_t customCameraTarget = 0; // 154
-    int8_t controllingPeerID = -1; // 155
-    EntityState entityState; // 156
-    uint8_t unk157; // 157
-    uint16_t unk158 = 0; // 158
+    void * unk148;                              // 148 related to replicate stuff
+    float updatingTransform;                    // 150
+    uint8_t customCameraTarget = 0;             // 154
+    int8_t controllingPeerID = -1;              // 155
+    EntityState entityState;                    // 156
+    uint8_t unk157;                             // 157
+    uint16_t unk158 = 0;                        // 158
     // factoryID
-    uint8_t unk15A = 2; // 15A
-    uint8_t renderSceneLayerMask = 1; // 15B
+    uint8_t unk15A = 2;                         // 15A
+    uint8_t renderSceneLayerMask = 1;           // 15B
     ComponentFlags componentFlags;
     uint8_t unk15D;
     uint8_t unk15E;
@@ -182,6 +191,7 @@ RED4EXT_ASSERT_SIZE(Entity, 0x160);
 // char (*__kaboom)[sizeof(Entity)] = 1;
 RED4EXT_ASSERT_OFFSET(Entity, entityID, 0x48);
 RED4EXT_ASSERT_OFFSET(Entity, currentAppearance, 0x50);
+RED4EXT_ASSERT_OFFSET(Entity, componentsStorage, 0x70);
 RED4EXT_ASSERT_OFFSET(Entity, entityTags, 0x138);
 } // namespace ent
 } // namespace RED4ext
