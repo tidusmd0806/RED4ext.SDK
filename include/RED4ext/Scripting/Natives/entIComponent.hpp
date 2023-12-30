@@ -7,6 +7,7 @@
 #include <RED4ext/CName.hpp>
 #include <RED4ext/NativeTypes.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
+#include <RED4ext/Scripting/Natives/Generated/Transform.hpp>
 #include <RED4ext/Scripting/Natives/Callbacks.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/PersistentState.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ent/IAttachment.hpp>
@@ -17,6 +18,7 @@ namespace RED4ext
 struct WorldTransform;
 namespace ent {
 struct Entity;
+struct IComponentState;
 struct IComponent : IScriptable
 {
     static constexpr const char* NAME = "entIComponent";
@@ -39,100 +41,108 @@ struct IComponent : IScriptable
 
     //}
 
-    inline virtual bool sub_58() override
-    {
-        RelocFunc<decltype(&IComponent::sub_58)> call(VFT, 0x58);
-        return call(this);
-    }
-
     inline virtual void* sub_C0(void* a1) override
     {
         RelocFunc<decltype(&IComponent::sub_C0)> call(VFT, 0xC0);
         return call(this, a1);
     }
 
-
-     virtual void sub_110();
-     // related to attachments, maybe
-     virtual bool sub_118(CName, void*);
-     virtual bool sub_120(CName, void*);
-     virtual void sub_128();
-     virtual bool sub_130();
-     virtual bool sub_138();
-     virtual void sub_140();
-     // after callback is registered
-     virtual void sub_148();
-     // called in Entity/Remove And Reapply
-     virtual void sub_150(void * componentHelper);
-     // Get persistent state
-     virtual Handle<game::PersistentState>* sub_158(Handle<game::PersistentState>*);
-     // called on initialize components
-     virtual bool sub_160();
-     // IsReplicable
-     virtual bool sub_168();
-     // OnMeshesLoaded
-     virtual void sub_170();
-     // called on initialize components
-     // unk88 |= 1
-     // actually Initialize
-     virtual uint64_t sub_178(void* entityInit);
-     // unk88 &= -2u
-     // PreUninitialize
-     virtual void sub_180(ScriptGameInstance* scriptGameInstance);
-     // this, 160, 1A8, then 190 called when initializing
-     // struct of entity, scriptGameIntance, runtimeScene
-     // on game editor attach?
-     // unk88 |= 2
-     virtual void sub_188(void*);
-     virtual void sub_190();
-     // on game editor detach
-     //   unk88 &= ~2u;
-     //   unk88 |= 8u;
-     // passed struct {
-        // ent::Entity*;
-        // scriptGameInstance*;
-        // runtime*;
-        // unk158
-     // }
-     virtual bool sub_198(void*);
-     // called before entity->sub_168()
-     virtual void sub_1A0(void * entityUnk158);
-     virtual void sub_1A8();
-     // OnPostSnapshotApplied
-     virtual void sub_1B0();
-     virtual bool sub_1B8();
-     virtual void sub_1C0();
-     virtual void sub_1C8();
-     virtual void sub_1D0();
-     virtual void sub_1D8();
-     virtual bool sub_1E0();
-     // maybe enable/disable?
-     virtual void sub_1E8(bool a1);
-     // called on gather event listeners, after registered
-     virtual uint64_t sub_1F0(Handle<CallbackManager>*);
-     virtual void sub_1F8();
-     // OnRenderSelection
-     virtual uint64_t sub_200(uint64_t);
-     virtual void sub_208();
-     // actually OnRequestComponents
-     virtual void Initialize(void *);
-     // PostInitialize
-     virtual void sub_218(void*);
-     virtual void sub_220(void*);
-     virtual const char * sub_228();
-     // called on initialize components
-     // Get Replicated State Class
-     virtual CClass* GetReplicatedStateClass();
+    virtual void sub_108() { };
+    // get property value when it's a Handle<IBinding>, assign to out
+    virtual bool sub_110(CName propertyName, void* out);
+    // get property value when it's a Handle<IBinding> and something is CResource, assign to out
+    virtual bool sub_118(CName propertyName, void* out);
+    virtual void sub_120() { };
+    virtual bool sub_128() { return false; };
+    virtual bool sub_130() { return true; };
+    virtual void sub_138() { };
+    // after callback is registered
+    virtual void sub_140() { };
+    // called in Entity/Remove And Reapply
+    virtual void sub_148(void * componentHelper) { };
+    // Get persistent state
+    virtual Handle<game::PersistentState>* sub_150(Handle<game::PersistentState>*);
+    // called on initialize components (checks isReplicable)
+    virtual bool sub_158();
+    // IsReplicable
+    virtual bool sub_160();
+    // OnMeshesLoaded
+    virtual void sub_168() { };
+    // called on initialize components
+    // flags |= 1
+    // actually Initialize
+    struct CompInit {
+        Transform transform;            // 00
+        ent::Entity * entity;           // 20
+        IGameInstance * gameInstance;   // 28
+    };
+    virtual uint64_t Initialize(CompInit* a1); // 170
+    // flags &= ~1u
+    // PreUninitialize
+    virtual void Uninitialize(ScriptGameInstance* scriptGameInstance);  // 178
+    // will attach
+    // this, 160, 1A8, then 190 called when initializing
+    // struct of entity, scriptGameIntance, runtimeScene
+    // on game editor attach?
+    // flags |= 2
+    virtual void OnAttach(void*);                                       // 180
+    virtual void HasAttached() { };                                     // 188
+    // will detach
+    //   flags &= ~2u;
+    //   flags |= 8u;
+    // passed struct {
+    // ent::Entity*;
+    // scriptGameInstance*;
+    // runtime*;
+    // unk158
+    // }
+    virtual bool OnDetach(void*);                                       // 190
+    virtual void sub_198(void * entityUnk158) { };                      // 198 called before entity->sub_168()
+    virtual void sub_1A0() { };
+    virtual void OnPostSnapshotApplied() { };                           // 1A8
+    virtual void sub_1B0() { };
+    virtual void Attachment_1(Handle<IAttachment>*) { };                // 1B8
+    virtual void Attachment_2(Handle<IAttachment>*) { };                // 1C0
+    virtual void Attachment_3(Handle<IAttachment>*) { };                // 1C8
+    virtual void Attachment_4(Handle<IAttachment>*) { };                // 1D0
+    virtual bool sub_1D8() { return true; };
+    // maybe enable/disable?
+    // called from Toggle when (flags & 2) == 0
+    // chassis updates gravity when a1 != 0
+    virtual void sub_1E0(bool a1) { };
+    // called on gather event listeners, after registered
+    virtual void sub_1E8(Handle<CallbackManager>*) { };
+    virtual void sub_1F0() { };
+    virtual uint64_t OnRenderSelection(uint64_t);                       // 1F8
+    virtual void sub_200() { };
+    virtual void OnRequestComponents(void *) { };                       // 208         
+    virtual void PostInitialize(void*) { };                             // 210
+    virtual void sub_218(void*) { };
+    virtual const char * GetBucketString();                             // 220
+    // called on initialize components
+    virtual CClass* GetReplicatedStateClass();                          // 228 gets netDefaultComponentReplicatedState Class
 
     // 1.52 RVA: 0x103E040 / 17031232
     /// @pattern 48 89 51 50 C3
     void __fastcall SetEntity(Entity *);
 
+    // 2.1
+    /// @pattern 48 89 5C 24 08 48 89 74 24 10 48 89 7C 24 18 41 56 48 83 EC 20 48 8B 72 20 4C 8B F1 48 F7 46 48
+    uint64_t *__fastcall InitializeReplicated(CompInit *a2);
+
+    // 16 bits i think
+    struct Flags
+    {
+        uint8_t Initialized : 1;    // 01 sub_170, sub_178
+        uint8_t Attached : 1;       // 02 sub_180, sub_190, ignore updates?
+        uint8_t Unk04 : 1;          // 04
+        uint8_t Unk08 : 1;          // 08 sub_190
+    };
+
     CName name; // 40
     CName appearanceName; // 48 "player"
     Entity* entity; // 50
-    // netIComponentState related
-    uint64_t unk58;
+    ent::IComponentState* replicatedState; // 58
     CRUID id; // 60
     ResourcePath appearancePath;
     // entITransformAttachements, etc
@@ -140,9 +150,7 @@ struct IComponent : IScriptable
     uint16_t transform_offset;
     uint16_t unk82;
     uint32_t unk84;
-    // flags - 2 is related to transform
-    // 0x2: ignore updates? 
-    uint8_t unk88;
+    Flags flags;
     uint8_t unk89;
     // mutex for attachements
     SharedMutex unk8A;

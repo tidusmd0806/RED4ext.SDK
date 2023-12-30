@@ -10,6 +10,7 @@
 #include <RED4ext/Scripting/Natives/Generated/ent/IComponent.hpp>
 #include <RED4ext/Scripting/Natives/gamePSInterface.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/PersistentState.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/Object.hpp>
 
 namespace RED4ext
 {
@@ -28,65 +29,44 @@ struct Component : ent::IComponent, PSInterface
         return call(this);
     }
 
-    inline virtual Handle<game::PersistentState>* sub_158(Handle<game::PersistentState>* a1) override {
-        RelocFunc<decltype(&Component::sub_158)> call(VFT, 0x158);
+    inline virtual Handle<game::PersistentState>* sub_150(Handle<game::PersistentState>* a1) override {
+        RelocFunc<decltype(&Component::sub_150)> call(VFT, 0x150);
         return call(this, a1);
     }
 
-    // GameWillAttach
-    inline virtual void sub_188(void* a1) override {
-        RelocFunc<decltype(&Component::sub_188)> call(VFT, 0x188);
+    inline virtual void OnAttach(void* a1) override {
+        RelocFunc<decltype(&Component::OnAttach)> call(VFT, 0x180);
         return call(this, a1);
     }
 
-    // GameWillDetach
-    inline virtual bool sub_198(void* a1) override {
-        RelocFunc<decltype(&Component::sub_198)> call(VFT, 0x198);
+    inline virtual bool OnDetach(void* a1) override {
+        RelocFunc<decltype(&Component::OnDetach)> call(VFT, 0x190);
         return call(this, a1);
     }
 
-    inline virtual void sub_220(void* a1) override {
-        RelocFunc<decltype(&Component::sub_220)> call(VFT, 0x220);
+    // checks to make sure entity is gameObject
+    inline virtual void sub_218(void* a1) override {
+        RelocFunc<decltype(&Component::sub_218)> call(VFT, 0x218);
         return call(this, a1);
     }
 
     // new virtuals
 
     // sets the persisent state
-    inline virtual void sub_238(Handle<game::PersistentState>* a1) {
-        RelocFunc<decltype(&Component::sub_238)> call(VFT, 0x238);
+    inline virtual void sub_230(Handle<game::PersistentState>* a1) {
+        RelocFunc<decltype(&Component::sub_230)> call(VFT, 0x230);
         return call(this, a1);
     }
 
     // is Scripted Class / has scripted callbacks?
-    inline virtual bool sub_240() {
-        RelocFunc<decltype(&Component::sub_240)> call(VFT, 0x240);
-        return call(this);
+    inline virtual bool sub_238(Handle<Object>*) {
+        return this->GetType()->flags.isScriptedClass;
     }
 
-    // called from on game attach
-    inline virtual void sub_248(IGameInstance* a1) {
-        RelocFunc<decltype(&Component::sub_248)> call(VFT, 0x248);
-        return call(this, a1);
-    }
-
-    // OnGameDetach
-    inline virtual void sub_250() {
-        RelocFunc<decltype(&Component::sub_250)> call(VFT, 0x250);
-        return call(this);
-    }
-
-    // called from on editor attach
-    inline virtual void sub_258() {
-        RelocFunc<decltype(&Component::sub_258)> call(VFT, 0x258);
-        return call(this);
-    }
-
-    // OnEditorDetach
-    inline virtual void sub_260() {
-        RelocFunc<decltype(&Component::sub_260)> call(VFT, 0x260);
-        return call(this);
-    }
+    inline virtual void OnGameAttach(IGameInstance* a1) { } // 240
+    inline virtual void OnGameDetach(IGameInstance* a1) { } // 248
+    inline virtual void OnEditorAttach() { }                // 250
+    inline virtual void OnEditorDetach() { }                // 258
 
     // uint8_t unk90[0x98 - 0x90]; // 90
     // Handle<game::PersistentState> persistentState; // 98

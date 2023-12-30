@@ -445,17 +445,17 @@ struct WheeledPhysics : Physics
     // or maybe type?
     uint32_t numDriveWheels;                            // D8
     float frontBackWheelDistance;
-    float unkD8;
-    float unkDC;
+    float unkE8;
+    float unkEC;
     float frontBackBias;
     float turnRate;
-    uint32_t unkE8;
-    uint32_t unkEC;
+    uint32_t unkF8;
+    uint32_t unkFC;
     float wheelTurningThing;
-    uint8_t unkF4;
-    uint8_t unkF5;
-    uint8_t unkF6;
-    uint8_t unkF7;
+    uint8_t unk104;
+    uint8_t unk105;
+    uint8_t unk106;
+    uint8_t unk107;
     WheeledBaseObject* wheeledObject;                   // 108
     physics::VehiclePhysicsInsert1 insert1[4];
     uint32_t insert1Count;
@@ -469,66 +469,52 @@ struct WheeledPhysics : Physics
     float unkBA0; // timer of some sort, stuff in SomeFixedUpdate
     float unkBA4; // if not equal to unkBA8, add (diff * timeDelta * 4)
     float unkBA8;
-    float antiSwaybarDampingScalor;
-    float turningRollFactor;
-    float turningRollFactorWeakContactMul;
-    float turningRollFactorWeakContactThresholdMin;
-    float turningRollFactorWeakContactThresholdMax;
-    float maxWheelTurnDeg;
-    float wheelTurnMaxAddPerSecond;
-    float wheelTurnMaxSubPerSecond;
-    uint8_t useAlternativeTurnUpdate;
-    uint8_t unkBCD;
-    uint8_t unkBCE;
-    uint8_t unkBCF;
-    float turnUpdateBaseSpeedThreshold;
-    float turnUpdateMaxSpeedThreshold;
-    float turnUpdateMaxSpeedTurnChangeMul;
-    float turnUpdateMaxSpeedTurnMul;
-    float turnUpdateInputDiffForSlowChange;
-    float turnUpdateInputDiffForFastChange;
-    float turnUpdateInputFastChangeSpeed;
-    float turnUpdateInputSlowChangeSpeed;
-    float turnUpdateInputDiffProgressionPow;
-    float airResistanceFactor;
-    float brakingFrictionFactor;
-    float lowVelStoppingDeceleration;
-    float handbrakeBrakingTorque;
-    float forwardWeightTransferFactor;
-    float sideWeightTransferFactor;
-    float smoothWheelContactIncreseTime;
-    float smoothWheelContactDecreseTime;
-    uint32_t wheelsFrictionMap;
-    uint32_t unkC18;
-    float slipAngleCurveScale;
-    float slipAngleMinSpeedThreshold;
-    float slipRatioCurveScale;
-    float slipRatioMinSpeedThreshold;
-    float slopeTractionReductionBegin;
-    float slopeTractionReductionMax;
-    float slopeTractionReductionFactor;
-    float unkC38;
-    uint8_t unkC3C;
-    uint8_t unkC3D;
-    uint8_t unkC3E;
-    uint8_t unkC3F;
-    float unkC40;
-    float unkC44;
-    float unkC48;
-    float unkC4C;
-    // VelocitySmoothingTime - PIDs?
-    Matrix unkC50;
-    Matrix unkC90;
-    uint32_t unkCD0[4];
-    uint32_t wheelsNeedUpdate;
-    uint32_t unkCE4;
-    DynArray<uintptr_t> driveHelpers;
-    Handle<void> curveSet;
-    uint64_t stuckTimeout;
-    uint64_t unk_2_0_new_0[4];
-    uint64_t unkD88;
-    UnkD10* unkD10; // D90
-    uint64_t unkD18; // D98
+    float antiSwaybarDampingScalor;                 // BFC
+    float turningRollFactor;                        // C00
+    float turningRollFactorWeakContactMul;          // C04
+    float turningRollFactorWeakContactThresholdMin; // C08
+    float turningRollFactorWeakContactThresholdMax; // C0C
+    float maxWheelTurnDeg;                          // C10
+    float wheelTurnMaxAddPerSecond;                 // C14
+    float wheelTurnMaxSubPerSecond;                 // C18
+    uint8_t useAlternativeTurnUpdate;               // C1C
+    uint8_t unkC1D;
+    uint8_t unkC1E;
+    uint8_t unkC1F;
+    float turnUpdateBaseSpeedThreshold;             // C20
+    float turnUpdateMidSpeedThreshold;              // C24
+    float turnUpdateMaxSpeedThreshold;              // C28
+    float turnUpdateMidSpeedTurnChangeMul;          // C2C
+    float turnUpdateMidSpeedTurnMul;                // C30
+    float turnUpdateMaxSpeedTurnChangeMul;          // C34
+    float turnUpdateMaxSpeedTurnMul;                // C38
+    float turnUpdateInputDiffForSlowChange;         // C3C
+    float turnUpdateInputDiffForFastChange;         // C40
+    float turnUpdateInputSlowChangeSpeed;           // C44
+    float turnUpdateInputFastChangeSpeed;           // C48
+    float turnUpdateInputDiffProgressionPow;        // C4C
+    float airResistanceFactor;                      // C50
+    float brakingFrictionFactor;                    // C54
+    float lowVelStoppingDeceleration;               // C58
+    float handbrakeBrakingTorque;                   // C5C
+    float forwardWeightTransferFactor;              // C60
+    float sideWeightTransferFactor;                 // C64
+    float smoothWheelContactIncreseTime;            // C68
+    float smoothWheelContactDecreseTime;            // C6C
+    TweakDBID wheelsFrictionMap;                    // C70
+    float slipAngleCurveScale;                      // C78
+    float slipAngleMinSpeedThreshold;               // C7C
+    float slipRatioCurveScale;                      // C80
+    float slipRatioMinSpeedThreshold;               // C84
+    float slopeTractionReductionBegin;              // C88
+    float slopeTractionReductionMax;                // C8C
+    float slopeTractionReductionFactor;             // C90
+    uint8_t unkC94[212];                            // C94
+    DynArray<uintptr_t> driveHelpers;               // D68
+    uint8_t unkD78[20];                             // D78
+    float stuckTimeout;                             // D8C
+    UnkD10* unkD10;                                 // D90
+    uint64_t unkD18;                                // D98
 };
 #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(WheeledPhysics, 0xDA0);

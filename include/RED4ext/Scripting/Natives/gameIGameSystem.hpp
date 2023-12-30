@@ -41,34 +41,35 @@ struct IGameSystem : IUpdatableSystem
     virtual CClass* GetNativeType() override;     
     virtual ~IGameSystem() override = default;
 
-    virtual void OnWorldAttached(world::RuntimeScene* aScene);                                                // 110
-    virtual void OnBeforeWorldDetach(world::RuntimeScene* aScene);                                            // 118
-    virtual void OnWorldDetached(world::RuntimeScene* aScene);                                                // 120
-    virtual void OnAfterWorldDetach();                                                                        // 128
-    virtual uint32_t OnBeforeGameSave(const JobGroup& aJobGroup, void* a2);                                   // 130
-    virtual void OnGameSave(void* aStream);                                                                   // 138
-    virtual void OnAfterGameSave();                                                                           // 140
-    virtual void OnGameLoad(const JobGroup& aJobGroup, bool& aSuccess, void* aStream);                        // 148
+    virtual void OnWorldAttached(world::RuntimeScene* aScene);                                        // 110
+    virtual void OnBeforeWorldDetach(world::RuntimeScene* aScene);                                    // 118
+    virtual void OnWorldDetached(world::RuntimeScene* aScene);                                        // 120
+    virtual void OnAfterWorldDetach();                                                                // 128
+    virtual uint32_t OnBeforeGameSave(const JobGroup& aJobGroup, void* a2);                           // 130
+    virtual void OnGameSave(void* aStream);                                                           // 138
+    virtual void OnAfterGameSave();                                                                   // 140
+    virtual void OnGameLoad(const JobGroup& aJobGroup, bool& aSuccess, void* aStream);                // 148
     // 158 ReturnOne, something WaitingForEntities, "Saved"
     // right before player attach
-    virtual bool OnGameRestored();                                                                            // 150
-    virtual void OnGamePrepared();                                                                            // 158
-    virtual void OnGamePaused();                                                                              // 160
-    virtual void OnGameResumed();                                                                             // 168
+    virtual bool OnGameRestored();                                                                    // 150
+    virtual void OnGamePrepared();                                                                    // 158
+    virtual void OnGamePaused();                                                                      // 160
+    virtual void OnGameResumed();                                                                     // 168
     // 178, 138, 148 fire when going out-of-bounds
     // something with a CString @ 0x08 - PointOfNoReturnSave?    
-    virtual void* IsSavingLocked(SaveLock* aLock, bool a2);                                                   // 170
-    virtual void OnStreamingWorldLoaded(world::RuntimeScene* aScene, uint64_t a2, const JobGroup& aJobGroup); // 178
-    virtual void sub_180();                                                                                   // 180
+    virtual void* IsSavingLocked(SaveLock* aLock, bool a2);                                           // 170
+    virtual void OnStreamingWorldLoaded(world::RuntimeScene* aScene, uint64_t a2, 
+        const JobGroup& aJobGroup);                                                                   // 178
+    virtual void sub_180();                                                                           // 180
     virtual void sub_188();       
     // called from GameInstance->sub_20, recieves some struct based on game performance setting & crowd density
-    virtual void sub_190(void* a1);                                                                        // 190
-    virtual void sub_198();                                                                                   // 198
+    virtual void sub_190(void* a1);                                                                   // 190
+    virtual void sub_198();                                                                           // 198
     // called after created & gameInstance is set
     // OnInitialize called
     // Tweaks loaded
-    virtual void OnInitialize(const JobHandle& aJob);                                                         // 1A0
-    virtual void OnUninitialize();                                                                            // 1A8
+    virtual void OnInitialize(const JobHandle& aJob);                                                 // 1A0
+    virtual void OnUninitialize();                                                                    // 1A8
 
 
     // 1.52 RVA: 0xAEC8E0 / 11454688

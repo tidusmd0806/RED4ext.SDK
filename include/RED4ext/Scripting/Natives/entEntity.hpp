@@ -172,13 +172,13 @@ struct Entity : IScriptable
     CallbackManager callbackManager;            // D8
     red::TagList entityTags;                    // 138
     // isReplicated = unk148 != 0
-    void * unk148;                              // 148 related to replicate stuff
+    void * unk148;                              // 148 net::IEntityState* ?
     float updatingTransform;                    // 150
     uint8_t customCameraTarget = 0;             // 154
     int8_t controllingPeerID = -1;              // 155
     EntityState entityState;                    // 156
     uint8_t unk157;                             // 157
-    uint16_t unk158 = 0;                        // 158
+    uint16_t unk158 = 0;                        // 158 used in another component initialize
     // factoryID
     uint8_t unk15A = 2;                         // 15A
     uint8_t renderSceneLayerMask = 1;           // 15B

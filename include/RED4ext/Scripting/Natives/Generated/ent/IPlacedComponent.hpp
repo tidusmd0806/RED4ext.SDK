@@ -31,11 +31,15 @@ struct __declspec(align(0x10)) IPlacedComponent : IComponent
     virtual Handle<ent::ITransformAttachment>* CreateTransformAttachment(Handle<ent::ITransformAttachment>* aAttachment, 
                                                                          CName name,
                                                                          Handle<void>* aDestination);
+    // unkB2 = 1
+    virtual void OnAttach(void*) override;
+    // unkB2 = 1
+    // unkA0 clear
+    virtual bool OnDetach(void*) override;
     // debug related? formats name to [%hs]
-    virtual void sub_240();
+    virtual void sub_238();
     // get bounding box maybe?
-    // debugbreak here
-    virtual void sub_248(Box* boundingBox);
+    virtual void sub_240(Box* boundingBox) = 0;
     virtual void GetFlags();
 
     struct UnkA0 {

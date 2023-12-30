@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <RED4ext/Common.hpp>
 #include <RED4ext/CName.hpp>
+#include <RED4ext/Handle.hpp>
 #include <RED4ext/Scripting/Natives/Generated/game/Component.hpp>
 
 namespace RED4ext
@@ -21,7 +22,8 @@ struct Controller : game::Component
     CName alarmCurve; // A8
     float alarmTime; // B0
     bool overrideHeadlightsSettingsForPlayer; // B4
-    uint8_t unkB5[0xD8 - 0xB5]; // B5
+    uint8_t unkB5[19];
+    Handle<ISerializable> vehicle;
 };
 RED4EXT_ASSERT_SIZE(Controller, 0xD8);
 } // namespace vehicle

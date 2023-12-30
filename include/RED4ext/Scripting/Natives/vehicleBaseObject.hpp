@@ -466,8 +466,8 @@ struct BaseObject : game::Object
     float unk2B8;
     float unk2BC;
     float unk2C0;
-    Physics *physics;
-    PhysicsData *physicsData;
+    Physics *physics;                     // 2C8
+    PhysicsData *physicsData;             // 2D0
     Handle<ISerializable> curveSetData;
     Handle<ChassisComponent> chassis;
     float unk2F8[16];
@@ -785,7 +785,7 @@ struct BaseObject : game::Object
 };
 // #pragma pack(pop)
 RED4EXT_ASSERT_SIZE(BaseObject, 0xB90);
-// RED4EXT_ASSERT_OFFSET(BaseObject, weapons, 0x940);
+RED4EXT_ASSERT_OFFSET(BaseObject, physics, 0x2C8);
 // char (*__kaboom)[sizeof(BaseObject)] = 1;
 // char (*__kaboom2)[offsetof(BaseObject, physicsSystem)] = 1;
 } // namespace vehicle

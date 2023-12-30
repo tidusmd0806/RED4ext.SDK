@@ -69,11 +69,11 @@ struct PhysicsData
     /// @pattern F3 0F 10 41 0C F3 0F 58 02 F3 0F 11 41 0C F3 0F 10 4A 04 F3 0F 58 49 10 F3 0F 11 49 10 F3 0F 10
     void __fastcall AddTorque(RED4ext::Vector3 *torque);
 
-    Vector3 force;
-    Vector3 torque;
-    Vector3 velocity;
-    Vector3 angularVelocity;
-    Quaternion orientation;
+    Vector3 force;              // 00
+    Vector3 torque;             // 0C
+    Vector3 velocity;           // 18
+    Vector3 angularVelocity;    // 24
+    Quaternion orientation;     // 30
     float inverseMass;
     uint32_t unk48[3];
     Matrix localInertiaTensor;

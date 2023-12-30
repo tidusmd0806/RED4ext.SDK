@@ -29,32 +29,32 @@ struct __declspec(align(0x10)) PhysicalMeshComponent : ent::MeshComponent, ent::
 //        game::PersistencySystem * persistency;
 //    };
 
-    virtual void sub_148();
+    virtual void sub_140();
 
     // PhysicalMeshComponent_OnMeshLoaded
-    virtual bool sub_178();
+    virtual bool Initialize();
 
     // disable/cleanup something?
-    virtual void sub_180();
+    virtual void Uninitialize();
 
     // sets proxyCacheID, runs sub_2A0
-    virtual void sub_188(void * a2);
+    virtual void OnAttach(void * a2);
 
     // proxyID & Stuff
-    virtual bool sub_198(void *);
+    virtual bool OnDetach(void *);
 
     // verify mesh collider stuff
-    virtual void sub_220(void *);
+    virtual void sub_218(void *);
 
     // calls sub_2B0 after sub_258
-    virtual bool sub_278(bool a2, bool a3);
+    virtual bool sub_270(bool a2, bool a3);
 
     // should enable collision
+    virtual bool sub_298();
     virtual bool sub_2A0();
-    virtual bool sub_2A8();
 
     // creates physicalResource & populates proxyID & proxyCacheID
-    virtual bool sub_2B0();
+    virtual bool sub_2A8();
 
     // 1.6  RVA: 0x10C7C30 / 17595440
     /// @pattern 40 55 41 56 48 8D AC 24 88 FD FF FF 48 81 EC 78 03 00 00 48 8B 12 4C 8B F1 48 85 D2 0F 84 7F 08

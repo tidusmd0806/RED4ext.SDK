@@ -17,7 +17,8 @@ struct IComponentState
     static constexpr const char* NAME = "netIComponentState";
     static constexpr const char* ALIAS = NAME;
 
-    uint8_t unk00[0x10 - 0x0]; // 0
+    uint8_t unk00[8]; // 0
+    void * unk10; // 10 comes from entity->unk148
     CName componentName; // 10
     bool enabled; // 18
     uint8_t unk19[0x20 - 0x19]; // 19
