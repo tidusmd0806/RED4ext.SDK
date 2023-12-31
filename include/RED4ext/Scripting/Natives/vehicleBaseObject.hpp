@@ -31,6 +31,7 @@
 // #include <RED4ext/Scripting/Natives/vehiclePhysicsData.hpp>
 #include <RED4ext/Scripting/Natives/Generated/red/ResourceReferenceScriptToken.hpp>
 #include <RED4ext/Scripting/Natives/gamedataTweakValue.hpp>
+#include <RED4ext/Scripting/Natives/Generated/game/IBlackboard.hpp>
 
 namespace RED4ext
 {
@@ -478,11 +479,11 @@ struct BaseObject : game::Object
     Vector4 angularVelocity_related;
     Vector4 worldPosition_related;
     uint64_t unk390;
-    Movement *movement;
+    Movement *movement;                     // 398
     uint64_t aiVehicleAgent_related;
-    uint64_t unk3A8;
-    uint64_t unk3B0;
-    action::ActionInterface actionInterface;
+    void * unk3A8;
+    void * unk3B0;
+    action::ActionInterface actionInterface; // 3B8
     Handle<ISerializable> driving;
     Handle<ISerializable> drivingParamsGeneric;
     Handle<ISerializable> drivingParamsRace;
@@ -495,8 +496,8 @@ struct BaseObject : game::Object
     Handle<game::IPhotoModeSystem> photoModeSystem;
     game::VehicleSystem *vehicleSystem;
     void *godModeSystem;
-    Handle<ISerializable> vehicleCNameThing;
-    Handle<ISerializable> blackboard;
+    Handle<game::IBlackboard> blackboard_1; // 558
+    Handle<game::IBlackboard> blackboard_2; // 568
     Handle<ISerializable> unk578;
     uint64_t unk588;
     uint64_t unk590;
@@ -558,7 +559,9 @@ struct BaseObject : game::Object
     uint8_t unk6A5;
     uint8_t unk6A6;
     uint8_t unk6A7;
-    uint32_t unk6A8[4];
+    uint32_t unk6A8;
+    float unk6AC;
+    uint32_t unk6B0[2];
     uint32_t unk6B8[4];
     float unk6C8[2];
     uint8_t unk6D0;
@@ -614,7 +617,7 @@ struct BaseObject : game::Object
     Vector3 weapon_trace;
     uint64_t unkB10;
     DynArray<void*> unkB18;
-    uint64_t unkB28;
+    void * unkB28;
     DynArray<void*> unkB30;
     uint64_t unkB40[4];
     HashMap<uint32_t, void*> unkB60;

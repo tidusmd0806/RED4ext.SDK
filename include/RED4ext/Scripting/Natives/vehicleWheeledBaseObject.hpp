@@ -51,10 +51,10 @@ struct WheeledBaseObject : vehicle::BaseObject
     virtual void sub_378() override;                        // 378
     virtual void sub_380() override;                        // 380
 
-    void * interactionsMaybe;
-    Transmission * transmissionData;
-    Engine * engineData;
-    void * burnoutData;
+    void * interactionsMaybe;           // B90
+    Transmission * transmissionData;    // B98
+    Engine * engineData;                // BA0
+    void * burnoutData;                 // BA8
     uint32_t unkBB0;
     uint8_t disableTireShooting;
     uint8_t disableChargePortDestruction;

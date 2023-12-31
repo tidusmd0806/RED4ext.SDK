@@ -70,19 +70,19 @@ struct IUpdatableSystem;
 
 enum class UpdateTickGroup : uint8_t
 {
-    FrameBegin,
-    Multiplayer_UpdateStateSnapshots,
-    EntityUpdateState,
-    PreBuckets,
-    Buckets,
-    PostBuckets,
-    CameraUpdate,
-    PlayerAimUpdate,
-    PostPlayerAimUpdate,
-    MappinsUpdate,
-    BlackboardCallbacks_SecondPass,
-    PreRenderUpdate,
-    Multiplayer_CaptureStateSnapshots,
+    FrameBegin = 0,
+    Multiplayer_UpdateStateSnapshots = 1,
+    EntityUpdateState = 2,
+    PreBuckets = 3,
+    Buckets = 4,
+    PostBuckets = 5,
+    CameraUpdate = 6,
+    PlayerAimUpdate = 7,
+    PostPlayerAimUpdate = 8,
+    MappinsUpdate = 9,
+    BlackboardCallbacks_SecondPass = 10,
+    PreRenderUpdate = 11,
+    Multiplayer_CaptureStateSnapshots = 12,
     Unknown,
 };
 
@@ -103,18 +103,18 @@ enum class UpdateBucketMask : uint8_t
 
 enum class UpdateBucketStage : uint8_t
 {
-    Entities_PreTick,
-    Entities_ServiceEvents,
-    PrePhysicsTick,
-    UpdateTransformPrePhysics,
-    PhysicsFlushBufferedState,
-    PhysicsExecuteAsyncQueries,
-    PostPhysicsSyncResults,
-    UpdateTransformPostPhysics,
-    AnimationUpdate,
-    PostPhysicsTick,
-    Entities_PostTick,
-    Entities_PostServiceEvents,
+    Entities_PreTick = 0,
+    Entities_ServiceEvents = 1,
+    PrePhysicsTick = 2,
+    UpdateTransformPrePhysics = 3,
+    PhysicsFlushBufferedState = 4,
+    PhysicsExecuteAsyncQueries = 5,
+    PostPhysicsSyncResults = 6,
+    UpdateTransformPostPhysics = 7,
+    AnimationUpdate = 8,
+    PostPhysicsTick = 9,
+    Entities_PostTick = 10,
+    Entities_PostServiceEvents = 11,
     Unknown,
 };
 

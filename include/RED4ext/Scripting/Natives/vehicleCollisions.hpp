@@ -39,36 +39,41 @@ struct Collisions {
 
     float unk00[3];
     float turnRelated;
-    float unk10[4];
-	WorldTransform worldTransform; // ",	0X20,	0x60000400,	get_struc_id("RED4ext::WorldTransform"),	32);
-	Vector4 linearVelocity; // ",	0X40,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	Vector4 acceleration; // ",	0X50,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-    // actually velocity, maybe - dot product taken @ 0x1CED337
-	Transform unk60; // ",	0X60,	0x60000400,	get_struc_id("RED4ext::Transform"),	32);
-	Vector4 unk80; // ",	0X80,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	Vector4 unk90; // ",	0X90,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	float currentForce; // ",	0XA0,	0x80000400,	-1,	4);
-	Vector3 currentForceVector; // ",	0XA4,	0x60000400,	get_struc_id("RED4ext::Vector3"),	12);
-	float collisionForce; // ",	0XB0,	0x80000400,	-1,	4);
-	Vector3 collisionForceVector; // ",	0XB4,	0x60000400,	get_struc_id("RED4ext::Vector3"),	12);
-	Vector4 rotationalVelocityMaybe; // ",	0XC0,	0x60000400,	get_struc_id("RED4ext::Vector4"),	16);
-	float unkD0[4]; // ",	0XD0,	0x80000400,	-1,	16);
-	float unkE0; // ",	0XE0,	0x80000400,	-1,	4);
-	float unkE4; // ",	0XE4,	0x80000400,	-1,	4);
-	float unkE8; // ",	0XE8,	0x80000400,	-1,	4);
-	float unkEC; // ",	0XEC,	0x80000400,	-1,	4);
-	float accelerationMaybe; // ",	0XF0,	0x80000400,	-1,	4);
-	float unkF4; // ",	0XF4,	0x80000400,	-1,	4);
-	float unkF8; // ",	0XF8,	0x80000400,	-1,	4);
-	float unkFC; // ",	0XFC,	0x80000400,	-1,	4);
-	float unk100; // ",	0X100,	0x80000400,	-1,	4);
-	float unk104; // ",	0X104,	0x80000400,	-1,	4);
-	float unk108; // ",	0X108,	0x80000400,	-1,	4);
-	float unk10C; // ",	0X10C,	0x80000400,	-1,	4);
-	float unk110; // ",	0X110,	0x80000400,	-1,	4);
-	float downforceMaybe; // ",	0X114,	0x80000400,	-1,	4);
-	float gravityScalar; // ",	0X118,	0x80000400,	-1,	4);
-	float unk11C; // ",	0X11C,	0x80000400,	-1,	100);
+		WorldTransform worldTransform; // 10
+		Vector4 linearVelocity; // 30
+		Vector3 acceleration; // 40
+			// actually velocity, maybe - dot product taken @ 0x1CED337
+		Transform unk50; // 50
+		Vector4 unk70; // 70
+		Vector4 unk80; // 80
+		float currentForce; // 90
+		Vector3 currentForceVector; // 94
+		float collisionForce; // A0
+		Vector3 collisionForceVector; // A4
+		float unkB0;
+		float unkB4;
+		float unkB8; // used a bit
+		float unkBC;
+		float unkC0;
+		float unkC4;
+		float unkC8; // used a bit
+		float unkCC;
+		float unkD0;
+		float unkD4;
+		float unkD8;
+		float unkDC;
+		float accelerationMaybe; // E0
+		float unkE4; 
+		float unkE8; 
+		float unkEC; 
+		float unkF0;
+		float unkF4;
+		float unkF8;
+		float unkFC;
+		float unk100;
+		float downforceMaybe; // 104
+		float gravityScalar; // 108
+		float unk11C; // 10C
 };
 // RED4EXT_ASSERT_SIZE(Collisions, 0x100);
 

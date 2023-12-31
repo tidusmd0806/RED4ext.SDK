@@ -179,9 +179,9 @@ struct Physics
     WorldTransform worldTransform2; // 80
     // Set to 1.0 when awake, counts down when sleep conditions are met - when 0.0, vehicle enters sleep state, and is set to -1.0
     float sleepTimer;               // A0
-    uint32_t unk_2_0_new_0;
+    float unkA4;                    // A4
     // counts from 0.5 down to 0.0
-    float unkA8;
+    float unkA8;                    // A8
     float setTo0point5;             // AC
     /*
     B0 in 2.0
@@ -201,22 +201,19 @@ struct Physics
     float unkB4;
     // computed from chassis component
     bool isMoving;                  // B8
-    uint8_t unk_2_0_new_1;
-    uint8_t unkB9;
-    // is player controllered maybe
-    bool unkBA;
-    // set from vehicle->unk361
-    uint8_t unkBB;
-    // true if any vehicle->acceleration, et al != 0
-    bool hasInput;
-    // true if any vehicle->unk568->unk60 value != 0 - isMoving?
-    bool unkBC;
-    uint8_t unkBD;
-    uint8_t unkBE;
-    uint16_t unkBF;
+    uint8_t unk_2_0_new_1;          // B9
+    uint8_t unkBA;                  // BA
+    bool unkBB;                     // BB is player controllered maybe
+    uint8_t unkBC;                  // BC set from vehicle->unk361
+    bool hasInput; // true if any vehicle->acceleration, et al != 0
+    bool unkBE; // true if any vehicle->unk568->unk60 value != 0 - isMoving?
+    uint8_t unkBF;
     uint8_t unkC0;
-    float has_been_flipped_over_for_some_time_delay;
-    float unkCC;
+    uint16_t unkC1;
+    uint8_t unkC3;
+    float has_been_flipped_over_for_some_time_delay; // C4
+    float unkC8;                    // C8
+    uint32_t unkCC;                 // CC
     UnkC8* physicsBaseStruct2;      // D0
     void* unkD8;                    // D8
 };

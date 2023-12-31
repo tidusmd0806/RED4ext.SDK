@@ -69,6 +69,9 @@ struct PhysicsData
     /// @pattern F3 0F 10 41 0C F3 0F 58 02 F3 0F 11 41 0C F3 0F 10 4A 04 F3 0F 58 49 10 F3 0F 11 49 10 F3 0F 10
     void __fastcall AddTorque(RED4ext::Vector3 *torque);
 
+    /// @pattern 40 53 48 83 EC 50 F3 0F 10 41 40 48 8B D9 F3 0F 10 51 08 0F 28 C8 F3 0F 59 09 0F 29 74 24 40 F3
+    void ApplyForceTorque();
+
     Vector3 force;              // 00
     Vector3 torque;             // 0C
     Vector3 velocity;           // 18
