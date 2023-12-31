@@ -27,7 +27,7 @@ struct __declspec(align(0x10)) ColliderSphere : physics::ICollider
     // 2.1
     /// @pattern 48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 30 48 8B FA 48 8B F1 BA A0 00 00 00 48 8D 4C 24 20 41
     /// @nth 1/3
-    static Handle<ColliderSphere> *__fastcall createHandleWithRadius(Handle<ICollider> *, float radius);
+    static Handle<ColliderSphere> *__fastcall createHandleWithRadius(Handle<ICollider> *, float * radius);
 
     float radius; // 90
     uint8_t unk94[0xA0 - 0x94]; // 94
