@@ -23,6 +23,7 @@ struct AsyncSpawnData : IScriptable
     static constexpr const char* ALIAS = NAME;
 
     uint8_t unk40[0x58 - 0x40]; // 40
+    // 50 libraryResource
     CName libraryID; // 58
     WeakHandle<ink::CompoundWidget> parentWidget; // 60
     uint8_t unk70[0xD8 - 0x70]; // 70
