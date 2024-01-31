@@ -20,7 +20,7 @@ struct IScriptable : ISerializable
     ~IScriptable() override;
     CClass* GetType() override;
 
-    virtual void sub_D8(int64_t a1, int64_t a2); // D8
+    virtual void sub_D8(int64_t a1, int64_t a2); // D8 EnumFunctionsFromFamily
     virtual void sub_E0();                       // E0
     virtual void sub_E8();                       // E8
     virtual void sub_F0();                       // F0
