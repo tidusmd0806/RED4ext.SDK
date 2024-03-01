@@ -329,7 +329,7 @@ RED4EXT_INLINE bool RED4ext::CClass::sub_D0() const
 template<typename T>
 RED4EXT_INLINE T RED4ext::CClass::CreateInstance(bool aZeroMemory) const
 {
-    using func_t = ScriptInstance (*)(const CClass*, uint32_t, bool);
+    using func_t = T (*)(const CClass*, uint32_t, bool);
     static UniversalRelocFunc<func_t> func(Detail::AddressHashes::CClass_CreateInstance);
     return func(this, GetSize(), aZeroMemory);
 }
@@ -538,7 +538,7 @@ RED4EXT_INLINE bool RED4ext::CEnum::ToString(const ScriptInstance aInstance, CSt
 
 RED4EXT_INLINE bool RED4ext::CEnum::FromString(ScriptInstance aInstance, const RawBuffer& aString) const
 {
-    using func_t = bool (*)(const CEnum*, ScriptInstance, const CString&);
+    using func_t = bool (*)(const CEnum*, ScriptInstance, const RawBuffer&);
     static UniversalRelocFunc<func_t> func(Detail::AddressHashes::CEnum_FromString);
     return func(this, aInstance, aString);
 }
@@ -658,7 +658,7 @@ RED4EXT_INLINE bool RED4ext::CBitfield::ToString(const ScriptInstance aInstance,
 
 RED4EXT_INLINE bool RED4ext::CBitfield::FromString(ScriptInstance aInstance, const RawBuffer& aString) const
 {
-    using func_t = bool (*)(const CBitfield*, ScriptInstance, const CString&);
+    using func_t = bool (*)(const CBitfield*, ScriptInstance, const RawBuffer&);
     static UniversalRelocFunc<func_t> func(Detail::AddressHashes::CBitfield_FromString);
     return func(this, aInstance, aString);
 }
