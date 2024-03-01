@@ -4,7 +4,7 @@
 #include <RED4ext/Scripting/IScriptable.hpp>
 #endif
 
-#include <RED4ext/Addresses.hpp>
+#include <RED4ext/Detail/AddressHashes.hpp>
 #include <RED4ext/RTTITypes.hpp>
 #include <RED4ext/Relocation.hpp>
 
@@ -40,7 +40,7 @@ RED4EXT_INLINE void RED4ext::IScriptable::sub_D8(int64_t a1, int64_t a2)
     // RelocFunc<decltype(&RED4ext::IScriptable::sub_D8)> call(VFT, 0xD8);
     // call(this, a1, a2);
     using func_t = void (*)(ISerializable*, int64_t, int64_t);
-    RelocFunc<func_t> func(Addresses::IScriptable_sub_D8);
+    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::IScriptable_sub_D8);
     func(this, a1, a2);
 }
 
@@ -84,7 +84,7 @@ RED4EXT_INLINE void* RED4ext::IScriptable::GetValueHolder()
 RED4EXT_INLINE void RED4ext::IScriptable::DestructValueHolder()
 {
     using func_t = void* (*)(IScriptable*);
-    RelocFunc<func_t> func(Addresses::IScriptable_DestructValueHolder);
+    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::IScriptable_DestructValueHolder);
     func(this);
 }
 

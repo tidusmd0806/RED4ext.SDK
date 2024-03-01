@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Windows.h>
 #include <cstdint>
 
 namespace RED4ext
@@ -8,13 +7,13 @@ namespace RED4ext
 class RelocBase
 {
 public:
-    inline static uintptr_t GetImageBase()
-    {
-        static const auto base = reinterpret_cast<uintptr_t>(GetModuleHandle(nullptr));
-        return base;
-    }
+    static uintptr_t GetImageBase();
 };
 
+/**
+ * @brief Represent a native function, use this to relocate its address at runtime.
+ * @tparam T The type.
+ */
 template<typename T>
 class RelocFuncBase : private RelocBase
 {
@@ -177,15 +176,85 @@ private:
     uintptr_t* m_address;
 };
 
-template<typename T>
-class [[deprecated("Use 'RelocFunc' instead.")]] REDfunc : public RelocFunc<T>
+
+class UniversalRelocBase
 {
-    using RelocFunc<T>::RelocFunc;
+public:
+    static uintptr_t Resolve(uint32_t aHash);
 };
 
+/**
+ * @brief Represent a native function, use this to relocate its address at runtime.
+ * @tparam T The type.
+ */
 template<typename T>
-class [[deprecated("Use 'RelocPtr' instead.")]] REDptr : public RelocPtr<T>
+class UniversalRelocFunc : private UniversalRelocBase
 {
-    using RelocPtr<T>::RelocPtr;
+public:
+    UniversalRelocFunc(uint32_t aHash)
+        : m_address(reinterpret_cast<T>(Resolve(aHash)))
+    {
+    }
+
+    inline operator T() const
+    {
+        return m_address;
+    }
+
+private:
+    T m_address;
 };
+
+/**
+ * @brief Represent a native pointer, use this to relocate its address at runtime.
+ * @tparam T The type.
+ */
+template<typename T>
+class UniversalRelocPtr : private UniversalRelocBase
+{
+public:
+    UniversalRelocPtr(uint32_t aHash)
+        : m_address(reinterpret_cast<T*>(Resolve(aHash)))
+    {
+    }
+
+    inline operator T() const
+    {
+        return *m_address;
+    }
+
+    inline T* GetAddr() const
+    {
+        return m_address;
+    }
+
+private:
+    T* m_address;
+};
+
+/**
+ * @brief Represent a native virtual table, use this to relocate its address at runtime.
+ * @tparam T The type.
+ */
+class UniversalRelocVtbl : private UniversalRelocBase
+{
+public:
+    UniversalRelocVtbl(uint32_t aHash)
+        : m_address(reinterpret_cast<uintptr_t*>(Resolve(aHash)))
+    {
+    }
+
+    inline operator uintptr_t*() const
+    {
+        return m_address;
+    }
+
+private:
+    uintptr_t* m_address;
+};
+
 } // namespace RED4ext
+
+#ifdef RED4EXT_HEADER_ONLY
+#include <RED4ext/Relocation-inl.hpp>
+#endif
