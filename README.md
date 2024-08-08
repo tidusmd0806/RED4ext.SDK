@@ -1,3 +1,5 @@
+These codes will be modified for use with 2.12a from jackhumbert's RED4ext.SDK(https://github.com/jackhumbert/RED4ext.SDK), which was forked from WopsS's RED4ext.SDK(https://github.com/WopsS/RED4ext.SDK).
+
 # RED4ext.SDK
 
 A library to create mods for REDengine 4 ([Cyberpunk 2077](https://www.cyberpunk.net)).
